@@ -1,6 +1,10 @@
 ---
 summary: Mentor Web AI tools for OutSystems Developer Cloud (ODC) include a Google Gemini prompt coach and a requirement document generator to improve app generation results.
-tags: ai tools, prompt engineering, requirement documents, gemini gem, ai assistants
+tags:
+  - Agentic
+  - AI
+  - Mentor
+  - Mentor Web
 guid: 3e8f9a2b-4c5d-6e7f-8a9b-0c1d2e3f4a5b
 locale: en-us
 app_type: reactive web apps
@@ -37,7 +41,7 @@ Access the [OutSystems Mentor Web prompt coach](https://gemini.google.com/gem/1t
 
 ## Requirement document generator
 
-Complex apps benefit from requirement documents rather than simple prompts. This generator is a prompt template you run through any AI assistant to transform meeting notes, user stories, or existing specs into structured documents that Mentor Web interprets consistently.
+Complex apps benefit from requirement documents. This generator is a prompt template you run through any AI assistant to transform meeting notes, user stories, or existing specs into structured documents that Mentor Web interprets consistently.
 
 ### When to use it
 

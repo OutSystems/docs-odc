@@ -1,5 +1,5 @@
 ---
-summary: Learn how to create and customize Screens in OutSystems Developer Cloud (ODC) for both web and mobile applications.
+summary: "ODC Studio screen from scratch: add an empty screen or use a template in your web or mobile app in a few steps."
 locale: en-us
 tags: ui development, app design
 guid: 7c01a3db-3807-4e86-bbbb-e88ba5c28346

@@ -1,5 +1,5 @@
 ---
-summary: Learn how to create and manage app screens using various methods in OutSystems Developer Cloud (ODC), ensuring consistency and efficiency in design.
+summary: "OutSystems Developer Cloud (ODC) screens overview: create screens using templates, scaffolding, or UI flows to ensure consistent app design."
 tags: ui design, screen templates, scaffolding, ui flows
 locale: en-us
 guid: 4afcc536-cf53-4130-9d7a-15887083d629

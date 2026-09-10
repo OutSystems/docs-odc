@@ -18,6 +18,7 @@ exceptions:
   - Case Management framework
   - CMf
   - Center
+  - Code Quality
   - Common plugin
   - Conversion Assessment Tool
   - DbCleaner
@@ -156,7 +157,6 @@ exceptions:
   - Read-Only
   - Read-Write
   - LLM
-  - CSP
   - Web Application Firewall
   - Plugin Manager
   - MediaResult data
@@ -239,6 +239,7 @@ exceptions:
   - Azure
   - Azure ACR
   - Azure Kubernetes Service
+  - Azure SQL Managed Instance
   - AKS
   - DOCX
   - Markdown
@@ -282,6 +283,8 @@ exceptions:
   - Firebase Analytics
   - Firebase Crashlytics
   - SSL Pinning plugin
+  - File Transfer plugin
+  - File Viewer plugin
   - OneSignal plugin
   - OpenTelemetry Collector
   - Amazon Bedrock
@@ -319,6 +322,8 @@ exceptions:
   - CI/CD
   - CICD
   - CI
+  - CSP
+  - Content Security Policy
   - DB2
   - DEV
   - DNS
@@ -331,6 +336,7 @@ exceptions:
   - IP
   - ID
   - JavaScript
+  - LDAP
   - macOS
   - MCP
   - MongoDB

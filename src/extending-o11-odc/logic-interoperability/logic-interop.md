@@ -14,6 +14,7 @@ audience:
   - Tech lead
 tags:
   - Authentication
+  - Best Practices
   - Logic
   - Performance
   - Private Gateway
@@ -40,7 +41,13 @@ This page provides an overview of logic interoperability between ODC and O11. Fo
 
 ## Security
 
-When **consuming O11 logic in your ODC apps**, you can [route REST API requests over a private gateway](logic-interop-secure-connection.md), which you can allowlist in your O11 firewall or network access policies.
+When **consuming O11 logic in your ODC apps**, you can [route REST API requests over a secure connection](logic-interop-secure-connection.md), which you can allowlist in your O11 firewall or network access policies. This secure connection is available for:
+
+* Any stage of an ODC Cloud organization
+
+* The Development stage of an [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md) organization
+
+    For the Test and Production stages of an ODC self-hosted organization, which run on customer infrastructure, you're responsible for creating a secure connection for those REST API requests yourself. Refer to [add a secure connection for O11 logic interoperability](logic-interop-secure-connection.md) for details.
 
 When **consuming ODC logic in your O11 apps**, your REST APIs are accessible by the internet as any other REST integration.
 
@@ -61,12 +68,7 @@ REST integrations with any other external system follow the regular license cons
 
 ## Limitations {#limitations}
 
-Your ODC apps can consume O11 logic over a secure private connection. However, this secure connection **isn't supported** for the following scenarios:
-
-* Consuming ODC logic in O11 apps
-* [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md)
-
-For the above scenarios, ensure a secure communication by [protecting your endpoints from unauthorized access](#security).
+Your ODC apps can consume O11 logic over a secure private connection. However, this secure connection **isn't supported** when **consuming ODC logic in O11 apps**. For this scenario, ensure a secure communication by [protecting your endpoints from unauthorized access](#security).
 
 ## Prerequisites {#prerequisites}
 

@@ -20,6 +20,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - evaluate
+topic:
+  - centralized-user-access
+  - configure-portfolio-roles
+  - end-users-in-portfolios
 isautopublish: true
 ---
 

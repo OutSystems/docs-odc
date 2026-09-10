@@ -1,6 +1,13 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) app development overview: build apps with ODC Studio, ODC Portal, and AI-powered agentic tools."
-tags: cloud-native architecture, ci/cd practices, application scaling, outsystems ide
+tags:
+  - Agentic
+  - AI
+  - CI/CD
+  - Mentor
+  - Mentor Studio
+  - Mentor Web
+  - Mobile app
 locale: en-us
 guid: 8ed3a740-284e-4650-9502-29f3a53bfd29
 app_type: mobile apps, reactive web apps
@@ -13,7 +20,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
-  - none
+  - understand
 isautopublish: true
 ---
 

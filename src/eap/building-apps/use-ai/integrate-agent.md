@@ -14,6 +14,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - configure-callagent
 ---
 
 # Integrate agent into your app

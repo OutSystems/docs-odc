@@ -1,6 +1,11 @@
 ---
 summary: Read/Write Data Last Write Wins pattern in ODC syncs offline mobile data using last-write-wins conflict resolution and auto-generated sync actions.
-tags: data synchronization, conflict resolution, mobile app development, offline data handling, last write wins
+tags:
+  - Aggregates
+  - Data Model
+  - Data Synchronization
+  - Entities
+  - Mobile app
 locale: en-us
 guid: e9dcceb5-b0e6-40de-a825-dfcda6d534e0
 app_type: mobile apps

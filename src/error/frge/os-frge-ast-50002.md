@@ -1,6 +1,8 @@
 ---
-summary: Some dependencies <dependencies> were not found on Forge. If the problem persists, let us know.
-tags: troubleshooting, error messages, dependency management, application deployment, outsystems forge
+summary: OS-FRGE-AST-50002 in OutSystems Developer Cloud (ODC) occurs when Forge asset dependencies are missing, blocking upload until they're added.
+tags:
+  - Forge
+  - Troubleshooting
 guid: 005988af-5a6c-45fe-95d8-961e2d174cac
 locale: en-us
 app_type: mobile apps, reactive web apps

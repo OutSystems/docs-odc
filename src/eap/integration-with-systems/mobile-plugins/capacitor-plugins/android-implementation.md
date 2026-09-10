@@ -7,6 +7,7 @@ coverage-type:
   - apply
   - understand
 topic:
+  - android-plugin-implementation
 app_type: mobile apps
 platform-version: odc
 audience:

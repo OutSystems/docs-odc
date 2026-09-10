@@ -1,6 +1,7 @@
 ---
 summary: Implement parallel paths in workflows to enhance task completion speed, scalability, and fault tolerance using OutSystems Developer Cloud (ODC).
-tags: workflow management, parallel processing, task automation, app scalability, fault tolerance
+tags:
+  - Workflows
 guid: c5650f38-6880-48fc-bfb5-8fc2687941f4
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -13,6 +14,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+  - understand
 ---
 
 # Implement parallel paths

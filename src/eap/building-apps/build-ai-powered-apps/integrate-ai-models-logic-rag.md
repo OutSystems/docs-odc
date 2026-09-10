@@ -13,7 +13,9 @@ audience:
   - Front-end developer
   - Developer
   - Tech lead
-tags: ai integration, search services, mobile app development, chatbot development, reactive web apps
+tags:
+  - AI
+  - Logic
 outsystems-tools:
   - odc studio
   - odc portal

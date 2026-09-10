@@ -1,6 +1,9 @@
 ---
 summary: The parameter '<ParamaterName>' in action '<ActionName>' is passed by reference. Passing parameters by reference is not supported.
-tags: error handling, c# development, external libraries, parameter passing, sdk usage
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: c8853561-096d-4400-b070-1159b4463503
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -8,7 +11,6 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - none
 coverage-type:

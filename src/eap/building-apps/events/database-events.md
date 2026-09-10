@@ -12,7 +12,11 @@ platform-version: odc
 audience:
   - Developer
   - Architect
-tags: database events, odc, data integrity, automation, real-time data updates
+tags:
+  - Data Integrity
+  - Entities
+  - Events
+  - Triggers
 outsystems-tools:
   - odc studio
 helpids:

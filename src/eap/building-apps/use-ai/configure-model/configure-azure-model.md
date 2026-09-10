@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) integrates with Azure OpenAI Service for enhanced AI capabilities.
+summary: "Azure OpenAI Service setup for OutSystems Developer Cloud (ODC): configure, deploy, and retrieve API keys and endpoint for AI Agent Builder."
 tags: azure, ai integration, openai service, api configuration, deployment
 locale: en-us
 guid: e577bb40-f2ee-468a-8ebe-ccad45fe2705

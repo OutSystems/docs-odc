@@ -1,6 +1,11 @@
 ---
 summary: Avoid passing identity information ina Block widget parameter.
-tags: identity management, security, block widget parameters, reactive web apps, client-side manipulation
+tags:
+  - Blocks
+  - Roles
+  - Security
+  - Technical Debt
+  - Widgets
 guid: 6459d2b6-9050-4c7e-ba16-4a24dec7394a
 locale: en-us
 app_type: mobile apps, reactive web apps

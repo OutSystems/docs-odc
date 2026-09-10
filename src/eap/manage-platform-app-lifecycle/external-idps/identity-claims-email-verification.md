@@ -1,5 +1,5 @@
 ---
-summary: Configure email verification and profile matching logic for external identity providers in OutSystems Developer Cloud (ODC).
+summary: 'OutSystems Developer Cloud (ODC) email verification for external IdPs: OIDC and SAML methods, claim mapping, and profile matching options.'
 locale: en-us
 guid: bf560c9c-82b5-4c8a-ba11-09939bcc8d87
 audience:
@@ -22,6 +22,7 @@ tags:
   - IdP
   - OIDC
   - SAML
+  - Security
 outsystems-tools:
   - none
 isautopublish: true
@@ -154,6 +155,12 @@ You must map either the **Username** or **Email** field. If the IdP is (or will 
 
 </div>
 
+<div class="warning" markdown="1">
+
+Claims entered in ODC must match exactly what your identity provider specifies in their configuration. Any mismatch between the claim names will prevent the IdP from working correctly.
+
+</div>
+
 Common matching scenarios include:
 
 **Invited users, self-registered users, or API-created users**
@@ -222,6 +229,8 @@ The following table shows when built-in IdP login is available based on how you 
 | [Invited via ODC Portal](../../user-management/create-deactivate-and-delete-users.md#creating-users), completed registration (followed the link in the invitation email and entered the verification code in the ODC Portal) and set up a password, then logged in through an external IdP | Yes | ODC created the built-in IdP profile when the user completed registration. |
 | Invited via ODC Portal, logged in through an external IdP before completing registration | No | The user hasn’t completed registration, so the user hasn’t set up a password. Completing registration sets up a password. |
 
+For users created via API with `addToBuiltInIdentityProvider` set to `true`, ODC creates the user-IdP link only on the user’s first login through the built-in IdP. Until that login, the [User and access management API](../../reference/apis/identity-v1.md) doesn’t list the built-in IdP for the user.
+
 #### Users registered with the built-in IdP that log in with an external IdP
 
 If a user logs in with built-in authentication and later logs in with an external IdP, ODC first tries to match the external login to the existing ODC profile by subject. If there’s no subject match, ODC uses the [**User profile matching**](#user-profile-matching) setting as a fallback when the external IdP is assigned to the organization or stage where the user is logging in:
@@ -240,11 +249,26 @@ For more information about invitations and user status scenarios, refer to [Invi
 
 The following flow details how ODC handles user login and profile matching when using an external IdP, based on IdP claims, IdP configuration, and ODC profile data.
 
-![User matching and profile creation flow phase 1](images/profile-match-flowchart-phase1-diag.png "User matching and profile creation flow phase 1")
+![User matching and profile creation flow phase 1](images/profile-match-flowchart-phase1-diag.png "Profile Matching Flow, Phase 1")
 
-![User matching and profile creation flow phase 2](images/profile-match-flowchart-phase2-diag.png "User matching and profile creation flow phase 2")
+![User matching and profile creation flow phase 2](images/profile-match-flowchart-phase2-diag.png "Profile Matching Flow, Phase 2")
 
-![User matching and profile creation flow phase 3](images/profile-match-flowchart-phase3-diag.png "User matching and profile creation flow phase 3")
+![User matching and profile creation flow phase 3](images/profile-match-flowchart-phase3-diag.png "Profile Matching Flow, Phase 3")
+
+The three-phase login process must complete within the timeframe allowed by your identity
+provider's session timeout (SSO Session Max or equivalent setting). Each phase: email
+verification determination, profile identification, and profile creation—contributes to the total login duration.
+
+<div class="warning" markdown="1">
+
+Configure your identity provider's SSO Session Max with sufficient duration for the complete
+login flow. If the timeout is too short, users may experience authentication failures even
+when their IdP and ODC configuration are correct. This is particularly important if your
+flow includes multi-factor authentication (MFA), consent screens, or complex profile matching
+scenarios. If login failures occur intermittently, verify the IdP session timeout is
+adequate before investigating configuration issues.
+
+</div>
 
 When users attempt to log in with an IdP, ODC processes the login in three phases:
 

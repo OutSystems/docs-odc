@@ -1,6 +1,10 @@
 ---
 summary: Detailed severity classification criteria for Code Quality findings across Security, Performance, Maintainability, and Architecture categories in OutSystems Developer Cloud (ODC).
-tags: code quality, severity levels, technical debt, security, performance, maintainability, architecture
+tags:
+  - Architecture
+  - Performance
+  - Security
+  - Technical Debt
 guid: 7c9d5f2a-8b3e-4d1f-9a2c-3e8f6b7d9c1a
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -11,7 +15,6 @@ coverage-type:
 audience:
   - Developer
   - Tech lead
-  - Platform administrator
 outsystems-tools:
   - none
 topic:

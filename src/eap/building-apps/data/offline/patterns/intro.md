@@ -1,6 +1,8 @@
 ---
 summary: Learn about common data synchronization patterns for mobile apps with OutSystems Developer Cloud (ODC), including sample modules for implementation.
-tags: data synchronization, local storage, server database, sample modules, forge components
+tags:
+  - Data Synchronization
+  - Mobile app
 locale: en-us
 guid: f5bd8377-7e81-4ae7-a75f-f5a2dca688de
 app_type: mobile apps

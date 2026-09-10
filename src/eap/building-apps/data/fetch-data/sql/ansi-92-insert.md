@@ -7,6 +7,8 @@ coverage-type:
   - remember
   - apply
 topic:
+  - insert-upsert-statement
+  - insert-upsert-support
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

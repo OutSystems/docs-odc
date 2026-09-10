@@ -1,5 +1,5 @@
 ---
-summary: The assembly <AssemblyName>, which contains the interface decorated with the OSInterface attribute, is not located in the root directory of the zip file.
+summary: OS-ELG-MODL-05029 in OutSystems Developer Cloud (ODC) occurs when a ZIP uses an unsupported compression method, blocking external library publishing.
 tags: error handling, application packaging, library publishing, external libraries, compression
 guid: a00f3190-e435-48cf-87c2-757c4036e693
 locale: en-us

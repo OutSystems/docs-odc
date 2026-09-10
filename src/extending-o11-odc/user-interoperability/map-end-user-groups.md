@@ -6,6 +6,7 @@ figma: https://www.figma.com/design/rWH1MmckD8Wz3H9D2QQEiT/Platform-Unification-
 coverage-type:
   - apply
 topic:
+  - map-o11-odc-groups
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

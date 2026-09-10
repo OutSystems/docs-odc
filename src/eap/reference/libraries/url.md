@@ -1,6 +1,10 @@
 ---
 summary: Explore URL manipulation features in OutSystems Developer Cloud (ODC), including decoding, encoding, and extracting URL components.
-tags: url manipulation, url encoding, url decoding, url components, web development
+tags:
+  - Front-End
+  - Libraries
+  - Mobile app
+  - Web
 locale: en-us
 guid: 0e709970-e4e6-4adb-9fa1-1b00fc851368
 app_type: mobile apps, reactive web apps

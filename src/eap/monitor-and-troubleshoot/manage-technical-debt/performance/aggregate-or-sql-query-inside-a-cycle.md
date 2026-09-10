@@ -1,5 +1,5 @@
 ---
-summary: The system executes an Aggregate or SQL query inside a For Each cycle.
+summary: ODC Aggregate or SQL query inside a For Each cycle causes repeated database calls. Move queries outside cycles and use joins instead.
 tags: aggregate query, sql query, for each cycle, performance optimization, database calls
 guid: bed2ebdb-1930-48fb-9c3c-fb5da8d5deec
 locale: en-us

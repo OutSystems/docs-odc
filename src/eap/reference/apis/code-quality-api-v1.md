@@ -5,7 +5,11 @@ guid: 56511d24-4834-4a34-aed7-226f63891109
 app_type: mobile apps, reactive web apps
 platform-version: odc
 api-render: true
-tags: api, code quality, mobile apps, reactive web apps
+tags:
+  - CI/CD
+  - Mobile app
+  - Quality Assurance
+  - REST
 audience:
   - Developer
   - Tech lead

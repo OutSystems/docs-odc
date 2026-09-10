@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables app interface translation and language switching capabilities for enhanced user accessibility.
+summary: "ODC app translation with ODC Studio: add locales, use SetCurrentLocale to build a language switcher, and handle Static Entities."
 tags: localization, internationalization, multilingual support, accessibility, user experience
 locale: en-us
 guid: 93f5315e-72fa-45f2-97ad-9e676da413a3

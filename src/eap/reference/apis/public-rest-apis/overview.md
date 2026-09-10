@@ -21,6 +21,9 @@ audience:
 coverage-type:
   - remember
   - understand
+topic:
+  - api-terminology-mapping
+  - choose-rest-api-domain
 platform-version: odc
 figma:
 isautopublish: true

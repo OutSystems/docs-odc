@@ -12,6 +12,8 @@ audience:
   - Developer
 outsystems-tools:
   - odc studio
+topic:
+  - fix-osinterface-duplicate
 ---
 # OS-ELG-MODL-05008
 

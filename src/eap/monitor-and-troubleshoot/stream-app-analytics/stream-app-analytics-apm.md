@@ -1,6 +1,9 @@
 ---
 summary: Learn about the process for streaming observability data to different APM tools
-tags: opentelemetry,observability,apm integration,monitoring,troubleshooting
+tags:
+  - Monitoring
+  - Performance
+  - Troubleshooting
 guid: d713c053-48b4-4a5e-bb7b-f35062668fff
 locale: en-us
 app_type: mobile apps, reactive web apps

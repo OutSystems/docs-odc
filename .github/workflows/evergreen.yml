@@ -5,15 +5,16 @@ on:
   schedule:
     - cron: '0 1 * * *'
     - cron: '0 13 * * *'
-
-concurrency:
-  group: evergreen-${{ github.ref }}
-  cancel-in-progress: true
+  push:
+    branches:
+      - master
+    paths:
+      - knowledge-needs.yaml
 
 jobs:
   metadata-refresh:
     name: Metadata
-    uses: OutSystems/tk-cicd/.github/workflows/evergreen-metadata.yml@main
+    uses: OutSystems/tk-cicd/.github/workflows/evergreen.yml@main
     with:
       path: "src"
       required-key: "guid"

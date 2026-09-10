@@ -20,6 +20,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - check-ssl-pinning-hash-validity
+  - configure-ssl-pinning-capacitor
+  - implement-ssl-pinning-cordova
 isautopublish: true
 ---
 

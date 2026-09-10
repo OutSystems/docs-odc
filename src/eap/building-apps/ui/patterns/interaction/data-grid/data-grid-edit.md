@@ -1,5 +1,8 @@
 ---
-tags: outsystems data grid, data editing, reactive web apps, column configuration, odc
+tags:
+  - OutSystems UI
+  - UI Patterns
+  - Widgets
 summary: Learn how to enable and configure data editing in OutSystems Developer Cloud (ODC) Data Grid by setting the AllowColumnEdit property to true and adding column widgets.
 guid: 639667f9-d416-4505-b150-199fae297750
 locale: en-us

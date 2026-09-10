@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - organization-functions
 ---
 
 # Organization

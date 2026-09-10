@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) offers built-in accessibility features to help developers create apps that comply with WCAG guidelines.
+summary: ODC accessibility features in ODC Studio — enable WCAG-compliant focus states, skip-to-content, ARIA roles, and alt text for mobile and web apps.
 tags: accessibility, wcag, aria, ui design, ethical design
 locale: en-us
 guid: 62770c36-d307-4a3a-ba01-acf10299454a

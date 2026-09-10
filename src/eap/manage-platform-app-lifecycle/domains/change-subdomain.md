@@ -14,6 +14,10 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - change-org-subdomain
+  - change-stage-subdomain
+  - finalize-subdomain-switch
 isautopublish: true
 ---
 

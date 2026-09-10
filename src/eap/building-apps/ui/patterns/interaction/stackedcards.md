@@ -1,5 +1,11 @@
 ---
-tags: mobile apps, user interface components, outsystems patterns
+tags:
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Explore the Stacked Cards UI Pattern in OutSystems Developer Cloud (ODC) for creating swipeable, multi-directional event-triggering cards.
 locale: en-us
 guid: 30866b44-9a14-45a8-bbbd-ee11cc898d5f

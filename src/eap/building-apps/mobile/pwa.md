@@ -15,6 +15,9 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - debug-pwa
+  - distribute-as-pwa
 ---
 
 # Distribute as progressive web app

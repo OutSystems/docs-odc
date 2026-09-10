@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - unblock
 isautopublish: true
+topic:
+  - context-service-errors
 ---
 
 # OS-CTXS-50001

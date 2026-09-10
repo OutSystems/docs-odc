@@ -1,6 +1,9 @@
 ---
 summary: Agent-to-agent communication in OutSystems Developer Cloud (ODC) enables collaborative AI agents for modular problem solving, scalability, and cross-platform workflows.
-tags: agent-to-agent communication, ai agents, multi-agent systems, reactive web apps, http integration
+tags:
+  - Agentic
+  - AI
+  - Architecture
 guid: 6c449182-a1d4-4584-9558-5292f761f97a
 locale: en-us
 app_type: reactive web apps

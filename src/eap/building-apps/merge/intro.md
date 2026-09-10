@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) Studio facilitates automatic and manual merging of app changes, enhancing collaboration among developers.
+summary: "ODC merge conflicts in ODC Studio: resolve conflicting revisions, compare versions, edit textual elements, and recover a previous merge."
 locale: en-us
 guid: ac454655-5a7f-47fb-8797-584d44f89894
 app_type: mobile apps, reactive web apps

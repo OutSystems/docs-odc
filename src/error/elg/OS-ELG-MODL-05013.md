@@ -1,6 +1,9 @@
 ---
 summary: No public properties/fields found in the struct decorated with OSStructure '<StructureName>'.
-tags: error handling, struct declaration, c# programming, code examples, outsystems error codes
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: 68de8b43-f63f-4791-909b-ca1a8869824f
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -8,7 +11,6 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

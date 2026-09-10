@@ -20,6 +20,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - evaluate
+topic:
+  - identify-cross-portfolio-needs
+  - own-shared-portfolio-libraries
+  - portfolio-boundary-design
 isautopublish: true
 ---
 

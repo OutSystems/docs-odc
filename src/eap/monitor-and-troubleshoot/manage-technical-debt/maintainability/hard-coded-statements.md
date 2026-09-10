@@ -1,6 +1,10 @@
 ---
-summary: Some parts of logic never run due to hard-coded True/False conditions
-tags: hard-coded conditions, dead code, feature flags, logic best practices, troubleshooting
+summary: Hard-coded True/False statements in OutSystems Developer Cloud (ODC) create unreachable logic, dead code, and forgotten feature flags you need to identify and remove.
+tags:
+  - Best Practices
+  - Logic
+  - Technical Debt
+  - Troubleshooting
 guid: 2ba9682e-9253-4df7-9c9f-a7dc5f391cd9
 locale: en-us
 app_type: mobile apps, reactive web apps

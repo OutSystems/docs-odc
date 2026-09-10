@@ -5,7 +5,10 @@ guid: 4d56d131-ab84-401a-950f-ba81eebd716c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=5493-10&t=RAac4dB4CBOEAXd8-1
 platform-version: odc
-tags: database operations, data consistency, transaction management, entity management, system behaviors
+tags:
+  - Aggregates
+  - Data
+  - Entities
 audience:
   - Developer
   - Front-end developer

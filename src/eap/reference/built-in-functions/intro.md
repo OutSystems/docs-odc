@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - function-default-values
 ---
 
 # Built-in functions

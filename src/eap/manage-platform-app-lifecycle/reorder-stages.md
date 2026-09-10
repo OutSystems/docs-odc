@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
+  - reorder-pipeline-stages
+  - stable-stage-identifiers
 isautopublish: true
 ---
 

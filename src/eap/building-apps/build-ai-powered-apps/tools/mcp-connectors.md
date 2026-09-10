@@ -3,7 +3,12 @@ guid: 7a08a9ca-8a6e-4f48-9079-8f840ce01a7b
 summary: Integrate MCP servers with AI agents in OutSystems Developer Cloud (ODC) to extend agent capabilities with external tools and enterprise services.
 locale: en-us
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8018-13&p=f&t=7IONekw0zMyvK9bL-0
-tags: mcp servers,ai agents,external tools,enterprise integration
+tags:
+  - Agentic
+  - AI
+  - Authentication
+  - OAuth
+  - Private Gateway
 app_type: mobile apps,reactive web apps
 platform-version: odc
 coverage-type:

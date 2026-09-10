@@ -12,6 +12,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+  - apply
 isautopublish: true
 ---
 

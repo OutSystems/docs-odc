@@ -7,6 +7,9 @@ coverage-type:
   - apply
   - understand
 topic:
+  - add-spm-support
+  - ios-plugin-implementation
+  - plugin-privacy-manifest
 app_type: mobile apps
 platform-version: odc
 audience:

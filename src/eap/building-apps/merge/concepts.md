@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports collaborative app development with features for automatic and manual merging of revisions.
+summary: "ODC merge feature: how automatic revision merging, conflict resolution, and comparing revisions work in OutSystems Developer Cloud (ODC) Studio."
 tags: version control, collaboration
 locale: en-us
 guid: c9965707-75fb-442f-ad27-6fbe322fcf08

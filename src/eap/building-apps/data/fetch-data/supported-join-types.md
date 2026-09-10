@@ -1,6 +1,8 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) join types: Only With, With or Without, With, and cross joins for combining entity records in aggregates."
-tags: database operations, entity relationships, data aggregation, query optimization, data modeling
+tags:
+  - Aggregates
+  - Entities
 locale: en-us
 guid: edee2ac8-5d4c-4423-9e26-cce4b0f45f4c
 app_type: mobile apps, reactive web apps

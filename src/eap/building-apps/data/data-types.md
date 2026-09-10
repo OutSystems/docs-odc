@@ -1,6 +1,7 @@
 ---
 summary: Explore data types, default values, and constraints in OutSystems Developer Cloud (ODC).
-tags: data modeling, data types, data conversions, entity modeling, data management
+tags:
+  - Data
 locale: en-us
 guid: 651e9382-9db0-4150-ad11-c160aa9c9835
 app_type: mobile apps, reactive web apps
@@ -13,6 +14,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - compound-data
+  - datetime-utc-behavior
+  - odc-data-types
 ---
 
 # Data types and conversions

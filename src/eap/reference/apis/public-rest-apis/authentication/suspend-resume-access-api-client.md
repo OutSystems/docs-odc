@@ -17,6 +17,9 @@ audience:
   - Platform administrator
 coverage-type:
   - apply
+topic:
+  - resume-api-client
+  - suspend-api-client
 platform-version: odc
 figma:
 isautopublish: true

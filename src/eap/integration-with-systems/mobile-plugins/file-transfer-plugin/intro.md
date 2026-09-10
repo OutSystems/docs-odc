@@ -1,5 +1,5 @@
 ---
-summary: Explore advanced file transfer capabilities in mobile apps using the File transfer plugin on OutSystems Developer Cloud (ODC).
+summary: 'File transfer plugin for OutSystems Developer Cloud (ODC) mobile apps and PWAs: download and upload files in the background with progress event tracking.'
 tags:
   - Capacitor
   - Cordova
@@ -25,11 +25,11 @@ topic:
 isautopublish: true
 ---
 
-# File transfer plugin
+# File Transfer plugin
 
-The File transfer plugin lets you download and upload files in your Mobile App or, in the case of a Progressive Web App (PWA), from your device. The plugin provides advanced file transfer that runs in the background, and, in the case of a Mobile App, continues even when the user closes or suspends the app.
+The File Transfer plugin lets you download and upload files in your Mobile App or, in the case of a Progressive Web App (PWA), from your device. The plugin provides advanced file transfer that runs in the background, and, in the case of a Mobile App, continues even when the user closes or suspends the app.
 
-The File transfer plugin also has a progress update for transfers that take longer, for example video, music, and large images.
+The File Transfer plugin also has a progress update for transfers that take longer, for example video, music, and large images.
 
 The plugin can currently handle files up to [maximum size](../../../getting-started/system-requirements.md#upload-request-size). Larger files will be rejected with an error.
 
@@ -39,9 +39,9 @@ See [Installing plugins](../intro.md) to learn how to install and reference a pl
 
 </div>
 
-## Using the File transfer plugin
+## Using the File Transfer plugin
 
-To add the File transfer plugin to your app, follow these steps:
+To add the File Transfer plugin to your app, follow these steps:
 
 1. Install the **FileTransfer** plugin and reference it in your app. For detailed instructions, refer to [Installing a plugin and adding a public element to your app](../intro.md#installing-a-plugin-and-adding-a-public-element-to-your-app).
 
@@ -61,21 +61,21 @@ To add and use these UI blocks to your app, follow these steps:
 
     ![Shows how to add and use the File transfer plugin from the ODC Studio Interface tab](images/create-and-use-filetransfer-plugin-in-interface-tab-odcs.png "Using the File transfer plugin in ODC Studio Interface Tab")
 
-    ![Shows how to add and use the File transfer plugin from the ODC Studio Interface tab](images/filetransfer-handledown-in-widget-tree-odcs.png "Using the File transfer plugin in ODC Studio Interface Tab")
+    ![Screenshot of the ODC Studio widget tree showing the FileTransfer HandleDownload block placed inside the Common Layout](images/filetransfer-handledown-in-widget-tree-odcs.png "HandleDownload Block in Widget Tree")
 
 1. Set the handlers for **OnDownloadComplete**, **OnDownloadError**, **OnDownloadProgress**, **OnUploadComplete**, **OnUploadError**, and on **OnUploadProgress** events.
 
     In these event handlers, you can define your own logic and what to do with the event data. For example, setting the progress on a **ProgressBar** widget for **OnUploadProgress** and **OnDownloadProgress** events.
 
-    ![Shows the new handlers for HandleDownload events](images/add-handlers-to-events-odcs.png "Settings Handlers for HandleDownload events.")
+    ![Screenshot of the ODC Studio properties panel showing handlers set for the OnDownloadComplete, OnDownloadError, OnDownloadProgress, OnUploadComplete, OnUploadError, and OnUploadProgress events](images/add-handlers-to-events-odcs.png "HandleDownload and HandleUpload Event Handlers")
 
-## Progressive Web Apps vs Mobile Apps
+## Progressive web apps vs mobile apps
 
-In a Mobile App, the File transfer plugin uses the [File Plugin](../file-plugin/intro.md) to save and manage the downloaded files inside the app's sandboxed file system, as well as upload files from it. This means it's possible to choose where to save a downloaded file given a path, as well as upload a file from its path. As of now, the File Plugin is not PWA compatible and as so, it's not possible to access and manage a file system in a PWA or browser context.
+In a mobile app, the File transfer plugin uses the [File Plugin](../file-plugin/intro.md) to save and manage the downloaded files inside the app's sandboxed file system, as well as upload files from it. This means it's possible to choose where to save a downloaded file given a path, as well as upload a file from its path. As of now, the File Plugin is not PWA compatible and as so, it's not possible to access and manage a file system in a PWA or browser context.
 
 In the following sections, it's explained how the PWA implementation of the File transfer plugin works around this limitation.
 
-### Download
+### PWA download behavior
 
 Instead of using a file system URL/path to save the downloaded file, in a PWA, the plugin triggers a download to the device's default saving folder. The file name is determined based on the following criteria:
 
@@ -91,13 +91,13 @@ Instead of using a file system URL/path to save the downloaded file, in a PWA, t
 
 The file type is always decided based on the HTTP header `Content-Type`, set in the server response to the download request.
 
-### Upload  { #pwa-upload }
+### PWA upload behavior  {#pwa-upload}
 
 This plugin doesn't offer the upload features in a PWA context, since the Upload Widget offers the same capabilities.
 
 ## Reference
 
-The File transfer plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-file-transfer](https://github.com/ionic-team/cordova-outsystems-file-transfer) and [capacitor-file-transfer](https://github.com/ionic-team/capacitor-file-transfer).
+The File Transfer plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-file-transfer](https://github.com/ionic-team/cordova-outsystems-file-transfer) and [capacitor-file-transfer](https://github.com/ionic-team/capacitor-file-transfer).
 
 ### Actions
 
@@ -121,6 +121,20 @@ The following table contains the reference of the client actions that were depre
 | **DEPRECATED_UploadFile**              | Action to upload files to the server.                       |
 | **DEPRECATED_UploadFileWithHeaders**   | Action to upload files to the server with HTTP headers.     |
 
+#### `CheckFileTransferPlugin` Behavior with old native plugin versions
+
+A device may still be running a native build with an older File Transfer Plugin version than the one currently configured for your app, for instance if it only received an over-the-air (OTA) update to its web layer instead of a new native build.
+
+From File Transfer Plugin 2.2.3 onwards, when this happens, **CheckFileTransferPlugin** returns **IsAvailable** as **True**, with **Warning.WarningCode** set to **OS-PLUG-FLTR-0002**, meaning the installed native plugin predates version 2.0.0. You can continue using all client actions (**DEPRECATED** and non-deprecated).
+
+<div class="info" markdown="1">
+
+File Transfer Plugin versions between 2.0.0 and 2.2.2 returned **False** for **IsAvailable** in this scenario, and you were only able to use **DEPRECATED** client actions.
+
+This was fixed in version 2.2.3 of File Transfer Plugin. Update to this version, especially if you can't have your users all update to the new native build.
+
+</div>
+
 ### Events
 
 Here is the reference for the events you can use from the File transfer plugin, available in **UI Flows** > **FileTransferPlugin** > **FileTransfer**.
@@ -134,7 +148,9 @@ Here is the reference for the events you can use from the File transfer plugin, 
 | **OnUploadError** | **HandleUpload** | Called when an error occurs. Invoked with a **FileTransferError** object. |
 | **OnUploadProgress** | **HandleUpload** | Called whenever a new chunk of data is uploaded, with a **Progress** object. |
 
-### Structures
+### Data structures
+
+The following structures are used as parameters and outputs in the File Transfer plugin's actions and events.
 
 #### Progress
 
@@ -197,6 +213,8 @@ List of predefined error codes for lower versions of the plugin:
 For a complete list of mobile plugin errors, their causes, impact, and recommended solutions, see the [Mobile Plugins errors page](https://www.outsystems.com/tk/redirect?g=8ae41e18-fa7d-4cbe-a223-226a14abd8bf).
 
 ## Known issues and limitations
+
+Here is a known issue and a limitation:
 
 ### Multiple downloads
 

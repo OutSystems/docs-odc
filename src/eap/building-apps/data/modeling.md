@@ -1,6 +1,10 @@
 ---
 summary: ODC data modeling covers the conceptual, logical, and physical model stages, plus entities, attributes, and relationships in ODC Studio.
-tags: data modeling, data integrity, application development, business requirements, data relationships
+tags:
+  - Data
+  - Data Integrity
+  - Data Model
+  - Entities
 locale: en-us
 guid: 5b4d315b-86c8-4c5d-964b-56b758aeee49
 app_type: mobile apps, reactive web apps

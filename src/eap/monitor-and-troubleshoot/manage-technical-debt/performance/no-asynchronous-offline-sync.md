@@ -1,6 +1,13 @@
 ---
-summary: Server data isn't being stored in the local database asynchronously.
-tags: asynchronous data storage, offline sync, mobile data synchronization, ui blocking issues, mobile app development
+summary: "ODC mobile offline sync stored synchronously blocks UI; use TriggerOfflineDataSync and OnSyncComplete to fix this in OutSystems Developer Cloud (ODC)."
+tags:
+  - Asynchronous Processes
+  - Data Synchronization
+  - Mobile app
+  - Performance
+  - Technical Debt
+  - Troubleshooting
+  - UI
 guid: 48e2ddb8-31e5-4d4c-963e-00ad9aed2056
 locale: en-us
 app_type: mobile apps

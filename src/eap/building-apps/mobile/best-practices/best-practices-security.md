@@ -16,6 +16,7 @@ tags:
   - Best Practices
   - Mobile app
   - Plugins
+  - Roles
   - Security
 outsystems-tools:
   - odc studio
@@ -51,7 +52,7 @@ The Ciphered Local Storage Plugin replaces the default SQLite engine with SQLCip
 
 ### Recommendation
 
-Install the Ciphered Local Storage Plugin from Forge and add a dependency to all elements of the plugin in your application module. Once the dependency is in place, the app uses a new encrypted database that replicates the structure of the previous local database.
+Install the [Ciphered Local Storage](https://www.outsystems.com/forge/component-overview/15759/ciphered-local-storage-plugin-odc) plugin from Forge and add a dependency to all elements of the plugin in your application module. Once the dependency is in place, the app uses a new encrypted database that replicates the structure of the previous local database.
 
 Adding the plugin to an app that already has data on users' devices requires a manual migration by users. Follow this sequence:
 

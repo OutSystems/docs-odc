@@ -1,6 +1,11 @@
 ---
 summary: Analyze code quality in OutSystems Developer Cloud (ODC) for performance, architecture, maintenance, and security insights.
-tags: code quality, code analysis, odc, performance
+tags:
+  - Architecture
+  - Performance
+  - Security
+  - Technical Debt
+  - Troubleshooting
 guid: CA38C82A-E390-425B-B588-D6BD3F692928
 locale: en-us
 app_type: mobile apps, reactive web apps

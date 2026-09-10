@@ -17,6 +17,8 @@ audience:
 coverage-type:
   - remember
   - understand
+topic:
+  - choose-chunking-strategy
 ---
 # About chunking strategies in ODC
 

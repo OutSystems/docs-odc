@@ -17,6 +17,10 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - stream-connectivity-requirements
+  - supported-apm-tools
+  - understand-analytics-stream
 content-type:
 audience:
   - Developer

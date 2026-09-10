@@ -1,6 +1,8 @@
 ---
 summary: Learn how to add wait nodes to your workflow.
-tags: workflow, wait node, workflow implementation, event conditions, mobile apps
+tags:
+  - Events
+  - Workflows
 locale: en-us
 guid: 55439e03-d90e-46f7-aac5-1cc0d1c42c90
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,9 @@
 ---
 summary: This article explains how to page through a list of resources retrieved in the API result.
-tags: rest api, pagination, offset-limit, api requests, http get
+tags:
+  - Best Practices
+  - Pagination
+  - REST
 guid: 9d2b8682-d5f4-440e-bd29-cf7f3922a7ab
 locale: en-us
 app_type: mobile apps, reactive web apps

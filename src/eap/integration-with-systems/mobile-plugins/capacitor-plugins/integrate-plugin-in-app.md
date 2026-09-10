@@ -7,6 +7,8 @@ coverage-type:
   - apply
   - understand
 topic:
+  - integrate-plugin-in-app
+  - vet-plugin-security
 app_type: mobile apps
 platform-version: odc
 audience:

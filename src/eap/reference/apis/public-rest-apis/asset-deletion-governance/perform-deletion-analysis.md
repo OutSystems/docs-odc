@@ -14,7 +14,8 @@ audience:
   - Tech lead
   - Platform administrator
   - Developer
-tags: asset deletion, deletion analysis, dependency management, rest api, outsystems api
+tags:
+  - REST
 outsystems-tools:
   - odc portal
 helpids:

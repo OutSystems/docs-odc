@@ -1,7 +1,10 @@
 ---
 helpids: 30689
 summary: Test and refine system and user messages in OutSystems Developer Cloud (ODC) easily using ODC Studio's Test area to ensure effective agent communication.
-tags: ai agents, agentcore, outsystems developer cloud
+tags:
+  - Agentic
+  - AI
+  - Testing
 guid: 554ca4b1-497a-48c9-8103-995f7552b3b0
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -17,6 +20,7 @@ audience:
   - Developer
   - Tech lead
 topic:
+  - test-agent-messages
 ---
 # Testing your messages
 

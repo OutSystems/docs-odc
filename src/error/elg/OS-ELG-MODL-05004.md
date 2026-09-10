@@ -1,6 +1,9 @@
 ---
 summary: The interface decorated with OSInterface '<InterfaceName>' is not public.
-tags: c# development, code modularity, library publishing, error handling, external libraries
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: b4205081-0901-4083-b578-0d589d1b1515
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -8,7 +11,6 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

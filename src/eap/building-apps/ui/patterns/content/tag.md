@@ -1,6 +1,6 @@
 ---
 tags: ui patterns, user interface design
-summary: Explore how to style and implement the Tag UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interfaces with customizable tags.
+summary: Tag UI Pattern in OutSystems Developer Cloud (ODC) lets you display statuses, labels, or categories with customizable color, shape, and size.
 locale: en-us
 guid: b2b8939e-3fc0-418b-abfe-cc20d2971442
 app_type: mobile apps, reactive web apps

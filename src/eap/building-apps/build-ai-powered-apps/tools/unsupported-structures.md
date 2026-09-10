@@ -3,7 +3,10 @@ guid: debf6461-bb1c-45cb-9335-c2d8111dc937
 summary: Unsupported MCP actions in OutSystems Developer Cloud (ODC) occur due to complex input data structures; fix by simplifying schemas on the external MCP Server.
 locale: en-us
 figma:
-tags: mcp servers,ai agents,external tools,enterprise integration
+tags:
+  - Agentic
+  - AI
+  - Troubleshooting
 app_type: mobile apps,reactive web apps
 platform-version: odc
 coverage-type:

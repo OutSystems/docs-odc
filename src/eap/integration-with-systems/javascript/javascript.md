@@ -5,7 +5,7 @@ guid: 7C534E3B-A579-427D-89B3-18FB8D1B94F7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/hdmSs8a8ifLQTmDBJmkJnD/Integration-with-external-systems?node-id=4601-280
-summary: Explore how ODC enhances mobile and reactive apps by integrating JavaScript for extended functionality.
+summary: JavaScript element in OutSystems Developer Cloud (ODC) lets you run JS code in client actions, using $parameters, $actions, and $public objects.
 audience:
   - Developer
   - Front-end developer

@@ -1,6 +1,10 @@
 ---
 summary: The number of records fetched from the database is not set in Aggregate.
-tags: database fetching, performance optimization, max records parameter, aggregate usage, troubleshooting
+tags:
+  - Aggregates
+  - Performance
+  - Technical Debt
+  - Troubleshooting
 guid: c3b5a66a-e289-4032-a76c-0343832f8925
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -12,7 +16,6 @@ coverage-type:
 audience:
   - Developer
   - Tech lead
-  - Platform administrator
 outsystems-tools:
   - odc studio
 ---

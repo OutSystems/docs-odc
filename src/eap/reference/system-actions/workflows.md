@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) provides server actions to perform various operations on human activity in run time.
-tags: workflows, server actions, human activity, runtime operations, low-code apis
+tags:
+  - Business Processes
+  - Workflows
 locale: en-us
 guid: dc9f69f7-605a-4865-96dd-c70140f80a89
 app_type: mobile apps, reactive web apps

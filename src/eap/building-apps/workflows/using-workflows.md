@@ -17,6 +17,10 @@ outsystems-tools:
   - workflow builder
 coverage-type:
   - apply
+topic:
+  - create-workflow
+  - deploy-workflow
+  - test-workflow
 isautopublish: true
 ---
 

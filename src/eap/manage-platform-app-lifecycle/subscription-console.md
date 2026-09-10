@@ -14,6 +14,9 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+topic:
+  - view-organization-regions
+  - view-subscription-entitlements
 isautopublish: true
 ---
 

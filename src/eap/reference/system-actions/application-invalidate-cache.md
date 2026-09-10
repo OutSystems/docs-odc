@@ -1,6 +1,7 @@
 ---
 summary: OutSystems Developer Cloud (ODC) provides a server action that invalidates server-side caches for an application, across all replicas.
-tags: caching, cache invalidation, system actions
+tags:
+  - Caching
 locale: en-us
 guid: 61a489f4-a08e-413f-ba58-0892b2bf6746
 app_type: mobile apps, reactive web apps
@@ -14,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - invalidate-app-cache
 isautopublish: true
 ---
 

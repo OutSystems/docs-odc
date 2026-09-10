@@ -1,5 +1,5 @@
 ---
-summary: (Version 1) Explore the Camera Plugin functionalities in OutSystems Developer Cloud (ODC), including client actions, web blocks, and error handling.
+summary: ODC Camera Plugin version 1 reference covering TakePicture, RecordVideo, ChooseFromGallery actions, MediaResult structure, and error codes.
 tags: plugin development, mobile camera integration, error handling, mobile application development, outsystems api
 locale: en-us
 guid: 5bace646-4be5-4d45-94b7-8aae53a71812

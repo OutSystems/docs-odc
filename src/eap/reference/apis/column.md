@@ -1,11 +1,16 @@
 ---
-summary: Learn how to create a Column Chart with data labels in OutSystems Developer Cloud (ODC) using the Column Chart widget and various properties.
-tags: data visualization, chart configuration
+summary: 'Column Chart widget in OutSystems Developer Cloud (ODC): add data points, configure SeriesName, and show data labels.'
+tags:
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 8651448f-4ebe-47c6-8d2e-676f33a830b0
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10550-12
 audience:
   - Developer
   - Front-end developer
@@ -15,9 +20,10 @@ coverage-type:
   - apply
 topic:
   - add-widget-ui-pattern
+isautopublish: true
 ---
 
-# Column Chart
+# Column chart
 
 <div class="info" markdown="1">
 
@@ -57,4 +63,4 @@ This example shows how to create a simple Column Chart with data labels.
 
 After following these steps, you can publish your module:
 
-![Image of the final result displaying a Column Chart with data labels after following the tutorial steps](images/chartcolumn-result.png "Final Column Chart Pattern Result")
+![Screenshot of the published Column Chart with data labels](images/chartcolumn-result.png "Column Chart with Data Labels")

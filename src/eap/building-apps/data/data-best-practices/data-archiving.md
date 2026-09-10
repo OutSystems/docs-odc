@@ -1,6 +1,12 @@
 ---
 summary: ODC data archiving best practices covering light and historical archiving strategies, control columns, Timer-based automation, and purging to maintain app performance.
-tags: data archiving, outsystems, best practices, performance optimization, long-term data storage
+tags:
+  - Best Practices
+  - Data
+  - Entities
+  - Indexes
+  - Performance
+  - Timers
 guid: 3c7e1c42-073c-4da7-bc65-163bb894caaa
 locale: en-us
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,8 @@
 ---
 summary: Learn more about how to troublehsoot errors in your workflows
-tags: troubleshooting, workflows, error handling, workflow status, portal usage
+tags:
+  - Troubleshooting
+  - Workflows
 guid: bf12c288-f7ad-4253-b6b7-bdf502c33e9b
 locale: en-us
 app_type: mobile apps, reactive web apps

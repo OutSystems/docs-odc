@@ -1,5 +1,5 @@
 ---
-summary: Learn about the Read/Write Data One-to-Many synchronization pattern in OutSystems Developer Cloud (ODC) for mobile apps, ensuring data consistency with a "last write wins" approach.
+summary: ODC Read/Write One-to-Many offline sync for mobile apps uses "last write wins" and a dictionary mapping to maintain parent-child entity relationships.
 tags: data synchronization, offline data handling, database management, mobile app development, data consistency
 locale: en-us
 guid: f7a2d56a-6a0b-4f28-bc88-73099a73c7cc

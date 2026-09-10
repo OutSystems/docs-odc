@@ -6,6 +6,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 topic:
+  - compare-workflow-versions
+  - workflow-diff-color-coding
 app_type: reactive web apps
 platform-version: odc
 audience:

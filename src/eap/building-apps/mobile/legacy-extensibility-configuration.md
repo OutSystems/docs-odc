@@ -11,7 +11,13 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: json schema, apache cordova, mobile customization, legacy configuration, extensibility settings
+tags:
+  - Android
+  - Cordova
+  - iOS
+  - Mobile app
+  - Native App
+  - Plugins
 outsystems-tools:
   - odc studio
 helpids:

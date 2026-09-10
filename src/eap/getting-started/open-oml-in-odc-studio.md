@@ -1,6 +1,7 @@
 ---
-summary: Explore how to open and publish .oml files in OutSystems Developer Cloud (ODC) using ODC Studio.
-tags: file management, application deployment
+summary: "ODC Studio .oml files: open, publish, and export app or library files to an OutSystems Developer Cloud (ODC) organization."
+tags:
+  - 1-Click Publish
 locale: en-us
 guid: 0cdbd545-592d-4778-b80a-2f01f9f93285
 app_type: mobile apps, reactive web apps

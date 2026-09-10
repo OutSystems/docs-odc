@@ -13,7 +13,9 @@ platform-version: odc
 audience:
   - Developer
   - Platform administrator
-tags: sql types,data mapping,type conversion,null handling
+tags:
+  - External Databases
+  - SQL
 outsystems-tools:
   - odc portal
   - odc studio

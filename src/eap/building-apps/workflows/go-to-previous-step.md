@@ -1,6 +1,7 @@
 ---
 summary: Utilize Go to nodes in OutSystems Developer Cloud (ODC) workflows to improve flexibility and handle loop and error scenarios effectively.
-tags: workflow design, user experience, process optimization, application development, workflow logic
+tags:
+  - Workflows
 locale: en-us
 guid: 0f6e0ee0-427a-4ed6-b1f9-506cf094363c
 app_type: mobile apps, reactive web apps
@@ -13,6 +14,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+  - understand
 ---
 
 # Go to a flow step in workflows

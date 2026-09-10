@@ -1,5 +1,5 @@
 ---
-summary: ODC API client secret regeneration in OutSystems Developer Cloud (ODC) — replace an expired or uncopied secret and update your app.
+summary: "ODC API client secret regeneration in OutSystems Developer Cloud (ODC): replace an expired or uncopied secret and update your app."
 tags:
   - Authentication
   - OAuth

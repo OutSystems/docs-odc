@@ -1,6 +1,13 @@
 ---
 summary: Mobile UI framework in OutSystems Developer Cloud (ODC) is a purpose-built toolkit with widgets, native behaviors, and CSS-based styling for mobile apps.
-tags: mobile ui, framework, components, widgets, mobile development
+tags:
+  - Capacitor
+  - CSS
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 guid: 05b31c6f-7d01-4c9f-9b3a-60e8e9df4655
 locale: en-us
 app_type: mobile apps, reactive web apps

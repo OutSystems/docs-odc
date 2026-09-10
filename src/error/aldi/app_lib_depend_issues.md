@@ -1,12 +1,14 @@
 ---
 helpids: 30498
-summary: Solving errors for apps or libraries with dependencies
+summary: "ODC app and library dependency errors: resolve missing elements when apps or libraries are removed from OutSystems Developer Cloud (ODC)."
 guid: c046a844-dddc-448e-a39a-8f9baa8b27c0
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: error handling, dependency management, application development, version control, troubleshooting
+tags:
+  - Libraries
+  - Troubleshooting
 audience:
   - Developer
   - Front-end developer

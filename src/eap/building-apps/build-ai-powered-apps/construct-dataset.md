@@ -6,6 +6,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 topic:
+  - configure-evaluation-setup-teardown-actions
+  - create-evaluation-dataset
+  - design-dataset-test-cases
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:

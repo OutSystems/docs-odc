@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) manages data type mapping across external systems, SQL nodes, and app logic, ensuring consistent data flow and type compatibility.
+summary: OutSystems Developer Cloud (ODC) maps external system data types to SQL node and app data types for SQL Server, Oracle, PostgreSQL, Salesforce, and SAP.
 tags:
   - Data
   - External Databases

@@ -1,6 +1,7 @@
 ---
 summary: Integrate AI models and search services into mobile apps and reactive web apps using OutSystems Developer Cloud (ODC).
-tags: ai models, search services, odc, mobile apps, reactive web apps
+tags:
+  - AI
 guid: 387270e4-2dc7-4c82-a8fc-3f0a0139eb98
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -14,6 +15,10 @@ coverage-type:
 audience:
   - Developer
   - Front-end developer
+topic:
+  - custom-model-connections-odc
+  - manage-ai-model-connections
+  - search-services-rag
 isautopublish: true
 ---
 

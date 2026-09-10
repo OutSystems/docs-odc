@@ -1,6 +1,6 @@
 ---
 helpids: 30499
-summary: OutSystems Developer Cloud (ODC) supports seamless integration with external databases for enhanced app development.
+summary: "Null value handling in ODC external databases: configure connection- or entity-level behavior to control how null and default values are read and written."
 tags: database integration, null value handling, configuration management, data types, external database connectivity
 locale: en-us
 guid: b29382ab-f4d3-479c-be4b-22a8319e612c

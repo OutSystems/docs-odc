@@ -1,5 +1,5 @@
 ---
-summary: OS-ABRS-CONN-50000 is a generic internal error from the OutSystems Developer Cloud (ODC) service that runs AI agent connections. It appears when testing or running an MCP server or A2A connection fails unexpectedly.
+summary: OS-ABRS-CONN-50000 signals an internal error in OutSystems Developer Cloud (ODC) when testing or running an MCP server or A2A connection fails.
 tags:
   - AI
   - Agentic

@@ -1,11 +1,17 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables the creation of a Line Chart with a Spline line and custom markers.
-tags: chart customization, data visualization, ui design, outsystems widgets, graphical representations
+tags:
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 7d5b86f8-dcc0-4ea7-a5f8-3f6d1e2c56c5
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10550-17
 audience:
   - Developer
   - Front-end developer
@@ -13,9 +19,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+isautopublish: true
 ---
 
-# Line Chart
+# Line chart
 
 <div class="info" markdown="1">
 
@@ -61,4 +68,4 @@ This example shows how you can create a simple Line Chart with a Spline line and
 
 After following these steps, you can publish your module:
 
-![Image of the final result showing a completed Line Chart pattern with a Spline line and custom markers](images/chartline-result.png "Final Line Chart Pattern Result")
+![Screenshot of the completed Line Chart with Spline line enabled and custom markers applied](images/chartline-result.png "Line Chart with Spline and Markers")

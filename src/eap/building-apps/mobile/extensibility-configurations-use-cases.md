@@ -6,6 +6,8 @@ figma:
 coverage-type:
   - apply
 topic:
+  - app-extensibility-use-cases
+  - plugin-extensibility-use-cases
 app_type: mobile apps
 platform-version: odc
 audience:

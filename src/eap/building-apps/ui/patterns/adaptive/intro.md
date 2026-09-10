@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - adaptive-ui-patterns
 ---
 
 # Adaptive

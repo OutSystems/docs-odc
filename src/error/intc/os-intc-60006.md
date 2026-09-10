@@ -1,6 +1,8 @@
 ---
-summary: Error fetching the selected entity list
-tags: error handling, entity management, data fetching, user interface issues, support and troubleshooting
+summary: OS-INTC-60006 in OutSystems Developer Cloud (ODC) signals a failure fetching selected entities; fix it by reloading the page.
+tags:
+  - Entities
+  - Troubleshooting
 guid: 7385df39-67fc-4e4c-9eb7-ad671c4afade
 locale: en-us
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,7 @@
 ---
 summary: Calculated attribute in an ODC aggregate lets you add expression-based columns to query results, with steps to group, count, and populate a Dropdown.
-tags: data management, ui components, data binding, database operations
+tags:
+  - Aggregates
 locale: en-us
 guid: 8d55b7fe-ff2d-4a80-b306-e8d7820ea579
 app_type: mobile apps, reactive web apps

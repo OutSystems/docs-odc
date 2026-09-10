@@ -1,11 +1,18 @@
 ---
-summary: Learn how to create and customize a Pie Chart with labeled data points using OutSystems Developer Cloud (ODC).
-tags: pie charts, data visualization, tutorials for beginners
+summary: 'OutSystems Developer Cloud (ODC) Pie Chart: add the widget, configure labeled data points, show values, and remove the legend.'
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: fda78656-7247-472a-8d79-c79accc91556
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10550-15
 audience:
   - Developer
   - Front-end developer
@@ -15,9 +22,10 @@ coverage-type:
   - apply
 topic:
   - add-widget-ui-pattern
+isautopublish: true
 ---
 
-# Pie Chart
+# Pie chart
 
 <div class="info" markdown="1">
 
@@ -57,4 +65,4 @@ This example shows how you can create a simple Pie Chart showing the labels of t
 
 After following these steps, you can publish your module:
 
-![Image of the final Pie Chart pattern with labels on data points and without a legend](images/chartpie-result.png "Final Pie Chart Pattern Result")
+![Screenshot of the final Pie Chart with data point labels displayed and the legend removed](images/chartpie-result.png "Final Pie Chart Result")

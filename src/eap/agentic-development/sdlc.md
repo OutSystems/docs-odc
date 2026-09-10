@@ -1,13 +1,13 @@
 ---
 summary: Agentic development integrates into the ODC software development lifecycle across generation, testing, deployment, maintenance, and governance.
 tags:
-  - Agentic
   - AI
+  - Agentic
   - Deploy
   - Development lifecycle
   - Mentor
   - Mentor Studio
-  - Testing
+  - Mentor Web
 guid: 7c3b8a4f-2d1e-4b9a-9e7f-6a5d3c2b1f0e
 locale: en-us
 app_type: reactive web apps
@@ -35,17 +35,17 @@ Apps created through agentic development follow the standard ODC software develo
 
 ## Integrate agentic development into ODC
 
-Agentic development fits into OutSystems Developer Cloud as an accelerated entry point to the standard development lifecycle. Rather than replacing your existing workflow, prompt-based development extends it by providing a conversational interface for the initial phases of app creation.
+Agentic development fits into OutSystems Developer Cloud as an accelerated entry point to the standard development lifecycle. Prompt-based development extends your existing workflow by providing a conversational interface for the initial phases of app creation.
 
 ### For ODC teams
 
-If you already develop in ODC Studio, think of agentic development as an alternative starting point for new apps. Instead of beginning with blank templates and manually configuring screens, entities, and roles, you describe your requirements in natural language. ODC generates the app scaffolding, complete with data models, UI layouts, and security roles, which you then refine through prompts before transitioning to ODC Studio.
+If you already develop in ODC Studio, think of agentic development as an alternative starting point for new apps. You describe your requirements in natural language. ODC generates the app scaffolding, complete with data models, UI layouts, and security roles, which you then refine through prompts before transitioning to ODC Studio.
 
 As your development needs grow beyond common patterns, you work in ODC Studio. There, Mentor Studio and manual development handle custom client or server actions, advanced aggregates with complex filtering, and external integrations.
 
 ### For O11 teams
 
-If you develop in OutSystems 11, you'll recognize familiar concepts. ODC still relies on visual development and model-driven architecture, with the OutSystems compiler applying established standards to the generated model as it does to any app. What changes is the interface for initial app creation. Instead of manually clicking through Service Studio to configure entities and screens, you describe your requirements conversationally, and ODC generates the foundation.
+If you develop in OutSystems 11, you'll recognize familiar concepts. ODC still relies on visual development and model-driven architecture, with the OutSystems compiler applying established standards to the generated model as it does to any app. What changes is the interface for initial app creation. You describe your requirements conversationally, and ODC generates the foundation.
 
 One difference to note: ODC uses a cloud-native, stage-based deployment model. Apps deploy through development, QA, and production stages using ODC deployment in Portal, which differs from the LifeTime-based deployment in O11.
 

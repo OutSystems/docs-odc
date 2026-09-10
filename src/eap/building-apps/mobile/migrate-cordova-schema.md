@@ -1,6 +1,9 @@
 ---
 summary: Learn how to migrate existing Cordova-based schema to Universal extensibility configuration JSON schema.
-tags: json configuration, app customization, mobile development, configuration schema
+tags:
+  - Capacitor
+  - Cordova
+  - Mobile app
 locale: en-us
 guid: b148ff0f-fb1f-4151-89df-d554ca3d3aa9
 app_type: mobile apps

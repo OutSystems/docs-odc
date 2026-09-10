@@ -1,6 +1,9 @@
 ---
 summary: "ODC exception handling mechanism: how exceptions propagate through action flows, UI flows, and timers to reach the first matching handler."
-tags: exception handling, error logging, flow management, outsystems development, ui & action flows
+tags:
+  - Logic
+  - REST
+  - Timers
 locale: en-us
 guid: 7f5c109f-a887-4f50-bd5d-ead38e50ff53
 app_type: mobile apps, reactive web apps

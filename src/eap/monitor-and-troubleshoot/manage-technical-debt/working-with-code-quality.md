@@ -1,6 +1,9 @@
 ---
 summary: Learn how to use Code Quality in ODC for developers and technical leads to manage technical debt effectively in the software development lifecycle.
-tags: code quality, technical debt, developers, technical leads, software development lifecycle
+tags:
+  - Monitoring
+  - Quality Assurance
+  - Technical Debt
 guid: 7be15662-74c5-4c35-9a7d-16a28816614d
 locale: en-us
 app_type: mobile apps, reactive web apps

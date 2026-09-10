@@ -14,6 +14,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+  - unblock
 isautopublish: true
 ---
 

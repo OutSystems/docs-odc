@@ -1,5 +1,12 @@
 ---
-tags: ui patterns, user interface design, data binding, widgets, employee management
+tags:
+  - Logic
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) includes a Dropdown Search UI Pattern for searchable option selection in applications.
 locale: en-us
 guid: 667dfcf6-b299-492b-8e93-655ad62ea91a

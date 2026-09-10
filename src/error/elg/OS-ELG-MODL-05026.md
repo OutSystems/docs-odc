@@ -1,6 +1,9 @@
 ---
 summary: The default value specified for <ParameterName> is unsupported.
-tags: error handling, c# programming, library publishing, parameters configuration, external libraries
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: 2cc2a5df-6b8e-45aa-9c4b-82ad0719d153
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -8,7 +11,6 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

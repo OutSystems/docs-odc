@@ -61,7 +61,7 @@ In a multi-portfolio organization, stage-level IdP assignments become portfolio-
 
 The following diagram shows an example setup.
 
-![External IdPs concept](images/external-idps-example-diag.png "External IdP Scopes Example")
+![Diagram showing an example setup of external IdPs assigned to organization scope and stage scope in ODC](images/external-idps-example-diag.png "External IdP Scopes Example")
 
 You can assign more than one identity provider to the same scope. A single stage can have multiple active IdPs at once, including multiple custom external IdPs, and you can keep the built-in provider active. If you want users to authenticate only through external IdPs for a scope, remove the built-in identity provider assignment. For more information, refer to [Manage identity providers](manage-external-idps.md#remove-built-in-idp-assignment).
 
@@ -118,6 +118,10 @@ If your IdP can't be exposed to the public internet, allowlist the ODC Identity 
     ```
 
 * Only the `client_secret_post` authentication method is supported for providers used in cloud stages. In self-hosted tenants, providers configured **For self-hosted** are public clients and do not require a client secret.
+
+* Only the Authorization Code flow with PKCE is supported. Implicit and hybrid flows are not supported.
+
+* Client secrets are cached after the first successful authentication. Changes to the client secret in your IdP might take up to one hour to take effect.
 
 ### System considerations for SAML 2.0
 

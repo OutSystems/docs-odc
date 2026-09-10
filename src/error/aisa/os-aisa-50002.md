@@ -12,7 +12,6 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - mentor studio
 coverage-type:

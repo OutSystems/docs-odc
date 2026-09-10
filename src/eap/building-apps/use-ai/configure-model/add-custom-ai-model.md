@@ -1,6 +1,6 @@
 ---
 helpids: 30553
-summary: In this article you will learn how to add custom AI model to the AI Agent Builder app.
+summary: "Custom AI model in ODC AI Agent Builder: add any LLM using an API contract-compliant connector with endpoints and authentication headers."
 tags: ai integration, custom ai model, configuration, authentication, api
 guid: 2fdeaba8-6979-4a03-aa9c-50422431e38a
 locale: en-us

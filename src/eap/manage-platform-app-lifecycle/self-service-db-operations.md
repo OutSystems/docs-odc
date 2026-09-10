@@ -16,6 +16,9 @@ coverage-type:
 audience:
   - Platform administrator
 topic:
+  - platform-update-notifications
+  - reschedule-platform-updates
+  - update-lifecycle-states
 helpids: 30745
 isautopublish: true
 ---

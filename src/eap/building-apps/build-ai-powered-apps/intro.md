@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) AI-powered apps use AI models, agents, and the ReAct loop to automate workflows and integrate LLMs into your app logic.
-tags: ai-powered apps,mobile apps,reactive web apps
+tags:
+  - Agentic
+  - AI
 guid: f217cece-7042-4055-811a-948ed6244007
 locale: en-us
 app_type: mobile apps,reactive web apps

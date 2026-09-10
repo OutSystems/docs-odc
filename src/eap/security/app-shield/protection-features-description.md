@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enhances mobile app security with comprehensive protection features via the AppShield plugin.
-tags: mobile app security, appshield plugin, root detection, repackaging detection, code injection protection
+tags:
+  - Android
+  - iOS
+  - Mobile app
+  - Security
 locale: en-us
 guid: 09e87858-f0f8-48c8-bbc1-2d2dcb4a0980
 app_type: mobile apps
@@ -11,6 +15,7 @@ audience:
 outsystems-tools:
   - mobile plugins
 coverage-type:
+  - remember
   - understand
 ---
 

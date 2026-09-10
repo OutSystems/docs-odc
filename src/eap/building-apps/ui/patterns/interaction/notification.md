@@ -1,5 +1,12 @@
 ---
-tags: user notifications, ui design
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Learn how to implement and configure the Notification UI Pattern in OutSystems Developer Cloud (ODC) to enhance user communication.
 locale: en-us
 guid: b60bb989-895e-49a1-a261-76d9bb540425

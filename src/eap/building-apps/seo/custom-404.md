@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 coverage-type:
-  - evaluate
+  - apply
 audience:
   - Platform administrator
   - Front-end developer

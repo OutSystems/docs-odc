@@ -1,6 +1,13 @@
 ---
 summary: Explore the File Plugin functionalities on OutSystems Developer Cloud (ODC), including client actions, error handling, and deprecations.
-tags: mobile app development, plugin integration, file management, error handling, deprecations
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - iOS
+  - Mobile app
+  - Native App
+  - Plugins
 locale: en-us
 guid: b6aad61f-35d7-4cf4-87bb-9a592d200984
 app_type: mobile apps
@@ -29,18 +36,18 @@ If you are looking to migrate from version 1.x.x of the File Plugin to 2.0.0 or 
 
 </div>
 
-This is the reference of all the functionality you can use from the [File Plugin version 2.0.0](intro.md). The File Plugin version 2.0.0 uses Cordova and Capacitor plugins. For more information see [cordova-outsystems-file](https://github.com/ionic-team/cordova-outsystems-file) and [capacitor/filesystem](https://github.com/ionic-team/capacitor-filesystem). For versions 1.X.X, see [cordova-plugin-file](https://github.com/OutSystems/cordova-plugin-file).
+This page describes the functionality available in [File Plugin version 2.0.0](intro.md). The File Plugin version 2.0.0 uses Cordova and Capacitor plugins. For more information, refer to [cordova-outsystems-file](https://github.com/ionic-team/cordova-outsystems-file) and [capacitor/filesystem](https://github.com/ionic-team/capacitor-filesystem). For versions 1.X.X, refer to [cordova-plugin-file](https://github.com/OutSystems/cordova-plugin-file).
 
-## Plugin elements
+## Plugin elements {#plugin-elements}
 
 This section details the different elements exposed by the File Plugin, starting on version 2.0.0. For older versions, refer to [Deprecated Elements](#deprecated-elements).
 
-### Actions
+### Actions {#actions}
 
 | Action | Description |
 | -------------------- | ------------------------------------------------------------------------------------- |
 | **AppendFile** | Appends content to an existing file. |
-| **CheckFilePlugin** | Checks if the File Plugin is loaded. |
+| **CheckFilePlugin** | Checks if the File Plugin is loaded. If it returns a **Warning**, see [Check the native plugin version before using new actions](file-plugin-migration-guide.md#check-native-plugin). |
 | **Copy** | Copies a file from one location to another. |
 | **CreateDirectory** | Creates a directory in the file system. |
 | **DeleteDirectory** | Deletes a directory in the file system. |
@@ -52,7 +59,7 @@ This section details the different elements exposed by the File Plugin, starting
 | **Rename** | Renames an existing file or directory. |
 | **WriteFile** | Writes content to a file. This action overwrites data written to the file previously. |
 
-### Path directory
+### Path directory {#path-directory}
 
 Most operations in the File Plugin have two attributes: **Path** and **Directory**, each with a different purpose. The **Directory** is an optional specific location in the file system. If it is specified, then the **Path** should be the relative path from that directory. If not, then **Path** should contain the full path to file.
 
@@ -78,7 +85,7 @@ If you're unsure which type of **PathDirectory** you need, try to think about th
 
 </div>
 
-### File info
+### File info {#file-info}
 
 The **GetMetadata** and **ListDirectory** client actions return a structure containing information about a file or directory, named **FileInfo**. The table below describes the attributes of this structure.
 
@@ -91,11 +98,11 @@ The **GetMetadata** and **ListDirectory** client actions return a structure cont
 | **ModificationTime**    | Date Time of last modification.                        |
 | **URI**                 | Full URI path to the file or directory (e.g. file://). |
 
-### Error codes
+### Error codes {#error-codes}
 
 For a complete list of mobile plugin errors, their causes, impact, and recommended solutions, see the [Mobile Plugins errors page](https://www.outsystems.com/tk/redirect?g=8ae41e18-fa7d-4cbe-a223-226a14abd8bf).
 
-## Deprecated elements
+## Deprecated elements {#deprecated-elements}
 
 The following section details the elements that were available in version 1.x.x of the File Plugin. These were marked as deprecated in version 2.0.0.
 
@@ -105,7 +112,7 @@ All deprecated elements include the prefix **DEPRECATED_** before the element na
 
 </div>
 
-### Deprecated actions
+### Deprecated actions {#deprecated-actions}
 
 | Action                            | Description                                                       |
 | --------------------------------- | ----------------------------------------------------------------- |
@@ -123,9 +130,9 @@ All deprecated elements include the prefix **DEPRECATED_** before the element na
 | **DEPRECATED_SaveFile**           | Saves a file in a specific directory.                             |
 | **DEPRECATED_SaveTemporaryFile**  | Saves a file in a temporary directory.                            |
 
-### Storage type
+### Storage type {#storage-type}
 
-These section contains information about the **StorageTypeId** property, which tells the app where to store the files. This property is available in some actions of the plugin. Newer versions of the File Plugin use [Path Directory](#path-directory).
+This section contains information about the **StorageTypeId** property, which tells the app where to store the files. This property is available in some actions of the plugin. Newer versions of the File Plugin use [Path Directory](#path-directory).
 
 | StorageTypeId                     | Description                                                                                                                                             |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |

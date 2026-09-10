@@ -1,6 +1,8 @@
 ---
-summary: Learn how to add decisions to your workflow in OutSystems Developer Cloud (ODC).
-tags: workflow design, conditional logic, process automation, user task management, service actions
+summary: ODC Decision node in OutSystems Developer Cloud (ODC) lets you build conditional workflow paths with outcomes and service actions.
+tags:
+  - Logic
+  - Workflows
 locale: en-us
 guid: c5d2a739-ccde-4f66-b9f9-9b8b7a3e46f7
 app_type: mobile apps, reactive web apps

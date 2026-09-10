@@ -1,6 +1,11 @@
 ---
-summary: Explore how to implement and customize the Accordion UI Pattern in OutSystems Developer Cloud (ODC) to enhance application interfaces.
-tags: ui components, accordion pattern, user interface design
+summary: Accordion UI Pattern in ODC lets you build collapsible content sections with AccordionItem widgets, configurable icons, and MultipleItems support.
+tags:
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 794b75df-0091-4e62-b1f8-22c56e7ebf90
 app_type: mobile apps, reactive web apps

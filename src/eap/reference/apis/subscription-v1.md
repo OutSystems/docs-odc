@@ -11,6 +11,8 @@ audience:
   - Platform administrator
 coverage-type:
   - remember
+topic:
+  - retrieve-subscription-data
 figma:
 api-render: true
 tags:

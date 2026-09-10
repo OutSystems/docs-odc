@@ -16,7 +16,6 @@ tags:
   - Entities
   - Infrastructure
   - Platform Server
-  - Private Gateway
   - Troubleshooting
 outsystems-tools:
   - lifetime
@@ -76,7 +75,7 @@ This happens because the Platform Server version of your O11 environments is not
 
 ### Recommended action
 
-To start [exposing your O11 entities to ODC](expose-entities.md), make sure the Platform Server version of your O11 environments is **11.40.0 or later**. See the [prerequisites for data interoperability](data-interop.md#prerequisites) for further details.
+To start [exposing your O11 entities to ODC](expose-entities.md), make sure the Platform Server version of your O11 environments is **11.41.0 or later**. See the [prerequisites for data interoperability](data-interop.md#prerequisites) for further details.
 
 ## Expose entities screen showing only the baseline environment
 
@@ -88,4 +87,4 @@ This happens because the Platform Server version of the remaining O11 environmen
 
 ### Recommended action
 
-Make sure the Platform Server version of all your O11 environments is **11.40.0 or later**. See the [prerequisites for data interoperability](data-interop.md#prerequisites) for further details.
+Make sure the Platform Server version of all your O11 environments is **11.41.0 or later**. See the [prerequisites for data interoperability](data-interop.md#prerequisites) for further details.

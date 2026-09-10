@@ -3,7 +3,6 @@ summary: ODC mobile apps support Capacitor and Cordova runtimes via MABS 12, ena
 tags:
   - Capacitor
   - Cordova
-  - Forge
   - Mobile app
   - Native App
   - Plugins
@@ -41,9 +40,9 @@ Starting from [MABS 12](mabs-overview.md), you can build mobile apps using both 
 
 Capacitor provides a flexible and scalable solution for integrating native features and plugins, enabling you to customize and extend mobile app functionality efficiently. You also have access to a highly active developer community with a growing library of [plugins](https://capacitorjs.com/docs/plugins) ready to use.
 
-While creating your mobile package using MABS 12, you can [select the native runtime](creating-mobile-package.md) that best suits your app's requirements.
+While creating a mobile package using MABS 12, you can [select the native runtime](creating-mobile-package.md) that best suits your app's requirements. If you select **Always use the latest stable version**, ODC builds the package using Capacitor by default. To build with Cordova instead, select a specific MABS version and choose the Cordova framework. For more information about the default framework, refer to [Capacitor and Cordova support in MABS](mabs-overview.md).
 
-With MABS 12, you can:
+From MABS 12, you can:
 
 * Build mobile apps using the modern Capacitor cross-platform native runtime.
 

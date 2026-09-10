@@ -2,6 +2,8 @@
 summary: How ODC converts an app's display name into a URL path, allowed characters, and how to avoid URL collisions.
 tags:
   - Best Practices
+  - Mentor Web
+  - Mobile app
 guid: f56b5edb-5ca4-487c-b806-5bb849622696
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -41,6 +43,7 @@ ODC applies these rules in order to produce the internal name:
 1. Remove leading characters until the first letter. Leading digits and underscores are also dropped, so a display name like `123abc4` becomes `abc4` and `_abc` becomes `abc`.
 1. Delete spaces, hyphens, and ampersands.
 1. Replace any other unsupported character with an underscore.
+1. Truncate the result to 35 characters, removing any characters beyond that limit.
 1. If the result is empty, ODC uses the default value `Module`.
 
 The last rule is the key one for non-Latin display names. If a display name has no Latin letter, every character is dropped and the internal name becomes `Module`.

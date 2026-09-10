@@ -7,6 +7,7 @@ coverage-type:
   - apply
   - understand
 topic:
+  - implement-web-plugin-layer
 app_type: mobile apps
 platform-version: odc
 audience:

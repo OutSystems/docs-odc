@@ -1,6 +1,8 @@
 ---
 summary: The version you're trying to approve has inactive and/or not approved dependencies <dependencies>.
-tags: error message, dependencies, approval process, mobile apps, reactive web apps
+tags:
+  - Forge
+  - Troubleshooting
 guid: 92bc2094-5a72-4b13-ba00-3a3b7184b8db
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -10,7 +12,6 @@ coverage-type:
   - unblock
 audience:
   - Developer
-  - Front-end developer
   - Platform administrator
 outsystems-tools:
   - odc studio

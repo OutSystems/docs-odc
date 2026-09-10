@@ -1,6 +1,6 @@
 ---
 tags: ui patterns, alert implementation
-summary: Explore how to implement and customize the Alert UI Pattern in OutSystems Developer Cloud (ODC) to display important messages in applications.
+summary: Alert UI Pattern in OutSystems Developer Cloud (ODC) lets you display error, warning, info, and success messages by dragging the widget and setting AlertType.
 locale: en-us
 guid: 1492d677-e96e-48f2-89af-1e0157058f58
 app_type: mobile apps, reactive web apps

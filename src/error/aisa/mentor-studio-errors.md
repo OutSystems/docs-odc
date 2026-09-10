@@ -1,5 +1,5 @@
 ---
-summary: Explore common Mentor Studio errors in OutSystems Developer Cloud (ODC) and their solutions.
+summary: Mentor Studio errors in OutSystems Developer Cloud (ODC) cover service, AI provider, and conversation-state failures, with causes and fixes.
 tags:
   - Agentic
   - AI

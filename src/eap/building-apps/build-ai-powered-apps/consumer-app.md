@@ -6,6 +6,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 topic:
+  - consume-ai-agent
+  - consumer-app-workflow
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

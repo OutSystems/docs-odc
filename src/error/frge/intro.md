@@ -13,6 +13,8 @@ outsystems-tools:
   - forge
 coverage-type:
   - unblock
+topic:
+  - forge-errors
 ---
 
 # Forge errors

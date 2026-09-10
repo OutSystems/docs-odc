@@ -7,12 +7,18 @@ coverage-type:
   - apply
   - remember
 topic:
+  - sql-null-behavior
+  - sql-operator-reference
+  - sql-type-conversion
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: sql operators,functions,external systems,null behavior,comparison operators
+tags:
+  - Entities
+  - External Databases
+  - SQL
 outsystems-tools:
   - odc studio
 ---

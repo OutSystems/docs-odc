@@ -7,6 +7,9 @@ coverage-type:
   - understand
   - evaluate
 topic:
+  - encapsulate-rest-apis
+  - jwt-rest-authentication
+  - new-api-version
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

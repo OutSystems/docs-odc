@@ -1,6 +1,10 @@
 ---
 summary: Extensibility configurations JSON schema for ODC mobile apps covers Capacitor and Cordova support, plugins, permissions, and build actions.
-tags: json configuration, plugin management, app customization, mobile development, configuration schema
+tags:
+  - Capacitor
+  - Cordova
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: ecb98e61-f07f-4204-a899-9fd1d5460fbf
 app_type: mobile apps

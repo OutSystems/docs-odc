@@ -1,5 +1,5 @@
 ---
-summary: Explore UI interactions and data management in OutSystems Developer Cloud (ODC) for seamless app development.
+summary: "OutSystems Developer Cloud (ODC) UI interactions: build screens, fetch data with aggregates, and refresh UI data in ODC Studio."
 tags: ui design, data management, screen navigation, user experience, aggregates
 locale: en-us
 guid: 743F0F2C-6ADF-4A7A-899E-3802A1249925

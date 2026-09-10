@@ -1,5 +1,12 @@
 ---
-tags: ui/ux design, ui patterns
+tags:
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
+  - Web
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) features the Input with Icon UI Pattern to enhance user data entry with visual hints.
 locale: en-us
 guid: 74216051-2083-436f-b118-102696b9c182

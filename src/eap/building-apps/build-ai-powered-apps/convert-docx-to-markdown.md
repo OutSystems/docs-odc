@@ -14,6 +14,10 @@ outsystems-tools:
   - forge
 coverage-type:
   - apply
+topic:
+  - add-images-to-message
+  - convert-file-to-markdown
+  - use-markdown-in-agent
 audience:
   - Developer
   - Tech lead

@@ -20,6 +20,10 @@ audience:
 outsystems-tools:
   - none
 isautopublish: true
+topic:
+  - configure-prerender-custom-domain-ssl
+  - expose-sitemap-robots-through-prerender
+  - integrate-seo-prerender
 ---
 
 # Improve SEO with prerendering

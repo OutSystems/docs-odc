@@ -7,7 +7,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - agent monitoring
+  - view-agent-trace
 app_type: reactive web apps
 platform-version: odc
 audience:

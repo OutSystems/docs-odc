@@ -18,6 +18,8 @@ outsystems-tools:
   - mentor web
 coverage-type:
   - unblock
+topic:
+  - mentor-web-errors
 isautopublish: true
 ---
 

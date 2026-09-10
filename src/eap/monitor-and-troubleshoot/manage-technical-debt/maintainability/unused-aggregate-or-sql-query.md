@@ -1,5 +1,5 @@
 ---
-summary: An Aggregate or SQL query isn't used.
+summary: ODC unused Aggregate or SQL query wastes resources and bloats your codebase; delete it if not needed.
 tags: unused aggregates, sql queries, performance optimization, code maintenance, app performance
 guid: f6b3dd0f-5a48-47a9-9e62-fb6b0dfc7c77
 locale: en-us

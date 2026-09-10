@@ -1,11 +1,17 @@
 ---
-summary: Learn how to create a stacked area chart using OutSystems Developer Cloud (ODC) with this step-by-step guide.
-tags: chart visualization, data visualization, user interface design, mobile app development, outsystems
+summary: 'ODC Area Chart with stacked series: build and configure a stacked area chart in ODC Studio using the OutSystems UI framework.'
+tags:
+  - Front-End
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 181b8675-7323-4afd-bab7-b315c237d709
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10550-11
 audience:
   - Developer
   - Front-end developer
@@ -13,9 +19,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+isautopublish: true
 ---
 
-# Area Chart
+# Area chart
 
 <div class="info" markdown="1">
 
@@ -53,4 +60,4 @@ This example shows how you can create a simple Area Chart with a Stacked Series.
 
 After following these steps, you can publish your module:
 
-![Image of the final result showing a completed Area Chart with a Stacked Series](images/chartarea-result.png "Final Area Chart Result")
+![Screenshot of the completed Area Chart with a Stacked Series](images/chartarea-result.png "Area Chart with Stacked Series")

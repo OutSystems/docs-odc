@@ -1,6 +1,11 @@
 ---
 summary: Filtering workflow activities to build interactive UI components
-tags: ui components, workflow activities, aggregates, dashboards, task boxes
+tags:
+  - Aggregates
+  - Screens
+  - Taskbox
+  - UI
+  - Workflows
 outsystems-tools:
   - odc studio
   - odc portal

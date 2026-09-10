@@ -1,6 +1,11 @@
 ---
 summary: The assembly <AssemblyName> is required and could not be found in your file.
-tags: error fixing, external libraries, c# development, assembly management, nuget packages
+tags:
+  - .NET
+  - C#
+  - Libraries
+  - NuGet
+  - Troubleshooting
 guid: 7a710394-e576-4885-8175-a5dbac24cb6d
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -8,7 +13,6 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

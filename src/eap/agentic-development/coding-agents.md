@@ -3,6 +3,7 @@ summary: Coding agents in OutSystems Developer Cloud (ODC) Mentor interpret inte
 tags:
   - Agentic
   - AI
+  - Architecture
   - Development lifecycle
   - Mentor
   - Mentor Studio
@@ -36,7 +37,7 @@ Mentor builds and modifies OutSystems assets through conversation. Assets includ
 
 Agentic development uses coding agents that work together behind a single conversation. You talk to one assistant, and the agents coordinate the work. Each agent handles a different kind of work.
 
-* **Building and modifying your asset.** One agent works on the OutSystems Model rather than raw code, reading the current structure, planning the changes, and applying them. It leads the conversation from your first prompt through to the applied result.
+* **Building and modifying your asset.** One agent works on the OutSystems Model, reading the current structure, planning the changes, and applying them. It leads the conversation from your first prompt through to the applied result.
 * **Planning the app structure.** When you create a new app in Mentor Web, one agent first scopes the work into a blueprint of entities, screens, roles, and the rest of the app structure. You review the blueprint, then other agents build from it.
 
 For most requests you interact with one assistant. Direct edits, such as adding an attribute to an entity, are applied without a separate planning step. In Mentor Web, creating a new app produces a blueprint first, so you review the shape of the app before it's built. For the blueprint, refer to [Blueprint](mentor-web/blueprint.md).
@@ -52,7 +53,7 @@ The coding agents work through a loop of four steps: gather context, plan, act, 
 
 ## The model the agents work on
 
-The coding agents work on the OutSystems Model, the high-level representation of an asset's structure and behavior. They work with model elements rather than raw code, apart from elements that hold code by nature, such as CSS or JavaScript.
+The coding agents work on the OutSystems Model, the high-level representation of an asset's structure and behavior. They work with model elements, except for elements that hold code by nature, such as CSS or JavaScript.
 
 To understand your asset, the agents query the model. They render the underlying code for the parts that matter to a request, such as a single action or an entity and its attributes. To change your asset, they modify the model. The OutSystems compiler turns that model into deployable code when you publish. ODC Studio works with the same model, so assets built or modified through agentic development are standard OutSystems assets. For how the model, the agents, and the compiler fit together, refer to [Architecture](architecture.md).
 
@@ -61,7 +62,7 @@ To understand your asset, the agents query the model. They render the underlying
 The coding agents work with the context of the asset you have open and its relationships to the rest of your tenant. This context grounds their interpretation of your prompts and lets them reuse what already exists.
 
 * **The open asset.** The agents read the structure, logic, data model, dependencies, and integrations of the asset you're working on.
-* **Referenced assets.** The agents recognize the public elements that other assets expose, such as entities and actions, so they reuse existing assets instead of recreating them. For background, refer to [Reuse elements across apps](../app-architecture/reuse-elements.md).
+* **Referenced assets.** The agents recognize the public elements that other assets expose, such as entities and actions, so they reuse existing assets. For background, refer to [Reuse elements across apps](../app-architecture/reuse-elements.md).
 * **Tenant context.** A populated development environment improves results, because the agents reference existing entities, actions, and patterns when they generate new elements.
 
 A clear, explicit prompt combined with relevant context produces more accurate results than a vague description. For prompting strategies, refer to [Effective prompts for Mentor](effective-prompts.md).
@@ -72,7 +73,7 @@ You stay in control of every change. Mentor asks you to accept a structural prop
 
 * **Plan when it matters.** Mentor proposes a plan for complex changes, such as those that span multiple elements. It applies a simple, self-contained change directly. For how to read and act on a plan in Mentor Studio, refer to [Review and accept the plan](mentor-studio/how-it-works.md#review-and-accept-the-plan).
 * **Clarify at decision points.** The agents use reasonable defaults and state their assumptions. They ask a clarifying question only when a wrong guess would cause significant rework or change the architecture.
-* **Review and accept.** For structural changes, Mentor proposes a blueprint (Mentor Web) or a plan (Mentor Studio). You accept, reject, or refine before Mentor builds. Mentor applies smaller changes without a separate step. You review the result afterward.
+* **Review and accept.** For structural changes, Mentor proposes a blueprint (Mentor Web) or a plan (Mentor Studio). For a blueprint, you refine it through follow-up prompts until it matches your intent. For a plan, you proceed, review the changes first, or discard it. Mentor applies smaller changes without a separate step. You review the result afterward.
 * **Review the result.** After the agents apply changes, you compare your asset before and after to confirm the outcome. For the comparison view, refer to [Review changes](mentor-studio/how-it-works.md#review-changes).
 
 ## How output quality is maintained

@@ -13,7 +13,9 @@ audience:
   - Developer
   - Platform administrator
   - Tech lead
-tags: ai search services, custom search service, rag best practices, odc portal
+tags:
+  - AI
+  - Best Practices
 outsystems-tools:
   - odc portal
 helpids:

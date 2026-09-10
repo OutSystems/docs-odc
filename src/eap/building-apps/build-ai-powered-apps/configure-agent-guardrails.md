@@ -6,6 +6,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 coverage-type:
   - apply
 topic:
+  - configure-agent-level-guardrails
+  - configure-stage-guardrails
+  - handle-guardrail-violation-exception
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

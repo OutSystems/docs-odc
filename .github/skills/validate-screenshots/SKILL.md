@@ -13,9 +13,6 @@ description: >-
   Trigger phrases: "validate screenshots", "review screenshots", "check my
   screenshots", "are these screenshots good", "screenshot review".
 allowed-tools: Read,Bash,Edit,AskUserQuestion
-metadata:
-  exclude-repos:
-    - OutSystems/training-internal
 ---
 
 # Validate screenshots
@@ -51,6 +48,11 @@ It prints a JSON array to stdout. Each entry has:
 
 * `image_path` — absolute path to the PNG
 * `article_path` — the markdown that references it, or `null`
+* `shared_with` — only present on a single-image invocation when the
+  calling workflow already knows the image is referenced by more than
+  one article changed in this same pull request; a list of those
+  articles' absolute paths. Mutually exclusive with `article_path` being
+  set — see "Choosing the summary title" in Step 3.
 
 If the array is empty, stop with:
 
@@ -131,6 +133,13 @@ For each entry in the list:
    step-based flows), rule 8 (PII), rule 9
    (internal environment URLs).
 
+   For `-ss`/`-odcs` files showing an entity or data-model layout (boxes
+   connected by lines), check against `visual-rules-screenshots.md` rule 2's
+   entity/data-model carve-out before concluding the suffix is wrong. A
+   Data-tab capture cropped tight with no toolbar chrome is not by itself a
+   sign of a misfiled `-diag` diagram — don't fall back on the genuine-diagram
+   checklist below as the only reference point for that judgment.
+
    For files ending in **`-diag`**: use vision to determine whether the
    content is a genuine diagram or a UI screenshot.
 
@@ -144,6 +153,13 @@ For each entry in the list:
    * Connecting elements: arrows, dashed lines, or swimlanes
    * A white or light-gray background with a rounded-rectangle shadow border
    * Descriptive text labels naming concepts or roles, not UI controls
+
+   Excluded: entity or data-model diagrams captured directly from Service
+   Studio's or ODC Studio's Data tab, even when cropped tight with no
+   visible toolbar chrome. These are native tool renderings, not
+   standalone Figma diagrams — refer to `visual-rules-screenshots.md`
+   rule 2's entity/data-model carve-out for the native iconography and
+   connector traits that identify them.
 
    A UI screenshot shows product interface chrome with interactive elements
    (panels, toolbars, dropdowns, form fields, menus) from ODC Studio, ODC
@@ -177,7 +193,7 @@ article in the header. In the common single-article case, one line is enough.
 Follow this exact format:
 
 ```
-## Screenshot review: <article filename or "branch changes">
+## Screenshot review: <TITLE>
 
 Figma: <url from frontmatter — omit this line entirely when no figma key>
 
@@ -190,6 +206,26 @@ Checked N screenshots. M need changes.
 ### <next image relative path>
 - ❌ <...>
 ```
+
+### Choosing the summary title
+
+`TITLE` is also what goes in the wrapping `<summary>` line (see the
+calling prompt). Every form of `TITLE` below is a file name with its
+extension kept: `input-parameter.md`, never `input-parameter`. For a
+markdown-article invocation `TITLE` is the article's file name, and in
+branch-diff mode it is "branch changes". For a single-image invocation,
+`TITLE` follows the `collect_targets.py` entry:
+
+* `article_path` is set — use that article's file name, `.md` included.
+  The image resolves to an owning article even when that article itself
+  isn't part of this pull request; the finding still belongs to it.
+* `shared_with` is set (`article_path` is `null`) — use the image's file
+  name, `.png` included, appended with " (shared image)". The image is
+  referenced by more than one article changed in this same pull request,
+  so don't attribute it to just one of them.
+* Neither is set — use the image's file name, `.png` included, appended
+  with " (orphan image)". No article anywhere in the repository
+  references it.
 
 Rules:
 

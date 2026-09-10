@@ -1,5 +1,12 @@
 ---
-tags: ui patterns, data binding, user interaction
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Web
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) features the Dropdown Tags UI Pattern, enabling users to select multiple options from a dropdown list.
 locale: en-us
 guid: 91934a88-de31-437d-be9c-e2ca182835bb

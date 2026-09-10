@@ -1,6 +1,8 @@
 ---
 summary: Explore automated testing strategies and tools in ODC to enhance application delivery and reliability.
-tags: automated testing, application reliability, software testing tools, testing best practices, bddframework
+tags:
+  - Quality Assurance
+  - Testing
 locale: en-us
 guid: B1B1C48B-A7E2-4E13-83F7-104B97075CB2
 app_type: mobile apps, reactive web apps
@@ -12,7 +14,6 @@ audience:
   - Architect
 coverage-type:
   - understand
-  - apply
 outsystems-tools:
   - bddframework
 ---

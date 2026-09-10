@@ -1,6 +1,11 @@
 ---
 summary: Data purging in OutSystems Developer Cloud (ODC) using Timers, bulk deletes, control columns, and referential integrity rules.
-tags: data purging, database performance, outsystems, reactive web apps, best practices
+tags:
+  - Best Practices
+  - Data
+  - Entities
+  - Performance
+  - Timers
 guid: 4bf14efa-d0be-4ff9-a8f5-0bc76c012905
 locale: en-us
 app_type: mobile apps, reactive web apps

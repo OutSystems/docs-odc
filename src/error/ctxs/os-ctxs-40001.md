@@ -2,7 +2,6 @@
 summary: OS-CTXS-40001 occurs when an agent harness sends a request to the OutSystems Developer Cloud (ODC) Context Service that doesn't match the API contract.
 tags:
   - Agentic
-  - AI
   - Troubleshooting
 guid: 85b2344d-4186-42ae-9846-4d63a0fccdae
 locale: en-us

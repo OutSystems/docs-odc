@@ -1,5 +1,5 @@
 ---
-summary: Explore how OutSystems Developer Cloud (ODC) facilitates single sign-on (SSO) integration and enhances user authentication experiences.
+summary: Single sign-on (SSO) in OutSystems Developer Cloud (ODC) lets users access multiple apps with one login via an identity provider configured in ODC Portal.
 tags: single sign-on, user authentication, security, identity provider, user experience
 locale: en-us
 guid: fe13e0ec-b375-4b07-946e-4ee1850436a4

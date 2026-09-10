@@ -74,7 +74,7 @@ When the blueprint differs from intent, adjust it through prompts before generat
 
 For the checks that tell you whether the interpretation is right, such as verifying the data model and relationship cardinality, refer to [Review checks](../odc-ai-and-platform.md#review-checks).
 
-For complex apps, use a [requirement document](requirements-doc.md) instead of a prompt. Structured documents with explicit entity definitions produce more precise blueprints than natural language prompts alone.
+For complex apps, use a [requirement document](requirements-doc.md). Structured documents with explicit entity definitions produce more precise blueprints than natural language prompts alone.
 
 ## From blueprint to app
 

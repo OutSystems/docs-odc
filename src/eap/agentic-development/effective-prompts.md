@@ -4,6 +4,7 @@ tags:
   - Agentic
   - AI
   - Best Practices
+  - Entities
   - Mentor
   - Mentor Studio
   - Mentor Web
@@ -42,7 +43,7 @@ Mentor is designed to support English. You can enter prompts in other languages,
 
 A prompt is a natural language instruction that tells an AI system what to do. Unlike traditional interfaces where you click buttons and fill forms, prompting requires you to describe your intent in words. The AI interprets your description and generates a response.
 
-Prompting shifts the interaction model from "select from options" to "describe what you want." This shift requires a different mindset, explored in [Thinking with AI](thinking-with-ai.md): instead of navigating menus, you communicate goals. The quality of your description directly determines the quality of the output.
+Prompting shifts the interaction model from "select from options" to "describe what you want." This shift requires a different mindset, explored in [Thinking with AI](thinking-with-ai.md): you communicate goals directly. The quality of your description directly determines the quality of the output.
 
 Mentor interprets prompts literally and matches them against patterns it recognizes, so state your requirements explicitly. If you omit information, Mentor fills gaps with defaults or makes assumptions that may not match your intent. Understanding this behavior helps you write prompts that produce predictable results.
 
@@ -80,7 +81,7 @@ The following prompt combines all three elements into a single request:
 
 ## Iterative refinement
 
-Complex apps emerge through iteration, not a single prompt. Trying to specify everything up front often leads to overstuffed prompts that Mentor struggles to interpret. Instead, start with a broad description and refine incrementally. Each prompt builds on the previous result.
+You create complex apps through iteration. Trying to specify everything up front often leads to overstuffed prompts that Mentor struggles to interpret. Instead, start with a broad description and refine incrementally. Each prompt builds on the previous result.
 
 * **Start broad.** Describe the overall app concept first. Let Mentor generate a foundation with the core data model, main screens, and basic roles.
 * **Refine in small steps.** Add one feature or adjustment per prompt rather than combining multiple changes.
@@ -103,7 +104,7 @@ Example: "Track Products (Name, SKU, Price, Stock) and Orders (OrderID, Customer
 
 ## Decomposition
 
-Complex requirements become clearer when broken into focused requests. Instead of describing an entire app in one prompt, separate concerns: data model first, then screens, then permissions, then refinements. Each prompt addresses one aspect.
+Complex requirements become clearer when broken into focused requests. Separate concerns: describe the data model first, then screens, then permissions, then refinements. Each prompt addresses one aspect.
 
 Decomposition reduces the chance of conflicting instructions and makes it easier to identify what went wrong when results don't match expectations. If a single prompt produces unexpected results, you can isolate which part caused the issue.
 

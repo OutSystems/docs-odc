@@ -1,5 +1,5 @@
 ---
-summary: Learn how to configure and integrate external data sources with AI search services for use in OutSystems Developer Cloud (ODC).
+summary: "ODC AI Agent Builder data sources: configure Azure AI Search or Amazon Kendra to enable RAG-based generative AI search on your enterprise data."
 tags: data integration, cloud services, ai search services, search service configuration
 locale: en-us
 guid: 425ba4ef-f4a7-42e1-9687-88a5e5021336

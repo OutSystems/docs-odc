@@ -1,6 +1,11 @@
 ---
-summary: Explore lifecycle events and data handling in OutSystems Developer Cloud (ODC) for mobile and web app development.
-tags: application lifecycle management, event handling in applications
+summary: ODC screen and block lifecycle events — On Initialize, On Ready, On Render, On After Fetch, and On Destroy — control when your logic runs.
+tags:
+  - Aggregates
+  - Blocks
+  - Events
+  - Lifecycle
+  - Screens
 locale: en-us
 guid: 91700588-62e6-4527-a323-426c81f47505
 app_type: mobile apps, reactive web apps

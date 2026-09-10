@@ -1,6 +1,9 @@
 ---
 summary: Avoid ebabling Expand Inline property of SQL Query Parameter.
-tags: sql injection, security, query parameters, performance, technical debt
+tags:
+  - Security
+  - SQL
+  - Technical Debt
 guid: de111634-1c2f-4d83-b60b-1b8ede727ce4
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -11,7 +14,6 @@ coverage-type:
   - remember
 audience:
   - Developer
-  - Platform administrator
   - Tech lead
 outsystems-tools:
   - odc studio

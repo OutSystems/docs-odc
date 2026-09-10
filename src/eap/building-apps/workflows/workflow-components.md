@@ -1,6 +1,7 @@
 ---
 summary: Implement and manage workflow nodes using OutSystems Developer Cloud (ODC). Learn about different node statuses including Running, Waiting, and Error.
-tags: workflow implementation, workflow editor, workflow nodes, workflow statuses, outsystems developer cloud
+tags:
+  - Workflows
 guid: e9f56ae4-aea1-411e-8ddd-6391e0b51fcc
 locale: en-us
 app_type: reactive web apps

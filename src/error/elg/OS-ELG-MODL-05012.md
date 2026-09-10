@@ -12,6 +12,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-osignore-field-error
 ---
 
 # OS-ELG-MODL-05012

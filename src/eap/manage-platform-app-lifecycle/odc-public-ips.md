@@ -213,7 +213,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 
 ## Authentication with external identity providers {#authentication-external-idp}
 
-When your users authenticate through an external identity provider (IdP), the authentication requests are sent from the ODC identity egress IP addresses. If your IdP is hosted in a private network, you must allow inbound access from the ODC identity egress IP addresses based on your ODC region. The same IP addresses apply to all stage types (Development, Non-production, and Production).
+When your users authenticate through an external identity provider (IdP) or custom domain, the authentication requests are sent from the ODC identity egress IP addresses. If your IdP or custom domain is hosted in a private network with firewall or IP filtering, you must allow inbound access from the ODC identity egress IP addresses based on your ODC region. The same IP addresses apply to all stage types (Development, Non-production, and Production).
 
 For background on the network requirements and the protocol-based security model, refer to [Network considerations](external-idps/intro.md#network-considerations).
 

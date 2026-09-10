@@ -4,6 +4,7 @@ tags:
   - AI
   - Agentic
   - Authentication
+  - External Authentication
   - OAuth
 guid: 8764e4f7-25f3-4a21-b6a9-000c59f4a93a
 locale: en-us

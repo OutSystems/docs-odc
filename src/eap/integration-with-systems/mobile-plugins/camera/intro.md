@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports the Camera plugin for capturing and editing media in mobile apps, as demonstrated in the Camera Sample App.
+summary: ODC Camera plugin lets you take photos, record video, and select media from the gallery in mobile apps and PWAs, with error handling guidance.
 tags: plugin implementation, media capture, user interface design, error handling, mobile app development
 locale: en-us
 guid: 6df6f491-46e4-434f-924e-043929958fef

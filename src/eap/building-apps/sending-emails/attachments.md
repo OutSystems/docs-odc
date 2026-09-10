@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables users to attach files to emails by defining attachment properties in ODC Studio.
+summary: "ODC email attachments: attach single or multiple files in ODC Studio using the Send Email node and Attachment data structure."
 tags: email integration, file handling, pdf attachments, application logic, user guides
 locale: en-us
 guid: b03f90a8-d437-4f61-a08b-dda12e8ebbfe

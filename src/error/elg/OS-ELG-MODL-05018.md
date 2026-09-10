@@ -1,6 +1,9 @@
 ---
 summary: The class that implements the interface decorated with OSInterface '<InterfaceName>' must be public.
-tags: error handling, external libraries, c# programming, interface implementation, public access modifiers
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: 536ffe0b-b810-4c80-b6f8-ecb0c60794d3
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -8,7 +11,6 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

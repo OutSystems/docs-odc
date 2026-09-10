@@ -1,5 +1,5 @@
 ---
-summary: The number of records fetched from the database is not set in the SQL query.
+summary: ODC SQL query unlimited records cause unnecessary I/O and memory use; add a LIMIT clause in Aurora PostgreSQL to restrict records fetched.
 tags: sql query optimization, database performance, memory consumption, data retrieval, aurora postgresql
 guid: d6d8dc05-4263-4561-923c-31e9598f20fc
 locale: en-us

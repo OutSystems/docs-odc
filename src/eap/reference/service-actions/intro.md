@@ -1,6 +1,9 @@
 ---
-summary: OutSystems Developer Cloud (ODC) features built-in system actions accessible through the Logic tab for both client and server actions.
-tags: system actions, api integration, data access, email services, ai integration
+summary: Service actions in OutSystems Developer Cloud (ODC) support AI agent builder integration via CallAgentV2, available in the Logic tab in ODC Studio.
+tags:
+  - Agentic
+  - AI
+  - Logic
 locale: en-us
 guid: 6b117820-fdd5-4224-88fb-3160685395c5
 app_type: mobile apps, reactive web apps

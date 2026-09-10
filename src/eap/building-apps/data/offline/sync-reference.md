@@ -1,6 +1,9 @@
 ---
 summary: "ODC sync framework reference for mobile apps: OnSync system event, OnSyncStart/Complete/Error screen events, and sync configuration properties."
-tags: data synchronization, offline support, mobile app development, client-server architecture, sync configuration
+tags:
+  - Data Synchronization
+  - Events
+  - Mobile app
 locale: en-us
 guid: 265632d0-77ce-4f71-88a0-9c1e75074949
 app_type: mobile apps

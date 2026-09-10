@@ -6,6 +6,8 @@ figma:
 coverage-type:
   - apply
 topic:
+  - build-agent-flow
+  - test-agentic-app
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

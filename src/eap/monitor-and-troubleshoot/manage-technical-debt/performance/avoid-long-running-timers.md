@@ -1,5 +1,5 @@
 ---
-summary: Avoid running Timers for longer than 30 minutes.
+summary: ODC long-running Timers exceeding 30 minutes risk reprocessing; use the wake timer pattern to reschedule and avoid data inconsistency.
 tags: timers, timeout, error handling, scheduler, rescheduling
 guid: 5a76f1b1-3582-46f9-9ad6-ef15bacd55a4
 locale: en-us

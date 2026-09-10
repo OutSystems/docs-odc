@@ -1,6 +1,9 @@
 ---
 summary: Learn how to  convert an excel object to a Record List in ODC Studio
-tags: excel to record list, data import, server actions, outsystems, reactive web apps
+tags:
+  - Data
+  - Entities
+  - Logic
 guid: f597eb92-f243-48a3-abd8-fc2fffab2ff2
 locale: en-us
 app_type: mobile apps, reactive web apps

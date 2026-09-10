@@ -7,11 +7,16 @@ coverage-type:
   - understand
   - remember
 topic:
+  - ansi-92-syntax-basics
+  - sql-query-execution
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
   - Developer
-tags: sql syntax, ansi-92, external entities, sql queries
+tags:
+  - Entities
+  - External Databases
+  - SQL
 outsystems-tools:
   - odc studio
 helpids: 30583

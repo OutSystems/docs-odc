@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables email management and configuration through ODC Studio and ODC Portal using SMTP.
+summary: ODC emails let you design content with widgets, send via SMTP, and configure per-stage settings in ODC Studio and ODC Portal.
 tags: email configuration, smtp integration
 locale: en-us
 guid: F826D84E-BF79-4287-9322-1E00E198A06E

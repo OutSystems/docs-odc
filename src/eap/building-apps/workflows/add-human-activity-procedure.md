@@ -1,6 +1,9 @@
 ---
 summary: Learn how to add a human activity to your workflow
-tags: workflow management, user task assignment, application development, event handling, odc
+tags:
+  - Events
+  - Roles
+  - Workflows
 locale: en-us
 guid: 3252a375-0332-4979-8e52-3205215fd0fa
 app_type: mobile apps, reactive web apps

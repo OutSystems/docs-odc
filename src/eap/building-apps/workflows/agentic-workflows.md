@@ -6,12 +6,17 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 coverage-type:
   - remember
   - understand
+  - apply
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
-tags: agentic workflows, automatic activities, parallel workflow, business processes, odc portal
+tags:
+  - Agentic
+  - AI
+  - Business Processes
+  - Workflows
 outsystems-tools:
   - odc portal
 helpids:

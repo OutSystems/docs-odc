@@ -1,5 +1,12 @@
 ---
-tags: ui patterns, timeline implementation
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Web
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) features the Timeline Item UI Pattern for displaying events in chronological order.
 locale: en-us
 guid: e420ff2a-afcd-4ca6-9d65-9e42ee8d5213

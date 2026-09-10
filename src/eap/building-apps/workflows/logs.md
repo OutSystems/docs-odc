@@ -1,6 +1,11 @@
 ---
 summary: Introduction to ODC workflow logs.
-tags: workflow logs, business process management, troubleshooting, process analysis, workflow monitoring
+tags:
+  - Business Processes
+  - Logging
+  - Monitoring
+  - Troubleshooting
+  - Workflows
 outsystems-tools:
   - odc portal
 guid: 3c5d3179-bef9-43ca-9636-90c4d40aa61f

@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) is not mentioned in the provided article about setting up Amazon Kendra with Amazon S3 as a data source.
+summary: Amazon Kendra with Amazon S3 as a data source for OutSystems Developer Cloud (ODC) AI Agent Builder setup steps.
 tags: cloud services, aws, amazon s3, search services, amazon kendra
 locale: en-us
 guid: c0920667-ced6-4aeb-b4fa-a096244c406f

@@ -1,6 +1,12 @@
 ---
 summary: Learn how to create and utilize a theme library in OutSystems Developer Cloud (ODC) to enhance app branding and consistency.
-tags: ui design, branding
+tags:
+  - Front-End
+  - Layouts
+  - Libraries
+  - OutSystems UI
+  - Themes
+  - UI
 locale: en-us
 guid: ca470c96-62e3-4b1b-9279-af09006e8042
 app_type: mobile apps, reactive web apps

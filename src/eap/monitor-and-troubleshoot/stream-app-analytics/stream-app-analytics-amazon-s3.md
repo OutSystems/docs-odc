@@ -1,6 +1,9 @@
 ---
 summary: Learn how to stream observability data from ODC to Amazon S3 by setting up the OpenTelemetry Collector and configuring the log streaming service.
-tags: aws s3, opentelemetry, observability
+tags:
+  - Infrastructure
+  - Logging
+  - Monitoring
 guid: 96ba49a9-328c-49ca-8530-d61b9a1a7cfe
 locale: en-us
 app_type: mobile apps, reactive web apps

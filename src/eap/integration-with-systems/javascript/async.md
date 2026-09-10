@@ -1,5 +1,5 @@
 ---
-summary: Explore asynchronous JavaScript code handling in ODC for efficient non-blocking operations in mobile and reactive web apps.
+summary: Asynchronous JavaScript in OutSystems Developer Cloud (ODC) uses Promises and `$resolve()`/`$reject()` to handle non-blocking client actions in apps.
 tags: asynchronous javascript, promises, api handling, javascript best practices, code optimization
 locale: en-us
 guid: 93DE96B7-D143-43EB-B5FD-163D15524CA0

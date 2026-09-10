@@ -1,6 +1,9 @@
 ---
 summary: Understand how to access and utilize the OpenID Connect Discovery document in OutSystems Developer Cloud (ODC) for streamlined user authentication.
-tags: openid connect, oidc discovery document, user authentication, json configuration, endpoint configuration
+tags:
+  - Authentication
+  - End-user Authentication
+  - OIDC
 outsystems-tools:
   - odc portal
 guid: 5a77f214-dc04-4629-ac04-cd51a89e5843

@@ -13,7 +13,11 @@ audience:
   - Architect
   - Platform administrator
   - Tech lead
-tags: self-hosted,responsibility model,cloud,infrastructure,outsystems
+tags:
+  - Architecture
+  - Best Practices
+  - Infrastructure
+  - Security
 outsystems-tools:
   - odc portal
   - self hosted console

@@ -1,5 +1,5 @@
 ---
-summary: Explore file management capabilities in mobile apps using the File Plugin on OutSystems Developer Cloud (ODC).
+summary: File Plugin version 2 for ODC mobile apps lets you write, copy, and list files on-device using WriteFile, Copy, and ListDirectory actions with binary data support.
 tags: file management, plugin integration, mobile app development, binary data handling, offline support
 locale: en-us
 guid: c2174075-3813-431b-8254-637c6a5e7d69

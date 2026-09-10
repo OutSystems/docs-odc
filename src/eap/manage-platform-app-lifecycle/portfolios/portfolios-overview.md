@@ -21,6 +21,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - asset-and-config-scope
+  - centralized-user-access
+  - portfolio-overview
 isautopublish: true
 ---
 

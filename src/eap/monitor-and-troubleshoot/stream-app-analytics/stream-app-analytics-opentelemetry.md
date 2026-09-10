@@ -1,6 +1,9 @@
 ---
 summary: Set up the OpenTelemetry Collector in OutSystems platform for receiving logs in Datadog, Splunk, or Amazon S3.
-tags: opentelemetry collector,apm tools,logs ingestion,datadog,splunk
+tags:
+  - Infrastructure
+  - Logging
+  - Monitoring
 guid: 9c440428-9e95-4e19-b96a-4bc0dd9ef098
 locale: en-us
 app_type: mobile apps,reactive web apps

@@ -21,6 +21,9 @@ coverage-type:
   - remember
   - apply
 isautopublish: true
+topic:
+  - keystore-plugin-actions
+  - secure-keystore-access
 ---
 
 # Key Store plugin

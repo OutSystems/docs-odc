@@ -12,7 +12,10 @@ platform-version: odc
 audience:
   - Architect
   - Developer
-tags: ai systems, agentic patterns, sequential agent, loop agent, outsystems developer cloud
+tags:
+  - Agentic
+  - AI
+  - Architecture
 outsystems-tools:
   - odc studio
 helpids:

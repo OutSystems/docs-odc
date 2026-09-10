@@ -1,6 +1,10 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports the Master Detail Pattern for displaying lists and their details in applications.
-tags: ui patterns, data management
+summary: "Master Detail Pattern in OutSystems Developer Cloud (ODC): build a list-detail view using aggregates, filters, and client actions in ODC Studio."
+tags:
+  - Aggregates
+  - OutSystems UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 2839f103-9cc0-4712-b9df-d3cd6cc805e9
 app_type: mobile apps, reactive web apps

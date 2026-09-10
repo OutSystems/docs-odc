@@ -8,6 +8,9 @@ platform-version: odc
 figma:
 coverage-type:
   - remember
+topic:
+  - detect-render-completion
+  - manipulate-screen-dom
 audience:
   - Developer
   - Front-end developer

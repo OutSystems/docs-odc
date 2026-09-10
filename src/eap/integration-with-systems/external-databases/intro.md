@@ -8,9 +8,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 audience:
-  - Platform administrator
   - Developer
-  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal

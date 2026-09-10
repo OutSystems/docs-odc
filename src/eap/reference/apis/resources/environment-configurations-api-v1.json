@@ -2501,6 +2501,10 @@
       "description": "Manage built-in domain prefixes for organizations and environments."
     },
     {
+      "name": "External Trust Chain Certificates",
+      "description": "Endpoints to manage external trust chain certificates"
+    },
+    {
       "name": "IP Filters",
       "description": "Create, update, and delete IP filter groups and rules."
     },

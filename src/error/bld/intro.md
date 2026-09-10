@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - 1-click-publish-errors
 ---
 
 # Build Errors

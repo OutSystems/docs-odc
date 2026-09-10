@@ -19,6 +19,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - configure-csp-ios
+  - csp-misconfiguration-risks
+  - csp-mobile-app-propagation
 isautopublish: true
 ---
 # Content security policy

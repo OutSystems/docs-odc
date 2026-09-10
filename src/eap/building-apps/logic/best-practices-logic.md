@@ -1,6 +1,12 @@
 ---
 summary: Learn the best practices for creating your app's logic.
-tags: best practices, app logic, performance optimization, mobile apps, reactive web apps
+tags:
+  - Aggregates
+  - Best Practices
+  - Caching
+  - Logic
+  - Performance
+  - Security
 outsystems-tools:
   - odc studio
 guid: b3c30de3-477e-4f09-99d0-e4b2e711f917

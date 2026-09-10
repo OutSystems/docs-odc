@@ -7,6 +7,9 @@ coverage-type:
   - understand
   - apply
 topic:
+  - capacitor-plugin-layers
+  - choose-plugin-approach
+  - plan-custom-capacitor-plugin
 app_type: mobile apps
 platform-version: odc
 audience:

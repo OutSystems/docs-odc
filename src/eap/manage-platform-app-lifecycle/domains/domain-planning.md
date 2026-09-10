@@ -22,6 +22,10 @@ coverage-type:
   - understand
   - apply
   - evaluate
+topic:
+  - finalize-subdomain-switch
+  - plan-domains-early
+  - rebuild-native-mobile-apps-domain-change
 isautopublish: true
 ---
 

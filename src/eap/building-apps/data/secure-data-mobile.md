@@ -7,6 +7,7 @@ coverage-type:
   - understand
   - remember
 topic:
+  - mobile-data-security
 app_type: mobile apps
 platform-version: odc
 audience:

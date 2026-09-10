@@ -33,7 +33,7 @@ isautopublish: true
 Agentic development in OutSystems combines three components to turn natural language into app structures. This architecture applies to both Mentor Web and Mentor Studio. Together with tenant context, these components form the OutSystems Enterprise Context Graph. This graph gives AI agents the context they need to understand your apps, data, and dependencies.
 
 * **AI agents** interpret natural language and map it to OutSystems development patterns.
-* **OutSystems Model** (the app model, not an AI model) represents the app's structure, data, logic, and UI at a high level of abstraction.
+* **OutSystems Model** represents the app's structure, data, logic, and UI at a high level of abstraction, distinct from the AI model that interprets your prompts.
 * **OutSystems compiler** translates the app model into deployable code, enforcing security and performance standards.
 
 Understanding how these components work together explains why explicit prompts produce better results than vague descriptions.
@@ -56,11 +56,11 @@ A populated development environment improves results. If your tenant has entitie
 
 ## OutSystems Model
 
-The OutSystems Model is a structured representation of an app's data, logic, and UI. All OutSystems apps are built on this model, not just those built through agentic development. Whether you build in ODC Studio or use Mentor, you work with the same app model.
+The OutSystems Model is a structured representation of an app's data, logic, and UI. All OutSystems apps are built on this model, including those built through agentic development. Whether you build in ODC Studio or use Mentor, you work with the same app model.
 
-Agentic development creates and modifies the app model, not raw code. Working at this level keeps generated apps consistent and easy to maintain in ODC Studio.
+Agentic development works at the app model level, generating and modifying model elements directly. Working at this level keeps generated apps consistent and straightforward to maintain in ODC Studio.
 
-The app model captures what to build, not how to build it. This brings three advantages:
+The app model captures what to build; the compiler determines how to build it. This brings three advantages:
 
 **ODC standards.** The compiler enforces security, performance, and architecture rules when it turns the model into code. AI-generated apps follow the same standards as hand-built apps.
 
@@ -90,7 +90,7 @@ Refinement prompts repeat the interpretation and generation phases, applying cha
 
 ## Modification flow (Mentor Studio)
 
-Mentor Studio works differently from Mentor Web. Instead of building a new app, it reads the existing model and applies targeted changes.
+Mentor Studio works differently from Mentor Web. Mentor Studio reads the existing model and applies targeted changes to it.
 
 ![ODC Studio modification flow showing prompts flowing through AI Services with tenant context and agent processing to external LLM providers](images/ai-modify-app-prompts-ide-architecture-diag.png "Mentor Studio architecture")
 

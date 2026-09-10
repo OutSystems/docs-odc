@@ -8,6 +8,9 @@ coverage-type:
   - apply
   - unblock
 topic:
+  - adapt-cordova-hooks-apis
+  - migrate-cordova-settings
+  - plugin-extensibility-use-cases
 app_type: mobile apps
 platform-version: odc
 audience:

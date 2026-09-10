@@ -14,8 +14,8 @@ outsystems-tools:
 coverage-type:
   - evaluate
 topic:
-  - mobile-ui-frameworks
-  - ui-comparison
+  - choose-ui-framework-mobile
+  - compare-ui-frameworks-mobile
 ---
 
 # Mobile UI versus OutSystems UI
