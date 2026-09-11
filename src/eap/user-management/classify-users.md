@@ -12,10 +12,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - users-in-os
+  - configure-user-domains
   - user-types
   - users-licensing
-  - user-management
 audience:
   - Platform administrator
 outsystems-tools:
