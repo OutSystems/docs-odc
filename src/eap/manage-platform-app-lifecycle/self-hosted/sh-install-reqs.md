@@ -93,7 +93,8 @@ The following table lists the details of the necessary outbound connectivity fro
 | Stage namespace | Stage database address defined during setup | TCP 5432 | Self-hosted stage database |
 | Namespace: `runtime-services` | All the stage’s database addresses defined during setup | TCP 5432 | Introspection over all self-hosted stage databases |
 | All cluster worker nodes | `public.ecr.aws/j0s5s8b0/ga/*` | TCP 443 | Pull container images from OutSystems ECR |
-| Cluster <br/> Admin workstation | `public.ecr.aws/j0s5s8b0/ga/*` | TCP 443 | Download Self-hosted configurator and Helm charts |
+| Cluster Admin workstation | `public.ecr.aws/token*` | TCP 443 | Authenticate to ECR Public (required for Helm chart pull) |
+| Cluster Admin workstation | `public.ecr.aws/j0s5s8b0/ga/*` | TCP 443 | Download Self-hosted configurator and Helm charts |
 | Cluster <br/> Admin workstation | `outsystems.github.io` | TCP 443 | Download Self-hosted installer script |
 | Cluster <br/> Admin workstation | `dl.k8s.io` | TCP 443 | Download kubectl binary (optional) |
 | Cluster <br/> Admin workstation | `raw.githubusercontent.com` | TCP 443 | Download Helm installation script (optional) |
