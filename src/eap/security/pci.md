@@ -7,7 +7,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - pci-odc-compliance
+  - pci-compliance
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
