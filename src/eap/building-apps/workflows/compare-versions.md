@@ -7,7 +7,7 @@ coverage-type:
   - apply
 topic:
   - compare-workflow-versions
-  - workflow-diff-color-coding
+  - workflow-diff-color-coding-odc
 app_type: reactive web apps
 platform-version: odc
 audience:
