@@ -20,7 +20,7 @@ coverage-type:
   - remember
 topic:
   - passwords
-  - register-user-system-actions
+  - register-user-system-actions-odc
   - update-user-email
 isautopublish: true
 ---

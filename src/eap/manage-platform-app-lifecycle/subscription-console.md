@@ -16,7 +16,7 @@ coverage-type:
   - remember
 topic:
   - view-organization-regions
-  - view-subscription-entitlements
+  - view-subscription-entitlements-odc
 isautopublish: true
 ---
 
