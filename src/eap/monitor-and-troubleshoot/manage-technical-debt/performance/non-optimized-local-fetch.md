@@ -14,6 +14,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - client-event-fetch
 ---
 # Non-optimized local data fetch
 
