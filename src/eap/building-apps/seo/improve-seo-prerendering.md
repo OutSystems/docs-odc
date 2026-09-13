@@ -23,7 +23,7 @@ isautopublish: true
 topic:
   - configure-prerender-custom-domain-ssl
   - expose-sitemap-robots-through-prerender
-  - integrate-seo-prerender
+  - integrate-seo-prerender-odc
 ---
 
 # Improve SEO with prerendering

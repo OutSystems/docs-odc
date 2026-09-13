@@ -6,9 +6,10 @@ audience:
   - Platform administrator
 platform-version: odc
 topic:
+  - avoid-idp-lockout
   - external-idps
-  - idp-openidp
-  - idp-saml
+  - remove-built-in-idp
+  - replace-external-idp
 coverage-type:
   - understand
   - apply

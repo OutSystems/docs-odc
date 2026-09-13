@@ -14,7 +14,7 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 topic:
-  - create-robots-txt-file
+  - create-robots-txt-file-odc
   - generate-dynamic-sitemap
 audience:
   - Front-end developer
