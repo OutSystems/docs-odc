@@ -8,6 +8,8 @@ platform-version: odc
 figma:
 coverage-type:
   - remember
+topic:
+  - detect-device-ready
 audience:
   - Developer
 outsystems-tools:

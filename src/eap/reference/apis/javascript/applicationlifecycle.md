@@ -14,6 +14,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - handle-app-load-status
 ---
 # ApplicationLifecycle
 
