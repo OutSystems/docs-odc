@@ -6,10 +6,7 @@ figma:
 coverage-type:
   - apply
 topic:
-  - role-assignment
-  - creating-users
-  - create-app-role
-  - app-roles
+  - create-user-assign-role-rest-api
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

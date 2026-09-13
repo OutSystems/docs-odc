@@ -19,9 +19,11 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
+  - build-self-registration-form
+  - finish-user-registration
   - passwords
   - self-registration
-  - user-self-registration
+  - validate-password-confirmation
 helpids: 
 ---
 
