@@ -5,7 +5,8 @@ summary: Avoid having ODC apps consuming a REST API directly without an ODC libr
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3780-15&t=QElPvbqHjXZ3tJiK-1
 coverage-type:
   - unblock
-topic: 
+topic:
+  - encapsulate-rest-apis
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
