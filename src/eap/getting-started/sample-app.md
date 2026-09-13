@@ -24,9 +24,11 @@ coverage-type:
   - apply
 topic:
   - creating-app-from-scratch
-  - publish-an-app
-  - test-share-app-users
+  - generate-app-from-prompt
+  - import-data-model-excel
+  - publish-an-app-odc
   - screen-scaffolding
+  - test-share-app-users
 isautopublish: true
 ---
 

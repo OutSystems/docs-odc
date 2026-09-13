@@ -8,6 +8,8 @@ platform-version: odc
 figma:
 coverage-type:
   - remember
+topic:
+  - identify-current-screen
 audience:
   - Developer
   - Front-end developer
