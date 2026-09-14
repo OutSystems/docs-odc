@@ -8,6 +8,8 @@ platform-version: odc
 figma:
 coverage-type:
   - remember
+topic:
+  - discover-js-api-modules
 audience:
   - Developer
   - Front-end developer
