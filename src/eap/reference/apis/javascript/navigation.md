@@ -8,6 +8,10 @@ platform-version: odc
 figma:
 coverage-type:
   - remember
+topic:
+  - intercept-navigation-events
+  - navigate-with-animations
+  - override-back-navigation
 audience:
   - Developer
   - Front-end developer

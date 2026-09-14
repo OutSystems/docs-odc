@@ -16,8 +16,8 @@ coverage-type:
   - remember
 topic:
   - compound-data
+  - data-types
   - datetime-utc-behavior
-  - odc-data-types
 ---
 
 # Data types and conversions
