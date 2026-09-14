@@ -8,7 +8,7 @@ coverage-type:
   - apply
   - evaluate
 topic:
-  - add-icon-widget
+  - add-icon-widget-odc
   - choose-icon-library
   - resolve-icon-library-conflicts
 app_type: mobile apps,reactive web apps
