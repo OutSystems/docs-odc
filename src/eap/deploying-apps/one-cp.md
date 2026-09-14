@@ -20,6 +20,9 @@ coverage-type:
   - understand
   - apply
 isautopublish: true
+topic:
+  - 1-click-publish-steps
+  - odc-publish-message
 ---
 
 # Understanding 1-Click Publish
