@@ -2,7 +2,6 @@
 summary: Add AI models in OutSystems Developer Cloud (ODC) for mobile and reactive web apps.
 tags:
   - AI
-  - Mobile app
 guid: af45db6e-ac0f-4ab9-8e4a-4ba8fd559812
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -18,6 +17,7 @@ coverage-type:
 audience:
   - Developer
   - Front-end developer
+  - Platform administrator
 topic:
 isautopublish: true
 ---
@@ -31,16 +31,18 @@ ODC supports connections to AI models from multiple providers, offering flexibil
 
 ### Natively supported providers
 
-* **Amazon Bedrock** – Compatible with the [Bedrock Converse API](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) for access to multiple foundation models.
-* **Azure OpenAI** – Microsoft OpenAI service for enterprise-grade AI models.
-* **Databricks** – AI models deployed and managed on the Databricks platform.
-* **Mistral** – Mistral AI models for advanced language and reasoning tasks.
-* **Gemini** – Google's generative AI models for text and multimodal use cases.
-* **OpenAI** – Direct integration with OpenAI's API for GPT and other models.
-* **Anthropic** – Anthropic Claude family of models for safe and helpful AI.
-* **Cohere** – Cohere models for natural language understanding and generation.
+ODC provides built-in configuration for AI models from the following providers, so you don't need to build a custom connector:
+
 * **AI21** – AI21 Labs' Jurassic models for text generation and comprehension.
+* **Amazon Bedrock** – Compatible with the [Bedrock Converse API](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) for access to multiple foundation models.
+* **Anthropic** – Anthropic Claude family of models for safe and helpful AI.
+* **Azure OpenAI** – Microsoft OpenAI service for enterprise-grade AI models.
+* **Cohere** – Cohere models for natural language understanding and generation.
+* **Databricks** – AI models deployed and managed on the Databricks platform.
+* **Gemini** – Google's generative AI models for text and multimodal use cases.
 * **IBM watsonx.ai** – IBM enterprise AI platform for building and deploying models.
+* **Mistral** – Mistral AI models for advanced language and reasoning tasks.
+* **OpenAI** – Direct integration with OpenAI's API for GPT and other models.
 
 ### Custom connections
 
@@ -66,11 +68,15 @@ The following tables shows the current limits of the available Trial Models.
 
 #### GPT-5
 
+The following table shows the trial limits for GPT-5.
+
 | Context | Maximum number of Requests | Requests rate limit | Maximum number of Tokens | Tokens Rate limit |
 | -- | -- | -- | -- | -- |
 | Licensed Customers | 100 | N.A. | N.A. | N.A. |
 
 #### Claude Haiku 4.5
+
+The following table shows the trial limits for Claude Haiku 4.5.
 
 | Context | Maximum number of Requests | Requests rate limit | Maximum number of Tokens | Tokens Rate limit |
 | -- | -- | -- | -- | -- |
@@ -78,6 +84,8 @@ The following tables shows the current limits of the available Trial Models.
 | Personal Edition | 3000 | 30 per minute | 5 Million | 100000 per minute |
 
 #### Amazon Nova Pro
+
+The following table shows the trial limits for Amazon Nova Pro.
 
 | Context | Maximum number of Requests | Requests rate limit | Maximum number of Tokens | Tokens Rate limit |
 | -- | -- | -- | -- | -- |
@@ -260,6 +268,8 @@ Use these parameters when configuring IBM watsonx.ai model endpoints.
 
 ### Anthropic parameters
 
+Use these parameters when configuring Anthropic model endpoints.
+
 | Parameter | Description | Notes |
 | :---------- | :-------------------------------------- | :----------------------------------- |
 | Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Anthropic model connection. |
@@ -269,6 +279,8 @@ Use these parameters when configuring IBM watsonx.ai model endpoints.
 | Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ### Cohere parameters
+
+Use these parameters when configuring Cohere model endpoints.
 
 | Parameter | Description | Notes |
 | :---------- | :-------------------------------------- | :----------------------------------- |
@@ -280,6 +292,8 @@ Use these parameters when configuring IBM watsonx.ai model endpoints.
 
 ### AI21 parameters
 
+Use these parameters when configuring AI21 model endpoints.
+
 | Parameter | Description | Notes |
 | :---------- | :-------------------------------------- | :----------------------------------- |
 | Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same AI21 model connection. |
@@ -290,4 +304,6 @@ Use these parameters when configuring IBM watsonx.ai model endpoints.
 
 ## Next steps
 
-[Integrating AI models and search services](integrate-ai-models-logic-rag.md)
+To call the AI models you configured here from your app logic, continue with the following:
+
+* [Integrating AI models and search services](integrate-ai-models-logic-rag.md)

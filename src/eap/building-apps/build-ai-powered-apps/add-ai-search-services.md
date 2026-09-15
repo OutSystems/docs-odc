@@ -19,6 +19,7 @@ tags:
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 
 # Adding search services
@@ -58,4 +59,6 @@ Prepare your content for optimal RAG performance before integrating a search ser
 
 ## Next steps
 
-[Integrating AI models and search services](integrate-ai-models-logic-rag.md)
+To call the search services you configured here from your app logic, continue with the following:
+
+* [Integrating AI models and search services](integrate-ai-models-logic-rag.md)
