@@ -15,6 +15,10 @@ audience:
 outsystems-tools:
   - odc portal
   - workflow builder
+topic:
+  - manage-workflow-errors
+  - manage-workflow-history
+  - search-workflow-editor
 coverage-type:
   - understand
   - evaluate

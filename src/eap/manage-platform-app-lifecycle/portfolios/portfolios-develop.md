@@ -19,6 +19,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - evaluate
+topic:
+  - per-portfolio-configs
+  - portfolio-boundary-design
+  - reuse-across-portfolios
 isautopublish: true
 ---
 

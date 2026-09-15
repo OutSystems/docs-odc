@@ -20,6 +20,10 @@ coverage-type:
   - understand
   - apply
   - evaluate
+topic:
+  - dual-exposure-pattern
+  - identify-cross-portfolio-needs
+  - own-shared-portfolio-libraries
 isautopublish: true
 ---
 
