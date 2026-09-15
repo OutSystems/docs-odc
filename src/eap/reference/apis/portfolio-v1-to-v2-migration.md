@@ -18,6 +18,8 @@ outsystems-tools:
 isautopublish: true
 coverage-type:
   - apply
+topic:
+  - migrate-portfolio-api-v1-v2
 ---
 
 # Migrate from Portfolio API v1 to v2
