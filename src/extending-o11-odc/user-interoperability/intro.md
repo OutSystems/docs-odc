@@ -6,6 +6,9 @@ figma: https://www.figma.com/design/rWH1MmckD8Wz3H9D2QQEiT/Platform-Unification-
 coverage-type:
   - understand
 topic:
+  - interop-end-user-licensing
+  - o11-odc-interop-limitations
+  - o11-odc-sso-overview
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
