@@ -17,6 +17,9 @@ audience:
 coverage-type:
   - understand
   - apply
+topic:
+  - create-sap-deep-insert
+  - create-sap-entity-actions
 platform-version: odc
 figma: https://www.figma.com/design/AOyPMm22N6JFaAYeejDoge/Configuration-management?node-id=3711-10&t=3EmFUNoGU0AIgLBT-1
 ---
