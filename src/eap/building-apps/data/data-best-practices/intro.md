@@ -1,6 +1,11 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) data best practices: entity indexing, settings, binary data isolation, and purging strategies for scalable apps."
-tags: data management, best practices, settings, app configurations, security
+tags:
+  - Best Practices
+  - Data
+  - Entities
+  - Indexes
+  - Settings
 guid: 858e8c87-2c13-4803-b279-008726bb77ea
 locale: en-us
 app_type: mobile apps, reactive web apps
