@@ -21,6 +21,9 @@ audience:
   - Platform administrator
   - Tech lead
 topic:
+  - capacity-limits
+  - optimize-usage
+  - resource-capacity
 helpids: 30559,30560,30561,30562
 isautopublish: true
 ---

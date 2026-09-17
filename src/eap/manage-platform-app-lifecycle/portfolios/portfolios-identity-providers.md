@@ -17,6 +17,9 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - avoid-idp-lockout
+  - idp-assignment-scopes
 isautopublish: true
 ---
 

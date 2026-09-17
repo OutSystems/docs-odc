@@ -17,6 +17,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - configure-exit-url
 isautopublish: true
 ---
 

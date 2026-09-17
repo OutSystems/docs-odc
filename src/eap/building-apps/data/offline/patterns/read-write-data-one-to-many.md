@@ -14,8 +14,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - data-synchronization
+  - data-syncronization
   - offline-synch
+  - one-to-many-sync-pattern
 ---
 
 # Read-Write data one-to-many synchronization pattern
