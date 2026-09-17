@@ -17,6 +17,8 @@ audience:
 coverage-type:
   - remember
   - unblock
+topic:
+  - appshield-shutdown-reasons
 outsystems-tools:
   - odc studio
   - odc portal

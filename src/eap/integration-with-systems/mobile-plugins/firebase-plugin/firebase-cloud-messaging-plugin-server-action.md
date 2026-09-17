@@ -22,6 +22,10 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - cloud-messaging-actions
+  - cloud-messaging-limitations
+  - cloud-messaging-setup
 isautopublish: true
 ---
 

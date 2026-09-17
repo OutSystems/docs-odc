@@ -16,6 +16,10 @@ audience:
   - Developer
 coverage-type:
   - apply
+topic:
+  - capacitor-system-bars
+  - cordova-system-bars
+  - safe-area-insets
 outsystems-tools:
   - none
 isautopublish: true

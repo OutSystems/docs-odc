@@ -20,6 +20,10 @@ tags:
 outsystems-tools:
   - odc studio
 helpids:
+topic:
+  - app-lifecycle-transitions
+  - deep-link-handling
+  - system-back-navigation
 isautopublish: true
 ---
 

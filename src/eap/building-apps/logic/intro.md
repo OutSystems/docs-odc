@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - creating-actions
 ---
 
 # Application logic

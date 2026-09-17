@@ -19,6 +19,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - migrate-cordova-app-to-capacitor
 helpids:
 isautopublish: true
 ---

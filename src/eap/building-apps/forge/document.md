@@ -16,6 +16,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - evaluate
+topic:
+  - document-forge-asset
 ---
 
 # Document your Forge asset
