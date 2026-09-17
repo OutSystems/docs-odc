@@ -17,6 +17,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - cloud-messaging-plugin-reference
 isautopublish: true
 ---
 

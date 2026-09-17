@@ -8,6 +8,9 @@ coverage-type:
   - apply
   - evaluate
 topic:
+  - ansi-92-syntax-basics
+  - o11-entity-handling
+  - oracle-empty-text
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
