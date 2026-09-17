@@ -20,6 +20,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - control-device-keyboard
+  - customize-keyboard-appearance
+  - handle-keyboard-events
 isautopublish: true
 ---
 

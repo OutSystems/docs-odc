@@ -16,6 +16,9 @@ audience:
 outsystems-tools:
   - odc studio
 isautopublish: true
+topic:
+  - keystore-plugin-actions
+  - secure-keystore-access
 ---
 # Key Store plugin reference
 

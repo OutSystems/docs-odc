@@ -17,6 +17,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - compare-locally-saved-apps
+  - merge-locally-saved-apps
+  - odc-studio-commands
 isautopublish: true
 ---
 

@@ -14,7 +14,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - data-synchronization
+  - conflict-detection-sync-pattern
+  - data-syncronization
   - offline-synch
 ---
 
