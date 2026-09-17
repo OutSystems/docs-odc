@@ -11,6 +11,10 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
+topic:
+  - browser-fallbacks
+  - debug-mobile-issues
+  - test-mobile-real-devices
 tags:
   - Best Practices
   - Debugging

@@ -19,9 +19,9 @@ coverage-type:
   - evaluate
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8791-2
 topic:
-  - rest-webservice-data
-  - document-apis
-  - authentication-mechanisms
+  - choose-jwt-signing-key-type
+  - jwk-key-rotation-practices
+  - store-jwt-signing-keys
 helpids:
 ---
 

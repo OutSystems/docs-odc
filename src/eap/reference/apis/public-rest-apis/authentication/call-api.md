@@ -15,6 +15,8 @@ audience:
   - Developer
 coverage-type:
   - apply
+topic:
+  - call-api-with-token
 platform-version: odc
 figma:
 isautopublish: true

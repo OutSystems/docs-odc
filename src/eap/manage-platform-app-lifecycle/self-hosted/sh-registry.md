@@ -8,6 +8,9 @@ coverage-type:
   - remember
   - apply
 topic:
+  - configure-registry-credentials
+  - reopen-self-hosted-configurator
+  - stage-prerequisites
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
