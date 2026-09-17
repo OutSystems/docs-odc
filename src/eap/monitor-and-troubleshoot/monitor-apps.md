@@ -18,6 +18,9 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - monitor-app-issues
+  - odc-observability-data-retention
 isautopublish: true
 ---
 
