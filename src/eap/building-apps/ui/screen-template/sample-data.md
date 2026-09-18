@@ -19,6 +19,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - manage-sample-data
+  - reference-sample-data
 ---
 
 # Sample data

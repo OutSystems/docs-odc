@@ -19,6 +19,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - app-naming-and-urls
 isautopublish: true
 ---
 
