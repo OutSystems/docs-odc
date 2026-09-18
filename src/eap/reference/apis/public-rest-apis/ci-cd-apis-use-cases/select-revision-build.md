@@ -1,7 +1,7 @@
 ---
 guid: a9a8983b-d8c9-4cff-8b02-486912f74051
 locale: en-us
-summary: Learn how to use OutSystems APIs to programmatically retrieve the correct revision and build of an asset to be deployed.
+summary: OutSystems Developer Cloud (ODC) revision and build selection for CI/CD uses Asset Revisions and Build Operations APIs to get a Release build key.
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4757-61&t=jv3UUwJMUhS9RLw4-1
 coverage-type:
   - apply
