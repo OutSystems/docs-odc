@@ -12,7 +12,11 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: ci/cd, deployment, asset management, outsystems api, revision control
+tags:
+  - CI/CD
+  - Deploy
+  - Development lifecycle
+  - REST
 outsystems-tools:
   - odc portal
 helpids:
