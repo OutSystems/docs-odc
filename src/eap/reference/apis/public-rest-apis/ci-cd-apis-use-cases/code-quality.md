@@ -13,7 +13,13 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: code quality analysis, outsystems apis, asset revision, code quality, tech debt basics
+tags:
+  - CI/CD
+  - Deploy
+  - Mentor
+  - Quality Assurance
+  - REST
+  - Technical Debt
 outsystems-tools:
   - odc portal
 helpids:
