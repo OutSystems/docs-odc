@@ -21,6 +21,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - allowlist-odc-public-ips
 isautopublish: true
 ---
 
