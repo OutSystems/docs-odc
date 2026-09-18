@@ -19,6 +19,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - use-breadcrumbs-pattern
 ---
 
 # Breadcrumbs

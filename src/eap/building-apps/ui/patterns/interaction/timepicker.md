@@ -21,6 +21,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - time-picker-reference
+  - use-time-picker-pattern
 ---
 
 # Time Picker

@@ -21,6 +21,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - use-submenu-pattern
 ---
 
 # Submenu
