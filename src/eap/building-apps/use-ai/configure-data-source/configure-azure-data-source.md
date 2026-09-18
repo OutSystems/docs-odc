@@ -12,6 +12,8 @@ outsystems-tools:
   - none
 coverage-type:
   - apply
+topic:
+  - configure-azure-ai-search
 ---
 
 # Set up Azure AI search with blob storage
