@@ -1954,6 +1954,9 @@ knowledge-needs:
     - name: Review delete rules
       id: review-delete-rules
       description: Wants to review foreign key delete rules to remove circular dependencies or multiple cascade paths that block foreign key creation during deployment, so the module can publish successfully.
+    - name: Troubleshoot FK timeout
+      id: troubleshoot-fk-timeout
+      description: Wants to increase the SQL query timeout or check database locks when foreign key creation times out during deployment, so the relationship can be created successfully.
   - name: Exposing data via REST webservices
     id: rest-webservice-data
   - name: Data isolation
@@ -3010,6 +3013,20 @@ knowledge-needs:
         notifications, including when continuing from a Decision outcome or
         after a conditional start event, in ODC's Workflow editor, so that the
         process completes without manual intervention when conditions are met.
+    - name: Add human activity
+      id: add-human-activity
+      description: Wants to add a Human activity to an ODC workflow in the
+        Workflow editor, configuring assignment, destination screen, display
+        message, close conditions, and timeout so the workflow can pause for
+        manual input and continue when the activity completes.
+    - name: Manual task notifications
+      id: manual-task-notifications
+      description: Wants to build custom notifications for pending human
+        activities so users know when a manual workflow task needs attention.
+    - name: Human activity SLA
+      id: human-activity-sla
+      description: Wants to configure an SLA for a human activity in an ODC
+        workflow so the task must complete within a defined timeframe.
     - name: Pause for manual review
       id: pause-for-manual-review
       description: Wants to pause a workflow with a Wait activity until a
@@ -9258,6 +9275,13 @@ knowledge-needs:
         and referencing that file in the app's extensibility configuration,
         so that Capacitor apps enforce certificate pinning without relying
         on Cordova extensibility settings.
+    - name: Choose plugin source
+      id: choose-plugin-source
+      description: Wants to choose the safest plugin source for an ODC
+        mobile app by checking OutSystems-supported plugins first, then
+        following the plugin decision flow and reviewing source,
+        maintenance activity, and security posture when no supported
+        plugin fits.
     - name: Integrate plugin in app
       id: integrate-plugin-in-app
       description: Wants to integrate a Capacitor plugin (official, community,
@@ -10060,6 +10084,13 @@ knowledge-needs:
       KeyStore Plugin, for small sensitive items like authentication tokens, and
       mandatorily re-validating all data server-side, so that mobile app data
       stays protected against device compromise and client-side tampering.
+  - name: Mobile app security
+    id: mobile-app-security
+    description: Wants to reduce a mobile app's attack surface by limiting
+      declared device permissions, configuring a restrictive CSP for the
+      WebView, and pinning server certificates when the app loads external
+      content or handles high-sensitivity data, so that the app resists common
+      platform and network attacks.
   - name: Extensibility configurations
     id: extensibility-configurations
     subtopics:
@@ -13734,6 +13765,14 @@ knowledge-needs:
         environment's apps and web services become reachable over HTTPS
         under the company's own domain instead of the default
         `outsystemsenterprise.com` domain.
+    - name: SSL domain errors
+      id: ssl-domain-errors
+      description: Wants to troubleshoot SSL domain certificate validation
+        errors in LifeTime while configuring a custom SSL domain on
+        OutSystems Cloud, by identifying each validation message, its
+        cause, and the recommended fix for PFX, PEM, ZIP, password,
+        private key, expiration, and chain problems, so that the
+        certificate validates successfully.
     - name: Assign SSL domain to LifeTime
       id: assign-ssl-domain-lifetime
       description: Wants to customize the domain of their LifeTime
@@ -15226,6 +15265,17 @@ knowledge-needs:
         Monitoring section, resetting filters, and using Export to Excel, so
         they have a log file to review or attach to a support case, given
         that Service Center has a limited log retention window.
+  - name: Troubleshooting overview
+    id: troubleshooting-overview
+    description: Wants to find the troubleshooting guides and known issues
+      in the section, then check their causes and how to solve them, so
+      that they can diagnose the issue from the right article.
+  - name: Troubleshoot infra issues
+    id: troubleshoot-infra-issues
+    description: Wants to find the right troubleshooting article for O11 infrastructure
+      issues, including installation, upgrade, configuration, connectivity,
+      application server, database, and platform service problems, so that they can
+      diagnose the problem in the correct section.
   - name: Fix cross-site cookies (O11)
     id: fix-cross-site-cookies-o11
     description: Wants to identify and fix cross-site cookie problems in
