@@ -3005,7 +3005,7 @@ knowledge-needs:
         a triggering event to the Start node in ODC's Workflow editor, so that
         the workflow launches automatically when that event occurs.
     - name: Configure conditional start
-      id: configure-conditional-start
+      id: configure-conditional-start-odc
       description: Wants to add a Conditional Start activity to an existing
         ODC workflow and link it to a business event in ODC's Workflow editor,
         so that the workflow triggers only when that event occurs.
@@ -3016,6 +3016,11 @@ knowledge-needs:
         for identifying the instance, and built-in functions, in ODC's Workflow
         editor, so that workflow instances are easier to identify and
         troubleshoot in logs and the Portal.
+    - name: Workflow built-in functions
+      id: workflow-built-in-functions
+      description: Wants to know which built-in function groups are available in ODC
+        workflow expressions, so they can choose expressions that work in
+        workflows.
     - name: Add decision activity
       id: add-decision-activity
       description: Wants to add a Decision activity to an ODC workflow, defining
@@ -3035,6 +3040,13 @@ knowledge-needs:
         Workflow editor, configuring assignment, destination screen, display
         message, close conditions, and timeout so the workflow can pause for
         manual input and continue when the activity completes.
+    - name: Human activity states
+      id: human-activity-states
+      description: Wants to understand the human activity statuses in an ODC
+        workflow and how HumanActivityOpen, HumanActivityAssign,
+        HumanActivityRelease, ProcessTerminate, and close events change the
+        node between Running, Waiting, Open, Completed, Terminated, and Error
+        states, so they can predict runtime transitions.
     - name: Manual task notifications
       id: manual-task-notifications
       description: Wants to build custom notifications for pending human
@@ -3049,12 +3061,28 @@ knowledge-needs:
         business event occurs, then hand off to a Human activity assigned to
         a role that closes on another event, in ODC's Workflow editor, so that
         a person can complete a required task before the workflow continues.
+    - name: Add wait activity
+      id: add-wait-activity
+      description: Wants to add a Wait activity to an ODC workflow in the
+        Workflow editor and configure its close event, conditions, and
+        timeout so the workflow pauses until the wait ends.
     - name: Create a workflow
       id: create-workflow
       description: Wants to implement a workflow in ODC Portal by creating it
         in the workflow editor, giving it a unique name, selecting the event
         that triggers the Start node, adding steps through to the End node,
         and publishing it, so that the workflow is ready to run in the app.
+    - name: End workflow
+      id: end-workflow
+      description: Wants to understand how an ODC workflow finishes when
+        execution reaches the End node, including how conditional start
+        flows must also reach the End node before the instance status changes
+        to Done.
+    - name: Terminate workflow
+      id: terminate-workflow
+      description: Wants to understand how a Terminate node stops an ODC
+        workflow execution, including how ongoing automatic activities finish
+        before the instance status changes to Done.
     - name: Search workflow editor
       id: search-workflow-editor
       description: Wants to open the workflow editor's search menu using
@@ -3062,6 +3090,12 @@ knowledge-needs:
         flow-steps or properties, edit expressions and outcomes, or add new
         flow-steps, so that they can navigate and edit complex workflows
         faster.
+    - name: Go to flow step
+      id: go-to-flow-step
+      description: Wants to use a Go to a flow step in an ODC workflow to loop back to a
+        previous node and understand where it is valid and which variables
+        remain available after the jump, so that they can model controlled loops
+        without losing required data.
     - name: Manage workflow errors
       id: manage-workflow-errors
       description: Wants to identify, locate, and resolve issues in a
@@ -3088,6 +3122,11 @@ knowledge-needs:
       then to the Production stage, understanding that an impact analysis
       runs in the background before each deployment, so that the workflow
       becomes available to end users.
+  - name: Workflow activity filters
+    id: workflow-activity-filters
+    description: Wants to create an aggregate that filters workflow activity
+      instances by process and activity definition keys so they can build
+      dashboards or task boxes that show only the relevant workflow work.
 - name: Advanced workflows
   guid: 7a84e09e-c48c-404f-8d9f-728b9f78c88c
   topics:
@@ -3905,6 +3944,11 @@ knowledge-needs:
       description: Wants to release a new library version in ODC using semantic
         versioning and release notes, so that consumers can adopt updates with
         clear compatibility expectations.
+    - name: Deploy library version
+      id: deploy-library-version
+      description: Wants to understand whether a new library version in ODC can
+        be deployed by itself from Development to QA, so they know that the
+        library is packaged and deployed with a consuming app instead.
     - name: Review accepted library updates
       id: review-accepted-library-updates
       description: Wants to review accepted library updates in consuming apps or
@@ -4357,6 +4401,15 @@ knowledge-needs:
       id: async-processes-basics
     - name: Triggering processes, process flows
       id: trigger-processes
+    - name: Execute sub-process
+      id: execute-sub-process
+      description: Wants to execute a sub-process from a parent process by using the Execute
+        Process activity in OutSystems 11, so that the runtime creates a
+        sub-process instance, pauses the parent until the sub-process terminates,
+        and then resumes the parent flow.
+    - name: Conditional process start
+      id: conditional-process-start-o11
+      description: Wants to configure a conditional start in an OutSystems 11 process so it starts on create or update entity events and only listens after a dependency source activity has executed.
     - name: Design process flow
       id: design-process-flow
       description: Wants to design the behavior of a process using the Process
@@ -5162,6 +5215,19 @@ knowledge-needs:
         description: Wants to add a unique aria-label to a layout nav element,
           either directly or through a MenuName input parameter, so screen
           readers can distinguish navigation regions in a reactive app layout.
+      - name: Use layout login
+        id: use-layout-login
+        description: Wants to locate and reuse the Layout Login web block in a Traditional
+          Web App by customizing its placeholders and widgets and adjusting its
+          optional device and accessibility configuration properties, so that
+          login screens use the built-in layout.
+      - name: Use layout popup
+        id: use-layout-popup
+        description: Wants to locate and reuse the Layout Popup web block in a Traditional
+          Web App by customizing its placeholders and widgets and adjusting its
+          optional DeviceConfiguration and AccessibilityConfiguration properties,
+          so that screens can display reusable off-canvas content in the built-in
+          popup layout.
     - name: Add menu link
       id: add-menu-link
       description: Wants to add a screen to the application menu by dragging it into the
@@ -5295,6 +5361,19 @@ knowledge-needs:
         its Source Entity, Source Attribute, and Variable properties, in
         Service Studio, so that end users can choose one value from a list of
         values bound to an Entity, in traditional web apps (O11).
+    - name: Use Dropdown pattern
+      id: use-dropdown-pattern
+      description: Wants to use the Dropdown UI Pattern in a Traditional Web
+        App by adding the widget, binding a List Records widget to a data
+        source, creating a Screen Action for each option, and refreshing the
+        selected value after Ajax Submit, so that users can choose an option
+        from a dynamic list and see feedback.
+    - name: Use Dropdown Select pattern
+      id: use-dropdown-select-pattern
+      description: Wants to use the Dropdown Select UI Pattern in a Traditional
+        Web App by adding the widget, linking it to a Combo Box or List Box
+        widget, and configuring its WidgetId and optional properties, so that
+        users can use an enhanced combo box or multi-select dropdown in forms.
     - name: Dropdown Server reference
       id: dropdown-server-reference
       description: Wants to look up the properties, events, and JavaScript API
@@ -5521,6 +5600,19 @@ knowledge-needs:
       id: add-widget-ui-pattern
     - name: UI elements (Blocks, widgets, OS UI patterns, accelerators)
       id: ui-elements-accelerators
+      subtopics:
+      - name: Use Search pattern
+        id: use-search-pattern-odc
+        description: Wants to add the Search UI Pattern to a screen and configure
+          its input variable in Service Studio for OutSystems 11, so that users
+          can search for content by entering queries without knowing its
+          location, in mobile apps and reactive web apps.
+      - name: Use Search pattern O11
+        id: use-search-pattern-o11
+        description: Wants to add the Search UI Pattern to a Traditional Web App screen,
+          add the dependency if the widget does not appear in the Toolbox,
+          create a local input variable, and configure the widget so users can
+          search for content by entering queries.
     - name: Build calculator screen
       id: build-calculator-screen
       description: Wants to build a simple Reactive Web calculator screen with a screen
@@ -6069,18 +6161,29 @@ knowledge-needs:
         and events in Service Studio for OutSystems 11, so that they can
         correctly configure time selection behavior and styling in mobile apps
         and reactive web apps.
+    - name: Use Date Picker
+      id: use-date-picker
+      description: Wants to add the Date Picker UI Pattern to a screen, including adding
+        the dependency when the widget does not appear in the Toolbox,
+        creating the input and local variable, wiring the OnClose and OnSelect
+        events, and configuring its properties in Service Studio for
+        OutSystems 11, so that users can select a single date or a date range
+        in Traditional Web Apps.
     - name: Use Date Picker Range
       id: use-date-picker-range
       description: Wants to add the Date Picker Range UI Pattern to a screen and configure
         its properties, in Service Studio for OutSystems 11, so that users can
         select a date range from a calendar, in mobile apps and reactive web
         apps.
-    - name: Use Search pattern
-      id: use-search-pattern
-      description: Wants to add the Search UI Pattern to a screen and configure
-        its input variable in Service Studio for OutSystems 11, so that users
-        can search for content by entering queries without knowing its
-        location, in mobile apps and reactive web apps.
+    - name: Date Picker reference
+      id: date-picker-reference
+      description: Wants to look up the Date Picker UI Pattern's configurable properties
+        and advanced format options in Service Studio for OutSystems 11, so
+        that they can correctly configure date selection behavior, disabled
+        dates, default dates, and styling in Traditional Web Apps.
+    - name: Use Search Balloon pattern
+      id: use-search-balloon-pattern
+      description: Wants to add the Search Balloon UI Pattern to a Traditional Web App, wire its search input and results list, configure the preparation action, filter condition, and refresh logic, so that matching records update as the user types.
     - name: Use Dropdown Search
       id: use-dropdown-search
       description: Wants to add the Dropdown Search UI Pattern to a screen and configure
@@ -6330,6 +6433,17 @@ knowledge-needs:
         Service Studio for OutSystems 11, so that a button shows a loading
         spinner and is disabled from being clicked while a non-immediate
         action is executing, in mobile apps and reactive web apps.
+    - name: Use Button Group pattern
+      id: use-button-group-pattern
+      description: Wants to add the Button Group UI Pattern to a Traditional
+        Web App screen and configure its radio-button items, labels, and
+        IsJustified property, so that users can choose from a small set of
+        options with grouped buttons.
+    - name: Button Group reference
+      id: button-group-reference
+      description: Wants to look up the Button Group UI Pattern's IsJustified
+        property in Service Studio, so that they can control how the button
+        group items are distributed in a Traditional Web App.
     - name: Button Loading reference
       id: button-loading-reference
       description: Wants to look up the properties of the Button Loading UI
@@ -6337,6 +6451,13 @@ knowledge-needs:
         and ExtendedClass, so that they can correctly configure a button's
         loading spinner behavior and appearance in OutSystems 11 mobile apps
         and reactive web apps.
+    - name: Use Toggle Button pattern
+      id: use-toggle-button-pattern
+      description: Wants to add the Toggle Button UI Pattern to a Traditional
+        Web App screen, bind it to a Boolean local variable, and use OnChange
+        with Ajax Refresh to update a related button's Enabled state, in
+        Service Studio, so that users can switch between two states before
+        submitting.
     - name: Use Video pattern
       id: use-video-pattern
       description: Wants to add a video to a screen using the OutSystems UI
@@ -7744,6 +7865,12 @@ knowledge-needs:
       can determine whether an out-of-the-box DevOps model meets their
       organization's needs before evaluating the individual lifecycle stages
       (plan, develop, test, deploy, release, secure, and monitor) in more depth.
+  - name: DORA metrics
+    id: dora-metrics
+    description: Wants to identify the four DORA metrics, deployment frequency,
+      lead time for changes, time to restore service, and change failure rate,
+      so they can recognize the correct measure set for DevOps delivery
+      effectiveness in an assessment.
 - name: Develop for testability
   guid: 71fc8278-36e0-4a93-a84d-79eb8da3135d
   topics:
@@ -9190,6 +9317,30 @@ knowledge-needs:
         structures (MediaResult, MediaMetadata) and static entities (MediaType), and
         error codes, so that they can implement camera and gallery functionality in
         an O11 mobile app using this legacy plugin version.
+    - name: Camera plugin migration
+      id: migrate-camera-plugin
+      description: Wants to migrate the Camera plugin from version 1 to version 2
+        by replacing deprecated client actions and blocks with TakePhoto and
+        ChooseFromGallery, updating renamed parameters and MediaResult output
+        handling, and adapting to the new OnError and error code behavior, so the
+        app keeps working after the upgrade.
+      subtopics:
+      - name: Migrate camera actions and blocks
+        id: migrate-camera-actions-blocks
+        description: Wants to replace deprecated Camera plugin actions and blocks
+          with TakePhoto and ChooseFromGallery, update renamed inputs and outputs,
+          and handle the gallery PWA limitations during migration, so the app uses
+          the version 2 API correctly.
+      - name: Handle TakePhoto migration errors
+        id: handle-takephoto-migration-errors
+        description: Wants to add the required OnError handler for the TakePhoto
+          block and update related error handling logic, so the migrated block
+          continues to fail safely.
+      - name: Update camera error codes
+        id: update-camera-error-codes
+        description: Wants to remap the Camera plugin error codes after version 2
+          renumbering, so existing error handling continues to route each failure
+          to the correct branch.
     - name: Control device keyboard
       id: control-device-keyboard
       description: Wants to show or hide the device's keyboard programmatically
@@ -10945,6 +11096,15 @@ knowledge-needs:
         the mobile compilation and opening a support case with OutSystems
         Support if the problem persists, so that the native mobile build
         completes successfully.'
+    - name: Missing app icon
+      id: missing-app-icon-error
+      description: 'Wants to resolve the OS-MCO-40015 "The app doesn''t have
+        an icon. Define an icon for the app in ODC Studio." error by
+        defining an app icon in the app properties in ODC Studio and
+        rebuilding the mobile app, so that the native build succeeds.'
+    - name: Missing primary color
+      id: missing-primary-color
+      description: 'Wants to resolve the OS-MCO-40016 "The app doesn''t have a primary color. Define a primary color for the app in ODC Studio." error by defining a primary color in the app properties in ODC Studio and rebuilding the mobile app, so that the native build succeeds.'
     - name: Invalid primary color error
       id: invalid-primary-color-error
       description: 'Wants to resolve the OS-MCO-50015 "The primary color is
@@ -12381,6 +12541,12 @@ knowledge-needs:
         Quality and install the code analysis and LifeTime probes, so that
         their apps' technical debt data starts being collected and appears in
         Code Quality.
+    - name: Configure proxy access
+      id: configure-code-quality-proxy
+      description: Wants to configure a forward proxy for Code Quality by
+        turning on proxy authentication, entering the proxy URL, and
+        providing credentials in the LifeTime plugin, so that the plugin can
+        connect to Code Quality SaaS through the proxy.
     - name: Connect performance analytics
       id: connect-performance-analytics-code-quality
       description: Wants to enable Code Quality to use runtime performance data from LifeTime Analytics by selecting the Runtime Performance probe environment, resuming monitoring for the app, republishing it, and waiting for synchronization, so that findings can show performance metrics.
@@ -12551,6 +12717,13 @@ knowledge-needs:
       id: prioritize-test-automation
     - name: Automated testing strategies
       id: automated-test-strategy
+    - name: Team automation roles
+      id: team-automation-roles
+      description: Wants to assign test automation responsibilities across product
+        owners, business analysts, engagement managers, tech leads, developers,
+        and manual testers when implementing a test automation strategy with a
+        team, so that the team plans, builds, triages, and maintains automated
+        tests as a shared responsibility.
     - name: Infra integration testing
       id: infra-integration-testing
       description: Wants to automate integration tests for non-API dependencies,
@@ -13514,6 +13687,11 @@ knowledge-needs:
         users in action and collecting statistics and context information for each,
         when conducting business analysis, so that they can understand each persona's
         contribution to strategic or tactical goals.
+  - name: Business processes
+    id: business-processes
+    description: Wants to understand what business processes are, why organizations
+      use them, and common examples such as approval and support flows, so that they
+      can recognize process-driven work in an organization.
 - name: O11 to ODC Migration
   guid: ''
   topics:
