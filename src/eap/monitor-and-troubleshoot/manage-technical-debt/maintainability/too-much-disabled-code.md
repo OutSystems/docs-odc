@@ -16,6 +16,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - remove-disabled-code
 ---
 # Too much disabled code
 
