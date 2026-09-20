@@ -21,6 +21,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - use-dropdown-search
 ---
 
 # Dropdown Search

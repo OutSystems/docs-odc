@@ -13,6 +13,9 @@ outsystems-tools:
   - ai agent builder
 coverage-type:
   - apply
+topic:
+  - configure-amazon-kendra
+  - configure-azure-ai-search
 isautopublish: true
 ---
 

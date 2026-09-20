@@ -21,6 +21,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - use-progress-circle-pattern
 ---
 
 # Progress Circle
