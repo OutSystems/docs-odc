@@ -20,6 +20,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - configure-chart-data-points
+  - configure-donut-inner-size
 isautopublish: true
 ---
 

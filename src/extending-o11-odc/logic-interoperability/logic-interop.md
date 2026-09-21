@@ -6,6 +6,9 @@ figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?no
 coverage-type:
   - understand
 topic:
+  - ao-counting-rules
+  - reuse-logic-o11-odc
+  - route-logic-reuse-secure-connection
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
