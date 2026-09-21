@@ -13,6 +13,8 @@ audience:
   - Developer
   - Tech lead
   - Architect
+topic:
+  - multi-entity-aggregate
 outsystems-tools:
   - none
 ---

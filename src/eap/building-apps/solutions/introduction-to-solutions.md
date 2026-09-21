@@ -25,6 +25,10 @@ content-type:
 coverage-type:
   - understand
   - evaluate
+topic:
+  - install-odc-solution
+  - manage-odc-solution
+  - odc-solutions-overview
 helpids: 30780
 isautopublish: true
 ---

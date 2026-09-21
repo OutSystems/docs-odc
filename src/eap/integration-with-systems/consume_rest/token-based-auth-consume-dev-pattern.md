@@ -7,6 +7,9 @@ coverage-type:
   - understand
   - apply
 topic:
+  - choose-token-flow
+  - manage-token-lifecycle
+  - protect-access-tokens
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
