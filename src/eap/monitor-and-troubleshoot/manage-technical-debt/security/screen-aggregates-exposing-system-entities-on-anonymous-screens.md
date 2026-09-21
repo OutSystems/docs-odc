@@ -22,6 +22,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - secure-anonymous-screens
 ---
 # Screen Aggregates exposing system entities accessible by anyone
 

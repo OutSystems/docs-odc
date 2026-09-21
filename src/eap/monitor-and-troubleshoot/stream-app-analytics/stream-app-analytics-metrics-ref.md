@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - streamed-metrics-data
 content-type: 
 audience:
   - Platform administrator

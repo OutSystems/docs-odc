@@ -17,6 +17,8 @@ audience:
   - Tech lead
   - Architect
 helpids: 
+topic:
+  - configure-new-relic-streaming
 ---
 
 # Stream observability data to New Relic
