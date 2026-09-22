@@ -1,7 +1,7 @@
 ---
 guid: b91101ba-b2f2-480f-aa7c-a60fc17948d1
 locale: en-us
-summary: Compare workflow versions in OutSystems Developer Cloud (ODC), using revision history and publish workflows to track changes, resolve conflicts, and maintain accuracy.
+summary: Compare workflow revisions in OutSystems Developer Cloud (ODC) using color-coded diffs to spot changes and resolve publish conflicts.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=9929-10
 coverage-type:
   - apply
@@ -19,15 +19,15 @@ outsystems-tools:
 helpids:
 isautopublish: true
 ---
-# Compare workflow versions
+# Compare workflow revisions
 
-In a real-world application, you are most likely ending up with multiple versions of a workflow as you and your make changes and improvements over time. Having the capacity to compare different versions of a workflow is crucial for maintaining the integrity of your application and ensuring that you can track changes effectively.
+As you and your team make changes over time, a workflow accumulates multiple revisions. Comparing revisions helps you maintain the integrity of your application and track changes effectively.
 
-ODC lets you compare different versions of a workflow side by side. Use this to identify changes, understand how your workflow evolved, and confirm you're working with the correct version. You can do this comparison in three ways:
+ODC lets you compare different revisions of a workflow side by side. Use this to identify changes, understand how your workflow evolved, and confirm you're working with the correct revision. You compare revisions in three ways:
 
-* **In the revision history**. Here you can compare any previous revision with your current work or the latest published version.
-* **When opening a workflow**. Whenever you have unpublished changes that aren't based on the latest published revision, you can compare both versions before choosing which one to continue with.
-* **When publishing a workflow**. If another user published a newer revision since you started editing, you can compare your changes with the new revision before publishing.
+* **In the revision history**. Compare any previous revision with your current work or the latest published revision.
+* **When opening a workflow**. Whenever you have unpublished changes that aren't based on the latest published revision, you compare both revisions before choosing which one to continue with.
+* **When publishing a workflow**. If another user published a newer revision since you started editing, you compare your changes with that revision before publishing.
 
 ## Compare in the revision history
 
@@ -52,7 +52,7 @@ As long as your workflow has more than one revision, you can compare a previous 
 
     ![Comparison view displaying two versions of a workflow side by side with change badges and Keep local work and Restore this revision buttons above each canvas.](images/compare-view-pl.png "Side-by-side workflow comparison view")
 
-1. Review the differences between the two versions. See [Understanding the comparison view](#understanding-the-comparison-view).
+1. Review the differences between the two revisions. Refer to [Understanding the comparison view](#understanding-the-comparison-view).
 
 1. Choose one of the available actions:
 
@@ -61,18 +61,18 @@ As long as your workflow has more than one revision, you can compare a previous 
 
 ## Compare revisions when opening a workflow
 
-When you open a workflow with unpublished changes not based on the latest published revision, the editor shows a dialog. For example, a colleague published a new revision while you had unsaved work. The dialog asks you to choose which version to use. To do this:
+When you open a workflow with unpublished changes not based on the latest published revision, the editor shows a dialog. For example, a colleague published a new revision while you had unsaved work. The dialog asks you to choose which revision to use. To do this:
 
-1. Open the workflow from the ODC Portal. If that version as unpublished changes that aren't based on the latest published revision, the _Recover unpublished work?_ pops up. This pop up shows your autosaved version and the latest published revision.
+1. Open the workflow from the ODC Portal. If the workflow has unpublished changes that aren't based on the latest published revision, the _Recover unpublished work?_ dialog appears. This dialog shows your autosaved work and the latest published revision.
 
 1. Click Compare revisions to open the comparison view.
 
     ![Recover unpublished work dialog listing an unpublished workflow revision and the latest revision, with the Compare revisions button highlighted.](images/recover-unpublished-work-pl.png "Recover unpublished work dialog")
 
-1. Review the differences between your autosaved version (left) and the latest published revision (right).
+1. Review the differences between your autosaved work (left) and the latest published revision (right).
 
 1. You must choose one of the following actions before you can continue, since you can't dismiss this dialog:
-    * Click **Keep local work** above the left canvas to continue editing your autosaved version.
+    * Click **Keep local work** above the left canvas to continue editing your autosaved work.
     * Click **Restore this revision** above the right canvas to open the latest published revision (this discards your unsaved changes).
 
     ![Side-by-side comparison view showing an autosaved workflow on the left and the latest published revision on the right, with Keep local work and Restore this revision buttons highlighted.](images/compare-revisions-unpublished-pl.png "Compare autosaved and latest revisions")
@@ -81,7 +81,7 @@ When you open a workflow with unpublished changes not based on the latest publis
 
 ## Compare revisions when publishing
 
-When you try to publish a workflow and another user published a newer revision since you started editing, the publish dialog includes a Compare both versions option.
+When you try to publish a workflow and another user published a newer revision since you started editing, the publish dialog includes a **Compare both versions** option.
 This lets you review the differences before deciding how to proceed. This happens when:
 
 1. You click **Publish** in the Workflow Editor.
@@ -116,7 +116,7 @@ The left canvas displays the local version (unsaved data) and the reference revi
 
 While the right canvas header displays the revision label, publication date, and the name of the person who published it.
 
-If workflow metadata (title, icon, or description) differs between versions, the header highlights those differences.
+If workflow metadata (title, icon, or description) differs between revisions, the header highlights those differences.
 
 ### Color coding
 

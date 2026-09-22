@@ -11,13 +11,15 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8547-2
 audience:
   - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
-  - remember
   - understand
   - apply
+  - unblock
 helpids: 30735
+isautopublish: true
 ---
 
 # Migrate your Cordova-based schema to the universal schema
@@ -73,7 +75,7 @@ To undo the schema migration, use the **Undo** functionality in ODC Studio.
 
 ![Screenshot demonstrating how to invoke the undo functionality of ODC.](images/ide-edit-undo-sample-odcs.png "Undo Schema Migration")
 
-If you can't undo the changes, [revert to a previous version](../../deploying-apps/deploy-apps.md#versions-and-revisions) of your app.
+If you can't undo the changes, [revert to a previous revision](../../deploying-apps/deploy-apps.md#versions-and-revisions) of your app.
 
 If you encounter any issues while migrating your extensibility configuration, contact the [support team](https://success.outsystems.com/support/home/).
 
