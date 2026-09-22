@@ -97,11 +97,16 @@ flowchart LR
     classDef stop    fill:#FFFFFF,stroke:#F22800,color:#0A141E
     classDef process fill:#FFFFFF,stroke:#686E76,color:#0A141E
 
-    REV(["`**Revision**<br/>(auto #)`"]):::process
-    APPSWF(["`**Apps and workflows**<br/>Deploy to Production, set version (m.m.p)`"]):::process
-    LIBS(["`**Libraries**<br/>  Release in ODC Portal, set version (m.m.p)`"]):::process
-    VDEPLOY(["`**Version**<br/>Marks what runs in Production`"]):::process
-    VRELEASE(["`**Version**<br/>Marks what other assets consume`"]):::process
+    REV(["`**Revision**
+    (auto #)`"]):::process
+    APPSWF(["`**Apps and workflows**
+    Deploy to Production, set version (m.m.p)`"]):::process
+    LIBS(["`**Libraries**
+    Release in ODC Portal, set version (m.m.p)`"]):::process
+    VDEPLOY(["`**Version**
+    Marks what runs in Production`"]):::process
+    VRELEASE(["`**Version**
+    Marks what other assets consume`"]):::process
 
     REV --> APPSWF
     REV --> LIBS
