@@ -18,6 +18,7 @@ audience:
   - Platform administrator
 tags:
   - Authentication
+  - Authorization
   - Infrastructure
   - Security
 outsystems-tools:
@@ -112,7 +113,7 @@ Before you start the Self-hosted configurator, create a service principal in Azu
 | **Tenant ID** | (Optional) The Azure Active Directory tenant ID. |
 | **Credentials expiration** | How long until the credential expires: 30, 90, 180, or 365 days. |
 
-Assign the service principal the `AcrPush` role, which covers both push and pull operations. You can scope the assignment to the entire registry or restrict it to specific repositories.
+Assign the service principal the `AcrPull`, `AcrPush`, and `AcrDelete` roles. You can scope the assignment to the entire registry or restrict it to specific repositories.
 
 ### Google Cloud GAR {#google-cloud-gar}
 
