@@ -263,8 +263,13 @@ Azure SQL
 
     As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.
 
-* When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input.
-* When creating the Azure SQL connection in ODC Portal, in Additional Parameters input you might need to add `encrypt=true;trustServerCertificate=true;`.
+* When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) in the username input.
+* When creating the Azure SQL connection in ODC Portal, in the Additional Parameters input, you might need to add `encrypt=true;trustServerCertificate=true;`.
+
+**For Azure SQL non-Managed Instances:**
+
+* When creating the Azure SQL connection in ODC Portal, use the format `username@instance-name` in the username input.
+* When creating the Azure SQL connection in ODC Portal, in the Additional Parameters input, you might need to add `trustServerCertificate=true;`.
 
 **Authenticate with Microsoft Entra ID**
 
