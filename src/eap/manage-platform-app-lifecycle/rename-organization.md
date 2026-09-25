@@ -41,7 +41,7 @@ To change your organization name, follow these steps:
 
 1. In the ODC Portal, select **Management** > **Organization**.
 
-1. In the **Details** section, in the **Organization name** container, click the elipsys and then **Edit organization name**.
+1. In the **Details** section, in the **Organization name** container, click the ellipsis and then **Edit organization name**.
 1. Type the new name.
 
     ![Organization name container in edit mode with a text input field](images/rename-org-edit-pl.png "Edit organization name")
