@@ -1,6 +1,11 @@
 ---
 summary: Explore the Debugger Tab in OutSystems Developer Cloud (ODC) to manage threads, examine app elements, and control runtime values during debugging sessions.
-tags: debugging, user interface, threads management
+tags:
+  - Debugging
+  - Front-End
+  - Logic
+  - Troubleshooting
+  - UI
 locale: en-us
 guid: 81645496-3038-4765-9092-e2ab5a7f413b
 app_type: mobile apps, reactive web apps
@@ -13,13 +18,15 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+  - understand
 topic:
   - debug-troubleshoot-app-logic
+isautopublish: true
 ---
 
 # Debugger reference
 
-The Debugger tab is in the lower pane of ODC Studio and allows you to track all threads being debugged and examine app elements and runtime values. This tab is automatically shown when the debugger is active and the execution flow hits a breakpoint.
+The Debugger tab is in the lower pane of ODC Studio and lets you track all threads being debugged and examine app elements and runtime values. This tab is automatically shown when the debugger is active and the execution flow hits a breakpoint.
 
 ![Overview of the Debugger User Interface in ODC Studio](images/debugger-ui-overview.png "Debugger UI Overview")
 
