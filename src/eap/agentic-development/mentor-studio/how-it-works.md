@@ -1,11 +1,12 @@
 ---
-summary: Mentor Studio in ODC Studio uses AI agents to generate and modify web app, library, and agentic app elements from natural language prompts.
+summary: Mentor Studio in OutSystems Developer Cloud (ODC) uses app context, plan review, and iteration to modify web apps, libraries, and agentic apps.
 tags:
   - Agentic
   - AI
   - Best Practices
   - Mentor
   - Mentor Studio
+  - Workflows
 guid: 27f4f846-5c2d-44fd-b9a2-99f5d2770cb2
 locale: en-us
 app_type: reactive web apps
@@ -45,7 +46,7 @@ Use Mentor Studio to add features, fix issues, or refine logic in apps you're de
 
 The image shows a Mentor interaction in ODC Studio. (A) **Mentor panel**. The prompt describes a credit card validation requirement, specifying the expected format, character limits, and Luhn algorithm check. (B) **Generated action flow**. Mentor creates the ValidateCreditCardNumber action with the complete logic, including input validation, format checks, and the checksum calculation, (C) **Element tree**. Mentor adds the elements to the app structure, including the new action and its input/output parameters.
 
-## Interacting with Mentor Studio
+## Interacting with Mentor Studio {#interacting-mentor-studio}
 
 Mentor is available in ODC Studio through the Mentor panel. Select the Mentor icon in the toolbar to open the panel. The panel remains open while you work and lets you describe requirements, review changes, and send follow-up prompts. Continue working on the app or switch to another app while Mentor processes a request. Use Mentor across multiple tabs at the same time, with each app maintaining its own conversation.
 
@@ -58,7 +59,7 @@ The Mentor panel includes several interaction options:
 
 ![ODC Studio workspace with the Mentor Studio chat panel open on the left and an app screen editor on the right, illustrating side-by-side development and conversation.](images/mentor-studio-ui-odcs.png "Mentor Studio panel in ODC Studio")
 
-### Use the current selection as context
+### Use the current selection as context {#current-selection}
 
 Mentor reads what you select and what you have open in ODC Studio, so you can refer to your work directly. Select an element or open a view, then prompt Mentor with a direct reference to it.
 
@@ -71,14 +72,14 @@ To scope a request to your work, select the element first, then prompt Mentor wi
 
 You don't have to rely on the selection. To act on a different element, name it in your prompt, and Mentor uses the element you name.
 
-## The workflow
+## The workflow {#workflow}
 
 Mentor Studio follows an iterative workflow. Describe a goal in natural language, review the changes Mentor generates, and refine through additional prompts until the result meets requirements.
 
 The workflow has four steps:
 
 1. **Describe the goal.** State your requirement in plain language, such as "add a comments feature to the Ticket entity" in a web app or "add a reusable date-formatting action" in a library.
-1. **Review the plan.** For complex requests, Mentor Studio proposes the changes it intends to make and waits for your decision before applying anything. For how to read a proposal and proceed, review the changes first, or discard it, refer to [Review and accept the plan](#review-and-accept-the-plan).
+1. **Review the plan.** For complex requests, Mentor Studio proposes the changes it intends to make and waits for your decision before applying anything. For how to read a proposal and proceed, review the changes first, or discard it, refer to [Review and accept the plan](#accept-plan).
 1. **Verify the changes.** After Mentor Studio applies the changes, review what changed and confirm the outcome. Refer to [Review changes](#review-changes).
 1. **Iterate.** Refine the result through follow-up prompts, or start a new conversation for a different requirement.
 
@@ -92,19 +93,19 @@ Don't include personally identifiable information (PII) in prompts. Use placehol
 
 For how agentic development handles your data, including encryption, data residency, and the policy against training third-party models on your prompts, refer to [Security and data privacy](../intro.md#security-and-data-privacy).
 
-## Review and accept the plan
+## Review and accept the plan {#accept-plan}
 
 For complex requests, Mentor Studio proposes the changes it plans to make and waits for you to decide before applying anything. Mentor Studio generates the proposed changes as a candidate revision alongside your current app. Nothing changes in your app until you merge that revision, either in full or element by element. This step lets you review the intended work and its impact across the app before it modifies your app.
 
 ![Mentor Studio window displaying a proposed plan that lists steps to modify an employee app, with options to proceed, review the changes first, or discard the planned changes.](images/mentor-ai-review-changes-odcs.png "Review plan in Mentor Studio")
 
-### When Mentor Studio proposes changes
+### When Mentor Studio proposes changes {#proposed-changes}
 
 For complex requests, Mentor Studio proposes changes and waits for your review before applying them.
 
 A high-level request that spans multiple elements, dependencies, or workflows produces a plan. Mentor Studio applies a simpler request that affects a single element directly.
 
-### What the plan includes
+### What the plan includes {#plan-includes}
 
 The plan summarizes the work Mentor Studio intends to do before applying it.
 
@@ -114,7 +115,7 @@ The plan summarizes the work Mentor Studio intends to do before applying it.
 
 Mentor Studio collapses long lists. Expand the list to review every step before you decide.
 
-### Act on the plan
+### Act on the plan {#act-on-plan}
 
 After you review the plan, choose one of the following options:
 
@@ -124,7 +125,7 @@ After you review the plan, choose one of the following options:
 
 You can also refine your request through a follow-up prompt as an alternative, and Mentor Studio revises the proposal.
 
-## Review changes
+## Review changes {#review-changes}
 
 Review what Mentor Studio changed, either from **Review changes first** during plan confirmation, before anything merges into your app, or after Mentor Studio applies changes. To review after applying, select **View changes** in the Mentor panel, or ask Mentor Studio what changed, for example "Show me what changed in the CreateOrder action." Both open the same **Review changes** dialog.
 
@@ -136,7 +137,7 @@ The dialog shows **Your revision** on the left and **Mentor's revision** on the 
 
 The Mentor panel shows this compact summary after Mentor Studio applies a change. Select **View changes** to open the dialog.
 
-## Capabilities
+## Capabilities {#capabilities}
 
 Mentor edits the elements the open asset supports and analyzes existing code to explain logic, suggest implementation approaches, and identify areas for improvement. For the full list of supported tasks and asset coverage, refer to [Capabilities and patterns for Mentor Studio](capabilities.md).
 
@@ -150,18 +151,18 @@ Apps edited with Mentor Studio are standard OutSystems apps. They follow the sam
 
 For real-time suggestions while building logic flows manually, [AI logic suggestions](../../building-apps/logic/ai-logic-suggestions.md) complements Mentor Studio by predicting and suggesting next steps as you develop.
 
-## Constraints
+## Constraints {#constraints}
 
 Mentor Studio edits web apps, libraries, and agentic apps through conversation. The elements available in each conversation depend on the asset type. For constraints and current limitations, refer to [Known limitations](../ai-limitations.md).
 
-## Best practices
+## Best practices {#best-practices}
 
 Follow these guidelines to improve outcomes:
 
 * **Be specific.** Provide detailed requirements instead of generic instructions so Mentor doesn't have to make assumptions.
 * **Break down complex requests.** Send one requirement per prompt, review the result, then build on it. Smaller prompts produce more predictable outcomes and make it easier to spot what went wrong. For decomposition strategies and examples, refer to [Effective prompts for Mentor](../effective-prompts.md#decomposition).
 
-## Related resources
+## Related resources {#related-resources}
 
 Mentor Studio is one of two AI development tools in ODC. The following resources cover prompt techniques, detailed capabilities, and how Mentor Studio connects to the broader agentic development workflow.
 
@@ -173,5 +174,6 @@ Mentor Studio is one of two AI development tools in ODC. The following resources
 * For how agentic development fits testing, deployment, and governance, refer to [Agentic development in the SDLC](../sdlc.md).
 * For the architecture behind Mentor Studio, including the OutSystems app model and the Enterprise Context Graph, refer to [Architecture](../architecture.md).
 * For how agentic development secures and handles your data, refer to [Security and data privacy](../intro.md#security-and-data-privacy).
+* For publishing with a Mentor-drafted message, refer to [Understanding 1-Click Publish](../../deploying-apps/one-cp.md).
 * For error codes that Mentor Studio can return, refer to [Mentor Studio errors](../../../error/aisa/mentor-studio-errors.md).
 * [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course: a video walkthrough of the Mentor Studio workflow.

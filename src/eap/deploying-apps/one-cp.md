@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) simplifies app and library publishing with an automated 1-Click Publish feature.
+summary: OutSystems Developer Cloud (ODC) automates app and library publishing with 1-Click Publish, and Mentor drafts the publish message for you.
 tags:
   - 1-Click Publish
   - Data Synchronization
@@ -7,6 +7,8 @@ tags:
   - Development lifecycle
   - Libraries
   - Lifecycle
+  - Mentor
+  - Mentor Studio
 locale: en-us
 guid: 2c3f88e1-c53a-450d-9e36-ac83a7bf7a5d
 app_type: mobile apps, reactive web apps
@@ -17,6 +19,7 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+  - mentor studio
 coverage-type:
   - understand
   - apply
@@ -30,7 +33,7 @@ topic:
 
 1-Click Publish builds your app or library for the Development stage. Each publish that changes the asset stores a new revision. You can optionally add a message describing your changes when publishing.
 
-## Publishing an app
+## Publishing an app {#publishing-app}
 
 OutSystems Developer Cloud (ODC) automates app publishing with its 1-Click Publish button. When you click the 1-Click Publish button to publish an app in the Development stage, the button initiates the following steps:
 
@@ -56,7 +59,7 @@ Stages other than Development run release builds, which package a revision as a 
 
 The **Deployments** screen shows these steps for each deployment, to Production as well as QA.
 
-## Publishing a library
+## Publishing a library {#publishing-library}
 
 When you click the 1-Click Publish button to publish a library, ODC initiates the following steps:
 
@@ -67,17 +70,39 @@ A library reference is a strong reference, so ODC merges the library's package i
 
 To make a library's elements available to other assets, you release it in the ODC Portal. For more information, refer to [Release a new version of a library](../building-apps/libraries/libraries.md#release-library).
 
-## Adding a message when publishing
+## Adding a message when publishing {#adding-message}
 
-You can add a message when publishing to describe the changes you made. Messages help your team understand the intent behind each revision, improving traceability and collaboration.
+A message describes the changes in a revision. Consistent messages make
+comparing versions, rolling back, and reviewing a colleague's work faster and
+less error-prone. Write the message yourself, or let Mentor draft it.
+
+### Write the message yourself {#write-message}
+
+The message dialog opens from the **Publish** button in ODC Studio.
 
 ![Screenshot of ODC Studio showing the Publish dropdown with 1-Click Publish and 1-Click Publish with Message options](images/publish-with-comment-odcs.png "1-Click Publish with Message in ODC Studio")
 
-To publish with a message, do one of the following in ODC Studio:
+To publish with a message, do one of the following:
 
 * Click the dropdown arrow on the **Publish** button and select **1-Click Publish with message**.
 * Press **Shift+F5** (Windows) or **Shift+Cmd+F5** (macOS).
 
-In the dialog that opens, type your message and publish. The message is optional and supports up to 2,000 characters. After publishing, the message becomes a permanent, read-only record of that revision.
+In the dialog that opens, type your message and publish. The message is
+optional and supports up to 500 characters. After publishing, the message
+becomes a permanent, read-only record of that revision.
 
 To review messages, open ODC Studio and go to **App** > **View revisions**.
+
+### Let Mentor write the message {#mentor-write-message}
+
+When you publish with a message, Mentor analyzes the changes you're about to
+commit, including added and modified screens, logic, data, and dependencies,
+and proposes a message that describes them.
+
+In the publish dialog, choose one of the following:
+
+* Accept the proposed message and publish.
+* Manually edit the proposed message, then publish.
+* Ask Mentor to rewrite the message, then review it again.
+
+Mentor drafts the message, and you decide when to publish. The same character limit and read-only record apply.
