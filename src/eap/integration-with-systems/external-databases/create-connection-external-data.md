@@ -8,6 +8,7 @@ tags:
   - External Databases
   - Private Gateway
   - Settings
+  - SQL
 guid: 32004a44-1a95-46b2-abcb-88ad76f51961
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -147,7 +148,7 @@ For existing connections, when objects are changed or new ones introduced, it's 
 
 ## Connection parameters
 
-Administrators  must supply the following information to connect to the external connector.
+Administrators must supply the following information to connect to the external connector.
 
 | Parameter | Description | Needs testing connection when edited | Notes |
 | -- | -- | -- | -- |
@@ -156,7 +157,7 @@ Administrators  must supply the following information to connect to the external
 | Username | Username to access the database | Yes | |
 | Password | Password to access the database | Yes | |
 | Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway`. |
-| Port | The port number to connect to the database | Yes | A default port number is shown that can changed. IF you're using Private Gateway, enter the port configured in the Cloud Connector. |
+| Port | The port number to connect to the database | Yes | A default port number is shown that can changed. If you're using Private Gateway, enter the port configured in the Cloud Connector. |
 | Database for SQL server and Azure SQL \ Service name for Oracle server | Name of the database | Yes | |
 | Additional parameters | Additional parameters for a database connection | Yes | For more information, see [additional parameters](#additional-parameters) |
 | SAP Server domain | SAP server/host address | Yes | |
@@ -197,7 +198,7 @@ You can use advanced parameters to add additional parameters for a database conn
 
     If you don't specify `Pagesize`, OutSystems applies a default of `1000` to help keep each response within the maximum allowed body size (10 MB). Very large page sizes produce responses above that limit and may result in a `Bad gateway` error.
 
-![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database additional parameters")
+![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database Additional Parameters")
 
 ## AI search service connection parameters
 
@@ -251,145 +252,11 @@ Consider the following when integrating an external system.
 * When a database user lacks the necessary permissions to access the table that a Foreign Key (FK) points to, the Foreign Key is treated as a regular column. This can result in errors during the insertion or updating of records. To prevent such issues, it is advisable to ensure that the user can access all the tables required by the application.
 * In a composite key scenario in ODC Studio, entities have only one attribute marked as the Identifier, while the remaining primary keys are treated as regular attributes. As a result, it's crucial to handle entity actions such as Update or Delete with caution. An incorrect update or delete action could result in updating or deleting unintended records in external systems, as these actions rely solely on the single Identifier. For the SAP OData connector, the behavior differs: in a composite key scenario, ODC does not designate any attribute as the Identifier.
 
-<div class="os-accordion__item">
-<div class="os-accordion__title">
-Azure SQL
-</div>
-<div class="os-accordion__content" markdown="1">
+Some external systems have additional, vendor-specific considerations.
 
-**For Azure SQL Managed Instances:**
-
-* As a prerequisite, you might need to create a user database following this format: `username@instance-name`. The username can be any value of your choosing. The `instance-name` can be found in your Microsoft Azure SQL environment. The `host` property contains the `instance-name`.
-
-    As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.
-
-* When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) in the username input.
-* When creating the Azure SQL connection in ODC Portal, in the Additional Parameters input, you might need to add `encrypt=true;trustServerCertificate=true;`.
-
-**For Azure SQL non-Managed Instances:**
-
-* When creating the Azure SQL connection in ODC Portal, use the format `username@instance-name` in the username input.
-* When creating the Azure SQL connection in ODC Portal, in the Additional Parameters input, you might need to add `trustServerCertificate=true;`.
-
-**Authenticate with Microsoft Entra ID**
-
-The Azure SQL connector supports Microsoft Entra ID (formerly Azure Active Directory) authentication using a Service Principal. This lets you use identity-based access to Azure SQL databases, aligned with your organization's security policies managed through Entra ID.
-
-<div class="info" markdown="1">
-
-This authentication method is not supported when connecting through a Private Gateway.
-
-</div>
-
-You need an active Microsoft Entra ID tenant with permission to register applications. Follow the steps below to set up a Service Principal and configure your connection in ODC Portal:
-
-1. Register an application in Microsoft Entra ID. Follow the instructions in [Register an application with the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal).
-1. Create a client secret for the registered application. In the Microsoft documentation, follow Option 3: Create a new client secret. Copy the Secret Value.
-1. Note the Client ID of the registered application. You'll need it when configuring the connection in ODC Portal.
-1. Link the Service Principal to your Azure SQL database. Follow the instructions in [Connect to Azure SQL with a Service Principal](https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-aad-service-principal?view=azuresql#connect-to-azure-%5B%E2%80%A6%5D-service-principal).
-1. Configure the connection in ODC Portal. When creating or editing your Azure SQL connection in ODC Portal, set the Username to the Client ID of the Service Principal and the Password to the Secret Value of the client secret. In the Additional Parameters field, add `authentication=ActiveDirectoryServicePrincipal`.
-
-</div>
-</div>
-
-<div class="os-accordion__item">
-<div class="os-accordion__title">
-MySQL
-</div>
-<div class="os-accordion__content" markdown="1">
-
-* MySQL's Timestamp data type starts at `1970-01-01 00:00:01`. To prevent conflicts when converting MySQL's Timestamp attributes to DateTime in OutSystems, enable the **Overwrite database NULL values** option in the Null behavior configuration. This way, all OutSystems DateTime attributes default to the same minimum value of `1970-01-01 00:00:01`.
-
-</div>
-</div>
-
-<div class="os-accordion__item">
-<div class="os-accordion__title">
-Oracle
-</div>
-<div class="os-accordion__content" markdown="1">
-
-* The `DiffMinutes` and `DiffSeconds` built-in functions for Oracle only allow max intervals between dates:
-
-    * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
-    * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
-
-* Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration.
-
-</div>
-</div>
-
-<div class="os-accordion__item">
-<div class="os-accordion__title">
-PostgreSQL
-</div>
-<div class="os-accordion__content" markdown="1">
-
-For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values. OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:
-
-* Time
-* Numeric (Any, >8)
-* Numeric (>28, Any)
-* Decimal (Any, >8)
-* Decimal (>28, Any)
-* Float4
-* Float8
-* Float8_range
-* Real
-* Double precision
-* XML
-* JSON
-* UUID
-* Pg_lsn
-* Enum
-
-</div>
-</div>
-
-<div class="os-accordion__item">
-<div class="os-accordion__title">
-Salesforce
-</div>
-<div class="os-accordion__content" markdown="1">
-
-* Entities and attributes for Salesforce are displayed using their API names, such as CustomObject_c, instead of Field Labels or Field Names, such as CustomObject.
-* Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, refer to [Salesforce custom columns mapping](external-data-type.md#salesforce-custom-columns-mapping).
-* Salesforce doesn't support leading and trailing white spaces. Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.
-* Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.
-* When sorting queries by ID, the Salesforce API orders the Id attribute in a case-sensitive manner, which differs from the expected case-insensitive sorting of other attributes. While regular attributes are sorted in the standard order (A, a, B, b, C, c), the Id attribute is sorted with uppercase letters first, followed by lowercase letters (A, B, C, a, b, c).
-* Regarding Salesforce queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.
-* When joining Salesforce entities, it's recommended to use parent-child relationships or primary key and foreign key attributes. [Salesforce query language](external-data-type.md#salesforce-custom-columns-mapping) doesn't support relationship queries using other attributes. If this guideline is not followed, the join condition can't be pushed to Salesforce, potentially causing performance issues.
-
-</div>
-</div>
-
-<div class="os-accordion__item">
-<div class="os-accordion__title">
-SAP OData
-</div>
-<div class="os-accordion__content" markdown="1">
-
-* Always [enable server-side pagination in SAP](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/server-side-pagination) to ensure integrations work correctly.
-* SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.
-* SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.
-* Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.
-* The CreateOrUpdate entity action is not available for any entity.
-* Deep updates and deletes are not available. However, you can use the Update and Delete entity actions to update or delete records individually, as long as those actions are available for the given entities.
-* Bulk insert/update entity action is unavailable for any entity due to SAP's lack of UPSERT support.  
-* Some Update entity actions may fail if SAP requires the **If-Match** header.
-    * For example, an error message `_The Data Service Request is required to be conditional. Try using the 'If-Match' header.`
-* Composite keys: SAP entities can have composite primary keys.
-    * Entities and entity actions: The entity won't have a primary key if there is a composite key. ODC won't mark any key as a primary key. Hence, you don't get the Update entity action. Also, the Create entity action has no output parameter ID.
-    * Deep insert server action: The server action provides an output parameter for each PK. The data types and the names of these parameters are based on the original input structure.
-* In SAP, computed attributes are categorized into the following types with distinct behaviors:
-    * Primitive Data Types:
-        * Read/Write Operations: These attributes support both read and write operations.
-        * Potential Issues: Writing data to these attributes may cause runtime errors due to conflicts with SAP business rules.
-    * Complex Data Types:
-        * Read Operations: Reading data from complex attributes is not supported.
-        * Write Operations: Writing to complex attributes is allowed but may result in runtime errors caused by SAP business rules.  
-        For example, an error `\[/IWBEP/CM\_V4\_COS/028] Complex property \&lt;ATTRIBUTE_NAME&gt; is computed and not changeable`.  Replace `ATTRIBUTE_NAME` with the SAP attribute name.
-* SAP v4 entities do not support NULL values. You can override the default value at the attribute level. Users must manually delete the default value during input in the app to prevent NULL values from being written to SAP.
-
-</div>
-</div>
+* **Azure SQL:** For more information, refer to [Azure SQL connection considerations](considerations-azure-sql.md).
+* **MySQL:** For more information, refer to [MySQL connection considerations](considerations-mysql.md).
+* **Oracle:** For more information, refer to [Oracle connection considerations](considerations-oracle.md).
+* **PostgreSQL:** For more information, refer to [PostgreSQL connection considerations](considerations-postgresql.md).
+* **Salesforce:** For more information, refer to [Salesforce connection considerations](considerations-salesforce.md).
+* **SAP OData:** For more information, refer to [SAP OData connection considerations](considerations-sap-odata.md).

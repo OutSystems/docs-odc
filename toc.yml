@@ -622,6 +622,13 @@
     - href: eap/integration-with-systems/external-databases/intro.md
     - topics: 
         - href: eap/integration-with-systems/external-databases/create-connection-external-data.md
+        - topics:
+            - href: eap/integration-with-systems/external-databases/considerations-azure-sql.md
+            - href: eap/integration-with-systems/external-databases/considerations-mysql.md
+            - href: eap/integration-with-systems/external-databases/considerations-oracle.md
+            - href: eap/integration-with-systems/external-databases/considerations-postgresql.md
+            - href: eap/integration-with-systems/external-databases/considerations-salesforce.md
+            - href: eap/integration-with-systems/external-databases/considerations-sap-odata.md
         - href: eap/integration-with-systems/external-databases/handle-null-values.md
         - href: eap/integration-with-systems/external-databases/sap-odata.md
         - href: eap/integration-with-systems/external-databases/external-data-type.md
