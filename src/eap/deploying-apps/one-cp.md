@@ -31,16 +31,16 @@ topic:
 
 # Understanding 1-Click Publish
 
-1-Click Publish builds your app or library for the Development stage. Each publish that changes the asset stores a new revision. You can optionally add a message describing your changes when publishing.
+1-Click Publish (1-CP) builds your app or library for the Development stage. Each publish that changes the asset stores a new revision. You can optionally add a message describing your changes when publishing.
 
 ## Publishing an app {#publishing-app}
 
 OutSystems Developer Cloud (ODC) automates app publishing with its 1-Click Publish button. When you click the 1-Click Publish button to publish an app in the Development stage, the button initiates the following steps:
 
-1. The ODC compiler compiles the app and generates HTML, CSS, JavaScript, and C# code while bundling the necessary libraries.
+1. ODC compiles the app and generates HTML, CSS, JavaScript, and C# code while bundling the necessary libraries.
 1. The ODC compiler produces a debug build of the revision. A debug build stores the compiled files directly, which supports differential builds and shortens publish time.
-1. The ODC Data tool generates database scripts to synchronize the app's data schema with the code's version, ensuring data consistency.
-1. The ODC Deployment tool deploys the debug build in the Kubernetes cluster using app configurations set in the ODC Portal. Simultaneously, the ODC Data tool starts executing the database scripts.
+1. Database scripts to synchronize the app's data schema with the code's version are generated, ensuring data consistency.
+1. The debug build is deployed in the Kubernetes cluster in the Development runtime stage using the app configurations set in the ODC Portal. Simultaneously, ODC starts executing the database scripts to update the application data model.
 
 ![Diagram illustrating the app publishing workflow after 1-Click Publish in ODC, showing steps from ODC Studio to Kubernetes deployment.](images/1-click-publish-diag.png "App Publishing Workflow Diagram")
 
