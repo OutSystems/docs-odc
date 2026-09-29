@@ -14,6 +14,8 @@ coverage-type:
   - unblock
 outsystems-tools:
   - none
+topic:
+  - forge-errors
 ---
 # OS-FRGE-AST-40007
 

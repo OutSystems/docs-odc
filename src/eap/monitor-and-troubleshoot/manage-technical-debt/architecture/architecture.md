@@ -6,6 +6,7 @@ figma:
 coverage-type:
   - understand
 topic:
+  - investigate-finding-causes
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
