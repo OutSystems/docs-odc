@@ -18,6 +18,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - unblock
+topic:
+  - agent-connection-errors
 isautopublish: true
 ---
 
