@@ -21,6 +21,10 @@ coverage-type:
   - apply
   - evaluate
 platform-version: odc
+topic:
+  - logic-performance-tips
+  - use-settings-in-logic
+  - secure-anonymous-screens
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6404-238
 ---
 # Best practices for logic
