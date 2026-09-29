@@ -121,6 +121,8 @@ Email matching and username matching behave differently across IdPs. With email 
 
 ODC always tries to match the user by subject first. If that match fails, ODC uses the **User profile matching** selection as the fallback.
 
+**Important:** If you choose **Email** for user profile matching, note that email matching is case-sensitive. Refer to [Email case sensitivity](#email-case-sensitivity) for important information about email casing and SCIM provisioning.
+
 </div>
 
 <div class="warning" markdown="1">
@@ -366,6 +368,17 @@ To resolve this issue, follow these steps:
 1. Delete the unneeded profile.
 
 Users who have logged in at least once with the IdP don't experience this issue because ODC matches them by subject.
+
+## Email case sensitivity {#email-case-sensitivity}
+
+Email address matching is case-sensitive in ODC. This is important when you provision users via SCIM API or use external identity providers.
+
+ODC stores SCIM-provisioned email addresses in lowercase format (for example, `john.doe@example.com`). If your IdP sends the same email address with different casing (for example, `John.Doe@example.com` or `JOHN.DOE@EXAMPLE.COM`), profile matching fails and ODC rejects the login with a `401` error.
+
+To avoid this issue:
+
+* **Normalize email addresses:** Ensure your IdP and SCIM provisioning send email addresses in lowercase consistently.
+* **Use username-based matching:** If email normalization isn't possible, switch to **Username** for **User profile matching** instead of **Email**.
 
 ## Related resources
 

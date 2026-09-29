@@ -1,6 +1,6 @@
 ---
 helpids: 30469, 30706
-summary: OutSystems Developer Cloud (ODC) facilitates efficient onboarding by enabling group mapping from identity providers to automate role assignments.
+summary: ODC end-user group mapping in OutSystems Developer Cloud links IdP group claims to ODC groups, automating role assignments via the ODC Portal.
 locale: en-us
 guid: 84c9098b-c486-483f-9836-70b8faee63fa
 app_type: mobile apps, reactive web apps
@@ -91,11 +91,15 @@ In this example, the claim indicates that the user belongs to the `marketing` gr
 
 If your IdP sends multiple group values in a single claim, it may use a delimiter to separate them (for example, a comma, semicolon, or pipe character). The **claim value delimiter** is the character or sequence of characters used to split the claim value into individual groups.
 
+For SAML providers, the comma (`,`) is the supported character to separate multiple group values in a single claim.
+
 The maximum claim length is as follows:
 
 * **Claim name**: 50 characters.
-* **Claim value (provider group)**: 256 characters.
+* **Claim value (provider group)**: 256 characters. The value must be a string. Arrays are not supported.
 * **Claim value delimiter**: 3 characters.
+
+For SAML providers, use comma (`,`) as the delimiter to separate multiple group values.
 
 <div class="info" markdown="1">
 
