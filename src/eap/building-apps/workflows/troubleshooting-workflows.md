@@ -14,6 +14,8 @@ coverage-type:
   - apply
 outsystems-tools:
   - odc portal
+topic:
+  - troubleshoot-workflows
 ---
 # Troubleshooting workflows
 

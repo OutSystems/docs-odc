@@ -21,6 +21,9 @@ outsystems-tools:
 content-type:
   - conceptual
   - process
+topic:
+  - capture-and-view-traces
+  - server-side-trace-overview
 ---
 # Server-side traces
 
