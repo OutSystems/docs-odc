@@ -19,6 +19,8 @@ audience:
   - Developer
 outsystems-tools:
   - none
+topic:
+  - css-best-practices
 ---
 # Inline CSS style
 

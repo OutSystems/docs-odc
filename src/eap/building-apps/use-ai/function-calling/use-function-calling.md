@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - function-calling-overview
 ---
 #  Use function calling in AI Agent Builder
 
