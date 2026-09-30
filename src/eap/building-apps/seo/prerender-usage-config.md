@@ -18,6 +18,10 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - reduce-prerender-costs
+  - prerender-sitemap-sync
+  - set-prerender-http-status
 ---
 # Prerender usage and configuration
 

@@ -19,6 +19,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - purge-safeguards
 ---
 # Data purging best practice
 

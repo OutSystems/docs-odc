@@ -8,6 +8,7 @@ coverage-type:
   - understand
   - apply
 topic:
+  - select-statement-syntax
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

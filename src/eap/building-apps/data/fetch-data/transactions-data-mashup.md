@@ -14,6 +14,8 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+topic:
+  - commit-before-mashup
 coverage-type:
   - understand
   - apply
