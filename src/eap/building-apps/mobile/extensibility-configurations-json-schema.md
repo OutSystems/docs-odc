@@ -17,6 +17,9 @@ outsystems-tools:
 coverage-type:
   - understand
   - remember
+topic:
+  - app-extensibility-use-cases
+  - plugin-extensibility-use-cases
 helpids: 30680
 ---
 

@@ -15,6 +15,8 @@ audience:
   - Tech lead
 coverage-type:
   - remember
+topic:
+  - use-code-quality-api-reference
 outsystems-tools:
   - odc portal
 figma:

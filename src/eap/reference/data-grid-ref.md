@@ -19,6 +19,8 @@ audience:
   - Business analyst
 coverage-type:
   - remember
+topic:
+  - data-grid-reference
 outsystems-tools:
   - odc studio
 ---
