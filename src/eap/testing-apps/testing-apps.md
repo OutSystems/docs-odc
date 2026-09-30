@@ -14,6 +14,9 @@ audience:
   - Architect
 coverage-type:
   - understand
+topic:
+  - automated-ui-testing
+  - component-test-automation
 outsystems-tools:
   - bddframework
 ---
