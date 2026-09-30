@@ -20,6 +20,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - card-item-reference
+  - use-card-item-pattern
 ---
 
 # Card Item

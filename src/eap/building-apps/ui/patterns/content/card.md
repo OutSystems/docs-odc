@@ -19,6 +19,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - card-reference
+  - use-card-pattern
 ---
 
 # Card

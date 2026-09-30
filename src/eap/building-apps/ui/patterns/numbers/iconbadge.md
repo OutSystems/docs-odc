@@ -18,6 +18,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - use-icon-badge-pattern
+  - icon-badge-reference
 ---
 
 # Icon Badge

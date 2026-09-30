@@ -19,6 +19,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - accordion-reference
+  - use-accordion-pattern
 ---
 
 # Accordion

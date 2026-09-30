@@ -16,6 +16,8 @@ audience:
   - Platform administrator
 outsystems-tools:
   - none
+topic:
+  - remove-ts-query-strings
 ---
 # Remove _ts from query strings
 
