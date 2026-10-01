@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - resolve-internal-error-odc
 ---
 
 # OS-INTC-60003
