@@ -1,6 +1,7 @@
 ---
 summary: Learn how to create and manage timers in OutSystems Developer Cloud (ODC) to execute application logic periodically.
-tags: scheduler, process automation, application lifecycle management, periodic tasks, cloud development
+tags:
+  - Timers
 locale: en-us
 guid: 8468A775-BC5C-489C-8A44-D15F7C0B5BF1
 app_type: mobile apps, reactive web apps
@@ -16,6 +17,7 @@ coverage-type:
   - apply
 topic:
   - process-data-timers
+isautopublish: true
 ---
 
 # Create and run Timers
@@ -42,7 +44,7 @@ If the Action you specify has input parameters, then when you create the Timer y
 
 You can set a schedule to run the Timer automatically or you can force the Timer to run without waiting at a specific time.
 
-## Set the Timer Schedule
+## Set the Timer schedule
 
 You can set the schedule of a Timer in one of the following ways:
 
@@ -67,7 +69,7 @@ Forcing the execution of a deactivated Timer that has a schedule defined, sets t
 
 </div>
 
-### Use the WakeTimer built-in Action
+### Use the WakeTimer built-in Action {#wake-timer}
 
 When you create a new Timer, a built-in action is available to you to programmatically run the timer. This action is called **Wake(Timer Name)** and can be used in your app logic.
 

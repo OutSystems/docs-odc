@@ -1,13 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) system requirements for ODC Studio and ODC Portal, including hardware, OS support, browsers, and platform limits.
 tags:
-  - Events
-  - External Authentication
-  - External Databases
-  - IdP
-  - IP Filters
-  - Mentor
-  - OIDC
+  - Debugging
+  - End-users
+  - Infrastructure
+  - Mobile app
+  - Performance
+  - Troubleshooting
+  - Web
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
@@ -251,7 +251,7 @@ The logs and traces limits are:
 | Trace spans rate/minute (thousands) | 50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
 | Trace span size (KB) | 1 | The maximum size of a trace span, in KB, streamed with Analytics Stream. |
 
-### Events
+### Events {#events}
 
 The event limits are:
 
@@ -298,6 +298,6 @@ For information about ODC API rate limits, refer to [Rate limits for the APIs](.
 
 The maximum value of the **Default Timeout in Seconds** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default value in the App properties configuration menu, under the Advanced settings.
 
-![Screenshot of app's property editor](images/edit-app-properties-odcs.png "Edit App Properties")
+![Screenshot of the app properties editor with the Default Timeout in Seconds field highlighted under Advanced settings](images/edit-app-properties-odcs.png "App Properties Default Timeout Setting")
 
 For queries or actions inside timer logic, the maximum timeout value is 60 minutes.
