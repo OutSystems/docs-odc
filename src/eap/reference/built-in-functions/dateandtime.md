@@ -15,6 +15,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - built-in-date-functions-odc
+  - dst-date-calculations
 isautopublish: true
 ---
 

@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - unblock
+topic:
+  - stored-procedures
 isautopublish: true
 ---
 
