@@ -2,13 +2,10 @@
 helpids: 30501, 30502
 summary: "OutSystems Developer Cloud (ODC) external database connections in ODC Portal: create connections, select entities, and configure deployment stages."
 tags:
-  - AI
   - Data
   - Entities
   - External Databases
   - Private Gateway
-  - Settings
-  - SQL
 guid: 32004a44-1a95-46b2-abcb-88ad76f51961
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -197,6 +194,7 @@ You can use advanced parameters to add additional parameters for a database conn
 * For **SAP OData**, set `Pagesize=PAGE_SIZE` in the additional parameters to control the maximum number of rows returned per page when fetching data from SAP OData. Replace `PAGE_SIZE` with the number of rows you want per page. A larger page size improves performance but increases memory use per page.
 
     If you don't specify `Pagesize`, OutSystems applies a default of `1000` to help keep each response within the maximum allowed body size (10 MB). Very large page sizes produce responses above that limit and may result in a `Bad gateway` error.
+* For **SAP OData**, if your server uses a self-signed certificate, add the `SSLServerCert=*` parameter to the additional parameters to bypass certificate validation. This parameter also applies to the metadata requests used to retrieve navigation properties (for example, during deep insert), so catalog discovery completes successfully instead of failing with a certificate verification error.
 
 ![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database Additional Parameters")
 
