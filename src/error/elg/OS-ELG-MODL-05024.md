@@ -16,6 +16,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-missing-osstructure-decoration
 ---
 
 # OS-ELG-MODL-05024
