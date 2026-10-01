@@ -16,6 +16,8 @@ audience:
 tags:
   - AI
   - Best Practices
+  - Performance
+  - Private Gateway
 outsystems-tools:
   - odc portal
 helpids:
@@ -40,7 +42,7 @@ Refer to [Create connections to external data sources](../../integration-with-sy
 
 ## Custom search service
 
-Beyond native support for Azure AI Search and Amazon Kendra, ODC allows you to connect to other search services, such as those from different providers or your private search service. Use the **Custom AI search** option to achieve this. To use this option, you must provide an intermediary web service that bridges ODC and your target LLM. This service must implement the OutSystems API contract.
+Beyond native support for Azure AI Search and Amazon Kendra, ODC allows you to connect to other search services, such as those from different providers or your private search service. Use the **Custom AI search** option to achieve this. To use this option, you must provide an intermediary service (API) that bridges ODC and your target AI search service. This service must implement the OutSystems API contract.
 
 When building your connector service, you implement a supported authentication scheme and ensure its endpoint is accessible to ODC, potentially using a private gateway for non-public endpoints. The connector must process requests and format responses, including handling standard parameters like messages and temperature, according to the OutSystems API contract details. Your service should also return standard HTTP status codes for errors. Deploy and ensure your connector service is accessible. Then, add it to the ODC Portal by selecting **Custom AI search** as the provider type during the **Select a provider** process and entering your connector's URL and authentication details.
 
