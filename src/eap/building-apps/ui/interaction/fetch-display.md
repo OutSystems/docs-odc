@@ -14,8 +14,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - aggregates
-  - bind-data-to-a-ui-element
+  - fetch-screen-data
+  - set-up-list-widget
 ---
 
 # Fetch and display data from the database in OutSystems

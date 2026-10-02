@@ -19,8 +19,9 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - allow-apps-read-data
-  - allow-apps-edit-data
+  - producer-consumer-apps
+  - public-entity-sharing
+  - use-server-actions
 isautopublish: true
 ---
 

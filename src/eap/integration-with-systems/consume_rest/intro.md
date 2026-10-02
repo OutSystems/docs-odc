@@ -20,7 +20,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - consume-refresh-methods
+  - call-api-with-token
+  - consume-rest-methods
+  - configure-rest-runtime
 isautopublish: true
 ---
 

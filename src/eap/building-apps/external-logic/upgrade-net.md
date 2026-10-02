@@ -22,7 +22,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - custom-code-integration
+  - release-upgraded-library
+  - update-consumers-upgraded-libraries
+  - upgrade-library-target-framework
 isautopublish: true
 ---
 

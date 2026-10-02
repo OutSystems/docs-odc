@@ -6,7 +6,7 @@ figma:
 coverage-type:
   - understand
 topic:
-  - deployments-api-automation
+  - asset-deletion-governance
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
