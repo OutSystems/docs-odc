@@ -33,6 +33,16 @@ In a multi-portfolio organization, service actions and entities from apps are po
 
 To use public elements, you must first add them to your app. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut (**Cmd+D** on Mac). In the selection window, you can filter by name, description, and type of element. Select the element or elements you want to add and click **Add**.
 
+### Add or open public elements from the search bar
+
+You can also use the search bar at the top of ODC Studio, or the **Ctrl+F** shortcut (**Cmd+F** on Mac). Type at least three characters and the results show a **Public Elements** section. Use **Add** to add the element to your app, or **Open** to open it in the app or library that provides it.
+
+The first word matches part of the element name or description. Each word after that also matches the name of the app or library that provides the element. For example, `customer sales` finds an element named Customer in an app named Sales.
+
+The name of the app or library can't be the first word. Searching for `sales customer` doesn't find that element.
+
+The search bar shows up to seven elements. To view all the matches, use the **Add public elements** window.
+
 ### Libraries
 
 ODC elevates libraries to a top-level concept. Libraries exist at the same level as apps and have their own lifecycle.
