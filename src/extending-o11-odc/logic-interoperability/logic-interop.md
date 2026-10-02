@@ -71,7 +71,15 @@ REST integrations with any other external system follow the regular license cons
 
 ## Limitations {#limitations}
 
-Your ODC apps can consume O11 logic over a secure private connection. However, this secure connection **isn't supported** when **consuming ODC logic in O11 apps**. For this scenario, ensure a secure communication by [protecting your endpoints from unauthorized access](#security).
+The secure private connection for logic interoperability has the following limitations:
+
+* **Consuming O11 logic in ODC apps:** This secure connection, which uses [Private Gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md), **isn't supported** for the following O11 environments:
+
+    * O11 Personal environments
+    * O11 trial environments
+    * Partner's Cloud demo environments
+
+* **Consuming ODC logic in O11 apps:** The secure private connection **isn't supported** in this scenario, where your endpoints work like any other [internet-accessible REST integration](#security).
 
 ## Prerequisites {#prerequisites}
 
@@ -82,4 +90,8 @@ Before you start, make sure the following requirements are met:
 * Your O11 environments and development tools meet the required **Platform Server** and IDE versions.
   Refer to [interoperability version requirements](../version-requirements.md#logic-interop) for the full list.
 
-* If you want to consume O11 logic in your ODC apps through a secure private connection, ensure your ODC organization [is already connected to the O11 infrastructure](../connect-o11-infrastructure.md) exposing that logic.
+* If you want to consume O11 logic in your ODC apps through a [secure private connection](logic-interop-secure-connection.md), ensure the following:
+
+    * You have an enterprise cloud or self-managed O11 infrastructure. Refer to the [limitations](#limitations) for the unsupported environments.
+
+    * Your ODC organization [is already connected to the O11 infrastructure](../connect-o11-infrastructure.md) exposing that logic.
