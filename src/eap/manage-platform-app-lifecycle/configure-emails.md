@@ -21,7 +21,8 @@ coverage-type:
   - apply
   - understand
 topic:
-  - how-to-send-emails
+  - configure-email-settings
+  - create-test-list
 isautopublish: true
 ---
 

@@ -15,7 +15,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - outsystems-overview
+  - o11-to-odc-overview
+  - odc-library-overview
 isautopublish: true
 ---
 # ODC for O11 developers
