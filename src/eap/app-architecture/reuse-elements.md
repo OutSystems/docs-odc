@@ -23,7 +23,9 @@ coverage-type:
   - apply
   - remember
 topic:
-  - dependencies
+  - dependency-strength
+  - module-exposure-and-reuse
+  - producer-consumer-apps
 helpids: 30644
 isautopublish: true
 ---

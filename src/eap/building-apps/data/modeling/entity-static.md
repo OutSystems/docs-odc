@@ -18,7 +18,9 @@ coverage-type:
   - remember
   - apply
 topic:
-  - static-entities
+  - choose-entity-type
+  - entity-change-behavior
+  - static-entity-setup
 isautopublish: true
 ---
 
