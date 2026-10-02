@@ -3560,6 +3560,11 @@ knowledge-needs:
       description: Wants to use the Security library to protect data
         confidentiality, so that an app can encrypt and decrypt sensitive
         information in ODC.
+    - name: Data masking techniques
+      id: data-masking-techniques
+      description: Wants to anonymize sensitive data in OutSystems using data
+        masking techniques so that they can hide or transform values before
+        showing them on screens or exposing them through an API.
     - name: Data integrity and authenticity actions
       id: data-integrity-authenticity-actions
       description: Wants to use the Security library to protect data integrity
@@ -6239,9 +6244,9 @@ knowledge-needs:
         scroll through longer pages.
     - name: Change app favicon
       id: change-app-favicon
-      description: Wants to replace the default OutSystems favicon with a custom PNG
-        or ICO image by changing the favicon resource in Service Studio, in a Reactive
-        Web App for O11, so that the app displays a branded browser tab icon.
+      description: Wants to replace the default OutSystems favicon with a custom image
+        by changing the favicon resource in Service Studio, in a Reactive Web App for
+        O11, so that the app displays a branded browser tab icon.
     - name: Choose icon library
       id: choose-icon-library
       description: Wants to select and switch between the available icon libraries for an
@@ -8599,6 +8604,12 @@ knowledge-needs:
       description: Wants to understand what a screen is, how templates and
         widgets build it, and how widgets adapt to smaller screens, so that
         they can recognize the main parts of a reactive UI screen.
+    - name: Scaffold screens
+      id: scaffold-screens
+      description: Wants to create linked list and detail screens by dragging
+        an entity to a UI flow, and understand the default widgets and actions
+        the platform generates on each screen, so that they can use the
+        scaffolded screens as a starting point.
     - name: Screen inputs and variables
       id: screen-inputs-and-variables
       description: Wants to pass data into a screen with input parameters and
@@ -9965,6 +9976,11 @@ knowledge-needs:
     - name: Traditional web app
       id: traditional-web-app
       description: Wants to create a traditional web application with a UI module and a blank Core module, connect the modules with a public server action, and show that action result on an anonymous home screen, so they can publish and test the app in a browser.
+    - name: Create web app
+      id: create-web-app
+      description: Wants to create a web app from scratch by selecting a web app
+        option, naming the app, uploading an icon, and opening the starter
+        screen, so they can start from a working app shell.
     - name: Application templates overview
       id: application-templates-overview
       description: Wants to understand what application templates are, what types are
@@ -11734,24 +11750,66 @@ knowledge-needs:
         client actions and fall back to the deprecated actions when the
         installed native plugin is still pre-4.0.0, so OTA-updated apps keep
         working on devices that have not been rebuilt.
+    - name: File plugin rebuild
+      id: file-plugin-rebuild
+      description: Wants to resolve the OS-PLUG-FILE-0002 warning by
+        generating and distributing a new mobile package after updating the
+        File Plugin, so the installed native build uses the updated plugin
+        version instead of the older package.
   - name: File Viewer plugin reference
     id: file-viewer-plugin-reference
     description: Wants to understand the File Viewer plugin in O11 mobile apps,
       including its client actions, platform-specific behavior, and resource
       setup, so they can open supported files correctly.
     subtopics:
+    - name: File Viewer availability
+      id: file-viewer-availability
+      description: Wants to resolve the OS-PLUG-FLVW-0001 error by confirming the
+        app runs as a native mobile app with the File Viewer plugin included and
+        the Cordova or Capacitor bridge is available when the File Viewer client
+        action runs, so the app opens files and media on a supported device.
+    - name: File Viewer not loaded
+      id: file-viewer-not-loaded
+      description: Wants to resolve the OS-PLUG-FLVW-0003 error by confirming the
+        File Viewer plugin is included in the mobile package, regenerating the
+        package if it is missing or failed to initialize, and reinstalling the
+        app so the client action can load the plugin at runtime.
     - name: File Viewer actions
       id: file-viewer-actions
       description: Wants to use the File Viewer plugin to open files from local
         paths, app resources, or remote URLs in O11 mobile apps and PWAs,
         check plugin availability, and preview supported media on iOS, so that
         users can view supported files in the right platform context.
+    - name: File Viewer parameters
+      id: file-viewer-parameters
+      description: 'Wants to resolve the OS-PLUG-FLVW-0009 invalid-parameters
+        error by validating File Viewer inputs and using the required
+        `resources/` prefix for OpenDocumentFromResources and
+        PreviewMediaContentFromResources, so file and media content open
+        successfully.'
+    - name: Document open error
+      id: document-open-error
+      description: 'Wants to resolve the OS-PLUG-FLVW-0008 "Could not open the
+        document." error by retrying the open action, re-creating or
+        re-downloading corrupted or unsupported files, and opening a support
+        case if the problem persists, so the document opens successfully.'
+    - name: File Viewer URL
+      id: file-viewer-url
+      description: Wants to resolve the OS-PLUG-FLVW-0007 error by ensuring the
+        URL passed to the File Viewer action is non-empty before the action
+        runs, so the app opens or downloads the file successfully.
     - name: File Viewer resources
       id: file-viewer-resources
       description: Wants to add a file as an app resource and reference it with
         OpenDocumentFromResources by setting the Resources target directory and
         resource path, so that the File Viewer plugin can open bundled files
         safely.
+    - name: File Viewer rebuild
+      id: file-viewer-rebuild
+      description: Wants to resolve the OS-PLUG-FLVW-0002 warning by
+        generating and distributing a new mobile package after updating the
+        File Viewer plugin, so the installed native build uses the updated
+        plugin version instead of the older package.
   - name: Camera plugin migration
     id: migrate-camera-plugin
     description: Wants to migrate the Camera plugin from version 1 to version 2
