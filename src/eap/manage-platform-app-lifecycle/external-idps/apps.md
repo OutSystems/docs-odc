@@ -184,9 +184,11 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
 1. Add the **GetExternalLogoutURL** [public element](../../building-apps/libraries/use-public-elements.md) in the **True** branch, to the right of the **If** element.
 
-1. Copy the **Clear client variables Assign** element, paste it in the **True** branch to the right of the **GetExternalLogoutURL** action.
+1. Add an **Assign** element in the **True** branch, to the right of the **GetExternalLogoutURL** action, and another **Assign** element in the **False** branch, to the right of the **Logout** action.
 
-1. Add a **Destination** to the right of the **Clear client variables Assign**, in the **True** branch. Select **RedirectToURL**, and in its properties, set the **URL** to `GetExternalLogoutURL.ExternalLogoutURL`.
+1. In each **Assign** element, add one line for every client variable your app uses to store the signed-in user's session data, and set each one back to its default value. Use the same variables and values in both **Assign** elements, so the user's session is cleared the same way whether they log out through the built-in flow or an external IdP.
+
+1. Add a **Destination** to the right of the new **Assign**, in the **True** branch. Select **RedirectToURL**, and in its properties, set the **URL** to `GetExternalLogoutURL.ExternalLogoutURL`.
 
     ![Flow diagram showing the logout process with an added IdP button.](images/clientlogout-if-added-idp-odcs.png "ClientLogout flow after modification")
 

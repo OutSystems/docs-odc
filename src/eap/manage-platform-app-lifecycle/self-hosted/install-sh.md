@@ -186,7 +186,7 @@ To install services on your self-hosted cluster, follow these steps:
 1. When the installation is complete, click **Next** to continue. The wizard will proceed to **Configure cluster** and for the Application Performance Monitoring configuration.
 
 1. Configure the Application Performance Monitoring (APM) integration:
-    1. Enter the **APM endpoint server** and **Token** for your OpenTelemetry-compatible tool.
+    1. Enter the **APM endpoint server** and **Token** for your APM tool. The tool must support OTLP over HTTP with Bearer token authentication.
     1. Click **Test connection**. When the test succeeds, click **Next**.
 
         ![Configure Cluster step with fields for APM endpoint server and token, a Test connection button, and a Next button.](images/configure-apm-shc.png "Configure APM tool for the cluster")

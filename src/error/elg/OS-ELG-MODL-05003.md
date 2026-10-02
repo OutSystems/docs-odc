@@ -16,6 +16,8 @@ audience:
   - Developer
 outsystems-tools:
   - none
+topic:
+  - fix-osinterface-attribute
 ---
 # OS-ELG-MODL-05003
 

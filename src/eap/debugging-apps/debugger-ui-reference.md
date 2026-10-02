@@ -1,6 +1,11 @@
 ---
 summary: Explore the Debugger Tab in OutSystems Developer Cloud (ODC) to manage threads, examine app elements, and control runtime values during debugging sessions.
-tags: debugging, user interface, threads management
+tags:
+  - Debugging
+  - Front-End
+  - Logic
+  - Troubleshooting
+  - UI
 locale: en-us
 guid: 81645496-3038-4765-9092-e2ab5a7f413b
 app_type: mobile apps, reactive web apps
@@ -13,13 +18,15 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+  - understand
 topic:
   - debug-troubleshoot-app-logic
+isautopublish: true
 ---
 
 # Debugger reference
 
-The Debugger tab is in the lower pane of ODC Studio and allows you to track all threads being debugged and examine app elements and runtime values. This tab is automatically shown when the debugger is active and the execution flow hits a breakpoint.
+The Debugger tab is in the lower pane of ODC Studio and lets you track all threads being debugged and examine app elements and runtime values. This tab is automatically shown when the debugger is active and the execution flow hits a breakpoint.
 
 ![Overview of the Debugger User Interface in ODC Studio](images/debugger-ui-overview.png "Debugger UI Overview")
 
@@ -44,13 +51,7 @@ The table shows more information about each command.
 | ![Icon of the Stop Debugging button in the Debugger Toolbar](images/toolbar-button-stop.png "Stop Debugging Button") | Stop Debugging | | Stops the debugger and resumes the execution of all of the suspended threads. |
 | ![Icon of the Suspend Running Server Threads button in the Debugger Toolbar](images/toolbar-button-suspend.png "Suspend Running Server Threads Button") | Suspend Running Server Threads | | Suspends the execution of all current server threads in OutSystems Developer Cloud (ODC). |
 | ![Icon of the Abort Running Server Threads button in the Debugger Toolbar](images/toolbar-abort-button.png "Abort Running Server Threads Button") | Abort Running Server Threads | | Aborts the execution of the current server threads in ODC. |
-| :---: | ------ | :--------: | ------------ |
-| ![Icon of the Stop Debugging button in the Debugger Toolbar](images/toolbar-button-stop.png "Stop Debugging Button") | Stop Debugging | | Stops the debugger and resumes the execution of all of the suspended threads. |
-| ![Icon of the Suspend Running Server Threads button in the Debugger Toolbar](images/toolbar-button-suspend.png "Suspend Running Server Threads Button") | Suspend Running Server Threads | | Suspends the execution of all current server threads in OutSystems Developer Cloud (ODC). |
-| ![Icon of the Abort Running Server Threads button in the Debugger Toolbar](images/toolbar-abort-button.png "Abort Running Server Threads Button") | Abort Running Server Threads | | Aborts the execution of the current server threads in ODC. |
 | ![Icon of the Continue button with the F9 shortcut in the Debugger Toolbar](images/toolbar-button-continue.png "Continue Button") | Continue | `F9` | Resumes the execution. |
-| ![Icon of the Step Over button with the F10 shortcut in the Debugger Toolbar](images/toolbar-button-step-over.png "Step Over Button") | Step Over | `F10` | Steps the execution trace to the next element in the same flow or, when in a web application, screen "level". |
-| ![Icon of the Step Into button with the F11 shortcut in the Debugger Toolbar](images/toolbar-button-step-into.png "Step Into Button") | Step Into | `F11` | Steps the execution trace to the first element "inside" elements like: <br/> &#8212; Execute Client Action (or Execute Server Action) elements which execute user-defined actions of the same app<br/> &#8212; User functions of the same app<br/> &#8212; Assignments of Assign elements<br/> Trying to step into any other element is the same as doing a ![Icon of the Step Over button with the F10 shortcut in the Debugger Toolbar](images/toolbar-button-step-over.png "Step Over Button") Step Over operation. |
 | ![Icon of the Step Over button with the F10 shortcut in the Debugger Toolbar](images/toolbar-button-step-over.png "Step Over Button") | Step Over | `F10` | Steps the execution trace to the next element in the same flow or, when in a web application, screen "level". |
 | ![Icon of the Step Into button with the F11 shortcut in the Debugger Toolbar](images/toolbar-button-step-into.png "Step Into Button") | Step Into | `F11` | Steps the execution trace to the first element "inside" elements like: <br/> &#8212; Execute Client Action (or Execute Server Action) elements which execute user-defined actions of the same app<br/> &#8212; User functions of the same app<br/> &#8212; Assignments of Assign elements<br/> Trying to step into any other element is the same as doing a ![Icon of the Step Over button with the F10 shortcut in the Debugger Toolbar](images/toolbar-button-step-over.png "Step Over Button") Step Over operation. |
 | ![Icon of the Step Out button with the Shift+F11 shortcut in the Debugger Toolbar](images/toolbar-button-step-out.png "Step Out Button") | Step Out | `Shift+F11` | Continues the execution trace to the next element in the outer "level" of the flow or screen, i.e. it "gets out" of the current flow or screen. |

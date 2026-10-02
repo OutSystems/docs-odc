@@ -13,6 +13,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - javascript-api-keywords
+  - when-to-use-javascript
 ---
 
 # Extend Your Apps Using JavaScript

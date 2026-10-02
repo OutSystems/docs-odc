@@ -14,7 +14,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - ui-elements-screen-blocks
+  - look-and-feel-overview
+  - ui-architecture-overview
 ---
 
 # User interface

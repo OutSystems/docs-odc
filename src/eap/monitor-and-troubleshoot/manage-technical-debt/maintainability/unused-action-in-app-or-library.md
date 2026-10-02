@@ -17,6 +17,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - remove-unused-action
 ---
 # Unused action in app or library
 

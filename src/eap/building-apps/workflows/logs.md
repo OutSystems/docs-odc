@@ -23,6 +23,8 @@ audience:
 coverage-type:
   - understand
   - apply
+topic:
+  - view-workflow-logs
 ---
 # Workflow logs
 

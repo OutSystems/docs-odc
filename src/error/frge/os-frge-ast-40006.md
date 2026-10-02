@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - forge-errors
 ---
 
 # OS-FRGE-AST-40006

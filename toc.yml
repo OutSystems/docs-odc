@@ -48,6 +48,15 @@
 - topics:
     # Application naming and URLs
     - href: eap/building-apps/app-naming.md
+    # Publishing your assets
+    - href: eap/building-apps/publishing/publishing-your-assets.md
+    - topics:
+        - href: eap/building-apps/publishing/revisions.md
+    # Merge
+    - href: eap/building-apps/merge/intro.md
+    - topics:
+        - href: eap/building-apps/merge/concepts.md
+        - href: eap/building-apps/merge/merge-example.md
     # Build AI-powered apps
     - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
@@ -179,6 +188,10 @@
         - topics:
             - href: eap/building-apps/data/data-best-practices/data-purging.md
             - href: eap/building-apps/data/data-best-practices/data-archiving.md
+            - href: eap/building-apps/data/data-best-practices/batch-integration/intro.md
+            - topics:
+                - href: eap/building-apps/data/data-best-practices/batch-integration/sequential.md
+                - href: eap/building-apps/data/data-best-practices/batch-integration/parallel.md
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
         - href: eap/building-apps/data/convert-data-types.md
@@ -387,11 +400,6 @@
         - href: eap/building-apps/events/implement-events.md
         - href: eap/building-apps/events/database-events.md
         - href: eap/building-apps/events/events-properties.md
-     # Merge
-    - href: eap/building-apps/merge/intro.md
-    - topics:
-        - href: eap/building-apps/merge/concepts.md
-        - href: eap/building-apps/merge/merge-example.md
     # Multilingual
     - href: eap/building-apps/ui/multilingual/intro.md
     - topics:
@@ -618,6 +626,13 @@
     - href: eap/integration-with-systems/external-databases/intro.md
     - topics: 
         - href: eap/integration-with-systems/external-databases/create-connection-external-data.md
+        - topics:
+            - href: eap/integration-with-systems/external-databases/considerations-azure-sql.md
+            - href: eap/integration-with-systems/external-databases/considerations-mysql.md
+            - href: eap/integration-with-systems/external-databases/considerations-oracle.md
+            - href: eap/integration-with-systems/external-databases/considerations-postgresql.md
+            - href: eap/integration-with-systems/external-databases/considerations-salesforce.md
+            - href: eap/integration-with-systems/external-databases/considerations-sap-odata.md
         - href: eap/integration-with-systems/external-databases/handle-null-values.md
         - href: eap/integration-with-systems/external-databases/sap-odata.md
         - href: eap/integration-with-systems/external-databases/external-data-type.md

@@ -17,6 +17,8 @@ content-type:
 audience:
   - Front-end developer
   - Developer
+topic:
+  - export-data-to-excel
 ---
 
 # Record List to Excel

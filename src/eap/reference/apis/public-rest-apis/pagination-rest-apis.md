@@ -20,6 +20,8 @@ coverage-type:
   - remember
   - understand
   - apply
+topic:
+  - rest-result-pagination
 ---
 
 # Page through lists of resources

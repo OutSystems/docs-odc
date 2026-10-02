@@ -21,6 +21,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - input-with-icon-reference
+  - use-input-with-icon-pattern
 ---
 
 # Input with Icon

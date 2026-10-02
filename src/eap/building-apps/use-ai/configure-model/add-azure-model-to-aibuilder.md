@@ -12,6 +12,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - manage-ai-model-connections
 ---
 
 # Add Azure OpenAI model to AI Agent Builder app

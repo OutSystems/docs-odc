@@ -13,6 +13,8 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+topic:
+  - custom-404-pages
 ---
 # Custom 404 pages
 

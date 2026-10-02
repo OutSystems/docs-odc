@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - troubleshoot-odc-connection-errors
 ---
 
 # OS-INTC-60004

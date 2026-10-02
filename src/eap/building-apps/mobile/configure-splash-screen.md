@@ -16,11 +16,12 @@ audience:
   - Developer
   - Front-end developer
 tags:
+  - Android
   - Capacitor
   - Cordova
+  - iOS
   - Mobile app
   - Native App
-  - Screens
   - Settings
 outsystems-tools:
   - odc studio

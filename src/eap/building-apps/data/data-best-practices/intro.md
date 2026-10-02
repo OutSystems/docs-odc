@@ -1,11 +1,11 @@
 ---
-summary: "OutSystems Developer Cloud (ODC) data best practices: entity indexing, settings, binary data isolation, and purging strategies for scalable apps."
+summary: "OutSystems Developer Cloud (ODC) data management best practices for settings, indexes, archiving, purging, and batch processing."
 tags:
   - Best Practices
   - Data
   - Entities
   - Indexes
-  - Settings
+  - Performance
 guid: 858e8c87-2c13-4803-b279-008726bb77ea
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -14,11 +14,13 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - evaluate
 audience:
+  - Architect
   - Developer
   - Platform administrator
-  - Architect
+  - Tech lead
 outsystems-tools:
   - odc portal
+isautopublish: true
 ---
 # Best practices for data management
 
@@ -78,7 +80,7 @@ Fetching and updating entities with large text or binary data attributes can be 
 
 * Isolate binary data attributes in a separate entity.
 
-![Data model showing large text and binary data attributes isolated in separate entities.](images/best-practice-binary-data-odcs.png "Isolate large text and binary data in separate entities")
+![Data model showing large text and binary data attributes isolated in separate entities.](images/best-practice-binary-data-odcs.png "Binary Data Isolation Data Model")
 
 ### Benefits
 
@@ -105,3 +107,15 @@ The following criteria can help you determine if these mechanisms are necessary 
 ### Benefits
 
 Implementing purging and archiving strategies improves **runtime performance** and prevents scenarios of application performance deterioration. Since the volume of active data is reduced, queries take less time to execute and the application reacts faster.
+
+## Process large data volumes in batches { #batch-integration }
+
+Moving a large volume of data between systems in a single operation competes with live user traffic for database and application resources, and a run that exceeds the execution limits of a Timer or an Event fails without completing.
+
+### Recommendations
+
+If your app moves large volumes of data on a schedule, split the work instead of processing everything in a single run. Batch integration can process chunks sequentially or in parallel, depending on your throughput needs and the complexity you're prepared to manage. For the full pattern, including guidance on choosing an approach and tracking each record's progress, refer to [Batch integration](batch-integration/intro.md).
+
+### Benefits
+
+Processing data in chunks keeps each unit of work small and durable, so a run makes **steady progress within platform execution limits** and resumes from where it stopped after an interruption, instead of repeating work that already completed.

@@ -20,6 +20,9 @@ coverage-type:
   - apply
   - evaluate
 isautopublish: true
+topic:
+  - client-event-fetch
+  - server-vs-client-logic
 ---
 
 # Best practices for keeping mobile apps responsive

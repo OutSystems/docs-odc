@@ -19,6 +19,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - configure-area-chart
 isautopublish: true
 ---
 

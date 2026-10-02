@@ -18,6 +18,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - capture-and-view-traces
+  - trace-retention-rules
+  - understand-traces-spans
 ---
 
 # Traces

@@ -17,6 +17,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - data-confidentiality-actions
+  - data-integrity-authenticity-actions
+  - jwt-library-actions
 ---
 
 # Security

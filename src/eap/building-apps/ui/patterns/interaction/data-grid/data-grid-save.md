@@ -17,6 +17,8 @@ audience:
   - Developer
 coverage-type:
   - apply
+topic:
+  - save-data-grid-changes
 outsystems-tools:
   - odc studio
 ---

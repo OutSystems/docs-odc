@@ -5,6 +5,8 @@ tags:
   - Workflows
 locale: en-us
 guid: dad534b3-39c0-4907-a743-5509d867e111
+topic:
+  - workflow-entities
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6675-2

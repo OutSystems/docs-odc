@@ -15,6 +15,8 @@ audience:
   - Front-end developer
 coverage-type:
   - remember
+topic:
+  - upload-external-library
 outsystems-tools:
   - odc studio
   - odc portal

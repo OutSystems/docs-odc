@@ -7,6 +7,8 @@ coverage-type:
   - apply
   - understand
 topic:
+  - create-database-event
+  - database-event-behavior
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

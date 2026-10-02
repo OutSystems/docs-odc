@@ -1,5 +1,7 @@
 ---
 summary: Learn how to end a workflow
+topic:
+  - end-workflow
 tags:
   - Workflows
 locale: en-us

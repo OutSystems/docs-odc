@@ -18,6 +18,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - prevent-sql-injection
 ---
 # SQL injection
 

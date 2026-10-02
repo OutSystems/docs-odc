@@ -22,6 +22,10 @@ coverage-type:
   - apply
   - evaluate
 isautopublish: true
+topic:
+  - optimize-mobile-list-data-loading
+  - prevent-mobile-content-flicker
+  - prioritize-mobile-screen-content
 ---
 
 # Best practices for rendering data on mobile screens

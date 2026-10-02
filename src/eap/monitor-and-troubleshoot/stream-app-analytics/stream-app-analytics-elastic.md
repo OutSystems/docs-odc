@@ -19,6 +19,8 @@ audience:
   - Tech lead
   - Architect
 helpids: 
+topic:
+  - stream-to-elastic
 ---
 
 # Stream observability data to Elastic

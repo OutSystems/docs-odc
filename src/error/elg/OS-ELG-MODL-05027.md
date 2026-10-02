@@ -16,6 +16,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-zip-root-assembly
 ---
 
 # OS-ELG-MODL-05027

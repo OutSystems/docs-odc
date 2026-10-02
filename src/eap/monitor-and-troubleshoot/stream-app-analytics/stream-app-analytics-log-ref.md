@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - streamed-log-data
 content-type:
 audience:
   - Platform administrator

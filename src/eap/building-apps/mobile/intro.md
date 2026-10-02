@@ -18,6 +18,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - choose-mobile-framework
+  - create-mobile-app-package
+  - migrate-cordova-app-to-capacitor
 helpids: 30625
 isautopublish: true
 ---

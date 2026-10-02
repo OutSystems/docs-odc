@@ -15,6 +15,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - unblock
+topic:
+  - package-manager-service-errors
 ---
 
 # Package Manager Service

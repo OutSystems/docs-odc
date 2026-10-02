@@ -2,6 +2,8 @@
 summary: This article describes the Asset Configurations REST API endpoint details.
 locale: en-us
 guid: cb142916-250b-42b9-a983-7ccdaa028480
+topic:
+  - asset-configurations-api
 app_type: mobile apps, reactive web apps
 platform-version: odc
 content-type:

@@ -84,7 +84,7 @@ For how the model and the compiler fit together, refer to [Architecture](archite
 
 ## Human oversight and control
 
-You decide what Mentor applies. For a complex change, such as one that spans several entities, screens, and logic, Mentor proposes a plan and applies it only after you accept it. For a single-action change, Mentor applies the change directly. You review proposed changes before Mentor applies them, and compare your app before and after. You accept the change, discard it, or refine it with a follow-up prompt. For how planning and review work, refer to [Planning and your control](coding-agents.md#planning-and-your-control) and [Review and accept the plan](mentor-studio/how-it-works.md#review-and-accept-the-plan).
+You decide what Mentor applies. For a complex change, such as one that spans several entities, screens, and logic, Mentor proposes a plan and applies it only after you accept it. For a single-action change, Mentor applies the change directly. You review proposed changes before Mentor applies them, and compare your app before and after. You accept the change, discard it, or refine it with a follow-up prompt. For how planning and review work, refer to [Planning and your control](coding-agents.md#planning-and-your-control) and [Review and accept the plan](mentor-studio/how-it-works.md#accept-plan).
 
 ## Access and governance
 

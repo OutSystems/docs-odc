@@ -7,6 +7,9 @@ coverage-type:
   - apply
   - unblock
 topic:
+  - handle-odc-event
+  - handle-odc-event-errors
+  - trigger-odc-event
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

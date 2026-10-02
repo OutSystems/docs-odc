@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - create-asset-via-api
 ---
 
 # OS-FRGE-AST-40009

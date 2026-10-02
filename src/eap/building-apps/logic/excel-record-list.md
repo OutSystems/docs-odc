@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - excel-to-record-list
 content-type:
 audience:
   - Developer

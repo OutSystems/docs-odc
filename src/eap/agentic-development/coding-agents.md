@@ -71,7 +71,7 @@ A clear, explicit prompt combined with relevant context produces more accurate r
 
 You stay in control of every change. Mentor asks you to accept a structural proposal before it builds, applies smaller changes directly, and lets you review the result before you continue.
 
-* **Plan when it matters.** Mentor proposes a plan for complex changes, such as those that span multiple elements. It applies a simple, self-contained change directly. For how to read and act on a plan in Mentor Studio, refer to [Review and accept the plan](mentor-studio/how-it-works.md#review-and-accept-the-plan).
+* **Plan when it matters.** Mentor proposes a plan for complex changes, such as those that span multiple elements. It applies a simple, self-contained change directly. For how to read and act on a plan in Mentor Studio, refer to [Review and accept the plan](mentor-studio/how-it-works.md#accept-plan).
 * **Clarify at decision points.** The agents use reasonable defaults and state their assumptions. They ask a clarifying question only when a wrong guess would cause significant rework or change the architecture.
 * **Review and accept.** For structural changes, Mentor proposes a blueprint (Mentor Web) or a plan (Mentor Studio). For a blueprint, you refine it through follow-up prompts until it matches your intent. For a plan, you proceed, review the changes first, or discard it. Mentor applies smaller changes without a separate step. You review the result afterward.
 * **Review the result.** After the agents apply changes, you compare your asset before and after to confirm the outcome. For the comparison view, refer to [Review changes](mentor-studio/how-it-works.md#review-changes).

@@ -20,6 +20,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - month-picker-reference
+  - use-month-picker
 ---
 
 # Month Picker

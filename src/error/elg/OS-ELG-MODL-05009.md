@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-icon-resource
 ---
 
 # OS-ELG-MODL-05009

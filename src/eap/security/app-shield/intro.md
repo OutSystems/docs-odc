@@ -23,6 +23,8 @@ coverage-type:
   - understand
   - apply
   - remember
+topic:
+  - appshield-hardening
 isautopublish: true
 ---
 

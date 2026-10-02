@@ -6,6 +6,9 @@ figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?no
 coverage-type:
   - apply
 topic:
+  - add-secure-connection
+  - configure-private-gateway
+  - route-logic-reuse-secure-connection
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports writing data to SAP O Data connection.
+summary: SAP OData external connection in OutSystems Developer Cloud (ODC) covers entity actions and deep insert for related records.
 tags:
   - Data
   - Entities
@@ -22,6 +22,7 @@ topic:
   - create-sap-entity-actions
 platform-version: odc
 figma: https://www.figma.com/design/AOyPMm22N6JFaAYeejDoge/Configuration-management?node-id=3711-10&t=3EmFUNoGU0AIgLBT-1
+isautopublish: true
 ---
 # Write data to SAP OData external connection
 
@@ -91,4 +92,4 @@ The deep insert server action returns the ID of the primary record inserted. If 
 
 Since the deep insert action is automatically generated and available as a public element, the Create entity action is unavailable for the external entity in the **Data** tab. You can use the Update and Delete entity actions as long as they are available in SAP for the given entities.
 
-For more information about considerations while working with SAP OData, refer to [Considerations when integrating external systems](intro.md#considerations-when-integrating-external-systems).
+For more information about considerations while working with SAP OData, refer to [SAP OData connection considerations](considerations-sap-odata.md).

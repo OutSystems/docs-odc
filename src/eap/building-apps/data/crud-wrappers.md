@@ -8,6 +8,10 @@ tags:
   - Entities
   - Logic
 guid: 27f0d3e2-f584-46a1-bb5a-adc6fe821a3d
+topic:
+  - crud-wrapper-accelerator
+  - crud-wrapper-auditing
+  - non-autonumber-crud-ids
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc

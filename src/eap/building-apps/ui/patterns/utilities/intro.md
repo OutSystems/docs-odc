@@ -10,6 +10,8 @@ platform-version: odc
 figma:
 coverage-type:
   - none
+topic:
+  - utility-scope
 outsystems-tools:
   - none
 audience:

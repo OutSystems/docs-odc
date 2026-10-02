@@ -22,6 +22,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - unblock
+topic:
+  - fix-deployment-inconsistencies
+  - impact-analysis-report
 isautopublish: true
 ---
 

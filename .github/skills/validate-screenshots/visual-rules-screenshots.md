@@ -6,7 +6,7 @@ excluding `-diag`).
 
 Focus areas (from the calibration brief): highlight component, shadow, naming
 convention, format. A few adjacent rules are included where they were obvious
-from the reference set (cursor, PII) — these can be kept or deleted on review.
+from the reference set (PII) — these can be kept or deleted on review.
 
 The skill uses this file as a checklist. Each rule has:
 
@@ -110,9 +110,12 @@ suffix-vs-content mismatch in either direction:
 ## 3. Highlight — red rectangle outline on the focal element
 
 * **Severity:** ❌ when the screenshot illustrates a specific click or focused
-  element and no highlight is present; ⚠️ when a highlight is present but the
-  red doesn't match the design-system token (a sign the rectangle was drawn
-  by hand instead of dropped from the Figma library).
+  element and it has no red rectangle AND no native selection state of its
+  own (see below); ⚠️ when a highlight is present but the red doesn't match
+  the design-system token (a sign the rectangle was drawn by hand instead of
+  dropped from the Figma library); also ⚠️ when there's no red rectangle but
+  the captured product already marks the focal element with its own native
+  selection state — see "Native selection state" below.
 * **Check (vision):** for screenshots that are part of a step ("click X",
   "open the Y panel"), the focal element is surrounded by a red rectangle
   outline — sharp corners, uniform ~2–3 px stroke, no fill. Multiple red
@@ -151,6 +154,33 @@ suffix-vs-content mismatch in either direction:
 * **Fail example:** would be a green or blue highlight, a filled rectangle,
   or the whole screenshot reshot without any highlight on an obvious
   step-target.
+
+**Native selection state:** when the focal element is a list row, tree node,
+card, or menu item, and the captured product already renders its own
+selected/chosen state on it — a full-row or full-node accent-color
+background, a ticked checkbox/radio, a bordered/filled selected state — that
+native state is a ⚠️, not a ❌, even with no red rectangle added. The native
+state likely makes the target clear enough on its own, but a designer should
+still confirm whether a red rectangle should be added for consistency with
+other step screenshots. This applies regardless of which product is
+captured or what accent color its native selection uses (blue, purple, gray,
+etc.) — it's a separate, broader case from the native-red-UI list above
+(that list covers pure rendering artifacts like buttons and logos, not a
+selection state standing in for a highlight). Still fail ❌ when the focal
+element has no native visual selection/focus indicator of its own at all (a
+plain unselected button, an unselected menu item, a bare canvas node) —
+there the reader has no way to tell what to click without an added
+rectangle.
+
+* **Verdict wording:** "Focal element is marked only by the product's native
+  selection state, not a red design-system highlight — consider adding one
+  from the Figma library for consistency with other step screenshots
+  (rule 3)."
+* **⚠️ example:** `a2a-public-element-odcs.png` (ODC Studio's "Add public
+  elements" dialog — the chosen `SendMessage` row is ticked and shown with a
+  full-row blue background, no red rectangle added); `a2a-call-odcs.png`
+  (ODC Studio's "Select ActionHandler" dialog — `SendMessage` is marked via
+  the tree's own blue selection highlight, no red rectangle added).
 
 ## 4. Numbered callouts — red circle, white digit
 
@@ -248,23 +278,7 @@ suffix-vs-content mismatch in either direction:
   chrome visible, but no grey border or drop shadow outside that chrome;
   the dark-theme background runs to the image edge.
 
-## 7. Cursor — present on interaction screenshots
-
-* **Severity:** ⚠️
-* **Check:** screenshots that document a click, drag, or hover include a
-  cursor icon positioned on or immediately next to the highlighted element.
-  Use one of the three Figma cursor components — never a raw vector:
-  `cursor-white`, `cursor-black`, `cursor-hand`. Informational screenshots
-  (output panels, result views, overviews) don't need a cursor. Step-based
-  screenshots that already contain numbered callouts guiding the user through
-  interaction steps also don't need a cursor — the callouts already direct
-  attention to the relevant element.
-* **Pass example:** `aggregate-create-ss.png` (cursor on the right edge of
-  the highlighted menu item); `add-source-ss.png` (cursor just below the
-  **Add source** button).
-* **Fail example:** a "click **Save**" step screenshot with no cursor at all.
-
-## 8. No PII / customer data
+## 7. No PII / customer data
 
 * **Severity:** ❌
 * **Check:** any personal data shown is obviously synthetic — no real names
@@ -276,7 +290,7 @@ suffix-vs-content mismatch in either direction:
 * **Fail example:** would be a screenshot showing `@outsystems.com` emails
   of real people, or a support ticket with a customer's company name.
 
-## 9. No internal environment URLs or hostnames
+## 8. No internal environment URLs or hostnames
 
 * **Severity:** ⚠️
 * **Check:** no internal OutSystems infrastructure hostname or staging
@@ -285,7 +299,8 @@ suffix-vs-content mismatch in either direction:
 
   **Not acceptable** — flag these:
     * Infrastructure or staging names: `eng-stage-us-01.outsystems.dev`,
-      `eng-stage-*`, `qa-*`, `internal-*`, `staging-*`
+      `eng-<lifecycle>-*` (for example `eng-stage-*` and `eng-dev-*`),
+      `qa-*`, `internal-*`, `staging-*`, `personal-*`
     * Development server IPs or private VPN hostnames
     * Internal Jira / ticket IDs (`RDTKF-*`, `TK-*`) visible on screen
 
@@ -305,9 +320,10 @@ suffix-vs-content mismatch in either direction:
   `training-prd.outsystems.app` (public demo URL).
 * **Fail example:** `action-odcs.png` (browser tab shows
   `eng-stage-us-01 - eng-stage-us-01.out...`), `emanuel-rodrigues-odcs.png`
-  (footer shows `eng-stage-us-01.outsystems.dev`).
+  (footer shows `eng-stage-us-01.outsystems.dev`), a screenshot with a
+  browser tab or address bar showing `personal-z1f36vp9.outsystems.dev`.
 
-## 10. Theme must match the captured surface
+## 9. Theme must match the captured surface
 
 * **Severity:** ❌ when the theme contradicts the mandate in the table
   below; ⚠️ when the suffix isn't listed yet.
@@ -341,14 +357,13 @@ suffix-vs-content mismatch in either direction:
 * **Fail example:** `apps-lalal-pl.png` (light-mode, but `-pl` must be
   dark), `data-mashup-odcs.png` (dark-mode, but `-odcs` must be light).
 
-## 11. Maximum width — 1200 px
+## 10. Maximum width — 1200 px
 
 * **Severity:** ⚠️
 * **Check:** the PNG's pixel width is at most 1200 px. Wider captures render
   poorly on the docs site and are hard to re-use. Heights are not
   constrained. **Verdict comes from `scripts/check_metadata.py`
-  (`width.verdict` and `width.px`; numbered `width` in the JSON refers to
-  this rule even though it's now rule 11).**
+  (`width.verdict` and `width.px`).**
 * **Pass example:** `aggregate-server-side-ss.png` (533 × 593).
 * **Fail example:** any export wider than 1200 px — e.g. a full retina
   editor grab at 2560 × 1440.

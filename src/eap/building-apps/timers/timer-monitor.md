@@ -16,6 +16,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - monitor-timer-logs
 ---
 
 # Monitor Timers

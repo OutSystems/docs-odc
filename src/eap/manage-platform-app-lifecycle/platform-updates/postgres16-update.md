@@ -7,6 +7,8 @@ coverage-type:
   - apply
   - understand
 topic:
+  - plan-postgresql-upgrade
+  - review-postgresql-breaking-changes
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

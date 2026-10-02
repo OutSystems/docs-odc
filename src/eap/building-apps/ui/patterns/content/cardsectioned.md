@@ -14,6 +14,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - card-sectioned-settings
+  - use-card-sectioned
 ---
 
 # Card Sectioned

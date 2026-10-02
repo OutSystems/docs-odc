@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - action-types-overview
 ---
 
 # Logic Actions

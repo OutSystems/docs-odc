@@ -12,6 +12,8 @@ outsystems-tools:
   - ai agent builder
 coverage-type:
   - apply
+topic:
+  - configure-azure-openai
 ---
 
 # Set up Azure OpenAI Service

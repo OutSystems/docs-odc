@@ -37,12 +37,20 @@ When editing or creating pages:
 
 ## Style guide (source of truth)
 
-When writing or reviewing docs, follow the rules in:
+Whenever you create, edit, rewrite, summarize, or review a content page, however the request is phrased and including small edits, follow the rules in the files below. `.claude/rules/doc-style-auto.md` says which files to read for which kind of change. Don't edit `translated/` content, which is generated from the English version.
 
 * `.github/doc-styles/formatting.md`: Markdown conventions, emphasis, UI elements, placeholders, admonitions
 * `.github/doc-styles/tone.md`: voice, language, capitalization, product names
 * `.github/doc-styles/structure.md`: headings, paragraphs, lists, procedures, document types
+* `.github/doc-styles/content.md`: grammar, clarity, and general content-quality rules
+* `.github/doc-styles/markdown.md`: Markdown syntax mechanics (headings, emphasis, lists, tables, links, images)
+* `.github/doc-styles/procedure-rules.md`: rules specific to procedure (task-based) topics
+* `.github/doc-styles/process-rules.md`: rules specific to process (multi-task, end-to-end) topics
+* `.github/doc-styles/word-lists.md`: approved product names and terminology
+* `.github/doc-styles/working-with-files.md`: file and folder naming conventions, and table of contents placement
 * `.github/doc-styles/visual-assets.md`: Mermaid diagram rules, color palette, visual audit workflow (only when working on diagrams or visual assets)
+
+`.github/copilot-instructions.md` is the index of these files; treat it as authoritative if the two ever disagree, since new style files are added there first.
 
 Key rules:
 
@@ -141,6 +149,18 @@ Validations run on PRs via `.github/workflows/`. Workflow names and checks vary 
 * `build.yml`: documentation build
 * `visual-assets-validate.yml` / `visual-assets-pr.yml`: image/diagram validation
 
+## Pull requests
+
+* Pull request titles must include the Jira ticket ID(s) relevant to the change. Valid Jira tickets ids contain the prefix `RDTKF-` or `TK-`, followed by a number (e.g. RDTKF-1234, TK-5678).
+* Source the ticket ID(s) from, in order of preference:
+    1. The conversation, if the user referenced ticket ID(s) when asking for the work (for example, "implement TK-25291"). Prefer this source since it can surface more than one ticket.
+    2. The current branch name, if it contains a valid ticket ID (`rdtkf-\d+` or `tk-\d+`). Branch names are often in lowercase. Use the uppercase form in the pull request tiltle (i.e. `rdtkf-1234` becomes `RDTKF-1234` in the pull request title).
+* A change can address more than one ticket. Include all relevant ticket IDs in the title, not just first one found.
+* If no Jira ticket ID can be found from either source, ask the user for one before opening the PR.
+* Format: Jira ticket ID(s) first, space-separated, followed by a space and the plain-text short summary of the pull request. No colon, brackets, or other punctuation around the ticket ID, since automations that parse the title can break on non-ASCII characters or unexpected punctuation.
+    * Single ticket: `RDTKF-25291 Fix heading hierarchy in MABS versions page`
+    * Multiple tickets: `RDTKF-25291 TK-1234 Fix heading hierarchy in MABS versions page`
+
 ## Editor settings
 
 * Indent with 4 spaces (configured in `.editorconfig`)
@@ -164,6 +184,8 @@ Use inline bold prefixes instead:
 
 ## Shared files
 
-This `CLAUDE.md` and all skills (Claude Code slash commands) are authored and
-maintained in the `tk-cicd` repository and synced to all other documentation
-repositories. Always edit them in `tk-cicd`. If unsure where to make the edit, ask the user.
+This file (`SHARED-CLAUDE.md` in `tk-cicd`) and all skills (Claude Code slash
+commands) are authored and maintained in the `tk-cicd` repository. This file is
+synced out to other documentation repositories as their `CLAUDE.md`. Always
+edit it in `tk-cicd` under the name `SHARED-CLAUDE.md`. If unsure where to make
+the edit, ask the user.

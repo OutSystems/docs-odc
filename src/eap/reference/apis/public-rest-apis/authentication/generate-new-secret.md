@@ -17,6 +17,8 @@ audience:
   - Platform administrator
 coverage-type:
   - apply
+topic:
+  - generate-client-secret
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3504-23&t=Ee0vNUQza7lfj7Sy-1
 isautopublish: true

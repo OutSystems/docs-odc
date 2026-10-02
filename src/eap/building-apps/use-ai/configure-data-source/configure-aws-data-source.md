@@ -12,6 +12,8 @@ outsystems-tools:
   - none
 coverage-type:
   - apply
+topic:
+  - add-amazon-kendra-data-source
 ---
 
 # Set up Amazon Kendra with a data source

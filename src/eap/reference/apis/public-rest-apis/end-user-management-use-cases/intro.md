@@ -6,6 +6,7 @@ figma:
 coverage-type:
   - remember
 topic:
+  - encapsulate-rest-apis
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

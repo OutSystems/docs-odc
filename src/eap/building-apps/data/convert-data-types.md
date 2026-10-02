@@ -15,6 +15,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - built-in-conversion-functions
+  - implicit-conversion-rules
 ---
 
 # Convert data types

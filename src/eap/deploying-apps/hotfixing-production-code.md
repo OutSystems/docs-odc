@@ -24,6 +24,10 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - hotfix-production
+  - hotfix-strategy-os
+  - portback-hotfix
 isautopublish: true
 ---
 

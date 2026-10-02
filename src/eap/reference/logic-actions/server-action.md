@@ -15,6 +15,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - action-properties-reference
+  - server-action-exposure
 ---
 
 # Server Action

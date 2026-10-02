@@ -17,6 +17,8 @@ audience:
   - Developer
   - Architect
   - Tech lead
+topic:
+  - optimize-usage
 outsystems-tools:
   - none
 ---

@@ -20,6 +20,10 @@ audience:
   - Architect
 outsystems-tools:
   - odc studio
+topic:
+  - data-archiving-cold-data
+  - entity-index-selection
+  - timer-best-practices
 ---
 # Data archiving best practice
 

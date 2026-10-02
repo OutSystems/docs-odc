@@ -21,6 +21,10 @@ outsystems-tools:
 coverage-type:
   - evaluate
   - apply
+topic:
+  - client-event-fetch
+  - load-screen-data-locally
+  - optimize-mobile-loading
 isautopublish: true
 ---
 

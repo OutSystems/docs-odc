@@ -20,6 +20,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - section-index-reference
+  - use-section-index-pattern
 ---
 
 # Section Index

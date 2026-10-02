@@ -18,6 +18,10 @@ outsystems-tools:
   - none
 coverage-type:
   - understand
+topic:
+  - automated-ui-tests
+  - page-object-model
+  - ui-testing-strategies
 ---
 
 # Web UI testing

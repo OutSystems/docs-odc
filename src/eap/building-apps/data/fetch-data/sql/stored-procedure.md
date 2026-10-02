@@ -1,6 +1,7 @@
 ---
 summary: Execute stored procedures from external entities using SQL nodes in OutSystems Developer Cloud (ODC) by obtaining a connectionId from Portal and using the CALL statement.
 tags:
+  - Entities
   - External Databases
   - SQL
 guid: b6caded7-82fc-4ce9-a8a2-6bd771c9e33b
@@ -15,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - unblock
+topic:
+  - stored-procedures
 isautopublish: true
 ---
 
@@ -89,30 +92,6 @@ For all other actions, `CALL` will return a single record containing a value of 
 * If the action returns any attributes of an unsupported type, the attributes will be present in the result of `CALL` however the values for those attributes will always be `NULL`.
 * ODC doesn't support the declaration of variables, so it isn't possible to retrieve the (mutated) value of an output parameter after the action has been executed.
 
-### Packaged Store procedures
-
-Calling _packaged stored procedures_ directly from a SQL node is currently _not supported_. The SQL node expects a standalone procedure name and cannot resolve the "dot" notation used for packages (e.g., `PackageName.ProcedureName`).
-
-If you need to execute logic contained within a package, follow this workaround:
-
-1. _Create a Standalone Wrapper:_ In your external database, create a regular, standalone stored procedure that invokes the desired packaged logic.
-
--- In your external database
-
-```sql
-CREATE OR REPLACE PROCEDURE MyStandaloneWrapper(p_param IN VARCHAR2) IS
-BEGIN
-  MyPackage.MyPackagedProcedure(p_param);
-END MyStandaloneWrapper;
-```
-
-1. _Call the Wrapper from ODC:_ In the ODC SQL node, call the standalone wrapper using the standard syntax. Ensure the procedure name is in _uppercase_.
-
-```sql
-CALL "connection-id"."MYSTANDALONEWRAPPER"(@Parameter);
-SELECT * FROM {ENTITY}
-```
-
 </div>
 
 ## Known issues
@@ -172,7 +151,24 @@ CALL "connectionId"."actionName" ('test', 123, @dynamic);
 
 ## Oracle
 
-* `CALL` will always return a single record with a value of `-1`. It's not possible to receive results from a stored procedure.
+* Stored procedures with custom data type parameters are not supported.
+
+<div class="info" markdown="1">
+
+### Stored procedures declared in Oracle packages
+
+You can call both standalone stored procedures and procedures defined inside Oracle packages.
+
+To call a stored procedure defined inside a package, follow this example:
+
+1. _Call the packaged stored procedure from ODC:_ In the SQL node, call the stored procedure using the standard syntax.
+
+```sql
+SELECT * FROM {ENTITY}
+CALL "connectionId"."MYPACKAGE.MYPACKAGEDPROCEDURE"(@Parameter);
+```
+
+</div>
 
 ## PostgreSQL
 

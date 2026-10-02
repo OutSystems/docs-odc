@@ -7,6 +7,8 @@ tags:
   - Libraries
   - Troubleshooting
 guid: d9196bdf-4c67-44a1-bc6f-3dc0031eb260
+topic:
+  - fix-unsupported-type
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc

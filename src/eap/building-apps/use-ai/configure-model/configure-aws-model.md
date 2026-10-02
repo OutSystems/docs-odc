@@ -12,6 +12,8 @@ outsystems-tools:
   - ai agent builder
 coverage-type:
   - apply
+topic:
+  - configure-amazon-bedrock
 ---
 
 # Set up Amazon Bedrock foundation AI models

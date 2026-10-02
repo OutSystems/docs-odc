@@ -19,6 +19,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - file-plugin-actions
+  - path-directory-options
+  - file-info-reference
 isautopublish: true
 ---
 

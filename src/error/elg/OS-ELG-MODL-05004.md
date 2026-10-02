@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-nonpublic-osinterface
 ---
 
 # OS-ELG-MODL-05004

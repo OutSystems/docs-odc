@@ -20,6 +20,7 @@ coverage-type:
   - remember
 content-type:
 topic:
+  - workflow-components
 ---
 # Notation Reference for BPMN Practitioners
 

@@ -1,7 +1,7 @@
 ---
 guid: 500ca4f7-24b5-4b70-9534-8f2873b745dd
 locale: en-us
-summary: Learn how to configure O11 data connections in the ODC Portal.
+summary: O11 connection configuration in ODC Portal covers creating the connection, importing exposed entities, and refreshing entity changes.
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2618-222
 coverage-type:
   - apply
@@ -13,6 +13,7 @@ audience:
   - Platform administrator
 tags:
   - Data
+  - Data Model
   - Entities
   - External Databases
   - Infrastructure
@@ -110,9 +111,19 @@ To create the data connection, follow these steps:
 
         * Set the **Username** and **Password** of the dedicated database user for interoperability created during [the initial setup](data-interop-self-managed.md#setup).
 
-        * For SQL Server, set the **Server**, **Port**, and **Database** for each O11 environment.
+        * For SQL Server, set the **Server**, **Port**, and **Database** for each O11 environment. To allow the client to bypass certificate validation, add `trustServerCertificate=true;` to the **Additional parameters** field.
 
         * For Oracle, set the **Host**, **Port**, and **Service name** for each O11 environment.
+
+        * If the O11 environment uses multiple database catalogs or schemas, do the following:
+
+            * For SQL Server, enter `metadataDatabase=META_CATALOG;` in the **Additional parameters** field. The `metadataDatabase` parameter targets the main catalog or schema. In the **Database** field, enter the catalog or schema you want to connect to for that environment.
+            * For Oracle, enter `current_schema=SCHEMA_NAME&metadata_schema=META_CATALOG;` in the **Additional parameters** field. The `current_schema` parameter targets the catalog or schema you want to connect to for that environment, and `metadata_schema` targets the main catalog or schema.
+
+            Replace the following:
+
+            * `META_CATALOG` with the name of the catalog or schema set as main.
+            * `SCHEMA_NAME` with the name of the catalog or schema you want to connect to.
 
         <div class="info" markdown="1">
 
@@ -140,7 +151,7 @@ This step requires the **Configuration management > Configure connections** perm
 
 Once the connection is successfully created, you can import the exposed entities you want to use. The connection automatically preserves the familiar logical names from O11, so you can work with entities like `Customer` directly.
 
-![Select exposed O11 entities for OutSystems 11 connection](images/configure-connection-011-select-entities-pl.png "O11 Exposed Entities Selection")
+![Select exposed O11 entities for OutSystems 11 connection](images/configure-connection-o11-select-entities-pl.png "O11 Exposed Entities Selection")
 
 Follow these steps to import the exposed entities:
 
