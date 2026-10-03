@@ -20,7 +20,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - output-parameters
+  - output-parameter-reference
 ---
 
 # Output Parameter

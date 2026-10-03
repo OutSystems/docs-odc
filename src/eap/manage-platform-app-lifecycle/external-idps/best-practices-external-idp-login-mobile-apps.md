@@ -7,7 +7,7 @@ coverage-type:
   - evaluate
   - unblock
 topic:
-  - lockout
+  - mobile-external-idp-login
 app_type: mobile apps
 platform-version: odc
 audience:

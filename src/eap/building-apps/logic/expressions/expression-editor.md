@@ -20,7 +20,7 @@ coverage-type:
   - remember
   - understand
 topic:
-  - write-expressions-guide
+  - use-expression-editor
 ---
 
 # Edit expressions
