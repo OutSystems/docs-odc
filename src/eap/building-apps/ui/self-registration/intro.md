@@ -22,7 +22,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - self-registration
+  - configure-email-settings
+  - self-registration-flow-overview
 ---
 
 # Self-registration flow

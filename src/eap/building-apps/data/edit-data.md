@@ -18,7 +18,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - edit-data-service-studio
+  - edit-entity-data
 ---
 
 # Edit data in ODC Studio

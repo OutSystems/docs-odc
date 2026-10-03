@@ -6,7 +6,9 @@ figma:
 coverage-type:
   - evaluate
 topic:
-  - lockout
+  - assign-to-user-groups
+  - avoid-idp-lockout
+  - permission-governance
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

@@ -18,7 +18,7 @@ coverage-type:
   - remember
   - understand
 topic:
-  - operands
+  - expression-operands
 ---
 
 # Operands
