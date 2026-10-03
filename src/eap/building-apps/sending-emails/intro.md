@@ -16,7 +16,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - how-to-create-emails
+  - compose-and-send-emails
+  - configure-email-settings
+  - email-css-compatibility
 ---
 
 # Emails

@@ -15,7 +15,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - get-data-from-external-db
+  - external-entity-behavior
 ---
 
 # Transactions in external entities

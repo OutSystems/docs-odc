@@ -21,7 +21,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - replace-ui-sample-data
+  - replace-data-in-screens
 ---
 
 # Replace data in screens

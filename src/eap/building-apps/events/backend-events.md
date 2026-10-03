@@ -16,7 +16,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - how-to-use-events
+  - odc-event-architecture
+  - odc-event-limits
+  - sync-vs-async-processing
 ---
 
 # Event-driven architecture in ODC

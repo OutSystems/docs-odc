@@ -17,7 +17,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - self-registration
+  - handle-signup-errors
+  - register-user-system-actions-odc
+  - send-email-logic
 ---
 
 # Create logic to register a user

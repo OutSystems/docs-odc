@@ -17,7 +17,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - external-idps
+  - custom-auth-screens
+  - external-idp-concepts
 ---
 
 # Single sign-on
