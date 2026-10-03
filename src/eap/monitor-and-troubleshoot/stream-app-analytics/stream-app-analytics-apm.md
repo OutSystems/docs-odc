@@ -18,10 +18,8 @@ audience:
   - Tech lead
   - Architect
 topic:
-  - app-settings
-  - app-configuration
-  - environments-stages
-  - debug-troubleshoot-logic
+  - create-analytics-stream
+  - set-up-open-telemetry-collector
 helpids:
 outsystems-tools:
   - odc portal

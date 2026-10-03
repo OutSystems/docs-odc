@@ -19,7 +19,8 @@ outsystems-tools:
   - odc studio
   - odc portal
 topic:
-  - manage-tech-debt
+  - code-quality-overview
+  - review-code-findings
 ---
 # Working with Code quality
 

@@ -16,7 +16,7 @@ audience:
 outsystems-tools:
   - none
 topic:
-  - manage-tech-debt
+  - code-quality-overview
 isautopublish: true
 ---
 # Getting started with Code quality as a technical lead
