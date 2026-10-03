@@ -23,8 +23,9 @@ coverage-type:
   - remember
   - apply
 topic:
-  - aggregates
-  - joins
+  - aggregate-properties
+  - create-aggregate
+  - multi-entity-aggregate
 isautopublish: true
 ---
 

@@ -17,7 +17,8 @@ coverage-type:
   - apply
   - understand
 topic:
-  - app-settings
+  - default-app-limitations
+  - manage-default-app
 isautopublish: true
 helpids: 30719
 ---

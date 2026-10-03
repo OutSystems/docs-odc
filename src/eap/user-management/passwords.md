@@ -22,8 +22,8 @@ coverage-type:
   - apply
   - unblock
 topic:
+  - password-recovery-flow
   - passwords
-  - lockout
 helpids:
 isautopublish: true
 ---

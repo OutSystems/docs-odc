@@ -17,7 +17,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - compound-data
+  - compound-data-types
 isautopublish: true
 ---
 

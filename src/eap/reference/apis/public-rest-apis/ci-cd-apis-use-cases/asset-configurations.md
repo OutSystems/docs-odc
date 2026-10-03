@@ -6,7 +6,7 @@ figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=476
 coverage-type:
   - apply
 topic:
-  - deployments-api-automation
+  - review-asset-configurations
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
