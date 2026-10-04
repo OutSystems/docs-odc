@@ -16,7 +16,7 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - how-to-use-events
+  - odc-event-architecture
 ---
 
 # About event-driven architecture

@@ -16,7 +16,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - how-to-send-emails
+  - send-email-logic
+  - trigger-email-sending
 ---
 
 # Sending emails
