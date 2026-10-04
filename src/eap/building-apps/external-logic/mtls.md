@@ -20,7 +20,6 @@ coverage-type:
 isautopublish: true
 topic:
   - authenticate-mtls-library
-  - custom-code-integration
 ---
 
 # Supporting mTLS in ODC

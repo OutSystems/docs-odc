@@ -17,7 +17,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - add-module-dependency
+  - add-public-elements
+  - odc-library-overview
 isautopublish: true
 ---
 

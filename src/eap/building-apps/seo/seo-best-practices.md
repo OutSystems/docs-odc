@@ -18,7 +18,8 @@ audience:
 outsystems-tools:
   - none
 topic:
-  - app-settings
+  - crawlability-requirements
+  - indexability-requirements
 ---
 
 # SEO best practices

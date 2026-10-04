@@ -20,7 +20,7 @@ coverage-type:
   - remember
   - understand
 topic:
-  - debug-troubleshoot-app-logic
+  - debugger-tab-reference
 isautopublish: true
 ---
 

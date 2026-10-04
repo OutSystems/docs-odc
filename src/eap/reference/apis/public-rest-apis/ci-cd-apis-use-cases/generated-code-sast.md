@@ -6,7 +6,7 @@ figma:
 coverage-type:
   - apply
 topic:
-  - deployments-api-automation
+  - use-third-party-sast
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

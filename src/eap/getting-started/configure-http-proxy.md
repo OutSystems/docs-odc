@@ -16,7 +16,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - download-and-set-up
+  - configure-http-proxy
 ---
 
 # How to configure a HTTP proxy server in ODC Studio
