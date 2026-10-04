@@ -22,7 +22,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 topic:
-  - manage-tech-debt
+  - activate-code-quality
 isautopublish: true
 ---
 

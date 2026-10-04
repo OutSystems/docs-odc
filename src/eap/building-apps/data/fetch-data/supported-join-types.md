@@ -16,7 +16,7 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - joins
+  - join-types
 ---
 
 # Supported join types

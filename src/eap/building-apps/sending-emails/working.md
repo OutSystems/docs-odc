@@ -17,7 +17,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - how-to-create-emails
+  - app-email-sending
+  - email-widgets
+  - use-input-parameters
 ---
 
 # Working with emails

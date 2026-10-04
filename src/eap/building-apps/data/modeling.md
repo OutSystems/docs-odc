@@ -18,8 +18,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - create-edit-entities
-  - data-relationships
+  - data-model-stages
+  - entity-schema-mapping
 ---
 
 # Data modeling

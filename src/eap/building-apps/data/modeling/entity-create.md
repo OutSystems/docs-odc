@@ -18,7 +18,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - create-edit-entities
+  - create-entity
 ---
 
 # Create an Entity to Persist Data
