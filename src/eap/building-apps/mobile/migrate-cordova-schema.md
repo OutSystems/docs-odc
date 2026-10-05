@@ -20,6 +20,8 @@ coverage-type:
   - unblock
 helpids: 30735
 isautopublish: true
+topic:
+  - migrate-cordova-app-to-capacitor
 ---
 
 # Migrate your Cordova-based schema to the universal schema

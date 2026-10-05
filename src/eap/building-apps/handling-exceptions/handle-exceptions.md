@@ -17,7 +17,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - how-to-handle-exceptions
+  - exception-handling
+  - raise-exception
 isautopublish: true
 ---
 

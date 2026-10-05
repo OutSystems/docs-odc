@@ -23,6 +23,12 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - 1-click-publish-steps
+  - odc-deployment-terminology
+  - library-revision-vs-version
+  - merging-revisions
+  - deploy-workflow
 content-type:
   - conceptual
 isautopublish: true

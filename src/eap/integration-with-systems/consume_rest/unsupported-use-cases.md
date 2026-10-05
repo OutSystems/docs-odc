@@ -18,7 +18,7 @@ outsystems-tools:
 coverage-type:
   - unblock
 topic:
-  - consume-refresh-methods
+  - unsupported-rest-imports
 ---
 
 # Unsupported REST Enum Use Cases

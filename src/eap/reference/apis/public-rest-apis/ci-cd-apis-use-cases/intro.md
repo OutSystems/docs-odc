@@ -7,7 +7,8 @@ coverage-type:
   - remember
   - understand
 topic:
-  - deployments-api-automation
+  - cicd-api-mapping
+  - odc-cicd-pipeline-model
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
