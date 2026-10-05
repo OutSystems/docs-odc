@@ -1,7 +1,7 @@
 ---
 guid: df369b59-5c40-4954-9622-722503ee54d1
 locale: en-us
-summary: Learn how to grant and revoke user roles in OutSystems Developer Cloud (ODC) to manage access and permissions effectively.
+summary: Grant and revoke user roles in OutSystems Developer Cloud (ODC) for members and end-users across organization, asset, and app stage scopes.
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3883-106&t=9snmrSiMZOFs7g77-1
 app_type: mobile apps, reactive web apps
 platform-version: odc
