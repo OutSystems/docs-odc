@@ -95,7 +95,7 @@ For SAML providers, the comma (`,`) is the supported character to separate multi
 
 The maximum claim length is as follows:
 
-* **Claim name**: 50 characters.
+* **Claim name**: 256 characters.
 * **Claim value (provider group)**: 256 characters. The value must be a string. Arrays are not supported.
 * **Claim value delimiter**: 3 characters.
 
