@@ -6,6 +6,9 @@ figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?no
 coverage-type:
   - apply
 topic:
+  - configure-o11-connection
+  - import-o11-entities
+  - reflect-o11-changes
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

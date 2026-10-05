@@ -19,6 +19,8 @@ audience:
 coverage-type:
   - apply
 isautopublish: true
+topic:
+  - null-values
 ---
 
 # MySQL connection considerations

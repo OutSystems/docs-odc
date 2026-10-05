@@ -22,8 +22,8 @@ coverage-type:
   - apply
   - understand
 topic:
-  - user-mapping
   - assign-to-user-groups
+  - configure-group-claims
 isautopublish: true
 ---
 

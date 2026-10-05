@@ -22,7 +22,9 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - download-and-set-up
+  - odc-setup-requirements
+  - app-user-requirements
+  - odc-platform-limits
 isautopublish: true
 ---
 

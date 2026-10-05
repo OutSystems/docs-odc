@@ -20,7 +20,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - external-idps
+  - authentication-actions
+  - custom-auth-screens
 isautopublish: true
 ---
 
