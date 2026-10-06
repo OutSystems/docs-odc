@@ -15,7 +15,8 @@ coverage-type:
   - apply
   - remember
 topic:
-  - add-widget-ui-pattern
+  - animate-pattern-reference
+  - use-animate-pattern
 ---
 
 # Animate
