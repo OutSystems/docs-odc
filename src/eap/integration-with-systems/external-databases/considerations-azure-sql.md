@@ -23,6 +23,8 @@ audience:
   - Platform administrator
 coverage-type:
   - apply
+topic:
+  - azure-sql-connections
 isautopublish: true
 ---
 

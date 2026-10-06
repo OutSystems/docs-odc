@@ -13,6 +13,10 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5969-642
 coverage-type:
   - evaluate
+topic:
+  - manage-large-data-volumes
+  - optimize-entity-data
+  - store-app-settings
 audience:
   - Architect
   - Developer

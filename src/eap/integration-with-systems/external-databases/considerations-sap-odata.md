@@ -23,6 +23,8 @@ coverage-type:
   - remember
   - apply
   - unblock
+topic:
+  - sap-odata-considerations
 isautopublish: true
 ---
 

@@ -23,6 +23,8 @@ audience:
 coverage-type:
   - remember
   - unblock
+topic:
+  - salesforce-considerations
 isautopublish: true
 ---
 

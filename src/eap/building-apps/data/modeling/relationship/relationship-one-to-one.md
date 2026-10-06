@@ -15,7 +15,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - data-relationships
+  - one-to-one-relationship
 ---
 
 # Create a One-to-One Relationship

@@ -19,6 +19,8 @@ audience:
 coverage-type:
   - apply
   - unblock
+topic:
+  - postgresql-empty-text
 isautopublish: true
 ---
 

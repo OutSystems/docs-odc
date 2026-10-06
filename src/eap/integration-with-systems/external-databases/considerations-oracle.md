@@ -18,6 +18,9 @@ audience:
   - Platform administrator
 coverage-type:
   - remember
+topic:
+  - oracle-diff-limits
+  - oracle-empty-text
 isautopublish: true
 ---
 

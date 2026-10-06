@@ -13,6 +13,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 topic:
+  - choose-batch-processing-approach
+  - timer-best-practices
+  - track-batch-progress
 audience:
   - Developer
   - Architect

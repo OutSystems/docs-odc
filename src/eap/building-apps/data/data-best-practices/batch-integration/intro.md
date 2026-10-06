@@ -17,6 +17,9 @@ coverage-type:
   - apply
   - evaluate
 topic:
+  - choose-batch-processing-approach
+  - manage-large-data-volumes
+  - track-batch-progress
 audience:
   - Developer
   - Architect
