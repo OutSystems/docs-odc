@@ -15,7 +15,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - translating-apps
+  - export-import-translations
 ---
 
 # Translation management

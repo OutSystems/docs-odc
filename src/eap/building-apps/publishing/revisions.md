@@ -24,6 +24,10 @@ coverage-type:
 content-type:
   - conceptual
 isautopublish: true
+topic:
+  - odc-asset-versioning
+  - odc-publish-message
+  - odc-revision-basics
 ---
 # Revisions
 

@@ -15,6 +15,8 @@ coverage-type:
   - apply
   - remember
 topic:
+  - binary-data-actions
+  - file-plugin-actions
   - using-cordova-plugins
 ---
 

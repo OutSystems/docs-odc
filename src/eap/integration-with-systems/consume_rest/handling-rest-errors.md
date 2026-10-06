@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
+  - customize-rest-callbacks
+  - handle-rest-status-codes
   - handle-webservice-errors
 ---
 

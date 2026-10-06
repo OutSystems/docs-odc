@@ -14,7 +14,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - accessibility-screen-reader
+  - test-accessibility-issues
 ---
 
 # Testing and fixing accessibility issues

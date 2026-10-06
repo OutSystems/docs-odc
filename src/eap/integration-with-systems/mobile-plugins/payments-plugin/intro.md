@@ -15,7 +15,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - using-cordova-plugins
+  - payments-plugin-setup
+  - trigger-payment-flow
 ---
 
 # Payments plugin

@@ -15,6 +15,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 topic:
+  - batch-chunk-orchestration
+  - parallel-batch-practices
+  - track-batch-progress
 audience:
   - Developer
   - Architect
