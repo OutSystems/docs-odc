@@ -18,7 +18,9 @@ coverage-type:
   - remember
   - apply
 topic:
+  - clone-forge-asset
   - install-forge-component
+  - update-forge-asset
 isautopublish: true
 ---
 

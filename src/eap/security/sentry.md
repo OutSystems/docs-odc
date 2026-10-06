@@ -6,6 +6,8 @@ figma:
 coverage-type:
   - understand
 topic:
+  - sentry-capabilities
+  - view-subscription-entitlements-odc
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
