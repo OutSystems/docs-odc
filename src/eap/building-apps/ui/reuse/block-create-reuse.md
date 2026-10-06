@@ -18,8 +18,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
+  - blocks-across-apps-odc
   - reuse-ui
-  - adding-a-block
 ---
 
 # Create and Reuse Screen Blocks

@@ -14,6 +14,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
+  - bootstrap-excel-blanks
   - bootstrap-test-data-excel
 ---
 

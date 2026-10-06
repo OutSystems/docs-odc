@@ -7,6 +7,9 @@ coverage-type:
   - apply
   - understand
 topic:
+  - add-custom-data-source
+  - data-source-contract
+  - search-services-rag
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

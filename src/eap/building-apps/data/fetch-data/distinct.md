@@ -15,6 +15,7 @@ coverage-type:
   - apply
 topic:
   - aggregates
+  - aggregation-functions
 ---
 
 # Get distinct values from the database
