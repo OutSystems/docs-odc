@@ -1,7 +1,8 @@
 ---
-summary: "Mentor coding agents in OutSystems Developer Cloud (ODC) apply layered safeguards: data isolation, safe output, user approvals, and access governance."
+summary: "Mentor in OutSystems Developer Cloud (ODC) applies layered safeguards: data isolation, safe output, user approvals, and access governance."
 tags:
   - AI
+  - OutSystems MCP
   - Agentic
   - Logging
   - Mentor
@@ -32,7 +33,7 @@ isautopublish: true
 
 # Security and safeguards
 
-Mentor's coding agents read and change your apps. OutSystems applies safeguards across that interaction: data privacy and isolation, prompt logging, guardrails and content filtering, output safety, human oversight, and access governance.
+Mentor reads and changes your apps. OutSystems applies safeguards across that interaction: data privacy and isolation, prompt logging, guardrails and content filtering, output safety, human oversight, and access governance.
 
 ## Data privacy and isolation
 
@@ -75,16 +76,11 @@ For the guardrails that inspect the prompts and AI model responses of the AI age
 
 ## Output safety
 
-Mentor's output takes the form of model changes and meets platform standards.
-
-* **Model-based changes.** Mentor turns your prompts into changes to the OutSystems Model, expressed as standard OutSystems Markup Language (OML).
-* **Same standards as hand-built apps.** OutSystems Developer Cloud (ODC) enforces the same security, performance, and architecture standards regardless of how the model was created, including role-based access, encryption, and input validation.
-
-For how the model and the compiler fit together, refer to [Architecture](architecture.md).
+Mentor's output takes the form of structured model changes. Mentor turns your prompts into changes to the OutSystems Model, expressed as standard OutSystems Markup Language (OML), so the compiler processes them like any other model change. For the standards the platform enforces on every app regardless of origin, refer to [Platform guarantees and AI interpretation](odc-ai-and-platform.md).
 
 ## Human oversight and control
 
-You decide what Mentor applies. For a complex change, such as one that spans several entities, screens, and logic, Mentor proposes a plan and applies it only after you accept it. For a single-action change, Mentor applies the change directly. You review proposed changes before Mentor applies them, and compare your app before and after. You accept the change, discard it, or refine it with a follow-up prompt. For how planning and review work, refer to [Planning and your control](coding-agents.md#planning-and-your-control) and [Review and accept the plan](mentor-studio/how-it-works.md#accept-plan).
+Human approval is a safeguard against unintended changes. Mentor proposes complex changes for you to accept before it applies them, and you review the result of every change. For how planning and review work, refer to [Your control over changes](coding-agents.md#your-control-over-changes) and [Review and accept the plan](mentor-studio/how-it-works.md#accept-plan).
 
 ## Access and governance
 
@@ -96,15 +92,14 @@ OutSystems operates Mentor under its enterprise security and compliance framewor
 
 ## Continuous testing and improvement
 
-OutSystems tests the coding agents continuously, including independent security reviews, to match current security best practices. Feedback you give on responses, together with anonymized usage patterns, informs improvements to the coding agents.
+OutSystems tests Mentor continuously, including independent security reviews, to match current security best practices. Feedback you give on responses, together with anonymized usage patterns, informs improvements to Mentor.
 
 ## Related resources
 
 The safeguards described here extend platform-wide security and the broader agentic development docs. The following resources add detail.
 
-* For a summary of data handling in agentic development, refer to [Security and data privacy](intro.md#security-and-data-privacy).
 * For the data platform features that log Mentor prompts, refer to [Features that send data to the data platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform-features).
-* For how the coding agents work, refer to [Coding agents](coding-agents.md).
+* For how Mentor works, refer to [Mentor](coding-agents.md).
 * For the architecture behind agentic development, refer to [Architecture](architecture.md).
 * For safeguards on the AI agents you build and run, refer to [Agent guardrails](../building-apps/build-ai-powered-apps/guardrails.md).
 * For platform-wide security, refer to [Security of OutSystems Developer Cloud](../security/security.md).

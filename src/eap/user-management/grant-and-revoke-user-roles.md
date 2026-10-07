@@ -76,7 +76,10 @@ To grant or revoke a role for a member (IT-user):
     </div>
 
 1. To grant or revoke roles at the [**Assets scope**](intro.md#organization-app-stage-and-app-scope):
-    1. On the **Organization access** tab, click **Assign roles**.
+    1. On the **Organization access** tab, click **Manage roles**.
+
+        ![ODC Portal user details page on the Organization access tab, with the Manage roles button highlighted in the Assets scope section.](images/asset-scope-pl.png "Manage roles in the Assets scope")
+
     1. Change the roles:
         * To grant a role, pick the role you want for each app from the dropdown list.  
         * To revoke a role, pick **Unassigned** for the relevant app from the dropdown list.
@@ -103,9 +106,11 @@ To grant or revoke a role for an end-user:
 
 1. Search for the end-user you want to update, and then click anywhere in the user's row.
 
-1. Go to the **End-user access** tab, and then click **Assign roles**.
+1. Go to the **End-user access** tab, and then click **Manage roles**.
 
-1. Select or clear the checkbox for the roles corresponding to each app and stage (**Development**, **QA**, or **Production**) to which you want to assign or revoke a role for the user.
+1. In the **Manage roles** dialog, search for the app by name. To show one stage only, select it in the **Stage** dropdown.
+
+1. Select or clear the checkbox for each role and stage (**Development**, **QA**, or **Production**) that you want to assign to or revoke from the user. The **Pending changes** tab lists your changes before you save them.
   
     ![Screenshot of the ODC Portal showing the option to assign roles to end-users for different apps and stages.](images/end-user-roles-pl.png "Assign roles to end-users")
 

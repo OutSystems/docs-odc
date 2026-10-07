@@ -1,6 +1,7 @@
 ---
 summary: OutSystems Developer Cloud (ODC) Mentor Web and Mentor Studio limitations, covering session persistence, blueprint phases, and editor restrictions.
 tags:
+  - OutSystems MCP
   - Agentic
   - AI
   - Mentor
@@ -66,7 +67,7 @@ The following limitations apply when modifying existing apps through Mentor Stud
 
 ### Scope of operations
 
-Mentor Studio modifies app elements but does not perform environment-level operations.
+Mentor Studio modifies app elements but doesn't perform stage-level operations, such as deployments.
 
 * **App elements only.** Mentor Studio generates and modifies logic, UI, and data within the app. ODC Studio operations such as one-click publish, changing preferences, and managing dependencies are not supported through Mentor.
 
@@ -75,7 +76,7 @@ Mentor Studio modifies app elements but does not perform environment-level opera
 Mentor Studio has partial awareness of the ODC Studio state. For what Mentor reads from your selection and the open view, refer to [Use the current selection as context](mentor-studio/how-it-works.md#current-selection).
 
 * **Conversation length.** Long iterations may reach the maximum conversation length. Start a new conversation if responses become inconsistent.
-* **No chat persistence.** Closing the app tab clears the conversation history.
+* **No chat persistence.** Closing the app clears the conversation history.
 
 ### Reliability
 
@@ -94,4 +95,4 @@ For a broader view of what agentic development supports, the following resources
 * For what Mentor Studio generates and modifies within existing apps, refer to [Capabilities and patterns for Mentor Studio](mentor-studio/capabilities.md).
 * For Mentor Studio error codes and recommended actions, refer to [Mentor Studio errors](../../error/aisa/mentor-studio-errors.md).
 * For Mentor Web error codes and recommended actions, refer to [Mentor Web errors](../../error/aica/mentor-web-errors.md).
-* For an overview of both tools and guidance on when to use each, refer to [Introduction to agentic development](intro.md).
+* For an overview of the three paths and guidance on when to use each, refer to [Agentic development](intro.md).

@@ -1,0 +1,49 @@
+# Build the IT Help Desk app
+
+Build an OutSystems web app named "IT Help Desk" in my tenant. Employees submit IT support tickets, and the IT team tracks and resolves them. Work in the phases below. Send Mentor one turn per phase step, and build one screen per Mentor turn. Ask me before each publish, publish after each step, and send me the app's URL after the last publish.
+
+## Guidelines for Mentor
+
+Include these guidelines in every Mentor turn:
+
+* Apply OutSystems UI to every screen, and use OutSystems UI blocks, such as a Tag for the ticket status. Don't generate bare HTML layouts.
+* Give each screen exactly the roles listed for it. Don't make any screen anonymous or public.
+* Use ODC terminology only.
+* At the end of the turn, run a quick sanity check of what you changed, not a full audit of the app.
+
+## Phase 1: Data model, roles, and sample data
+
+Build the following data model, roles, and sample data in one Mentor turn, then publish.
+
+Entities:
+
+* Ticket: TicketNumber (Text, unique, generated as TCK-00001, TCK-00002, and so on), Subject (Text), Description (Text), SubmittedDate (DateTime), ResolvedDate (DateTime, optional), CreatedById (User Identifier), AssignedToId (User Identifier, optional), StatusId (TicketStatus Identifier), CategoryId (TicketCategory Identifier).
+* Comment: CommentText (Text), CreatedDate (DateTime), AuthorId (User Identifier), TicketId (Ticket Identifier). A ticket has many comments. Deleting a ticket deletes its comments.
+
+Static entities:
+
+* TicketStatus: New, Assigned, In Progress, Resolved, Closed.
+* TicketCategory: Hardware, Software, Network, Account Access, Other.
+
+Roles: Employee, IT Agent, IT Manager.
+
+Sample data: when the app starts with no tickets, create 5 sample tickets with different categories and statuses, each with one or two comments.
+
+## Phase 2: Screens
+
+Build the following screens in order, one screen per Mentor turn, and publish after each screen. Make every screen available to the Employee, IT Agent, and IT Manager roles.
+
+1. Ticket Queue: tickets that aren't Resolved or Closed, newest first, with TicketNumber, Subject, Category, Status, and SubmittedDate. Show Status as a Tag. Add a search on Subject and a filter by Status. Set Ticket Queue as the app's default screen, so the app's URL opens it.
+2. Ticket Details: the ticket's fields and its comments in chronological order, with author and date. Add a form to add a comment as the current user. Add a dropdown that lists the app's users to assign the ticket, and a dropdown to change its status. When the status changes to Resolved, set ResolvedDate to now. Make each row in Ticket Queue open Ticket Details.
+3. Submit Ticket: a form with Subject, Description, and Category, all required. On save, set SubmittedDate to now, CreatedById to the current user, and Status to New, generate the TicketNumber, then open the ticket's details. Add a menu with Ticket Queue and Submit Ticket.
+
+## Phase 3: Dashboard
+
+Build this phase only if I ask for it: a Dashboard with open tickets, tickets by category, and average resolution time, measured from SubmittedDate to ResolvedDate.
+
+## After the last publish
+
+Send me the app's URL. Then tell me that to open the app, my user needs one of the app's end-user roles in the stage I'm testing, and that my member access to ODC Portal and ODC Studio doesn't include it. Tell me to assign the roles in ODC Portal, under Management > Govern > Users, by opening my user and managing its end-user roles for IT Help Desk in the Development stage. Share these pages:
+
+* User management, which explains members and end-users: https://www.outsystems.com/tk/redirect?g=9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
+* Grant or revoke user roles: https://www.outsystems.com/tk/redirect?g=df369b59-5c40-4954-9622-722503ee54d1

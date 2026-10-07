@@ -63,7 +63,7 @@ Apps created through agentic development are standard ODC apps and follow the sa
 
 ## Govern and collaborate
 
-From a governance perspective, apps created through agentic development are indistinguishable from apps built manually in ODC Studio. ODC enforces the same security, performance, and architecture standards regardless of how you created the underlying model. This means administrators apply the same quality gates, conduct the same code reviews, and perform the same security reviews. Architecture governance policies that apply to your manually created apps apply equally to AI-generated ones.
+Because an app built through agentic development is a standard ODC app, administrators apply the same quality gates, code reviews, security reviews, and architecture governance policies as they do to any other app. For the platform guarantee behind this parity, refer to [Platform guarantees and AI interpretation](odc-ai-and-platform.md).
 
 This consistency enables collaboration across teams. You can iterate on requirements using agentic development, describing changes conversationally while the AI handles implementation details. When implementation requires deeper technical work, you move to ODC Studio for complex logic. Architects review generated patterns and provide guidance just as they would for any app, ensuring the architecture aligns with organizational standards. Administrators manage deployment, monitoring, and governance through the same tools and processes they use for all ODC apps, maintaining consistency across your app portfolio.
 
@@ -86,5 +86,5 @@ For more information about the Mentor permission and how to assign it through ro
 Agentic development integrates into your existing testing and deployment processes, and introduces access controls for who can use Mentor. The following resources cover the tools and concepts that support each phase of the lifecycle.
 
 * For the conceptual shift to prompt-based development and iteration strategies, refer to [Thinking with AI](thinking-with-ai.md).
-* For an overview of both Mentor tools and guidance on when to use each, refer to [Introduction to agentic development](intro.md).
-* For technical details on how AI agents interact with the OutSystems compiler and app model, refer to [Architecture](architecture.md).
+* For an overview of the three paths and guidance on when to use each, refer to [Agentic development](intro.md).
+* For technical details on how Mentor interacts with the OutSystems compiler and app model, refer to [Architecture](architecture.md).

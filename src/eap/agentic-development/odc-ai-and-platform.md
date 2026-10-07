@@ -29,7 +29,7 @@ isautopublish: true
 
 # Platform guarantees and AI interpretation
 
-This page describes how ODC and the AI divide the work when you build with Mentor, and what that division requires from you. ODC applies a fixed set of guarantees to every app it compiles, so its results are deterministic. The AI interprets your intent to propose a model, and interpretation is probabilistic, so you review and validate each proposal. This distinction tells you where the output is reliable and where your review is required. Mentor and manual development in ODC Studio produce the same OutSystems Model.
+This page describes how ODC and the AI divide the work when you build with Mentor, and what that division requires from you. ODC applies a fixed set of guarantees to every app it compiles, so its results are deterministic. The AI interprets your intent to propose a model, and interpretation is probabilistic, so you review and validate each proposal. This distinction tells you where the output is reliable and where your review is required. Whether you use Mentor Web, Mentor Studio, OutSystems MCP, or manual development in ODC Studio, the result is the same OutSystems Model.
 
 Your starting point depends on your background:
 
@@ -42,19 +42,19 @@ Your starting point depends on your background:
 
 ODC provides these guarantees at the platform level. Every ODC app is enterprise-grade by default: it inherits the compiler, delivery pipeline, security, observability, governance, and scalable runtime, whether you build it by hand or through Mentor. ODC applies these standards to every app it compiles, so the results are deterministic.
 
-* **One model.** Mentor works on the OutSystems Model, the high-level representation that every OutSystems app is built on. Assets built or modified through Mentor are standard OutSystems assets, with no separate AI code path. For how the model, the agents, and the compiler fit together, refer to [Architecture](architecture.md).
-* **Compiler-enforced standards.** The OutSystems compiler turns the model into deployable code and applies the same security, performance, and architecture standards to Mentor output as to hand-built assets. For how the agents and the compiler interact, refer to [Coding agents](coding-agents.md).
+* **One model.** Agentic development works on the OutSystems Model, the high-level representation that every OutSystems app is built on. Assets it creates or modifies are standard OutSystems assets, with no separate AI code path, whichever path produced them. For how the model, Mentor, and the compiler fit together, refer to [Architecture](architecture.md).
+* **Compiler-enforced standards.** The OutSystems compiler turns the model into deployable code and applies the same security, performance, and architecture standards to Mentor output as to hand-built assets, including data encryption and input validation. For how Mentor and the compiler interact, refer to [Mentor](coding-agents.md).
 * **Reviewable intent before it is applied.** For structural work, Mentor presents its intended work before it commits: the blueprint in Mentor Web, and proposed changes in Mentor Studio. You accept, reject, or refine first. For the blueprint, refer to [The blueprint](mentor-web/blueprint.md).
-* **Governance parity.** From deployment, monitoring, and audit perspectives, an asset created through Mentor is indistinguishable from one built in ODC Studio. The same quality gates, reviews, and lifecycle processes apply. For lifecycle integration, refer to [Agentic development in the SDLC](sdlc.md).
+* **Governance parity.** From deployment, monitoring, and audit perspectives, an asset is indistinguishable from one built by hand in ODC Studio, regardless of the path that created or changed it. The same quality gates, reviews, and lifecycle processes apply. For lifecycle integration, refer to [Agentic development in the SDLC](sdlc.md).
 
 ## AI interpretation today
 
 The AI's contribution behaves differently from the platform guarantees in two ways. It is probabilistic rather than deterministic, and it changes as agentic development matures. The word "today" marks the second point. Verify these behaviors against your current release rather than assuming they are fixed.
 
-* **Interpretation is probabilistic.** The coding agents interpret your description and map it to OutSystems patterns; they don't apply a fixed rule. The same prompt can produce different results.
-* **Coverage expands between releases.** The range of tasks the agents handle grows over time. A limit in the current release may not exist in the next one. Check the current constraints rather than assuming a fixed boundary. For current constraints, refer to [Known limitations](ai-limitations.md).
+* **Interpretation is probabilistic.** Mentor interprets your description and maps it to OutSystems patterns rather than applying a fixed rule. The same prompt can produce different results on repeated runs.
+* **Coverage expands between releases.** The range of tasks Mentor supports grows over time. A limit in the current release may not exist in the next one. Check the current constraints rather than assuming a fixed boundary. For current constraints, refer to [Known limitations](ai-limitations.md).
 * **Output is a proposal.** A generated entity, screen, or logic flow reflects what the AI inferred from your prompt, and it compiles to a standard OutSystems asset. Compilation confirms the code is valid. You confirm that it matches your requirement.
-* **The prompt is your input to interpretation.** Because the agents build from what you state, clear and explicit intent produces more accurate proposals. For prompting technique, refer to [Effective prompts for Mentor](effective-prompts.md).
+* **The prompt is your input to interpretation.** Because Mentor builds from what you state, clear and explicit intent produces more accurate proposals. For prompting technique, refer to [Effective prompts for Mentor](effective-prompts.md).
 
 ## Review checks
 
@@ -78,6 +78,6 @@ Your main tasks are to direct Mentor with well-formed intent and to validate its
 The tools and workflows in this section apply these platform guarantees and AI behaviors. The following resources cover them in detail.
 
 * For the mindset and iteration cycle of prompt-based development, refer to [Thinking with AI](thinking-with-ai.md).
-* For an overview of both Mentor tools and guidance on when to use each, refer to [Introduction to agentic development](intro.md).
-* For what the coding agents are and how they work, refer to [Coding agents](coding-agents.md).
+* For an overview of the paths and guidance on when to use each, refer to [Agentic development](intro.md).
+* For what Mentor is and how it works, refer to [Mentor](coding-agents.md).
 * For prompting strategies that improve how Mentor interprets your intent, refer to [Effective prompts for Mentor](effective-prompts.md).

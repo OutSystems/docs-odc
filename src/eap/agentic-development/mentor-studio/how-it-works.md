@@ -1,5 +1,5 @@
 ---
-summary: Mentor Studio in OutSystems Developer Cloud (ODC) uses app context, plan review, and iteration to modify web apps, libraries, and agentic apps.
+summary: In ODC Studio, Mentor Studio generates and modifies web app, library, and agentic app elements from natural language prompts.
 tags:
   - Agentic
   - AI
@@ -32,7 +32,7 @@ Mentor Studio brings conversational AI into ODC Studio. It works across the asse
 
 Mentor analyzes the app model and generates changes that integrate with the existing elements. Mentor also draws on tenant context, so it references and reuses public elements that other apps expose in your tenant. Mentor creates and modifies elements through conversation. Mentor works within your user permissions and applies OutSystems patterns when generating changes.
 
-Mentor uses AI agents to process requests. When you describe a goal, Mentor analyzes the current app model, plans the required changes, and generates modifications that build on existing elements. This agent-based processing lets Mentor handle multi-step tasks and coordinate changes across different parts of the app. Mentor Studio works on the OutSystems app model rather than raw code, apart from elements that hold code by nature such as CSS or JavaScript, and draws on the Enterprise Context Graph for a high-fidelity view of your apps, data, and dependencies. For this architecture, refer to [Architecture](../architecture.md).
+When you describe a goal, Mentor analyzes the current app model, plans the required changes, and generates modifications that build on existing elements. Mentor processes multi-step tasks and coordinates changes across different parts of the app. Mentor Studio works on the OutSystems app model rather than raw code, apart from elements that contain code, such as CSS or JavaScript. Mentor Studio reads the Enterprise Context Graph for a high-fidelity view of your apps, data, and dependencies. For this architecture, refer to [Architecture](../architecture.md).
 
 <div class="info" markdown="1">
 
@@ -40,7 +40,7 @@ In a multi-portfolio organization, for more information about roles, portfolio-s
 
 </div>
 
-Use Mentor Studio to add features, fix issues, or refine logic in apps you're developing. To create a new app from requirements, refer to [AI app generation in Mentor Web](../mentor-web/how-it-works.md).
+Use Mentor Studio to add features, fix issues, or refine logic in apps you're developing. To create a new app from requirements, refer to [AI app generation in Mentor Web](../mentor-web/how-it-works.md). To make changes from an AI tool such as Claude Code or Cursor instead, refer to [OutSystems MCP](../outsystems-mcp/outsystems-mcp-overview.md).
 
 ![ODC Studio with the Mentor panel creating a ValidateCreditCardNumber client action from a natural language prompt, showing the generated validation flow and the new action in the elements tree.](images/mentor-sample-prompt-resulting-code-odcs.png "Mentor generating a ValidateCreditCardNumber action from a natural language prompt")
 
@@ -91,7 +91,7 @@ Don't include personally identifiable information (PII) in prompts. Use placehol
 
 </div>
 
-For how agentic development handles your data, including encryption, data residency, and the policy against training third-party models on your prompts, refer to [Security and data privacy](../intro.md#security-and-data-privacy).
+For how agentic development handles your data, including encryption, data residency, and the policy against training third-party models on your prompts, refer to [Data privacy and isolation](../security-safeguards.md#data-privacy-and-isolation).
 
 ## Review and accept the plan {#accept-plan}
 
@@ -173,7 +173,6 @@ Mentor Studio is one of two AI development tools in ODC. The following resources
 * For background on agentic development concepts, refer to [Thinking with AI](../thinking-with-ai.md).
 * For how agentic development fits testing, deployment, and governance, refer to [Agentic development in the SDLC](../sdlc.md).
 * For the architecture behind Mentor Studio, including the OutSystems app model and the Enterprise Context Graph, refer to [Architecture](../architecture.md).
-* For how agentic development secures and handles your data, refer to [Security and data privacy](../intro.md#security-and-data-privacy).
-* For publishing with a Mentor-drafted message, refer to [Understanding 1-Click Publish](../../deploying-apps/one-cp.md).
+* For how agentic development secures and handles your data, refer to [Security and safeguards](../security-safeguards.md).
 * For error codes that Mentor Studio can return, refer to [Mentor Studio errors](../../../error/aisa/mentor-studio-errors.md).
 * [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course: a video walkthrough of the Mentor Studio workflow.

@@ -79,10 +79,10 @@ The reliable path is to add the element yourself, then reference it:
 
 Mentor can also add a public element for you as a convenience. When you reference an element that Mentor locates in the tenant, Mentor surfaces the matching public elements, asks you to confirm, and adds the one you select. Confirm the producer when several elements share a name, so Mentor consumes the correct one.
 
-Mentor and the **Add public elements** flow find an element only when the producer set its **Public** property to **Yes** and published it to the environment. For background on public elements and producer-consumer dependencies, refer to [Reuse elements across apps](../../app-architecture/reuse-elements.md).
+Mentor and the **Add public elements** flow find an element only when the producer set its **Public** property to **Yes** and published it to the Development stage. For background on public elements and producer-consumer dependencies, refer to [Reuse elements across apps](../../app-architecture/reuse-elements.md).
 
 ## Scope
 
 Mentor Studio edits web apps, libraries, and agentic apps. It handles tasks ranging from creating a single server action to coordinating changes across multiple elements in a single conversation. The available elements depend on the asset type.
 
-For constraints that apply to Mentor Studio, refer to [Known limitations](../ai-limitations.md). For a breakdown of what Mentor handles and what requires manual development, refer to [When to use each tool](../intro.md#when-to-use-each-tool).
+For constraints that apply to Mentor Studio, refer to [Known limitations](../ai-limitations.md). For a breakdown of what Mentor supports and what requires manual development, refer to [Scope and limits](../coding-agents.md#scope-and-limits).

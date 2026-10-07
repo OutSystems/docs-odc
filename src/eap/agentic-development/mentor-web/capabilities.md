@@ -37,7 +37,7 @@ This page describes the components and patterns available in each phase for Ment
 
 During generation, Mentor Web converts natural language prompts or requirement documents into functional apps. Mentor Web analyzes input to identify entities, relationships, user roles, and UI requirements. It then applies design patterns and generates screens, data models, and authorization rules. You review and adjust these in the blueprint before generation.
 
-![Blueprint showing the generated data model with entities and attributes, screens, roles and permissions, and stateflows.](images/ai-capabilities-elements-pl.png "Generated app elements in the blueprint")
+![Blueprint showing the generated data model with entities and attributes, screens, roles and permissions, and stateflows.](images/ai-capabilities-elements-pl.png "Generated App Blueprint")
 
 ### Data and entities
 
@@ -66,9 +66,9 @@ Mentor suggests roles based on app context and applies authorization rules at th
 
 ### Screen generation
 
-Mentor selects screen patterns based on entity structure and relationships. Patterns convert automatically when constraints apply, such as the popup pattern converting to table when an entity exceeds five non-ID attributes.
+Mentor selects screen patterns based on entity structure and relationships, and converts a pattern automatically when an entity exceeds its limits.
 
-* **Screen pattern selection**. Match patterns to entity structure. Popup for entities with five or fewer non-ID attributes, table for larger entities, tabs for organizing related content.
+* **Screen pattern selection**. Match patterns to entity structure and relationships. For the pattern options and their attribute limits, refer to [Select a pattern](prompts.md#select-a-pattern).
 * **Context-aware layouts**. Generate layouts based on data context, such as list with map view for entities containing addresses or card layout for personal attributes.
 * **Theme application**. Apply themes when specified in the prompt or requirement document. Mentor is aware of the themes available in your ODC tenant, so you can ask which themes you can pick from or reference one by name, for example, "Use the CorporateBrand theme". You can set or change the theme at any point during the blueprint phase, either through prompts or through the theme picker in the blueprint. After generation, theme changes require ODC Studio. If no theme is specified, Mentor applies the default OutSystems UI. For the picker workflow, refer to [Select a theme](blueprint.md#select-a-theme). For prompt examples, refer to [Theme prompts](prompts.md#theme-prompts).
 * **UI styling**. Apply a curated default color palette when no theme is specified, selecting from a set of primary colors with adaptive backgrounds for a consistent look. Suggest styling elements such as primary color and icon based on app context.
@@ -99,7 +99,7 @@ After generation, Mentor provides tools and AI-powered suggestions to refine and
 
 The editor displays generated screens alongside the data model and roles, giving you a complete view of the app while you refine it through prompts.
 
-![The editor showing generated screens, data entities, and roles available for refinement.](images/ai-capabilities-refinement-pl.png "Refine the app in the editor")
+![The editor showing generated screens, data entities, and roles available for refinement.](images/ai-capabilities-refinement-pl.png "App Refinement Editor")
 
 ### Additional capabilities
 
@@ -112,8 +112,8 @@ Mentor Web offers the following additional capabilities for refining apps in the
 
 **About stateflows:** Mentor generates stateflows for entity lifecycle management. A stateflow defines statuses (such as Draft, Submitted, and Approved) and the allowed transitions between them, with conditions for which roles perform each transition and which attributes must be provided. At runtime, records move only along the defined transitions. For multi-step processes that orchestrate actions across entities and systems, use ODC workflows.
 
-![TicketStatus stateflow showing transitions from New to Assigned to In Progress to Resolved to Closed.](images/ai-capabilities-flow-pl.png "Stateflow example for TicketStatus")
+![TicketStatus stateflow showing transitions from New to Assigned to In Progress to Resolved to Closed.](images/ai-capabilities-flow-pl.png "TicketStatus Stateflow")
 
 </div>
 
-For a breakdown of what Mentor handles and what requires ODC Studio, refer to [When to use each tool](../intro.md#when-to-use-each-tool).
+For a breakdown of what Mentor supports and what requires ODC Studio, refer to [Scope and limits](../coding-agents.md#scope-and-limits).

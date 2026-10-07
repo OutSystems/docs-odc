@@ -18,6 +18,38 @@
 # Agentic development
 - href: eap/agentic-development/intro.md
 - topics:
+    # How agentic development works
+    - href: eap/agentic-development/coding-agents.md
+    - topics:
+        - href: eap/agentic-development/architecture.md
+        - href: eap/agentic-development/context-graph.md
+        - href: eap/agentic-development/odc-ai-and-platform.md
+    # Modify apps (Mentor Studio)
+    - href: eap/agentic-development/mentor-studio/how-it-works.md
+    - topics:
+        - href: eap/agentic-development/mentor-studio/modify-app.md
+        - href: eap/agentic-development/mentor-studio/prompts.md
+        - href: eap/agentic-development/mentor-studio/capabilities.md
+    # OutSystems MCP
+    - href: eap/agentic-development/outsystems-mcp/outsystems-mcp-overview.md
+    - topics:
+        # Get started
+        - href: eap/agentic-development/outsystems-mcp/get-started.md
+        - href: eap/agentic-development/outsystems-mcp/odc-overview.md
+        - href: eap/agentic-development/outsystems-mcp/connect-mcp-hosts.md
+        - href: eap/agentic-development/outsystems-mcp/use-with-o11.md
+        # Workflows
+        - href: eap/agentic-development/outsystems-mcp/build-first-app.md
+        - href: eap/agentic-development/outsystems-mcp/evolve-app.md
+        - href: eap/agentic-development/outsystems-mcp/introspect-app.md
+        - href: eap/agentic-development/outsystems-mcp/extend-with-csharp.md
+        # Concepts
+        - href: eap/agentic-development/outsystems-mcp/mentor-delegation.md
+        - href: eap/agentic-development/outsystems-mcp/architecture.md
+        - href: eap/agentic-development/outsystems-mcp/governance.md
+        # Reference
+        - href: eap/agentic-development/outsystems-mcp/skills.md
+        - href: eap/agentic-development/outsystems-mcp/tool-reference.md
     # Create apps (Mentor Web)
     - href: eap/agentic-development/mentor-web/how-it-works.md
     - topics:
@@ -27,21 +59,17 @@
         - href: eap/agentic-development/mentor-web/requirements-doc.md
         - href: eap/agentic-development/mentor-web/capabilities.md
         - href: eap/agentic-development/mentor-web/ai-tools.md
-    # Modify apps (Mentor Studio)
-    - href: eap/agentic-development/mentor-studio/how-it-works.md
-    - topics:
-        - href: eap/agentic-development/mentor-studio/modify-app.md
-        - href: eap/agentic-development/mentor-studio/prompts.md
-        - href: eap/agentic-development/mentor-studio/capabilities.md
-    # Concepts
-    - href: eap/agentic-development/odc-ai-and-platform.md
-    - href: eap/agentic-development/effective-prompts.md
+    # Working with AI
     - href: eap/agentic-development/thinking-with-ai.md
-    - href: eap/agentic-development/architecture.md
-    - href: eap/agentic-development/coding-agents.md
+    - topics:
+        - href: eap/agentic-development/effective-prompts.md
+    # Governance
     - href: eap/agentic-development/sdlc.md
-    - href: eap/agentic-development/ai-limitations.md
-    - href: eap/agentic-development/security-safeguards.md
+    - topics:
+        - href: eap/agentic-development/security-safeguards.md
+        - href: eap/agentic-development/ai-limitations.md
+    # Reference
+    - href: eap/agentic-development/agentic-development-terminology.md
 
 # Building apps
 - href: eap/building-apps/intro.md
