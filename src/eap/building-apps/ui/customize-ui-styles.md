@@ -14,7 +14,7 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - customize-app-styles
+  - look-and-feel-overview
 ---
 
 # Customize UI styles
