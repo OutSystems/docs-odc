@@ -6,7 +6,6 @@ tags:
   - External Authentication
   - IdP
   - OIDC
-  - Security
 locale: en-us
 guid: 0a284428-86c4-4b57-b912-b122674b69e4
 app_type: mobile apps, reactive web apps

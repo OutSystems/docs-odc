@@ -14,7 +14,7 @@ audience:
 tags:
   - Aggregates
   - Best Practices
-  - Data
+  - Entities
   - External Databases
   - Performance
   - Security

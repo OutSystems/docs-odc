@@ -13,6 +13,7 @@ audience:
   - Developer
   - Front-end developer
 tags:
+  - Best Practices
   - Data
   - Data Model
   - Deploy
