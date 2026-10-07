@@ -39,7 +39,7 @@ OutSystems MCP has two parts:
 
 To have an AI agent in an app you build call an external MCP server, refer to [Use MCP servers](../../building-apps/build-ai-powered-apps/tools/mcp-connectors.md).
 
-![Claude Code session summarizing the screens, logic, and roles of an OutSystems Directory app](./images/outsystems-mcp-odc-sa.png)
+![Claude Code session summarizing the screens, logic, and roles of an OutSystems Directory app](images/outsystems-mcp-odc-sa.png)
 
 ## Request flow across the parts
 

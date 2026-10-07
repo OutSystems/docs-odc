@@ -58,7 +58,7 @@ The agent reads your tenant's stages and checks that no app named IT Help Desk e
 
 Creating an app changes your tenant, so the agent restates the change and waits for you. The agent names the app, the web template it starts from, and the portfolio it goes in.
 
-![Claude Code terminal where the agent restates the app it creates, with its name, template, and portfolio, and waits for confirmation](./images/outsystems-mcp-claude-code-app-confirmation-sa.png "App confirmation in Claude Code")
+![Claude Code terminal where the agent restates the app it creates, with its name, template, and portfolio, and waits for confirmation](images/outsystems-mcp-claude-code-app-confirmation-sa.png "App confirmation in Claude Code")
 
 Confirm when the details match what you expect. The agent then starts a Mentor session, creates the app, and reports the app's asset key. Use the asset key to refer to the app in later requests, because names can be edited and can collide.
 
@@ -94,7 +94,7 @@ The prompt file's guidelines ask Mentor to build each screen with OutSystems UI 
 
 Each turn takes several minutes. Before you confirm each publish, compare the agent's summary to the prompt file. If Mentor built something differently, such as a screen's access, ask the agent to have Mentor correct it before you publish.
 
-![Claude Code terminal where the agent summarizes the Ticket Queue screen that Mentor built, including its roles, data, and OutSystems UI blocks](./images/outsystems-mcp-claude-code-review-sa.png "Ticket Queue review in Claude Code")
+![Claude Code terminal where the agent summarizes the Ticket Queue screen that Mentor built, including its roles, data, and OutSystems UI blocks](images/outsystems-mcp-claude-code-review-sa.png "Ticket Queue review in Claude Code")
 
 When the last publish finishes, the agent returns the app's URL, which is your Development stage's domain followed by `/ITHelpDesk`.
 
@@ -111,7 +111,7 @@ For more information, refer to [Grant and revoke user roles](../../user-manageme
 
 Open the app's URL and sign in. Ticket Queue opens as the default screen.
 
-![IT Help Desk app showing the Ticket Queue screen with a search box, a status filter, and open tickets with their category, status tag, and submitted date](./images/sample-app-outsystems-mcp-sa.png "Ticket Queue screen")
+![IT Help Desk app showing the Ticket Queue screen with a search box, a status filter, and open tickets with their category, status tag, and submitted date](images/sample-app-outsystems-mcp-sa.png "Ticket Queue screen")
 
 Test each feature from the prompt file: open a ticket, add a comment, change its status, and submit a new ticket. Mentor generates the app with AI, so its output varies between runs. A first version can have gaps, such as a screen with no data or an action that fails.
 

@@ -26,7 +26,7 @@ This page shows you how to use OutSystems MCP to change an existing OutSystems a
 
 Publishing and deploying are distinct operations. Publishing uploads the edited app model, builds it, and deploys the result to the development stage connected to your Mentor session, creating a new revision. Deploying promotes an already-built revision from one stage to another without rebuilding it.
 
-![Claude Code terminal over ODC Studio, listing bugs, inconsistencies, and minor issues found in the Directory app](./images/outsystems-mcp-data-model-odcs.png)
+![Claude Code terminal over ODC Studio, listing bugs, inconsistencies, and minor issues found in the Directory app](images/outsystems-mcp-data-model-odcs.png)
 
 This page uses these placeholders. Replace the following:
 
