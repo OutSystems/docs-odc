@@ -45,6 +45,12 @@ You need the following before you start:
 
 ## Step 1: Give the agent the prompt file
 
+<div class="warning" markdown="1">
+
+Don't include personally identifiable information (PII) in prompts or prompt files. Use placeholder or fictional data instead of real names, email addresses, phone numbers, or other sensitive data.
+
+</div>
+
 The prompt file describes the app and the order to build it in. Phase 1 builds the data model, roles, and sample data. Phase 2 builds the screens, one screen per Mentor turn. The prompt file also gives Mentor guidelines for every turn, such as applying OutSystems UI to every screen and keeping every screen behind the app's roles.
 
 1. Download the [IT help desk prompt file](resources/it-help-desk-prompt.txt) and save it in the folder where you run Claude Code.

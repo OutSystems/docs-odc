@@ -57,6 +57,12 @@ The agent reads the context graph and reports the structure, including the app's
 
 Describe the change in natural language. The agent delegates the edit to Mentor, which changes the app model on the server, then returns a summary.
 
+<div class="warning" markdown="1">
+
+Don't include personally identifiable information (PII) in prompts. Use placeholder or fictional data instead of real names, email addresses, phone numbers, or other sensitive data.
+
+</div>
+
 Ask the agent:
 
 * "Use Mentor to add a Notes text field to the `ENTITY_NAME` entity in `APP_NAME`."
