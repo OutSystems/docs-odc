@@ -14,7 +14,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - create-screen-scratch
+  - create-screens-odc
 ---
 
 # Create screen from scratch
