@@ -49,6 +49,7 @@ The following terms name agentic development and the three paths you use it thro
 | Mentor Studio | Mentor inside ODC Studio. You use Mentor Studio to change the asset you have open, such as a web app, a library, or an agentic app. Refer to [AI development in Mentor Studio](mentor-studio/how-it-works.md). |
 | Mentor Web | Mentor inside ODC Portal. You use Mentor Web to create a new app from a prompt or a requirements document. Refer to [AI app generation in Mentor Web](mentor-web/how-it-works.md). |
 | OutSystems MCP | The OutSystems capability that lets the agent in an MCP host, such as Claude Code or Cursor, build and manage OutSystems apps. OutSystems MCP has two parts: the OutSystems MCP server, which OutSystems hosts for your tenant, and the OutSystems skill, which your MCP host loads. The agent sends app changes to Mentor and runs publish and deploy operations. Refer to [OutSystems MCP](outsystems-mcp/outsystems-mcp-overview.md). |
+| Agent Experience | Another name for OutSystems MCP. These pages use OutSystems MCP, which names the same capability in both OutSystems 11 (O11) and ODC. The word agent in the name refers to the AI agent in your MCP host. |
 
 ## Mentor and the app model
 

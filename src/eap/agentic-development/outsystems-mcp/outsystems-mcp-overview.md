@@ -27,6 +27,8 @@ isautopublish: true
 
 OutSystems MCP connects the AI application you work in, such as Claude Code, Cursor, or AWS Kiro, to OutSystems Developer Cloud (ODC). You ask the AI agent in that application to build, change, and deploy OutSystems apps. ODC compiles and runs those apps with the same standards and governance as any other OutSystems app.
 
+OutSystems MCP is also known as OutSystems Agent Experience. For more information about the names, refer to [Agentic development terminology](../agentic-development-terminology.md).
+
 OutSystems MCP uses the Model Context Protocol (MCP), an open protocol that connects AI applications to external tools. The following MCP terms describe your side of the connection:
 
 * **MCP host:** The AI application you work in.

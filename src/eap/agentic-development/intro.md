@@ -35,7 +35,7 @@ isautopublish: true
 
 # Agentic development
 
-With agentic development, you describe an app in natural language, and OutSystems builds and updates it for you. You work through one of three paths: Mentor Studio in ODC Studio, your own MCP host through OutSystems MCP, or Mentor Web in OutSystems Developer Cloud (ODC) Portal. Every path produces the same OutSystems app model, and the platform compiles and governs it the same way.
+With agentic development, you describe an app in natural language, and OutSystems builds and updates it for you. You work through one of three paths: Mentor Studio in ODC Studio, your own MCP host through OutSystems MCP (also known as OutSystems Agent Experience), or Mentor Web in OutSystems Developer Cloud (ODC) Portal. Every path produces the same OutSystems app model, and the platform compiles and governs it the same way.
 
 <div class="info" markdown="1">
 

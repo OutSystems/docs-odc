@@ -21,7 +21,7 @@ isautopublish: true
 
 # Get started with OutSystems MCP
 
-This page describes how to set up OutSystems MCP in Claude Code, your MCP host. The steps cover installing the OutSystems plugin, signing in, and running a first request. If you use another MCP host, such as Cursor or AWS Kiro, follow the steps for your host in [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md) instead. For the MCP hosts OutSystems validates, refer to [Supported MCP hosts](outsystems-mcp-overview.md#supported-mcp-hosts).
+This page describes how to set up OutSystems MCP (also known as OutSystems Agent Experience) in Claude Code, your MCP host. The steps cover installing the OutSystems plugin, signing in, and running a first request. If you use another MCP host, such as Cursor or AWS Kiro, follow the steps for your host in [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md) instead. For the MCP hosts OutSystems validates, refer to [Supported MCP hosts](outsystems-mcp-overview.md#supported-mcp-hosts).
 
 ## Prerequisites
 
