@@ -1,5 +1,5 @@
 ---
-summary: Explore theme customization and management in OutSystems Developer Cloud (ODC) for app styling and consistency.
+summary: OutSystems Developer Cloud (ODC) themes explain properties, layouts, CSS, the Theme Editor, and shared theme libraries.
 tags: theme customization, css customization, ui design, consistency management, theme libraries
 locale: en-us
 guid: d284fd25-cb3c-4b8f-a7b6-e44b9dff9a20

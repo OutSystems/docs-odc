@@ -1,5 +1,5 @@
 ---
-summary: Learn how Test Query in ODC Studio relates to the runtime behavior of Aggregates and SQL nodes.
+summary: Test Query results in OutSystems Developer Cloud (ODC) show why Aggregates and SQL nodes differ by data volume, transactions, and query paths.
 tags:
   - Aggregates
   - Best Practices

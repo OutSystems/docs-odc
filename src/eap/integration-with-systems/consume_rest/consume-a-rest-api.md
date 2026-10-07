@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports consuming single or multiple REST API methods with Swagger integration.
+summary: OutSystems Developer Cloud (ODC) REST API consumption covers single or multiple methods, OpenAPI imports, and base URL setup.
 tags:
   - Authentication
   - REST
