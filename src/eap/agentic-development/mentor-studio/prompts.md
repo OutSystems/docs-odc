@@ -41,6 +41,19 @@ Use these prompts to create or modify server actions, client actions, service ac
 * Basic: Create a server action that validates an email format.
 * Detailed: Create a Server Action named `ValidateOrderTotal` that takes `OrderId` as input, retrieves all `OrderItem` records for that order, calculates the sum of `Quantity * UnitPrice`, and returns the `TotalAmount`. Include error handling for cases where the order doesn't exist.
 
+### Logic prompts by task
+
+Use these prompts as starting points for aggregates, server actions, and client variables. Replace the element names with the names in your app.
+
+* **Filter an aggregate:** In the `GetEmployees` aggregate, add a filter so that it returns only the employees whose `City` is London.
+* **Sort an aggregate:** In the `GetEmployees` aggregate, sort the results by `FirstName` in ascending order.
+* **Add a dynamic sort:** In the `GetOrders` aggregate, add a dynamic sort that uses a Text variable named `SortBy`. Users can sort by `Order.OrderDate`.
+* **Return distinct values:** Create an aggregate that returns the distinct values of the `City` attribute of the `Employee` entity.
+* **Add a calculated attribute:** In the `GetProducts` aggregate, count `Product.Id` for each group of `Category.Id` and `Category.Label`. Add a calculated attribute named `DropdownLabel` that shows the label followed by the count in parentheses.
+* **Join an external entity:** In the `GetOrdersWithCustomers` aggregate, add the external `Customer` entity as a source with a With or Without join to `Order` on `CustomerId`.
+* **Wrap entity actions:** Create server actions that wrap the Create, Update, and Delete entity actions of the `Product` entity. Validate the mandatory attributes before saving, and set `CreatedOn` and `CreatedBy` when a record is created.
+* **Create a client variable:** Create a client variable named `SearchKeyword` of type Text. Bind it to the Search input on the `Employees` screen, and filter the `Employee` aggregate by `FirstName` using the variable.
+
 ## UI
 
 Use these prompts to create or modify screens, web blocks, and layouts.
@@ -58,6 +71,16 @@ Use these prompts to create or modify entities, attributes, and relationships.
 
 * Basic: Add a `Priority` attribute to the `Task` entity.
 * Detailed: Create a `Comment` entity linked to the `Ticket` entity with attributes `CommentText` (Text), `CreatedBy` (User reference), and `CreatedDate` (DateTime). Set up a one-to-many relationship where each Ticket can have multiple Comments.
+
+### Data prompts by task
+
+Use these prompts as starting points for specific data modeling tasks. Use fictional values in prompts, because prompts must not include personally identifiable information.
+
+* **Create an entity:** Create a `Place` entity with a mandatory `Name` attribute of type Text with 100 characters, a mandatory `Address` attribute of type Text with 200 characters, an optional `PhoneNumber` attribute of type Phone Number, and optional `Latitude` and `Longitude` attributes of type Decimal.
+* **Create a static entity:** Create a `Status` static entity with a `TextDescription` attribute of type Text. Add the records `Booked`, `CheckedIn`, `CheckedOut`, and `Canceled`, and give each a description.
+* **Create a one-to-one relationship:** Create a `Profile` entity that extends the `User` entity in a one-to-one relationship. Use the `User` identifier as the `Profile` identifier, and add the attributes `Twitter` (Text), `Facebook` (Text), and `Photo` (Binary Data).
+* **Create a many-to-many relationship:** Create a `Review` entity as a junction between the `User` and `Place` entities in a many-to-many relationship. Add the attributes `Classification` (Integer), `Comments` (Text), and `SubmittedOn` (Date).
+* **Add records:** Add three records to the `Place` entity with fictional names, addresses, and phone numbers.
 
 ## Reuse public elements
 

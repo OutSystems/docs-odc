@@ -14,10 +14,13 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - aggregates
+isautopublish: true
 ---
 
 # Fetch data from the database in OutSystems
@@ -27,3 +30,7 @@ When developing apps, you often need to fetch data from a database to display it
 [Entities](../modeling/entity.md) serve as the data sources, while aggregates access and organize that data for specific app purposes. Aggregates can perform various operations, such as combining data from multiple entities using joins, applying filters to retrieve specific data, and sorting data for display or further processing.
 
 To learn more about fetching data from the database and displaying it on the screen, refer to [fetch display](../../ui/interaction/fetch-display.md).
+
+## Fetch data with Mentor Studio
+
+You can describe the data you need to Mentor Studio, which proposes the aggregate for you to review before it changes your app. The platform guarantees the aggregate is valid, and you check that it returns the correct data. For the characteristics of a correct aggregate, refer to [Correct aggregate output](aggregate.md#correct-aggregate-output).

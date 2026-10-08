@@ -15,10 +15,13 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - unblock
 topic:
   - edit-entity-data
+isautopublish: true
 ---
 
 # Edit data in ODC Studio
@@ -45,7 +48,38 @@ Adding, removing, and changing entity records during app development, allows you
 
 In ODC, you can use sample data to create screen instances. To learn more about using sample data, see [sample data](../ui/screen-template/sample-data.md)
 
-## How to edit an entity’s data in ODC Studio
+## Add records with Mentor Studio
+
+Add records by describing them in Mentor Studio. Mentor Studio generates bootstrap logic that creates the records, and publishing the app runs that logic and creates the records in the database. The entity must meet the same criteria as for manual editing.
+
+In your prompt, name the entity, the attribute values, and the number of records. Use fictional values, because prompts must not include personally identifiable information. For example, "Add three records to the Place entity with fictional names, addresses, and phone numbers."
+
+For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#data).
+
+For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+
+### Validate the bootstrap logic
+
+The platform guarantees that the model is valid, and you decide whether the logic creates the data you need for your test or demo. Mentor Studio adds the records through logic that calls the Create action of the entity, for example in an existing bootstrap server action. In the **Logic** tab of ODC Studio, check the following:
+
+* The logic creates one record for each record you described, in the entity you intended.
+* Each record sets every mandatory attribute, with a value that fits the data type of the attribute.
+* Foreign key values point to existing records.
+* The values are fictional and contain no personally identifiable information.
+
+### Validate the data
+
+After you publish the app, check the records that the bootstrap logic created. In the **Data** tab of ODC Studio, right-click the entity, select **View or Edit Data**, and check the following:
+
+* The entity contains the records you described.
+* Mandatory cells are filled. A red outline marks a mandatory cell without a value.
+* Foreign key values point to existing records. By design, ODC Studio doesn't validate foreign keys to referenced entities.
+
+If a record is wrong, correct the cell manually. Also correct the bootstrap logic, so that later runs of the logic create the values you need.
+
+## Edit data manually in ODC Studio
+
+To edit the data yourself, use the data grid that ODC Studio provides for each entity.
 
 <div class="info" markdown="1">
 
@@ -152,3 +186,9 @@ You can permanently discard changes in one of the following ways:
 * To discard all of your changes, click **Discard** and then confirm that want to permanently discard your changes.
 
     ![Button to discard all changes in ODC Studio with a confirmation dialog](images/edit-data-discard-all-changes-odcs.png "Discarding All Changes in ODC Studio")
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

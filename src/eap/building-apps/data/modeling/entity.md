@@ -14,10 +14,13 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - indexes
+isautopublish: true
 ---
 
 # Entities
@@ -93,8 +96,20 @@ To convert an existing static entity to an entity right-click the static entity 
 
 </div>
 
+## Correct entity output
+
+The platform guarantees that the model is valid, and you decide whether it's the right entity for your requirement. The following checks are examples, not a complete list. To create an entity, refer to [Create an Entity to Persist Data](entity-create.md).
+
+* **Identifier.** The entity has an `Id` attribute as Entity Identifier, with the Long Integer data type and AutoNumber. If the entity uses another data type or has AutoNumber switched off, the logic that creates records sets a unique identifier. The identifier attribute and its name are final after the first publish.
+* **Sequential attribute.** The entity has at most one sequential attribute.
+* **Attributes and mandatory flags.** Each attribute has the data type that fits its data. The platform validates mandatory attributes on the user interface, and the database accepts null values for them.
+* **Indexes.** Attributes that the app often searches or sorts by have an index. Each index trades faster reads against slower inserts.
+* **Entity type.** Data that changes at runtime is in an entity. Constant values, such as the possible values of a payment status, are in a [Static Entity](entity-static.md).
+* **Impact of a change.** When a proposed change deletes an entity or an attribute, the platform allows it whether the element is in use or not. Review each element that uses it, because the platform doesn't delete the entity or attribute in the database. When a proposed change renames an entity attribute, the references to it update automatically.
+
 ## Related resources
 
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).
 * [Modeling Data](https://learn.outsystems.com/training/journeys/modeling-data-643) online course
 
 * [Data Model Integrity](https://learn.outsystems.com/training/journeys/data-model-integrity-638) online course

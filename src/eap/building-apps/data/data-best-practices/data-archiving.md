@@ -20,10 +20,12 @@ audience:
   - Architect
 outsystems-tools:
   - odc studio
+  - mentor studio
 topic:
   - data-archiving-cold-data
   - entity-index-selection
   - timer-best-practices
+isautopublish: true
 ---
 # Data archiving best practice
 
@@ -162,7 +164,7 @@ If needed, create UI where the end user can interact with the archived data:
 
 Due to the volume of data, the archive storage is less performant than the primary storage. To manage the end user expectations in terms of response time, implement a toggle that the end user must explicitly set before interacting with the archived data.
 
-![Diagram showing the interaction between the archiving logic, the primary storage and archive storage, and the archive search UI for end users.](images/data-archiving-search-ui-diag.png "Light Archiving Step 3: Archiving search UI")
+![Diagram showing the interaction between the archiving logic, the primary storage and archive storage, and the archive search UI for end users.](images/data-archiving-search-ui-diag.png "Archive Search UI")
 
 ### Historical archiving
 
@@ -183,6 +185,18 @@ This solution eliminates the need to design and maintain a separate archive repo
 Each business app is responsible for moving its records into the centralized archive. The archiving criteria can vary from application to application (inactive records, last update timestamp, creation date, etc).
 
 Note that whenever a record is added to the archive, it must be purged from the original location in the same transaction scope, to prevent data loss.
+
+## Correct archiving output
+
+The platform guarantees that the model is valid, and you decide whether the mechanism archives only the intended records without data loss. The following checks are examples, not a complete list.
+
+* **Control columns.** The entities have control columns that define which records to archive, such as `LastUpdatedOn`, `IsActive`, `IsArchived`, or `IsDraft`, and the control columns are indexed.
+* **Archive storage.** The archive storage mirrors the primary storage, and its entities have the indexes that the archive queries need.
+* **Transaction scope.** A record that moves to the archive is purged from the original location in the same transaction scope, to prevent data loss.
+* **Timer.** A Timer runs the archiving process asynchronously.
+* **Archive type.** Light archiving makes the archived data searchable and recoverable. Historical archiving makes the data inaccessible to users and keeps it for auditing.
+* **Policy and schedule.** Each entity has the archive policy that fits its data growth. The archiving runs during off-peak hours.
+* **Purging.** A purging strategy applies to the archive storage when the archived data is no longer required.
 
 ## Common pitfall scenarios
 
@@ -211,3 +225,9 @@ When the archived data is no longer required, you should purge it. [See more det
 ### Incorrect archiving schedule
 
 The archiving process(es) should run during off-peak hours to minimize the impact over requests provided to end users.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

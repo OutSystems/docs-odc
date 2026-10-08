@@ -14,8 +14,10 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - evaluate
 topic:
   - compound-data-types
 isautopublish: true
@@ -120,3 +122,18 @@ To reuse user information in another action, create a structure to hold this dat
 1. To assign the values to the output variable, add an Assign element to the action and assign the first element returned from the aggregate.
 
 1. Since the data type returned by the aggregate is different from the output variable, map the attributes from the aggregate output to the output parameter attributes.
+
+## Correct compound data type output
+
+The platform guarantees that the data type is valid, and you decide whether it's the right data type for your logic. The following checks are examples, not a complete list.
+
+* **Structure or record.** A structure is a reusable data type that several variables or actions share. A record belongs to a single variable.
+* **Attribute data types.** Each attribute of the structure or record has the data type of the value it receives, such as a `User Identifier` for a user Id or `Binary Data` for a photo.
+* **Mapping.** When the data type that an aggregate returns differs from the output variable, each attribute of the aggregate output is mapped to an attribute of the output parameter.
+* **Output parameter.** The output parameter of a REST API method or action uses the intended structure or record as its data type, and the assignment sets its attributes.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

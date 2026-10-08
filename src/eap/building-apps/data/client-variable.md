@@ -13,9 +13,12 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - remember
   - apply
+  - evaluate
+isautopublish: true
 ---
 
 # Client Variable
@@ -27,7 +30,28 @@ The amount of data you have available for all Client Variables across an environ
 
 Client Variables reset to their default values when the user signs out of the app or when the platform signs out the user automatically. However, don't use Client Variables to store sensitive or confidential information.
 
-## How to use
+## Add a Client Variable with Mentor Studio
+
+Create a Client Variable by describing it and the elements that use it in Mentor Studio, and validate the variable and its usages before you publish.
+
+In your prompt, name it, give its data type, and state which widget or logic uses it. For example, "Create a Client Variable named SearchKeyword of type Text. Bind it to the Search input on the Employees screen, and filter the Employee aggregate by FirstName using the variable."
+
+For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#ui).
+
+For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+
+### Validate the Client Variable
+
+The platform guarantees that the model is valid, and you decide whether the Client Variable is correct for your requirement. In the **Data** tab of ODC Studio, check the following:
+
+* The Client Variable has a basic data type or an entity identifier. A **Binary** variable isn't valid.
+* The default value is a literal.
+* The variable doesn't hold sensitive or confidential information, because Client Variables are stored client-side.
+* The widget that sets the value, such as the Input widget, has the **Variable** property set to `Client.` followed by the variable name, for example `Client.SearchKeyword`.
+* The logic that reads the value, such as the aggregate filter, references the same variable.
+* After you publish the app, the value stays when you change screens or close the browser, and the variable returns to its default value when the user signs out.
+
+## Add a Client Variable manually in ODC Studio {#how-to-use}
 
 This example shows how to use a Client Variable to keep the value of a Search widget. The value of the Client Variable is then used to filter an Aggregate. This value is kept if you change to another screen or close the browser.
 
@@ -102,3 +126,9 @@ After you follow these steps and publish your application, you can test the func
 </tr>
 </tbody>
 </table>
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

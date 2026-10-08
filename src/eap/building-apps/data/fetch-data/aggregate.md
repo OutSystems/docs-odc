@@ -19,9 +19,11 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - remember
   - apply
+  - evaluate
 topic:
   - aggregate-properties
   - create-aggregate
@@ -136,8 +138,21 @@ To learn more about writing better queries, refer to [writing better queries in 
 | IsDataFetched | True when data has been fetched from the database and is ready to be used. | Yes | Boolean | |
 | HasFetchError | True when there is an error during data fetch due to a server error or communication timeout. | Yes | Boolean | |
 
+## Correct aggregate output
+
+The platform guarantees that the model is valid, and you decide whether the aggregate returns the correct data for your requirement. The following checks are examples, not a complete list.
+
+* **Sources and joins.** The aggregate has the entities that hold the data you need, and the join types match the relationship between them. For more information, refer to [supported join types](supported-join-types.md).
+* **Attributes.** The aggregate fetches only the attributes that the screen or action uses.
+* **Location.** A screen or block aggregate is client-side and loads data when the screen or block loads. An aggregate in the logic flow is server-side. An action doesn't have an aggregate inside a cycle, and doesn't isolate a single aggregate in its own action.
+* **Max. Records.** A screen aggregate that must fetch all records has **Max. Records** higher than the number of records you expect. A data action that must fetch all records leaves **Max. Records** empty.
+* **Result.** The records the aggregate returns match your requirement. Test Query and runtime results can differ, so confirm the result in the published app.
+
+To review an existing aggregate, ask Mentor Studio to explain it, for example "Explain what the GetOrdersByStatus Aggregate is doing, specifically the 'Only With' join between Order and ShippingStatus." For more prompt examples, refer to the explain code section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#explain-code).
+
 ## Related resources
 
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).
 * [Aggregates 101](https://learn.outsystems.com/training/journeys/aggregates-101-634) online course
 
 * [Advanced Aggregates](https://learn.outsystems.com/training/journeys/advanced-aggregates-633) online course

@@ -11,16 +11,19 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - evaluate
 topic:
   - human-language-fetch
+isautopublish: true
 ---
 
 # Fetch data using human language
 
 Fetch data in your apps by using everyday language to create queries.
-Ask for data in similar way that you would ask another person, and ODC Studio creates an Aggregate to get you that data.
+Ask for data in similar way that you would ask another person, and ODC Studio creates an Aggregate to get you that data. This page describes the **Get Data** capability in the aggregate editor. To describe changes to an aggregate in Mentor Studio instead, refer to [AI development in Mentor Studio](../../../agentic-development/mentor-studio/how-it-works.md).
 
 Fetching data using human language includes the following steps:
 
@@ -103,6 +106,16 @@ Since this capability is still under development you need to always validate bot
 Start by checking the aggregate results, ensuring you got the data you expected.
 Then check the sources, filters, and sorts tabs of the generated aggregate to ensure the aggregate is valid and makes sense for your data request.
 
+### Correct generated aggregate
+
+A generated aggregate is correct when it returns the data you asked for. The following checks are examples, not a complete list.
+
+* The **Sources** tab has the entities that hold the data you asked for, and the joins between them match the relationship. A generated aggregate with several sources only uses left joins and inner joins.
+* The **Filters** tab has one condition for each criterion in your request, with the attribute, operator, and value or variable you intended.
+* The **Sorts** tab has the order you asked for. Dynamic sorts aren't generated.
+* **Max. Records** fits your need. A generated aggregate always sets **Max. Records** to `50`.
+* The aggregate has a name that describes it. ODC Studio doesn't rename a generated aggregate.
+
 To improve your aggregate, tweak your sentence and ask for data again. Alternatively, tweak your aggregate manually by adding sources, filters, sorts, and functions.
 
 ## Limitations
@@ -134,3 +147,9 @@ This capability is under development, check the current limitations in the follo
 * The generated aggregate isn't renamed automatically.
 
 * Generated aggregates with several source only use left joins and inner joins.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

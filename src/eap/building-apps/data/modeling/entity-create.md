@@ -1,5 +1,5 @@
 ---
-summary: "OutSystems Developer Cloud (ODC) entity creation: add entities in ODC Studio via Entity Diagram or Data tab, define attributes, and enable local storage."
+summary: "OutSystems Developer Cloud (ODC) entity creation: describe an entity to Mentor Studio and validate the result, or add entities in ODC Studio manually."
 tags:
   - Data
   - Data Model
@@ -15,54 +15,81 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - evaluate
 topic:
   - create-entity
+isautopublish: true
 ---
 
 # Create an Entity to Persist Data
   
-In OutSystems, a database table is an Entity, and the table columns are Entity Attributes.
+In OutSystems, a database table is an Entity, and the table columns are Entity Attributes. You create an Entity by describing it to Mentor Studio and validating the result, or by building it manually in ODC Studio.
 
-To create an Entity you need to:
+## Create an Entity with Mentor Studio
 
-1. Double click in the Entity Diagram created by default in the Data tab.
-1. Right-click anywhere on the canvas and select **Add Entity to Database**. By default, it will be named "Entity1" and it can be renamed.
-1. Expand the **Entities** tree and note the entity has the Id attribute created as Entity Identifier (primary key).
-1. Right-click the Entity and the other attributes by selecting **Add Entity Attribute**.
-1. You can add indexes if necessary by right clicking with the Entity and choosing **Edit Entity**.
+Create an Entity by describing its Attributes in Mentor Studio, and validate each Attribute before you publish.
 
-Alternatively, you can create entities in the Data tab:
+In your prompt, include its name, each Attribute with its data type and length, which Attributes are mandatory, and any relationship to an existing Entity. For example, "Create a Place entity with a mandatory Name attribute of type Text with 100 characters, a mandatory Address attribute of type Text with 200 characters, an optional PhoneNumber attribute of type Phone Number, and optional Latitude and Longitude attributes of type Decimal."
 
-* Right-click on the Entities folder and select 'Add Entity'.  
-It's a quicker way, but with access to less information about the entity.
-* Right-click on the Entities folder and select 'Import New Entities from Excel...'.
+For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#data).
 
-It's useful to create an entity and bootstrap data for it.
+For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 
-In mobile applications, you can create entities to store information in the device's local storage. This typically happens when end-users need use the application while offline.
+### Validate the Entity
 
-## Example
+The platform guarantees that the model is valid, and you decide whether it's the correct model for your requirement. In the **Data** tab of ODC Studio, check the following:
 
-We have an application called Go Out, that allows you to read and write reviews of places you go to, for instance restaurants. Let's see how to create the table that stores the information about these places.
+* The Entity has an `Id` Attribute set as the Entity Identifier and set as AutoNumber, unless your requirement calls for another identifier. After the first publish, you can't change the identifier Attribute or rename it.
+* Each Attribute has the data type and length from your description. A Text Attribute has a length of 50 unless you specify another length.
+* The Attributes you described as mandatory have the **Is Mandatory** property set to `Yes`.
+* Each reference Attribute points to the intended Entity, and its **Delete Rule** matches the behavior you want. For more information, refer to [Relationships between entities](relationship/relationships.md#referential-integrity).
 
-1. In the Data tab, under Entity Diagrams, open the `GoOutDataModel` diagram.
+## Create an Entity manually in ODC Studio
 
-1. Right-click and choose 'Add Entity to Database'.
+To build the Entity yourself, add it in ODC Studio and then define its Attributes.
 
-1. Set the name of the entity to `Place`. OutSystems creates an `Id` attribute with data type `Long Integer`, set as AutoNumber.
+1. Double-click the Entity Diagram created by default in the **Data** tab.
+1. Right-click anywhere on the canvas and select **Add Entity to Database**. By default, OutSystems names it `Entity1`. You can rename it.
+1. Expand the **Entities** tree and check that the Entity has the `Id` Attribute created as Entity Identifier (primary key).
+1. Right-click the Entity and select **Add Entity Attribute** to add the other Attributes.
+1. To add indexes, right-click the Entity and select **Edit Entity**.
 
-1. With the entity selected, add the other attributes by clicking with the right-button in "Add Entity Attribute" to create the attributes:
+Alternatively, create Entities in the **Data** tab:
 
-    ![Screenshot of OutSystems Entity Editor with the 'Add Entity Attribute' option highlighted](images/entity-editor-odcs.png "Adding Entity Attributes in OutSystems")
+* Right-click the **Entities** folder and select **Add Entity**. This option gives you access to less information about the Entity.
+* Right-click the **Entities** folder and select **Import New Entities from Excel...**. This option creates an Entity and bootstraps data for it.
 
-    1. Create the `Name` attribute. By default the data type is set to `Text` and the length is `50`, change it to `100`;
-    1. Make the attribute mandatory by setting the Is Mandatory property to `Yes`.
-    1. Create the `Address` attribute as a mandatory Text attribute with 200 characters of length.
-    1. Create the `PhoneNumber` attribute. The data type of the attribute changes to `Phone Number`. Leave this attribute optional.
-    1. Create the `Latitude` and `Longitude` attributes as optional Decimal attributes. Use the default length (37) and decimals (8) to define the precision of the numbers stored in the database.
+In mobile apps, you can create Entities to store information in the device's local storage. This typically applies when end users need to use the app while offline.
 
-1. Publish your application.
+### Example
 
-When you publish your application, OutSystems creates the database table that corresponds to the Place entity.
+The Go Out app lets users read and write reviews of places such as restaurants. The following steps create the table that stores the places manually in ODC Studio. The Mentor Studio prompt earlier on this page produces the same Entity.
+
+1. In the **Data** tab, under **Entity Diagrams**, open the `GoOutDataModel` diagram.
+
+1. Right-click and choose **Add Entity to Database**.
+
+1. Set the name of the Entity to `Place`. OutSystems creates an `Id` Attribute with data type `Long Integer`, set as AutoNumber.
+
+1. With the Entity selected, right-click and select **Add Entity Attribute** to create the following Attributes:
+
+    ![Screenshot of OutSystems Entity Editor with the 'Add Entity Attribute' option highlighted](images/entity-editor-odcs.png "Add Entity Attribute Option")
+
+    1. Create the `Name` Attribute. By default the data type is `Text` and the length is `50`. Change the length to `100`.
+    1. Make the Attribute mandatory by setting the **Is Mandatory** property to `Yes`.
+    1. Create the `Address` Attribute as a mandatory Text Attribute with 200 characters of length.
+    1. Create the `PhoneNumber` Attribute. The data type of the Attribute changes to `Phone Number`. Leave this Attribute optional.
+    1. Create the `Latitude` and `Longitude` Attributes as optional Decimal Attributes. Use the default length (37) and decimals (8) to define the precision of the numbers stored in the database.
+
+1. Publish your app.
+
+When you publish your app, OutSystems creates the database table that corresponds to the Place Entity.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

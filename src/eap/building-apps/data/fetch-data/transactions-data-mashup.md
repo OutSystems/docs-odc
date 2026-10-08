@@ -14,11 +14,14 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 topic:
   - commit-before-mashup
 coverage-type:
   - understand
   - apply
+  - evaluate
+isautopublish: true
 ---
 
 # Data mashup transactions
@@ -29,7 +32,7 @@ When you perform a write operation to an OutSystems entity, such as a create or 
 
 ![Diagram showing the flow of transactions and mashup queries in OutSystems.](images/intro-transactions-mashup.png "Diagram of transactions and mashup queries")
 
-In this scenario, use the **CommitTransaction** Server Action in your logic flow to commit the changes to the OutSystems entity before running the mashup query that includes the same entity. This ensures the aggregate retrieves the data changes. This applies to logic flows executed by the app runtime in your Server actions, Service Actions, Client Actions, and Data Actions, and the logic executed through Timers.
+In this scenario, use the **CommitTransaction** Server Action in your logic flow to commit the changes to the OutSystems entity before running the mashup query that includes the same entity. This ensures the aggregate retrieves the data changes. This applies to logic flows executed by the app runtime in your Server actions, Service Actions, and Data Actions, and the logic executed through Timers. **CommitTransaction** runs in server-side logic only.
 
 ![Screenshot of ODC Studio displaying an aggregate combining data from different sources.](images/data-mash-aggregate-odcs.png "Screenshot of ODC Studio with aggregate")
 
@@ -41,8 +44,17 @@ If you perform a write operation to an OutSystems entity within a Client Action,
 
 ![Screenshot of ODC Studio showing a client action where the aggregate is implemented at the screen level, not requiring a commit transaction.](images/data-mash-no-commit-odcs.png "Screenshot of ODC Studio without the need to commit transaction")
 
+## Correct logic output with data mashup
+
+The platform applies the transaction behavior described in this page, and you decide whether the flow returns the changed data. The following checks are examples, not a complete list.
+
+* A server action, service action, data action, or timer logic that writes to an OutSystems entity and then runs a mashup aggregate with an external entity has a **CommitTransaction** Server Action between the write and the aggregate.
+* A client action that writes to an OutSystems entity and refreshes a screen aggregate has no **CommitTransaction**, because the refresh returns the changed data.
+* A mashup of external entities only has no **CommitTransaction**, because each external entity request runs in its own transaction.
+
 ## Related resources
 
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).
 * [Database transaction isolation level](../../../reference/isolation.md)
 
 * [Transactions in external entities](transaction-external-entities.md)

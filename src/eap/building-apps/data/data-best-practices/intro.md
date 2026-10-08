@@ -24,6 +24,7 @@ audience:
   - Tech lead
 outsystems-tools:
   - odc portal
+  - mentor studio
 isautopublish: true
 ---
 # Best practices for data management
@@ -123,3 +124,19 @@ If your app moves large volumes of data on a schedule, split the work instead of
 ### Benefits
 
 Processing data in chunks keeps each unit of work small and durable, so a run makes **steady progress within platform execution limits** and resumes from where it stopped after an interruption, instead of repeating work that already completed.
+
+## Correct data management output
+
+The platform guarantees that the model is valid, and you decide whether it follows these practices. The following checks are examples, not a complete list.
+
+* **Settings.** Values that change rarely, such as an external party's email address or a feature toggle flag, are in settings. Values that change frequently are in an entity.
+* **Indexes.** Attributes that queries filter or sort by have an index, and attributes with low variability, such as Boolean attributes, aren't indexed for performance.
+* **Isolated large data.** Large text and binary attributes, particularly rarely accessed ones, are in a separate entity from the master entity.
+* **Purging and archiving.** Entities with a high growth rate have a purging or archiving mechanism. For more information, refer to [Data purging best practice](data-purging.md) and [Data archiving best practice](data-archiving.md).
+* **Batches.** Work that moves large volumes of data runs in batches that stay within the execution limits of a Timer or an Event.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

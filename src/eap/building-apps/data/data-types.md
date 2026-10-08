@@ -1,5 +1,5 @@
 ---
-summary: Explore data types, default values, and constraints in OutSystems Developer Cloud (ODC).
+summary: OutSystems Developer Cloud (ODC) data types cover default values, constraints, conversions, and UTC DateTime behavior.
 tags:
   - Data
 locale: en-us
@@ -12,12 +12,16 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - remember
+  - understand
+  - evaluate
 topic:
   - compound-data
   - data-types
   - datetime-utc-behavior
+isautopublish: true
 ---
 
 # Data types and conversions
@@ -100,3 +104,20 @@ To learn more about compound data types, refer to [Use structures and records to
 | Type | Comments |
 | --- | --- |
 | List | A List is a sequence of elements of the same data type, either basic or compound. Elements can be inserted, fetched, and removed from a List. |
+
+## Correct data type output
+
+The platform guarantees that the data types are valid, and you decide whether they are correct for your data. The following checks are examples, not a complete list.
+
+* **Type fits the value.** A Date, Time, or Date Time attribute holds temporal values. An Email attribute holds an email address, and screens generated from it validate the address format. Text holds other character values.
+* **Range fits the data.** An Integer holds values between `-2147483648` and `2147483647`. Use a Long Integer for larger values. A Decimal holds at most 8 digits in the decimal part.
+* **Default values apply.** OutSystems has no NULL value except for the Entity Identifier data type. Logic that tests for an empty value compares with the default value of the data type, such as `""` for Text or `#1900-01-01#` for Date.
+* **Time zone behavior matches the requirement.** A Date Time value is stored in UTC and displayed in the device time zone. Date and Time values are stored and displayed exactly as entered.
+* **Compound types match the use.** A Structure is for a data type that several variables share, and a Record is for a single variable. For more information, refer to [Use structures and records to create compound data types](structure-create-use.md).
+* **Conversions are explicit where needed.** For more information, refer to [Convert data types](convert-data-types.md).
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

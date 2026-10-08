@@ -15,11 +15,14 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - data-model-stages
   - entity-schema-mapping
+isautopublish: true
 ---
 
 # Data modeling
@@ -84,6 +87,8 @@ If you update the logical data model, it updates the physical data model.
 
 ODC Studio provides tools to design a data model efficiently. By abstracting the need to manipulate the physical data model directly, ODC lets you get to the first usable version of your app quickly.
 
+You can also describe entities, attributes, and relationships to Mentor Studio, which proposes the changes and lets you review them before they change your app. For the steps, refer to [Create an Entity to Persist Data](modeling/entity-create.md). The data model design steps are the same in both cases.
+
 There are three steps to designing the data model for an app in ODC.
 
 1. Add entities.
@@ -124,8 +129,20 @@ You can organize entities into folders. Although folders don't affect the app da
 
 To learn more about relationships between entities, refer to [relationships between entities](modeling/relationship/relationships.md).
 
+## Correct data model output
+
+Whether you build the data model in ODC Studio or review a proposal from Mentor Studio, the same characteristics define a correct data model. The platform guarantees that the model is valid, and you decide whether it's the right model for your requirements. The following checks are examples, not a complete list. They follow the three steps of data model design.
+
+* **Entities isolate business concepts.** Each entity represents one business concept. An entity that holds binary data, such as a photo, is separate from the entity it describes, and the two are connected by a relationship.
+* **Attributes use the data type that fits the data.** A data type such as email provides built-in validation on generated screens.
+* **Each entity has an identifier.** The `Id` attribute is the primary key, and you choose other identifier attributes deliberately, because the identifier can't change after the first publish.
+* **Relationships replace duplicated attributes.** The reference attribute, the foreign key, is on the entity that holds the many side of a one-to-many relationship. A many-to-many relationship has a junction entity with a reference attribute to each related entity. For more information, refer to [Relationships between entities](modeling/relationship/relationships.md).
+* **Business rules appear in the model where possible.** A requirement such as one customer record for each VAT number maps to the data model, for example through an index that acts as an alternate key, and doesn't depend on screen logic alone.
+* **Delete rules match the intended behavior.** The **Delete Rule** of each reference attribute is **Protect**, **Delete**, or **Ignore** according to what must happen to related records. For more information, refer to [Referential integrity](modeling/relationship/relationships.md#referential-integrity).
+
 ## Related resources
 
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).
 * [Modeling Data](https://learn.outsystems.com/training/journeys/modeling-data-643) online course
 
 * [Modeling Data Relationships](https://learn.outsystems.com/training/journeys/modeling-data-relationships-642) online course

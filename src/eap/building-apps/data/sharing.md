@@ -16,8 +16,10 @@ audience:
   - Developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - producer-consumer-apps
   - public-entity-sharing
@@ -76,3 +78,19 @@ To manipulate entity data in a consumer app, you create a server action in the p
 ## Sharing data with external systems
 
 You share data with external systems by creating and exposing REST services. ODC Studio provides a simple interface to create and define REST methods in your app. The result is a lightweight, fast, and secure JSON-based REST API that follows the industry-standard Swagger specification. You configure an external system to consume these methods directly.
+
+## Correct data sharing output
+
+The platform guarantees that the model is valid, and you decide whether the sharing design is correct for your architecture. The following checks are examples, not a complete list.
+
+* **Producer and consumer roles.** The data model and its actions are in a dedicated producer app, unless the app is small and self-contained. Consumer apps reference the shared entities and actions.
+* **Public flag.** An entity that another app reads has its public flag set to **Yes**. A consumer app uses the shared entity for read-only purposes.
+* **Write access.** A consumer app writes data through a service action. The producer app wraps a server action in the service action, and the server action wraps the entity actions.
+* **Portfolio scope.** In a multi-portfolio organization, entities and service actions are available only within the same portfolio. Data shared across portfolios uses a REST API.
+* **External systems.** Data shared with external systems is exposed through REST methods.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

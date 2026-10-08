@@ -18,9 +18,11 @@ audience:
   - Platform administrator
 outsystems-tools:
   - odc studio
+  - mentor studio
   - odc portal
 topic:
   - purge-safeguards
+isautopublish: true
 ---
 # Data purging best practice
 
@@ -80,6 +82,17 @@ The following is an example of the purge process logic:
 
 The whole system may require multiple Timers to purge data from different entities. Each Timer has its own purge condition, aligned with the use case associated with that Entity.
 
+## Correct purging output
+
+The platform guarantees that the model is valid, and you decide whether the mechanism purges only the intended records. The following checks are examples, not a complete list.
+
+* **Control columns.** The entities have control columns that define which records to purge, such as `LastUpdatedOn`, `IsActive`, `IsDeleted`, or `IsDraft`, and the control columns are indexed.
+* **Purge condition.** The condition matches the business and legal requirements. A value that changes over time, such as the number of days, comes from a Setting.
+* **Timer and chunks.** A Timer runs the purge asynchronously and deletes records in chunks with bulk operations. The chunk size comes from a Setting.
+* **Timeout check.** The purge flow checks the elapsed time against the Timer timeout before it processes another chunk.
+* **Delete Rule.** The **Delete Rule** of each relationship matches the purge flow. A **Protect** rule requires deleting related records in the correct order.
+* **Schedule.** The purge runs during off-peak hours.
+
 ## Common pitfall scenarios
 
 ### No referential integrity strategy
@@ -110,3 +123,9 @@ Examples of transient data that might require purging:
 ### Incorrect purging schedule
 
 The purging process(es) should run during off-peak hours to minimize the impact over requests provided to end users.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

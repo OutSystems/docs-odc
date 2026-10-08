@@ -11,10 +11,13 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - aggregates
+isautopublish: true
 ---
 
 # Data management
@@ -24,6 +27,8 @@ This article introduces the concepts of entities and optimized tools for retriev
 OutSystems Developer Cloud (ODC) uses relational databases for business data. Each stage (Development, Test, Production) where your apps use data has an isolated database.
 
 ODC Studio allows modeling and retrieving data in a visual interface that abstracts the relational databases. ODC lets you focus on development and business value, because the database management is automatic and happens in the background.
+
+You can also describe a data change to Mentor Studio in ODC Studio. Mentor Studio proposes entities, attributes, relationships, and aggregates, and you review the result before it changes your app. Whether you build manually or review a proposal, a correct result has the same characteristics. For more information, refer to [Correct data model output](modeling.md#correct-data-model-output) and [Correct aggregate output](fetch-data/aggregate.md#correct-aggregate-output).
 
 ## Data modeling
 

@@ -11,11 +11,14 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
   - apply
+  - evaluate
 topic:
   - external-entity-behavior
+isautopublish: true
 ---
 
 # Transactions in external entities
@@ -90,6 +93,22 @@ If you don't use an Exception Handler, LocalWrite is rolled back automatically.
 
 ![Diagram showing an error in the last LocalWrite in OutSystems Developer Cloud Studio.](images/LastLocalWriterError-odcs.png "Screenshot of Error in Last LocalWrite in ODC Studio")
 
+## Correct logic output with external entities
+
+The platform applies the transaction behavior described in this page, and you decide whether the logic handles the failure scenarios your requirement has. The following checks are examples, not a complete list.
+
+* The logic doesn't expect a rollback of an external write. Each request to an external entity commits or rolls back in its own transaction.
+* The logic that writes to both the OutSystems database and external entities has an Exception Handler that catches the Database Exception, when a failure after an external write needs a response such as logging the error or reverting the external write.
+* The Exception Handler rolls back or commits only the OutSystems database transaction.
+* Logic that calls a service action doesn't expect to roll back the service action after it ends, because the service action commits its own transaction.
+* A flow without an Exception Handler relies on ODC to roll back the OutSystems database writes of the main transaction when an exception isn't caught.
+
 ## Isolation level
 
 The isolation level of an external database is determined by its own configuration, and ODC does not alter it. This setting cannot be modified by the developer at the connection or query level.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

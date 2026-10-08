@@ -13,10 +13,13 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - join-types
+isautopublish: true
 ---
 
 # Supported join types
@@ -33,6 +36,8 @@ To do this, just drag the entities into your aggregate. They are automatically j
 In the examples below we will combine the following two entities:
 
 ![Screenshot of two original database tables before joining](images/originaltables.png "Original Tables")
+
+The following sections show what each join type returns, so you can judge whether the join in an aggregate matches your requirement. For example, an aggregate that must list every Issue, including those without an Engineer, uses **With or Without**. An aggregate that uses **Only With** omits those Issues.
 
 ## Only fetch records with a match
 

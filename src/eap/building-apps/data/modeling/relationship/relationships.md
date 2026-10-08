@@ -13,11 +13,12 @@ figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=desi
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - data-relationships
 isautopublish: true
@@ -97,7 +98,7 @@ When you create a relationship between entity A and entity B, you must specify t
 
 <div class="info" markdown="1">
 
-Relationships between entities in different apps works differently. The **Delete Rule** is always set to **Ignore**.
+Relationships between entities in different apps works differently. The **Delete Rule** is always set to **Ignore**. A reference attribute to the `User` entity also supports only **Ignore**, and TrueChange shows an error for **Protect** or **Delete**.
 
 </div>
 
@@ -125,8 +126,21 @@ You can use the **Ignore** value when implementing a historical [data archiving]
 
 For example, suppose every operation performed on `Order` is audited to `OrderHistory`. Setting the **Delete Rule** of the reference attribute to **Ignore** between `Order` and `OrderHistory` entities allows you to delete an order and retain the associated audit record.
 
+## Correct relationship output
+
+The platform guarantees that the model is valid, and you decide whether the relationship is the right one for your requirement. The following checks are examples, not a complete list.
+
+* **Reference attribute on the right entity.** In a one-to-many relationship, the reference attribute is on the entity that holds the many side. The data type of the reference attribute is `<entity A> Id`.
+* **One-to-one.** The extension entity uses the identifier of the entity it extends as its own identifier.
+* **Many-to-many.** A junction entity has one reference attribute for each related entity.
+* **Delete Rule.** Each reference attribute has the **Delete Rule** that matches the behavior you want when a record of entity A is deleted. The default is **Protect** for entities in the same app. Relationships between entities in different apps and reference attributes to the `User` entity use **Ignore**.
+* **Index.** OutSystems creates a relationship index for each reference attribute.
+
+To create each relationship type, refer to [Create a One-to-One Relationship](relationship-one-to-one.md), [Create a One-to-Many Relationship](relationship-one-to-many.md), and [Create a Many-to-Many Relationship](relationship-many-to-many.md).
+
 ## Related resources
 
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../../agentic-development/odc-ai-and-platform.md).
 * [Modeling Data Relationships](https://learn.outsystems.com/training/journeys/modeling-data-relationships-642) online course
 
 * [Data Model Integrity](https://learn.outsystems.com/training/journeys/data-model-integrity-638) online course

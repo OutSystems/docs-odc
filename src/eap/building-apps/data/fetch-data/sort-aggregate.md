@@ -1,5 +1,5 @@
 ---
-summary: Explore how to implement fixed and dynamic sorting in aggregates using OutSystems Developer Cloud (ODC).
+summary: Aggregate sorting in OutSystems Developer Cloud (ODC) sets fixed and dynamic order with Mentor Studio and manual Sort tab checks.
 tags: data sorting, dynamic content
 locale: en-us
 guid: 4f62a181-c24b-49d7-8a88-95df2253dcf7
@@ -11,17 +11,43 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - evaluate
 topic:
   - filter-data
+isautopublish: true
 ---
 
 # Sort results in an aggregate
 
 Most times, records display on screens following an order that facilitates reading or finding information.
 
-In OutSystems, aggregates let you choose how the records sort when they return data. The sorting can be fixed or dynamic, meaning that it can change during runtime.
+In OutSystems, aggregates let you choose how the records sort when they return data. The sorting can be fixed or dynamic, meaning that it can change during runtime. You set the sorting by describing it to Mentor Studio and validating the result, or manually in ODC Studio.
+
+## Sort results in an aggregate with Mentor Studio
+
+Sort an aggregate by describing the order, fixed or dynamic, in Mentor Studio, and validate the order of the returned records before you publish.
+
+In your prompt, name the aggregate and the attribute, and state whether the order is fixed or dynamic. For example, "In the GetEmployees aggregate, sort the results by FirstName in ascending order." For a dynamic sort, for example, "In the GetEmployees aggregate, add a dynamic sort that uses a Text variable named SortAttribute."
+
+For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+
+For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+
+### Validate the sorting
+
+The platform guarantees that the model is valid, and you decide whether the aggregate returns the correct data for your requirement. In ODC Studio, check the following:
+
+* A fixed sort uses the attribute and the direction that you described, **A-Z** for ascending or **Z-A** for descending.
+* A dynamic sort uses an expression of type Text, and the expression refers to a variable of type Text from the Scope tree.
+* A dynamic sort refers to a group-by attribute by its name, such as `AttributeName DESC`.
+* The aggregate returns the records in the order you described, and a dynamic sort changes the order when the variable value changes.
+
+## Sort results manually in ODC Studio
+
+To sort the results of an aggregate yourself, use the following procedures.
 
 To display results in an aggregate with **fixed sorting**, follow these steps:
 
@@ -46,7 +72,7 @@ While defining expressions as values for your variable, you can specify:
 * **Calculated or grouped attributes**, using the pattern `AttributeName` for ascending order or `AttributeName DESC` for descending order.
 * **Entity attributes**, using the pattern `Entity.Attribute` or `Entity.Attribute DESC` for ascending or descending order.
 
-## Example
+### Example
 
 In the following Sorting Example, an application displays a list of employees, with details about each employee. Users should be able sort by the name of the employee in either ascending or descending order.
 
@@ -95,3 +121,9 @@ In the following Sorting Example, an application displays a list of employees, w
 1. Publish and test. Verify the list sorting changes after clicking the **Sort ASC** or **Sort DESC** buttons.  
 
     <iframe src="https://player.vimeo.com/video/973090257" width="750" height="454" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video demonstrating the sorting functionality.</iframe>
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

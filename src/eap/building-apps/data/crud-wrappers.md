@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) accelerates CRUD operations with CRUD wrappers, enabling efficient data handling and faster development.
+summary: CRUD wrappers in OutSystems Developer Cloud (ODC) use Mentor Studio and the ODC Studio accelerator for validations, auditing, and non-AutoNumber IDs.
 tags:
   - Best Practices
   - Data
@@ -17,12 +17,15 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6699-48
 outsystems-tools:
-    - odc studio
+  - odc studio
+  - mentor studio
 audience:
-    - Developer
+  - Developer
 coverage-type:
-    - understand
-    - evaluate
+  - understand
+  - apply
+  - evaluate
+isautopublish: true
 ---
 
 # Understanding CRUD operations in ODC
@@ -30,6 +33,28 @@ coverage-type:
 CRUD operations—Create, Read, Update, and Delete—are basic actions that let you work with data in applications. They’re a foundation of application development, making them critical for organizing, storing, and updating information. In OutSystems, CRUD operations are central because they help developers create and manage apps quickly and efficiently.
 
 OutSystems provides tools that simplify CRUD operations, saving time while ensuring consistency and scalability. These tools allow developers to design systems that grow as needed and maintain high standards for functionality. A key feature of these tools is CRUD wrappers. CRUD wrappers let developers add rules, validations, and custom logic to CRUD actions to ensure the application behaves as expected. While manually creating CRUD wrappers can take time, OutSystems Studio’s accelerator feature lets developers create them faster and more easily.
+
+## Create CRUD wrappers with Mentor Studio
+
+Create the wrapper server actions by describing the entity and the actions you need in Mentor Studio, and validate the wrappers and their validations before you publish.
+
+In your prompt, name the entity, the actions you need, and the validations and audit attributes to include. For example, "Create server actions that wrap the Create, Update, and Delete entity actions of the Product entity. Validate the mandatory attributes before saving, and set CreatedOn and CreatedBy when a record is created."
+
+For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#logic).
+
+For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+
+### Validate the wrappers
+
+The platform guarantees that the model is valid, and you decide whether the wrappers implement the rules your app needs. Compare the generated server actions with the output of the [ODC Studio accelerator](#odc-studio-accelerator), and check the following:
+
+* The wrappers cover the operations you described. The accelerator creates `<Entity>Create`, `<Entity>CreateOrUpdate`, `<Entity>Delete`, and `<Entity>Update` in a folder named after the entity.
+* Each wrapper calls the entity action it encapsulates.
+* The validation covers the [mandatory attributes](#mandatory-attributes) that your rules require. The accelerator doesn't validate numeric, Boolean, and basic audit attributes.
+* The audit attributes `CreatedOn`, `CreatedBy`, and `UpdatedOn` or `ModifiedOn`, and `UpdatedBy` or `ModifiedBy`, are assigned values. For more information, refer to [Enable auditing for data changes](#enable-auditing-for-data-changes).
+* For an entity whose identifier isn't AutoNumber, the `Create` and `CreateOrUpdate` wrappers check that the identifier is set, and your logic provides a unique value. For more information, refer to [Handling identifiers that aren't AutoNumber](#handling-identifiers-that-arent-autonumber).
+* If other apps write to the entity, service actions encapsulate the server actions. The wrappers can come back as server actions only, so name the service actions in your prompt when you need them.
+* The wrappers match the current data model. Existing wrappers don't adjust when you add or remove attributes or change their properties, so update them when the data model changes.
 
 ## Core concepts of CRUD wrappers in OutSystems
 
@@ -45,7 +70,7 @@ While CRUD wrappers are extremely useful, they can be tedious to create manually
 
 ### ODC Studio accelerator
 
-ODC Studio offers an accelerator feature designed to simplify CRUD wrapper creation for entities created in ODC Studio. The accelerator automates repetitive tasks like adding validations and parameters, streamlining the initial setup process.
+You can also create the wrappers with the accelerator. ODC Studio offers an accelerator feature designed to simplify CRUD wrapper creation for entities created in ODC Studio. The accelerator automates repetitive tasks like adding validations and parameters, streamlining the initial setup process.
 
 The accelerator creates four server action wrappers, which are visible in the Logic tab under a folder with the same name as the entity:
 
@@ -117,3 +142,9 @@ Even with the accelerator, it's important to follow best practices to ensure rob
     * Add role validations.
     * Add logic to update related tables, for example, updating the stock when an order is fulfilled.
     * Write into auditing tables.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).
