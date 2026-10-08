@@ -1,11 +1,10 @@
 ---
-summary: An action with a high node count is hard to maintain, especially if it has no comments to explain the logic.
+summary: A flow with more than 50 nodes, or with 20 to 50 nodes and no comments, is hard to understand and maintain.
 tags:
   - Logic
   - Modular Programming
   - Refactoring
   - Technical Debt
-  - Troubleshooting
 guid: 34e826d1-c93f-488e-8e42-524502cc0617
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -21,24 +20,31 @@ audience:
   - Tech lead
 outsystems-tools:
   - none
+isautopublish: true
 ---
 # Long undocumented flow
 
-Action with a long and undocumented flow.
+Action with a very long flow, or a long flow without comments.
 
 ## Impact
 
-A client action with more than 20 nodes or an action with more than 40 nodes is hard to maintain, especially if it has no comments to explain the logic.
+A long flow is hard to understand and maintain. It's harder still when no comments explain the logic.
 
 ## Why is this happening?
 
-A client action within a flow contains more than 20 nodes or any action that surpasses 40 nodes. This high node count makes the flow difficult to understand and maintain, especially in the absence of comments that explain the underlying logic.
+The flow has too many nodes. This happens in one of the following cases:
+
+* **Very long flow**: The flow has more than 50 nodes, even if it has comments.
+
+* **Medium flow without comments**: The flow has 20 to 50 nodes and no comments.
+
+The node count excludes comments. The same rule applies to every action type and to screen actions.
 
 ![A complex flow diagram with multiple nodes and no comments.](images/odcs-undocumented-flow.png "Undocumented Flow")
 
 ## How to fix
 
-Break flow logic into smaller and potentially reusable actions and/or place comments to explain portions of your flow.
+Break the flow logic into smaller, reusable actions. For a medium flow, adding comments that explain portions of the logic also resolves the finding. For a very long flow, comments don't resolve the finding, so split the flow.
 
 ![A flow diagram with multiple nodes and a comment added to explain part of the logic.](images/odcs-comment-flow.png "Flow with Comments")
 
