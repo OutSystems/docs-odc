@@ -14,8 +14,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - ui-elements-screen-blocks
-  - ui-elements-accelerators
+  - screen-composition
+  - screen-template
 ---
 
 # Screens
