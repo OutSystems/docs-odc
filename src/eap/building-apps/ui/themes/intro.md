@@ -15,7 +15,9 @@ coverage-type:
   - remember
   - understand
 topic:
-  - creating-a-theme
+  - theme-editor-customization
+  - theme-libraries
+  - theme-properties
 isautopublish: true
 ---
 
