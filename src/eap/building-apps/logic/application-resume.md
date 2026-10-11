@@ -17,7 +17,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - system-events
+  - app-lifecycle-transitions
 isautopublish: true
 ---
 
