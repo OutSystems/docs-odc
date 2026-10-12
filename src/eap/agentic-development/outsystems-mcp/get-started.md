@@ -106,3 +106,4 @@ With the connection working, build a first app, then read the delegation model b
 * To build a first app from a sample prompt file, refer to [Build your first app](build-first-app.md).
 * To understand how the agent and Mentor divide the work, refer to [Delegation to Mentor](mentor-delegation.md).
 * To see example prompts for evolving an app end to end, refer to [Evolve an existing app](evolve-app.md).
+* To send feedback about OutSystems MCP, refer to [Give feedback on OutSystems MCP](give-feedback.md).

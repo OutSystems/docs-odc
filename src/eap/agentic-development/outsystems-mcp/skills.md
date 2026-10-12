@@ -1,6 +1,11 @@
 ---
-summary: The OutSystems skills that your MCP host loads for the agent, which skills are Beta Features, and how to send feedback on them.
-tags: outsystems mcp, skills, beta, mcp host, agentic development
+summary: The OutSystems skills that your MCP host loads for the agent, which skills are Beta Features, and where to send feedback about them.
+tags:
+  - agentic development
+  - beta
+  - mcp host
+  - outsystems mcp
+  - skills
 guid: f9a69471-9433-464a-9d88-111b28d26071
 locale: en-us
 app_type: reactive web apps
@@ -10,6 +15,7 @@ outsystems-tools:
   - claude code
 coverage-type:
   - remember
+  - understand
 content-type:
   - reference
 audience:
@@ -40,11 +46,6 @@ The following OutSystems skills are Beta Features:
 * `outsystems-spec-driven-build`
 * `outsystems-tenant-architecture`
 
-## Give feedback on Beta skills
+## Give feedback on skills {#give-feedback-on-beta-skills}
 
-You send feedback on a Beta skill through the OutSystems MCP feedback tool, the channel the OutSystems team uses for OutSystems MCP feedback. Use one of the following ways from your MCP host:
-
-* In Claude Code, type `/outsystems-feedback` for a guided form, or `/outsystems-feedback MESSAGE` to submit directly. Replace `MESSAGE` with your feedback.
-* In any MCP host, ask the agent in plain language, for example "send feedback about the OutSystems skill you just used".
-
-Name the skill in your message, so the report identifies which skill it concerns. For more information about how the agent prepares your feedback before it submits it, refer to [Give feedback](connect-mcp-hosts.md#give-feedback).
+To send feedback about an OutSystems skill, including a Beta skill, use the OutSystems MCP feedback tool. Name the skill in your message, so the report identifies which skill it concerns. The feedback tool also accepts feedback about the rest of OutSystems MCP. For the ways to send feedback from your MCP host, refer to [Give feedback on OutSystems MCP](give-feedback.md).

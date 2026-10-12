@@ -1,6 +1,12 @@
 ---
 summary: Connect your MCP host to the OutSystems MCP server, with setup for Claude Code, AWS Kiro, Cursor, GitHub Copilot, and Claude Desktop.
-tags: install, setup, mcp, mcp host, claude code, kiro, cursor, copilot
+tags:
+  - AI
+  - Agentic
+  - Authentication
+  - Authorization
+  - Plugins
+  - Settings
 guid: c4722355-e921-4c57-a127-dcd7991a6615
 locale: en-us
 app_type: reactive web apps
@@ -215,14 +221,7 @@ The OutSystems tools then use the `mcp__plugin_outsystems_outsystems__` prefix. 
 
 ## Give feedback
 
-The OutSystems MCP server includes a feedback tool, and it's the channel the OutSystems team uses for OutSystems MCP feedback. Every way of sending feedback from your MCP host goes through this tool. Use one of the following ways:
-
-* In Claude Code, type `/outsystems-feedback` for a guided form, or `/outsystems-feedback MESSAGE` to submit directly. Replace `MESSAGE` with your feedback. The command sends your feedback through the feedback tool.
-* In any MCP host, ask the agent in plain language, for example "send a thumbs-up about the OutSystems agent".
-
-Before it submits, the agent removes secrets and personal data from your message, then reports what it replaced.
-
-The agent can also report its own observations about the OutSystems tools, such as a lookup that returned no results when the agent expected data. The agent asks for your agreement once in each conversation before it sends any. Each observation contains a fixed category and one sentence that the agent writes, without your messages, code, or app content. When a tool call fails unexpectedly, the agent can also offer, once in each session, to send a bug report with the failed call and its error code.
+The feedback tool of the OutSystems MCP server sends feedback about OutSystems MCP. For the ways to send feedback from your MCP host, refer to [Give feedback on OutSystems MCP](give-feedback.md).
 
 ## Next steps
 
@@ -230,3 +229,4 @@ The following pages cover authentication and your first workflow.
 
 * To authenticate and run a first request, refer to [Get started with OutSystems MCP](get-started.md).
 * To understand what you can do once connected, refer to [OutSystems MCP](outsystems-mcp-overview.md).
+* To send feedback about OutSystems MCP, refer to [Give feedback on OutSystems MCP](give-feedback.md).

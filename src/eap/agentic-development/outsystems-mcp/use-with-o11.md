@@ -75,7 +75,7 @@ Before you save the OutSystems skill for ODC, check whether the file already exi
 
 ## Give feedback
 
-The feedback tool of the OutSystems MCP server sends feedback about OutSystems MCP in ODC. For the ways to send feedback from your MCP host, refer to [Give feedback](connect-mcp-hosts.md#give-feedback).
+The feedback tool of the OutSystems MCP server sends feedback about OutSystems MCP in ODC. For the ways to send feedback from your MCP host, refer to [Give feedback on OutSystems MCP](give-feedback.md).
 
 ## Next steps
 

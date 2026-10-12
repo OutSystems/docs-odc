@@ -1,6 +1,13 @@
 ---
 summary: OutSystems MCP lets the agent in your MCP host build, evolve, and deploy apps in OutSystems Developer Cloud (ODC), while ODC governs, builds, and runs them.
-tags: outsystems mcp, agentic development, mcp, claude code
+tags:
+  - Agentic
+  - AI
+  - Authentication
+  - Deploy
+  - Development lifecycle
+  - Mentor
+  - Workflows
 guid: acf55a04-48ee-4732-bfca-ce3938a72020
 locale: en-us
 app_type: reactive web apps
@@ -131,6 +138,10 @@ For example, OutSystems validates the following MCP hosts:
 
 Any other MCP host that supports the MCP Streamable HTTP transport with OAuth connects to the same endpoint, without validated setup. For per-host setup, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md).
 
+## Give feedback
+
+The OutSystems team collects feedback about OutSystems MCP through the feedback tool of the OutSystems MCP server. You send feedback from your MCP host. For more information, refer to [Give feedback on OutSystems MCP](give-feedback.md).
+
 ## Next steps
 
 Read the concepts before you run a workflow, because the delegation model determines how the tools behave.
@@ -147,3 +158,4 @@ The following pages cover OutSystems MCP topics in more depth:
 * For terms such as MCP client and OutSystems plugin, refer to [Agentic development terminology](../agentic-development-terminology.md).
 * For the request path from your MCP host to ODC, refer to [OutSystems MCP request architecture](architecture.md).
 * For per-host setup, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md).
+* To send feedback about OutSystems MCP, refer to [Give feedback on OutSystems MCP](give-feedback.md).
