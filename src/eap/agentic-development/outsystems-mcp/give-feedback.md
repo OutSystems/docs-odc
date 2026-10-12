@@ -1,10 +1,9 @@
 ---
 summary: Send feedback about OutSystems MCP, including the server, the tools, the skills, and delegation to Mentor, through the feedback tool of the OutSystems MCP server.
 tags:
-  - claude code
-  - feedback
-  - mcp host
-  - outsystems mcp
+  - Agentic
+  - Mentor
+  - Security
 guid: 67bafccc-6450-4ded-95a8-aa73ea13a700
 locale: en-us
 app_type: reactive web apps
