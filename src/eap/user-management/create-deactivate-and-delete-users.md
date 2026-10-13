@@ -20,11 +20,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - manage-users
-  - deleting-users
-  - assign-to-user-groups
-  - built-in-authentication
-  - creating-users
+  - creating-users-odc
+  - delete-users
+  - manage-user-status
 helpids: 30703
 isautopublish: true
 ---
