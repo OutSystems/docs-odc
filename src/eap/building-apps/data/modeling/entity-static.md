@@ -40,11 +40,16 @@ OutSystems recommends using [entities](entity.md) to store dynamically changing 
 
 Create a Static Entity by describing its Attributes and Records in Mentor Studio, and validate the Records and the data type of each Attribute before you publish.
 
-In your prompt, include its name, any Attributes beyond the [default Attributes](#default-attributes), and each Record with its values. For example, "Create a Status static entity with a TextDescription attribute of type Text. Add the records Booked, CheckedIn, CheckedOut, and Canceled, and give each a description."
+In your prompt, include the following:
 
-For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#data).
+* The name of the static entity
+* Any Attributes beyond the [default Attributes](#default-attributes)
+* Each Record with its values
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentences form one prompt:
+
+* "Create a Status static entity with a TextDescription attribute of type Text."
+* "Add the records Booked, CheckedIn, CheckedOut, and Canceled, and give each a description."
 
 ### Validate the Static Entity
 
@@ -115,6 +120,8 @@ You can access the record for checked out status by referencing its Identifier, 
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#data).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

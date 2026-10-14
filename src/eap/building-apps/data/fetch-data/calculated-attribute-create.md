@@ -29,11 +29,16 @@ There are situations when the data fetched from the database isn't enough and yo
 
 Add a calculated attribute by describing it in terms of the attributes that the aggregate returns in Mentor Studio, and validate its values before you publish.
 
-In your prompt, name the aggregate, the new attribute, and the formula in terms of the attributes that the aggregate already returns. For example, "In the GetProducts aggregate, group by Category.Id and Category.Label and count Product.Id. Add a calculated attribute named DropdownLabel that shows the label followed by the count in parentheses, or Not categorized followed by the count when the label is empty."
+In your prompt, include the following:
 
-For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* The aggregate
+* The new attribute
+* The formula, in terms of the attributes that the aggregate already returns
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentences form one prompt:
+
+* "In the GetProducts aggregate, group by Category.Id and Category.Label and count Product.Id."
+* "Add a calculated attribute named DropdownLabel that shows the label followed by the count in parentheses, or Not categorized followed by the count when the label is empty."
 
 ### Validate the calculated attribute
 
@@ -90,6 +95,8 @@ To calculate this data and add it to each entry of the Dropdown, do the followin
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

@@ -32,11 +32,16 @@ In OutSystems, a database table is an Entity, and the table columns are Entity A
 
 Create an Entity by describing its Attributes in Mentor Studio, and validate each Attribute before you publish.
 
-In your prompt, include its name, each Attribute with its data type and length, which Attributes are mandatory, and any relationship to an existing Entity. For example, "Create a Place entity with a mandatory Name attribute of type Text with 100 characters, a mandatory Address attribute of type Text with 200 characters, an optional PhoneNumber attribute of type Phone Number, and optional Latitude and Longitude attributes of type Decimal."
+In your prompt, include the following:
 
-For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#data).
+* The name of the Entity
+* Each Attribute with its data type and length
+* Which Attributes are mandatory
+* Any relationship to an existing Entity
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentence is a prompt:
+
+* "Create a Place entity with a mandatory Name attribute of type Text with 100 characters, a mandatory Address attribute of type Text with 200 characters, an optional PhoneNumber attribute of type Phone Number, and optional Latitude and Longitude attributes of type Decimal."
 
 ### Validate the Entity
 
@@ -90,6 +95,8 @@ When you publish your app, OutSystems creates the database table that correspond
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#data).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

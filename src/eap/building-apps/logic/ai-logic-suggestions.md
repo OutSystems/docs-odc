@@ -27,6 +27,8 @@ AI logic suggestions help you build action flows faster by suggesting the next s
 
 Suggestions appear in flow connectors when you click the AI radar, shown as a pulsing blue circle.
 
+AI logic suggestions complete the flow you build manually in ODC Studio. To describe a logic change in natural language and review the proposed result, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md).
+
 <iframe src="https://player.vimeo.com/video/926348913" width="750" height="635" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video illustrating AI logic suggestions within flow connectors.</iframe>
 
 ## Prerequisites {#prerequisites}

@@ -27,11 +27,16 @@ When designing queries, it's common to add conditions to filter results and get 
 
 Filter an aggregate by describing the condition in Mentor Studio, and validate the filter and the returned records before you publish.
 
-In your prompt, name the aggregate, the attribute, the operator, and the value or variable to compare. For example, "In the GetEmployees aggregate, add a filter so that it returns only the employees whose City is London."
+In your prompt, include the following:
 
-For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* The aggregate
+* The attribute
+* The operator
+* The value or variable to compare
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentence is a prompt:
+
+* "In the GetEmployees aggregate, add a filter so that it returns only the employees whose City is London."
 
 ### Validate the filter
 
@@ -57,6 +62,8 @@ To edit the conditions, go to the Filters option and change the ones you want to
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

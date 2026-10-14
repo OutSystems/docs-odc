@@ -30,11 +30,17 @@ A common scenario is when you want to extend an entity with more attributes and 
 
 Create a one-to-one relationship by describing the entity to extend and the additional attributes in Mentor Studio, and validate the identifier of the new entity before you publish.
 
-In your prompt, name the entity to extend, name the new entity, and state that the new entity uses the identifier of the entity it extends. List the additional attributes. For example, "Create a Profile entity that extends the User entity in a one-to-one relationship. Use the User identifier as the Profile identifier, and add the attributes Twitter (Text), Facebook (Text), and Photo (Binary Data)."
+In your prompt, include the following:
 
-For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../../agentic-development/mentor-studio/prompts.md#data).
+* The entity to extend
+* The new entity
+* A statement that the new entity uses the identifier of the entity it extends
+* The additional attributes
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentences form one prompt:
+
+* "Create a Profile entity that extends the User entity in a one-to-one relationship."
+* "Use the User identifier as the Profile identifier, and add the attributes Twitter (Text), Facebook (Text), and Photo (Binary Data)."
 
 ### Validate the relationship
 
@@ -84,6 +90,8 @@ As a result, you have the `Profile` entity extending the `User` entity. Every ti
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../../agentic-development/mentor-studio/prompts.md#data).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../../agentic-development/odc-ai-and-platform.md).

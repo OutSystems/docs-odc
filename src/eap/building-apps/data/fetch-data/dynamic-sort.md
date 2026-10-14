@@ -30,11 +30,16 @@ A dynamic sort changes the order of the records that an aggregate with [external
 
 Set up a dynamic sort by describing it and the attributes users can sort by in Mentor Studio, and validate the sort values and the returned records before you publish.
 
-In your prompt, name the aggregate, the Text variable that holds the sort value, and the attributes users can sort by. For example, "In the GetOrders aggregate, add a dynamic sort that uses a Text variable named SortBy. Users can sort by Order.OrderDate."
+In your prompt, include the following:
 
-For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* The aggregate
+* The Text variable that holds the sort value
+* The attributes users can sort by
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentences form one prompt:
+
+* "In the GetOrders aggregate, add a dynamic sort that uses a Text variable named SortBy."
+* "Users can sort by Order.OrderDate."
 
 ### Validate the dynamic sort
 
@@ -53,7 +58,9 @@ When working with [external entities](../../../integration-with-systems/external
 
 Additionally, when performing dynamic sorting based on [calculated attributes](calculated-attribute-create.md), you must format those attributes correctly. Calculated attributes (such as aggregates like counts or sums) must be enclosed in square brackets (for example `[Count]`). This formatting is necessary because it tells the system that you're working with a calculated attribute rather than an [entity](../../../building-apps/data/modeling/entity.md) attribute. If you don't use this format, it can result in runtime errors, or the query might return no results at all.
 
-**Example**
+### Example
+
+The following screenshots show a dynamic sort on a calculated attribute without and with square brackets.
 
 * Without square brackets, the query doesn't work as expected, and no results are returned:
 
@@ -75,6 +82,8 @@ Assuming that the dynamic sort attribute is called `SortBy`, this code checks fo
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

@@ -28,11 +28,14 @@ Database tables can have columns that contain repeated values. When you only wan
 
 Get distinct values by describing the attribute or attributes in Mentor Studio, and validate that the aggregate returns each value once before you publish.
 
-In your prompt, name the entity and the attribute, or the attributes, whose distinct values you need. For example, "Create an aggregate that returns the distinct values of the City attribute of the Employee entity."
+In your prompt, include the following:
 
-For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* The entity
+* The attribute, or the attributes, whose distinct values you need
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentence is a prompt:
+
+* "Create an aggregate that returns the distinct values of the City attribute of the Employee entity."
 
 ### Validate the distinct values aggregate
 
@@ -61,6 +64,8 @@ To get distinct values using multiple entity attributes, select all the required
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

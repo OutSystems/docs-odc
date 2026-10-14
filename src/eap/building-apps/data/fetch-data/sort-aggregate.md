@@ -30,11 +30,19 @@ In OutSystems, aggregates let you choose how the records sort when they return d
 
 Sort an aggregate by describing the order, fixed or dynamic, in Mentor Studio, and validate the order of the returned records before you publish.
 
-In your prompt, name the aggregate and the attribute, and state whether the order is fixed or dynamic. For example, "In the GetEmployees aggregate, sort the results by FirstName in ascending order." For a dynamic sort, for example, "In the GetEmployees aggregate, add a dynamic sort that uses a Text variable named SortAttribute."
+In your prompt, include the following:
 
-For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* The aggregate
+* The attribute
+* Whether the order is fixed or dynamic
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentence is a prompt:
+
+* "In the GetEmployees aggregate, sort the results by FirstName in ascending order."
+
+For a dynamic sort, the following sentence is a prompt:
+
+* "In the GetEmployees aggregate, add a dynamic sort that uses a Text variable named SortAttribute."
 
 ### Validate the sorting
 
@@ -124,6 +132,8 @@ In the following Sorting Example, an application displays a list of employees, w
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

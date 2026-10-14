@@ -38,11 +38,16 @@ OutSystems provides tools that simplify CRUD operations, saving time while ensur
 
 Create the wrapper server actions by describing the entity and the actions you need in Mentor Studio, and validate the wrappers and their validations before you publish.
 
-In your prompt, name the entity, the actions you need, and the validations and audit attributes to include. For example, "Create server actions that wrap the Create, Update, and Delete entity actions of the Product entity. Validate the mandatory attributes before saving, and set CreatedOn and CreatedBy when a record is created."
+In your prompt, include the following:
 
-For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#logic).
+* The entity
+* The actions you need
+* The validations and audit attributes to include
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentences form one prompt:
+
+* "Create server actions that wrap the Create, Update, and Delete entity actions of the Product entity."
+* "Validate the mandatory attributes before saving, and set CreatedOn and CreatedBy when a record is created."
 
 ### Validate the wrappers
 
@@ -145,6 +150,8 @@ Even with the accelerator, it's important to follow best practices to ensure rob
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

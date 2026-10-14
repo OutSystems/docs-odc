@@ -15,6 +15,7 @@ audience:
   - Developer
 outsystems-tools:
   - odc studio
+  - mentor studio
   - odc portal
 coverage-type:
   - apply
@@ -29,6 +30,8 @@ isautopublish: true
 You can extend your ODC apps with external logic using custom C# code. This is useful for building capabilities in your app where ODC's standard functions and libraries don't fully cover. You can write your C# code in IDEs such as Visual Studio or JetBrains Rider, and use libraries of your choice, whether open-source or private.
 
 Once you build the custom code, ODC apps can consume this C# logic just like [libraries](../../building-apps/libraries/libraries.md) built using OutSystems visual language or [out-of-the-box libraries](../../reference/libraries/intro.md). This means developers using your C# libraries don't need to understand the underlying C# code to use the external logic in their apps. The C# code becomes available in libraries as server actions and structures.
+
+You build the C# code in your IDE with the External Libraries SDK, which is manual work outside Mentor Studio. After you publish and release the library, you consume its server actions and structures in your app like those of any other library. The same applies when you describe a change to Mentor Studio. For the tasks that Mentor supports, refer to [Scope and limits](../../agentic-development/coding-agents.md#scope-and-limits). To bring a library into your tenant from an MCP host, refer to [Extend an app with custom C# code](../../agentic-development/outsystems-mcp/extend-with-csharp.md).
 
 To create new external logic or update existing external logic using C#, follow these steps:
 

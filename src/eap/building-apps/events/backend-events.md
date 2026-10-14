@@ -12,13 +12,16 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+  - mentor studio
 coverage-type:
   - understand
   - apply
+  - evaluate
 topic:
   - odc-event-architecture
   - odc-event-limits
   - sync-vs-async-processing
+isautopublish: true
 ---
 
 # Event-driven architecture in ODC
@@ -26,6 +29,8 @@ topic:
 In a cloud-native environment, apps are designed as a collection of loosely coupled, independently deployable components or services. To enable efficient communication between these components, event-driven architecture enables asynchronous messaging. This approach ensures that apps can react to changes in real-time without creating tight dependencies, improving scalability, resilience, and flexibility.
 
 In ODC, apps are loosely coupled, and the dependencies between apps are always weak, following a [micro-services architecture pattern.](../../app-architecture/intro.md) To implement event-driven ODC apps, you can define events to trigger a sequence of actions or handle specific scenarios within an app.
+
+You build event-driven ODC apps by describing the events to Mentor Studio and validating the result, or by building them manually in ODC Studio. For the steps, refer to [Implement events in ODC](implement-events.md). For what a correct result looks like, refer to [Correct event output](#correct-event-output).
 
 To build event-driven ODC apps, you can use the following low-code constructs in ODC Studio.
 
@@ -95,7 +100,21 @@ If the producer app generates events faster than the consumer app can handle the
 
 </div>
 
+## Correct event output
+
+The platform guarantees that the model is valid, and you decide whether the events implement your design. The following checks are examples, not a complete list.
+
+* **Events are in apps.** Apps define the events, because libraries can't define them. Only the app that defines an event triggers it.
+* **Publishers and subscribers match the design.** The publisher app defines and triggers the event. Each subscriber app handles it with an event handler. An event has the **Public** property set to **Yes** when other apps subscribe to it.
+* **Handlers are independent.** Each handler runs asynchronously in the background and doesn't depend on another handler or on the order of delivery.
+* **Handlers finish within the limits.** Handler execution doesn't exceed 2 minutes, and the producer app doesn't generate events faster than the consumers handle them, so the queue stays below 10000 events.
+* **Errors are handled.** The producer and consumer apps handle the exceptions that events raise. For more information, refer to [Error processing in events](implement-events.md#error-processing-in-events).
+
 ## Related resources
+
+The following resources describe event implementation, a presentation on event-driven architecture, and what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md)
 
 * [One Conference presentation on event-driven architecture with ODC](https://www.youtube.com/watch?v=gLfUocukA4Q)
 

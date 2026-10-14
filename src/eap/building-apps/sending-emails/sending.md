@@ -1,5 +1,5 @@
 ---
-summary: ODC sending emails requires a server action with the Send Email node; add input parameters, set the To field, and trigger it from a client action for transactional flows.
+summary: Send emails in OutSystems Developer Cloud (ODC) with a server action and the Send Email node. Build it with Mentor Studio or manually.
 tags:
   - Logic
 locale: en-us
@@ -13,11 +13,14 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+  - mentor studio
 coverage-type:
   - apply
+  - evaluate
 topic:
   - send-email-logic
   - trigger-email-sending
+isautopublish: true
 ---
 
 # Sending emails
@@ -27,9 +30,39 @@ Email is a fundamental component of app development, serving as a channel for co
 * **Sending emails** - This is a generic action. ODC takes the Email you create in OutSystems Developer Cloud (ODC) Studio, renders it as an email, and then sends it to the users inbox.
 * **Triggering emails** -  This event initiates sending an email. It's usually an automated action, but you can trigger sending an email manually in the Portal.
 
-## Creating logic for sending emails
+## Create logic for sending emails with Mentor Studio
 
-To create logic that sends an email, go to ODC Studio and follow these steps:
+Create the server action that sends an Email by describing it in Mentor Studio, and validate the action and its parameters before you publish.
+
+In your prompt, include the following:
+
+* The server action
+* The Email to send
+* The input parameters that the Email requires
+* The input parameter for the **To** field of the **Send Email** action
+
+To trigger the sending from a screen, also name the widget and the screen.
+
+For example, the following sentences form one prompt:
+
+* "Create a server action named SendRegistrationConfirmation that sends the RegistrationConfirmation email."
+* "Add an input parameter named Recipient of type Text for the To field."
+* "For each input parameter of the email, add an input parameter with the same name and data type, and pass it to the email."
+
+### Validate the sending logic
+
+The platform guarantees that the model is valid, and you decide whether the logic sends the Email you intend. In the **Logic** tab of ODC Studio, check the following:
+
+* The logic is a server action or a service action, because the logic for sending emails runs on the server.
+* The **Send Email** action has your Email selected in the **Email** property, and the flow shows no error for missing parameters.
+* The server action has an input parameter for each parameter that the Email requires, and an input parameter for the **To** property.
+* The **To** property and the Email parameters of the **Send Email** action have the values you intend.
+* The **From** property is unchanged unless you intend to change it. Most spam algorithms reject emails with a misconfigured **From** field.
+* The logic that triggers the sending calls the server action and provides the input parameters that the action requires. For transactional emails, one wrapper server action contains both the business logic and the email logic. For more information, refer to [Best practices for logic](../logic/best-practices-logic.md).
+
+## Create logic for sending emails manually in ODC Studio {#creating-logic-for-sending-emails}
+
+To create logic that sends an email manually, go to ODC Studio and follow these steps:
 
 1. To create a server action, go to the **Logic** tab and right-click **Server Actions** and from the menu, select  **Add Server Action**.  A new server action opens for editing. (The logic for sending emails runs on server.)
 1. To add  the **Send Email** to the flow, drag the **Send Email** action to the flow. ODC Studio adds **Send Email** to the flow and shows an error to let you know some parameters are missing.
@@ -91,3 +124,11 @@ The pattern shown here is simplified for demonstration. It is best practice to a
 </div>
 
 ![Screenshot of the logic flow handling new event registration and triggering a confirmation email in ODC Studio](images/sample-logic-new-registration-ss.png "Logic for New Registration")
+
+## Related resources
+
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
+
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

@@ -1,11 +1,12 @@
 ---
 guid: 73db3695-0270-4495-915a-df56d5f993c1
 locale: en-us
-summary: ODC database events trigger automatically on entity record changes after a successful transaction commit — set up OnCreate, OnUpdate, or OnDelete in ODC Studio.
+summary: ODC database events trigger after an entity record changes and the transaction commits. Set them up with Mentor Studio or in ODC Studio.
 figma:
 coverage-type:
   - apply
   - understand
+  - evaluate
 topic:
   - create-database-event
   - database-event-behavior
@@ -21,6 +22,7 @@ tags:
   - Triggers
 outsystems-tools:
   - odc studio
+  - mentor studio
 helpids:
 isautopublish: true
 ---
@@ -54,7 +56,33 @@ In a banking app, a customer initiates a payment. The **OnUpdate** database even
 **Auto cleanup of orphaned records**  
 When a user account is deleted, related records (e.g., user preferences, session data) must also be removed to prevent orphaned data. An **OnDelete** database event ensures cleanup always happens at the database level, independent of app behavior.
 
-## Create a database event
+## Create a database event with Mentor Studio
+
+Create a database event by describing the entity, the trigger, and the event in Mentor Studio, and validate the event before you publish.
+
+In your prompt, include the following:
+
+* The entity
+* The trigger event (**OnCreate**, **OnUpdate**, or **OnDelete**)
+* The event to trigger
+* The input parameters
+
+For example, the following sentence is a prompt:
+
+* "Add an OnUpdate database event to the Payment entity that triggers the PaymentUpdated event with the Payment identifier as its input parameter, and handle PaymentUpdated with a new server action named NotifyAccountOwner."
+
+### Validate the database event
+
+The platform guarantees that the model is valid, and you decide whether the database event matches your requirement. In the **Data** tab of ODC Studio, select the entity and check the following:
+
+* The **Trigger Event** property selects the operation you need. The entity has at most one event for each trigger event type.
+* The **Event** property selects the event you expect.
+* The only input parameters are entity identifiers.
+* The handler doesn't depend on the order in which the platform triggers the events.
+* The handler logic reads the committed data, because the platform triggers the event only after the transaction commits.
+* After you publish the app, a record change through an entity action or a SQL node triggers the event, and the handler runs once for each trigger.
+
+## Create a database event manually in ODC Studio
 
 Create database events in ODC apps for **Create**, **Update**, or **Delete** entity actions. These events trigger automatically when the entity actions execute and commit. For example, in a banking app, a customer initiates a payment. The **OnUpdate** database event is raised only after the request transaction succeeds, e.g., after a successful check against the account balance and the account balance is updated in the database. The triggering of the event allows all consumers to be certain that the event is executed only when the payment operation transaction is completed successfully.
 
@@ -93,7 +121,20 @@ For detailed information about handling errors in events, refer to [Error proces
 
 ## Related resources
 
-For more information on implementing events in ODC, event properties or error handling, refer to the following articles:
+The following resources describe Mentor Studio prompts, event implementation, event properties, error handling, and what the platform guarantees.
+
+### Mentor Studio
+
+For prompt examples and the steps to prompt Mentor Studio, refer to the following:
+
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+
+### Platform guarantees
+
+For what the platform guarantees and what you validate, refer to the following:
+
+* [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md)
 
 ### Implement events in ODC
 

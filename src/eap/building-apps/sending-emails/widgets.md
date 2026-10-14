@@ -1,5 +1,5 @@
 ---
-summary: Explore email widget capabilities in OutSystems Developer Cloud (ODC) for creating lightweight, secure emails compatible with most readers.
+summary: Email widgets in OutSystems Developer Cloud (ODC) create lightweight, secure emails that most email readers display.
 tags:
   - JavaScript
   - Security
@@ -16,8 +16,10 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - remember
+  - evaluate
 topic:
   - email-widgets
 isautopublish: true
@@ -53,3 +55,19 @@ You can use the following widgets in Emails.
 (*) If your app uses a [custom domain](../../manage-platform-app-lifecycle/domains/custom-domains.md) and you want to link to an app screen, you must link to the URL of that screen. For example, to link to `Screen1` in `App1` using the custom domain `example.com`, set the **OnClick** property to **RedirectToURL** with the expression `"https://example.com/App1/Screen1"`. For guidance on building expressions, see [Expressions](../../building-apps/logic/expressions.md).
 
 </div>
+
+## Correct email widget output
+
+The platform guarantees that the model is valid, and you decide whether the widgets in an Email suit your content. The following checks are examples, not a complete list.
+
+* **Supported widgets.** The Email uses only the widgets in [Widgets available in Emails](#widgets-available-in-emails).
+* **No scripts.** The Email has no JavaScript and no custom actions, because most email clients don't support JavaScript.
+* **Light content.** The Email doesn't depend on features that handle plenty of data, because Tables in Emails don't show a pagination section.
+* **Images.** An Images widget embeds an image from binary content in a database.
+* **Links to screens.** When the app uses a custom domain, a link to an app screen sets **OnClick** to **RedirectToURL** with the URL of the screen.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

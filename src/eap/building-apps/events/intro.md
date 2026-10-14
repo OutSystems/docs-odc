@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) leverages event-driven architecture for real-time data processing and app automation.
+summary: OutSystems Developer Cloud (ODC) event-driven architecture uses pub/sub to run decoupled apps asynchronously.
 tags:
   - Architecture
   - Events
@@ -13,10 +13,13 @@ audience:
   - Developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - odc-event-architecture
+isautopublish: true
 ---
 
 # About event-driven architecture
@@ -87,8 +90,21 @@ Here are some scenarios where EDA can be used.
 
     * Running simulations on multiple data points simultaneously for faster research.
 
+## Correct event-driven design output
+
+The platform guarantees that the model is valid, and you decide whether the design follows event-driven architecture. The following checks are examples, not a complete list.
+
+* **Roles.** Producer apps define and trigger events. Consumer apps subscribe to the events they need.
+* **Decoupling.** Apps interact through asynchronous events instead of direct dependencies.
+* **Event content.** Each event represents a change in state, such as a customer submitting a loan application, and carries the payload that consumers need.
+* **Independence.** If one consumer app fails, the other apps continue to operate.
+
 ## Related resources
+
+The following resources describe event implementation, and what the platform guarantees and what you check in a Mentor Studio proposal.
 
 * [Event-driven architecture in ODC](backend-events.md)
 
 * [Implement events in ODC](implement-events.md)
+
+* [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md)

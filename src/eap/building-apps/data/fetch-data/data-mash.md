@@ -34,11 +34,15 @@ You combine sources by describing the data you need to Mentor Studio and validat
 
 Combine sources by describing the data you need from each one in Mentor Studio, and validate the aggregate sources and joins before you publish.
 
-In your prompt, name the aggregate, the sources to combine, and the join between them. For example, "In the GetOrdersWithCustomers aggregate, add the external Customer entity as a source with a With or Without join to Order on CustomerId."
+In your prompt, include the following:
 
-For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* The aggregate
+* The sources to combine
+* The join between them
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentence is a prompt:
+
+* "In the GetOrdersWithCustomers aggregate, add the external Customer entity as a source with a With or Without join to Order on CustomerId."
 
 ### Validate the data mashup
 
@@ -68,6 +72,10 @@ To better understand queries in data mashup, refer to [Writing better queries in
 
 ## Related resources
 
+The following resources describe prompt examples, the steps to prompt Mentor Studio, what the platform guarantees, and related data mashup topics.
+
+* For more prompt examples, refer to the logic section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).
 * [Data mashup transactions](transactions-data-mashup.md)
 

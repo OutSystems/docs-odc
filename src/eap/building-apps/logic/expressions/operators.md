@@ -13,11 +13,14 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - remember
+  - evaluate
 topic:
   - access-list-items
   - expression-operators
+isautopublish: true
 ---
 
 # Operators
@@ -218,3 +221,20 @@ The next table presents the precedence of the operators, highest precedence firs
 | LIKE | Similarity operator |
 | AND | Logical AND |
 | OR | Logical OR |
+
+## Correct operator output
+
+The platform guarantees that the model is valid, and you decide whether the operators produce the result you need. The following checks are examples, not a complete list.
+
+* **Text concatenation.** The **+** operator concatenates when one operand is Text, and it converts the other operand to Text.
+* **Division.** The result of a division is always a Decimal.
+* **Comparison with Text.** The comparison operators `<`, `>`, `<=`, and `>=` compare a Text operand with another Text operand as strings. For example, `"aa" < "b"` returns `True`. ODC Studio shows an invalid expression error for a comparison of Text with an Integer, Decimal, Boolean, or Date value.
+* **Like.** The `LIKE` operator appears only in the Filter Condition Editor of an aggregate.
+* **Indexes.** An index in the indexer operator starts at zero and is within the range of the list. Otherwise, the runtime error "Index n is out of range" is raised.
+* **Precedence.** An expression that mixes operators returns the result that the [precedence of operators](#precedence-of-operators) defines, or uses parentheses to set the order.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

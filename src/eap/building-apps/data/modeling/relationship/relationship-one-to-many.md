@@ -28,11 +28,18 @@ When modeling data, you create one-to-many relationships between entities. For i
 
 Create a one-to-many relationship by describing the parent entity and the child entity in Mentor Studio, and validate which entity holds the foreign key before you publish.
 
-In your prompt, name the parent entity and the child entity, and state that each parent record can have multiple child records. For example, "Create a Comment entity linked to the Ticket entity with attributes CommentText (Text), CreatedBy (User reference), and CreatedDate (DateTime). Set up a one-to-many relationship where each Ticket can have multiple Comments."
+In your prompt, include the following:
+
+* The parent entity
+* The child entity
+* A statement that each parent record can have multiple child records
+
+For example, the following sentences form one prompt:
+
+* "Create a Comment entity linked to the Ticket entity with attributes CommentText (Text), CreatedBy (User reference), and CreatedDate (DateTime)."
+* "Set up a one-to-many relationship where each Ticket can have multiple Comments."
 
 This prompt comes from [Prompts for Mentor Studio](../../../../agentic-development/mentor-studio/prompts.md#data), which has more data prompt examples.
-
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 
 ### Validate the relationship
 
@@ -58,6 +65,7 @@ When you create relationships between entities in your app, you must define the 
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe the steps to prompt Mentor Studio and what the platform guarantees.
 
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../../agentic-development/odc-ai-and-platform.md).

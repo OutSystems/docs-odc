@@ -30,11 +30,16 @@ You resolve this kind of relationship by adding a third entity, called a **junct
 
 Create a many-to-many relationship by describing the two entities in Mentor Studio, and validate the junction entity and its foreign keys before you publish.
 
-In your prompt, name the two entities, state that each can relate to many records of the other, and list any attributes that belong to the relationship itself. For example, "Create a Review entity as a junction between the User and Place entities in a many-to-many relationship. Add the attributes Classification (Integer), Comments (Text), and SubmittedOn (Date)."
+In your prompt, include the following:
 
-For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../../agentic-development/mentor-studio/prompts.md#data).
+* The two entities
+* A statement that each entity can relate to many records of the other
+* Any attributes that belong to the relationship itself
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentences form one prompt:
+
+* "Create a Review entity as a junction between the User and Place entities in a many-to-many relationship."
+* "Add the attributes Classification (Integer), Comments (Text), and SubmittedOn (Date)."
 
 ### Validate the relationship
 
@@ -78,6 +83,8 @@ The following steps create the `Review` entity manually in ODC Studio.
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../../agentic-development/mentor-studio/prompts.md#data).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../../agentic-development/odc-ai-and-platform.md).

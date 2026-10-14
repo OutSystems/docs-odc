@@ -39,6 +39,8 @@ To add this action to a Mobile, do the following:
 
     ![Screenshot showing how to add the On Application Resume system event in OutSystems Developer Cloud.](images/add-system-event-resume-odcs.png "Add On Application Resume System Event")
 
+Mentor Studio edits web apps, so add this action to a mobile app manually in ODC Studio. For more information, refer to [Capabilities and patterns for Mentor Studio](../../agentic-development/mentor-studio/capabilities.md).
+
 ## Related resources
 
 * [Best practices for app lifecycle, navigation, and deep linking](../mobile/best-practices/best-practices-app-lifecycle-navigation.md)

@@ -34,16 +34,16 @@ Mentor reads the element you select and the view you have open in ODC Studio. Se
 
 ## Logic
 
-Use these prompts to create or modify server actions, client actions, service actions, and aggregates.
+Use these prompts to create or modify server actions, client actions, service actions, aggregates, events, Timers, variables, and parameters, and to send emails.
 
 ### Prompt progression
 
 * Basic: Create a server action that validates an email format.
 * Detailed: Create a Server Action named `ValidateOrderTotal` that takes `OrderId` as input, retrieves all `OrderItem` records for that order, calculates the sum of `Quantity * UnitPrice`, and returns the `TotalAmount`. Include error handling for cases where the order doesn't exist.
 
-### Logic prompts by task
+### Aggregate prompts
 
-Use these prompts as starting points for aggregates, server actions, and client variables. Replace the element names with the names in your app.
+Use these prompts as starting points to filter, sort, and join the data that an aggregate returns. Replace the element names with the names in your app.
 
 * **Filter an aggregate:** In the `GetEmployees` aggregate, add a filter so that it returns only the employees whose `City` is London.
 * **Sort an aggregate:** In the `GetEmployees` aggregate, sort the results by `FirstName` in ascending order.
@@ -51,8 +51,44 @@ Use these prompts as starting points for aggregates, server actions, and client 
 * **Return distinct values:** Create an aggregate that returns the distinct values of the `City` attribute of the `Employee` entity.
 * **Add a calculated attribute:** In the `GetProducts` aggregate, count `Product.Id` for each group of `Category.Id` and `Category.Label`. Add a calculated attribute named `DropdownLabel` that shows the label followed by the count in parentheses.
 * **Join an external entity:** In the `GetOrdersWithCustomers` aggregate, add the external `Customer` entity as a source with a With or Without join to `Order` on `CustomerId`.
+
+### Email prompts
+
+Use these prompts as starting points to send an email and attach files to it from a server action. Replace the element names with the names in your app.
+
+* **Send an email:** Create a server action named `SendRegistrationConfirmation` that sends the `RegistrationConfirmation` email. Add an input parameter named `Recipient` of type Text for the To field. For each input parameter of the email, add an input parameter with the same name and data type, and pass it to the email.
+* **Attach a file:** In the `SendOrderConfirmation` server action, attach the PDF resource `sample_pdf` to the Send Email node with the file name `sample.pdf` and the media type `application/pdf`.
+* **Attach a list of files:** In the `SendProductCatalog` server action, fetch five records of the `Sample_ProductImage` entity and attach them to the Send Email node. Use `FileName` as the file name and `FileContent` as the content.
+
+### Event prompts
+
+Use these prompts as starting points to create events, handle them, and trigger them from database changes. Replace the element names with the names in your app.
+
+* **Create an event:** Create a public event named `OnPurchaseStarted` with an input parameter `ProductId` of type Product Identifier. Trigger it at the end of the `PlacePurchase` server action, and handle it in this app with a new server action named `UpdateStock`.
+* **Handle an event from another app:** Handle the public `OnPurchaseStarted` event from the `Storefront` app with a new server action named `CheckFraud`, and log any exception with the All Exceptions handler.
+* **Add a database event:** Add an `OnUpdate` database event to the `Payment` entity that triggers the `PaymentUpdated` event with the `Payment` identifier as its input parameter, and handle `PaymentUpdated` with a new server action named `NotifyAccountOwner`.
+
+### Server action prompts
+
+Use these prompts as starting points for server actions that wrap entity actions or convert data between records and Excel. Replace the element names with the names in your app.
+
 * **Wrap entity actions:** Create server actions that wrap the Create, Update, and Delete entity actions of the `Product` entity. Validate the mandatory attributes before saving, and set `CreatedOn` and `CreatedBy` when a record is created.
+* **Export to Excel:** Create a server action named `ExportEmployeeToExcel` with a Binary Data output parameter named `ExcelContent`. Fetch the `Employee` entity with an aggregate, convert `GetEmployees.List` with Record List to Excel, and assign the result to `ExcelContent`. Exclude the `Employee.Address` attribute from the export.
+* **Import from Excel:** In the `ImportEmployees` server action, use Excel to Record List to read the uploaded file with the `Employee` entity as the record definition. Call `CreateOrUpdateSomeEmployees` with the resulting list as the source list.
+
+### Timer prompts
+
+Use this prompt as a starting point to schedule a server action with a Timer. Replace the element names with the names in your app.
+
+* **Create a Timer:** Create a Timer named `ArchiveOldOrders` that runs a new server action named `ArchiveOrders` every day at 2:00 AM, with a timeout of 30 minutes. In `ArchiveOrders`, set `IsArchived` to True for the `Order` records that are older than 365 days.
+
+### Variable and parameter prompts
+
+Use these prompts as starting points to create variables and parameters, and to bind them to widgets and logic. Replace the element names with the names in your app.
+
+* **Create a local variable:** Create a Text local variable named `SearchKeyword` on the `Employees` screen. Bind it to the Search input, and filter the `Employee` aggregate by `FirstName` using the variable.
 * **Create a client variable:** Create a client variable named `SearchKeyword` of type Text. Bind it to the Search input on the `Employees` screen, and filter the `Employee` aggregate by `FirstName` using the variable.
+* **Add parameters:** In the `GetWeatherData` client action, add an output parameter `WeatherInfo` and the mandatory Text input parameters `City` and `Country`. Assign `WeatherInfo` the `Data` output of `API_GetWeatherData`.
 
 ## UI
 
@@ -62,6 +98,12 @@ Use these prompts to create or modify screens, web blocks, and layouts.
 
 * Basic: Create a screen to list all Customer records.
 * Detailed: Create a screen named `OrderDashboard` that displays a summary of orders by status. Include a table showing `OrderId`, `CustomerName`, `OrderDate`, and `Status`. Add a filter dropdown for `Status` and sort by `OrderDate` descending.
+
+### UI prompts by task
+
+Use this prompt as a starting point for an email template. Replace the element names with the names in your app.
+
+* **Create an Email:** Create an Email named `WelcomeEmail` with the subject `Welcome`. Add a mandatory input parameter named `Handle` of type Text. Add a Text widget and an Expression widget that displays `"Hello, " + Handle + "!"`.
 
 ## Data
 

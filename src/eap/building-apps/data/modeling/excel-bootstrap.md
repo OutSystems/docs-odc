@@ -36,11 +36,14 @@ If you're using Google Sheets, download your document as an .xlsx file (File > D
 
 Create the entity by describing it in Mentor Studio, and validate that its names match the Excel sheet and column headers before you bootstrap the data.
 
-In your prompt, name the entity after the sheet, and list one attribute for each column header with its data type. For example, "Create a Place entity with the attributes Name (Text), Address (Text), PhoneNumber (Phone Number), Latitude (Decimal), and Longitude (Decimal)."
+In your prompt, include the following:
 
-For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#data).
+* The entity, named after the sheet
+* One attribute for each column header, with its data type
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan). To create the entity manually, refer to [Create an Entity to Persist Data](entity-create.md).
+For example, the following sentence is a prompt:
+
+* "Create a Place entity with the attributes Name (Text), Address (Text), PhoneNumber (Phone Number), Latitude (Decimal), and Longitude (Decimal)."
 
 ### Validate the entity
 
@@ -88,3 +91,11 @@ The bootstrap action runs in ODC Studio. To bootstrap data from the first sheet 
 1. Publish to bootstrap the data.
 
 When you publish the app, it executes the action to bootstrap the data. If the entity already has data, the action with the bootstrap logic is **not** executed.
+
+## Related resources
+
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and manual entity creation.
+
+* For more prompt examples, refer to the data section of [Prompts for Mentor Studio](../../../agentic-development/mentor-studio/prompts.md#data).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+* To create the entity manually, refer to [Create an Entity to Persist Data](entity-create.md).

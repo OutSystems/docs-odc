@@ -34,11 +34,16 @@ Client Variables reset to their default values when the user signs out of the ap
 
 Create a Client Variable by describing it and the elements that use it in Mentor Studio, and validate the variable and its usages before you publish.
 
-In your prompt, name it, give its data type, and state which widget or logic uses it. For example, "Create a Client Variable named SearchKeyword of type Text. Bind it to the Search input on the Employees screen, and filter the Employee aggregate by FirstName using the variable."
+In your prompt, include the following:
 
-For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#ui).
+* The Client Variable
+* Its data type
+* The widget or logic that uses it
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+For example, the following sentences form one prompt:
+
+* "Create a Client Variable named SearchKeyword of type Text."
+* "Bind it to the Search input on the Employees screen, and filter the Employee aggregate by FirstName using the variable."
 
 ### Validate the Client Variable
 
@@ -129,6 +134,8 @@ After you follow these steps and publish your application, you can test the func
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#ui).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

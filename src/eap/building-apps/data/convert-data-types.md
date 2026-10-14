@@ -32,11 +32,17 @@ OutSystems enables the conversion between different data types. This can be made
 
 Convert a data type by describing the element and the target data type in Mentor Studio, and validate the conversion where the element is used before you publish.
 
-In your prompt, name the element, the source data type, and the target data type. Alternatively, paste the data type warning that ODC Studio shows. For example, "Fix the 'Data Type Mismatch' warning that appears when the Text variable TicketIdText is assigned to the TicketId attribute of type Ticket Identifier."
+In your prompt, include the following:
 
-For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#fix-errors-and-warnings).
+* The element
+* The source data type
+* The target data type
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+Alternatively, paste the data type warning that ODC Studio shows.
+
+For example, the following sentence is a prompt:
+
+* "Fix the 'Data Type Mismatch' warning that appears when the Text variable TicketIdText is assigned to the TicketId attribute of type Ticket Identifier."
 
 ### Validate the conversion
 
@@ -97,6 +103,8 @@ To learn more about how to convert values from one data type to another, refer t
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#fix-errors-and-warnings).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

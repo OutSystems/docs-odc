@@ -52,11 +52,17 @@ In ODC, you can use sample data to create screen instances. To learn more about 
 
 Add records by describing them in Mentor Studio. Mentor Studio generates bootstrap logic that creates the records, and publishing the app runs that logic and creates the records in the database. The entity must meet the same criteria as for manual editing.
 
-In your prompt, name the entity, the attribute values, and the number of records. Use fictional values, because prompts must not include personally identifiable information. For example, "Add three records to the Place entity with fictional names, addresses, and phone numbers."
+In your prompt, include the following:
 
-For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#data).
+* The entity
+* The attribute values
+* The number of records
 
-For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+Use fictional values, because prompts must not include personally identifiable information.
+
+For example, the following sentence is a prompt:
+
+* "Add three records to the Place entity with fictional names, addresses, and phone numbers."
 
 ### Validate the bootstrap logic
 
@@ -89,7 +95,7 @@ Additionally, foreign key cells for the User entity don't show values or suggest
 
 </div>
 
-**Prerequisites**
+### Prerequisites
 
 You must have the App management **Change** permission for the app
 
@@ -146,7 +152,7 @@ To modify a record's attribute or cell, follow these steps:
 1. Depending on the data type of the cell, set the data in one of the following ways:
 
     * For a **Text** or **Phone** cell, enter a text string, for example, text or +1 555 565 3730.
-    * For an **Email** cell, enter a text string with at least two characters separated by a @, for example, <fran.wilson@example.com>.
+    * For an **Email** cell, enter a text string with at least two characters separated by a @, for example, `fran.wilson@example.com`.
     * For an **Integer** or a **Long Integer** cell, enter an integer, for example, 10.
     * For a **Decimal** or a **Currency** cell, enter a decimal, for example, 10.8.
     * For a **Date** cell, enter a date using the YYYY-MM-DD format, for example, 1988-08-28.
@@ -189,6 +195,8 @@ You can permanently discard changes in one of the following ways:
 
 ## Related resources
 
-The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
 
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#data).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).
