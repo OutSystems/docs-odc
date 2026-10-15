@@ -36,6 +36,12 @@ In a multi-portfolio organization, evaluations are scoped to agents in each port
 
 Before you can run evaluations against your target agentic apps, they must be republished at least once after agent evaluations are enabled for your organization.
 
+<div class="info" markdown="1">
+
+Agent evaluations isn't currently supported in ODC Self hosted.
+
+</div>
+
 ## Data retention
 
 The platform keeps **evaluation summaries** (total test cases, overall evaluation score, score from each judge criterion, and similar metadata) indefinitely. **Evaluation details** (per-test-case pass/fail results, agent actual input and output, judge rationale for each test case, and similar granular data) are retained for **30 days** and then automatically removed.
