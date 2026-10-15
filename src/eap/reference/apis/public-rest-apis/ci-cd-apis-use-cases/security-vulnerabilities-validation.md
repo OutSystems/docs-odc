@@ -6,7 +6,8 @@ figma:
 coverage-type:
   - apply
 topic:
-  - security-vulnerabilities-validation
+  - severity-criteria
+  - use-code-quality-api-reference
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
