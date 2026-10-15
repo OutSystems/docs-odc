@@ -1,7 +1,7 @@
 ---
 guid: 81642257-b77d-44ad-b469-28a71efa7c8d
 locale: en-us
-summary: Learn how to use OutSystems APIs to programmatically retrieve the code quality analysis of an asset revision.
+summary: OutSystems Developer Cloud (ODC) code quality APIs let you retrieve analysis summaries, trigger analyses, and apply quality gates in CI/CD pipelines.
 figma:
 coverage-type:
   - apply
@@ -88,6 +88,7 @@ You can also extend the policy to consider, for example, quality score, high-sev
 
 ## Next steps
 
+* [Validating security vulnerabilities](security-vulnerabilities-validation.md)
 * [Retrieving generated code for SAST analysis](generated-code-sast.md)
 * [Setting the release version and release notes](set-version-release-notes.md)
 * [Reviewing asset configurations](asset-configurations.md)

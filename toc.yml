@@ -990,6 +990,7 @@
     - topics:
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/select-revision-build.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/code-quality.md
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/security-vulnerabilities-validation.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/generated-code-sast.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/set-version-release-notes.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/asset-configurations.md

@@ -18,7 +18,6 @@ tags:
   - CI/CD
   - Deploy
   - Development lifecycle
-  - Jenkins
   - Quality Assurance
   - REST
   - Testing
@@ -58,6 +57,7 @@ The following table maps each CI/CD step to the related API or action.
 | ---- | ------- | ------------- |
 | Select revision and build | Identify the correct build to deploy | [Select the revision and build](select-revision-build.md) |
 | Evaluate code quality | Apply quality gates before deployment | [Evaluate code quality](code-quality.md) |
+| Validate security vulnerabilities | Block deployments with critical security issues | [Validate security vulnerabilities](security-vulnerabilities-validation.md) |
 | SAST analysis | Run static application security testing (SAST) on generated code | [Retrieve generated code for SAST analysis](generated-code-sast.md) |
 | Set version and notes | Define semantic version for production | [Set the release version and release notes](set-version-release-notes.md) |
 | Configure asset | Set stage-specific configurations | [Review asset configurations](asset-configurations.md) |
