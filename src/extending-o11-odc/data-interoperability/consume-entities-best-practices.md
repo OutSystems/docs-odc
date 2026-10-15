@@ -74,7 +74,7 @@ ODC doesn't provide safeguards, including in Advanced SQL nodes, to enforce or v
 
 Similarly to other [external data source integrations](../../eap/building-apps/data/fetch-data/transaction-external-entities.md), ODC creates an independent transaction on the O11 database for each O11 entity action.
 
-When combining O11 entities with other external data sources in your ODC app, be aware of the [transaction behavior in data mashup scenarios](../../eap/building-apps/data/fetch-data/transactions-data-mashup.md), especially when performing write operations before querying the combined data.
+When combining ODC entities with O11 entities in your ODC app, be aware of the [transaction behavior in data mashup scenarios](../../eap/building-apps/data/fetch-data/transactions-data-mashup.md), especially when performing write operations before querying the combined data.
 
 If you require transactional consistency across multiple O11 records - for example, creating an Order and the Order Lines together - create a wrapper REST API in O11 that handles the transaction internally. Then, use [logic interoperability](../logic-interoperability/logic-interop.md) to consume that O11 logic in your ODC app.
 
@@ -86,7 +86,7 @@ To ensure stability across both platforms:
 
 * **Design your O11 data model for performance:** Ensure proper indexing and normalization to handle queries efficiently. Refer to the [O11 data model best practices](https://success.outsystems.com/documentation/11/onboarding_developers/outsystems_platform_best_practices/#data-model) for more details.
 
-* **Write efficient queries in your ODC apps:** Optimize data fetching by selecting only necessary columns and limiting result sets. Avoid executing SQL queries inside logic loops, as this generates database communication overhead. For more details, refer to the best practices for [fetching and displaying data](../../eap/building-apps/ui/creating-screens/best-practices-fetch-display-data.md) and [querying data using SQL](../../eap/building-apps/data/fetch-data/sql/use-sql.md). When combining O11 entities with other external data sources in your ODC app, follow the [best practices for data mashup queries](../../eap/building-apps/data/fetch-data/queries.md).
+* **Write efficient queries in your ODC apps:** Optimize data fetching by selecting only necessary columns and limiting result sets. Avoid executing SQL queries inside logic loops, as this generates database communication overhead. For more details, refer to the best practices for [fetching and displaying data](../../eap/building-apps/ui/creating-screens/best-practices-fetch-display-data.md) and [querying data using SQL](../../eap/building-apps/data/fetch-data/sql/use-sql.md). When combining ODC entities with O11 entities in your ODC app, follow the [best practices for data mashup queries](../../eap/building-apps/data/fetch-data/queries.md).
 
 * **Test your apps:** Conduct load testing to verify that your O11 database can handle the additional concurrent load from ODC apps without degradation. Refer to [Testing apps](../../eap/testing-apps/testing-apps.md) for further details.
 
