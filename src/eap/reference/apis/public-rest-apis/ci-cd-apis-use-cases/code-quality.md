@@ -14,11 +14,9 @@ audience:
   - Tech lead
 tags:
   - CI/CD
-  - Deploy
   - Mentor
   - Quality Assurance
   - REST
-  - Technical Debt
 outsystems-tools:
   - odc portal
 helpids:
@@ -88,6 +86,7 @@ You can also extend the policy to consider, for example, quality score, high-sev
 
 ## Next steps
 
+* [Analyzing deployment impact](analyze-deployment-impact.md)
 * [Validating security vulnerabilities](security-vulnerabilities-validation.md)
 * [Retrieving generated code for SAST analysis](generated-code-sast.md)
 * [Setting the release version and release notes](set-version-release-notes.md)

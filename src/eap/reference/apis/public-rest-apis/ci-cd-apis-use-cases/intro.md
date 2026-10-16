@@ -1,11 +1,12 @@
 ---
 guid: 7edaa93d-b5a7-4aba-b126-10ddfcced471
 locale: en-us
-summary: OutSystems Developer Cloud (ODC) CI/CD automation covers pipeline stages and OutSystems REST APIs for publishing, deploying, and configuring apps.
+summary: OutSystems Developer Cloud (ODC) CI/CD automation maps pipeline stages to APIs for revision selection, quality gates, configuration, and deployment.
 figma:
 coverage-type:
   - remember
   - understand
+  - apply
 topic:
   - cicd-api-mapping
   - odc-cicd-pipeline-model
@@ -57,6 +58,7 @@ The following table maps each CI/CD step to the related API or action.
 | ---- | ------- | ------------- |
 | Select revision and build | Identify the correct build to deploy | [Select the revision and build](select-revision-build.md) |
 | Evaluate code quality | Apply quality gates before deployment | [Evaluate code quality](code-quality.md) |
+| Analyze deployment impact | Identify dependent assets and potential risks | [Analyze deployment impact](analyze-deployment-impact.md) |
 | Validate security vulnerabilities | Block deployments with critical security issues | [Validate security vulnerabilities](security-vulnerabilities-validation.md) |
 | SAST analysis | Run static application security testing (SAST) on generated code | [Retrieve generated code for SAST analysis](generated-code-sast.md) |
 | Set version and notes | Define semantic version for production | [Set the release version and release notes](set-version-release-notes.md) |

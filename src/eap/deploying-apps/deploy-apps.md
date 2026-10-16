@@ -166,6 +166,8 @@ When **deploying a workflow**, the analysis report shows:
 
 For more information about impact analysis inconsistencies, refer to [Guidance for deployment inconsistencies](../deploying-apps/deployment-inconsistencies.md).
 
+Impact analysis also applies to other scenarios. To run the same kind of analysis through the CI/CD APIs before deploying, refer to [Analyzing deployment impact](../reference/apis/public-rest-apis/ci-cd-apis-use-cases/analyze-deployment-impact.md). To analyze the impact of deleting an asset, refer to [Asset deletion governance](../reference/apis/public-rest-apis/asset-deletion-governance/asset-deletion-governance-intro.md).
+
 ## Deployment status
 
 An asset can have one of the following deployment statuses:

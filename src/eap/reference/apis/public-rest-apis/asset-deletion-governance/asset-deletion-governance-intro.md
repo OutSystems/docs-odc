@@ -5,6 +5,7 @@ summary: Learn how to implement a safe, governed process for deleting assets in 
 figma:
 coverage-type:
   - understand
+  - apply
 topic:
   - asset-deletion-governance
 app_type: mobile apps, reactive web apps
@@ -14,7 +15,13 @@ audience:
   - Tech lead
   - Platform administrator
   - Developer
-tags: asset governance, asset deletion, dependency analysis, risk management, rest api, outsystems api
+tags:
+  - Authorization
+  - Best Practices
+  - REST
+  - Security
+  - Technical Debt
+  - Workflows
 outsystems-tools:
   - odc portal
   - odc studio
@@ -66,3 +73,7 @@ To implement the approval automation, follow these API procedures:
 * [Dependency Management API reference](../../dependency-v1.md)
 
 * [Apply the principle of least privilege](../../../../user-management/best-practices-user-management.md#apply-the-principle-of-least-privilege)
+
+* [Analyzing deployment impact](../ci-cd-apis-use-cases/analyze-deployment-impact.md) — Run impact analysis before deploying an asset.
+
+* [Understanding the impact analysis report](../../../../deploying-apps/deploy-apps.md#understanding-the-impact-analysis-report) — The automatic impact analysis ODC runs on every deployment.
