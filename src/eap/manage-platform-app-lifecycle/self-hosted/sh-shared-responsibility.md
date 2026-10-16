@@ -153,6 +153,8 @@ Customers are fully responsible for the applications they develop and deploy int
 
 OutSystems provides telemetry data through the monitoring platform, but customers must host and operate their own observability destination.
 
+For more information about the customer responsibilities in the OutSystems SOC 2 Type II audit, refer to [SOC 2 customer responsibilities in ODC](../../security/soc2-cuec.md).
+
 ### Customers must manage the custom container registry {#manage-registry}
 
 For custom registry configurations, customers are responsible for:

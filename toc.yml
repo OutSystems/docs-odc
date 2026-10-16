@@ -735,6 +735,7 @@
     - href: eap/security/sentry.md
     - href: eap/security/hipaa.md
     - href: eap/security/pci.md
+    - href: eap/security/soc2-cuec.md
     - href: eap/security/configure-csp.md
     - topics:
         - href: eap/security/implement-csp.md
