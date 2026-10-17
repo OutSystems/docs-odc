@@ -6,7 +6,7 @@ tags:
   - UI
   - UI Patterns
   - UX
-summary: Explore design patterns for mobile and reactive web apps on OutSystems Developer Cloud (ODC) to enhance user experience and interface design.
+summary: OutSystems UI patterns for OutSystems Developer Cloud (ODC) mobile and reactive web apps, with guidance for consistent layouts and interactions.
 locale: en-us
 guid: e9ff1e1e-bda3-4146-8d4e-797ee3ed73c9
 app_type: mobile apps, reactive web apps
