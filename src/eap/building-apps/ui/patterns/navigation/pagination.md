@@ -23,6 +23,8 @@ coverage-type:
   - remember
 topic:
   - add-widget-ui-pattern
+  - pagination-reference
+  - use-pagination-pattern
 ---
 
 # Pagination
