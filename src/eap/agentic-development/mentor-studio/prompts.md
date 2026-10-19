@@ -137,24 +137,22 @@ Use these prompts to reuse public elements that other apps expose in the tenant.
 
 Use these prompts to ground a request in an attached file, such as a requirement spec, entity relationship diagram (ERD), screen mockup, error log, or API response sample. Attach the file to your prompt in the Mentor panel, then describe what you want Mentor to do with it. For supported file types and what to avoid in an attached file, refer to [Attach a file as context](how-it-works.md#attach-file).
 
-### Prompt progression {#attach-progression}
-
-#### Data model from an ERD {#data-model-erd}
+### Data model from an ERD {#data-model-erd}
 
 * Basic: Use the attached `DataModel.pdf` and create the entities it describes.
 * Detailed: Use the attached `DataModel.pdf` and create the Order entity with OrderNumber (Text), OrderDate (DateTime), and StatusId (Identifier, a foreign key to a new OrderStatus static entity), and the OrderItem entity with Quantity (Integer) and UnitPrice (Currency) in a one-to-many relationship with Order. Reuse the existing Customer entity instead of creating a new one.
 
-#### Screen from a design mockup {#screen-from-mockup}
+### Screen from a design mockup {#screen-from-mockup}
 
 * Basic: Use the attached `OrderDashboard.png` and create the screen it shows.
 * Detailed: Use the attached `OrderDashboard.png` and create the OrderDashboard screen with the layout, containers, and widgets it shows. Display the orders in a table that uses the `GetOrders` aggregate, and reuse the existing Customer entity for the customer column.
 
-#### Integration from an API response sample {#api-response-sample}
+### Integration from an API response sample {#api-response-sample}
 
 * Basic: Use the attached `ApiResponseSample.json` and create a Structure that matches the response it describes.
 * Detailed: Use the attached `ApiResponseSample.json` and create a PaymentGatewayResponse Structure with the TransactionId (Text), Status (Text), AuthorizedAmount (Currency), and ProcessedAt (DateTime) attributes it describes. Create a server action named AuthorizePayment that calls the POST /v1/payments/authorize endpoint, maps the response to the new Structure, and returns an error when Status is "declined".
 
-#### Debugging from a pasted error log {#pasted-error-log}
+### Debugging from a pasted error log {#pasted-error-log}
 
 * Basic: Use the attached `error-log.txt` and explain the error.
 * Detailed: Use the attached `error-log.txt` and identify which node in the CreateOrder action raised the `Null object reference` exception. Suggest a fix that adds a null check before the OrderItems aggregate runs.
