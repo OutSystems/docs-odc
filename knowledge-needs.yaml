@@ -734,9 +734,16 @@ knowledge-needs:
     - name: Fix lifecycle warning
       id: fix-lifecycle-warning
       description: Wants to fix coherence suggestion warnings where an OnInitialize, OnReady, or OnRender action accesses an Aggregate or Data Action too early or assigns variables too late, by moving the data access to OnAfterFetch or the variable assignment to OnInitialize, so the fetch uses consistent values.
+    - name: Fix property value errors
+      id: fix-property-value-errors
+      description: Wants to resolve Required Property Value errors by setting the missing widget or element
+        property the error identifies, so the module compiles and the element behaves correctly.
     - name: Fix performance suggestion
       id: fix-performance-suggestion-warning
       description: Wants to fix Service Studio performance suggestion warnings by applying the recommended change for the warning family shown on the page, so the app runs efficiently.
+    - name: Fix parameter expression
+      id: fix-parameter-expression
+      description: Wants to resolve the Required Property Value error for a Client Action input parameter by setting a valid expression or using AI-Assisted Development to bind the parameter automatically, so the logic compiles with the parameter value in place.
     - name: Fix database integrity
       id: fix-database-integrity
       description: Wants to resolve database integrity suggestion warnings in Service Studio by matching entity definitions to database tables, adding missing attributes, fixing unsupported data types or table names, or ignoring the warning when appropriate, so the module stays consistent.
@@ -4010,6 +4017,9 @@ knowledge-needs:
     - name: Fix literal defaults
       id: fix-literal-defaults
       description: Wants to resolve the Invalid Extension error in Integration Studio by setting extension action input parameter default values to literals and refreshing the Extension reference when a default value is not a literal, so they can publish the extension successfully.
+    - name: Fix extension conflict
+      id: fix-extension-conflict
+      description: Wants to resolve the Extension Name Conflict Error in OutSystems 11 by renaming the duplicate extension in Integration Studio before trying to store or publish it again, so they can save or publish the extension successfully.
     - name: Fix reference parameter
       id: fix-reference-parameter
       description: 'Wants to fix the OS-ELG-MODL-05016 error ("The parameter ''<ParamaterName>'' in action ''<ActionName>'' is passed by reference. Passing parameters by reference is not supported.") by changing ref or in parameters to pass by value and returning modified values if needed in their C# external library project, so they can successfully publish the external library.'
@@ -4028,6 +4038,9 @@ knowledge-needs:
     - name: Set up Integration Studio
       id: set-up-integration-studio
       description: Wants to install Integration Studio from the OutSystems website and connect it with their OutSystems credentials, so they can start creating extensions.
+    - name: Resolve environment fault
+      id: resolve-environment-fault
+      description: Wants to resolve Environment Fault Error messages in Integration Studio by checking environment and setup issues, so they can open, compile, save, and update extensions.
     - name: Configure Visual Studio
       id: configure-visual-studio
       description: Wants to install Microsoft Visual Studio with the .NET desktop development workload and have Integration Studio detect and use it, so they can develop C# extensions.
@@ -6545,6 +6558,11 @@ knowledge-needs:
       id: architecture-canvas-rules
       description: Wants to validate module architecture with the Architecture Canvas rules
         for modules, so they can keep module dependencies sound.
+    - name: Discovery validation scope
+      id: discovery-validation-scope
+      description: Wants to recognize that Discovery validates both app and module
+        architecture rules, so they can answer questions about Discovery validation
+        scope.
     - name: Architecture design review
       id: architecture-design-review
       description: Wants to run architecture design review sessions before each sprint by
@@ -6627,7 +6645,7 @@ knowledge-needs:
     id: application-composition
     subtopics:
     - name: Library module overview
-      id: library-module-overview
+      id: library-module-overview-o11
       description: Wants to understand what a Library module is in OutSystems 11, including
         its stateless, database-agnostic design principles, typical use cases
         such as UI/style guides and reusable connectors or logic utilities,
@@ -6655,7 +6673,7 @@ knowledge-needs:
         module to a consuming module when debugging it, so that they have a
         working Library ready to hold reusable stateless components.
     - name: ODC library overview
-      id: odc-library-overview
+      id: odc-library-overview-odc
       description: Wants to understand what a library is in OutSystems Developer
         Cloud (ODC), including its stateless design, common use cases such as
         wrapping an external system or centralizing style guides and themes, and
@@ -6679,6 +6697,12 @@ knowledge-needs:
       description: Wants to identify business concepts and group them into bounded
         contexts before designing an ODC app architecture, so that the app
         structure follows the business domain.
+    - name: Validate app composition
+      id: validate-app-composition
+      description: Wants to validate application composition by checking that
+        common modules and services are isolated in a separate app that other
+        apps can reference, so they can confirm the app structure follows the
+        composition rules.
     - name: App ownership cadence
       id: app-ownership-cadence
       description: Wants to assign one business owner and sponsor per app, and
@@ -9751,18 +9775,9 @@ knowledge-needs:
     - name: Use Gallery pattern
       id: use-gallery-pattern
       description: Wants to add the Gallery UI Pattern to a screen and configure
-        its responsive layout properties — including RowItemsDesktop, RowItemsTablet,
-        RowItemsPhone, ItemsGap, and ExtendedClass — in ODC Studio, so that groups
-        of images or content are displayed in a browsable, sequential grid across
-        different device types.
-    - name: Use Gallery pattern (O11)
-      id: use-gallery-pattern-o11
-      description: Wants to add the Gallery UI Pattern to a screen and configure
-        its responsive layout properties — including RowItemsDesktop, RowItemsTablet,
-        RowItemsPhone, ItemsGap, and ExtendedClass — in Service Studio for
-        OutSystems 11, so that groups of images or content are displayed in a
-        browsable, sequential grid across different device types, in mobile
-        apps and reactive web apps.
+        its responsive layout properties, so that groups of images or content
+        are displayed in a browsable, sequential grid across different device
+        types.
     - name: Gallery pattern reference
       id: gallery-pattern-reference
       description: Wants to look up the Gallery UI Pattern's structure, responsive
@@ -11826,6 +11841,11 @@ knowledge-needs:
         they can migrate their apps after upgrading their license,
         understanding this is intended as a one-time migration and app data
         itself isn't transferred.
+    - name: O11 environment topology
+      id: o11-environment-topology
+      description: Wants to understand that each OutSystems 11 environment has
+        its own Platform Server instance and that deployments run within that
+        environment, so they know how the environment layout works.
     - name: Portfolio deploy scope
       id: portfolio-deploy-scope
       description: Wants to understand how deployment, promotion, and undeployment
@@ -13838,6 +13858,11 @@ knowledge-needs:
         by using Service Center's Monitoring area, querying the OutSystems Log Database
         directly, and reading Windows Event Viewer alerts, so that they can track,
         monitor, and receive alerts about errors in the platform.
+    - name: Logging in OutSystems
+      id: logging-in-outsystems
+      description: Wants to understand what OutSystems logs, how to read error details and
+        stack traces, how module logging is configured, and how the platform writes and
+        retains logs, so they can inspect and tune logging behavior.
     - name: O11 perf counters
       id: o11-perf-counters
       description: Wants to use OutSystems Platform Server's Windows Performance Counters to
@@ -19351,6 +19376,9 @@ knowledge-needs:
     - name: Authentication management overview
       id: authentication-management-overview
       description: Wants to understand how ODC handles authentication and authorization at a high level, including built-in authentication, external identity providers, custom authentication flows, and role-based access control, so that they can explain the platform's sign-in model and choose the right approach for an app.
+    - name: Token lifecycle
+      id: token-lifecycle
+      description: Wants to understand how ODC issues short-lived access tokens and refresh tokens, validates requests before they reach services, and invalidates sessions and tokens on logout, so that they can explain the platform's token lifecycle and request security.
     - name: Create service account
       id: create-service-account
       description: Wants to create a LifeTime service account, choose its role and
@@ -19530,6 +19558,12 @@ knowledge-needs:
         core concepts of authentication, authorization, and single sign-on in the
         context of ODC, so that they can explain external IdP integration and its
         value before configuring it.
+    - name: Azure AD login
+      id: azure-ad-login
+      description: Wants to know where users enter their credentials when the
+        authentication method is set to Azure AD in OutSystems 11, so they are
+        redirected to the Azure AD login screen instead of the default
+        application login page.
     - name: IdP assignment scopes
       id: idp-assignment-scopes
       description: Wants to understand the difference between assigning an
@@ -20790,6 +20824,11 @@ knowledge-needs:
     description: Wants to coordinate project communication so the team and
       stakeholders stay connected and aligned, communication channels are
       established, and bottlenecks are removed.
+  - name: Business alignment
+    id: business-alignment
+    description: Wants to identify the Business alignment core behavior from a
+      statement about mapping business use cases to the solution, so they can
+      recognize the behavior in OutSystems delivery.
   - name: Be the user
     id: be-the-user
     description: Wants to understand the Be the user core behavior in OutSystems
@@ -20815,6 +20854,11 @@ knowledge-needs:
       delivery team, including solution architecture, team building, quality
       assurance, acting as the user, and project steering, so that they can guide
       delivery with a balance of architecture, quality, and business value.
+  - name: Project steering
+    id: project-steering
+    description: Wants to identify the project steering core behavior from a
+      statement about assessing and acting on project risks while they are
+      small, so they can recognize the behavior in OutSystems delivery.
   - name: Organizational awareness
     id: organizational-awareness
     description: Wants to understand organizational awareness in OutSystems
@@ -22324,6 +22368,12 @@ knowledge-needs:
         environment, configuring the management console, and installing
         the development tools, so that the infrastructure is ready for
         development and administration.
+    - name: Understand platform server
+      id: understand-platform-server
+      description: Wants to understand what Platform Server is and that it
+        is the core of OutSystems Platform for generating and deploying
+        web and mobile applications, so that they can identify its role in
+        the platform architecture.
     - name: Unattended platform setup
       id: unattended-platform-setup
       description: 'Wants to install or upgrade Platform Server in an
@@ -23171,6 +23221,9 @@ knowledge-needs:
         and reviewing the General section for Abort Activity Change Exception
         records, so they can investigate application exceptions in OutSystems
         11.
+    - name: Environment health
+      id: environment-health
+      description: Wants to review an OutSystems 11 environment health in Service Center, including front-end server status, the Mobile Apps Build Service, running processes, queued emails, timers, and platform logs, so they can monitor the environment and troubleshoot issues.
     - name: Identify Service Center
       id: identify-service-center
       description: Wants to identify Service Center as the web console for
