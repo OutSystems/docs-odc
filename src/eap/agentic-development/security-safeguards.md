@@ -1,13 +1,11 @@
 ---
 summary: "Mentor in OutSystems Developer Cloud (ODC) applies layered safeguards: data isolation, safe output, user approvals, and access governance."
 tags:
-  - AI
-  - OutSystems MCP
   - Agentic
+  - AI
   - Logging
   - Mentor
   - Mentor Studio
-  - Mentor Web
   - Security
 guid: 8ec0312c-41cd-4c37-8059-50d385cad7ef
 locale: en-us

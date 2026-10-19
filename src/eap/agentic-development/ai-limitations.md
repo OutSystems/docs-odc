@@ -1,9 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) Mentor Web and Mentor Studio limitations, covering session persistence, blueprint phases, and editor restrictions.
 tags:
-  - OutSystems MCP
-  - Agentic
   - AI
+  - Agentic
   - Mentor
   - Mentor Studio
   - Mentor Web
@@ -19,6 +18,7 @@ outsystems-tools:
   - mentor studio
 coverage-type:
   - remember
+  - understand
 audience:
   - Developer
   - Front-end developer
@@ -76,7 +76,6 @@ Mentor Studio modifies app elements but doesn't perform stage-level operations, 
 Mentor Studio has partial awareness of the ODC Studio state. For what Mentor reads from your selection and the open view, refer to [Use the current selection as context](mentor-studio/how-it-works.md#current-selection).
 
 * **Conversation length.** Long iterations may reach the maximum conversation length. Start a new conversation if responses become inconsistent.
-* **No chat persistence.** Closing the app clears the conversation history.
 
 ### Reliability
 

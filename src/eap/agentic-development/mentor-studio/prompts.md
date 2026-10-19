@@ -190,9 +190,10 @@ Use these prompts to decompose large requirements into smaller implementation st
 
 ## Related resources
 
-These prompt examples are starting points that you can adjust based on your app's structure and complexity. The following resources cover general strategies and the full range of Mentor Studio capabilities.
+These prompt examples are starting points that you can adjust based on your app's structure and complexity. The following resources cover general strategies, the full range of Mentor Studio capabilities, and how to continue past conversations.
 
 * For prompting strategies that apply across all Mentor tools, including entity-first thinking and decomposition, refer to [Effective prompts for Mentor](../effective-prompts.md).
 * For the full list of elements that Mentor Studio supports, including logic, UI, and data, refer to [Capabilities and patterns for Mentor Studio](capabilities.md).
 * For how Mentor Studio processes requests and integrates changes with existing apps, refer to [AI development in Mentor Studio](how-it-works.md).
+* For how to find, search, and resume your past Mentor Studio conversations, refer to [Find and resume past conversations in Mentor Studio](conversation-history.md).
 * For UI pattern prompts and app generation examples in Mentor Web, refer to [Prompts for Mentor Web](../mentor-web/prompts.md).

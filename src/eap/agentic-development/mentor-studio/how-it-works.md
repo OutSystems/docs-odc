@@ -1,8 +1,8 @@
 ---
 summary: In ODC Studio, Mentor Studio generates and modifies web app, library, and agentic app elements from natural language prompts.
 tags:
-  - Agentic
   - AI
+  - Agentic
   - Best Practices
   - Mentor
   - Mentor Studio
@@ -136,6 +136,10 @@ The dialog shows **Your revision** on the left and **Mentor's revision** on the 
 ![Compact diff summary panel listing four AI changes made by Mentor Studio, including changed and added elements, with a button to view detailed changes.](images/mentor-ai-changes-verify-odcs.png "AI diff summary of Mentor Studio changes")
 
 The Mentor panel shows this compact summary after Mentor Studio applies a change. Select **View changes** to open the dialog.
+
+## Conversation history {#conversation-history}
+
+Mentor Studio saves your past conversations for the app you have open. You search them, open one, and continue the work in a new prompt. Your conversations stay private to you. For more information, refer to [Find and resume past conversations in Mentor Studio](conversation-history.md).
 
 ## Capabilities {#capabilities}
 

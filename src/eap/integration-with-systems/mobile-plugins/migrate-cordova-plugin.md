@@ -16,8 +16,11 @@ platform-version: odc
 audience:
   - Developer
 tags:
+  - Android
   - Capacitor
   - Cordova
+  - Extensions
+  - iOS
   - Mobile app
   - Plugins
 outsystems-tools:
