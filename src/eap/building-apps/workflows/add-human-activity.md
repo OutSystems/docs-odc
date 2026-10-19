@@ -1,5 +1,5 @@
 ---
-summary: Learn how to add a human activity to your workflow
+summary: OutSystems Developer Cloud (ODC) human activity workflows with custom notifications, SLAs, and close-on events
 tags:
   - Business Processes
   - Events
