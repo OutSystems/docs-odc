@@ -8,7 +8,7 @@ guid: 67bafccc-6450-4ded-95a8-aa73ea13a700
 locale: en-us
 app_type: reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10887-2
 outsystems-tools:
   - claude code
 coverage-type:
@@ -37,10 +37,14 @@ The feedback tool of the OutSystems MCP server accepts feedback about any part o
 
 ## Send OutSystems MCP feedback from your MCP host
 
-To send feedback through the feedback tool of the OutSystems MCP server, use one of the following ways:
+The feedback tool is named `submit_feedback`. To send feedback through the tool, use one of the following ways:
 
-* In Claude Code, type `/outsystems-feedback` for a guided form, or `/outsystems-feedback MESSAGE` to submit directly. Replace `MESSAGE` with your feedback. The command sends your feedback through the feedback tool.
-* In any MCP host, ask the agent in plain language, for example "send a thumbs-up about the OutSystems agent".
+* In any MCP host, ask the agent in plain language, for example "send a thumbs-up about the OutSystems agent". The agent calls the `submit_feedback` tool with your feedback.
+* In Claude Code with the OutSystems plugin installed, type `/outsystems:outsystems-feedback` for a guided form, or `/outsystems:outsystems-feedback MESSAGE` to submit directly. Replace `MESSAGE` with your feedback. The command includes the plugin name as a prefix.
+
+When you run the command without a message, Claude Code shows the following category picker.
+
+![Claude Code terminal showing the category picker of the feedback command with the options Thumbs up, Thumbs down, Bug report, and Feature request](images/outsystems-mcp-send-feedback-sa.png "Feedback category picker in Claude Code")
 
 To help the OutSystems team act on your feedback, describe the action you took, the result you expected, and the result you got.
 
