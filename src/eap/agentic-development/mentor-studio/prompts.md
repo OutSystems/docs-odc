@@ -28,15 +28,15 @@ isautopublish: true
 
 This cookbook provides prompt examples for modifying apps with Mentor Studio. Examples progress from basic (single-task prompts) to detailed (prompts with specific context and multiple aspects). For general prompting strategies that apply across all Mentor tools, refer to [Effective prompts for Mentor](../effective-prompts.md).
 
-## Before you start
+## Before you start {#before-you-start}
 
 Mentor reads the element you select and the view you have open in ODC Studio. Select an element, then refer to it directly, such as "modify this action." To act on a different element, name it in your prompt instead, such as "modify the ValidateEmail action." After you add a public element through **Add public elements**, reference it by name the same way. Mentor also finds and adds a public element when you reference one it locates in the tenant.
 
-## Logic
+## Logic {#logic}
 
 Use these prompts to create or modify server actions, client actions, service actions, aggregates, events, Timers, variables, and parameters, and to send emails.
 
-### Prompt progression
+### Prompt progression {#logic-progression}
 
 * Basic: Create a server action that validates an email format.
 * Detailed: Create a Server Action named `ValidateOrderTotal` that takes `OrderId` as input, retrieves all `OrderItem` records for that order, calculates the sum of `Quantity * UnitPrice`, and returns the `TotalAmount`. Include error handling for cases where the order doesn't exist.
@@ -90,11 +90,11 @@ Use these prompts as starting points to create variables and parameters, and to 
 * **Create a client variable:** Create a client variable named `SearchKeyword` of type Text. Bind it to the Search input on the `Employees` screen, and filter the `Employee` aggregate by `FirstName` using the variable.
 * **Add parameters:** In the `GetWeatherData` client action, add an output parameter `WeatherInfo` and the mandatory Text input parameters `City` and `Country`. Assign `WeatherInfo` the `Data` output of `API_GetWeatherData`.
 
-## UI
+## UI {#ui}
 
 Use these prompts to create or modify screens, web blocks, and layouts.
 
-### Prompt progression
+### Prompt progression {#ui-progression}
 
 * Basic: Create a screen to list all Customer records.
 * Detailed: Create a screen named `OrderDashboard` that displays a summary of orders by status. Include a table showing `OrderId`, `CustomerName`, `OrderDate`, and `Status`. Add a filter dropdown for `Status` and sort by `OrderDate` descending.
@@ -105,11 +105,11 @@ Use this prompt as a starting point for an email template. Replace the element n
 
 * **Create an Email:** Create an Email named `WelcomeEmail` with the subject `Welcome`. Add a mandatory input parameter named `Handle` of type Text. Add a Text widget and an Expression widget that displays `"Hello, " + Handle + "!"`.
 
-## Data
+## Data {#data}
 
 Use these prompts to create or modify entities, attributes, and relationships.
 
-### Prompt progression
+### Prompt progression {#data-progression}
 
 * Basic: Add a `Priority` attribute to the `Task` entity.
 * Detailed: Create a `Comment` entity linked to the `Ticket` entity with attributes `CommentText` (Text), `CreatedBy` (User reference), and `CreatedDate` (DateTime). Set up a one-to-many relationship where each Ticket can have multiple Comments.
@@ -124,75 +124,102 @@ Use these prompts as starting points for specific data modeling tasks. Use ficti
 * **Create a many-to-many relationship:** Create a `Review` entity as a junction between the `User` and `Place` entities in a many-to-many relationship. Add the attributes `Classification` (Integer), `Comments` (Text), and `SubmittedOn` (Date).
 * **Add records:** Add three records to the `Place` entity with fictional names, addresses, and phone numbers.
 
-## Reuse public elements
+## Reuse public elements {#reuse-elements}
 
 Use these prompts to reuse public elements that other apps expose in the tenant. Add the element through **Add public elements** first, or let Mentor find and add it for you.
 
-### Prompt progression
+### Prompt progression {#reuse-progression}
 
 * Basic: Use the public `CallAgent01_Intake` action to call the intake agent from a new `ProcessIntake` screen.
 * Detailed: List the public elements available in this tenant, then add the `CallAgent01_Intake` action from the `LoanOrigination` app and call it from a new `ProcessIntake` screen that captures applicant documents.
 
-## Add documentation
+## Attach a file {#attach-file}
+
+Use these prompts to ground a request in an attached file, such as a requirement spec, entity relationship diagram (ERD), screen mockup, error log, or API response sample. Attach the file to your prompt in the Mentor panel, then describe what you want Mentor to do with it. For supported file types and what to avoid in an attached file, refer to [Attach a file as context](how-it-works.md#attach-file).
+
+### Prompt progression {#attach-progression}
+
+#### Data model from an ERD {#data-model-erd}
+
+* Basic: Use the attached `DataModel.pdf` and create the entities it describes.
+* Detailed: Use the attached `DataModel.pdf` and create the Order entity with OrderNumber (Text), OrderDate (DateTime), and StatusId (Identifier, a foreign key to a new OrderStatus static entity), and the OrderItem entity with Quantity (Integer) and UnitPrice (Currency) in a one-to-many relationship with Order. Reuse the existing Customer entity instead of creating a new one.
+
+#### Screen from a design mockup {#screen-from-mockup}
+
+* Basic: Use the attached `OrderDashboard.png` and create the screen it shows.
+* Detailed: Use the attached `OrderDashboard.png` and create the OrderDashboard screen with the layout, containers, and widgets it shows. Display the orders in a table that uses the `GetOrders` aggregate, and reuse the existing Customer entity for the customer column.
+
+#### Integration from an API response sample {#api-response-sample}
+
+* Basic: Use the attached `ApiResponseSample.json` and create a Structure that matches the response it describes.
+* Detailed: Use the attached `ApiResponseSample.json` and create a PaymentGatewayResponse Structure with the TransactionId (Text), Status (Text), AuthorizedAmount (Currency), and ProcessedAt (DateTime) attributes it describes. Create a server action named AuthorizePayment that calls the POST /v1/payments/authorize endpoint, maps the response to the new Structure, and returns an error when Status is "declined".
+
+#### Debugging from a pasted error log {#pasted-error-log}
+
+* Basic: Use the attached `error-log.txt` and explain the error.
+* Detailed: Use the attached `error-log.txt` and identify which node in the CreateOrder action raised the `Null object reference` exception. Suggest a fix that adds a null check before the OrderItems aggregate runs.
+
+## Add documentation {#add-docs}
 
 Use these prompts to generate descriptions for elements and add comments that explain code.
 
-### Prompt progression
+### Prompt progression {#docs-progression}
 
 * Basic: Write a short description for a Client Action named `CalculateDiscount` that takes `BasePrice` and `CustomerTier` as inputs and returns the `FinalPrice`.
 * Detailed: On the `ProcessRefund` Service Action, explain the input parameters, the logic flow (including the aggregate filters used), and the specific exception handling strategy. Also, describe the impact analysis for other apps in the same ODC tenant that consume this service.
 
-## Explain code
+## Explain code {#explain-code}
 
 Use these prompts to understand unfamiliar logic or get an overview of app structure.
 
-### Prompt progression
+### Prompt progression {#explain-progression}
 
 * Basic: Explain what the `GetOrdersByStatus` Aggregate is doing, specifically the 'Only With' join between `Order` and `ShippingStatus`.
 * Detailed: Provide a high-level explanation of what the OrderManagement application does. What are the main flows?
 * With a selection: Select the logic flow, then ask "Explain this."
 
-## Fix errors and warnings
+## Fix errors and warnings {#fix-errors}
 
 Use these prompts to resolve TrueChange errors and warnings.
 
-### Prompt progression
+### Prompt progression {#errors-progression}
 
 * Basic: I'm getting a 'Data Type Mismatch' warning when assigning a Text variable to an Identifier attribute. How do I properly use **TextToIdentifier**?
 * Detailed: I have a 'Cyclic Dependency' warning between two ODC Libraries. Suggest a refactoring strategy to move the shared Structures or Service Actions into a 'Core' library to resolve the cycle while maintaining ODC best practices for modularity.
 
-## Find and fix bugs
+## Find and fix bugs {#fix-bugs}
 
 Use these prompts to identify inconsistencies or unexpected behavior.
 
-### Prompt progression
+### Prompt progression {#bugs-progression}
 
 * Basic: The 'Save' button is enabled even when the Form is invalid. Review the SaveOrder logic and tell me where the `Form.Valid` check is missing.
 * Detailed: Users are reporting that the 'Total Amount' on the screen doesn't update when a line item is deleted. Review the UpdateOrderTotal Client Action logic and the 'On Parameters Changed' event of the Block to identify why the state isn't refreshing correctly in the ODC Reactive UI.
 
-## Manage technical debt
+## Manage technical debt {#technical-debt}
 
 Use these prompts to identify areas that need improvement and refactor complex logic.
 
-### Prompt progression
+### Prompt progression {#debt-progression}
 
 * Basic: Identify redundant logic in the CalculateShipping Action where the same Aggregate is being called twice unnecessarily.
 * Detailed: The ProcessOrder Server Action has over 20 nodes and multiple nested 'If' statements. Break this down into smaller, reusable Actions. Focus on separating the 'Data Retrieval' logic from the 'Business Validation' and 'Data Persistence' steps to improve maintainability.
 
-## Break down complex tasks
+## Break down complex tasks {#break-down-tasks}
 
 Use these prompts to decompose large requirements into smaller implementation steps.
 
-### Prompt progression
+### Prompt progression {#tasks-progression}
 
 * Basic: List the steps needed to implement a 'Forgot Password' flow.
 * Detailed: I need to build a 'Real-time Inventory Dashboard' that consumes data from an external API and displays it in ODC. Break this down into tasks: external logic integration, Data Action setup, caching strategy for performance, and the UI Block structure for the charts.
 
-## Related resources
+## Related resources {#related-resources}
 
 These prompt examples are starting points that you can adjust based on your app's structure and complexity. The following resources cover general strategies, the full range of Mentor Studio capabilities, and how to continue past conversations.
 
 * For prompting strategies that apply across all Mentor tools, including entity-first thinking and decomposition, refer to [Effective prompts for Mentor](../effective-prompts.md).
+* For what Mentor extracts from an attached file and what to avoid including in one, refer to [Attach a file as context](how-it-works.md#attach-file).
 * For the full list of elements that Mentor Studio supports, including logic, UI, and data, refer to [Capabilities and patterns for Mentor Studio](capabilities.md).
 * For how Mentor Studio processes requests and integrates changes with existing apps, refer to [AI development in Mentor Studio](how-it-works.md).
 * For how to find, search, and resume your past Mentor Studio conversations, refer to [Find and resume past conversations in Mentor Studio](conversation-history.md).

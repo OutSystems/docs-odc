@@ -72,6 +72,34 @@ To scope a request to your work, select the element first, then prompt Mentor wi
 
 You don't have to rely on the selection. To act on a different element, name it in your prompt, and Mentor uses the element you name.
 
+### Attach a file as context {#attach-file}
+
+Mentor Web already supports [uploading a requirement document](../mentor-web/requirements-doc.md) to generate a whole app. Attach a file to a Mentor Studio prompt for the same document-grounded approach, scoped to the app you have open. Mentor processes both the text and the images in the file and uses them, together with your selection and open view, to generate screens with data bindings, entities and attributes that reuse your existing data model, and the actions that connect them.
+
+Attach a file in `.pdf`, `.docx`, `.txt`, `.json`, `.md`, `.csv`, `.png`, `.jpg`, or `.jpeg` format, up to 5 MB per file. Attach up to 3 files in the same prompt.
+
+Attach a file for tasks such as the following:
+
+* Extend an existing app from a written feature specification.
+* Build a data model from an ERD or table definition.
+* Generate a screen from a Figma export or mockup, with a matching layout, containers, and widgets.
+* Debug an issue from a pasted error log.
+* Build an integration from an API response sample.
+
+Attach the file from the Mentor panel, then describe what you want Mentor to do with it, for example "Using the attached OrderRequirements.docx, create the OrderIntake screen and the data model it describes."
+
+Review the generated proposal against the source document before you accept it. Check that Mentor bound fields to the correct data, reused existing entities and attributes instead of creating duplicates, and matched the screen layout you described. For how to review a proposal, refer to [Review and accept the plan](#accept-plan).
+
+<div class="warning" markdown="1">
+
+Mentor doesn't always reuse an existing entity or attribute when the name in your document doesn't closely match, or when Mentor doesn't have enough context to be confident. Check your tenant's existing data model first, and name the element you want Mentor to reuse directly in your prompt.
+
+</div>
+
+Mentor also can't surface or reuse an element referenced in your document when that element is private to another app outside your ODC Roles. For more information about public elements, refer to [Reuse tenant public elements](capabilities.md#reuse-public-elements).
+
+The attached file content becomes part of the prompt, so it's subject to the same data-handling guidance as the rest of your prompt. For attachment-specific constraints, such as file size limits, refer to [Known limitations](../ai-limitations.md). For how ODC logs prompts, including attached file content, refer to [Prompt logging](../security-safeguards.md#prompt-logging).
+
 ## The workflow {#workflow}
 
 Mentor Studio follows an iterative workflow. Describe a goal in natural language, review the changes Mentor generates, and refine through additional prompts until the result meets requirements.
