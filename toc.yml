@@ -30,6 +30,7 @@
         - href: eap/agentic-development/mentor-studio/modify-app.md
         - href: eap/agentic-development/mentor-studio/prompts.md
         - href: eap/agentic-development/mentor-studio/capabilities.md
+        - href: eap/agentic-development/mentor-studio/conversation-history.md
     # OutSystems MCP
     - href: eap/agentic-development/outsystems-mcp/outsystems-mcp-overview.md
     - topics:
@@ -60,16 +61,7 @@
         - href: eap/agentic-development/mentor-web/requirements-doc.md
         - href: eap/agentic-development/mentor-web/capabilities.md
         - href: eap/agentic-development/mentor-web/ai-tools.md
-    # Modify apps (Mentor Studio)
-    - href: eap/agentic-development/mentor-studio/how-it-works.md
-    - topics:
-        - href: eap/agentic-development/mentor-studio/modify-app.md
-        - href: eap/agentic-development/mentor-studio/prompts.md
-        - href: eap/agentic-development/mentor-studio/capabilities.md
-        - href: eap/agentic-development/mentor-studio/conversation-history.md
-    # Concepts
-    - href: eap/agentic-development/odc-ai-and-platform.md
-    - href: eap/agentic-development/effective-prompts.md
+    # Working with AI
     - href: eap/agentic-development/thinking-with-ai.md
     - topics:
         - href: eap/agentic-development/effective-prompts.md
