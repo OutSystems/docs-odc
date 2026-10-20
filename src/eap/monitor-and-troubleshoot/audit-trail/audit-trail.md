@@ -1,10 +1,9 @@
 ---
 helpids: 30635
-summary: OutSystems Developer Cloud (ODC)'s audit trail ensures compliance, aids troubleshooting, and tracks platform operations for effective incident response.
+summary: OutSystems Developer Cloud (ODC) audit trail shows, exports, and streams platform logs so you can audit actions and troubleshoot issues.
 tags:
   - Events
   - Logging
-  - Mobile app
   - Monitoring
   - Roles
   - Security
@@ -83,7 +82,7 @@ The logs display the most important information about **platform operations**. Y
 
 * **Who did it**: Know which user performed the action.
 
-    ![Screenshot of the ODC Portal showing the Audit trail screen](images/audit-trail-pl.png "Audit trail")
+    ![Screenshot of the ODC Portal showing the Audit trail screen](images/audit-trail-pl.png "Audit Trail Screen")
 
 ### Exporting logs to CSV {#export-csv}
 
@@ -97,7 +96,7 @@ You can export your logs to a CSV file. This gives you even more flexibility:
 
 To download your logs, click the **Export trail** button. This downloads a CSV file directly to your local machine.
 
-![Screenshot of the ODC Portal showing the Export trail screen](images/export-audit-trail-pl.png "Export trail")
+![Screenshot of the ODC Portal showing the Export trail screen](images/export-audit-trail-pl.png "Export Trail Screen")
 
 <div class="info" markdown="1">
 
@@ -142,6 +141,12 @@ Audit trail logs do not track actions made within your app's runtime.
 Track detailed records of successful logins in your tenant to monitor and analyze access activity.
 
 * User Login
+
+<div class="info" markdown="1">
+
+The audit trail only records successful logins. Failed login attempts aren't audited, so they don't appear in the ODC Portal, in exported CSV files, or in streamed audit logs.
+
+</div>
 
 ### User management
 
