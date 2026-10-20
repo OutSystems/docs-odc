@@ -6,6 +6,7 @@ figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?no
 coverage-type:
   - unblock
 topic:
+  - troubleshoot-o11-interoperability
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

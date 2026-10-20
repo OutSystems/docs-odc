@@ -1,5 +1,5 @@
 ---
-summary: This article describes the Deployments REST API endpoint details.
+summary: Deployments REST API reference for OutSystems Developer Cloud (ODC), with endpoint details and request schema.
 locale: en-us
 guid: acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d
 app_type: mobile apps, reactive web apps

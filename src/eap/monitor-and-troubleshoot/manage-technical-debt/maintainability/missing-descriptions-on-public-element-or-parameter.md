@@ -16,6 +16,8 @@ coverage-type:
 audience:
   - Developer
   - Front-end developer
+topic:
+  - add-missing-descriptions
 outsystems-tools:
   - odc studio
 ---

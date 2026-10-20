@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-duplicate-osstructure-name
 ---
 
 # OS-ELG-MODL-05014

@@ -11,6 +11,7 @@ coverage-type:
   - understand
   - remember
 topic:
+  - ai-integration-overview
 app_type: mobile apps,reactive web apps
 platform-version: odc
 tags:

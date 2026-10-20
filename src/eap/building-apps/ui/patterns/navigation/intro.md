@@ -11,6 +11,8 @@ platform-version: odc
 figma:
 coverage-type:
   - none
+topic:
+  - navigation-patterns-overview
 audience:
   - Developer
   - Front-end developer

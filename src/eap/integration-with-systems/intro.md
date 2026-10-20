@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - evaluate
+topic:
+  - integration-pattern-basics
 ---
 
 # Integration with external systems

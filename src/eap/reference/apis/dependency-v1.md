@@ -16,6 +16,8 @@ api-render: true
 tags:
   - REST
   - Web services
+topic:
+  - dependency-management-api
 outsystems-tools:
   - odc studio
   - odc portal

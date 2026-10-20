@@ -8,6 +8,7 @@ coverage-type:
   - understand
   - apply
 topic:
+  - ansi-92-data-types
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

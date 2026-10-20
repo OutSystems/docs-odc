@@ -1,5 +1,5 @@
 ---
-summary: ODC emails let you design content with widgets, send via SMTP, and configure per-stage settings in ODC Studio and ODC Portal.
+summary: ODC emails use widgets for content and SMTP for sending. Build them with Mentor Studio or ODC Studio, and configure each stage in ODC Portal.
 tags: email configuration, smtp integration
 locale: en-us
 guid: F826D84E-BF79-4287-9322-1E00E198A06E
@@ -12,11 +12,16 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+  - mentor studio
 coverage-type:
   - understand
   - apply
+  - evaluate
 topic:
-  - how-to-create-emails
+  - compose-and-send-emails
+  - configure-email-settings
+  - email-css-compatibility
+isautopublish: true
 ---
 
 # Emails
@@ -24,6 +29,8 @@ topic:
 In OutSystems Developer Cloud (ODC), email is a way to get information from your apps and send it to users. For example, you can send alerts to administrators or send a copy of a form to an end-user for submission. Before you can create emails and set up logic in your apps to send the emails, make sure you have the configuration for the SMTP server.
 
 In OutSystems, email is a UI element that lets you design and manage the content of email messages. To create, send, and configure emails, you use both ODC Studio and ODC Portal. Emails are sent using SMTP. In ODC Portal, you can define the configuration and can create different configurations for each stage. At the app level you can change the test email addresses.
+
+You can build emails and the logic that sends them by describing them to Mentor Studio and validating the result, or manually in ODC Studio. Whichever way you build, a correct result has the same characteristics. For more information, refer to [Correct email output](#correct-email-output).
 
 In **ODC Studio** you define how you want to send emails. When working with the display of the content, you can use or define new templates. By default, ODC uses a light theme which is an industry standard and is automatically set for you.
 
@@ -54,6 +61,7 @@ For more information about emails, see the following resources:
 
 | If you want to... | Check out... |
 | - | - |
+| Describe an email to Mentor Studio | [Create an Email with Mentor Studio](working.md#create-an-email-with-mentor-studio) |
 | Create a new email | [Creating a new Email](working.md#create-a-new-email) |
 | Add content for an email | [Adding content to Email](working.md#add-content-to-an-email) |
 | Add content based on user inputs | [Modify content in Emails](working.md#modify-content-in-emails) |
@@ -92,3 +100,20 @@ Google Gmail clips messages if the HTML code is larger than 102 KB. OutSystems r
 ### SMTP server configurations
 
 To send emails from your app you need to configure your SMTP server on the ODC Portal. The SMTP policy of your server might limit sending of the emails that can cause errors. For example, you might have a maximum number of addresses in To / From, or policy may limit the port number, body message size, or prevent concurrent emails.
+
+## Correct email output
+
+The platform guarantees that the model is valid, and you decide whether an email and its sending logic meet your requirements. The following checks are examples, not a complete list.
+
+* **SMTP configuration.** The SMTP server is configured in ODC Portal, for each stage that sends emails.
+* **Theme.** The Email uses a light theme, which is an industry standard for emails.
+* **Data in scope.** The Email content uses input parameters, local variables, and the scope of the Email widgets. Aggregates, Data Actions, and Client Variables aren't available in an Email.
+* **Size.** The HTML of the Email stays under 102 KB, because Gmail clips larger messages. The Email starts with basic styles, without the CSS from OutSystems UI.
+* **CSS support.** The content displays correctly in the email clients that your users have, because CSS support differs between email clients.
+* **SMTP policy.** The sending respects the policy of the SMTP server, such as limits on the number of addresses, the port, the body size, or concurrent emails.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

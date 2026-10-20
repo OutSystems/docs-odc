@@ -18,6 +18,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - master-detail-widget-reference
+  - use-master-detail-pattern
 ---
 
 # Master Detail

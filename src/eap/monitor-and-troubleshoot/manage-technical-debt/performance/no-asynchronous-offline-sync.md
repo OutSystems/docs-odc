@@ -13,6 +13,8 @@ locale: en-us
 app_type: mobile apps
 platform-version: odc
 figma:
+topic:
+  - sync-actions-procedure
 coverage-type:
   - unblock
   - remember

@@ -13,6 +13,8 @@ outsystems-tools:
   - none
 coverage-type:
   - unblock
+topic:
+  - fix-salesforce-api-error
 ---
 
 # OS-INTC-API-50002

@@ -18,6 +18,8 @@ audience:
   - Platform administrator
   - Tech lead
   - Architect
+topic:
+  - streamed-trace-data
 helpids:
 ---
 # Streamed trace data

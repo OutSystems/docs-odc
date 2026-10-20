@@ -13,6 +13,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - add-amazon-kendra-data-source
 ---
 
 # Add the Amazon Kendra data source to the AI Agent Builder app

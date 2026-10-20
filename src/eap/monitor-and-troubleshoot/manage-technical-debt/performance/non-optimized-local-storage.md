@@ -13,6 +13,8 @@ figma:
 coverage-type:
   - unblock
   - remember
+topic:
+  - optimize-local-storage
 audience:
   - Developer
 outsystems-tools:

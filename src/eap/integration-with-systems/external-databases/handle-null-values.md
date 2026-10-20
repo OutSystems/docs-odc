@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - get-data-from-external-db
+  - null-values
 ---
 
 # Handle null values

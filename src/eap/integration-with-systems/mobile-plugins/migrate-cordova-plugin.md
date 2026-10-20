@@ -16,9 +16,11 @@ platform-version: odc
 audience:
   - Developer
 tags:
+  - Android
   - Capacitor
   - Cordova
-  - Libraries
+  - Extensions
+  - iOS
   - Mobile app
   - Plugins
 outsystems-tools:
@@ -191,9 +193,11 @@ If your OutSystems plugin uses any of the above mentioned functionalities from C
 Cordova preferences allow for the creation of variables that can be customized by plugin users. These preferences can then be used elsewhere in `plugin.xml`.
 Here is an example of an Android-specific preference:
 
+**Note:** cordova-android renamed `res/values/strings.xml` to `res/values/cdv_strings.xml`. If your `plugin.xml` still targets the old `strings.xml` path, the merge silently no-ops, no error, no file written, so update any existing references to use `cdv_strings.xml`.
+
 ```xml
 <preference name="MY_CUSTOM_STRING" default="default-value" />
-<config-file target="./res/values/strings.xml" parent="/resources">
+<config-file target="./res/values/cdv_strings.xml" parent="/resources">
     <string name="custom">$MY_CUSTOM_STRING</string>
 </config-file>
 ```
@@ -295,10 +299,10 @@ The `android` block explicitly declares the camera permission your plugin requir
 
 For other changes in `Info.plist` files, as well as changes in other Android files, you must use [build actions](../../building-apps/mobile/build-actions.md).
 
-Here’s an example for a change in Android’s `strings.xml` via Cordova `plugin.xml`:
+Here’s an example for a change in Android’s `cdv_strings.xml` via Cordova `plugin.xml`:
 
 ```xml
-<config-file target="./res/values/strings.xml" parent="/resources">
+<config-file target="./res/values/cdv_strings.xml" parent="/resources">
     <string name="custom">Custom String</string>
 </config-file>
 ```
@@ -311,7 +315,7 @@ Here's how you can convert it to a build actions .json file:
         "android": {
             "xml": [
                 {
-                    "resFile": "values/strings.xml",
+                    "resFile": "values/cdv_strings.xml",
                     "target": "resources",
                     "merge": "&lt;string name='custom'&gt;Custom String&lt;/string&gt;"
                 }

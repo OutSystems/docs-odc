@@ -22,6 +22,9 @@ audience:
 coverage-type:
   - remember
   - apply
+topic:
+  - data-grid-properties
+  - display-grid-data
 outsystems-tools:
   - odc studio
   - forge

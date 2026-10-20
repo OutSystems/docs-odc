@@ -18,7 +18,7 @@ audience:
 outsystems-tools:
   - none
 topic:
-  - manage-tech-debt
+  - severity-criteria
 figma:
 ---
 

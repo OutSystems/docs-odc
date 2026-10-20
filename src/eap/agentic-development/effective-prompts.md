@@ -24,6 +24,9 @@ coverage-type:
 audience:
   - Front-end developer
   - Developer
+topic:
+  - mentor-studio-prompt-best-practices
+  - ui-pattern-prompts
 isautopublish: true
 ---
 

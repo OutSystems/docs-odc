@@ -17,7 +17,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - get-data-from-external-db
+  - query-external-data
 ---
 
 # Integrate with external data sources using Data Fabric

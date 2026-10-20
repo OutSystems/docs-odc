@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - export-oml-files-from-odc-studio
+  - open-oml-files-in-odc-studio
 ---
 
 # Open an oml file in ODC Studio

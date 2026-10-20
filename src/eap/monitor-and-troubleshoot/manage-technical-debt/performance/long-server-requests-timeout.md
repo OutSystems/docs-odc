@@ -13,6 +13,9 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 coverage-type:
   - unblock
   - remember
+topic:
+  - cache-repeatedly-accessed-database-data
+  - configure-server-request-timeout
 audience:
   - Developer
 outsystems-tools:

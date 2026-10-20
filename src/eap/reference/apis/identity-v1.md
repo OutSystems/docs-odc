@@ -11,6 +11,8 @@ audience:
   - Platform administrator
 coverage-type:
   - remember
+topic:
+  - send-full-request-body
 figma:
 api-render: true
 tags:

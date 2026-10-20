@@ -14,6 +14,7 @@ coverage-type:
 topic:
   - rename-org-or-stage
 tags:
+  - Lifecycle
   - Settings
 isautopublish: true
 ---
@@ -40,7 +41,7 @@ To change your organization name, follow these steps:
 
 1. In the ODC Portal, select **Management** > **Organization**.
 
-1. In the **Details** section, in the **Organization name** container, click the elipsys and then **Edit organization name**.
+1. In the **Details** section, in the **Organization name** container, click the ellipsis `(...)` and then **Edit organization name**.
 1. Type the new name.
 
     ![Organization name container in edit mode with a text input field](images/rename-org-edit-pl.png "Edit organization name")
@@ -60,10 +61,6 @@ To rename a stage, follow these steps:
 1. Type the new name.
 1. Click **Save**.
 
-A toast notification confirms the change. The new name appears throughout the ODC Portal and ODC Studio immediately. Renaming a stage doesn't log out users or affect running apps.
-
-### Stage name rules {#stage-name-rules}
-
-<!-- TK TODO: confirm actual character limit and allowed characters for stage names; not yet confirmed in any source available this session. Don't publish a guessed limit. -->
+A toast notification confirms the change. The new name appears throughout the ODC Portal and ODC Studio immediately. Renaming a stage does not log out users or affect running apps.
 
 You can also rename a stage programmatically through the [Portfolio API](../reference/apis/portfolio-v2.md). Before scripting stage changes, review the [automation and integrations considerations](reorder-stages.md#automation).

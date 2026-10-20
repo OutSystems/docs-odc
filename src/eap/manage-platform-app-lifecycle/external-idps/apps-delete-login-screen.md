@@ -21,7 +21,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - external-idps
+  - authentication-actions
+  - external-login-redirect
 isautopublish: true
 ---
 

@@ -16,6 +16,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - configure-callagent
+  - service-actions-when-use
 ---
 
 # Service actions

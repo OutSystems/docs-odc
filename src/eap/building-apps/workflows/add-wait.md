@@ -16,6 +16,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - add-wait-activity
 ---
 
 # Add wait

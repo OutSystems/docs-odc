@@ -17,6 +17,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - unblock
+topic:
+  - fix-ai-agent-connection-error
 isautopublish: true
 ---
 

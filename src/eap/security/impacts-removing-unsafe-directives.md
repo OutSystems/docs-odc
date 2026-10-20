@@ -7,6 +7,8 @@ tags:
   - Security
   - UI
   - UI Patterns
+topic:
+  - csp-directive-impacts
 
 guid: 6c2f1c26-58b9-46a6-ba0f-f7c432c6a4bc
 locale: en-us

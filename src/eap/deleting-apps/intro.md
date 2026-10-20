@@ -15,7 +15,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - delete-apps-libraries
+  - delete-apps-and-libraries
+  - impact-analysis-report
 ---
 
 # Deleting apps and libraries

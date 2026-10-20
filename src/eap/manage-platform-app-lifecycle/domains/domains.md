@@ -14,6 +14,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - understand-odc-domains
 isautopublish: true
 ---
 

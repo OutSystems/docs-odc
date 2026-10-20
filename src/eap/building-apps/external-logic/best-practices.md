@@ -6,7 +6,9 @@ figma:
 coverage-type:
   - evaluate
 topic:
-  - custom-code-integration
+  - external-library-runtime
+  - external-library-safety
+  - use-private-gateway-endpoints
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

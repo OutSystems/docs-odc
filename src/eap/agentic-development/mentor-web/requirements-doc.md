@@ -174,3 +174,5 @@ The following sample documents demonstrate requirement structures for different 
 * [Employee Onboarding Requirements Document](resources/employee-onboarding-requirements.docx): HR app example covering employee data management, onboarding workflows, and role-based access for HR teams and managers
 * [Order Management System Requirements Document](resources/order-management-system-requirements.docx): E-commerce example including order processing, customer management, product catalog integration, and multi-role permissions
 * [IT Service Management Requirements Document](resources/it-service-management-requirements.docx): Help desk example covering ticket management, comment systems, role-based access, and status tracking workflows
+
+To build the IT Service Management example from an MCP host, such as Claude Code, refer to [Build your first app](../outsystems-mcp/build-first-app.md). That tutorial uses a prompt file adapted from this requirement document for OutSystems MCP.

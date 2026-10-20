@@ -19,7 +19,7 @@ coverage-type:
   - remember
   - understand
 topic:
-  - dependencies
+  - dependency-strength
 isautopublish: true
 ---
 

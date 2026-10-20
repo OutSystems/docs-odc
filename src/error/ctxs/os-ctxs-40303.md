@@ -1,5 +1,5 @@
 ---
-summary: OS-CTXS-40303 occurs when an agent harness queries the OutSystems Developer Cloud (ODC) Context Service for resources in a different tenant than its credentials.
+summary: OS-CTXS-40303 occurs when an ODC Context Service query uses credentials for one tenant but targets resources in another tenant.
 tags:
   - Agentic
   - AI
@@ -32,7 +32,7 @@ Caller tenant does not match request tenant.
 
 ## Cause
 
-The tenant in the authentication token doesn't match the tenant scope of the request. This happens when the agent harness is authenticated to one tenant but the request targets resources owned by a different tenant.
+The tenant in the authentication token doesn't match the tenant scope of the request. Your MCP host is the AI application you work in, such as Claude Code, Cursor, or AWS Kiro. This error happens when your MCP host is signed in to one tenant but the request targets resources owned by a different tenant.
 
 ## Impact
 
@@ -40,4 +40,4 @@ The Context Service rejected the request without processing it.
 
 ## Recommended action
 
-Verify that your agent harness is signed in to the same tenant that owns the resources you're querying. Sign in to the correct tenant and retry the request.
+Verify that your MCP host is signed in to the same tenant that owns the resources you're querying. Sign in to the correct tenant and retry the request.

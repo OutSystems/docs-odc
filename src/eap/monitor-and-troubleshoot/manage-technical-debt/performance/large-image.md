@@ -20,6 +20,8 @@ audience:
   - Front-end developer
 outsystems-tools:
   - none
+topic:
+  - optimize-image-size
 ---
 # Large image
 

@@ -1,5 +1,5 @@
 ---
-summary: Learn the best practices for creating your app's logic.
+summary: OutSystems Developer Cloud (ODC) logic best practices for server calls, aggregates, caching, roles, and public screens.
 tags:
   - Aggregates
   - Best Practices
@@ -9,6 +9,7 @@ tags:
   - Security
 outsystems-tools:
   - odc studio
+  - mentor studio
 guid: b3c30de3-477e-4f09-99d0-e4b2e711f917
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -21,13 +22,18 @@ coverage-type:
   - apply
   - evaluate
 platform-version: odc
+topic:
+  - logic-performance-tips
+  - use-settings-in-logic
+  - secure-anonymous-screens
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6404-238
+isautopublish: true
 ---
 # Best practices for logic
 
 In OutSystems, your apps' logic is implemented through actions. Follow these recommendations to ensure efficiency and good performance.
 
-## Avoid multiple server calls in a client action flow { #multiple-server-calls }
+## Avoid multiple server calls in a client action flow {#multiple-server-calls}
 
 Multiple server calls inside client actions can lead to performance issues.
 Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency.
@@ -46,7 +52,7 @@ If you need to make multiple server calls in a client action, wrap all those ser
 
 Having all required server logic in a single server action reduces the number of server requests, which improves your app's performance.
 
-## Don't add aggregates or SQL queries inside a cycle { #aggregates-inside-cycle }
+## Don't add aggregates or SQL queries inside a cycle {#aggregates-inside-cycle}
 
 Aggregates or SQL queries inside a For Each cycle mean repeated database calls for each iteration.
 This results in significant performance degradation, particularly with large datasets or nested loops.
@@ -65,7 +71,7 @@ When adding aggregates or SQL queries to an action flow, consider the following:
 
 Keeping database calls outside the cycle prevents you from executing the same call repeatedly, thus improving performance.
 
-## Avoid isolating a single aggregate in an action { #isolated-aggregates }
+## Avoid isolating a single aggregate in an action {#isolated-aggregates}
 
 Aggregates are optimized to fetch only the attributes used in the action. When you isolate an aggregate in an action and the action returns an entire record or list of records, the platform can't optimize the number of fields to retrieve and fetches all their information from the database. This causes unnecessary database overload and memory usage.
 
@@ -81,7 +87,7 @@ When calling aggregates in your logic flows, follow these recommendations:
 
 Calling an aggregate directly instead of wrapping it in an action allows the platform to automatically detect the necessary fields to fetch, thus improving your app's performance.
 
-## Avoid hard-coded values { #hard-coded-values }
+## Avoid hard-coded values {#hard-coded-values}
 
 Using hard-coded values makes your app's code difficult to understand and maintain:
 
@@ -105,7 +111,7 @@ Avoid hard-coded values in your app's code. Depending on the use case, use one o
 
 Avoiding hard-coded values makes your code easier to understand and maintain.
 
-## Enable caching of server actions returning the same result { #caching }
+## Enable caching of server actions returning the same result {#caching}
 
 Server actions that calculate or fetch information multiple times with the same results consume unnecessary processing time and resources. If those actions are slow, they negatively impact the end-user experience.
 
@@ -123,7 +129,7 @@ When implementing your server-side logic:
 
 Enabling the cache of server actions that repeatedly return the same information improves your app's performance, as it avoids repeated calculation or data retrieval.
 
-## Validate user permissions on server-side logic { #validate-permissions-server-side }
+## Validate user permissions on server-side logic {#validate-permissions-server-side}
 
 Client-side logic is less secure than the server-side logic. Thus, you need more than [client-side validations](../ui/creating-screens/best-practices-screens.md#roles) to secure your app against malicious users trying to obtain or modify data they should not have access to.
 
@@ -152,3 +158,21 @@ With the exception of special use cases, such as authentication operations (for 
 ### Benefits
 
 Avoiding unnecessary exposure of Server Actions on public screens reduces the risk of exploitation by malicious users, improving your app's security.
+
+## Correct logic output
+
+The platform guarantees that the model is valid, and you decide whether the logic follows these practices. Apply the same checks to logic that you build manually and to a Mentor Studio proposal. The following checks are examples, not a complete list.
+
+* **Server calls.** A client action flow calls one server action that wraps the server logic, not several server actions in sequence. For more information, refer to [Avoid multiple server calls in a client action flow](#multiple-server-calls).
+* **Cycles.** No aggregate or SQL query runs inside a For Each cycle. For more information, refer to [Don't add aggregates or SQL queries inside a cycle](#aggregates-inside-cycle).
+* **Aggregates.** The flow calls an aggregate directly. A server action that isolates an aggregate defines output parameters for the attributes that the flow needs. For more information, refer to [Avoid isolating a single aggregate in an action](#isolated-aggregates).
+* **Values.** Static entities, settings, entities, or query parameters hold the values, not hard-coded literals. For more information, refer to [Avoid hard-coded values](#hard-coded-values).
+* **Caching.** Caching is enabled on server actions that return the same information repeatedly, and disabled on server actions that return information that changes frequently. For more information, refer to [Enable caching of server actions returning the same result](#caching).
+* **Permissions.** Server-side logic that modifies data verifies the logged-in user with the **CheckROLENAMERole()** and **GetUserId()** functions. For more information, refer to [Validate user permissions on server-side logic](#validate-permissions-server-side).
+* **Public screens.** Screens that don't require authentication expose no server actions, except for special cases such as Login. For more information, refer to [Avoid exposing server actions on public screens](#avoid-exposing-server-actions-on-public-screens).
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

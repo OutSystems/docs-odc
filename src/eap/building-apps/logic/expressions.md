@@ -13,10 +13,14 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - understand
+  - evaluate
 topic:
-  - write-expressions-guide
+  - use-expression-editor
+  - use-expression-widget
+isautopublish: true
 ---
 
 # Expressions
@@ -54,3 +58,19 @@ Here are some tips for using expressions.
 * For the type **Identifier**, use the [built-in functions](../../reference/built-in-functions/data-conversion.md).
 
 * The types **BinaryData** and **Record List** don't support calculations.
+
+## Correct expression output
+
+The platform guarantees that the model is valid, and you decide whether an expression returns the value you need. When Mentor Studio proposes logic, the proposal includes expressions, so apply the same checks. The following checks are examples, not a complete list.
+
+* **Operators fit the types.** The **+** operator is the only arithmetic operator for the type Text. The equality operators **=** and **&lt;&gt;** are the only operators for the type `Record`.
+* **Unsupported types.** No expression calculates with the types **BinaryData** and **Record List**.
+* **Identifiers.** An expression that converts an **Identifier** to another type uses the [built-in functions](../../reference/built-in-functions/data-conversion.md). The equality operators **=** and **&lt;&gt;** compare two Identifiers directly, and ODC Studio shows a warning when the Identifiers belong to different entities.
+* **Date and time.** An expression compares **Date**, **Time**, and **DateTime** values with the comparison and equality operators. To calculate with these values or convert them, the expression uses the [built-in functions](../../reference/built-in-functions/dateandtime.md) or the [libraries](../../reference/libraries/datetime.md).
+* **Status.** The expression status in the [expression editor](expressions/expression-editor.md) shows that the expression is valid.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

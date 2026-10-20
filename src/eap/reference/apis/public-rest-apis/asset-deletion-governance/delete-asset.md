@@ -6,7 +6,7 @@ figma:
 coverage-type:
   - apply
 topic:
-  - deployments-api-automation
+  - delete-asset-via-api
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

@@ -16,6 +16,8 @@ coverage-type:
   - apply
 topic:
   - aggregates
+  - go-to-destination
+  - manage-screen-data
 ---
 
 # UI Interactions

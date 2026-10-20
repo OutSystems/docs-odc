@@ -7,8 +7,9 @@ app_type: mobile apps
 platform-version: odc
 figma:
 coverage-type:
-  - unblock
   - remember
+  - apply
+  - unblock
 audience:
   - Developer
 outsystems-tools:

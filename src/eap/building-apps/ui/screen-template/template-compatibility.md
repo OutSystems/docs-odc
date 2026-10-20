@@ -20,7 +20,7 @@ outsystems-tools:
 coverage-type:
   - unblock
 topic:
-  - screen-template
+  - fix-theme-mismatch
 ---
 
 # Theme compatibility in Screen Templates

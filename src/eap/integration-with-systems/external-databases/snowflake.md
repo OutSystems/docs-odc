@@ -7,7 +7,9 @@ coverage-type:
   - apply
   - unblock
 topic:
-  - get-data-from-external-db
+  - configure-snowflake
+  - snowflake-limitations
+  - snowflake-setup-issues
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

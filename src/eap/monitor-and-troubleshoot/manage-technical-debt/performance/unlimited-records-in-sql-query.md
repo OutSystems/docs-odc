@@ -13,6 +13,8 @@ outsystems-tools:
 coverage-type:
   - unblock
   - remember
+topic:
+  - sql-best-practices
 ---
 
 # Unlimited records in SQL query

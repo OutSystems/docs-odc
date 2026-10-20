@@ -21,6 +21,8 @@ coverage-type:
   - remember
   - understand
   - evaluate
+topic:
+  - choose-mobile-framework
 isautopublish: true
 ---
 # Capacitor and Cordova support in MABS

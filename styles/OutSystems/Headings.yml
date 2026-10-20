@@ -34,10 +34,11 @@ exceptions:
   - OutSystems Cloud
   - OutSystems Developer Cloud
   - OutSystems Model
+  - EU Sovereign Cloud
   - Personal Edition
   - ODC Portal
   - Workflow Builder
-  - AI Mentor Studio
+  - Mentor Studio
   - AIMS
   - MABS
   - Mentor
@@ -45,6 +46,8 @@ exceptions:
   - UsersIdP
   - Build Operations API
   - Dependency Management API
+  - Enterprise Context Graph
+  - Mentor Agent
   - Data
   - Call Agent
   - StoreMemory
@@ -163,7 +166,9 @@ exceptions:
   - RequestPart
   - Form URL
   - Create/Upgrade
-  
+  - Excel To Record List
+  - Record List To Excel
+
 # Events
   - On Click
   - On Initialize
@@ -226,6 +231,7 @@ exceptions:
   - Google Cloud GAR
   - Google Kubernetes Engine
   - GKE
+  - App Store Connect
   - Apple Developer
   - AWS
   - AWS ECR
@@ -262,6 +268,7 @@ exceptions:
   - HIPPA
   - iOS
   - Integrated Authentication
+  - TestFlight
   - Kubernetes
   - TypeScript
   - Windows
@@ -290,9 +297,13 @@ exceptions:
   - IBM
   - GPT-4o
   - Claude 3.7 Sonnet
+  - Claude Desktop
   - Claude Haiku 4.5
   - Amazon Nova Pro
   - Chrome DevTools
+  - Cursor
+  - GitHub Copilot
+  - AWS Kiro
   - Microsoft Visual Studio
   - Visual Studio Code
   - .NET
@@ -370,6 +381,8 @@ exceptions:
   - WCAG 2.2 AA
   - Accessibility Conformance Report
   - ACR
+  - SOC 2
+  - SOC 2 Type II
 # Country
   - US East
   - North Virginia

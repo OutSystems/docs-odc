@@ -15,8 +15,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - rest-webservice-data
-  - define-methods
+  - expose-rest-api
 isautopublish: true
 ---
 

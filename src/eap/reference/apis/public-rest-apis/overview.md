@@ -1,11 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) REST APIs for user management, deployments, builds, and code quality with OAuth 2.0 authentication.
 tags:
-  - Authentication
   - Authorization
+  - Authentication
   - Deploy
-  - OAuth
   - OIDC
+  - OAuth
   - REST
   - Roles
 outsystems-tools:
@@ -102,6 +102,14 @@ The Dependency Management REST API enables you to analyze and understand depende
 * Make informed decisions about asset lifecycle management based on dependency analysis results.
 
 For detailed information about the endpoints, refer to [Dependency Management API reference](../dependency-v1.md).
+
+Impact analysis based on dependency data also appears in other ODC flows:
+
+* The ODC Portal runs it automatically on every deployment. Refer to [Understanding the impact analysis report](../../../deploying-apps/deploy-apps.md#understanding-the-impact-analysis-report).
+
+* You can run it through the CI/CD APIs before deploying. Refer to [Analyzing deployment impact](ci-cd-apis-use-cases/analyze-deployment-impact.md).
+
+* You can run it before deleting an asset. Refer to [Asset deletion governance](asset-deletion-governance/asset-deletion-governance-intro.md).
 
 ### Asset repository
 

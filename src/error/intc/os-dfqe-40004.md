@@ -16,6 +16,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - connection-test-errors
 ---
 
 # OS-DFQE-40004

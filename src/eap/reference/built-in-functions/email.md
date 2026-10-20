@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - how-to-create-emails
+  - validate-email-address
 ---
 
 # Email

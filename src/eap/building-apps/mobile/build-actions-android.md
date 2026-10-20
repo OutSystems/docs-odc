@@ -6,7 +6,7 @@ figma:
 coverage-type:
   - remember
 topic:
-  - customize-mobile-apps
+  - android-build-actions
 app_type: mobile apps
 platform-version: odc
 audience:

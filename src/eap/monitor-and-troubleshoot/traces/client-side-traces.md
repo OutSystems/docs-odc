@@ -22,6 +22,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - client-side-trace-behavior
+  - enable-client-side-traces
+  - client-side-trace-limits
 ---
 
 # Client-side traces

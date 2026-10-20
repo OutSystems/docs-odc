@@ -1,5 +1,5 @@
 ---
-summary: ODC Studio emails let you create and customize email messages using UI Flows, widgets, and input parameters in OutSystems Developer Cloud (ODC).
+summary: Create Emails in OutSystems Developer Cloud (ODC) with Mentor Studio or in ODC Studio.
 tags:
   - Screens
   - Themes
@@ -14,19 +14,52 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - evaluate
 topic:
-  - how-to-create-emails
+  - app-email-sending
+  - email-widgets
+  - use-input-parameters
+isautopublish: true
 ---
 
 # Working with emails
 
-In ODC Studio, Email is a UI element that lets you design and manage the content of email messages. Like Screens, you can find and create Emails in the UI Flows. However, unlike Screens that usually use the OutSystems UI, Emails require lightweight styles to follow the industry best practices for email sizes.
+In ODC Studio, Email is a UI element that lets you design and manage the content of email messages. Like Screens, you can find and create Emails in the UI Flows. However, unlike Screens that usually use the OutSystems UI, Emails require lightweight styles to follow the industry best practices for email sizes. You create an Email by describing it to Mentor Studio and validating the result, or by building it manually in ODC Studio.
 
-## Create a new Email
+## Create an Email with Mentor Studio
 
-To create a new Email, go to ODC Studio and follow these steps:
+Create an Email, its input parameters, and its content by describing them in Mentor Studio, and validate the Email before you use it in logic that sends it.
+
+In your prompt, include the following:
+
+* The Email
+* Its subject
+* Its input parameters with their data types
+* The content to display
+
+For example, the following sentences form one prompt:
+
+* "Create an Email named WelcomeEmail with the subject Welcome."
+* "Add a mandatory input parameter named Handle of type Text."
+* "Add a Text widget and an Expression widget that displays \"Hello, \" + Handle + \"!\"."
+
+### Validate the Email
+
+The platform guarantees that the model is valid, and you decide whether the Email displays the content you need. In the **Interface** tab of ODC Studio, check the following:
+
+* The Email is in a UI Flow with a light theme, a blank Theme, or a dedicated email Theme. A Theme with a lot of CSS that isn't designed for emails can push the content over the 102 KB at which Gmail clips messages. For more information, refer to [Clipped content warning](#clipped-content-warning).
+* The **Subject** property has the subject you want, not the temporary `"No subject"`.
+* Each input parameter has the **Data Type** you need, and **Is Mandatory** is **Yes** for the values that the Email requires.
+* Expressions use only input parameters, local variables, and the scope of the Email widgets. Aggregates, Data Actions, and Client Variables aren't available in an Email. For more information, refer to [Data considerations](intro.md#data-considerations).
+* The Email uses only the widgets in [Widgets available in Emails](widgets.md#widgets-available-in-emails), and uses no JavaScript or custom actions.
+* Each expression displays the expected value. For example, the greeting displays `Hello, John!` when **Handle** is `"John"`.
+
+## Create a new Email manually in ODC Studio {#create-a-new-email}
+
+To create a new Email manually, go to ODC Studio and follow these steps:
 
 1. Go to **Interface** > **UI Flows** and do one of the following:
 
@@ -48,7 +81,7 @@ To create a new Email, go to ODC Studio and follow these steps:
 
     ![Screenshot of the Email properties panel in ODC Studio with fields for Name, Description, and Subject.](images/email-properties.png "Email Properties Interface")
 
-## Add content to an Email
+## Add content to an Email manually in ODC Studio {#add-content-to-an-email}
 
 To add content to your email, follow these steps in ODC Studio:
 
@@ -62,7 +95,7 @@ To add content to your email, follow these steps in ODC Studio:
 
 1. Optionally, you can edit the **Text** widget properties from the **Styles** tab and,modify the text look and feel.
 
-## Modify content in Emails
+## Modify content in Emails manually in ODC Studio {#modify-content-in-emails}
 
 You can customize the content of your emails by adding information to the corresponding Email. Emails support compound data types and can use the data from the client scope of Email.
 
@@ -93,8 +126,16 @@ To add an **Input** to your Email and display the value in the email body, follo
 
 When you open this email in the email client, the expression displays "Hello, John!" when the value of **Handle** is `"John"`.
 
-## Clipped content warning { #clipped-content-warning }
+## Clipped content warning {#clipped-content-warning}
 
 If the content of an email is too big, some email readers clip the content. For example, Gmail displays **[Message clipped] View entire message** for all emails larger than 102KB. This can happen if you're generating content in your emails with a Theme that has a lot of CSS not designed for emails.
 
 To reduce the size of the email content, use a blank Theme or a dedicated email Theme. You can also create UI Flow without styles and then add your emails under this UI Flow.
+
+## Related resources
+
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
+
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#ui).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

@@ -6,6 +6,7 @@ figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?no
 coverage-type:
   - understand
 topic:
+  - data-interoperability-overview
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
@@ -69,6 +70,8 @@ The following mapping rules apply:
 * For O11 infrastructures with additional pipelines, map your ODC stages to O11 environments of a single pipeline. For example, consider you have two O11 pipelines, **Finance** and **HR**. If you want to consume entities from both pipelines in your ODC apps, you need to [configure a separate O11 connection](configure-connection.md) to map each pipeline.
 
     ![Diagram of data interoperability architecture for additional pipelines](images/data-interoperability-architecture-pipelines-diag.png "Data interoperability architecture for additional pipelines")
+
+* For O11 self-managed infrastructures using multiple database catalogs or schemas, each O11 connection maps to a single catalog or schema. If you want to consume entities from more than one catalog or schema, [configure a separate O11 connection](configure-connection.md) for each one.
 
 In case you have multiple O11 infrastructures exposing entities, you must [configure a different O11 connection](configure-connection.md) for each O11 infrastructure.
 
@@ -169,7 +172,6 @@ OutSystems is working to improve the data interoperability capability. Meanwhile
 
     * [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md) connected to an O11 Cloud infrastructure
     * Hybrid O11 infrastructures
-    * O11 self-managed infrastructures using [multiple database catalogs and schemas](https://www.outsystems.com/tk/redirect?g=1c742c8a-449c-4828-865b-7295d2f90527)
 
 ## Prerequisites {#prerequisites}
 

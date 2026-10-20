@@ -18,6 +18,8 @@ audience:
   - Front-end developer
 outsystems-tools:
   - none
+topic:
+  - set-screen-access
 ---
 # Avoid setting screens as accessible by everyone
 

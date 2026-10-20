@@ -24,12 +24,9 @@ content-type:
 audience:
   - Platform administrator
 topic:
-  - app-settings
-  - app-configuration
-  - config-app-after-deploy
-  - config-app-before-deploy
-  - environments-stages
-  - deployment-options
+  - audited-operations-scope
+  - stream-audit-logs
+  - view-audit-logs
 isautopublish: true
 ---
 # Audit trail

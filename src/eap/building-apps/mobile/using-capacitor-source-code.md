@@ -20,7 +20,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - debug-troubleshoot-app-logic
+  - use-package-source-code
 isautopublish: true
 ---
 

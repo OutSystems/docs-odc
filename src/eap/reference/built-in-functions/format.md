@@ -14,6 +14,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - format-numbers-rounding
+  - formatdatetime-patterns
+  - text-phone-formatting
 ---
 
 # Format

@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - built-in-url-functions
 isautopublish: true
 ---
 

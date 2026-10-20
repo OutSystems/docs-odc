@@ -17,6 +17,8 @@ audience:
   - Platform administrator
 coverage-type:
   - apply
+topic:
+  - enable-grid-column-edit
 outsystems-tools:
   - odc studio
 ---

@@ -16,6 +16,9 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - add-custom-data-source
+  - data-source-contract
 ---
 
 # Add a custom data source to the AI Agent Builder app

@@ -13,6 +13,8 @@ figma:
 coverage-type:
   - unblock
   - remember
+topic:
+  - reduce-module-size
 audience:
   - Developer
   - Front-end developer

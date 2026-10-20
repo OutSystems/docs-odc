@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - use-sql
+  - sql-syntax-differences
 ---
 
 # SQL queries compared to OutSystems 11

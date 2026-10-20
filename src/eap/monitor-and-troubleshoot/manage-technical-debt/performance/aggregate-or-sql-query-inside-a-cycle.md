@@ -14,6 +14,8 @@ audience:
   - Tech lead
 outsystems-tools:
   - odc studio
+topic:
+  - sql-best-practices
 ---
 # Aggregate or SQL query inside a cycle
 

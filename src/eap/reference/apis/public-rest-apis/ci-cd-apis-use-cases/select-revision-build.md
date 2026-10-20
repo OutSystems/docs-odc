@@ -6,7 +6,7 @@ figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=475
 coverage-type:
   - apply
 topic:
-  - deployments-api-automation
+  - select-revision-build
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
@@ -20,6 +20,7 @@ tags:
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 # Selecting the revision and build of your asset
 
@@ -43,7 +44,7 @@ Before using the APIs to get the revision and build of your asset, ensure that y
 
     To get the asset key, go to **Portal** > **Apps**, and select the asset you want to deploy. In the URL, copy the asset key after "application?id=", as shown in this example:
 
-    ![Screenshot of the ODC Portal showing how to retrieve the asset key from the asset URL](images/asset-key-pl.png "Get the asset key")
+    ![Screenshot of the ODC Portal showing how to retrieve the asset key from the asset URL](images/asset-key-pl.png "ODC Portal Asset Key")
 
     You can also retrieve the asset key programmatically, using `GET /api/asset-repository/v1/assets` with the necessary filters.
 
@@ -72,6 +73,8 @@ To get the revision and build of the asset in your CI/CD pipeline, follow these 
 ## Next steps
 
 * [Evaluating code quality](code-quality.md)
+* [Analyzing deployment impact](analyze-deployment-impact.md)
+* [Validating security vulnerabilities](security-vulnerabilities-validation.md)
 * [Retrieving generated code for SAST analysis](generated-code-sast.md)
 * [Setting the release version and release notes](set-version-release-notes.md)
 * [Reviewing asset configurations](asset-configurations.md)

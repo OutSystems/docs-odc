@@ -3,6 +3,11 @@ summary: Knowledge bases in OutSystems Developer Cloud (ODC) store and semantica
 tags:
   - Agentic
   - AI
+  - Architecture
+  - Data
+  - Infrastructure
+  - Indexes
+  - Security
 guid: aa426959-c1c6-474e-b905-8d96e799a15f
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -39,7 +44,7 @@ When you upload a file to a knowledge base, the platform automatically runs it t
 
 1. Splits the document into smaller pieces called chunks.
 1. Converts each chunk into a numerical representation called an embedding, a vector that captures the meaning of the text.
-1. stores embeddings in a vector index that it uses to find the most relevant chunks for a given query.
+1. Stores embeddings in a vector index that it uses to find the most relevant chunks for a given query.
 
 At runtime, when a developer calls knowledge base search from an agent or app, the platform compares the query against the vector index and returns the most semantically relevant chunks. This process is called **retrieval-augmented generation (RAG)**.
 
@@ -58,6 +63,14 @@ Knowledge bases accept the following file types:
 | Comma-separated values | `.csv` |
 
 Note that files can't be bigger than 20MB.
+
+## Supported languages
+
+ODC doesn't block files by language. If the file type is supported and has selecteble text, all the document text is extracted, indexed and can be searched.
+
+Languages we cannot name are still indexed, but search works best for English content. So, if you are using other language than English, expect less quality in search results.
+
+For scanned PDFs (with image-only pages, no selectable text), ODC only supports English and Chinese. Other scripts on a supported file but with images of text are not supported and may be extracted as empty or unreadable text.
 
 ## Stage isolation
 

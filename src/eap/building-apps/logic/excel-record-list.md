@@ -1,5 +1,5 @@
 ---
-summary: Learn how to  convert an excel object to a Record List in ODC Studio
+summary: Excel to Record List in OutSystems Developer Cloud (ODC) imports Excel data in server actions, maps sheets, and validates mandatory values.
 tags:
   - Data
   - Entities
@@ -12,11 +12,16 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 api-render: false
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - evaluate
+topic:
+  - excel-to-record-list
 content-type:
 audience:
   - Developer
+isautopublish: true
 ---
 
 # Excel to Record List
@@ -25,11 +30,38 @@ The **Excel to Record List** action converts an Excel object to a Record List. T
 
 The Excel To Record List is only available in Server Actions. In Reactive Web and Mobile apps, you must send the uploaded file to the server and then process it in a Server Action.
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 To use **Excel To Record List** action, you need an entity or structure that matches the content of the Excel (.xls, .xlsx or .xlsb) file you want to import. OutSystems matches the attribute labels of the entity or structure specified in the Record Definition property with column headings in the Excel file. Entity attributes without a corresponding column in the Excel file get the default value of their data type (for example, "" for a Text attribute).
 
-## Convert an Excel object to a Record List
+## Import Excel data with Mentor Studio
+
+Add the **Excel to Record List** action to a Server Action by describing the import in Mentor Studio, and validate the properties and the data flow before you publish.
+
+In your prompt, include the following:
+
+* The Server Action
+* The entity or structure that defines the records
+* The Excel file source
+* The entity action that saves the records
+
+For example, the following sentences form one prompt:
+
+* "In the ImportEmployees Server Action, use the Excel to Record List action to read the uploaded file with the Employee entity as the Record Definition."
+* "Call CreateOrUpdateSomeEmployees with the resulting list as the Source List."
+
+### Validate the conversion
+
+The platform guarantees that the model is valid, and you decide whether the import loads the data you expect. Check the following against the [Prerequisites](#prerequisites) and the [Properties](#properties) on this page:
+
+* The action is in a Server Action, because **Excel to Record List** is only available there.
+* The **Record Definition** is the entity or structure whose attribute labels match the column headings in the Excel file.
+* The **File Content** is a Binary Data value that holds the Excel file.
+* The **Sheet Name** is set when you import a specific sheet. Without a **Sheet Name**, the action imports the first sheet, unless the file has a sheet named 'Sheet1'.
+* The **Source List** of the entity action is the output of **Excel to Record List**.
+* The logic validates mandatory values, because **Excel to Record List** doesn't validate them. Attributes without a column get the default value of their data type.
+
+## Import Excel data manually in ODC Studio
 
 The following example shows a scenario in which you want to add or update the names and addresses of your current employees in an entity called Employee.
 
@@ -51,7 +83,7 @@ The following example shows a scenario in which you want to add or update the na
 
     **Note**:  Excel to Record doesn't validate if the Excel file data has mandatory values.
 
-## Properties
+## Properties {#properties}
 
 | Name | Description | Mandatory | Observations |
 | --- | --- | --- | --- |
@@ -63,6 +95,10 @@ The following example shows a scenario in which you want to add or update the na
 
 ## Related resources
 
-* [Record List to Excel](record-list-excel.md)
+The following resources describe prompt examples, the steps to prompt Mentor Studio, the reverse conversion, and bootstrapping an entity from Excel.
 
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+* [Record List to Excel](record-list-excel.md)
 * [Bootstrap an Entity Using an Excel File](../data/modeling/excel-bootstrap.md)
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

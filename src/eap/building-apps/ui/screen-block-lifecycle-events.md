@@ -20,7 +20,8 @@ coverage-type:
   - understand
   - remember
 topic:
-  - screen-events
+  - on-parameters-changed
+  - screen-lifecycle-events
 ---
 
 # Screen and block lifecycle events

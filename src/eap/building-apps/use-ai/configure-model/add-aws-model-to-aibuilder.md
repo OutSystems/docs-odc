@@ -12,6 +12,9 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - add-amazon-bedrock-model
+  - configure-amazon-bedrock
 ---
 
 # Add Amazon Bedrock AI model to the AI Agent Builder

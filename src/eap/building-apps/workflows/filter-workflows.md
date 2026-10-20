@@ -18,6 +18,8 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6274-150
 coverage-type:
   - apply
+topic:
+  - workflow-activity-filters
 ---
 # Build UI components using workflow entities
 

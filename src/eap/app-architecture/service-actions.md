@@ -23,7 +23,7 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - service-actions-when-use
+  - service-actions-overview
 isautopublish: true
 ---
 

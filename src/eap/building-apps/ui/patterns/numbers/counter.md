@@ -19,6 +19,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - counter-reference
+  - use-counter-pattern
 ---
 
 # Counter

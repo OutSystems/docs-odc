@@ -1,8 +1,9 @@
 ---
-summary: "ODC knowledge base chunking strategies reference: compare Smart, Fixed-size, Sentence-based, and more, with trade-offs to optimize retrieval quality."
+summary: "OutSystems Developer Cloud (ODC) knowledge base chunking strategies reference, compare Smart, Fixed-size, Recursive, and overlap for better retrieval."
 tags:
   - AI
   - Best Practices
+  - Optimization
 guid: fdfda10e-c4af-49f4-a8ad-1b7fab45a6ac
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -17,6 +18,7 @@ audience:
 coverage-type:
   - remember
   - understand
+  - evaluate
 topic:
   - choose-chunking-strategy
 ---
@@ -35,7 +37,7 @@ The table below shows the chunking strategies available in ODC Knowledge Bases, 
 | **Fixed-size** | Splits at a fixed token or character count, with optional configurable overlap between adjacent chunks | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
 | **Recursive** | Splits into chunks of a fixed token or character count, with optional overlap | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
 | **By Page** | Splits into chunks of a fixed token or character count, with optional overlap | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
-| **Recursive** | Splits into chunks of a fixed token or character count, with optional overlap | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
+
 | **By paragraph** | Splits at sentence boundaries | Documents where individual sentences carry complete meaning | Can produce very short chunks for dense technical text |
 | **By section-header** | Splits at section header boundaries | Documents with clear section structure | May create very large chunks for sections with little content |
 | **None** | Splits into chunks of a fixed token or character count, with optional overlap (Max characters: 8192) | Documents smaller than the max characters limits | May cut sentences mid-thought if overlap is too small. Also, if the document is larger than the max characters limit, the remainder of the characters is truncated. |

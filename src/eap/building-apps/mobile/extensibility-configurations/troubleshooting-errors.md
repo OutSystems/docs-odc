@@ -6,6 +6,8 @@ figma:
 coverage-type:
   - unblock
 topic:
+  - invalid-schema-error
+  - plugin-source-mismatch
 app_type: mobile apps
 platform-version: odc
 audience:
@@ -46,4 +48,3 @@ Here are some common scenarios for extensibility configuration errors:
 * [App extensibility configuration JSON schema](extensibility-app-reference.md)
   
 * [Library (plugin) extensibility configuration JSON schema](extensibility-lib-reference.md)
-

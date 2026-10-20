@@ -1,5 +1,5 @@
 ---
-summary: Configure external identity providers for authentication in OutSystems Developer Cloud (ODC), supporting OpenID Connect, SAML 2.0, and social logins.
+summary: External identity providers in OutSystems Developer Cloud (ODC) cover organization and stage scopes, OIDC and SAML limits, and self-hosted setup.
 locale: en-us
 guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
 app_type: mobile apps,reactive web apps
@@ -8,11 +8,11 @@ platform-version: odc
 tags:
   - Authentication
   - End-user Authentication
-  - End-users
   - External Authentication
   - IdP
   - OIDC
   - SAML
+  - Security
 audience:
   - Developer
   - Platform administrator
@@ -88,8 +88,8 @@ The built-in provider is only available for IT-user sign-in to the ODC Portal an
 
 Two separate OIDC connector configurations are required, one for each deployment context:
 
-* **For Cloud**: Assigned to the Development stage. Requires a client secret.
-* **For self-hosted**: Assigned to Test and Production stages. Does not require a client secret (public client).
+* **For Cloud**: Assigned to the Development stage. Requires a client secret (private client).
+* **For self-hosted**: Assigned to Test and Production stages. Does **not** require a client secret (public client).
 
 A connector created as one type cannot be assigned to stages of the other type.
 
@@ -119,7 +119,7 @@ If your IdP can't be exposed to the public internet, allowlist the ODC Identity 
     Expected: https://login.microsoftonline.com/{tenantid}/v2.0
     ```
 
-* Only the `client_secret_post` authentication method is supported for providers used in cloud stages. In self-hosted tenants, providers configured **For self-hosted** are public clients and do not require a client secret.
+* Only the `client_secret_post` authentication method is supported for providers used in cloud stages. In self-hosted tenants, providers configured **For self-hosted** are public clients and do not use a client secret.
 
 * Only the Authorization Code flow with PKCE is supported. Implicit and hybrid flows are not supported.
 
@@ -128,6 +128,7 @@ If your IdP can't be exposed to the public internet, allowlist the ODC Identity 
 ### System considerations for SAML 2.0
 
 * Only SAML 2.0 SP-initiated flows are supported.
+*
 * OutSystems recommends that SAML responses are signed.
 
 <div class="info" markdown="1">

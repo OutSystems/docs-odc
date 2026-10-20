@@ -1,5 +1,5 @@
 ---
-summary: Explore Firebase-based plugins for mobile app development on OutSystems Developer Cloud (ODC), including analytics, crash reporting, and more.
+summary: Firebase plugins for OutSystems Developer Cloud (ODC) apps, add Google services files, App Tracking Transparency prompts, Analytics, and Crashlytics.
 locale: en-us
 guid: 050c7d77-0418-4f38-9bb8-7b0275931b80
 app_type: mobile apps

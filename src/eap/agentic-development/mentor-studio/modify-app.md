@@ -6,8 +6,6 @@ tags:
   - AI
   - Mentor
   - Mentor Studio
-  - Screens
-  - UI
 guid: 8d4c9f3e-a521-4b8f-9e7a-6f2d8c1b5a09
 locale: en-us
 app_type: reactive web apps
@@ -83,3 +81,4 @@ For more information:
 * [AI development in Mentor Studio](how-it-works.md) - Learn about the Mentor interface, workflow, and how to send feedback.
 * [Capabilities and patterns for Mentor Studio](capabilities.md) - Review detailed examples and use cases for what Mentor generates.
 * [Effective prompts for Mentor](../effective-prompts.md) - Strategies for writing prompts that produce accurate results.
+* [Find and resume past conversations in Mentor Studio](conversation-history.md) - Search your history and continue from where you left off.

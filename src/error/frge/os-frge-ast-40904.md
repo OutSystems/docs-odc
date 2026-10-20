@@ -10,6 +10,8 @@ platform-version: odc
 figma:
 coverage-type:
   - unblock
+topic:
+  - forge-errors
 audience:
   - Developer
   - Platform administrator

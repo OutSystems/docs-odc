@@ -18,6 +18,10 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - automatic-app-updates
+  - new-build-required
+  - ota-rollback-behavior
 isautopublish: true
 ---
 

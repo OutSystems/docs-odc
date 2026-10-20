@@ -3,7 +3,6 @@ summary: OutSystems Developer Cloud (ODC) workflows automate business processes 
 tags:
   - Business Processes
   - Events
-  - Triggers
   - Workflows
 locale: en-us
 guid: 70b986e2-cd07-48a6-92c0-e57751112bb7
@@ -81,7 +80,7 @@ Here are some use cases where you can use workflow for automation:
 
 ## Using workflow editor
 
-ODC provides a **workflow editor**, a visual web-based tool for implementing workflows. You can access the workflow editor from the ODC Portal. You can implement workflows as a new type of asset similar to ODC apps and libraries with an independent lifecycle.
+ODC provides a **workflow editor**, a visual web-based tool for implementing workflows. You can access the workflow editor from the ODC Portal. You implement workflows as a type of asset similar to ODC apps and libraries with an independent lifecycle.
 
 ![Screenshot of the workflow editor interface in ODC, showing a workflow with nodes for start, human activity, decision, automatic activity, and end.](images/workflow-editor-pl.png "Workflow Editor Interface")
 
@@ -116,7 +115,7 @@ With search, you can do the following:
 
 ### Managing workflow revisions
 
-The workflow editor includes revisions history to help you track, manage, and restore previous versions of your workflows.
+The workflow editor includes revision history to help you track, manage, and restore previous revisions of your workflows. For more information about how revisions work for workflows, refer to [Revisions](../publishing/revisions.md#workflows).
 
 With revisions history, you can:
 
@@ -151,9 +150,9 @@ The **notification** panel eliminates manual searching within large workflows. I
 
 ## Compare workflow revisions
 
-When a workflow has multiple published versions, you can compare any two revisions side by side. Color coding highlights additions, deletions, and modifications so you know exactly what to keep.
+When a workflow has multiple published revisions, you can compare any two revisions side by side. Color coding highlights additions, deletions, and modifications so you know exactly what to keep.
 
-[Learn more about compare workflow revisions](compare-versions.md).
+For more information, refer to [Compare workflow revisions](compare-versions.md).
 
 ## Key considerations for implementing workflows
 
@@ -165,7 +164,7 @@ Here are some points to consider as you implement workflows in ODC:
 
 * **Workflows can be implemented, tested, and deployed across stages independent of ODC apps and libraries**. Because they rely on the app's public elements, they are subject to impact analysis. For detailed information about deploying workflows, refer to [Deploying assets](../../deploying-apps/deploy-apps.md).  
 
-* **Workflows can have** [**multiple revisions**](../../deploying-apps/deploy-apps.md#multiple-revisions-of-a-workflow) **running simultaneously in the same stage**, and every revision can have one or more instances of the workflow in execution. An instance is a unit of execution of a workflow. Each instance can run up to 1,000 activities.
+* **Workflows can have** [**multiple revisions**](../../deploying-apps/deploy-apps.md#workflow-revisions) **running simultaneously in the same stage**, and every revision can have one or more instances of the workflow in execution. An instance is a unit of execution of a workflow. Each instance can run up to 1,000 activities.
 
     <div class="info" markdown="1">
 
@@ -177,7 +176,7 @@ Here are some points to consider as you implement workflows in ODC:
 
 ## Known constraints
 
-* Workflows **do not support real-time collaboration**, meaning multiple users cannot edit a workflow simultaneously. However, basic conflict detection is supported. If a new version of a workflow exists in dev, you are notified when you open it or try to publish your changes.
+* Workflows **don't support real-time collaboration**, meaning multiple users can't edit a workflow simultaneously. However, basic conflict detection is supported. If a newer revision of a workflow exists in Development, you're notified when you open it or try to publish your changes.
 
 * There is **no debugger** for workflows. However, you can monitor the workflow's current state in the portal in near real-time.
 

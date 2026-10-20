@@ -15,6 +15,8 @@ outsystems-tools:
   - none
 coverage-type:
   - unblock
+topic:
+  - fix-reference-parameter
 ---
 
 # OS-ELG-MODL-05016

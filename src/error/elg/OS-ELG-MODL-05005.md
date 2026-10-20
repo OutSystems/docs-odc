@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-osinterface-ctor
 ---
 
 # OS-ELG-MODL-05005

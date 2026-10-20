@@ -13,6 +13,8 @@ outsystems-tools:
 coverage-type:
   - apply
 content-type: 
+topic:
+  - configure-datadog-streaming
 audience:
   - Platform administrator
   - Tech lead

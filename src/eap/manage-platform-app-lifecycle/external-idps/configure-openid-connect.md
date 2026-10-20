@@ -11,6 +11,7 @@ tags:
   - IdP
   - OIDC
   - Security
+  - SSO
 audience:
   - Platform administrator
 outsystems-tools:

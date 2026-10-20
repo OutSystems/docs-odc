@@ -18,6 +18,7 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
   - evaluate
@@ -102,6 +103,16 @@ To write better queries, you need to understand the following joins:
 
 * Sorting can significantly affect performance. If you anticipate many records, performing any required sorting in your app rather than in the aggregate is advisable.
 
+## Correct mashup query output
+
+Check the query against the guidance in this page. The platform guarantees that the query is valid, and you decide whether it returns the correct data and runs within the execution plan cost limit. The following checks are examples, not a complete list.
+
+* The joins and join conditions follow [Join conditions](#join-conditions), and literals are in filters.
+* The filters follow [Filters](#filters), with predicates for each entity combined with AND.
+* The aggregate functions and grouping follow [Aggregate functions and grouping](#aggregate-functions-and-grouping).
+* The query selects only the attributes that the mashup uses and avoids binary data and large text attributes.
+* The query works at runtime, not only in Test Query. Entities in other environments can hold more records than the development environment.
+
 ## Supported use cases
 
 ### Joining a large entity to a large entity across two systems
@@ -120,3 +131,9 @@ When best practices are followed:
 
 * The queries for both entities will sort records based on the equi-keys in the join condition in ascending order with nulls last.
 * A merge join algorithm joins the records in the Data Fabric.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

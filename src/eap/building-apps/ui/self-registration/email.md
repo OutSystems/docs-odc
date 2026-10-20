@@ -20,7 +20,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - self-registration
+  - build-verification-email
 ---
 
 # Create email to send verification code

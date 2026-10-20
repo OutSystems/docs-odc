@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - workflow-built-in-functions
 ---
 
 # Using built-in functions in workflows

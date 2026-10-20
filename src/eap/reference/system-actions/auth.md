@@ -19,6 +19,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+topic:
+  - authentication-actions
 isautopublish: true
 ---
 

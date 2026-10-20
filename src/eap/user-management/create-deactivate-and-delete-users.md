@@ -9,22 +9,20 @@ audience:
   - Platform administrator
 tags:
   - Authentication
+  - End-user Authentication
   - End-users
   - External Authentication
   - IdP
   - IT Users
-  - Lifecycle
   - Roles
 outsystems-tools:
   - odc portal
 coverage-type:
   - apply
 topic:
-  - manage-users
-  - deleting-users
-  - assign-to-user-groups
-  - built-in-authentication
-  - creating-users
+  - creating-users-odc
+  - delete-users
+  - manage-user-status
 helpids: 30703
 isautopublish: true
 ---
@@ -251,7 +249,9 @@ To deactivate or activate a user, follow these steps:
 
 ## Delete users
 
-Deleting a user permanently removes their access and all related data from the system. This action can't be undone.
+Deleting a user permanently removes their access to the ODC Portal, Studio, and apps. This action can't be undone.
+
+To delete a user, follow these steps:
 
 1. Go to the **ODC Portal**.
 1. Go to **Management** > **Govern** > **Users**.
@@ -259,6 +259,16 @@ Deleting a user permanently removes their access and all related data from the s
 1. Click **Delete**, and then confirm the action.
 
     ![Screenshot of the ODC Portal Users list with the three-dot Actions menu open and the Delete option highlighted.](images/delete-pl.png "Delete User Option in ODC Portal")
+
+<div class="info" markdown="1">
+
+When you delete a user, ODC anonymizes the user's row in the **User** system entity in every stage. The **Name** and **Username** attributes show `Deleted user`, and ODC clears the **Email** and **PhotoUrl** attributes.
+
+The row stays in the entity, so queries on the **User** entity still return it.
+
+If you invite the same person again, ODC creates a new user with a new identifier. After the user logs in to an app in a stage, the **User** entity in that stage has two rows for that person, the anonymized row and the new row.
+
+</div>
 
 <div class="warning" markdown="1">
 

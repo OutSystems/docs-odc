@@ -15,6 +15,9 @@ audience:
 coverage-type:
   - remember
   - understand
+topic:
+  - workflow-components
+  - workflow-node-statuses
 outsystems-tools:
   - none
 ---

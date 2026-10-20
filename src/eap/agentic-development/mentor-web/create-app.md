@@ -95,7 +95,7 @@ To create an Employee Onboarding app with AI in ODC Portal:
 
       * **Refine in the editor** through additional prompts to adjust entities, screens, or roles.
       * **Preview** to review generated screens with sample data before moving to implementation work.
-      * **Open in ODC Studio** for capabilities beyond Mentor Web, such as complex logic, external integrations, or advanced UI customization. For a breakdown of what Mentor handles and what requires ODC Studio, refer to [When to use each tool](../intro.md#when-to-use-each-tool).
+      * **Open in ODC Studio** for capabilities beyond Mentor Web, such as complex logic, external integrations, or advanced UI customization. For a breakdown of what Mentor supports and what requires ODC Studio, refer to [Scope and limits](../coding-agents.md#scope-and-limits).
       * **Deploy** through **Portal** > **DELIVER** > **Deployments** to move your app to the test and production stage.
 
 ## Next steps

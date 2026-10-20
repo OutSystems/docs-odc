@@ -18,6 +18,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - activate-private-gateway
+  - reconnect-private-gateway-connectors-domain-change
+  - use-private-gateway-endpoints
 isautopublish: true
 ---
 

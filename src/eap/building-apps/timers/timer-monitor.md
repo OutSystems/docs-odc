@@ -16,11 +16,15 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+  - unblock
+topic:
+  - monitor-timer-logs
+isautopublish: true
 ---
 
 # Monitor Timers
 
-OutSystems logs enable you to display information for a stage, an app, or all apps.
+OutSystems logs enable you to display information for a stage, an app, or all apps. You monitor Timers manually in ODC Portal. Mentor Studio doesn't change Timer logs. After you validate a Timer that Mentor Studio creates, use the logs to confirm that the Timer runs. For the validation checks, refer to [Validate the Timer](timer-create-run.md#validate-the-timer).
 
 Timer logs display the following:
 

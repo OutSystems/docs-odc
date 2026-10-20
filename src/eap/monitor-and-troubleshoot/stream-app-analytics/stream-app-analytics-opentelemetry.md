@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - set-up-open-telemetry-collector
 content-type:
 audience:
   - Platform administrator

@@ -1,7 +1,7 @@
 ---
 guid: e9876507-c556-4e7e-984f-3a411913a26c
 locale: en-us
-summary: Apply these recommendations when selecting, integrating, and building Capacitor plugins in OutSystems Developer Cloud mobile apps.
+summary: OutSystems Developer Cloud (ODC) native plugin best practices help you choose supported plugins, pin versions, add fallbacks, and manage releases.
 figma:
 coverage-type:
   - apply

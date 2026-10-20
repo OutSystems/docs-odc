@@ -7,6 +7,7 @@ coverage-type:
   - apply
   - remember
 topic:
+  - app-extensibility-use-cases
 app_type: mobile apps
 platform-version: odc
 audience:

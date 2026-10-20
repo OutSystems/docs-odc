@@ -18,6 +18,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - configure-radar-chart
 isautopublish: true
 ---
 

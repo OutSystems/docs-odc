@@ -18,6 +18,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - lightbox-image-properties
+  - use-lightbox-image-pattern
 ---
 
 # Lightbox Image

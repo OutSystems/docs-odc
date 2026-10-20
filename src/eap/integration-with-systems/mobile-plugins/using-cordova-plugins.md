@@ -13,7 +13,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - wrap-cordova-plugin
+  - build-plugin-wrapper
+  - customize-plugin-hooks
+  - reference-cordova-plugin
 ---
 
 # Using Cordova plugins

@@ -17,8 +17,8 @@ coverage-type:
   - apply
 content-type:
 topic:
-  - config-app-after-deploy
-  - config-app-before-deploy
+  - edit-app-setting-values
+  - manage-app-settings
   - use-settings-in-logic
 audience:
   - Developer

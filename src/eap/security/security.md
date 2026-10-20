@@ -2,7 +2,7 @@
 summary: OutSystems Developer Cloud (ODC) security covers encryption, WAF, namespace isolation, vulnerability patching, and secure-by-design principles.
 tags:
   - Authentication
-  - IdP
+  - Authorization
   - Monitoring
   - OIDC
   - OWASP
@@ -299,6 +299,8 @@ OutSystems maintains formal policies and procedures for managing security incide
 OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
 Customers can report suspected privacy or security incidents through the Support Portal at `https://<customername>.outsystems.dev/support/`.
+
+For more information about the customer responsibilities in the OutSystems SOC 2 Type II audit, refer to [SOC 2 customer responsibilities in ODC](soc2-cuec.md).
 
 ## Additional links
 

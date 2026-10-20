@@ -1,5 +1,5 @@
 ---
-summary: Learn about the different build types available for iOS and Android mobile app packages in OutSystems Developer Cloud (ODC), including their purposes and requirements.
+summary: Mobile app build types in OutSystems Developer Cloud (ODC) cover Simulator, Development, App Store, Ad Hoc, In House, Debug, and Release choices.
 tags:
   - Android
   - Development lifecycle

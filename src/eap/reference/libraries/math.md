@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - built-in-math-functions-odc
 ---
 
 # Math

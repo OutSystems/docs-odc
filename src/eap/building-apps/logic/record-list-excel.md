@@ -8,22 +8,53 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6728-2
-api-render: false 
+api-render: false
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - evaluate
 content-type:
 audience:
   - Front-end developer
   - Developer
+topic:
+  - export-data-to-excel
+isautopublish: true
 ---
 
 # Record List to Excel
 
 The **Record List to Excel** action converts a Record list to an Excel file. This article explains how you can use the Record List action to convert your data into an Excel file.
 
-## Convert a Record List to Excel
+## Export data to Excel with Mentor Studio
+
+Add the **Record List to Excel** action to a Server Action by describing the export in Mentor Studio, and validate the parameters and the assignment before you publish.
+
+In your prompt, include the following:
+
+* The Server Action
+* The entity to export
+* The attributes to include or exclude
+* The Output Parameter that returns the file
+
+For example, the following sentences form one prompt:
+
+* "Create a Server Action named ExportEmployeeToExcel with a Binary Data Output Parameter named ExcelContent."
+* "Fetch the Employee entity with an aggregate, convert GetEmployees.List with Record List to Excel, and assign the result to ExcelContent."
+* "Exclude the Employee.Address attribute from the export."
+
+### Validate the conversion
+
+The platform guarantees that the model is valid, and you decide whether the export contains the data you need. Check the following against the [Properties](#properties) on this page:
+
+* The Server Action has an Output Parameter with a **Binary Data** data type.
+* The **Record List** property of **Record List to Excel** is a Record List, such as `GetEmployees.List`.
+* An Assign node sets the Output Parameter to the output of **Record List to Excel**.
+* The **Attribute Selection** section of **Record List to Excel** leaves out the attributes you don't want to export, such as **Employee.Address**.
+
+## Export data to Excel manually in ODC Studio
 
 The following example shows a scenario in which you export a list of employees from an Entity called **Employee** into an Excel spreadsheet.
 
@@ -41,7 +72,7 @@ The following example shows a scenario in which you export a list of employees f
 
     ![Screenshot of the Record List to Excel action configuration, showing the selection of attributes to be included in the Excel export.](images/select-odcs.png "Record List to Excel Action Configuration")
 
-## Properties
+## Properties {#properties}
 
 | Name | Description | Mandatory | Default value | Observations |
 | --- | --- | --- | --- | --- |
@@ -51,4 +82,9 @@ The following example shows a scenario in which you export a list of employees f
 
 ## Related resources
 
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and the reverse conversion.
+
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
 * [Excel to Record List](excel-record-list.md)
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

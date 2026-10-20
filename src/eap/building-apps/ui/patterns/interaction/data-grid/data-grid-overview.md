@@ -17,6 +17,9 @@ audience:
 coverage-type:
   - understand
   - apply
+topic:
+  - data-grid-overview
+  - install-forge-component
 outsystems-tools:
   - odc portal
   - forge

@@ -14,6 +14,8 @@ outsystems-tools:
   - none
 coverage-type:
   - understand
+topic:
+  - business-processes
 ---
 
 # About business processes

@@ -12,6 +12,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - add-azure-ai-search-data-source
 ---
 
 # Add Azure AI Search data source to the AI Agent Builder app

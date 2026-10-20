@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - paged-request-limit
 ---
 
 # OS-FRGE-AST-40003

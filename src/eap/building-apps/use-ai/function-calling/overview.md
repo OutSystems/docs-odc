@@ -16,6 +16,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - function-calling-overview
 ---
 
 # Introduction to function calling

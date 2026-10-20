@@ -19,7 +19,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - debug-troubleshoot-app-logic
+  - inspect-network-traffic
+  - simulate-mobile-network-conditions
 isautopublish: true
 ---
 

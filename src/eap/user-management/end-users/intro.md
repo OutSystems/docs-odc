@@ -23,9 +23,9 @@ outsystems-tools:
   - odc portal
   - odc studio
 topic:
-  - authorization
-  - authentication
-  - built-in-authentication
+  - authentication-management-overview
+  - builtin-member-workflow
+  - external-idp-member-workflow
 helpids:
 isautopublish: true
 ---

@@ -16,7 +16,8 @@ audience:
 outsystems-tools:
   - odc studio
 topic:
-  - manage-tech-debt
+  - change-finding-status
+  - review-code-findings
 ---
 # Getting started with Code quality as a developer
 

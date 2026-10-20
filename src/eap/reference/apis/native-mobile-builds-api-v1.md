@@ -11,6 +11,8 @@ audience:
   - Platform administrator
 coverage-type:
   - remember
+topic:
+  - native-mobile-build-api
 figma:
 api-render: true
 tags:

@@ -18,6 +18,40 @@
 # Agentic development
 - href: eap/agentic-development/intro.md
 - topics:
+    # How agentic development works
+    - href: eap/agentic-development/coding-agents.md
+    - topics:
+        - href: eap/agentic-development/architecture.md
+        - href: eap/agentic-development/context-graph.md
+        - href: eap/agentic-development/odc-ai-and-platform.md
+    # Modify apps (Mentor Studio)
+    - href: eap/agentic-development/mentor-studio/how-it-works.md
+    - topics:
+        - href: eap/agentic-development/mentor-studio/modify-app.md
+        - href: eap/agentic-development/mentor-studio/prompts.md
+        - href: eap/agentic-development/mentor-studio/capabilities.md
+        - href: eap/agentic-development/mentor-studio/conversation-history.md
+    # OutSystems MCP
+    - href: eap/agentic-development/outsystems-mcp/outsystems-mcp-overview.md
+    - topics:
+        # Get started
+        - href: eap/agentic-development/outsystems-mcp/get-started.md
+        - href: eap/agentic-development/outsystems-mcp/odc-overview.md
+        - href: eap/agentic-development/outsystems-mcp/connect-mcp-hosts.md
+        - href: eap/agentic-development/outsystems-mcp/use-with-o11.md
+        - href: eap/agentic-development/outsystems-mcp/give-feedback.md
+        # Workflows
+        - href: eap/agentic-development/outsystems-mcp/build-first-app.md
+        - href: eap/agentic-development/outsystems-mcp/evolve-app.md
+        - href: eap/agentic-development/outsystems-mcp/introspect-app.md
+        - href: eap/agentic-development/outsystems-mcp/extend-with-csharp.md
+        # Concepts
+        - href: eap/agentic-development/outsystems-mcp/mentor-delegation.md
+        - href: eap/agentic-development/outsystems-mcp/architecture.md
+        - href: eap/agentic-development/outsystems-mcp/governance.md
+        # Reference
+        - href: eap/agentic-development/outsystems-mcp/skills.md
+        - href: eap/agentic-development/outsystems-mcp/tool-reference.md
     # Create apps (Mentor Web)
     - href: eap/agentic-development/mentor-web/how-it-works.md
     - topics:
@@ -27,27 +61,32 @@
         - href: eap/agentic-development/mentor-web/requirements-doc.md
         - href: eap/agentic-development/mentor-web/capabilities.md
         - href: eap/agentic-development/mentor-web/ai-tools.md
-    # Modify apps (Mentor Studio)
-    - href: eap/agentic-development/mentor-studio/how-it-works.md
-    - topics:
-        - href: eap/agentic-development/mentor-studio/modify-app.md
-        - href: eap/agentic-development/mentor-studio/prompts.md
-        - href: eap/agentic-development/mentor-studio/capabilities.md
-    # Concepts
-    - href: eap/agentic-development/odc-ai-and-platform.md
-    - href: eap/agentic-development/effective-prompts.md
+    # Working with AI
     - href: eap/agentic-development/thinking-with-ai.md
-    - href: eap/agentic-development/architecture.md
-    - href: eap/agentic-development/coding-agents.md
+    - topics:
+        - href: eap/agentic-development/effective-prompts.md
+    # Governance
     - href: eap/agentic-development/sdlc.md
-    - href: eap/agentic-development/ai-limitations.md
-    - href: eap/agentic-development/security-safeguards.md
+    - topics:
+        - href: eap/agentic-development/security-safeguards.md
+        - href: eap/agentic-development/ai-limitations.md
+    # Reference
+    - href: eap/agentic-development/agentic-development-terminology.md
 
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
     # Application naming and URLs
     - href: eap/building-apps/app-naming.md
+    # Publishing your assets
+    - href: eap/building-apps/publishing/publishing-your-assets.md
+    - topics:
+        - href: eap/building-apps/publishing/revisions.md
+    # Merge
+    - href: eap/building-apps/merge/intro.md
+    - topics:
+        - href: eap/building-apps/merge/concepts.md
+        - href: eap/building-apps/merge/merge-example.md
     # Build AI-powered apps
     - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
@@ -179,6 +218,10 @@
         - topics:
             - href: eap/building-apps/data/data-best-practices/data-purging.md
             - href: eap/building-apps/data/data-best-practices/data-archiving.md
+            - href: eap/building-apps/data/data-best-practices/batch-integration/intro.md
+            - topics:
+                - href: eap/building-apps/data/data-best-practices/batch-integration/sequential.md
+                - href: eap/building-apps/data/data-best-practices/batch-integration/parallel.md
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
         - href: eap/building-apps/data/convert-data-types.md
@@ -387,11 +430,6 @@
         - href: eap/building-apps/events/implement-events.md
         - href: eap/building-apps/events/database-events.md
         - href: eap/building-apps/events/events-properties.md
-     # Merge
-    - href: eap/building-apps/merge/intro.md
-    - topics:
-        - href: eap/building-apps/merge/concepts.md
-        - href: eap/building-apps/merge/merge-example.md
     # Multilingual
     - href: eap/building-apps/ui/multilingual/intro.md
     - topics:
@@ -618,6 +656,13 @@
     - href: eap/integration-with-systems/external-databases/intro.md
     - topics: 
         - href: eap/integration-with-systems/external-databases/create-connection-external-data.md
+        - topics:
+            - href: eap/integration-with-systems/external-databases/considerations-azure-sql.md
+            - href: eap/integration-with-systems/external-databases/considerations-mysql.md
+            - href: eap/integration-with-systems/external-databases/considerations-oracle.md
+            - href: eap/integration-with-systems/external-databases/considerations-postgresql.md
+            - href: eap/integration-with-systems/external-databases/considerations-salesforce.md
+            - href: eap/integration-with-systems/external-databases/considerations-sap-odata.md
         - href: eap/integration-with-systems/external-databases/handle-null-values.md
         - href: eap/integration-with-systems/external-databases/sap-odata.md
         - href: eap/integration-with-systems/external-databases/external-data-type.md
@@ -691,6 +736,7 @@
     - href: eap/security/sentry.md
     - href: eap/security/hipaa.md
     - href: eap/security/pci.md
+    - href: eap/security/soc2-cuec.md
     - href: eap/security/configure-csp.md
     - topics:
         - href: eap/security/implement-csp.md
@@ -946,6 +992,8 @@
     - topics:
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/select-revision-build.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/code-quality.md
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/analyze-deployment-impact.md
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/security-vulnerabilities-validation.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/generated-code-sast.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/set-version-release-notes.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/asset-configurations.md

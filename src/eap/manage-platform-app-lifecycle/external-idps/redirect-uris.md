@@ -6,8 +6,7 @@ audience:
   - Platform administrator
 platform-version: odc
 topic:
-  - external-idps
-  - idp-openidp
+  - set-oidc-redirect-uris
 coverage-type:
   - apply
 figma:

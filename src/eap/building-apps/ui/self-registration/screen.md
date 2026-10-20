@@ -17,7 +17,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - self-registration
+  - create-sign-up-screen
 ---
 
 # Create the Sign up screen

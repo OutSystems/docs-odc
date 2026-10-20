@@ -17,6 +17,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - secure-getuserid-use
 ---
 # Insecure usage of GetUserId function on client context
 

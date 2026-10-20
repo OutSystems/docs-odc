@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-osstructure-field
 ---
 
 # OS-ELG-MODL-05011

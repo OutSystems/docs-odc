@@ -9,6 +9,8 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 coverage-type:
   - unblock
   - remember
+topic:
+  - css-best-practices
 audience:
   - Developer
   - Front-end developer

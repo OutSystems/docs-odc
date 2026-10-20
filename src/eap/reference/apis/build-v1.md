@@ -11,6 +11,8 @@ audience:
   - Platform administrator
 coverage-type:
   - remember
+topic:
+  - build-operations-api
 figma:
 api-render: true
 tags:

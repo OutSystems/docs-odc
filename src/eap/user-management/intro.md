@@ -22,12 +22,9 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - app-roles
-  - users-in-os
-  - user-types
-  - user-groups
-  - org-roles
-  - permissions
+  - authentication-management-overview
+  - odc-access-control-overview
+  - user-management-overview
 isautopublish: true
 ---
 

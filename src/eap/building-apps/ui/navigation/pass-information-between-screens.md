@@ -16,8 +16,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - navigate-screens
-  - input-parameters
+  - screen-inputs-and-variables
 ---
 
 # Pass Data Between Screens With Input Parameters

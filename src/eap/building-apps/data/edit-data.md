@@ -15,10 +15,13 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
+  - unblock
 topic:
-  - edit-data-service-studio
+  - edit-entity-data
+isautopublish: true
 ---
 
 # Edit data in ODC Studio
@@ -45,7 +48,44 @@ Adding, removing, and changing entity records during app development, allows you
 
 In ODC, you can use sample data to create screen instances. To learn more about using sample data, see [sample data](../ui/screen-template/sample-data.md)
 
-## How to edit an entity’s data in ODC Studio
+## Add records with Mentor Studio
+
+Add records by describing them in Mentor Studio. Mentor Studio generates bootstrap logic that creates the records, and publishing the app runs that logic and creates the records in the database. The entity must meet the same criteria as for manual editing.
+
+In your prompt, include the following:
+
+* The entity
+* The attribute values
+* The number of records
+
+Use fictional values, because prompts must not include personally identifiable information.
+
+For example, the following sentence is a prompt:
+
+* "Add three records to the Place entity with fictional names, addresses, and phone numbers."
+
+### Validate the bootstrap logic
+
+The platform guarantees that the model is valid, and you decide whether the logic creates the data you need for your test or demo. Mentor Studio adds the records through logic that calls the Create action of the entity, for example in an existing bootstrap server action. In the **Logic** tab of ODC Studio, check the following:
+
+* The logic creates one record for each record you described, in the entity you intended.
+* Each record sets every mandatory attribute, with a value that fits the data type of the attribute.
+* Foreign key values point to existing records.
+* The values are fictional and contain no personally identifiable information.
+
+### Validate the data
+
+After you publish the app, check the records that the bootstrap logic created. In the **Data** tab of ODC Studio, right-click the entity, select **View or Edit Data**, and check the following:
+
+* The entity contains the records you described.
+* Mandatory cells are filled. A red outline marks a mandatory cell without a value.
+* Foreign key values point to existing records. By design, ODC Studio doesn't validate foreign keys to referenced entities.
+
+If a record is wrong, correct the cell manually. Also correct the bootstrap logic, so that later runs of the logic create the values you need.
+
+## Edit data manually in ODC Studio
+
+To edit the data yourself, use the data grid that ODC Studio provides for each entity.
 
 <div class="info" markdown="1">
 
@@ -55,7 +95,7 @@ Additionally, foreign key cells for the User entity don't show values or suggest
 
 </div>
 
-**Prerequisites**
+### Prerequisites
 
 You must have the App management **Change** permission for the app
 
@@ -112,7 +152,7 @@ To modify a record's attribute or cell, follow these steps:
 1. Depending on the data type of the cell, set the data in one of the following ways:
 
     * For a **Text** or **Phone** cell, enter a text string, for example, text or +1 555 565 3730.
-    * For an **Email** cell, enter a text string with at least two characters separated by a @, for example, <fran.wilson@example.com>.
+    * For an **Email** cell, enter a text string with at least two characters separated by a @, for example, `fran.wilson@example.com`.
     * For an **Integer** or a **Long Integer** cell, enter an integer, for example, 10.
     * For a **Decimal** or a **Currency** cell, enter a decimal, for example, 10.8.
     * For a **Date** cell, enter a date using the YYYY-MM-DD format, for example, 1988-08-28.
@@ -152,3 +192,11 @@ You can permanently discard changes in one of the following ways:
 * To discard all of your changes, click **Discard** and then confirm that want to permanently discard your changes.
 
     ![Button to discard all changes in ODC Studio with a confirmation dialog](images/edit-data-discard-all-changes-odcs.png "Discarding All Changes in ODC Studio")
+
+## Related resources
+
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
+
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#data).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

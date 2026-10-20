@@ -13,7 +13,7 @@ description: >
   of questions. For validating a list or table of questions the user
   already wrote, use the knowledge-need-validator skill instead — this
   skill's job starts from a file, not a list.
-allowed-tools: Bash(gh api repos/OutSystems/tk-cicd/contents/knowledge-needs.yaml:*),Bash(gh repo view:*),Bash(git branch --show-current:*),Bash(gh api repos/OutSystems/tk-cicd --jq '.default_branch':*),Bash(gh api repos/OutSystems/tk-cicd/git/ref/heads/:*),Bash(gh api repos/OutSystems/tk-cicd/git/matching-refs/heads/add-knowledge-needs:*),Bash(gh api repos/OutSystems/tk-cicd/commits/add-knowledge-needs:*),Bash(gh pr list --repo OutSystems/tk-cicd --head add-knowledge-needs:*),Bash(diff:*)
+allowed-tools: Bash(gh api repos/OutSystems/tk-cicd/contents/knowledge-needs.yaml:*),Bash(gh repo view:*),Bash(git branch --show-current:*),Bash(gh api repos/OutSystems/tk-cicd --jq '.default_branch':*),Bash(gh api repos/OutSystems/tk-cicd/git/ref/heads/:*),Bash(gh api repos/OutSystems/tk-cicd/git/matching-refs/heads/add-knowledge-needs:*),Bash(gh api repos/OutSystems/tk-cicd/commits/add-knowledge-needs:*),Bash(gh pr list --repo OutSystems/tk-cicd --head add-knowledge-needs:*),Bash(diff:*),Bash(python3 .github/skills/knowledge-needs-classification/scripts/validate_register.py:*),Bash(python .github/skills/knowledge-needs-classification/scripts/validate_register.py:*)
 ---
 
 # Knowledge needs content classification
@@ -54,10 +54,20 @@ This skill does update the input file's own frontmatter, but only the
 2. If the path doesn't exist or can't be read, stop and ask the user to
    provide the correct path — don't guess at a different path or proceed
    without the content.
-3. Read the whole piece before drafting anything — don't propose knowledge
+3. Determine the applicable identifier key: `kp-guid` if the current
+   repository name starts with `training`, otherwise `guid`. Get the
+   repository name from the **remote** repository, not the local folder
+   name — a worktree's folder often doesn't match the repo name. Prefer
+   `gh repo view --json name --jq '.name'` when the `gh` tool is available;
+   otherwise fall back to `git remote get-url origin` and take the last
+   path segment, stripped of a trailing `.git`. If the file's frontmatter
+   does not contain that identifier field, stop — files without an
+   identifier don't need knowledge needs classification and are excluded
+   from this skill.
+4. Read the whole piece before drafting anything — don't propose knowledge
    needs section-by-section without having seen the full document first,
    since later sections can change how earlier ones should be scoped.
-4. Note whether a `topic` field already exists in the file's frontmatter,
+5. Note whether a `topic` field already exists in the file's frontmatter,
    and if so, its current values — this is used as a prior in Step 9.
 
 ## Step 2 — Fetch the register
@@ -81,6 +91,14 @@ knowledge-needs:
       id: <slug>
       description: <optional>
 ```
+
+**The nesting is exactly 3 levels — category > topic > subtopic — and a
+subtopic is always a leaf.** A subtopic entry must never have a `subtopics`
+key of its own; if a subtopic needs finer breakdown, either add more
+subtopics as siblings under the same topic, or promote it to a topic in its
+own right (with its own `subtopics`) — never nest a fourth level under an
+existing subtopic. `validate-metadata.yml`'s schema check rejects a subtopic
+that has its own `subtopics`, so this isn't just a style preference.
 
 **How to fetch it:**
 
@@ -190,7 +208,12 @@ For every `NEW` candidate (not `REUSE`):
    taxonomy (the categories, topics, and subtopics already in
    `knowledge-needs.yaml`) reasonably covers it.
 2. If an existing topic fits but the specific question isn't covered yet, add
-   it as a new subtopic under that topic.
+   it as a new subtopic under that topic — as a sibling of the topic's other
+   subtopics, never nested under one of them. A subtopic is always a leaf
+   (Step 2); if the closest conceptual fit is an existing *subtopic* rather
+   than a topic, that subtopic needs to become a topic of its own (moved up a
+   level, with the new entry added as one of its subtopics) — don't nest the
+   new entry under it as-is.
 3. Generate the `id`: lowercase, hyphen-separated, derived from the name,
    unique across the entire flattened register — check for collisions before
    finalizing.
@@ -247,13 +270,29 @@ the matching option above.
   same `gh api repos/OutSystems/tk-cicd/contents/knowledge-needs.yaml`
   command as Step 3.
   Whichever copy you insert into below, validate it immediately after
-  inserting and before saving, committing, or pushing it: parse the file
-  with a YAML parser (for example
-  `python3 -c "import yaml; yaml.safe_load(open('<path>'))"`) and confirm it
-  succeeds. If it fails, the most likely cause is a `name` or `description`
-  value that needed the quoting rule from Step 7 — fix it and re-validate
-  before continuing. Never save, commit, or push a `knowledge-needs.yaml`
-  that fails to parse.
+  inserting and before saving, committing, or pushing it, by running the
+  bundled validator against that file:
+  `python3 .github/skills/knowledge-needs-classification/scripts/validate_register.py <path>`
+  (the `scripts/` folder next to this `SKILL.md`; use `python` if `python3`
+  isn't available). It checks that the file parses as YAML **and** that the
+  register structure is valid — exactly 3 levels with subtopics as leaves,
+  unique `id`s, required `name`s — and prints every problem it finds.
+  **If it fails, fix the file yourself and re-run it; repeat until it exits
+  0.** Don't ask the user and don't skip it. Typical causes:
+  - *Does not parse* — a `name` or `description` that needed the quoting
+    rule from Step 7. Quote it and re-validate.
+  - *Subtopic has its own `subtopics`* — the new entries were nested under an
+    existing subtopic. Re-apply Step 7.2: add them as siblings under the same
+    topic, or promote that subtopic to a topic of its own (move it up a
+    level and put the new entries under it).
+  - *Duplicate or missing `id`* — regenerate the `id` per Step 7.3.
+
+  Fix by editing only the entries you added — never restructure or delete
+  existing entries to make the validator pass beyond the promotion in Step
+  7.2. If the file still fails after a few honest attempts, stop: don't save,
+  commit, or push it, show the user the validator output and the proposed
+  placement, and ask how to proceed. Never save, commit, or push a
+  `knowledge-needs.yaml` that fails this validator.
   - **`tk-cicd` unreachable** — insert each approved `NEW` item at its
     placement directly into the **local** `knowledge-needs.yaml` (the file
     read in Step 2, at the repo root) instead, and save it. Tell the user

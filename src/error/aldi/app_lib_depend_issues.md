@@ -16,6 +16,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - resolve-dependency-error
 ---
 
 # Solving app or library dependency errors

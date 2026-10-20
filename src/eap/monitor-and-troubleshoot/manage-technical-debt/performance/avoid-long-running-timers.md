@@ -14,6 +14,8 @@ audience:
   - Platform administrator
 outsystems-tools:
   - self hosted console
+topic:
+  - timer-best-practices
 ---
 # Avoid long-running Timers
 

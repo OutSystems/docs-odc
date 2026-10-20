@@ -1,12 +1,20 @@
 ---
 summary: Explore key differences between OutSystems 11 (O11) and OutSystems Developer Cloud (ODC) in app development, lifecycle management of assets, and library usage.
-tags: outsystems developer cloud, odc vs o11, app development, libraries, element reuse
+tags:
+  - Agentic
+  - Architecture
+  - Deploy
+  - Development lifecycle
+  - Libraries
+  - Mobile app
+  - Workflows
 locale: en-us
 guid: cb10aa0f-4e5b-4a29-92ce-03fbc813bc14
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/RJa2jhHlZ3O7UDDV8zWIwZ/Onboarding-for-OutSystems-developers?node-id=2449-32709
 audience:
+  - Architect
   - Developer
   - Platform administrator
 outsystems-tools:
@@ -15,12 +23,15 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - outsystems-overview
+  - o11-to-odc-overview
+  - odc-library-overview
 isautopublish: true
 ---
 # ODC for O11 developers
 
 This article summarizes differences in functionality and features that developers familiar with OutSystems 11 (O11) may find helpful when learning about OutSystems Developer Cloud (ODC).
+
+In ODC, you build apps with agentic development. You describe the app in natural language, and Mentor generates or modifies it. You apply your O11 modeling experience to review the data model, screens, and logic that Mentor produces. The differences in the following sections apply whether you build with Mentor or by hand in ODC Studio. For more information about the development paths, refer to [Agentic development](../agentic-development/intro.md).
 
 ## App development
 

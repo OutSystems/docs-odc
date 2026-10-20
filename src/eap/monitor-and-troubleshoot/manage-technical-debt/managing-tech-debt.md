@@ -92,3 +92,4 @@ For more information, refer to [Getting started with Code quality as a developer
 
 * [Working with Code quality](working-with-code-quality.md)
 * [Setting up Code quality](how-does-aims-works.md)
+* [Understanding the impact analysis report](../../deploying-apps/deploy-apps.md#understanding-the-impact-analysis-report) — Dependency-based impact analysis, distinct from code quality analysis.

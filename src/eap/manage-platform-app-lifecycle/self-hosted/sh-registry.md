@@ -18,6 +18,7 @@ audience:
   - Platform administrator
 tags:
   - Authentication
+  - Authorization
   - Infrastructure
   - Security
 outsystems-tools:

@@ -19,6 +19,8 @@ audience:
   - Platform administrator
   - Tech lead
   - Architect
+topic:
+  - stream-to-amazon-s3
 ---
 
 # Stream observability data to Amazon S3

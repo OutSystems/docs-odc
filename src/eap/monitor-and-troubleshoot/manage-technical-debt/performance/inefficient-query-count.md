@@ -7,6 +7,8 @@ tags:
   - Technical Debt
   - Troubleshooting
 guid: 0b899e99-db9d-4840-85ae-691656b8f0d8
+topic:
+  - optimize-data-fetching
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc

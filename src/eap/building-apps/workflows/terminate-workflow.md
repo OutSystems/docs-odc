@@ -8,6 +8,8 @@ platform-version: odc
 figma:
 coverage-type:
   - understand
+topic:
+  - terminate-workflow
 audience:
   - Developer
 outsystems-tools:

@@ -1,7 +1,7 @@
 ---
 guid: b2cecd1e-1c27-4b49-97fe-f89c9fda7dea
 locale: en-us
-summary: Manage workflow publishing messages in OutSystems Developer Cloud (ODC) to validate configurations, track revisions, and support collaborative development.
+summary: OutSystems Developer Cloud (ODC) publish with message for workflows lets you add custom notes, revision history, and conflict review.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=9880-1161&p=f&t=JROE02jIB3OACfDg-0
 coverage-type:
   - apply
@@ -14,6 +14,7 @@ audience:
   - Developer
   - Tech lead
 tags:
+  - Deploy
   - Workflows
 outsystems-tools:
   - odc portal
@@ -22,7 +23,7 @@ isautopublish: true
 ---
 # Messages in workflows publishing
 
-After you implement your workflow in the ODC workflow editor, you need to publish it to make it available for execution. Publishing a workflow validates its configuration and deploys it to the Development stage of your ODC tenant.
+After you implement your workflow in the ODC workflow editor, you publish it to make it available for execution. Publishing a workflow validates its configuration and deploys it to the Development stage of your ODC tenant. For more information about publishing and the asset lifecycle, refer to [Publishing your assets](../publishing/publishing-your-assets.md).
 
 You can publish a workflow in two ways:
 
@@ -39,7 +40,7 @@ Writing a clear and descriptive message can help you and your team understand th
 
 ## Messages in revision history
 
-When you publish a workflow, you are creating a new revision of that workflow. Each revision is stored in the workflow's revision history, allowing you to track changes over time and revert to previous versions if necessary.
+When you publish a workflow, you create a new revision of that workflow. Each revision is stored in the workflow's revision history, allowing you to track changes over time and revert to previous revisions if necessary.
 
 If you have added a custom message during the publish action, this message will be displayed in the revision history alongside the revision details. This helps you and your team understand the purpose of each revision and the changes that were made.
 
@@ -61,4 +62,4 @@ If someone published a newer revision while you were editing, a dialog appears w
 
 Click **Compare both versions** to open a side-by-side comparison of your version and the latest published revision before deciding whether to override or cancel.
 
-For more information, see [Compare revisions when publishing](compare-versions.md#compare-revisions-when-publishing).
+For more information, refer to [Compare revisions when publishing](compare-versions.md#compare-revisions-when-publishing).

@@ -13,6 +13,8 @@ audience:
   - Developer
 outsystems-tools:
   - none
+topic:
+  - webservice-authentication
 ---
 # Exposed REST services without authentication
 

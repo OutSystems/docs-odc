@@ -6,6 +6,8 @@ figma:
 coverage-type:
   - understand
 topic:
+  - sentry-capabilities
+  - view-subscription-entitlements-odc
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
@@ -30,7 +32,7 @@ Sentry for OutSystems Developer Cloud (ODC) is a security and compliance add-on 
 
 Sentry for ODC includes the following capabilities:
 
-* **Compliance certifications**: Attestation and documentation for regulatory standards including HIPAA and PCI DSS. For more information, refer to [HIPAA compliance with ODC](hipaa.md) and [PCI compliance with ODC](pci.md). For a current list of all certifications and attestations, refer to [OutSystems ODC with Sentry security](https://security.outsystems.com/?product=odcwithsentry).
+* **Compliance certifications**: Attestation and documentation for regulatory standards including HIPAA and PCI DSS. For more information, refer to [HIPAA compliance with ODC](hipaa.md) and [PCI compliance with ODC](pci.md). For SOC 2 customer responsibilities, refer to [SOC 2 customer responsibilities in ODC](soc2-cuec.md). For a current list of all certifications and attestations, refer to [OutSystems ODC with Sentry security](https://security.outsystems.com/?product=odcwithsentry).
 
 * **IP filtering**: Restrict access to your apps based on IP addresses. Create rules at the app level, within app groups, or by stage to control which traffic reaches your deployed assets. For more information, refer to [Manage IP filters](../manage-platform-app-lifecycle/filter-ip.md).
 

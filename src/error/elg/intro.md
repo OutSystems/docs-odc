@@ -14,6 +14,8 @@ outsystems-tools:
   - none
 coverage-type:
   - unblock
+topic:
+  - external-library-errors
 ---
 
 # External Libraries SDK errors

@@ -18,6 +18,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - troubleshoot-mashup-errors
 isautopublish: true
 ---
 

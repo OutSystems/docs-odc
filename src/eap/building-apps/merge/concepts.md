@@ -1,6 +1,6 @@
 ---
-summary: "ODC merge feature: how automatic revision merging, conflict resolution, and comparing revisions work in OutSystems Developer Cloud (ODC) Studio."
-tags: version control, collaboration
+summary: ODC merge feature. How automatic revision merging, conflict resolution, and comparing revisions work in OutSystems Developer Cloud (ODC) Studio.
+tags: []
 locale: en-us
 guid: c9965707-75fb-442f-ad27-6fbe322fcf08
 app_type: mobile apps, reactive web apps
@@ -14,19 +14,22 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+content-type:
+  - conceptual
+isautopublish: true
 ---
 
 # The merge feature and team collaboration
 
-OutSystems Developer Cloud (ODC) uses a simple versioning system that assigns an incremental revision number to each published app. ODC allows you to restore or compare an app to any previous revision stored on the server.
+OutSystems Developer Cloud (ODC) uses a versioning system that assigns an incremental revision number to each published app. ODC lets you restore or compare an app to any previous revision stored on the server.
 
-Multiple developers can work on the same app simultaneously. When you publish changes, ODC automatically attempts to merge your code with changes made by other developers. If there are any conflicts, ODC studio displays **Conflicting revision found**.
+Multiple developers work on the same app simultaneously. When you publish changes, ODC automatically attempts to merge your code with changes made by other developers. If there are conflicts, ODC Studio displays **Conflicting revision detected**.
 
-For more information about merge feature, see [Using the Compare and Merge window](intro.md).
+For more information about the merge feature, refer to [Merge the work](intro.md).
 
 ## Automatic merge of app revisions
 
-When no conflicts exist in visual elements (e.g., screens, widgets) and textual elements (e.g., CSS, JavaScript), ODC automatically performs a merge. For example,<br/>
+When no conflicts exist in visual elements (for example, screens and widgets) and textual elements (for example, CSS and JavaScript), ODC automatically performs a merge. For example:<br/>
 
 1. Other developers open revision 4 of the app and start developing it.
 1. You also open revision 4 of the app and begin developing.
@@ -38,7 +41,7 @@ When no conflicts exist in visual elements (e.g., screens, widgets) and textual 
 
 ## Resolve merge conflicts
 
-When multiple developers modify the same app elements, OutSystems cannot automatically merge the work. You must resolve the conflicts manually by choosing the changes you want to publish. For example,<br/>
+When multiple developers modify the same app elements, ODC can't automatically merge the work. You must resolve the conflicts manually by choosing the changes you want to publish. For example:<br/>
 
 1. Other developers open revision 4 of the app in ODC Studio and start developing it.
 1. You open revision 4 of the app in ODC Studio and start developing.
@@ -47,14 +50,14 @@ When multiple developers modify the same app elements, OutSystems cannot automat
 1. ODC detects changes to be merged based on the revision from which both parties started developing (V4). The **Conflicting revision detected** window displays two options,
     * **Override with this revision**: Overwrites published changes with your changes.
     * **Compare revisions**: Compares published changes and your changes to select which change to publish.
-1. Click **Compare revisions** to display a compare and merge screen between the published and your changes.
-1. Select the changes you want to keep and click **Merge and publish**.
+1. Select **Compare revisions** to display a compare and merge screen between the published and your changes.
+1. Select the changes you want to keep and select **Merge and publish**.
 
 ![Diagram showing the steps to resolve merge conflicts in OutSystems Developer Cloud](images/resolve-merge-conflicts-diag.png "Resolve Merge Conflicts Diagram")
 
 ## Compare and merge revisions
 
-You compare the changes of your local app with a previously published revision of the app on the server. From the top left corner in ODC Studio, click the Hamburger icon > **App** to display a list of options:
+You compare the changes of your local app with a previously published revision of the app on the server. From the top left corner in ODC Studio, select the menu icon > **App** to display a list of options:
 
 * **Compare and Merge with published revision** – enables you to compare the published revision of the app with the currently open app.
 * **Compare and Merge with another revision of file** –  fetches the list of the available revisions of the app from the server, selects one revision and compares it with the currently open revision. Additionally, you can load a local app from your system.

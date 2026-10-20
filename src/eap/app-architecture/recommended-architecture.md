@@ -21,8 +21,9 @@ coverage-type:
   - evaluate
   - understand
 topic:
-  - application-composition
-  - map-os-to-global-concepts
+  - app-ownership-cadence
+  - bounded-context-mapping
+  - odc-architecture-overview
 isautopublish: true
 ---
 

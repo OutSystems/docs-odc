@@ -20,7 +20,7 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - screen-template
+  - screen-template-overview
 ---
 
 # Screen templates

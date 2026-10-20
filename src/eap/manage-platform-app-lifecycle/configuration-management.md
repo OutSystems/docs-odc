@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables efficient app configuration management without the need for redeployment.
+summary: OutSystems Developer Cloud (ODC) configuration management lets you update stage-specific settings, timers, and REST integrations without redeploying.
 tags:
   - CI/CD
   - REST

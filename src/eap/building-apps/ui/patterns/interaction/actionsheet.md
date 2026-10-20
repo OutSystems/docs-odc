@@ -19,6 +19,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - action-sheet-reference
+  - use-action-sheet-pattern
 ---
 
 # Action Sheet

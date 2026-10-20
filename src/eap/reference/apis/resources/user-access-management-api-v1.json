@@ -3346,7 +3346,7 @@
           "users"
         ],
         "summary": "Returns the user count based on specified conditions.",
-        "description": "Returns the user count that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission.",
+        "description": "Returns the user count that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission.",
         "operationId": "UserProfile_CountUsers",
         "parameters": [
           {
@@ -3507,7 +3507,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission."
       }
     },
     "/users": {
@@ -3516,7 +3516,7 @@
           "users"
         ],
         "summary": "Creates a new user.",
-        "description": "Creates a new user by specifying the user information. You can provide the user's name, photo URL, and active status. Additionally, the AddToBuiltInIdentityProvider can be used to add the user to the built-in provider.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Creates a new user by specifying the user information, such as name, email, photo URL, and active status.\n\nTo let the user sign in with the built-in identity provider, set `addToBuiltInIdentityProvider` to `true`. The built-in identity provider identifies users by email, not by username.\n\nTo link the user to an external identity provider at creation time, provide `identityProviderKey`. ODC creates a `UserIdpProfile` for that provider and stores `username` and `subject` on it. ODC uses those values to match the user the first time they sign in through that provider.\n\nWithout `identityProviderKey`, ODC ignores `username` and `subject`, and the user profile has no username. A username belongs to one identity provider, and the `PATCH /users/{ key }` method doesn't update it.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "UserProfile_CreateUser",
         "requestBody": {
           "description": "The user object with the necessary information.",
@@ -3600,7 +3600,7 @@
           "users"
         ],
         "summary": "Returns the list of users based on specified conditions.",
-        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission.",
         "operationId": "UserProfile_QueryUsers",
         "parameters": [
           {
@@ -3840,7 +3840,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission."
       }
     },
     "/users/{key}": {
@@ -3925,7 +3925,7 @@
           "users"
         ],
         "summary": "Retrieves a user.",
-        "description": "Retrieves detailed information about a user using the user's key.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission.",
+        "description": "Retrieves detailed information about a user using the user's key.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission.",
         "operationId": "UserProfile_GetUser",
         "parameters": [
           {
@@ -4012,7 +4012,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission."
       },
       "patch": {
         "tags": [

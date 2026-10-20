@@ -12,6 +12,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - common-plugin-actions
+  - plugin-manager-scopes
 ---
 
 # Common plugin

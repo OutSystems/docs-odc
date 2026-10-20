@@ -15,6 +15,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-custom-ai-model
+  - custom-model-connections-odc
 ---
 
 # Add a custom AI model

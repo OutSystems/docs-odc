@@ -7,6 +7,7 @@ coverage-type:
   - remember
   - apply
 topic:
+  - stage-prerequisites
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:

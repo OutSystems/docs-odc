@@ -14,6 +14,8 @@ outsystems-tools:
   - forge
 coverage-type:
   - unblock
+topic:
+  - forge-errors
 ---
 
 # OS-FRGE-AST-40302

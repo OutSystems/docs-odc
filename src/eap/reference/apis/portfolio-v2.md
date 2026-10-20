@@ -1,5 +1,5 @@
 ---
-summary: This article describes the Portfolio REST API v2 endpoint details.
+summary: Portfolio API v2 reference for OutSystems Developer Cloud (ODC) endpoint details and the /api/portfolio/v2 server URL.
 locale: en-us
 guid: d4294848-3a75-44c5-b4a0-03ef6a32ba34
 app_type: mobile apps, reactive web apps

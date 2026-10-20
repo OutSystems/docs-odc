@@ -79,21 +79,21 @@ The iteration cycle follows three steps:
 
 Agentic development provides immediate visual feedback with sample data, so you evaluate each change before continuing. Through this rapid iteration, you refine the app toward its requirements without writing code or configuring screens by hand.
 
-Use agentic development for structural changes such as entities, data models, roles, and standard UI patterns. Build advanced logic, complex aggregates, and external integrations in ODC Studio, with Mentor Studio or manual development. For a breakdown of when to transition, refer to [When to use each tool](intro.md#when-to-use-each-tool).
+Use agentic development for structural changes such as entities, data models, roles, and standard UI patterns. Build advanced logic, complex aggregates, and external integrations in ODC Studio, with Mentor Studio or manual development. For a breakdown of when to transition, refer to [Scope and limits](coding-agents.md#scope-and-limits).
 
 ## Match oversight to impact
 
 The effort you spend reviewing a change scales with its complexity and reach.
 
-A contained change, such as adding an attribute, affects a single element, and you verify it directly after Mentor Studio applies it. A change that spans multiple elements, dependencies, or workflows affects more of the app, and an incorrect assumption propagates further. For changes of this kind, the Mentor tools present their intended work for review before applying it: the blueprint in Mentor Web, and proposed changes in Mentor Studio. Reviewing and accepting a proposal before Mentor applies it keeps the change supervised and verifiable.
+Verify a contained change, such as adding an attribute, directly. Give a change that spans multiple elements, dependencies, or workflows closer review before you accept it, because an incorrect assumption propagates further.
 
-For the specific checks your development judgment maps to when you review a proposal, refer to [Review checks](odc-ai-and-platform.md#review-checks). For how this works when modifying apps, refer to [AI development in Mentor Studio](mentor-studio/how-it-works.md).
+For how Mentor presents complex changes for review before applying them, refer to [Your control over changes](coding-agents.md#your-control-over-changes). For the specific checks your judgment maps to, refer to [Review checks](odc-ai-and-platform.md#review-checks).
 
 ## Related resources
 
 This article covers the mindset for prompt-based development. The following resources cover the prompt techniques, tool workflows, and architecture in detail.
 
 * For prompt strategies that improve AI responses across all Mentor tools, refer to [Effective prompts for Mentor](effective-prompts.md).
-* For the technical architecture behind agentic development, including AI agents and the OutSystems Model, refer to [Architecture](architecture.md).
+* For the technical architecture behind agentic development, including Mentor and the OutSystems Model, refer to [Architecture](architecture.md).
 * For the app creation workflow in Mentor Web, including the blueprint validation step, refer to [How AI app generation works](mentor-web/how-it-works.md).
 * For the app modification workflow in Mentor Studio, refer to [AI development in Mentor Studio](mentor-studio/how-it-works.md).

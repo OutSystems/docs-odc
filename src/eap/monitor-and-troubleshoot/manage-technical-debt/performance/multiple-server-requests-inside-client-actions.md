@@ -7,6 +7,8 @@ tags:
   - Performance
   - Troubleshooting
 guid: e23a842d-a31b-4cb8-850a-f6612d1f0c16
+topic:
+  - multiple-server-calls-client-action
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc

@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - troubleshoot-odc-entity-list-errors
 ---
 
 # OS-INTC-60005

@@ -12,6 +12,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - agent-builder-analytics
 ---
 
 # Analyze agent

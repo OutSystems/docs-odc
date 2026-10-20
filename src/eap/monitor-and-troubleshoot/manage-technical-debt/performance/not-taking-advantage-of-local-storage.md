@@ -13,6 +13,8 @@ audience:
   - Developer
 outsystems-tools:
   - odc studio
+topic:
+  - load-screen-data-locally
 ---
 # Not taking advantage of Local Storage
 

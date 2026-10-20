@@ -17,6 +17,9 @@ audience:
   - Platform administrator
 coverage-type:
   - understand
+topic:
+  - api-client-statuses
+  - create-api-client
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3495-24&t=Ee0vNUQza7lfj7Sy-1
 ---

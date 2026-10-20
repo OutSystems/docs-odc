@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - go-to-flow-step
 ---
 
 # Go to a flow step in workflows

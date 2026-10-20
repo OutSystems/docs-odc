@@ -16,11 +16,14 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - remember
   - understand
+  - evaluate
 topic:
-  - write-expressions-guide
+  - use-expression-editor
+isautopublish: true
 ---
 
 # Edit expressions
@@ -50,6 +53,15 @@ Description pane
 Status
 :     The expression status (5) tells you if the expression you're editing is valid or not.
 
+## Validate an expression
+
+The platform guarantees that the model is valid, and you decide whether the expression returns the value you need. Check the following in the expression editor. The checks are examples, not a complete list.
+
+* The status (5) shows that the expression is valid.
+* The variables and functions come from the scope pane (3), so they are available where you edit the expression.
+* A function that comes from an action is an action that you set as a function, because only those actions show in the scope pane.
+* The description pane (4) shows the documentation of a function, so you can confirm what the function returns.
+
 ## Notes
 
 The following are notes about expression and the expression widget, and the concepts that are closely related to the expression editor.
@@ -65,3 +77,9 @@ An expression is what you edit in the expression editor. An expression consists 
 ### Expression widget
 
 To quickly display the result of an expression, use the Expression widget.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

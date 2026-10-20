@@ -7,6 +7,8 @@ tags:
   - Technical Debt
   - Widgets
 guid: 6459d2b6-9050-4c7e-ba16-4a24dec7394a
+topic:
+  - protect-block-parameters
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc

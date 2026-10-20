@@ -21,7 +21,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - ui-elements-screen-blocks
+  - configure-ui-flow
+  - scaffold-screens
+  - ui-flow-editor
 ---
 
 # UI flows

@@ -13,6 +13,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - create-analytics-stream
+  - stream-to-splunk
 content-type: 
 audience:
   - Platform administrator

@@ -17,6 +17,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - create-ai-agent
 ---
 
 # Create an agent

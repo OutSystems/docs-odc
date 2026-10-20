@@ -19,6 +19,7 @@ audience:
   - Front-end developer
   - Platform administrator
 topic:
+  - manage-ai-model-connections
 isautopublish: true
 ---
 # Adding AI models

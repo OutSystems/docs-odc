@@ -14,11 +14,14 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - remember
   - understand
+  - evaluate
 topic:
-  - operands
+  - expression-operands
+isautopublish: true
 ---
 
 # Operands
@@ -71,3 +74,19 @@ The following is a screenshot showing an expression in the expression editor. Th
 * `Sqrt()`: a built-in function
 
 ![Screenshot showing an expression in the expression editor](images/operands-ss.png "Expression Editor")
+
+## Correct operand output
+
+The platform guarantees that the model is valid, and you decide whether the operands express what you need. The following checks are examples, not a complete list.
+
+* **Data type.** Each operand has the [data type](../../data/data-types.md) that the operation needs.
+* **Scope.** Each variable, parameter, and function is available in the scope where you edit the expression. The [expression editor](expression-editor.md) shows the available operands.
+* **Literals.** A value that changes over time is a variable or a value from settings, not a literal hard-coded in the expression.
+* **Functions.** Each function is a built-in function, a user-defined function in the app, or a function that the app consumes from a library.
+* **Smart names.** A value named with a smart name, such as **PurchaseDate**, has the data type that ODC Studio sets from the name.
+
+## Related resources
+
+The following resource describes what the platform guarantees and what you check in a Mentor Studio proposal.
+
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../../agentic-development/odc-ai-and-platform.md).

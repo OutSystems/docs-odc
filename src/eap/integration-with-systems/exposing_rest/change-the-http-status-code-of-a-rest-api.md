@@ -14,7 +14,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - error-codes
+  - customize-http-response
 ---
 
 # Change the HTTP Status Code of a REST API

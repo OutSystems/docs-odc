@@ -18,6 +18,10 @@ outsystems-tools:
   - forge
 coverage-type:
   - apply
+topic:
+  - agent-builder-process
+  - ai-agent-builder-sample-apps
+  - create-ai-agent
 ---
 
 # Using the AI Agent Builder

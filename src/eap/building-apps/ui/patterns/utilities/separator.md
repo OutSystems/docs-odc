@@ -16,6 +16,7 @@ coverage-type:
   - remember
 topic:
   - add-widget-ui-pattern
+  - use-separator-pattern
 ---
 
 # Separator

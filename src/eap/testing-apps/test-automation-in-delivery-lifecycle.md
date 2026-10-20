@@ -18,6 +18,10 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - gherkin-functional-criteria
+  - team-automation-roles
+  - three-amigos-sessions
 ---
 
 # Test Automation in the Delivery Lifecycle

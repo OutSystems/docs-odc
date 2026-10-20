@@ -13,6 +13,8 @@ outsystems-tools:
   - none
 coverage-type:
   - unblock
+topic:
+  - appshield-settings-error
 ---
 
 # OS-FRGE-AST-40008

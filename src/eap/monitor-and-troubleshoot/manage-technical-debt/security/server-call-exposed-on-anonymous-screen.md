@@ -7,6 +7,7 @@ coverage-type:
   - unblock
   - remember
 topic:
+  - secure-anonymous-screens
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

@@ -19,6 +19,10 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - check-file-plugin-version
+  - create-file-blob-url
+  - migrate-file-plugin-actions
 isautopublish: true
 ---
 

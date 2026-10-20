@@ -22,6 +22,9 @@ audience:
 coverage-type:
   - understand
   - evaluate
+topic:
+  - human-activity-sla
+  - add-wait-activity
 ---
 
 # Implementing SLAs in workflows

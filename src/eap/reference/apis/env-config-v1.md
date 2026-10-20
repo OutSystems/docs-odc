@@ -2,6 +2,8 @@
 summary: This article describes the Environment Configurations REST API endpoint details.
 locale: en-us
 guid: 9ed82de3-dd3f-4b5d-9935-184abdbadf04
+topic:
+  - environment-configurations-api
 app_type: mobile apps, reactive web apps
 platform-version: odc
 content-type:

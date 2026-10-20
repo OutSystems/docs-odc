@@ -16,6 +16,8 @@ audience:
   - Developer
 outsystems-tools:
   - none
+topic:
+  - hard-coded-statements
 ---
 # Hard-coded statements
 

@@ -14,7 +14,9 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
+  - set-text-behavior
   - translating-apps
+  - use-translation-editor
 ---
 
 # Translating with the translation editor

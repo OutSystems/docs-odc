@@ -14,6 +14,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - fix-unused-query-warning
 ---
 # Unused Aggregate or SQL Query
 

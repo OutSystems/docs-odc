@@ -19,6 +19,7 @@ content-type:
 coverage-type:
   - remember
 topic:
+  - external-type-mapping
 isautopublish: true
 ---
 

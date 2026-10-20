@@ -21,6 +21,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - cloud-messaging-actions
+  - cloud-messaging-apis
+  - cloud-messaging-limitations
 ---
 
 # Firebase Cloud Messaging plugin using configurator APIs

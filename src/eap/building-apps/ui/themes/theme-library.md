@@ -1,9 +1,10 @@
 ---
 summary: Learn how to create and utilize a theme library in OutSystems Developer Cloud (ODC) to enhance app branding and consistency.
 tags:
+  - Blocks
   - Front-End
-  - Layouts
   - Libraries
+  - Layouts
   - OutSystems UI
   - Themes
   - UI

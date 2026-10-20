@@ -18,7 +18,9 @@ outsystems-tools:
 coverage-type:
   - unblock
 topic:
-  - debug-troubleshoot-app-logic
+  - app-detection-issues
+  - debug-port-conflicts
+  - device-discovery-issues
 isautopublish: true
 ---
 

@@ -27,6 +27,8 @@ isautopublish: true
 
 With OutSystems Developer Cloud (ODC), architects can design apps to solve business problems and automate business processes using a **cloud-native** approach to the architecture. In a cloud-native architecture, an app is decomposed into loosely coupled and independently deployable components or services.
 
+When you build with agentic development, Mentor generates a data model, screens, and logic from a natural-language description. The architecture decisions in this section remain yours, such as how to decompose a solution into loosely coupled apps and where to set boundaries and ownership. You decide whether the structure that Mentor generates fits your domain. For more information about building apps with Mentor, refer to [Agentic development](../agentic-development/intro.md).
+
 In a cloud-native architecture, you can use a single app in ODC:
 
 * To solve a specific business need with a single web or mobile user interface.

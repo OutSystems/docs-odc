@@ -13,6 +13,8 @@ outsystems-tools:
   - ai mentor studio
 coverage-type:
   - remember
+topic:
+  - custom-model-connections-odc
 ---
 
 # Custom AI model API contract

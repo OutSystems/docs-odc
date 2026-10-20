@@ -16,6 +16,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-empty-osinterface
 ---
 
 # OS-ELG-MODL-05007

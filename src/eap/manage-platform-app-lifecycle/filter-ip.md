@@ -15,6 +15,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - ip-filter-groups
+  - manage-ip-filter-groups
+  - self-hosted-ip-filtering
 isautopublish: true
 ---
 

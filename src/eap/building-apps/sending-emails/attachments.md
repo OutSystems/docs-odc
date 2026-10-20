@@ -1,5 +1,5 @@
 ---
-summary: "ODC email attachments: attach single or multiple files in ODC Studio using the Send Email node and Attachment data structure."
+summary: Attach one or more files to an email in ODC with Mentor Studio or manually in ODC Studio.
 tags: email integration, file handling, pdf attachments, application logic, user guides
 locale: en-us
 guid: b03f90a8-d437-4f61-a08b-dda12e8ebbfe
@@ -11,11 +11,14 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+  - mentor studio
 coverage-type:
   - apply
   - remember
+  - evaluate
 topic:
-  - how-to-create-emails
+  - attach-file-to-email
+isautopublish: true
 ---
 
 # Adding email attachments
@@ -30,9 +33,41 @@ In the **Attachments** section of the **Send Email**, you can add:
 
 * A list of attachments. Do this when, for example, you want to send multiple files from a database, such as images from a product catalog. See: [Attaching multiple files](#attaching-multiple-files)
 
-## Attaching a file
+## Attach files with Mentor Studio
 
-To attach a file to an email, complete the following steps in ODC Studio:
+Attach one file or a list of files by describing the attachment in Mentor Studio, and validate the **Send Email** node before you publish.
+
+In your prompt, include the following:
+
+* The action that sends the email
+* The source of the files
+* The file name and media type
+
+For a list of files, also name the entity and the attributes that hold the file name and the file content.
+
+For example, the following sentence attaches a single file:
+
+* "In the SendOrderConfirmation server action, attach the PDF resource sample_pdf to the Send Email node with the file name sample.pdf and the media type application/pdf."
+
+The following sentences attach a list of files:
+
+* "In the SendProductCatalog server action, fetch five records of the Sample_ProductImage entity, and attach them to the Send Email node."
+* "Use FileName as the file name and FileContent as the content."
+
+### Validate the attachments
+
+The platform guarantees that the model is valid, and you decide whether the email carries the files you intend. In the **Logic** tab of ODC Studio, open the action that sends the email, select the **Send Email** node, and check the following:
+
+* Each attachment defines **FileName** and **FileContent**. For more information, refer to [Attachment data structure](#attachment-data-structure).
+* **FileContent** is binary data, such as `Resource.sample_pdf.Content` for a file in the app resources, or the binary attribute of the fetched records.
+* When you set **MimeType**, the value matches the file, such as `"application/pdf"` for a PDF file. When **MimeType** is empty, the email clients detect the media type.
+* A file from the app resources exists in **Resources** in the **Data** tab.
+* For a list of attachments, the Aggregate comes before the **Send Email** node, **Max. Records** returns the number of files you intend, and the **Attachments** list maps the binary content and the file name.
+* The **Send Email** node shows no data type error for the **Attachments** list.
+
+## Attach a file manually in ODC Studio {#attaching-a-file}
+
+To attach a file to an email manually, complete the following steps in ODC Studio:
 
 1. On the **Logic** tab, open the action that sends the email and select the **Send Email** node.
 
@@ -74,9 +109,9 @@ To attach a file to an email, complete the following steps in ODC Studio:
 
     </div>
 
-## Attaching multiple files
+## Attach multiple files manually in ODC Studio {#attaching-multiple-files}
 
-To attach several files to an email, create a List with the Attachment data structure and then pass the list to the **Attachments** property of the **Send Email** action.
+To attach several files to an email manually, create a List with the Attachment data structure and then pass the list to the **Attachments** property of the **Send Email** action.
 
 <div class="info" markdown="1">
 
@@ -123,3 +158,11 @@ Use the Attachment data structure to pass information about files between the lo
 | FileContent | Binary Data | Content that the platform embeds as the attachment. |
 | FileName | Text | The file name of the attachment to show in the email. For example, `"image.png"`. |
 | MimeType | Text | Media type identifier. For example, `"image/png"`. Enter to tell the email readers how to handle the content, as this can help prevent errors in some clients. Leave empty to let the email clients handle the detection. |
+
+## Related resources
+
+The following resources describe prompt examples, the steps to prompt Mentor Studio, and what the platform guarantees.
+
+* For more prompt examples, refer to [Prompts for Mentor Studio](../../agentic-development/mentor-studio/prompts.md#logic).
+* For the requirements and the steps to prompt Mentor Studio and review the change, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md) and [Review and accept the plan](../../agentic-development/mentor-studio/how-it-works.md#accept-plan).
+* For what the platform guarantees and what you validate, refer to [Platform guarantees and AI interpretation](../../agentic-development/odc-ai-and-platform.md).

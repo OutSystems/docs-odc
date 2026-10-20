@@ -15,6 +15,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - configure-callagent
+  - function-calling-overview
 ---
 
 # CallAgent V2 service action

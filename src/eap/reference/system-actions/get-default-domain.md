@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - get-default-domain
 ---
 
 # GetDefaultDomain server action

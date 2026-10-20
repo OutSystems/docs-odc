@@ -15,7 +15,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - structures
+  - generated-rest-structures
+  - rest-structure-reuse
 ---
 
 # REST API Structures

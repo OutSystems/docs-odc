@@ -15,6 +15,8 @@ coverage-type:
 audience:
   - Developer
   - Front-end developer
+topic:
+  - investigate-finding-causes
 outsystems-tools:
   - odc studio
   - odc portal

@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-parameter-defaults
 ---
 
 # OS-ELG-MODL-05026

@@ -20,6 +20,8 @@ coverage-type:
   - apply
   - unblock
 isautopublish: true
+topic:
+  - mentor-studio-errors
 ---
 
 # Mentor Studio errors

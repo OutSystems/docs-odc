@@ -19,8 +19,7 @@ content-type:
 audience:
   - Platform administrator
 topic:
-  - app-settings
-  - app-configuration
+  - stream-audit-logs
 isautopublish: true
 ---
 

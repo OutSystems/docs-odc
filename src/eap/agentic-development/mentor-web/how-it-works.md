@@ -29,7 +29,7 @@ isautopublish: true
 
 AI app generation in OutSystems follows a structured workflow that balances AI generation with human validation. The process turns natural language requirements into working apps through cycles of description, review, and refinement.
 
-Use Mentor Web to turn requirements into a working app. To modify and extend an existing app, refer to [AI development in Mentor Studio](../mentor-studio/how-it-works.md).
+Use Mentor Web to turn requirements into a working app. To modify and extend an existing app, refer to [AI development in Mentor Studio](../mentor-studio/how-it-works.md). To create or change apps from an AI tool such as Claude Code or Cursor, refer to [OutSystems MCP](../outsystems-mcp/outsystems-mcp-overview.md).
 
 <div class="info" markdown="1">
 
@@ -65,18 +65,9 @@ Don't include personally identifiable information (PII) in prompts. Use placehol
 
 ## Review the blueprint
 
-Before generation, Mentor Web displays a blueprint of the proposed app structure. The blueprint is a visual representation of how the AI read the requirements, showing entities, roles, screens, and relationships. You verify the reading and make corrections before committing to generation.
+Before generation, Mentor Web displays a blueprint of the proposed app structure, showing how the AI read your requirements. You verify the reading and refine it through prompts before you commit to generation. Making changes at this stage takes less effort than modifying a generated app, since you adjust the plan directly.
 
-The blueprint displays:
-
-* Entities with attributes and relationships
-* User roles with permissions
-* Proposed screens and layouts
-* Stateflows for entities with lifecycle states
-
-You refine the blueprint through prompts. Mentor Web applies the changes you describe in natural language. Making changes at this stage takes less effort than modifying a generated app, since you adjust the plan directly.
-
-For more information, refer to [The blueprint](blueprint.md).
+For what the blueprint shows and how to edit it, including entities, roles, screens, and stateflows, refer to [The blueprint](blueprint.md).
 
 ![Blueprint for an Employee Onboarding System showing the data model, screens, roles and permissions, and stateflows proposed by Mentor.](images/ai-gen-app-review-plan-pl.png "Review the blueprint in Mentor Web")
 
@@ -115,7 +106,7 @@ Refinement in the editor processes requests differently than initial generation.
 
 ## Continue in ODC Studio
 
-After generation and refinement, open the app in ODC Studio when development requires capabilities beyond Mentor Web. Examples include complex business logic, external integrations, or advanced UI customization. ODC Studio provides full access to the OutSystems development environment. For a breakdown of what Mentor handles and what requires ODC Studio, refer to [When to use each tool](../intro.md#when-to-use-each-tool).
+After generation and refinement, open the app in ODC Studio when development requires capabilities beyond Mentor Web. Examples include complex business logic, external integrations, or advanced UI customization. ODC Studio provides full access to the OutSystems development environment. For a breakdown of what Mentor supports and what requires ODC Studio, refer to [Scope and limits](../coding-agents.md#scope-and-limits).
 
 ## Related resources
 
