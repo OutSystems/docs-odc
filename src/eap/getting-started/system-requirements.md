@@ -1,12 +1,12 @@
 ---
 summary: OutSystems Developer Cloud (ODC) system requirements for ODC Studio and ODC Portal, including hardware, OS support, browsers, and platform limits.
 tags:
-  - Debugging
   - End-users
+  - External Databases
   - Infrastructure
   - Mobile app
+  - OIDC
   - Performance
-  - Troubleshooting
   - Web
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
@@ -72,9 +72,9 @@ The following are the minimum recommended hardware requirements. However, keep i
 OutSystems supports the following operating systems. This list is subject to change. OutSystems supports operating systems for six months after the manufacturer's end-of-life date.
 
 * macOS:
+    * macOS Golden Gate since ODC Studio 1.7.29
     * macOS Tahoe since ODC Studio 1.6.5
     * macOS Sequoia since ODC Studio 1.5.0
-    * macOS Sonoma since ODC Studio 1.4.10
 
 * Windows:
     * Windows 11 (64-bit) since ODC Studio 1.3.15
