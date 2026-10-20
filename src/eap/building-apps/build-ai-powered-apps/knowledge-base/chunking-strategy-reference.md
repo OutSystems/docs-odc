@@ -13,8 +13,9 @@ isautopublish: true
 outsystems-tools:
   - odc portal
 audience:
-  - Tech lead
+  - Architect
   - Developer
+  - Tech lead
 coverage-type:
   - remember
   - understand
@@ -37,7 +38,6 @@ The table below shows the chunking strategies available in ODC Knowledge Bases, 
 | **Fixed-size** | Splits at a fixed token or character count, with optional configurable overlap between adjacent chunks | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
 | **Recursive** | Splits into chunks of a fixed token or character count, with optional overlap | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
 | **By Page** | Splits into chunks of a fixed token or character count, with optional overlap | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
-
 | **By paragraph** | Splits at sentence boundaries | Documents where individual sentences carry complete meaning | Can produce very short chunks for dense technical text |
 | **By section-header** | Splits at section header boundaries | Documents with clear section structure | May create very large chunks for sections with little content |
 | **None** | Splits into chunks of a fixed token or character count, with optional overlap (Max characters: 8192) | Documents smaller than the max characters limits | May cut sentences mid-thought if overlap is too small. Also, if the document is larger than the max characters limit, the remainder of the characters is truncated. |
