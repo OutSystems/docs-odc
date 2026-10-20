@@ -125,7 +125,7 @@ Before you start the Self-hosted configurator, create a service account and have
 | **Service account key** | The service account JSON key file. |
 | **Credentials expiration** | How long until the credential expires: 30, 90, 180, or 365 days. |
 
-Assign the service account the `roles/artifactregistry.writer` role, scoped at the repository level through IAM binding. This role covers both push and pull operations.
+Assign the service account the `roles/artifactregistry.repoAdmin` role, scoped at the repository level through IAM binding. This role covers push, pull, and delete operations. Don't use `roles/artifactregistry.writer`, as it doesn't include delete permissions.
 
 ### Other {#other}
 
