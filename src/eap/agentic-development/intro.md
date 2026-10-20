@@ -1,20 +1,16 @@
 ---
 summary: Agentic development in OutSystems Developer Cloud (ODC) uses AI to create and modify apps through Mentor Studio, OutSystems MCP, and Mentor Web.
 tags:
-  - OutSystems MCP
   - Agentic
-  - Agentic Systems Engineering
   - AI
-  - Development lifecycle
   - Mentor
   - Mentor Studio
   - Mentor Web
-  - Security
 guid: 7681329f-0fe1-47ea-9d99-911eddfac02b
 locale: en-us
 app_type: reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=9254-46
+figma:
 outsystems-tools:
   - portal
   - odc studio
@@ -62,6 +58,12 @@ For what the platform guarantees and what you review, refer to [Platform guarant
 ## Working effectively with AI
 
 Clear, specific requests produce more accurate results. The AI interprets your instructions and applies patterns it supports, so it builds from what you state explicitly. To learn how Mentor works, refer to [Mentor](coding-agents.md). For the mindset and prompting technique, refer to [Thinking with AI](thinking-with-ai.md) and [Effective prompts for Mentor](effective-prompts.md).
+
+<div class="warning" markdown="1">
+
+Don't include personally identifiable information (PII) such as real names, email addresses, phone numbers, or government IDs in prompts or requirement documents. Use placeholder or fictional data instead.
+
+</div>
 
 ## Agentic development and AI-powered apps
 

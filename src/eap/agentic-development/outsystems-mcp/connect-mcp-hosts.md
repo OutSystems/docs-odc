@@ -1,10 +1,10 @@
 ---
 summary: Connect your MCP host to the OutSystems MCP server, with setup for Claude Code, AWS Kiro, Cursor, GitHub Copilot, and Claude Desktop.
 tags:
-  - AI
   - Agentic
+  - AI
   - Authentication
-  - Authorization
+  - OAuth
   - Plugins
   - Settings
 guid: c4722355-e921-4c57-a127-dcd7991a6615
@@ -64,15 +64,19 @@ AWS Kiro is a validated MCP host. Install the OutSystems Power, set your tenant 
           }
         }
 
-    Put the URL under the top-level `mcpServers`, not under `powers.mcpServers`. Kiro rewrites the `powers` block on every Power update, which drops a URL stored there.
+    Put the URL under the top-level `mcpServers`. Kiro rewrites the `powers` block, including `powers.mcpServers`, on every Power update, which drops a URL stored there.
 
-1. Ask Kiro Chat for an OutSystems request. Kiro opens the browser for OAuth on the first tool call, and you complete the sign-in there. Kiro runs the flow itself, so there's no authenticate tool to call.
+1. Ask Kiro Chat for an OutSystems request. Kiro opens the browser for OAuth on the first tool call, and you complete the sign-in there. Kiro runs the sign-in flow itself.
 
 ## Connect Cursor
 
-Cursor is a validated MCP host. The Cursor CLI path works on every plan, including individual accounts. Cursor loads the OutSystems skill from `AGENTS.md` in your workspace root.
+Cursor is a validated MCP host. You connect it from the Cursor IDE or the Cursor CLI. Both paths read the same `mcp.json` file and open your default browser for sign-in. The CLI path works on every plan, including individual accounts. Cursor loads the OutSystems skill from `AGENTS.md` in your workspace root.
 
-1. Add the server to the global config `~/.cursor/mcp.json`, or the project config `.cursor/mcp.json`. Read the file first, keep your other entries, then add this under the top-level `mcpServers` object:
+### Add the server and the skill
+
+Add the OutSystems MCP server to the Cursor configuration, then install the OutSystems skill. The IDE and CLI paths both use these steps.
+
+1. Add the server to the global config `~/.cursor/mcp.json`, or the project config `.cursor/mcp.json`. Cursor merges both files, and the project entry takes priority when the same server name appears in both. Read the file first, keep your other entries, then add this under the top-level `mcpServers` object:
 
         {
           "mcpServers": {
@@ -82,19 +86,48 @@ Cursor is a validated MCP host. The Cursor CLI path works on every plan, includi
           }
         }
 
-    Use `mcpServers` as the key, not `servers`, and omit `type`. Cursor reads the transport from the URL.
+    Use `mcpServers` as the key and omit `type`. Cursor reads the transport from the URL. An entry copied from another MCP host's configuration file uses that host's keys, and Cursor skips it silently.
 
-1. Install the OutSystems skill. Save the [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) to `AGENTS.md` in your workspace root, which Cursor loads for the agent.
+1. Install the OutSystems skill. Save the [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) to `AGENTS.md` in your workspace root, which Cursor loads for the agent. Cursor loads `.mdc` files with rule frontmatter from `.cursor/rules/`, so a plain Markdown copy saved there is ignored.
 
-1. Verify and sign in from a terminal:
+### Sign in from the Cursor IDE
+
+Cursor starts the sign-in when it loads the server entry. To sign in and confirm the connection:
+
+1. Save `mcp.json`. Cursor opens your default browser.
+1. Complete the sign-in in the browser.
+1. In Cursor, open the **MCPs** tab and select `outsystems`. Confirm that **Local** shows **Connected** under **Environments**.
+1. Confirm the connection by asking `list 10 of my outsystems apps` in Cursor chat.
+
+### Sign in from the Cursor CLI
+
+The Cursor CLI provides the `agent` command. To install it, approve the server, and sign in:
+
+1. Install the Cursor CLI. On macOS, Linux, and WSL, run the following command:
+
+        curl https://cursor.com/install -fsS | bash
+
+    On Windows, run the following command in PowerShell:
+
+        irm 'https://cursor.com/install?win32=true' | iex
+
+    For more information, refer to the [Cursor CLI installation](https://cursor.com/docs/cli/installation) page.
+
+1. Run the following commands in a terminal. The last command opens your default browser to sign in:
 
         agent mcp list
         agent mcp enable outsystems
         agent mcp login outsystems
 
-1. Confirm the connection by asking `list 10 of my outsystems apps`.
+    The `login` command requires an approved server, and an unapproved server fails with `has not been approved`. Run `agent mcp enable outsystems` when `agent mcp list` shows `outsystems` as needing approval.
 
-Team and Enterprise plans install the Cursor app plugin from a Team Marketplace. For that path, refer to the [Cursor plugin setup](https://github.com/OutSystems/outsystems-mcp/blob/main/cursor/README.md).
+1. Confirm the connection by running the following command in the terminal:
+
+        agent "list 10 of my outsystems apps"
+
+### Install the plugin for a team
+
+Team and Enterprise plans install the Cursor app plugin from a Team Marketplace. A team administrator imports the `OutSystems/outsystems-mcp` repository under **Plugins** > **Team Marketplaces** in the Cursor dashboard. Marketplace plugins require a Team or Enterprise plan, so free and individual plans use the steps in the previous sections. For the plugin path, refer to the [Cursor plugin setup](https://github.com/OutSystems/outsystems-mcp/blob/main/cursor/README.md).
 
 ## Connect GitHub Copilot
 
@@ -135,7 +168,7 @@ To connect in the Copilot CLI, register the server and reload the config:
 
 ## Connect Claude Desktop
 
-Claude Desktop connects through a local proxy. The native **Add custom connector** flow doesn't complete OAuth with an OutSystems tenant, so use the `mcp-remote` proxy.
+Claude Desktop connects through the `mcp-remote` local proxy, which completes the OAuth flow with an OutSystems tenant.
 
 1. Confirm Node.js with `npx` is available, then install the proxy:
 
@@ -181,7 +214,7 @@ To get the OutSystems skill in Claude Desktop, install the plugin from the same 
 
 ## Connect another MCP host
 
-Other MCP hosts connect to the same endpoint without validated setup. The OutSystems MCP server is a standard MCP endpoint over the Streamable HTTP transport with OAuth and Dynamic Client Registration, so MCP hosts that support this transport connect to it. OutSystems validates only the MCP hosts listed on this page.
+Other MCP hosts connect to the same endpoint with a generic setup. The OutSystems MCP server is a standard MCP endpoint over the Streamable HTTP transport with OAuth and Dynamic Client Registration, so MCP hosts that support this transport connect to it. The MCP hosts listed on this page are the ones OutSystems validates.
 
 1. Register `outsystems` as an MCP server in your MCP host, pointing at `https://TENANT_HOSTNAME/mcp` over the Streamable HTTP transport. Leave the callback port unset, so the host picks one automatically.
 1. Add the OutSystems skill to the host's agent instructions from the [root skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/main/SKILL.md).
@@ -189,7 +222,7 @@ Other MCP hosts connect to the same endpoint without validated setup. The OutSys
 
 ## Update the OutSystems skill
 
-OutSystems updates the OutSystems MCP server on the tenant side, so the server needs no action from you. You update the OutSystems skill in your MCP host, which the plugin, the Power, or the saved skill file delivers.
+OutSystems updates the OutSystems MCP server on the tenant side. You update the OutSystems skill in your MCP host, which the plugin, the Power, or the saved skill file delivers.
 
 * **Claude Code:** Run the following commands in this order, then restart Claude Code:
 
@@ -199,13 +232,13 @@ OutSystems updates the OutSystems MCP server on the tenant side, so the server n
     The first command refreshes Claude Code's copy of the OutSystems marketplace. The second command compares your installed plugin with that copy and installs the newer version. Run on its own, the second command compares with the old copy and reports that you already have the latest version.
 
 * **Claude Desktop:** Uninstall the OutSystems plugin, reinstall it from the same marketplace, and restart Claude Desktop.
-* **AWS Kiro:** Update the OutSystems Power from the Powers panel. If the panel offers no update, uninstall the Power and import it again from the same URL.
+* **AWS Kiro:** Update the OutSystems Power from the Powers panel. To reinstall the latest version, uninstall the Power and import it again from the same URL.
 * **Cursor CLI and GitHub Copilot:** The saved skill file keeps the version you installed. Download the current [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) or [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) again, and replace the saved copy.
 * **Cursor app:** A team administrator refreshes the `OutSystems/outsystems-mcp` import under **Plugins** > **Team Marketplaces** in the Cursor dashboard.
 
 ### Upgrade an earlier Claude Code setup
 
-Before plugin version 0.20.0, the setup registered the server with `claude mcp add`, and that entry takes precedence over the server the plugin registers. When `claude mcp list` shows an `outsystems` entry instead of `plugin:outsystems:outsystems`, move to the plugin's server:
+Before plugin version 0.20.0, the setup registered the server with `claude mcp add`, and that entry takes precedence over the server the plugin registers. When `claude mcp list` shows an `outsystems` entry, move to the plugin's server, which appears as `plugin:outsystems:outsystems`:
 
 1. Set your tenant on the plugin:
 

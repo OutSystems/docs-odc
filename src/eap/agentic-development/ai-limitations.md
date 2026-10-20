@@ -1,12 +1,12 @@
 ---
 summary: OutSystems Developer Cloud (ODC) Mentor Web and Mentor Studio limitations, covering session persistence, blueprint phases, and editor restrictions.
 tags:
-  - OutSystems MCP
-  - Agentic
   - AI
+  - Agentic
   - Mentor
   - Mentor Studio
   - Mentor Web
+  - Themes
 guid: 53247733-479b-4853-90a8-dd366ce0fba3
 locale: en-us
 app_type: reactive web apps
@@ -19,6 +19,7 @@ outsystems-tools:
   - mentor studio
 coverage-type:
   - remember
+  - understand
 audience:
   - Developer
   - Front-end developer
@@ -33,25 +34,25 @@ Agentic development uses generative AI, so its output is non-deterministic and v
 
 This page documents current constraints for both app generation and development in ODC Studio. Review these limitations alongside the capabilities for [Mentor Web](mentor-web/capabilities.md) and [Mentor Studio](mentor-studio/capabilities.md) when planning projects that use agentic development.
 
-## App generation (Mentor Web)
+## App generation (Mentor Web) {#app-generation}
 
 The following limitations apply when creating new apps through Mentor Web.
 
-### Session and conversation
+### Session and conversation {#session}
 
 Mentor Web does not persist conversations and work in progress automatically.
 
 * **Session persistence.** Closing or refreshing the browser loses the conversation and blueprint. Save or publish work before closing.
 * **Conversation length.** Mentor Web limits conversations to approximately 10 prompts. For longer sessions, publish the app and continue development in ODC Studio.
 
-### Blueprint phase
+### Blueprint phase {#blueprint-phase}
 
 You can configure some options only before generating the app for the first time.
 
 * **Validation rules.** You can configure validation rules only before the first blueprint generation.
 * **Theme configuration.** You can set or change the theme during the blueprint phase, either through the theme picker or through prompts. After generation, theme changes require ODC Studio. The theme must have the layout block property set and include these placeholders: Header, Breadcrumbs, Title, Actions, and MainContent.
 
-### Editor
+### Editor {#editor}
 
 After generation, Mentor Web restricts some modification capabilities in the editor.
 
@@ -61,24 +62,24 @@ After generation, Mentor Web restricts some modification capabilities in the edi
 
 To discover available changes at any point, ask Mentor Web "What can I change through this conversational agent?"
 
-## Development in ODC Studio (Mentor Studio)
+## Development in ODC Studio (Mentor Studio) {#studio-development}
 
 The following limitations apply when modifying existing apps through Mentor Studio.
 
-### Scope of operations
+### Scope of operations {#scope-of-operations}
 
 Mentor Studio modifies app elements but doesn't perform stage-level operations, such as deployments.
 
 * **App elements only.** Mentor Studio generates and modifies logic, UI, and data within the app. ODC Studio operations such as one-click publish, changing preferences, and managing dependencies are not supported through Mentor.
 
-### Context awareness
+### Context awareness {#context-awareness}
 
 Mentor Studio has partial awareness of the ODC Studio state. For what Mentor reads from your selection and the open view, refer to [Use the current selection as context](mentor-studio/how-it-works.md#current-selection).
 
 * **Conversation length.** Long iterations may reach the maximum conversation length. Start a new conversation if responses become inconsistent.
 * **No chat persistence.** Closing the app clears the conversation history.
 
-### Reliability
+### Reliability {#reliability}
 
 Mentor Studio can attempt any change within a web app, but success varies by task complexity. Focused, atomic tasks, such as adding a single entity or creating a server action, tend to produce more consistent results than complex, multi-step changes.
 
@@ -87,7 +88,7 @@ Mentor Studio can attempt any change within a web app, but success varies by tas
 * **Apply errors.** "Failed to apply changes" errors occur in some cases and trigger repeated retries. If this happens, start a new conversation and rephrase the request.
 * **Screen generation.** Screen generation and editing produces more errors than working with logic or data. Review screen changes carefully after each request.
 
-## Related resources
+## Related resources {#related-resources}
 
 For a broader view of what agentic development supports, the following resources describe capabilities and workflows for each tool.
 
