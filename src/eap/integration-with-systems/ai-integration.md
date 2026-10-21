@@ -1,7 +1,7 @@
 ---
 guid: ba7abbe3-ff30-43d0-b799-1d788f4390f0
 locale: en-us
-summary: Implement AI integration for mobile and reactive web apps using OutSystems Developer Cloud (ODC).
+summary: OutSystems Developer Cloud (ODC) AI integration connects external models, agentic apps, and grounding data for mobile and reactive web apps.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8646-1385&t=gnLX1WsXFPXUEvhR-1
 audience:
   - Architect
@@ -17,15 +17,19 @@ platform-version: odc
 tags:
   - Agentic
   - AI
+  - Architecture
+  - Mobile app
+  - Web
 outsystems-tools:
   - odc studio
 helpids:
+isautopublish: true
 ---
 # AI integration
 
 Integrating with external AI systems in ODC involves a set of distinct components. At the core of this integration is the connection to an **external AI model**, which provides the intelligence. An **agentic app** acts as the native interface to this external system, while **grounding data** serves as the business-specific payload sent to it.
 
-![Diagram showing the integration of external AI systems with OutSystems app, agentic app, and grounding data sources.](images/integrating-external-ai-systems-diag.png "Diagram of Integrating External AI Systems")
+![Diagram showing an OutSystems app that triggers an agentic app. The agentic app retrieves context from grounding data sources and exchanges requests and responses with an external AI model from a provider such as Amazon Bedrock, Azure OpenAI, or Databricks.](images/integrating-external-ai-systems-diag.png "Diagram of Integrating External AI Systems")
 
 This article describes the role of each component in the context of external system integration.
 

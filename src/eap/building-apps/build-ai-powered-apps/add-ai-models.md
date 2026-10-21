@@ -1,7 +1,9 @@
 ---
-summary: Add AI models in OutSystems Developer Cloud (ODC) for mobile and reactive web apps.
+summary: OutSystems Developer Cloud (ODC) AI model connections, configure provider endpoints, trial models, and usage limits in the ODC Portal.
 tags:
   - AI
+  - Authentication
+  - Security
 guid: af45db6e-ac0f-4ab9-8e4a-4ba8fd559812
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -151,16 +153,16 @@ After you complete the steps, ODC redirects you to the main AI models page. To u
 
 Use the following parameters when configuring endpoints for the supported AI model providers in the ODC Portal. The specific parameters required depend on the provider you choose.
 
-### Azure OpenAI parameters
+### AI21 parameters
 
-Use the following parameters when configuring Azure OpenAI model endpoints.
+Use these parameters when configuring AI21 model endpoints.
 
 | Parameter | Description | Notes |
-| :---- | :---- | :---- |
-| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Azure OpenAI model connection. |
-| Deployment name | The name of your model deployment within the Azure OpenAI service. | Obtain from the Azure portal. |
-| API key | The authentication key required to access the Azure OpenAI service. | Obtain from the Azure portal. Treat this securely. |
-| URL | The endpoint URL for the Azure OpenAI service. | Obtain from the Azure portal. |
+| :---------- | :-------------------------------------- | :----------------------------------- |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same AI21 model connection. |
+| Model ID | The identifier for the specific AI21 model used. | For example, jurassic-2-ultra. |
+| API key | The authentication key required to access the AI21 API. | Obtain from your AI21 account. Treat this securely. |
+| URL | The endpoint URL for the AI21 API. | Typically `https://api.ai21.com/studio/v1`. |
 | Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ### Amazon Bedrock parameters
@@ -194,6 +196,42 @@ The following parameters are required when using **Access Keys** for authenticat
 
 Keep in mind that IAM Role authentication is recommended over Access Keys, since it avoids storing long-lived credentials. Existing Access Key connections continue to work without changes; see [Migrate an Access Key connection to IAM Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-console.html) if you'd like to switch.
 
+### Anthropic parameters
+
+Use these parameters when configuring Anthropic model endpoints.
+
+| Parameter | Description | Notes |
+| :---------- | :-------------------------------------- | :----------------------------------- |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Anthropic model connection. |
+| Model ID | The identifier for the specific Anthropic model used. | For example, claude-3-sonnet-20240229-v1:0. |
+| API key | The authentication key required to access the Anthropic API. | Obtain from your Anthropic account. Treat this securely. |
+| URL | The endpoint URL for the Anthropic API. | Typically `https://api.anthropic.com`. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
+
+### Azure OpenAI parameters
+
+Use the following parameters when configuring Azure OpenAI model endpoints.
+
+| Parameter | Description | Notes |
+| :---- | :---- | :---- |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Azure OpenAI model connection. |
+| Deployment name | The name of your model deployment within the Azure OpenAI service. | Obtain from the Azure portal. |
+| API key | The authentication key required to access the Azure OpenAI service. | Obtain from the Azure portal. Treat this securely. |
+| URL | The endpoint URL for the Azure OpenAI service. | Obtain from the Azure portal. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
+
+### Cohere parameters
+
+Use these parameters when configuring Cohere model endpoints.
+
+| Parameter | Description | Notes |
+| :---------- | :-------------------------------------- | :----------------------------------- |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Cohere model connection. |
+| Model ID | The identifier for the specific Cohere model used. | For example, command-r-plus. |
+| API key | The authentication key required to access the Cohere API. | Obtain from your Cohere account. Treat this securely. |
+| URL | The endpoint URL for the Cohere API. | Typically `https://api.cohere.ai`. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
+
 ### Custom AI model parameters
 
 Use these parameters when configuring custom connection AI models and their endpoints in the ODC Portal.
@@ -208,14 +246,16 @@ Use these parameters when configuring custom connection AI models and their endp
 
 ### Databricks parameters
 
-Use these parameters when configuring Databricks AI model endpoints.
+A Databricks connection calls a model serving endpoint in your Databricks workspace. The endpoint serves a model that you deploy and manage in Databricks.
+
+Use the following parameters when configuring Databricks AI model endpoints.
 
 | Parameter | Description | Notes |
 | :---- | :---- | :---- |
 | Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Databricks model connection. |
-| Serving endpoint name | Identifies the specific Databricks model you use. | Obtain from your Databricks workspace. |
-| Personal access token (PAT) | The authentication token required to access the Databricks API. | Obtain from your Databricks workspace. Treat this securely. |
-| URL | The endpoint URL for the Databricks model API. | Obtain from your Databricks workspace configuration. URL should follow this format: [Databricks instance name]/serving-endpoints |
+| Serving endpoint name | The name of the model serving endpoint in your Databricks workspace. | Obtain from your Databricks workspace. |
+| Personal access token (PAT) | The token that authenticates requests to your Databricks workspace. | Obtain from your Databricks workspace. Treat this securely. |
+| URL | The serving endpoints URL of your Databricks workspace. | Use the format `DATABRICKS_INSTANCE_NAME/serving-endpoints`. Replace `DATABRICKS_INSTANCE_NAME` with the instance name of your Databricks workspace. |
 | Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ### Gemini parameters
@@ -228,6 +268,19 @@ Use these parameters when configuring Google Gemini model endpoints.
 | Model ID | Identifies the specific Gemini model you use. | For example, gemini-1.5-pro or gemini-1.5-flash. |
 | API key | The authentication key required to access the Gemini API. | Obtain from Google AI Studio or Google Cloud Console. Treat this securely. |
 | URL | The endpoint URL for the Gemini API. | Typically follows the format `https://generativelanguage.googleapis.com`. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
+
+### IBM watsonx.ai parameters
+
+Use these parameters when configuring IBM watsonx.ai model endpoints.
+
+| Parameter | Description | Notes |
+| :---------- | :-------------------------------------- | :----------------------------------- |
+| Project ID | The identifier for your IBM watsonx.ai project. | This is a stage-level configuration and you must set before adding endpoints. Changing the Project ID requires re-testing and saving all endpoints in the stage. |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same IBM watsonx.ai model connection. |
+| Model ID | Identifies the specific IBM watsonx.ai model you use. | Obtain from your IBM watsonx.ai workspace. |
+| API key | The authentication key required to access the IBM watsonx.ai API. | Obtain from your IBM watsonx.ai account. Treat this securely. |
+| URL | The endpoint URL for the IBM watsonx.ai API. | Obtain from your IBM watsonx.ai workspace configuration. |
 | Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ### Mistral parameters
@@ -252,55 +305,6 @@ Use these parameters when configuring OpenAI model endpoints (direct OpenAI API,
 | Model ID | Identifies the specific OpenAI model you use. | For example, gpt-4o, gpt-4-turbo, or gpt-3.5-turbo. |
 | API key | The authentication key required to access the OpenAI API. | Obtain from your OpenAI account. Treat this securely. |
 | URL | The endpoint URL for the OpenAI API. | Typically `https://api.openai.com/v1`. |
-| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
-
-### IBM watsonx.ai parameters
-
-Use these parameters when configuring IBM watsonx.ai model endpoints.
-
-| Parameter | Description | Notes |
-| :---------- | :-------------------------------------- | :----------------------------------- |
-| Project ID | The identifier for your IBM watsonx.ai project. | This is a stage-level configuration and you must set before adding endpoints. Changing the Project ID requires re-testing and saving all endpoints in the stage. |
-| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same IBM watsonx.ai model connection. |
-| Model ID | Identifies the specific IBM watsonx.ai model you use. | Obtain from your IBM watsonx.ai workspace. |
-| API key | The authentication key required to access the IBM watsonx.ai API. | Obtain from your IBM watsonx.ai account. Treat this securely. |
-| URL | The endpoint URL for the IBM watsonx.ai API. | Obtain from your IBM watsonx.ai workspace configuration. |
-| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
-
-### Anthropic parameters
-
-Use these parameters when configuring Anthropic model endpoints.
-
-| Parameter | Description | Notes |
-| :---------- | :-------------------------------------- | :----------------------------------- |
-| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Anthropic model connection. |
-| Model ID | The identifier for the specific Anthropic model used. | For example, claude-3-sonnet-20240229-v1:0. |
-| API key | The authentication key required to access the Anthropic API. | Obtain from your Anthropic account. Treat this securely. |
-| URL | The endpoint URL for the Anthropic API. | Typically `https://api.anthropic.com`. |
-| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
-
-### Cohere parameters
-
-Use these parameters when configuring Cohere model endpoints.
-
-| Parameter | Description | Notes |
-| :---------- | :-------------------------------------- | :----------------------------------- |
-| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Cohere model connection. |
-| Model ID | The identifier for the specific Cohere model used. | For example, command-r-plus. |
-| API key | The authentication key required to access the Cohere API. | Obtain from your Cohere account. Treat this securely. |
-| URL | The endpoint URL for the Cohere API. | Typically `https://api.cohere.ai`. |
-| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
-
-### AI21 parameters
-
-Use these parameters when configuring AI21 model endpoints.
-
-| Parameter | Description | Notes |
-| :---------- | :-------------------------------------- | :----------------------------------- |
-| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same AI21 model connection. |
-| Model ID | The identifier for the specific AI21 model used. | For example, jurassic-2-ultra. |
-| API key | The authentication key required to access the AI21 API. | Obtain from your AI21 account. Treat this securely. |
-| URL | The endpoint URL for the AI21 API. | Typically `https://api.ai21.com/studio/v1`. |
 | Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ## Next steps
