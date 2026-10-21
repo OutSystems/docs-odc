@@ -1,6 +1,12 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the creation of one-to-many relationships between entities using foreign keys.
-tags: database modeling, entity relationships, data management, referential integrity, data modeling
+tags:
+  - Data
+  - Data Integrity
+  - Data Model
+  - Entities
+  - Mentor
+  - Mentor Studio
 locale: en-us
 guid: 6bde9ed9-7127-4f01-96ee-3add9ecda974
 app_type: mobile apps, reactive web apps

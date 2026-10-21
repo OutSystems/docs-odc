@@ -1,6 +1,12 @@
 ---
 summary: Explore how to create a one-to-one relationship in OutSystems Developer Cloud (ODC) to extend entities with additional attributes.
-tags: entity relationships, database modeling, system entities, data management, extending entities
+tags:
+  - Data
+  - Data Integrity
+  - Data Model
+  - Entities
+  - Extensions
+  - Mentor Studio
 locale: en-us
 guid: d3ee8fb1-e6dd-4c20-9dec-af509afc4afe
 app_type: mobile apps, reactive web apps

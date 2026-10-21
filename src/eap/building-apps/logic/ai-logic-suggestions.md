@@ -1,6 +1,10 @@
 ---
 summary: Speed up logic development with AI logic suggestions, an ODC Studio feature that predicts and suggests next steps in your action flows.
-tags: ide usage, reactive web apps, ai and machine learning integration, logic development, ai logic suggestions
+tags:
+  - AI
+  - Front-End
+  - Logic
+  - Settings
 locale: en-us
 guid: e358240c-1045-477c-b9cd-a0c3d04c4233
 app_type: mobile apps, reactive web apps

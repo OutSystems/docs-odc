@@ -6,7 +6,13 @@ guid: 54254c98-5a1e-42c3-a280-fa2aae5c5abe
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7453-435
-tags: asynchronous communication, event handling, pub/sub model, task automation, data orchestration
+tags:
+  - Asynchronous Processes
+  - Architecture
+  - Events
+  - Mentor Studio
+  - Microservices
+  - Triggers
 audience:
   - Developer
 outsystems-tools:
