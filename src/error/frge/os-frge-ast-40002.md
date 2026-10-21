@@ -1,6 +1,9 @@
 ---
 summary: "OS-FRGE-AST-40002 in OutSystems Developer Cloud (ODC) Forge: invalid sort value for listing assets. Use name, -name, publishedOn, or -publishedOn."
-tags: error handling, asset management, sorting mechanism, technical support, forge component
+tags:
+  - Forge
+  - Sorting
+  - Troubleshooting
 guid: 145fcaf4-8cf1-11ed-a1eb-0242ac120002
 locale: en-us
 app_type: mobile apps, reactive web apps

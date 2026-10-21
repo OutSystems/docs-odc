@@ -13,7 +13,11 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: sql, database operations, queries, data manipulation, examples
+tags:
+  - Data
+  - Entities
+  - External Databases
+  - SQL
 outsystems-tools:
   - odc studio
 ---

@@ -1,6 +1,13 @@
 ---
 summary: "Location Plugin for OutSystems Developer Cloud (ODC): access GPS data, track real-time position, and handle location errors in mobile and PWA apps."
-tags: gps integration, plugin installation, real-time tracking, error handling, geolocation
+tags:
+  - Capacitor
+  - Cordova
+  - iOS
+  - Mobile app
+  - Native App
+  - Plugins
+  - Troubleshooting
 locale: en-us
 guid: f2b0feab-c558-4d7f-b507-4511ae094677
 app_type: mobile apps

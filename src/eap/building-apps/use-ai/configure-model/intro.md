@@ -1,7 +1,9 @@
 ---
 helpids: 30503
 summary: ODC AI Agent Builder configuration guide for Azure OpenAI, Amazon Bedrock, and custom LLM models, including high availability setup.
-tags: ai integration, azure openai, amazon bedrock, ai high availability, large-language-model integration
+tags:
+  - Agentic
+  - AI
 locale: en-us
 guid: 81dc39d3-cb37-4757-88fe-eec0fbfc80ea
 app_type: mobile apps, reactive web apps

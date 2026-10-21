@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports distributing mobile apps as progressive web apps (PWAs) for a native-like experience on multiple platforms.
-tags: progressive web apps, web app development, cross-platform development, app distribution, offline capabilities
+tags:
+  - Android
+  - Debugging
+  - Deploy
+  - Front-End
+  - iOS
+  - Mobile app
+  - Web
 locale: en-us
 guid: 0fc271c5-bb66-4ea9-a271-6905e3dfc160
 app_type: mobile apps

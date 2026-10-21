@@ -1,6 +1,9 @@
 ---
 summary: OS-ELG-MODL-05029 in OutSystems Developer Cloud (ODC) occurs when a ZIP uses an unsupported compression method, blocking external library publishing.
-tags: error handling, application packaging, library publishing, external libraries, compression
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: a00f3190-e435-48cf-87c2-757c4036e693
 locale: en-us
 app_type: mobile apps, reactive web apps

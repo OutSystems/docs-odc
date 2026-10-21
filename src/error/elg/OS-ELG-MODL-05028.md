@@ -1,6 +1,12 @@
 ---
 summary: OS-ELG-MODL-05028 error in ODC occurs when a file in your external library ZIP package can't be uncompressed. Remove unnecessary files or contact Support.
-tags: error handling, c# development, zip file processing, outsystems deployment, outsystems support
+tags:
+  - .NET
+  - C#
+  - Deploy
+  - Extensions
+  - Libraries
+  - Troubleshooting
 guid: b1599188-83e3-4a9c-91ec-383cdf7be74f
 locale: en-us
 app_type: mobile apps, reactive web apps

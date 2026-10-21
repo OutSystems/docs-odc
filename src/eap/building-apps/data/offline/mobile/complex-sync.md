@@ -5,7 +5,14 @@ locale: en-us
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7943-11
-tags: data synchronization, mobile app development, performance optimization, local storage, data modelling
+tags:
+  - Batch Processing
+  - Data Model
+  - Data Synchronization
+  - Entities
+  - Mobile app
+  - Optimization
+  - Performance
 audience:
   - Developer
   - Front-end developer

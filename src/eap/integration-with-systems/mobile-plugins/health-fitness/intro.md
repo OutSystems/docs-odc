@@ -1,6 +1,13 @@
 ---
 summary: Health and Fitness Plugin for ODC lets you access HealthKit (iOS) and Health Connect (Android) data, request permissions, and query health metrics in mobile apps.
-tags: healthkit integration, health connect integration, mobile health data, plugin development, user permissions
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - Data
+  - iOS
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: a0e9b45a-9726-4804-8019-7abe52b3b813
 app_type: mobile apps

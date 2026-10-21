@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers editable pre-built screens and blocks for custom authentication flows.
-tags: authentication, ux/ui design, customization, user management, security
+tags:
+  - Authentication
+  - Blocks
+  - End-user Authentication
+  - Screens
+  - Security
+  - UI
+  - UX
 locale: en-us
 guid: 49853077-9937-4865-8183-3f1f9ff224c2
 app_type: mobile apps, reactive web apps

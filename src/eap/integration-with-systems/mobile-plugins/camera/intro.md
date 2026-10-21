@@ -1,6 +1,13 @@
 ---
 summary: ODC Camera plugin lets you take photos, record video, and select media from the gallery in mobile apps and PWAs, with error handling guidance.
-tags: plugin implementation, media capture, user interface design, error handling, mobile app development
+tags:
+  - Capacitor
+  - Cordova
+  - Logic
+  - Mobile app
+  - Plugins
+  - Troubleshooting
+  - UI
 locale: en-us
 guid: 6df6f491-46e4-434f-924e-043929958fef
 app_type: mobile apps
