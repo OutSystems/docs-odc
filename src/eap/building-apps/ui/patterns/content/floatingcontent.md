@@ -1,5 +1,9 @@
 ---
-tags: ui patterns, overlay ui components
+tags:
+  - OutSystems UI
+  - Screens
+  - UI Patterns
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) supports the Floating Content UI Pattern for overlaying content on screen elements.
 locale: en-us
 guid: 12a78364-ee4e-4528-a0f7-239c9b0e31f9

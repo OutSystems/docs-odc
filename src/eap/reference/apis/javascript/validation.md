@@ -1,5 +1,9 @@
 ---
-tags: validation, widgets, outsystems, mobile apps, reactive web apps
+tags:
+  - Front-End
+  - JavaScript
+  - UI
+  - Widgets
 summary: Explore validation functions for widgets in OutSystems Developer Cloud (ODC), including checking validity and setting validation statuses.
 locale: en-us
 guid: 27a8a508-630d-4b24-bf12-b76d41fa1a79

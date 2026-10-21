@@ -11,7 +11,14 @@ app_type: reactive web apps
 platform-version: odc
 audience:
   - Front-end developer
-tags: ui components,icon widget,phosphor icons,widget properties,user interface
+tags:
+  - CSS
+  - Events
+  - Front-End
+  - JavaScript
+  - Themes
+  - UI
+  - Widgets
 outsystems-tools:
   - odc studio
 helpids:

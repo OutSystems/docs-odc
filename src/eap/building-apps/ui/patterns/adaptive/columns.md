@@ -1,6 +1,12 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers a Columns UI Pattern to enhance on-screen content organization by splitting it into separate columns.
-tags: ui patterns, responsive design
+tags:
+  - Front-End
+  - Layouts
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 2b4629ec-0dcd-4a8c-81a7-ade0ecf7ad9a
 app_type: mobile apps, reactive web apps

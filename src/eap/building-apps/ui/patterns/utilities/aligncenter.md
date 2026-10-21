@@ -1,5 +1,11 @@
 ---
-tags: ui design, user experience
+tags:
+  - Front-End
+  - Layouts
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Explore how to horizontally or vertically center content using the Align Center UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 0902827b-4339-4965-b8c3-94a2a7825594

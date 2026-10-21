@@ -1,6 +1,11 @@
 ---
 summary: Explore the Haptics Plugin functionalities in OutSystems Developer Cloud (ODC), including client actions and error handling.
-tags: mobile development, haptics, vibration, feedback, plugin integration, mobile app development
+tags:
+  - Android
+  - Capacitor
+  - iOS
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: 8f24f6f1-7d87-4ca1-9ec9-2b6dcfde47b1
 app_type: mobile apps

@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the Display on Device UI pattern for device-specific content rendering.
-tags: ui patterns, cross-platform development
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Web
+  - Widgets
 locale: en-us
 guid: 4dd69c5c-c0a3-4c26-a4f7-b4c86313495f
 app_type: mobile apps, reactive web apps

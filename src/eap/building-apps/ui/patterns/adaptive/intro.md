@@ -1,6 +1,13 @@
 ---
 summary: Explore adaptive app development with OutSystems Developer Cloud (ODC) to ensure optimal display across various device sizes and resolutions.
-tags: adaptive design, user experience, device compatibility, screen resolution, design patterns
+tags:
+  - Front-End
+  - Layouts
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
 locale: en-us
 guid: 2c47448a-ec28-4a99-99bc-171fc05cd0e6
 app_type: mobile apps, reactive web apps

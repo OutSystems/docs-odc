@@ -1,6 +1,10 @@
 ---
 summary: Integrate AI agents into applications using the CallAgent service action in OutSystems Developer Cloud (ODC).
-tags: ai integration, configuration management, odc studio, service actions, ai agent builder
+tags:
+  - Agentic
+  - AI
+  - Settings
+  - Web services
 locale: en-us
 guid: 121c834e-88cc-4b0a-aa9d-4bb174daf881
 app_type: mobile apps, reactive web apps

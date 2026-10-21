@@ -1,6 +1,10 @@
 ---
 summary: Explore how to implement and customize the Gallery UI Pattern in OutSystems Developer Cloud (ODC) to display content effectively.
-tags: ui patterns, content display
+tags:
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 6ae27265-f93e-465d-ae49-d98f7dedb86c
 app_type: mobile apps, reactive web apps

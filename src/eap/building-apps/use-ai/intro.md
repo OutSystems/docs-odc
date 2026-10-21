@@ -1,6 +1,10 @@
 ---
 summary: Explore the AI Agent Builder in OutSystems Developer Cloud (ODC) to build generative AI applications efficiently.
-tags: ai integration, generative ai, ai agent templates, outsystems forge, ai model consumption
+tags:
+  - Agentic
+  - AI
+  - Forge
+  - Templates
 locale: en-us
 guid: 03e2025e-bca6-46f7-af75-725e1d310127
 app_type: mobile apps, reactive web apps
