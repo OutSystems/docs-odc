@@ -60,7 +60,7 @@ To add a custom domain, in the ODC Portal go to **Management** > **Domains** and
 
 <div class="warning" markdown="1">
 
-* You must complete these steps within **72 hours** or the CNAME records expire and you must restart the process.
+You must complete these steps within **72 hours** or the CNAME records expire and you must restart the process.
 
 </div>
 
