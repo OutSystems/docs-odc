@@ -18,7 +18,8 @@ audience:
 outsystems-tools:
   - odc studio
 coverage-type:
-  - none
+  - remember
+  - understand
 topic:
   - add-widget-ui-pattern
 ---

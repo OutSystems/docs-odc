@@ -10,7 +10,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 coverage-type:
-  - none
+  - understand
 topic:
   - navigation-patterns-overview
 audience:
