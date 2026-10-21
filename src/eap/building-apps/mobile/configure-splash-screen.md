@@ -134,7 +134,7 @@ By default, Cordova apps display a solid-color launch screen using the app's pri
 
 * **Override the background color** — Set the background color through the extensibility JSON using app configurations. For more information about the available properties, refer to [App extensibility configuration JSON schema - Splash screen](extensibility-configurations/extensibility-app-reference.md#splashscreen).
 
-* **Use full-screen images** — For detailed information about using custom images, refer to [Use Custom Splash Screens](https://success.outsystems.com/documentation/11/deploying_apps/mobile_apps_packaging_and_delivery/customize_your_mobile_app/use_custom_splash_screens/).
+* **Use full-screen images** — Set a splash screen image catalog through the extensibility JSON using build configurations. For more information about the available properties, refer to [App extensibility configuration JSON schema - Splash screen image catalog](extensibility-configurations/extensibility-app-reference.md#splash-image-catalog). For the images that each catalog must include, refer to [App icon and splash screen image catalogs](extensibility-configurations/image-catalogs.md).
 
 ## Generate the mobile package {#generate-package}
 

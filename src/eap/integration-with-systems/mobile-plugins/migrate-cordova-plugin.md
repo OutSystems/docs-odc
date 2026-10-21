@@ -180,7 +180,7 @@ The following Cordova functionalities in `plugin.xml` are not supported by Capac
 
 If your OutSystems plugin uses any of the above mentioned functionalities from Cordova, you must do the following to ensure compatibility:
 
-* [Migrate Cordova preferences](#migrate-cordova-preferences-migrate-cordova-preferences)
+* [Migrate Cordova preferences](#migrate-cordova-preferences)
 
 * [Use build actions for Cordova hooks](#use-build-actions-for-cordova-hooks-use-build-actions-for-cordova-hooks)
 

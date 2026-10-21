@@ -15,9 +15,10 @@ tags:
   - Android
   - Capacitor
   - Cordova
+  - Extensions
   - iOS
   - Mobile app
-  - Settings
+  - Native App
 outsystems-tools:
   - odc studio
 helpids:
@@ -125,7 +126,7 @@ Here, the Cordova preference `SomePreference` is being set globally with a value
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [preferences](#preferences-cordova-preferences) | `object` | Optional |
+| [preferences](#cordova-preferences) | `object` | Optional |
 
 #### `preferences` {#cordova-preferences}
 
@@ -580,7 +581,8 @@ Build configurations are a set of configurations used at build time such as addi
 | Property | Type | Required | Per platform override |
 | :---- | :---- | :---- | :---- |
 | [resources](#resources) | `object` | Optional | false |
-| [splashscreens](#splashscreens) | `object` | Optional | false |
+| [icons](#icons) | `object` | Optional | false |
+| [splashscreens](#splash-screen) | `object` | Optional | false |
 | [buildAction](#buildaction) | `object` | Optional | false |
 | [spmPreview](#spmpreview-spmpreview) | 'object' | Optional | false |
 
@@ -679,6 +681,130 @@ The target location for the resource in the form of a file path
 * Type: `string`
 * Placeholders: `extensibility settings`
 
+### `icons` {#icons}
+
+<div class="info" markdown="1">
+
+Applies only to Cordova apps. For more information about setting the app icon for Capacitor and Cordova apps, refer to [Modify the app icon](../modify-the-app-icon.md).
+
+</div>
+
+Sets image catalogs with your own image for each app icon size, in place of the app icon images ODC creates from the **Icon** in the app properties. For more information about the sizes and densities that each catalog must include, refer to [App icon and splash screen image catalogs](image-catalogs.md).
+
+#### Example {#icons-example}
+
+```json
+{
+  "buildConfigurations": {
+    "icons": {
+      "android": {
+        "imageCatalog": [
+          { "source": "$images.IconLdpi", "density": "ldpi" },
+          { "source": "$images.IconMdpi", "density": "mdpi" },
+          ...
+        ]
+      },
+      "ios": {
+        "imageCatalog": [
+          { "source": "$images.Icon20", "size": "20" },
+          { "source": "$images.Icon29", "size": "29" },
+          ...
+        ]
+      }
+    }
+  }
+}
+```
+
+`icons`
+
+* Optional
+* Type: `object`
+
+The `icons` object has the following properties:
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| [android](#icons-android) | `object` | Optional |
+| [ios](#icons-ios) | `object` | Optional |
+
+#### `android` {#icons-android}
+
+Android-specific configurations for the app icon.
+
+`android`
+
+* Optional
+* Type: `object`
+
+The `android` object has the following property:
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| [imageCatalog](#icons-image-catalog) | `array` of `object` | Optional |
+
+#### `ios` {#icons-ios}
+
+iOS-specific configurations for the app icon.
+
+`ios`
+
+* Optional
+* Type: `object`
+
+The `ios` object has the following property:
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| [imageCatalog](#icons-image-catalog) | `array` of `object` | Optional |
+
+#### `imageCatalog` {#icons-image-catalog}
+
+A list of app icon images. In the `android` object, each item sets the image for one screen density. In the `ios` object, each item sets the image for one app icon size.
+
+`imageCatalog`
+
+* Optional
+* Type: `array` of `object`
+
+Each item in the `android` list has the following properties:
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| source | `string` | Required |
+| density | `string` | Required |
+
+Each item in the `ios` list has the following properties:
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| source | `string` | Required |
+| size | `string` | Required |
+
+`source`
+
+A reference to the image for the item. Use `$images` for an OutSystems app image, or `$resources` for an OutSystems app resource.
+
+* Required
+* Type: `string`
+* Placeholders: `images`, `resources`
+
+`density`
+
+The screen density that the image is for, such as `mdpi`. Applies only to items in the `android` list.
+
+* Required
+* Type: `string`
+* Placeholders: _none_
+
+`size`
+
+The app icon size in pixels that the image is for, such as `"180"`. Applies only to items in the `ios` list.
+
+* Required
+* Type: `string`
+* Placeholders: _none_
+
 ### `splashscreens` {#splash-screen}
 
 <div class="info" markdown="1">
@@ -715,8 +841,8 @@ Assets to customize the splash screen experience. By default, MABS 12 applicatio
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [android](#android-android-1) | `object` | Optional |
-| [ios](#ios-ios-1) | `object` | Optional |
+| [android](#android-1) | `object` | Optional |
+| [ios](#ios-1) | `object` | Optional |
 
 #### `android` {#android-1}
 
@@ -732,12 +858,13 @@ Properties:
 | Property | Type | Required |
 | :---- | :---- | :---- |
 | [logo](#logo) | `string` | Optional |
+| [imageCatalog](#splash-image-catalog) | `array` of `object` | Optional |
 
 #### `ios` {#ios-1}
 
 iOS specific configurations for the splash screen
 
-`android`
+`ios`
 
 * Optional  
 * Type: `object`
@@ -747,8 +874,15 @@ Properties:
 | Property | Type | Required |
 | :---- | :---- | :---- |
 | [logo](#logo) | `string` | Optional |
+| [imageCatalog](#splash-image-catalog) | `array` of `object` | Optional |
 
 #### `logo`
+
+<div class="info" markdown="1">
+
+Applies only to Capacitor apps.
+
+</div>
 
 Customize the logo based splash screen experience. When using `appIcon`, the application icon will be used in the center of the splash screen. Otherwise a path or reference to an image can be provided
 
@@ -766,6 +900,84 @@ Use one of the above.
 * Optional  
 * Type: `string`
 * Placeholders: `images`, `resources`
+
+#### `imageCatalog` {#splash-image-catalog}
+
+<div class="info" markdown="1">
+
+Applies only to Cordova apps.
+
+</div>
+
+A list of splash screen images that ODC uses in place of the splash screens it creates from the **Primary color** in the app properties. In the `android` object, each item sets the image for one orientation and screen density. In the `ios` object, each item sets the image for one image identifier. For more information about the identifiers and densities that each catalog must include, refer to [App icon and splash screen image catalogs](image-catalogs.md).
+
+##### Example {#splash-image-catalog-example}
+
+```json
+{
+  "buildConfigurations": {
+    "splashscreens": {
+      "android": {
+        "imageCatalog": [
+          { "source": "$images.SplashLandLdpi", "density": "land-ldpi" },
+          { "source": "$images.SplashLandMdpi", "density": "land-mdpi" },
+          ...
+        ]
+      },
+      "ios": {
+        "imageCatalog": [
+          { "source": "$images.Splash2xUniversalAnyAny", "identifier": "Default@2x~universal~anyany" },
+          { "source": "$images.Splash2xUniversalComAny", "identifier": "Default@2x~universal~comany" },
+          ...
+        ]
+      }
+    }
+  }
+}
+```
+
+`imageCatalog`
+
+* Optional
+* Type: `array` of `object`
+
+Each item in the `android` list has the following properties:
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| source | `string` | Required |
+| density | `string` | Required |
+
+Each item in the `ios` list has the following properties:
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| source | `string` | Required |
+| identifier | `string` | Required |
+
+`source`
+
+A reference to the image for the item. Use `$images` for an OutSystems app image, or `$resources` for an OutSystems app resource.
+
+* Required
+* Type: `string`
+* Placeholders: `images`, `resources`
+
+`density`
+
+The orientation and screen density that the image is for, such as `port-xhdpi`. Applies only to items in the `android` list.
+
+* Required
+* Type: `string`
+* Placeholders: _none_
+
+`identifier`
+
+The identifier of the splash screen image, such as `Default@2x~universal~anyany`. Applies only to items in the `ios` list.
+
+* Required
+* Type: `string`
+* Placeholders: _none_
 
 ### `buildAction`
 

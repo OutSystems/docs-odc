@@ -4,8 +4,9 @@ locale: en-us
 summary: Cordova-based extensibility configuration JSON schema for OutSystems Developer Cloud (ODC) mobile apps, covering plugins, preferences, and resources.
 figma:
 coverage-type:
-  - apply
   - remember
+  - understand
+  - apply
 topic:
   - app-extensibility-use-cases
 app_type: mobile apps
@@ -15,6 +16,7 @@ audience:
 tags:
   - Android
   - Cordova
+  - Extensions
   - iOS
   - Mobile app
   - Native App
@@ -22,6 +24,7 @@ tags:
 outsystems-tools:
   - odc studio
 helpids:
+isautopublish: true
 ---
 # Cordova-based extensibility configuration JSON schema
 
@@ -107,8 +110,42 @@ The value of the **Extensibility Configurations** property of a mobile app modul
             /* ...more iOS resources... */
         }
     },
-    "icons": { ... },
-    "splashscreens": { ... }
+    "icons": {
+        // Just for Android
+        "android": [
+            {
+                "resource": "<The reference to the icon image>",
+                "density": "<The screen density of the icon image>"
+            },
+            /* ...one item for each density... */
+        ],
+        // Just for iOS
+        "ios": [
+            {
+                "resource": "<The reference to the icon image>",
+                "height": "<The size in pixels of the icon image>"
+            },
+            /* ...one item for each size... */
+        ]
+    },
+    "splashscreens": {
+        // Just for Android
+        "android": [
+            {
+                "resource": "<The reference to the splash screen image>",
+                "density": "<The orientation and screen density of the splash screen image>"
+            },
+            /* ...one item for each orientation and density... */
+        ],
+        // Just for iOS
+        "ios": [
+            {
+                "resource": "<The reference to the splash screen image>",
+                "defaultName": "<The identifier of the splash screen image>"
+            },
+            /* ...one item for each identifier... */
+        ]
+    }
 }
 ```
 
@@ -186,9 +223,50 @@ The `target` property specifies the destination path within the mobile project. 
 
 As an example of the usage of this feature on an OutSystems-supported plugin, see the [Firebase supported plugins documentation](../../integration-with-systems/mobile-plugins/firebase-plugin/intro.md#adding-google-services-configuration-file).
 
+## Icons and splash screens {#icons-splashscreens}
+
+The `icons` and `splashscreens` top-level properties set image catalogs with your own image for each app icon size and splash screen. ODC uses these images in place of the images it creates from the **Icon** and the **Primary color** in the app properties.
+
+Each property has an `android` list and an `ios` list. Each item has a `resource` property that points to the image, using `$images` for an OutSystems app image or `$resources` for an OutSystems app resource. Each item also has a property that identifies the image, such as `density`.
+
+The following example shows the start of each image catalog:
+
+```json
+{
+    "icons": {
+        "android": [
+            { "resource": "$images.IconLdpi", "density": "ldpi" },
+            { "resource": "$images.IconMdpi", "density": "mdpi" },
+            ...
+        ],
+        "ios": [
+            { "resource": "$images.Icon20", "height": "20" },
+            { "resource": "$images.Icon29", "height": "29" },
+            ...
+        ]
+    },
+    "splashscreens": {
+        "android": [
+            { "resource": "$images.SplashLandLdpi", "density": "land-ldpi" },
+            { "resource": "$images.SplashLandMdpi", "density": "land-mdpi" },
+            ...
+        ],
+        "ios": [
+            { "resource": "$images.Splash2xUniversalAnyAny", "defaultName": "Default@2x~universal~anyany" },
+            { "resource": "$images.Splash2xUniversalComAny", "defaultName": "Default@2x~universal~comany" },
+            ...
+        ]
+    }
+}
+```
+
+Each catalog must include an image for every value, at the size that the value requires. For more information about the values and image sizes of each catalog, refer to [App icon and splash screen image catalogs](extensibility-configurations/image-catalogs.md).
+
 ## Related resources
 
 * [Universal extensibility configuration JSON schema](extensibility-configurations.md)
+
+* [App icon and splash screen image catalogs](extensibility-configurations/image-catalogs.md)
 
 * [Troubleshooting errors](extensibility-configurations/troubleshooting-errors.md)
 

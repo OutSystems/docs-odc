@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports the Keyboard Plugin for keyboard display and visibility control, and event tracking for when the keyboard shows and hides.
+summary: OutSystems Developer Cloud (ODC) Keyboard Plugin controls Android and iOS keyboard visibility, styling, accessory bars, backdrop behavior, and keyboard events.
 tags:
   - Android
   - Blocks
@@ -55,16 +55,16 @@ iOS 26 and later changed the keyboard appearance. On iOS 26 and later, a black b
 Here are the possible values for **KeyboardBackdropBehavior**:
 
 * **dom** (Default): The Keyboard plugin looks at the DOM for the screen's background color and applies it as the background behind the keyboard whenever the keyboard opens.
-* **auto**: The Keyboard plugin uses the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundColor) defined in the app's extensibility configuration, which defaults to the app's primary color, and applies it as the keyboard background. If none is provided, the plugin looks at the DOM as described in the **dom** option.
+* **auto**: The Keyboard plugin uses the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundcolor) defined in the app's extensibility configuration, which defaults to the app's primary color, and applies it as the keyboard background. If none is provided, the plugin looks at the DOM as described in the **dom** option.
 * **off**: Keyboard backdrop color is not changed. Same behavior as 1.2.2 and older.
 
 To change the **KeyboardBackdropBehavior** value, go to your mobile app's detail page in the ODC Portal and select the **Mobile Distribution**.
 
 ![Screenshot showing where to change **KeyboardBackdropBehavior** for your app in ODC Portal](images/change-keyboard-backdrop-behavior-pl.png "Changing the keyboard backdrop behavior")
 
-If closing the keyboard on iOS 26 and later shows a brief color flicker, the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundColor) value doesn't match your app's actual background. Set **backgroundColor** to your app's actual background color to fix the flicker.
+If closing the keyboard on iOS 26 and later shows a brief color flicker, the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundcolor) value doesn't match your app's actual background. Set **backgroundColor** to your app's actual background color to fix the flicker.
 
-Under your app's **Extensibility Configurations** tab, explicitly add the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundColor) property. For example, if your app's background is white:
+Under your app's **Extensibility Configurations** tab, explicitly add the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundcolor) property. For example, if your app's background is white:
 
 ```json
 {
@@ -140,7 +140,7 @@ To create the logic to set the keyboard style on iOS, follow these steps:
 
 Here's the result of calling the **SetStyle** client action with **KeyboardStyle.Dark** on iOS:
 
-![Screenshot of the keyboard with style set to Light on iOS](images/set-style-diag.png "Set Style on iOS")
+![Screenshot of the keyboard with style set to KeyboardStyle.Dark on iOS](images/set-style-diag.png "Dark Keyboard Style on iOS")
 
 ## Handle keyboard events
 

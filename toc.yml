@@ -466,6 +466,8 @@
             - href: eap/building-apps/mobile/legacy-extensibility-configuration.md
             - topics:
                 - href: eap/building-apps/mobile/cordova-extensibility-configurations-use-cases.md
+            # App icon and splash screen image catalogs
+            - href: eap/building-apps/mobile/extensibility-configurations/image-catalogs.md
             
             - href: eap/building-apps/mobile/build-actions.md
             - topics:
