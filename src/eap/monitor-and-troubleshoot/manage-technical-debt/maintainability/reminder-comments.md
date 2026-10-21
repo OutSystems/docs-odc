@@ -1,6 +1,8 @@
 ---
 summary: ODC reminder comments flag technical debt in ODC Studio via the Is Reminder property, triggered by TODO, TBD, or REMINDER keywords.
-tags: technical debt, reminder comments, task management, comment properties, issue tracking
+tags:
+  - Technical Debt
+  - Troubleshooting
 guid: 24d9c5d6-b735-4e64-b47f-ada091e94f1f
 locale: en-us
 app_type: mobile apps, reactive web apps

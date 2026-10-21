@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) Studio supports setting, removing, and managing breakpoints for effective debugging in action flows.
-tags: debugging, developer tools, ide features, application lifecycle management
+tags:
+  - Debugging
+  - Troubleshooting
 locale: en-us
 guid: 2f4fd5a1-65ad-48ef-83b6-69bbfa851f53
 app_type: mobile apps, reactive web apps

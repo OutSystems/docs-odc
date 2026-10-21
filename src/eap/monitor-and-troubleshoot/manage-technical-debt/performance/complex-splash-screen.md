@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) splash screen complexity raises app load time — reduce server requests and minimize Blocks to fix it.
-tags: splash screen optimization, mobile app performance, ui complexity reduction, load time improvement, user experience
+tags:
+  - Blocks
+  - Front-End
+  - Mobile app
+  - Optimization
+  - Performance
+  - Troubleshooting
+  - UI
 guid: ee32b593-673e-4edc-a344-e2487d6285dc
 locale: en-us
 app_type: mobile apps

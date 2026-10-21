@@ -5,7 +5,13 @@ guid: 43207953-41b5-4c62-887b-bb7a72a433ec
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: debugging, watches, odc studio
+tags:
+  - Debugging
+  - Logic
+  - Screens
+  - Troubleshooting
+  - UI
+  - Widgets
 audience:
   - Developer
   - Front-end developer

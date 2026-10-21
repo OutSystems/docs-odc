@@ -1,5 +1,10 @@
 ---
-tags: widget implementation, ui design, date handling, form inputs, flatpickr library
+tags:
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Date Picker UI Pattern in OutSystems Developer Cloud (ODC) lets you build a flatpickr-based calendar input with OnSelect events and date variable assignment.
 locale: en-us
 guid: 87d21dac-8006-44b5-8e43-919e93a4e462

@@ -1,5 +1,11 @@
 ---
-tags: date handling, ui components
+tags:
+  - Events
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Date Picker Range pattern in OutSystems Developer Cloud (ODC) lets you add a calendar date range selector, configure variables, and handle start and end date events.
 locale: en-us
 guid: 940d5a36-2677-40c7-a073-974104ff7704

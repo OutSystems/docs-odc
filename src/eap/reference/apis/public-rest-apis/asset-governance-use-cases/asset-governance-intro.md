@@ -14,7 +14,14 @@ audience:
   - Tech lead
   - Platform administrator
   - Developer
-tags: asset governance, asset creation, templates, access management, rest api, outsystems api
+tags:
+  - Authorization
+  - REST
+  - Roles
+  - Security
+  - Templates
+  - Web services
+  - Workflows
 outsystems-tools:
   - odc portal
   - odc studio

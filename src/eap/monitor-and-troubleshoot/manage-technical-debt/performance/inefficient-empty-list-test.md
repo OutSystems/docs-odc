@@ -1,6 +1,12 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) inefficient empty list test: use List.Empty instead of List.Count to avoid an extra query and improve performance."
-tags: count property, aggregate, sql query, performance, outsystems
+tags:
+  - Aggregates
+  - Optimization
+  - Performance
+  - SQL
+  - Technical Debt
+  - Troubleshooting
 guid: 468193f3-a09a-4dfb-acc8-f14947476d95
 locale: en-us
 app_type: mobile apps, reactive web apps

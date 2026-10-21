@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) automatically generates REST API documentation from method properties and descriptions upon app publication.
-tags: api documentation, swagger, rest api, automatic documentation, integration
+tags:
+  - REST
+  - Web services
 locale: en-us
 guid: 08460e49-ec25-478c-abce-d4dc5d1abe2b
 app_type: mobile apps, reactive web apps

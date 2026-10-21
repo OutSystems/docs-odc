@@ -1,6 +1,12 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables navigation to detail screens in web and mobile applications by configuring the List Item widget's On Click event.
-tags: ui navigation, screen design
+tags:
+  - Front-End
+  - Mobile app
+  - Screens
+  - UI
+  - Web
+  - Widgets
 locale: en-us
 guid: 32d89cec-ecb5-4c30-9d43-548cc4077425
 app_type: mobile apps, reactive web apps

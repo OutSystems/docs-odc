@@ -1,6 +1,8 @@
 ---
 summary: Learn how to refresh REST web services in OutSystems Developer Cloud (ODC) to update consumed API methods efficiently.
-tags: api integration, rest api, json, version control, service refresh
+tags:
+  - REST
+  - Web services
 locale: en-us
 guid: 1ba6b838-04bc-4c08-813d-5a2901954f8c
 app_type: mobile apps, reactive web apps

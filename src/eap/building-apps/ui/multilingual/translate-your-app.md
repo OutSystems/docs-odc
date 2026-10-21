@@ -1,6 +1,13 @@
 ---
 summary: "ODC app translation with ODC Studio: add locales, use SetCurrentLocale to build a language switcher, and handle Static Entities."
-tags: localization, internationalization, multilingual support, accessibility, user experience
+tags:
+  - Data
+  - Logic
+  - Multi-language
+  - Translation
+  - UI
+  - UX
+  - Widgets
 locale: en-us
 guid: 93f5315e-72fa-45f2-97ad-9e676da413a3
 app_type: mobile apps, reactive web apps
