@@ -1,6 +1,9 @@
 ---
 summary: Too much disabled code in ODC apps adds clutter, raises maintenance costs, and signals when removal is the right fix.
-tags: disabled code, code maintenance, app performance, code readability, production code
+tags:
+  - Best Practices
+  - Refactoring
+  - Technical Debt
 guid: c166aa05-26ca-48da-b80a-91ea20294bbc
 locale: en-us
 app_type: mobile apps, reactive web apps

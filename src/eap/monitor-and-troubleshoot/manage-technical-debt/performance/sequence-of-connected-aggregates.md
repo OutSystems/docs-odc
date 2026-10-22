@@ -1,6 +1,12 @@
 ---
 summary: ODC connected Aggregates cause database overhead when referencing one another. Merge them into a single Aggregate with a join to reduce latency.
-tags: aggregates, database optimization, performance, data fetching, latency
+tags:
+  - Aggregates
+  - Data
+  - Optimization
+  - Performance
+  - Technical Debt
+  - Troubleshooting
 guid: 8fa32beb-6cca-412c-a16d-5a33c658c6f9
 locale: en-us
 app_type: mobile apps, reactive web apps

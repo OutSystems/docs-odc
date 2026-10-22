@@ -1,6 +1,12 @@
 ---
 summary: ODC mobile app performance suffers when Local Storage is unused — fix over-reliance on server requests with proper data synchronization.
-tags: local storage, server requests, data synchronization, offline performance, mobile app optimization
+tags:
+  - Data Synchronization
+  - Mobile app
+  - Optimization
+  - Performance
+  - Technical Debt
+  - Troubleshooting
 guid: 3d6eebdf-a7d5-43fc-b885-468832a87141
 locale: en-us
 app_type: mobile apps

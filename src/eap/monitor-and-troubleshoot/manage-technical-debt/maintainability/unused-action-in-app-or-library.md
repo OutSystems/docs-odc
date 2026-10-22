@@ -1,6 +1,13 @@
 ---
 summary: Unused action in OutSystems Developer Cloud (ODC) apps or libraries increases code size and security risks. Delete it if not needed.
-tags: code maintenance, security risks, unused actions, non-public actions, mobile apps
+tags:
+  - Libraries
+  - Logic
+  - Optimization
+  - Refactoring
+  - Security
+  - Technical Debt
+  - Troubleshooting
 guid: 395ec5da-9a47-4849-9a22-cbaffa541e8e
 locale: en-us
 app_type: mobile apps, reactive web apps

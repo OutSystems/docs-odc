@@ -1,6 +1,11 @@
 ---
 summary: ODC unused Aggregate or SQL query wastes resources and bloats your codebase; delete it if not needed.
-tags: unused aggregates, sql queries, performance optimization, code maintenance, app performance
+tags:
+  - Aggregates
+  - Optimization
+  - Performance
+  - SQL
+  - Technical Debt
 guid: f6b3dd0f-5a48-47a9-9e62-fb6b0dfc7c77
 locale: en-us
 app_type: mobile apps, reactive web apps

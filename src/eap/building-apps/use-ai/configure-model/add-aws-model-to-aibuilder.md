@@ -1,6 +1,12 @@
 ---
 summary: Amazon Bedrock AI model setup in OutSystems Developer Cloud (ODC) AI Agent Builder, including adding endpoints with access keys and priority order.
-tags: cloud integration, ai model deployment, aws services, high availability, devops
+tags:
+  - AI
+  - Authentication
+  - Infrastructure
+  - Security
+  - Settings
+  - Sorting
 locale: en-us
 guid: e871f14b-e322-4cfc-a1b8-bc361fba8dc5
 app_type: mobile apps, reactive web apps

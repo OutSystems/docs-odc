@@ -14,7 +14,14 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
-tags: jwt, token-based authentication, access token, rest api, api authentication
+tags:
+  - Authentication
+  - Authorization
+  - Best Practices
+  - Libraries
+  - OAuth
+  - REST
+  - Security
 outsystems-tools:
   - odc studio
 helpids:

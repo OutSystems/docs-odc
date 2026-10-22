@@ -1,6 +1,12 @@
 ---
 summary: "Common Plugin for OutSystems Developer Cloud (ODC) mobile apps: access device info, console logging, and manage plugin scopes with PluginManager."
-tags: plugin development, cordova integration, mobile app development, outsystems mobile, javascript modules
+tags:
+  - Capacitor
+  - Cordova
+  - JavaScript
+  - Logging
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: d5aea2d2-678e-4823-a1f2-26e1022244c3
 app_type: mobile apps

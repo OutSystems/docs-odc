@@ -1,5 +1,12 @@
 ---
-tags: ui design patterns, mobile app development
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Card Sectioned UI pattern in OutSystems Developer Cloud (ODC) organizes screen content into title, image, and footer sections for use in ODC Studio.
 locale: en-us
 guid: 7ac603a7-60c1-48cf-b47d-fed2ac2e544b
