@@ -1,6 +1,11 @@
 ---
 summary: Explore various text manipulation functions in OutSystems Developer Cloud (ODC) for secure and efficient application development.
-tags: mobile apps, secure coding practices, html encoding, javascript encoding
+tags:
+  - Best Practices
+  - JavaScript
+  - Logic
+  - SQL
+  - Security
 locale: en-us
 guid: 7afd2224-135c-4325-af02-20ee06290373
 app_type: mobile apps, reactive web apps

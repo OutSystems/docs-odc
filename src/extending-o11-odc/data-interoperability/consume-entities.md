@@ -12,7 +12,10 @@ platform-version: odc
 audience:
   - Developer
   - Front-end developer
-tags: entities, data interoperability
+tags:
+  - Data
+  - Data Model
+  - Entities
 outsystems-tools:
   - odc studio
 helpids:

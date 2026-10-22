@@ -1,6 +1,10 @@
 ---
 summary: Reference information for Roles built-in function in OutSystems Developer Cloud (ODC).
-tags: roles, user authentication, server actions, service actions, outsystems developer cloud
+tags:
+  - Authentication
+  - Authorization
+  - End-user Authentication
+  - Roles
 locale: en-us
 guid: 4facff20-972f-477b-8b61-d2b64539ea1c
 app_type: mobile apps, reactive web apps

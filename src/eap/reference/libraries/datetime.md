@@ -1,6 +1,7 @@
 ---
 summary: Explore date and time manipulation features in OutSystems Developer Cloud (ODC) with the DateTime library's comprehensive actions.
-tags: date and time manipulation, datetime functions, mobile app development, outsystems programming, technical reference
+tags:
+  - Libraries
 locale: en-us
 guid: 9da728fe-ebdc-4114-af34-1ef4d2265e19
 app_type: mobile apps, reactive web apps

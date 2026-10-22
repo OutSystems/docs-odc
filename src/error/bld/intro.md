@@ -1,6 +1,9 @@
 ---
 summary: Common errors when performing 1-Click Publish
-tags: build errors, 1-click publish, error handling, developer cloud, deployment issues
+tags:
+  - 1-Click Publish
+  - Deploy
+  - Troubleshooting
 locale: en-us
 guid: 12e59999-56de-4e59-aeb0-282f9d094604
 app_type: mobile apps, reactive web apps

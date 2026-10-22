@@ -14,7 +14,14 @@ platform-version: odc
 audience:
   - Tech lead
   - Platform administrator
-tags: entities,data interoperability
+tags:
+  - Data
+  - Entities
+  - External Databases
+  - Infrastructure
+  - Platform Server
+  - SQL
+  - Security
 outsystems-tools:
   - none
 helpids:

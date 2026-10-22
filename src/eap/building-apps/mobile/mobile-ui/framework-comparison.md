@@ -1,6 +1,13 @@
 ---
 summary: Compare Mobile UI with OutSystems UI to help developers choose the optimal framework for their mobile app development in OutSystems Developer Cloud (ODC).
-tags: mobile ui, outsystems ui, framework comparison, mobile development, ui widgets
+tags:
+  - Capacitor
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UX
+  - Widgets
 locale: en-us
 guid: e90bb9f0-8f9f-4950-953f-9f6af3c67253
 app_type: mobile apps
