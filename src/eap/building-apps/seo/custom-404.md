@@ -1,6 +1,9 @@
 ---
 summary: Display a custom 404 error page when a specific URL can't be found.
-tags: custom 404 page, seo, reverse proxy, cdn, nginx
+tags:
+  - Front-End
+  - Infrastructure
+  - Web
 guid: 0b037701-1e07-4ace-983f-6a20d500aa1f
 locale: en-us
 app_type: mobile apps, reactive web apps

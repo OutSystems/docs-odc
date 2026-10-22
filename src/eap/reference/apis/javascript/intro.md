@@ -1,6 +1,13 @@
 ---
 summary: Explore how OutSystems Developer Cloud (ODC) enhances mobile and reactive web apps through its comprehensive JavaScript API for custom user experiences.
-tags: javascript api, mobile app development, reactive web apps, outsystems developer cloud, feedback handling
+tags:
+  - Events
+  - Extensions
+  - Front-End
+  - JavaScript
+  - Mobile app
+  - UI
+  - Web
 guid: f58513d5-9cae-419d-b7a7-81dca37bdd61
 locale: en-us
 app_type: mobile apps, reactive web apps

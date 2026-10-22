@@ -1,6 +1,13 @@
 ---
 summary: Learn about advanced data synchronization and conflict detection in OutSystems Developer Cloud (ODC) for mobile apps, ensuring data integrity across offline scenarios.
-tags: data synchronization, conflict detection, offline data handling, local storage, database synchronization
+tags:
+  - Aggregates
+  - Data
+  - Data Integrity
+  - Data Model
+  - Data Synchronization
+  - Entities
+  - Logic
 locale: en-us
 guid: a1693cc0-c406-4769-8dc9-2bbb6b790b33
 app_type: mobile apps

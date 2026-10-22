@@ -1,5 +1,10 @@
 ---
-tags: applicationcontext, screen context, odc, reactive web apps, mobile apps
+tags:
+  - Front-End
+  - JavaScript
+  - Mobile app
+  - Screens
+  - Web
 summary: OutSystems Developer Cloud (ODC) features ApplicationContext for contextual details on the current screen, and application.
 locale: en-us
 guid: d55f5702-dea5-4bc3-bf39-de884d07bffd

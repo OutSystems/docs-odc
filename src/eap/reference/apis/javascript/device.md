@@ -1,5 +1,10 @@
 ---
-tags: device capabilities, cordova, mobile development, native apis, event handling
+tags:
+  - Cordova
+  - Events
+  - JavaScript
+  - Mobile app
+  - Native App
 summary: Explore device capabilities in OutSystems Developer Cloud (ODC) with the `whenReady` function, ensuring native API readiness.
 locale: en-us
 guid: 013451b7-0d79-423f-9f0b-745024729929

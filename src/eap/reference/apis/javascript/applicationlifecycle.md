@@ -1,5 +1,10 @@
 ---
-tags: application lifecycle, upgrades, event handling, monitoring, customization
+tags:
+  - Events
+  - Front-End
+  - JavaScript
+  - Lifecycle
+  - Monitoring
 summary: OutSystems Developer Cloud (ODC) provides tools to manage the application lifecycle, including monitoring upgrades and customizing the loading process.
 locale: en-us
 guid: adf14b4f-4bef-4989-8ffe-9661392a4e54

@@ -11,7 +11,14 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
-tags: REST,rest api,logic encapsulation,libraries
+tags:
+  - Architecture
+  - Libraries
+  - Logic
+  - Modular Programming
+  - REST
+  - Technical Debt
+  - Web services
 outsystems-tools:
   - odc studio
 helpids: 

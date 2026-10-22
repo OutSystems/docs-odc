@@ -1,5 +1,11 @@
 ---
-tags: navigation, mobile apps, reactive web apps, back handlers, transition animations
+tags:
+  - CSS
+  - Events
+  - Front-End
+  - JavaScript
+  - Mobile app
+  - Web
 summary: OutSystems Developer Cloud (ODC) enhances navigation in mobile and reactive web apps with custom back handlers and transition animations.
 locale: en-us
 guid: 2726ff0c-6682-45e1-88eb-067d0cc6f57d

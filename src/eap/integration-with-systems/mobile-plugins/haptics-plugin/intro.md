@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the Haptics Plugin to provide physical feedback to the user through touch and vibration.
-tags: mobile development, haptics, vibration, feedback, plugin integration, mobile app development
+tags:
+  - Android
+  - Capacitor
+  - Forge
+  - iOS
+  - Logic
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: b198cf6e-e1f5-45c6-8cfe-0a13d744383a
 app_type: mobile apps, reactive web apps
