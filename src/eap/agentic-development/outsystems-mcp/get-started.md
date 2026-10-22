@@ -1,6 +1,12 @@
 ---
-summary: Authenticate Claude Code to OutSystems MCP and confirm the connection with a first tenant request.
-tags: getting started, setup, claude code, oauth, mcp, mcp host
+summary: Set up OutSystems MCP in Claude Code with a guided file or manual steps, sign in, and confirm the connection with a first request.
+tags:
+  - Agentic
+  - AI
+  - Authentication
+  - OAuth
+  - Plugins
+  - Troubleshooting
 guid: 3d7c70ce-dbd2-47ee-a927-76b6009b0b84
 locale: en-us
 app_type: reactive web apps
@@ -21,13 +27,32 @@ isautopublish: true
 
 # Get started with OutSystems MCP
 
-This page describes how to set up OutSystems MCP (also known as OutSystems Agent Experience) in Claude Code, your MCP host. The steps cover installing the OutSystems plugin, signing in, and running a first request. If you use another MCP host, such as Cursor or AWS Kiro, follow the steps for your host in [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md) instead. For the MCP hosts OutSystems validates, refer to [Supported MCP hosts](outsystems-mcp-overview.md#supported-mcp-hosts).
+This page shows you how to connect Claude Code, your MCP host, to OutSystems MCP from a terminal. You install the plugin, sign in, and run a first request.
 
-## Prerequisites
+To have an AI tool guide you instead, refer to [Use the guided setup file](#guided-setup). To use another MCP host, such as Cursor or AWS Kiro, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md). For the MCP hosts that OutSystems validates, refer to [Supported MCP hosts](outsystems-mcp-overview.md#supported-mcp-hosts).
+
+## Use the guided setup file {#guided-setup}
+
+Give the guided setup file to your AI tool, and it sets up OutSystems MCP with you. It shows each step, runs the step, and asks for your confirmation before it continues. Setup changes nothing in your tenant.
+
+1. Download the [guided setup file](resources/outsystems-mcp-setup.txt) and save it in an empty folder.
+1. Open the empty folder in your AI tool.
+1. Start a new session.
+1. Ask your AI tool:
+
+    * "Follow the instructions in @outsystems-mcp-setup.txt"
+
+1. Answer the questions that your AI tool asks, and approve each step.
+
+In Claude Code, the `@` reference attaches the file. In AWS Kiro, name the file in the prompt. In other AI tools, attach or name the file the way the tool does.
+
+The guided setup file supports Claude Code in the **Code** tab of Claude Desktop and AWS Kiro. It also covers Cursor, GitHub Copilot, and the **Chat** tab of Claude Desktop. The **Code** tab requires a paid Claude plan.
+
+## Prerequisites for the manual steps {#prerequisites}
 
 You need the following before you start:
 
-* Claude Code installed.
+* The Claude Code command-line tool installed, so that the `claude` command runs in your terminal. To check, run `claude --version`. For more information about installing Claude Code, refer to the [Claude Code quickstart](https://code.claude.com/docs/en/quickstart).
 * Your OutSystems tenant hostname, the host part of your OutSystems URL, for example `mycompany.outsystems.dev`.
 * A web browser on the same machine as Claude Code. The sign-in redirect goes to a local loopback address.
 * A tenant with OutSystems MCP enabled for your organization, and your user able to sign in to it.
@@ -37,11 +62,17 @@ You need the following before you start:
     * **Release management** > **Deploy assets** to deploy an app to another stage.
     * **Monitoring** > **Access asset logs and traces** to read an app's logs and traces.
 
-For the full list of permissions, refer to [ODC permissions](../../user-management/roles.md#permissions-registry).
+A Personal Edition tenant has OutSystems MCP enabled and gives you these permissions. For the full list of permissions, refer to [ODC permissions](../../user-management/roles.md#permissions-registry).
 
 ## Install the OutSystems plugin
 
 The OutSystems plugin registers the OutSystems MCP server in Claude Code and delivers the OutSystems skill. Install it once for your tenant.
+
+<div class="info" markdown="1">
+
+The manual steps on this page run in a terminal and assume that you're comfortable with command-line tools. To have an AI tool such as Claude Code or AWS Kiro set up OutSystems MCP with you instead, refer to [Use the guided setup file](#guided-setup).
+
+</div>
 
 1. Add the OutSystems marketplace:
 
@@ -57,13 +88,13 @@ The OutSystems plugin registers the OutSystems MCP server in Claude Code and del
 
         claude mcp list
 
-    The output lists `plugin:outsystems:outsystems` with the URL `https://TENANT_HOSTNAME/mcp`.
+    The output lists `plugin:outsystems:outsystems` with the URL `https://TENANT_HOSTNAME/mcp` and the status `Needs authentication`, which clears after you sign in.
 
 1. Restart Claude Code so it loads the server.
 
 ## Sign in
 
-Claude Code signs you in through the browser the first time you call an OutSystems tool, using a built-in authenticate tool that runs the flow automatically.
+Claude Code signs you in through the browser the first time you call an OutSystems tool, using the plugin's authenticate tool.
 
 1. Open Claude Code in a working folder by running `claude`.
 1. Ask the agent an OutSystems request, for example:
@@ -79,9 +110,21 @@ If Claude Code shows an MCP setup warning before you authenticate, continue with
 
 Depending on your Claude Code permission settings, Claude Code asks you to allow each OutSystems tool before the agent first runs it. Allow the tool, and the request continues.
 
-If the sign-in doesn't start, or a request fails with an authentication error, run `/mcp` in Claude Code, select the `outsystems` server that comes from the plugin, and choose **Authenticate**.
-
 Your sign-in persists across requests. When it expires, the agent prompts you to authenticate again and retries the request.
+
+### Sign in with a command
+
+If the sign-in doesn't start, or a request fails with an authentication error, start the sign-in yourself with one of the following options.
+
+* **Terminal command:** Run the following command in a terminal. It opens your browser, and it reports when the sign-in completes:
+
+        claude mcp login plugin:outsystems:outsystems
+
+    On a remote machine, add the `--no-browser` option. The command prints the authorization URL. After you sign in, paste the redirect URL only at the command's prompt.
+
+* **Slash command:** In a Claude Code session, run `/mcp`, select the `outsystems` server that comes from the plugin, and choose **Authenticate**.
+
+If a running Claude Code session doesn't list the OutSystems tools after the sign-in, restart Claude Code. To clear the stored sign-in, run `claude mcp logout plugin:outsystems:outsystems`.
 
 ## Verify the connection
 
@@ -91,7 +134,7 @@ Confirm the connection by asking for something only your tenant answers.
 
     * "Which environments do I have in OutSystems?"
 
-1. Confirm the response lists your tenant's stages, such as Development.
+1. Confirm the response lists your tenant's stages, such as Development. A Personal Edition tenant lists one stage, Development.
 
 This request lists stages rather than apps, so it returns results on a tenant that has no apps. To list the apps in your tenant, ask the agent:
 

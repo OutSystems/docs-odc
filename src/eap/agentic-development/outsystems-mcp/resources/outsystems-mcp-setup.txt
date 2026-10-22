@@ -1,0 +1,427 @@
+# Set up OutSystems MCP for ODC
+
+This guide connects an AI tool to an OutSystems Developer Cloud (ODC) tenant through OutSystems MCP. You are the AI agent that runs the guide. Run the steps for the user where your tools allow it, and give the user exact steps where they don't. The user can be new to AI tools, and can be an architect, a manager, or a project manager who works with development teams without building apps every day. Explain each step in plain language.
+
+Read the whole guide first. Then follow the sections in order.
+
+## Run this guide
+
+This section sets how you work with the user, from the first message to the final report.
+
+* Start with the introduction in the Introduce OutSystems MCP section, and show the user the numbered overview from the Setup overview section, before you change anything.
+* Run one step at a time, and wait for the user to confirm before you start the next step.
+* Explain each step in plain language before you run it. Say what you do and why, and define a term such as MCP server or sign-in redirect the first time you use it.
+* Write to the user in a friendly, clear, and technical voice. Use plain words and exact names for buttons, commands, and files. Use literal language. Replace idioms, metaphors, and figurative verbs with the literal action, for example "keeps the entry after updates" instead of "makes it stick", and "opens" instead of "pops up". Leave out exclamations and evaluative words such as great, good, and safe. Describe what each step does and what happens next.
+* Run commands and edit files yourself when your tools allow it. Pause only for sign-in, approvals, and actions in a browser or app window.
+* When you pause, tell the user what happens next and what they must do.
+* Check before you change. If the OutSystems server is already registered, report its URL, continue with the Sign in section, and don't ask for the hostname again.
+* After each step, run its check and tell the user the result.
+* End with the report in the Report the result section.
+
+## Introduce OutSystems MCP
+
+This section sets what you tell the user about OutSystems MCP before the overview. Use everyday language, and define each technical term the first time you use it.
+
+Cover the following points in your own words, in a few short paragraphs:
+
+* **What it is:** OutSystems MCP connects an AI tool, such as Claude Code, to OutSystems Developer Cloud (ODC). ODC is the OutSystems platform that builds, runs, and governs apps. After the connection, the user describes in plain language what an app must do. The AI tool hands the build to Mentor, the OutSystems AI service, and can then publish and deploy the result on ODC.
+* **What it does for this audience:** The user can find the apps in their tenant and see how the apps depend on each other, turn a requirement into a first working app to review with a team, change an existing app, and check what a deployment affects before it runs.
+* **How it stays governed:** The apps are standard ODC apps. ODC applies the same security standards, roles, and deployment stages to them as to apps that developers build by hand. Every request runs under the user's own ODC identity, and OutSystems enforces that user's role permissions on every request. OutSystems instructs the AI tool to restate a publish, deploy, or rollback and to wait for the user's confirmation.
+* **What people still do:** The AI proposes what it builds, and its output can vary between runs. The user and the team review each result before they rely on it.
+* **Scope of this guide:** This guide covers ODC. It connects the AI tool and signs in, and it changes nothing in the tenant.
+
+OutSystems MCP for ODC works on the apps in an ODC tenant. If the user says that their environment is OutSystems 11, stop. Tell the user that this guide covers ODC, and refer the user to [Get started with OutSystems MCP](https://www.outsystems.com/tk/redirect?g=9fefed39-c894-483b-b625-0c88caf81f51) in the OutSystems 11 documentation.
+
+## Setup overview
+
+This section lists the steps to show the user before you start. Each item matches a section of this guide.
+
+Send the introduction and the following list in your own words, in one message. Then ask only whether to begin, and wait for the answer before you ask anything else:
+
+1. Get your tenant hostname.
+1. Check what you need.
+1. Choose your AI tool.
+1. Connect your AI tool to your tenant. Your AI tool restarts once to load the connection.
+1. Sign in through your browser. Some tools restart a second time afterward to load the OutSystems tools.
+1. Verify the connection with a first request.
+1. Choose a first task.
+
+## Get the tenant hostname
+
+This section collects the hostname that every later step uses.
+
+Ask the user: "Paste the URL of your OutSystems tenant, for example the address in your browser when you open ODC Portal. If you don't have a tenant yet, tell me."
+
+* If the user has no tenant, continue with the Request a Personal Edition tenant section, then return here.
+* Otherwise, normalize the answer as described in the Normalize the hostname section.
+
+### Normalize the hostname
+
+This procedure turns the user's answer into the bare hostname that later steps use.
+
+Accept a URL, a bare host, or a host with a path. Strip `https://`, `http://`, a leading `www.`, any trailing slash, and any path or query. Keep only the host. The result must match the following pattern:
+
+```
+^[A-Za-z0-9]([A-Za-z0-9.-]*[A-Za-z0-9])?$
+```
+
+If the result doesn't match, ask again. Never use a value that fails the check.
+
+The OutSystems MCP URL has the following form:
+
+```
+https://TENANT_HOSTNAME/mcp
+```
+
+Replace `TENANT_HOSTNAME` with the normalized hostname. This guide uses `TENANT_HOSTNAME` for that value in every command and configuration.
+
+### Identify a Personal Edition tenant
+
+This procedure sets what you tell the user about the tenant type, based on the normalized hostname.
+
+* If the hostname starts with `personal-`, tell the user that it's a Personal Edition (PE) tenant, and that a PE tenant has one stage, Development.
+* For any other hostname, state no tenant type.
+
+## Request a Personal Edition tenant
+
+Use this section only when the user has no PE tenant yet. A PE tenant has one stage, Development.
+
+1. If the user has no OutSystems Community account, ask them to create one. The user signs in to the PE tenant with the Community account.
+1. Ask the user to request a PE tenant on the [Personal Edition page](https://www.outsystems.com/personaledition). The user receives an email when the tenant is ready. Wait until the tenant is ready before you continue.
+1. Ask the user for the full hostname exactly as it appears in the email or in the tenant details. Don't build the hostname yourself. A PE hostname looks like `personal-abcdefgh.outsystems.dev`. Normalize it as described in the Normalize the hostname section.
+1. Check that the tenant answers. Open `https://TENANT_HOSTNAME` in a browser, or run the following command:
+
+        curl -sI https://TENANT_HOSTNAME
+
+    If the hostname doesn't resolve, the hostname is wrong or the tenant isn't ready. Ask the user to check the email.
+
+## Check what you need
+
+This section confirms the conditions that setup depends on. If one is missing, tell the user before you continue.
+
+For a PE tenant, skip the conditions about OutSystems MCP and the ODC role, because a PE tenant has OutSystems MCP enabled and gives the user the permissions that setup and the first tasks need. Confirm the other conditions. For any other tenant, confirm every condition.
+
+* The user can sign in to `https://TENANT_HOSTNAME` in a browser.
+* OutSystems MCP is enabled for the tenant. If it isn't, the user's administrator must enable it.
+* The user's ODC role allows the work they plan to do, such as **Asset management** > **Create** or **Change**, and **Release management** > **Deploy assets**.
+* The AI tool and a web browser run on the same machine, because the sign-in redirect uses a local loopback address. If the AI tool runs on a remote machine, such as an SSH session, a container, or a virtual machine, tell the user to paste a callback URL back to you in the Sign in section.
+* The user's plan includes the AI tool. Claude Desktop's **Code** tab requires a paid Claude plan.
+
+## Identify the AI tool
+
+This section routes you to the configuration steps for the user's AI tool. Ask which tool the user works in, or detect it from the environment.
+
+| AI tool | Section |
+| ------- | ------- |
+| Claude Code, in a terminal or in the **Code** tab of Claude Desktop | Claude Code |
+| Cursor | Cursor |
+| AWS Kiro | AWS Kiro |
+| GitHub Copilot, in VS Code or the Copilot CLI | GitHub Copilot |
+| Claude Desktop, **Chat** tab | Claude Desktop |
+| Any other tool that supports remote MCP over HTTP | Another AI tool |
+
+## Configure the AI tool
+
+This section configures the user's AI tool. Follow only the section for their tool. Each section ends by sending you to the Sign in section.
+
+### Claude Code
+
+Use these steps when the user works in Claude Code. The OutSystems plugin registers the OutSystems MCP server and delivers the OutSystems skill, the instructions that tell the agent how to use the OutSystems tools.
+
+1. Check the Claude Code version. Run the following command, and tell the user the version:
+
+        claude --version
+
+    If the command isn't found, the Claude Code command-line tool isn't available in this session. Tell the user to install it from the [Claude Code quickstart](https://code.claude.com/docs/en/quickstart), and then restart this guide. A user who works only in the **Chat** tab of Claude Desktop follows the Claude Desktop section instead.
+
+1. Add the OutSystems marketplace:
+
+        claude plugin marketplace add OutSystems/outsystems-mcp
+
+1. Install the plugin with the tenant hostname. Replace `TENANT_HOSTNAME` with the normalized hostname, without `https://` or a path. Don't pass a client ID or a callback port.
+
+        claude plugin install outsystems@outsystems --config tenant_hostname=TENANT_HOSTNAME
+
+1. Confirm that the plugin registered the server:
+
+        claude mcp list
+
+    The output lists `plugin:outsystems:outsystems` with the URL `https://TENANT_HOSTNAME/mcp` and the status `Needs authentication`, which clears after sign-in.
+
+1. Ask the user to restart Claude Code. A running session keeps its earlier configuration until it restarts. Before the restart, tell the user how to continue:
+
+    * In a terminal, open Claude Code in the same folder, and run `claude --continue`.
+    * In Claude Desktop, select this session in the sidebar.
+
+    Then ask the user to tell you to continue the setup. When the user continues, run `claude mcp list`. If `plugin:outsystems:outsystems` appears, continue with the Sign in section. If the conversation doesn't continue, ask the user to add this guide again, read the hostname from the `claude mcp list` output, and continue with the Sign in section.
+
+If `claude plugin install` rejects `--config`, the Claude Code version predates plugin options. Ask the user to update Claude Code. If an update isn't possible, install the plugin without `--config`. Then ask the user to run `/plugin configure outsystems@outsystems` and enter the bare hostname.
+
+If you can't run shell commands, give the user the commands from this section one at a time, and ask them to paste back each output.
+
+If `claude mcp list` shows an `outsystems` entry without the `plugin:` prefix, an earlier setup registered it, and it takes precedence over the plugin's server. Run `claude mcp get outsystems` to read its scope and URL. Tell the user both values, and ask before you remove the entry with the following command:
+
+    claude mcp remove outsystems -s SCOPE
+
+Replace `SCOPE` with the scope that `claude mcp get outsystems` reports. Never remove or change an entry with the `project` scope, because the project configuration is shared with the user's collaborators. Report the entry and let the user decide.
+
+Continue with the Sign in section.
+
+### Cursor
+
+Use these steps when the user works in Cursor. Cursor loads the OutSystems skill from `AGENTS.md` in the workspace root.
+
+1. Add the server to the global configuration `~/.cursor/mcp.json`, or to the project configuration `.cursor/mcp.json`. Read the file first, keep every existing key, and add the following entry under `mcpServers`. Use `mcpServers` as the key and omit `type`, because Cursor reads the transport from the URL.
+
+        {
+          "mcpServers": {
+            "outsystems": {
+              "url": "https://TENANT_HOSTNAME/mcp"
+            }
+          }
+        }
+
+1. Install the OutSystems skill. Download the [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) and save its exact contents as `AGENTS.md` in the workspace root. Don't retype or summarize the file. Don't save it in `.cursor/rules/`, because Cursor loads only `.mdc` files with rule frontmatter from that folder. If `AGENTS.md` already holds an OutSystems skill, tell the user and don't add a second copy. If it holds other content, don't merge by hand. Tell the user and ask where to save the skill file.
+1. Run the following commands in a terminal. Run the second command only when the first command shows `outsystems` as needing approval. The third command opens the default browser for sign-in.
+
+        agent mcp list
+        agent mcp enable outsystems
+        agent mcp login outsystems
+
+1. Restart Cursor if the server doesn't appear.
+
+On a Cursor Team or Enterprise plan, an administrator can install the plugin from a Team Marketplace instead of steps 1 and 2.
+
+Continue with the Sign in section.
+
+### AWS Kiro
+
+Use these steps when the user works in AWS Kiro. The OutSystems Power delivers the OutSystems skill. Kiro blocks the agent from writing to the `~/.kiro/settings/` folder, so the user makes the configuration edit in step 2 themselves.
+
+1. Ask the user to open the Powers panel by selecting the ghost icon with a lightning bolt. In the panel, select **Add Custom Power**, then **Import power from GitHub**. Enter the following URL, and select **Install**:
+
+        https://github.com/OutSystems/outsystems-mcp/tree/main/kiro/outsystems
+
+1. Explain to the user why they make this edit. Kiro blocks agent writes to its settings folder, which holds its permission files, so an agent can't change its own permissions. The edit takes one paste and one save. Then read `~/.kiro/settings/mcp.json` if it exists, without repeating other entries in the chat, because they can hold credentials.
+
+    If the file is new or empty, show the user the following complete content:
+
+        {
+          "mcpServers": {
+            "outsystems": {
+              "type": "http",
+              "url": "https://TENANT_HOSTNAME/mcp"
+            }
+          }
+        }
+
+    If the file has other servers, show the user only the following entry:
+
+        "outsystems": {
+          "type": "http",
+          "url": "https://TENANT_HOSTNAME/mcp"
+        }
+
+    Put the server under the top-level `mcpServers` key, not under `powers.mcpServers`, because Kiro rewrites the `powers` block on every Power update and drops a URL stored there. Then guide the user through these actions:
+
+    1. Open the command palette with **Cmd+Shift+P** on macOS, or **Ctrl+Shift+P** on Windows and Linux. Run **Kiro: Open user MCP config (JSON)**.
+    1. Paste the content you showed. When the file has other servers, paste the entry inside `mcpServers`, and add a comma after the entry before it.
+    1. Save the file with **Cmd+S** on macOS, or **Ctrl+S** on Windows and Linux. Kiro reconnects to MCP servers when the user saves.
+
+    Wait until the user confirms that they saved the file. If the server doesn't appear, ask the user to open **Settings**, search for `MCP`, and confirm that MCP support is on.
+
+Continue with the Sign in section.
+
+### GitHub Copilot
+
+Use these steps when the user works in GitHub Copilot. In VS Code, Copilot loads the OutSystems skill from `.github/copilot-instructions.md` in the workspace. On a Copilot Business or Enterprise plan, an administrator must enable the **MCP servers in Copilot** policy before the server appears.
+
+To connect in VS Code, do the following:
+
+1. Add the server to `.vscode/mcp.json` in the workspace, or to the user's MCP configuration. Read the file first, keep every existing entry, and add the following under the top-level `servers` key. Use `servers` as the key and omit `oauth.clientId`, because VS Code registers its own client through Dynamic Client Registration.
+
+        {
+          "servers": {
+            "outsystems": {
+              "type": "http",
+              "url": "https://TENANT_HOSTNAME/mcp"
+            }
+          }
+        }
+
+1. Download the [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) and save its exact contents as `.github/copilot-instructions.md` in the workspace. Don't retype or summarize the file.
+1. Start the server from the MCP configuration. A browser window opens for sign-in.
+
+To connect in the Copilot CLI, do the following:
+
+1. Register the server:
+
+        copilot mcp add --transport http outsystems https://TENANT_HOSTNAME/mcp
+
+1. In a running session, run `/mcp reload`.
+
+Continue with the Sign in section.
+
+### Claude Desktop
+
+Use these steps when the user works in the **Chat** tab of Claude Desktop. A user in the **Code** tab follows the Claude Code section. The built-in custom connector doesn't complete the OutSystems sign-in, so these steps use the `mcp-remote` local proxy. The **Chat** tab has no shell or file access, so give the user each step.
+
+1. Check that Node.js is installed by running the following command:
+
+        npx --version
+
+    If the command fails, ask the user to install Node.js first. Without Node.js, the server fails to connect and shows no error.
+
+1. Install the proxy at the pinned version. Use exactly this version, and don't use an unversioned name or `@latest`.
+
+        npm install -g mcp-remote@0.14.3
+
+1. Open the Claude Desktop configuration file for the user's operating system:
+
+    * macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+    * Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+    * Linux: `~/.config/Claude/claude_desktop_config.json`
+
+    Keep every existing key. Don't paste the file's contents back into the chat, because other entries can hold other servers' credentials. Add or replace only the `outsystems` entry.
+
+    On macOS and Linux, use the following entry:
+
+        {
+          "mcpServers": {
+            "outsystems": {
+              "command": "npx",
+              "args": ["mcp-remote@0.14.3", "https://TENANT_HOSTNAME/mcp"]
+            }
+          }
+        }
+
+    On Windows, use the following entry:
+
+        {
+          "mcpServers": {
+            "outsystems": {
+              "command": "cmd",
+              "args": ["/c", "npx mcp-remote@0.14.3 https://TENANT_HOSTNAME/mcp"]
+            }
+          }
+        }
+
+1. Ask the user to restart Claude Desktop. The app has no authenticate tool, so the sign-in window opens when the first OutSystems call runs. Don't wait for a window before a call runs.
+
+If the server doesn't connect after the restart, the app can't find `npx`. On macOS and Linux, replace the `command` value with the full path that `which npx` prints. On Windows, replace `npx` inside the `/c` argument with the path that `where npx` prints for the `.cmd` file, and put the path in quotes when it contains a space. Then restart the app again. If the server still doesn't connect, refer the user to the troubleshooting section of the [OutSystems MCP repository](https://github.com/OutSystems/outsystems-mcp#troubleshooting).
+
+To add the OutSystems skill, install the `outsystems` plugin from the `OutSystems/outsystems-mcp` marketplace through the app's plugin install flow. Plugins require a paid plan.
+
+Continue with the Sign in section.
+
+### Another AI tool
+
+Use these steps for any other tool that supports remote MCP over the Streamable HTTP transport with OAuth.
+
+1. Register a server named `outsystems` with the URL `https://TENANT_HOSTNAME/mcp` and the Streamable HTTP transport. Leave the callback port unset, so the tool picks one.
+1. Add the [OutSystems skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/main/SKILL.md) to the tool's agent instructions.
+1. Start the tool's sign-in for the server, and finish it in the browser.
+
+Check the result in the Verify the connection section.
+
+## Sign in
+
+This section completes the sign-in in the user's browser. How sign-in starts depends on the AI tool.
+
+* **Claude Code in a terminal:** Sign-in starts the first time a tool calls OutSystems, through the plugin's authenticate tool. The browser opens, or you give the user an authorization link. The sign-in opens in the system default browser. If the user wants another browser, give them the link to open there. The user signs in and approves. The request then continues.
+* **Claude Code in the Code tab of Claude Desktop:** Before sign-in, the session has no OutSystems tools and no `/mcp` command. Open a Terminal panel that runs `claude` in the session's folder. If you can't open the panel, ask the user to open it and run `claude` there. Then give the user these actions:
+
+    1. Type `/mcp` and press Return. If the terminal first shows a prompt that's unrelated to OutSystems, dismiss it.
+    1. Select `plugin:outsystems:outsystems`, then select **Authenticate**.
+    1. Sign in and approve access in the browser window that opens.
+
+    When the terminal reports that authentication succeeded, ask the user to quit and reopen Claude Desktop, open the **Code** tab, and select this session. The restart loads the OutSystems tools. Then continue with the Verify the connection section in this session.
+* **Kiro:** Kiro starts the sign-in when it connects to the server, and Kiro has no OutSystems tool for you to call before that. Ask the user to select the Kiro icon in the activity bar, open the **MCP servers** tab, find `outsystems`, and select **Authenticate**. Don't call tools to start the sign-in.
+* **Remote machine:** The callback page fails to load, which is expected. Tell the user right away, and don't wait for a timeout. Ask the user to copy the full URL from the browser's address bar and paste it back to you. The URL starts with `http://localhost:`, followed by a port number and `/callback`. Claude Code finishes the sign-in with that URL. Other tools can need a retry.
+* **Sign-in doesn't start or fails:** In Claude Code in a terminal, run `/mcp`, select the `outsystems` server that comes from the plugin, and select **Authenticate**. In Claude Desktop, follow the steps for the **Code** tab in this section. In Cursor, run `agent mcp login outsystems`.
+
+An authorization code works once. If sign-in fails, start it again, and don't reuse an old code. Treat codes like passwords, and don't repeat them.
+
+## Verify the connection
+
+This section confirms that the AI tool reaches the user's tenant.
+
+Ask only the following question: "Which environments do I have in OutSystems?"
+
+Run the question in the session where the user works. If that session has no OutSystems tools because it started before sign-in, ask the user to restart the AI tool, as the Sign in section describes. A separate session isn't a substitute, because it doesn't show the user whether their own session works.
+
+The response lists the stages of the tenant, such as Development, Test, and Production. A PE tenant lists one stage, Development. Report the result with the tenant hostname, so the user can confirm that it's the right tenant.
+
+If you see one of the results in the following table, take the action in the last column:
+
+| What you see | What it means | What to do |
+| ------------ | ------------- | ---------- |
+| `tenant_not_allowed` | Sign-in worked, but OutSystems MCP isn't enabled for this tenant. | Stop. Tell the user that their administrator must enable OutSystems MCP for the tenant. Don't retry sign-in. Retry once only when the user says the administrator enabled it. |
+| The OutSystems tools aren't visible | The server isn't configured, or the tool wasn't restarted. | Go back to the Configure the AI tool section for the user's tool. Restart the tool, and check again. |
+| `tenant not configured` | The hostname is missing or wrong. | Go back to the Get the tenant hostname section, and check the hostname. |
+| An authentication error after sign-in | The sign-in token expired, or the server refused it. | Sign in again once. If the error persists, stop and report the error. |
+| No sign-in window appears | The browser step didn't start. | Check that the AI tool and the browser run on the same machine. Then restart the tool. |
+
+If the problem persists after these checks, refer the user to the troubleshooting section of the [OutSystems MCP repository](https://github.com/OutSystems/outsystems-mcp#troubleshooting), and report the exact error text.
+
+## Report the result
+
+This section sets the final message to the user. Report only what you verified.
+
+Send a message in the following form:
+
+```text
+OutSystems MCP setup report
+Tenant: TENANT_HOSTNAME
+AI tool: TOOL_NAME TOOL_VERSION
+Server: SERVER_STATE
+Sign-in: SIGN_IN_STATE
+Verification request: VERIFICATION_RESULT
+```
+
+Replace the following:
+
+* `TENANT_HOSTNAME`: The normalized hostname.
+* `TOOL_NAME` and `TOOL_VERSION`: The AI tool and the version that the tool reports.
+* `SERVER_STATE`: `registered`, or `blocked` followed by the reason.
+* `SIGN_IN_STATE`: `complete`, or `blocked` followed by the reason.
+* `VERIFICATION_RESULT`: `stages listed`, or `not run` followed by the reason.
+
+## Offer a first task
+
+This section tells the user what they can do next. Setup only reads from the tenant, so wait for the user to choose.
+
+Offer the following tasks:
+
+* List the apps in the tenant by asking: "List my apps in OutSystems."
+* Build a first app, an IT help desk, by following a tutorial with a sample prompt file.
+* Change an existing app. For more information, refer to [Evolve an existing app](https://www.outsystems.com/tk/redirect?g=079fe95f-09ff-4cbd-901b-a7b6c6c488a8).
+
+### Build a first app
+
+This section guides the user through a first app when they choose it.
+
+1. Read the tutorial [Build your first app](https://github.com/OutSystems/docs-odc/blob/main/src/eap/agentic-development/outsystems-mcp/build-first-app.md). Fetch the raw file at `https://raw.githubusercontent.com/OutSystems/docs-odc/main/src/eap/agentic-development/outsystems-mcp/build-first-app.md`, so you read Markdown and not a web page.
+1. Download the tutorial's [prompt file](https://raw.githubusercontent.com/OutSystems/docs-odc/main/src/eap/agentic-development/outsystems-mcp/resources/it-help-desk-prompt.txt) and save its exact contents as `it-help-desk-prompt.txt` in the user's working folder. Don't retype or summarize the file.
+1. Check the tutorial's prerequisites with the user, and then follow its steps one at a time. Before each change to the tenant, restate the change and wait for the user to confirm.
+
+## Rules for the agent
+
+This section lists the rules that apply to every step of this guide.
+
+* Never type or store a password, token, or API key. The user signs in through the browser.
+* Never publish, deploy, or change apps during setup. This guide only connects the server. After setup, change the tenant only when the user chooses a task, and restate each change and wait for confirmation first.
+* Read a config file before you edit it. If you can't read or write the file, ask the user to make the edit, and wait for them to confirm. When the file exists, give only the `outsystems` entry to add, never a command that overwrites the file, and ask the user to paste back only that entry. When the file doesn't exist, give the full content.
+* Keep the user's other settings. When you edit a config file, keep every existing key and entry.
+* Confirm before you change an existing `outsystems` entry. Show the old value and the new value, and wait for a yes.
+* Use the hostname the user gives you. Never invent a tenant name. Ask for it.
+* When the user reports a message or behavior that you can't identify, ask for the exact text or a screenshot. Don't explain a cause that you haven't verified.
+* When the user reports that a command, menu, or button doesn't exist, stop giving that instruction. Use the fallback for the user's AI tool, or ask for the exact text on the screen.
+* Don't set a fixed OAuth client ID or callback port. The server supports Dynamic Client Registration, and a fixed port makes sessions compete for it, so only one session signs in.
+
+## Related resources
+
+The following pages give more information about OutSystems MCP:
+
+* [Get started with OutSystems MCP](https://www.outsystems.com/tk/redirect?g=3d7c70ce-dbd2-47ee-a927-76b6009b0b84)
+* [Connect MCP hosts to OutSystems MCP](https://www.outsystems.com/tk/redirect?g=c4722355-e921-4c57-a127-dcd7991a6615)

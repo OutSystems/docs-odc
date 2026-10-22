@@ -20,6 +20,7 @@ content-type:
   - procedure
 audience:
   - Developer
+  - Platform administrator
 topic:
   - creating-apps
 isautopublish: true
@@ -28,6 +29,12 @@ isautopublish: true
 # Connect MCP hosts to OutSystems MCP
 
 This page shows you how to connect your MCP host, the AI application you work in, to the OutSystems MCP server. It covers Claude Code, Cursor, AWS Kiro, GitHub Copilot, and Claude Desktop, and the settings any other MCP host needs. Each MCP host also loads the OutSystems skill, the instructions that tell the agent how to use the OutSystems tools. The install steps differ per MCP host, and each MCP host has its own section on this page. After you connect, refer to [Get started with OutSystems MCP](get-started.md) to authenticate and run a first request. For the terms this page uses, such as MCP host, OutSystems skill, OutSystems plugin, and OutSystems Power, refer to [Agentic development terminology](../agentic-development-terminology.md).
+
+<div class="info" markdown="1">
+
+The steps on this page assume that you're comfortable with command-line tools and configuration files. To have an AI tool such as Claude Code or AWS Kiro set up OutSystems MCP with you instead, refer to [Use the guided setup file](get-started.md#guided-setup).
+
+</div>
 
 ## Prerequisites
 
