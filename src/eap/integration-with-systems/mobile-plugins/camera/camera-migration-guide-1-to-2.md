@@ -1,6 +1,10 @@
 ---
 summary: Understand the changes in Camera Plugin 2.0.0 in OutSystems Developer Cloud (ODC), and how to migrate to it from older versions.
-tags: mobile app development, plugin integration, error handling, camera, migration, breaking changes
+tags:
+  - Capacitor
+  - Cordova
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: 1eeb15f4-2028-4518-bd95-54822abb0026
 app_type: mobile apps

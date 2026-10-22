@@ -1,6 +1,7 @@
 ---
 summary: OutSystems Developer Cloud (ODC) Terminate node stops workflow execution, completing automatic activities before marking it as Done.
-tags: workflow termination, mobile apps, reactive web apps, workflow management, automatic activities
+tags:
+  - Workflows
 locale: en-us
 guid: 79d2da47-7cb8-48eb-bc23-04f62fd67c86
 app_type: mobile apps, reactive web apps

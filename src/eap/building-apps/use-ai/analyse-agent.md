@@ -1,6 +1,13 @@
 ---
 summary: Explore how to create and customize AI agents using OutSystems Developer Cloud (ODC) and AI Agent Builder.
-tags: ai, ai agent builder, artificial intelligence, integration, data source configuration
+tags:
+  - Agentic
+  - AI
+  - Logging
+  - Monitoring
+  - Optimization
+  - Performance
+  - Troubleshooting
 locale: en-us
 guid: 623ac859-3327-4979-9605-c68979099d55
 app_type: mobile apps, reactive web apps

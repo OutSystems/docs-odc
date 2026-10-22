@@ -1,6 +1,9 @@
 ---
 summary: "Amazon Bedrock in OutSystems Developer Cloud (ODC): request Anthropic Claude FM access, create an IAM user, and configure access keys for AI Agent Builder."
-tags: aws, artificial intelligence, amazon bedrock, foundation models, ai model customization
+tags:
+  - AI
+  - Authorization
+  - Security
 locale: en-us
 guid: 6550169c-eb62-46d3-9181-68a71bed10f9
 app_type: mobile apps, reactive web apps

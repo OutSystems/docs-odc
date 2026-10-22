@@ -1,6 +1,9 @@
 ---
 summary: "Azure OpenAI model configuration in OutSystems Developer Cloud (ODC) AI Agent Builder: add endpoints, set priority, and ensure high-availability."
-tags: azure openai, cloud services, high-availability, devops, ai model management
+tags:
+  - Agentic
+  - AI
+  - Settings
 locale: en-us
 guid: db6b7e45-96d2-4f0b-9723-b5a59c57fe60
 app_type: mobile apps, reactive web apps

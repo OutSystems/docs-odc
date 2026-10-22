@@ -1,6 +1,10 @@
 ---
 summary: Azure AI Search setup with Azure Blob Storage for ODC, covering service creation, data indexing, and key retrieval for AI Agent Builder.
-tags: azure, azure ai search, azure blob storage, search services, ai integration
+tags:
+  - AI
+  - Data
+  - Indexes
+  - Infrastructure
 locale: en-us
 guid: ac8ae913-7436-4101-a1b6-0542bfadac9c
 app_type: mobile apps, reactive web apps

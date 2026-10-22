@@ -1,6 +1,10 @@
 ---
 summary: "ODC custom AI model API contract: REST POST parameters, tool calls, and error codes to integrate your custom AI model with AI Agent Builder."
-tags: ai integration, api usage, rest apis, ai builder, api authentication
+tags:
+  - AI
+  - Authentication
+  - REST
+  - Web services
 guid: 6b5e78e7-8672-491d-88c6-641e67098096
 locale: en-us
 app_type: mobile apps, reactive web apps

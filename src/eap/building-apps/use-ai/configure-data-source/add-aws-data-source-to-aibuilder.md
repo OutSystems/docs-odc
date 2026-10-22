@@ -1,6 +1,8 @@
 ---
 summary: Explore how to integrate Amazon Kendra as a data source in the AI Agent Builder app using OutSystems Developer Cloud (ODC).
-tags: cloud integration, amazon kendra, data source configuration, enterprise search, ai-powered applications
+tags:
+  - AI
+  - Data
 locale: en-us
 guid: c8bbf427-c528-45cf-a5f7-441ad1359e3d
 app_type: mobile apps, reactive web apps

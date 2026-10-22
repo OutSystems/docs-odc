@@ -1,6 +1,13 @@
 ---
 summary: "ODC external JavaScript library integration: import scripts via the Scripts folder and Required Scripts property in ODC Studio for Mobile and Reactive Web Apps."
-tags: integration, javascript, script management, external libraries, best practices
+tags:
+  - Blocks
+  - Front-End
+  - JavaScript
+  - Libraries
+  - Mobile app
+  - Screens
+  - Web
 locale: en-us
 guid: A8E1C4A8-CD24-4707-823B-6FD5702E7BE5
 app_type: mobile apps, reactive web apps

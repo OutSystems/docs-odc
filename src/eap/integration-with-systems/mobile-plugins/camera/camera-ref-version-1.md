@@ -1,6 +1,12 @@
 ---
 summary: ODC Camera Plugin version 1 reference covering TakePicture, RecordVideo, ChooseFromGallery actions, MediaResult structure, and error codes.
-tags: plugin development, mobile camera integration, error handling, mobile application development, outsystems api
+tags:
+  - Android
+  - Cordova
+  - iOS
+  - Mobile app
+  - Native App
+  - Plugins
 locale: en-us
 guid: 5bace646-4be5-4d45-94b7-8aae53a71812
 app_type: mobile apps
