@@ -138,7 +138,7 @@ Team and Enterprise plans install the Cursor app plugin from a Team Marketplace.
 
 ## Connect GitHub Copilot
 
-GitHub Copilot connects to the OutSystems MCP server in agent mode across VS Code, the CLI, and Visual Studio. VS Code loads the OutSystems skill from `.github/copilot-instructions.md` in your workspace.
+GitHub Copilot is a validated MCP host. It connects to the OutSystems MCP server in agent mode across VS Code, the CLI, and Visual Studio. VS Code loads the OutSystems skill from `.github/copilot-instructions.md` in your workspace.
 
 <div class="info" markdown="1">
 

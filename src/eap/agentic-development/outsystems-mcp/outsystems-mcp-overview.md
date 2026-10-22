@@ -3,7 +3,7 @@ summary: OutSystems MCP lets the agent in your MCP host build, evolve, and deplo
 tags:
   - Agentic
   - AI
-  - Authentication
+  - Architecture
   - Deploy
   - Development lifecycle
   - Mentor
@@ -32,7 +32,7 @@ isautopublish: true
 
 # OutSystems MCP
 
-OutSystems MCP connects the AI application you work in, such as Claude Code, Cursor, or AWS Kiro, to OutSystems Developer Cloud (ODC). You ask the AI agent in that application to build, change, and deploy OutSystems apps. ODC compiles and runs those apps with the same standards and governance as any other OutSystems app.
+OutSystems MCP connects the AI application you work in, such as Claude Code, Cursor, AWS Kiro, or GitHub Copilot, to OutSystems Developer Cloud (ODC). You ask the AI agent in that application to build, change, and deploy OutSystems apps. ODC compiles and runs those apps with the same standards and governance as any other OutSystems app.
 
 OutSystems MCP is also known as OutSystems Agent Experience. For more information about the names, refer to [Agentic development terminology](../agentic-development-terminology.md).
 
@@ -132,9 +132,10 @@ The following behaviors apply when you work from an MCP host:
 
 For example, OutSystems validates the following MCP hosts:
 
-* Claude Code
 * AWS Kiro
+* Claude Code
 * Cursor
+* GitHub Copilot, in VS Code, the Copilot CLI, and Visual Studio
 
 Any other MCP host that supports the MCP Streamable HTTP transport with OAuth connects to the same endpoint, without validated setup. For per-host setup, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md).
 
