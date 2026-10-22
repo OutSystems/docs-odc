@@ -1,6 +1,10 @@
 ---
 summary: "OS-INTC-API-50002 Salesforce authentication error in ODC occurs when the Salesforce API is unreachable; re-authenticate or open a support case."
-tags: salesforce integration, api troubleshooting, mobile app development, error handling, support case management
+tags:
+  - Authentication
+  - External Authentication
+  - Troubleshooting
+  - Web services
 guid: f65214b7-75f5-4bb3-996a-baaff894ef5f
 locale: en-us
 app_type: mobile apps, reactive web apps

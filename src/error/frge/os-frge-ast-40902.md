@@ -1,6 +1,8 @@
 ---
 summary: OS-FRGE-AST-40902 error in ODC Forge occurs when an asset name is already taken. Rename the asset to resolve it.
-tags: error message, asset naming, troubleshooting, outsystems support, duplicate asset
+tags:
+  - Forge
+  - Troubleshooting
 guid: fcb2bea5-4242-4953-ac08-6f2707aed89e
 locale: en-us
 app_type: mobile apps, reactive web apps

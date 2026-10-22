@@ -1,6 +1,8 @@
 ---
 summary: OS-FRGE-AST-40006 in OutSystems Developer Cloud (ODC) signals an invalid asset version identifier format; use major.minor.patch to resolve it.
-tags: error handling, version control, asset management, technical support, documentation
+tags:
+  - Forge
+  - Troubleshooting
 guid: 970e4c74-04b9-4b3d-9ebd-bb1da1d0636d
 locale: en-us
 app_type: mobile apps, reactive web apps

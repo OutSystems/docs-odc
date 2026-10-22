@@ -1,6 +1,13 @@
 ---
 summary: ODC server requests in client events serialize lifecycle events and slow screen render time. Move server calls to screen actions or business events.
-tags: server requests, client events, performance optimization, screen render time, mobile apps
+tags:
+  - Events
+  - Mobile app
+  - Optimization
+  - Performance
+  - Screens
+  - Technical Debt
+  - Troubleshooting
 topic:
   - client-event-fetch
 guid: e23f04cc-761b-4d4c-8ef3-b639f4a80c83

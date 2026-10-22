@@ -1,6 +1,10 @@
 ---
 summary: OS-FRGE-AST-40302 error in OutSystems Developer Cloud (ODC) occurs when you lack ForgeAdmin permissions to perform a Forge operation.
-tags: error handling, permissions issues, user account management, outsystems support, security
+tags:
+  - Authorization
+  - Forge
+  - Roles
+  - Troubleshooting
 guid: 86e944ab-403b-4573-9502-bb6d9cf61eb0
 locale: en-us
 app_type: mobile apps, reactive web apps

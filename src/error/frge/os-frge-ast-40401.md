@@ -1,6 +1,8 @@
 ---
 summary: OS-FRGE-AST-40401 in OutSystems Developer Cloud (ODC) Forge occurs when an asset key is invalid or not uploaded to Forge.
-tags: error handling, troubleshooting issues, asset management, forge platform, support and guidance
+tags:
+  - Forge
+  - Troubleshooting
 guid: d9aa7178-706a-47fd-8c5d-e33954d81db7
 locale: en-us
 app_type: mobile apps, reactive web apps

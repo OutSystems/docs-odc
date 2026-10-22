@@ -1,6 +1,8 @@
 ---
 summary: "OS-FRGE-AST-40402 error occurs when the requested Forge asset key or version doesn't exist in OutSystems Developer Cloud (ODC)."
-tags: error handling, asset management, outsystems forge, technical support, troubleshooting
+tags:
+  - Forge
+  - Troubleshooting
 guid: 6226cf6a-666e-4b10-a6f2-95f345ed3137
 locale: en-us
 app_type: mobile apps, reactive web apps

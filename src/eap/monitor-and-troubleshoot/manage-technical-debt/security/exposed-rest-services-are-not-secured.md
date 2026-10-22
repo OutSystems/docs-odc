@@ -1,6 +1,13 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) exposed REST services without authentication risk unauthorized access — set authentication to Basic or Custom to fix."
-tags: authentication, rest services, security, vulnerability
+tags:
+  - Authentication
+  - REST
+  - Security
+  - Settings
+  - Technical Debt
+  - Troubleshooting
+  - Web services
 guid: d669fc5b-08da-4bff-954f-cc007ade6174
 locale: en-us
 app_type: mobile apps, reactive web apps
