@@ -1,10 +1,12 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports extending apps with custom .NET code through external logic integration.
+summary: OutSystems Developer Cloud (ODC) external logic lets you build, publish, release, and consume custom C# libraries.
 helpids: 30485
 tags:
   - .NET
   - C#
+  - Deploy
   - Libraries
+  - Logic
   - Logging
 locale: en-us
 guid: 656e14cb-27b2-433f-835b-2535636e053b
@@ -50,13 +52,13 @@ The following diagram illustrates the steps to implement external logic in ODC.
 
 ![Diagram illustrating the steps to implement External Logic in OutSystems Developer Cloud](images/extend-your-apps-with-external-logic-diag.png "External Logic Implementation Steps")
 
-## Build the external logic
+## Build the external logic {#build-the-external-logic}
 
 To build the external logic using custom C# code, you must use the stand-alone tool kit [OutSystems External Libraries SDK](https://www.nuget.org/packages/OutSystems.ExternalLibraries.SDK). This external OutSystems SDK library allows you to decorate your C# code with SDK attributes that map to OutSystems visual language elements. For detailed information, refer to the [SDK documentation](README.md). The SDK documentation provides instructions that guide you through every step, from project creation to packaging your built custom C# code into a ZIP file for upload to the ODC Portal.
 
 You don't need an  ODC organization account to use the SDK.
 
-### Log your custom code
+### Log your custom code {#log-your-custom-code}
 
 You can also add logging capabilities directly into your custom C# code. To log your custom code and generate detailed logs including informational messages and errors, you must use the [**Microsoft.Extensions.Logging**](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger) ILogger interface in your C# code. Additionally, you can create custom spans/activities for distributed tracing to better monitor the performance and behavior of your external logic. For detailed information about how to log your custom code and create spans, refer to [External library SDK README](README.md#build-external-logic-using-sdk).
 
@@ -70,7 +72,7 @@ Ensure also that logs don't expose sensitive information, such as personal data 
 
 </div>
 
-## Upload and publish the external logic
+## Upload and publish the external logic {#upload-and-publish-the-external-logic}
 
 <div class="info" markdown="1">
 
@@ -121,13 +123,13 @@ You can follow the same steps to update and publish an existing external library
 
 Once the library is published you must release the library to be used in other ODC apps and libraries.
 
-## Release the library
+## Release the library {#release-the-library}
 
 Release the first version of your library. For detailed information, refer to [Release a new version of a library](../libraries/libraries.md#release-a-new-version-of-a-library).
 
 When an app or library that consumes the external library deploys to another stage, the external library automatically deploys to that stage as well.
 
-## Consume the external logic
+## Consume the external logic {#consume-the-external-logic}
 
 Once the library is successfully published and released, the custom C# code becomes available as a library to be consumed across your ODC organization's apps and existing libraries. For detailed information about how to consume the exposed server actions in your apps and libraries using ODC Studio, refer to [Use public elements](../libraries/use-public-elements.md#libraries).
 
@@ -139,13 +141,13 @@ The server actions and structures exposed through external libraries are read-on
 
 </div>
 
-## Share the external logic
+## Share the external logic {#share-the-external-logic}
 
 To share an external library outside your organization, submit it to Forge. For detailed information, refer to [Submit assets to Forge](../forge/submit.md). The submission or update process is the same as for any asset developed in OutSystems.
 
 Users outside your organization can [install](../forge/install.md) an external library from Forge the same way they would install any asset developed in OutSystems. Users inside and outside of your organization can use the library from Forge in their apps but can’t edit its external logic in ODC Studio.
 
-## Delete external logic
+## Delete external logic {#delete-external-logic}
 
 To delete an external library before it has been published, follow these steps:
 
@@ -177,7 +179,15 @@ Deleting an external library impacts consumers that consume the library.
 
 For more information about deleting published assets, refer to [Deleting apps and libraries](../../deleting-apps/intro.md) for guidance.
 
-## Related resources
+## Automatic removal of unused external libraries {#automatic-removal}
+
+Besides deleting an external library yourself, ODC also automatically removes one when no deployed app or library depends on it. This frees the resources that an unused external library takes up.
+
+ODC runs this process once a day for each stage in your organization. It requires no configuration or manual intervention. The removal isn't immediate because it waits for the next scheduled run.
+
+This process never removes an external library that a deployed app or library in the stage consumes. If you need the library again, deploy the app or library that consumes it to the stage again. The external library deploys with it.
+
+## Related resources {#related-resources}
 
 * [External libraries SDK README](README.md)
 
