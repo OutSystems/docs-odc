@@ -6,7 +6,8 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 coverage-type:
   - understand
 topic:
-  - agent monitoring
+  - agent-monitoring-access
+  - agent-monitoring-overview
 app_type: reactive web apps
 platform-version: odc
 audience:
