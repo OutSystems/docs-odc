@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enhances UI development with built-in templates and customizable patterns, streamlining app design across devices.
-tags: ui frameworks, screen templates, design integration, ui/ux design, responsive design
+tags:
+  - Front-End
+  - OutSystems UI
+  - Screens
+  - Templates
+  - UI
+  - UI Patterns
+  - UX
 locale: en-us
 guid: bd056d16-4d8d-4b0b-ade7-9dc0ffc6f487
 app_type: mobile apps, reactive web apps

@@ -4,6 +4,8 @@ tags:
   - AI
   - Agentic
   - MCP
+  - Private Gateway
+  - Testing
   - Troubleshooting
 guid: ac2f6ac8-a547-4f2f-afe5-28062601fc8f
 locale: en-us
