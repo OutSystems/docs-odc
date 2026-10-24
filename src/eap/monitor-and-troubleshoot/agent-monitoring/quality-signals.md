@@ -5,6 +5,7 @@ summary: OutSystems Developer Cloud (ODC) agent quality signals explain answer r
 figma:
 coverage-type:
   - understand
+  - unblock
 topic:
   - agent monitoring
 app_type: reactive web apps

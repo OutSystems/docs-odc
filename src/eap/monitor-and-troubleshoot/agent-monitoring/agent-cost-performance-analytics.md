@@ -5,6 +5,7 @@ summary: 'ODC agent performance analytics: view token consumption, P90 latency, 
 figma:
 coverage-type:
   - understand
+  - apply
 topic:
   - agent monitoring
 app_type: reactive web apps
