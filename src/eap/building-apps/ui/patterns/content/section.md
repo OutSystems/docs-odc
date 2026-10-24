@@ -1,5 +1,10 @@
 ---
-tags: ui design patterns, mobile apps development, section ui pattern
+tags:
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Learn how to organize on-screen content using the Section UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 938450a3-c869-4c7b-82f2-7599c196d482

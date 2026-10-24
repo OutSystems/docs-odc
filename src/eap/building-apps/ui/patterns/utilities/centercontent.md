@@ -1,5 +1,10 @@
 ---
-tags: ui design, ui patterns
+tags:
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) features the Center Content UI Pattern for vertically aligning content within an application's container.
 locale: en-us
 guid: a4890513-8edb-4155-8075-a2e68740e6f0

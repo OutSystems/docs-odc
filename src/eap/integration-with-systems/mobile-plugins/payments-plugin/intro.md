@@ -5,7 +5,14 @@ guid: e3086e25-ffd3-4660-8162-ee45350e0f3f
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4313%3A327&mode=design&t=OmSDtxS14Ggp4J6f-1
 platform-version: odc
-tags: mobile payment integration, apple pay, google pay, plugin configuration, payment processing
+tags:
+  - Android
+  - Forge
+  - iOS
+  - Mobile app
+  - Plugins
+  - REST
+  - Settings
 audience:
   - Developer
 outsystems-tools:

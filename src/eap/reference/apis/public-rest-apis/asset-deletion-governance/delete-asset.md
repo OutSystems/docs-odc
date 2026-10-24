@@ -14,7 +14,11 @@ audience:
   - Tech lead
   - Platform administrator
   - Developer
-tags: asset deletion, asset repository, irreversible operation, rest api, outsystems api
+tags:
+  - Authentication
+  - Authorization
+  - REST
+  - Web services
 outsystems-tools:
   - odc portal
 helpids:

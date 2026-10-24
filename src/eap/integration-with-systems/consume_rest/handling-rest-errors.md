@@ -1,6 +1,10 @@
 ---
 summary: Explore how to handle and manipulate REST API errors in OutSystems Developer Cloud (ODC) by using exception handlers and the OnAfterResponse callback.
-tags: rest api, error handling, http status codes, exception handling, user experience
+tags:
+  - Logging
+  - REST
+  - Troubleshooting
+  - Web services
 locale: en-us
 guid: 7cec44e7-afba-470f-ae17-1804d2b0ae4d
 app_type: mobile apps, reactive web apps

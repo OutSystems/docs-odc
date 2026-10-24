@@ -1,6 +1,13 @@
 ---
 summary: "Cordova plugins in OutSystems Developer Cloud (ODC): wrap them using Extensibility Configuration JSON, define variables, set preferences, and add custom hooks."
-tags: cordova plugins, mobile app development, app extensibility, plugin management, outsystems developer cloud
+tags:
+  - Cordova
+  - Extensions
+  - Forge
+  - Mobile app
+  - Native App
+  - Plugins
+  - Settings
 locale: en-us
 guid: 3891dc3c-5286-413f-9a23-1bee7f313e6e
 app_type: mobile apps

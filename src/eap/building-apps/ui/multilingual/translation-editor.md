@@ -1,6 +1,12 @@
 ---
 summary: Explore the translation editor in OutSystems Developer Cloud (ODC) for managing app translations directly within ODC Studio.
-tags: localization, multilingual support, user interface design, application development
+tags:
+  - Front-End
+  - Mobile app
+  - Multi-language
+  - Translation
+  - UI
+  - Web
 locale: en-us
 guid: af4a2233-5b33-4b4e-bf4c-e24216bcbb07
 app_type: mobile apps, reactive web apps

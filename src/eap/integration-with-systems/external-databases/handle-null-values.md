@@ -1,7 +1,12 @@
 ---
 helpids: 30499
 summary: "Null value handling in ODC external databases: configure connection- or entity-level behavior to control how null and default values are read and written."
-tags: database integration, null value handling, configuration management, data types, external database connectivity
+tags:
+  - Data
+  - Data Integrity
+  - Entities
+  - External Databases
+  - SQL
 locale: en-us
 guid: b29382ab-f4d3-479c-be4b-22a8319e612c
 app_type: mobile apps, reactive web apps
