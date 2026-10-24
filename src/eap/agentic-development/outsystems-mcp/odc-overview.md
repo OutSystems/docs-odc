@@ -1,6 +1,13 @@
 ---
 summary: Introduces OutSystems Developer Cloud (ODC) to developers new to OutSystems and explains how ODC builds, deploys, and runs what the agent creates.
-tags: outsystems mcp, mcp host, odc, onboarding, agentic development
+tags:
+  - Agentic
+  - AI
+  - Architecture
+  - Deploy
+  - Development lifecycle
+  - Mentor
+  - Workflows
 guid: 9bf850b1-9174-4b61-a970-199c3b805d54
 locale: en-us
 app_type: reactive web apps

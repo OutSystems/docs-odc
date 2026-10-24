@@ -1,6 +1,13 @@
 ---
 summary: Find apps in your tenant, inspect an app's structure, and map its dependencies and dependents from your MCP host.
-tags: introspect, app structure, mcp host, context graph, context search, dependencies, integration mapping, tutorial, agentic development
+tags:
+  - Agentic
+  - Architecture
+  - Data Model
+  - Entities
+  - Libraries
+  - Roles
+  - Screens
 guid: bc0cf5c3-beff-44c5-919b-4de2dc7d1e11
 locale: en-us
 app_type: reactive web apps

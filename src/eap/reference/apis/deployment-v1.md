@@ -13,7 +13,10 @@ coverage-type:
   - remember
 figma:
 api-render: true
-tags: deployments api, rest api, api documentation, mobile apps, odc portal
+tags:
+  - Deploy
+  - REST
+  - Web services
 outsystems-tools:
   - odc studio
   - odc portal

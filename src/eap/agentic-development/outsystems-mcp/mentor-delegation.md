@@ -1,6 +1,9 @@
 ---
 summary: With OutSystems MCP, the agent in your MCP host sequences the work and delegates the build to Mentor, which edits the app model on the OutSystems server.
-tags: mentor, delegation, agent-to-agent, outsystems mcp, agentic development
+tags:
+  - Agentic
+  - AI
+  - Mentor
 guid: 57e403b6-6cec-458a-8abc-16db6321a3f0
 locale: en-us
 app_type: reactive web apps

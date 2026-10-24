@@ -1,6 +1,12 @@
 ---
 summary: How custom C# code becomes a governed external library in OutSystems, and how you bring it in and integrate it into an app from your MCP host.
-tags: external library, c#, extend, mcp host, agentic development
+tags:
+  - .NET
+  - Agentic
+  - C#
+  - Extensions
+  - Libraries
+  - Mentor
 guid: c8c0c926-77d2-4286-a27d-14b1148393c0
 locale: en-us
 app_type: reactive web apps

@@ -1,5 +1,11 @@
 ---
-tags: ui design, user experience, animation in apps, ui patterns, outsystems ui
+tags:
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) features the Animate UI Pattern for enhancing app usability by animating elements on screen.
 locale: en-us
 guid: bd23a378-5bd7-4fcb-8c53-5455b46be344

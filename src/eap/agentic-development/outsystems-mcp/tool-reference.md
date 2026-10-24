@@ -1,6 +1,13 @@
 ---
 summary: A workflow-oriented index of the tools the agent in your MCP host uses with OutSystems, grouped by task and cross-linked to the relevant concepts and tutorials.
-tags: tool reference, mcp tools, mcp host, agentic development
+tags:
+  - Agentic
+  - AI
+  - Architecture
+  - Deploy
+  - Monitoring
+  - Troubleshooting
+  - Workflows
 guid: a76b6c8f-15b1-4080-a049-4c297ef8c92c
 locale: en-us
 app_type: reactive web apps

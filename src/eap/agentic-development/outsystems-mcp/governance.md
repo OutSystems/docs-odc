@@ -1,6 +1,12 @@
 ---
 summary: How OutSystems governs OutSystems MCP operations from your MCP host, covering per-request identity and permissions, confirmation before state changes, and data residency.
-tags: governance, security, outsystems mcp, mcp host, agentic development
+tags:
+  - Agentic
+  - Authentication
+  - Authorization
+  - OAuth
+  - Roles
+  - Security
 guid: 21776eb4-8b22-4ab7-9936-62a3d64b9337
 locale: en-us
 app_type: reactive web apps

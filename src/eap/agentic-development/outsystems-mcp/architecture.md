@@ -1,6 +1,13 @@
 ---
 summary: How an MCP host connects to the OutSystems platform, from the MCP client in the host to the OutSystems MCP server and on to Context, Platform, and Mentor Services.
-tags: architecture, mcp host, mcp client, mcp server, enterprise context graph, mentor, agentic development
+tags:
+  - Agentic
+  - AI
+  - Architecture
+  - Authentication
+  - Authorization
+  - Mentor
+  - Security
 guid: b18b17fd-2d23-4bde-a34f-bfb3fef10f8b
 locale: en-us
 app_type: reactive web apps

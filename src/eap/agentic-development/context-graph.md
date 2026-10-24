@@ -1,9 +1,13 @@
 ---
 summary: The Enterprise Context Graph indexes your tenant's apps, data, and dependencies as the knowledge layer agents read before they act.
 tags:
-  - Agentic development
-  - Context search
-  - Enterprise Context Graph
+  - Agentic
+  - AI
+  - Architecture
+  - Data
+  - Entities
+  - Indexes
+  - Mentor
 guid: 88381752-3878-49a1-8f2d-46c231f54a5a
 locale: en-us
 app_type: reactive web apps

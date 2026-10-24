@@ -1,6 +1,13 @@
 ---
 summary: Build a first OutSystems app from your MCP host with OutSystems MCP, starting from a sample prompt file for an IT help desk.
-tags: first app, tutorial, sample app, mentor, mcp host, outsystems mcp, agentic development
+tags:
+  - Agentic
+  - AI
+  - Data Model
+  - Mentor
+  - OutSystems UI
+  - Roles
+  - Screens
 guid: 2932df74-9c2f-4cfa-9576-eb82c7255002
 locale: en-us
 app_type: reactive web apps

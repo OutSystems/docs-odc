@@ -1,13 +1,13 @@
 ---
 summary: Evolve an existing OutSystems app from your MCP host by inspecting it, delegating a change to Mentor, then publishing and deploying the result across stages.
 tags:
-  - agentic development
-  - deploy
-  - evolve app
-  - impact analysis
-  - mentor
-  - promote
-  - publish
+  - Agentic
+  - Data Model
+  - Deploy
+  - Development lifecycle
+  - Entities
+  - Mentor
+  - Troubleshooting
 guid: 079fe95f-09ff-4cbd-901b-a7b6c6c488a8
 locale: en-us
 app_type: reactive web apps

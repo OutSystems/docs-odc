@@ -1,13 +1,11 @@
 ---
 summary: Definitions of the terms used across agentic development in ODC, including Mentor, OutSystems MCP, MCP host, agent, and the OutSystems skill.
 tags:
-  - OutSystems MCP
   - Agentic
+  - AI
   - Mentor
   - Mentor Studio
   - Mentor Web
-  - MCP
-  - Terminology
 guid: 98283a24-a179-44a1-a706-435a15f8b838
 locale: en-us
 app_type: reactive web apps
