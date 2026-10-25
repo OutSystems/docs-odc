@@ -3,7 +3,6 @@ summary: OS-ABRS-CONN-50000 signals an internal error in OutSystems Developer Cl
 tags:
   - AI
   - Agentic
-  - MCP
   - Private Gateway
   - Testing
   - Troubleshooting

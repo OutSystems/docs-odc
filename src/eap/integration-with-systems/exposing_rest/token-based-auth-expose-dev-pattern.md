@@ -14,7 +14,14 @@ platform-version: odc
 audience:
   - Developer
   - Architect
-tags: rest apis,security,authentication,jwt,token-based authentication
+tags:
+  - Authentication
+  - Authorization
+  - Best Practices
+  - External Authentication
+  - REST
+  - Security
+  - Web services
 outsystems-tools:
   - odc studio
 helpids:

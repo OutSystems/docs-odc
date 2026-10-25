@@ -1,6 +1,10 @@
 ---
 summary: Many-to-many relationship in OutSystems Developer Cloud (ODC), create a junction entity and validate foreign keys and Delete Rule.
-tags: database modeling, entity relationship
+tags:
+  - Data Integrity
+  - Data Model
+  - Entities
+  - Mentor Studio
 locale: en-us
 guid: 4e158cbd-cb4d-4152-81f2-dae5e703e5ec
 app_type: mobile apps, reactive web apps

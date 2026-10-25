@@ -14,9 +14,9 @@ audience:
   - Tech lead
 tags:
   - Agentic
-  - AI
   - Architecture
   - Data
+  - End-user Authentication
   - Extensions
   - Logic
   - REST

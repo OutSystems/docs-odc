@@ -1,6 +1,12 @@
 ---
 summary: ODC timers use container-based cron jobs to run asynchronous logic, with configurable timeout and automatic retries on failure.
-tags: timers, asynchronous tasks, container infrastructure, job scheduler, cron jobs
+tags:
+  - Asynchronous Processes
+  - Infrastructure
+  - Logic
+  - Mentor Studio
+  - Timers
+  - Triggers
 locale: en-us
 guid: 94BE2885-0E48-4516-9CD1-6638F16E7F4E
 app_type: mobile apps, reactive web apps

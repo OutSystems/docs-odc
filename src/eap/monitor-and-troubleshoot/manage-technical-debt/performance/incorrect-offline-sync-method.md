@@ -1,6 +1,13 @@
 ---
 summary: "ODC offline sync technical debt: fix it by placing sync actions inside OfflineDataSync, configuring SyncUnit, and using TriggerOfflineDataSync."
-tags: offline sync, data synchronization, mobile apps, sync performance, troubleshooting
+tags:
+  - Data Synchronization
+  - Mobile app
+  - Optimization
+  - Performance
+  - Technical Debt
+  - Triggers
+  - Troubleshooting
 guid: 41123945-5631-4f69-8c49-49e0dc4df83b
 locale: en-us
 app_type: mobile apps

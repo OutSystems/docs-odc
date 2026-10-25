@@ -13,10 +13,12 @@ audience:
   - Developer
   - Tech lead
 tags:
-  - dependency analysis
-  - deployment gates
-  - deployment impact
-  - outsystems apis
+  - CI/CD
+  - Deploy
+  - Libraries
+  - REST
+  - Testing
+  - Web services
 outsystems-tools:
   - odc portal
 helpids:

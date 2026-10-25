@@ -1,6 +1,11 @@
 ---
 summary: Attach one or more files to an email in ODC with Mentor Studio or manually in ODC Studio.
-tags: email integration, file handling, pdf attachments, application logic, user guides
+tags:
+  - Aggregates
+  - Data
+  - Entities
+  - Logic
+  - Mentor Studio
 locale: en-us
 guid: b03f90a8-d437-4f61-a08b-dda12e8ebbfe
 app_type: mobile apps, reactive web apps

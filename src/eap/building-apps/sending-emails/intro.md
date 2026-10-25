@@ -1,6 +1,13 @@
 ---
 summary: ODC emails use widgets for content and SMTP for sending. Build them with Mentor Studio or ODC Studio, and configure each stage in ODC Portal.
-tags: email configuration, smtp integration
+tags:
+  - CSS
+  - Logic
+  - Mentor Studio
+  - Settings
+  - Timers
+  - Triggers
+  - Widgets
 locale: en-us
 guid: F826D84E-BF79-4287-9322-1E00E198A06E
 app_type: mobile apps, reactive web apps
