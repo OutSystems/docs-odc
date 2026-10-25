@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) bootstrap from Excel loads data into an existing entity and handles blank numeric cells.
-tags: client-side aggregates, server-side aggregates, data management
+tags:
+  - Data
+  - Data Model
+  - Entities
+  - Mentor Studio
+  - Testing
+  - Timers
+  - Troubleshooting
 locale: en-us
 guid: e2c6960b-b589-475a-b0e4-4792bba6a6be
 app_type: mobile apps, reactive web apps

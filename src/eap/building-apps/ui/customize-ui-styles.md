@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) customize UI styles with widgets, CSS, themes, responsive rules, and RTL display.
-tags: ui customization, style guide, widgets, css, design consistency
+tags:
+  - CSS
+  - Layouts
+  - OutSystems UI
+  - Style Guides
+  - Themes
+  - UI
+  - Widgets
 locale: en-us
 guid: A15EFAFE-CE22-4974-B90E-CB0E18D263B1
 app_type: mobile apps, reactive web apps

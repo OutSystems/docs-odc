@@ -1,6 +1,10 @@
 ---
 summary: Aggregate sorting in OutSystems Developer Cloud (ODC) sets fixed and dynamic order with Mentor Studio and manual Sort tab checks.
-tags: data sorting, dynamic content
+tags:
+  - Aggregates
+  - Data
+  - Mentor Studio
+  - Sorting
 locale: en-us
 guid: 4f62a181-c24b-49d7-8a88-95df2253dcf7
 app_type: mobile apps, reactive web apps

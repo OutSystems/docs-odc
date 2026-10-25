@@ -1,6 +1,11 @@
 ---
 summary: Learn how to retrieve distinct values from a database using OutSystems Developer Cloud (ODC) by grouping entity attributes in aggregates.
-tags: database operations, data aggregation, entity management, data retrieval, aggregates
+tags:
+  - Aggregates
+  - Data
+  - Entities
+  - Logic
+  - Mentor Studio
 locale: en-us
 guid: b72114bf-98ec-4f22-89b6-e162569612a1
 app_type: mobile apps, reactive web apps

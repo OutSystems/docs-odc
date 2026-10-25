@@ -1,11 +1,10 @@
 ---
 summary: The OutSystems skills that your MCP host loads for the agent, which skills are Beta Features, and where to send feedback about them.
 tags:
-  - agentic development
-  - beta
-  - mcp host
-  - outsystems mcp
-  - skills
+  - Agentic
+  - AI
+  - Mentor
+  - Plugins
 guid: f9a69471-9433-464a-9d88-111b28d26071
 locale: en-us
 app_type: reactive web apps

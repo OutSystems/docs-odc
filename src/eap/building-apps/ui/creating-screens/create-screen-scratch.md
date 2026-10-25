@@ -1,7 +1,14 @@
 ---
 summary: "ODC Studio screen from scratch: add an empty screen or use a template in your web or mobile app in a few steps."
 locale: en-us
-tags: ui development, app design
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - Templates
+  - UI
+  - Web
 guid: 7c01a3db-3807-4e86-bbbb-e88ba5c28346
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10561&t=ZwHw8hXeFhwYsO5V-1

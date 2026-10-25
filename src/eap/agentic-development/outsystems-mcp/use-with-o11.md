@@ -1,6 +1,12 @@
 ---
 summary: Keep OutSystems MCP requests on ODC when your MCP host also connects to O11. Recognize the ODC server, name the platform, and enter the right tenant hostname.
-tags: outsystems mcp, o11, mcp host, agentic development, tenant hostname
+tags:
+  - Agentic
+  - AI
+  - Authentication
+  - Plugins
+  - Settings
+  - Troubleshooting
 guid: 01d0c5b1-af47-4fa7-bcd3-dc8a833fc63b
 locale: en-us
 app_type: reactive web apps

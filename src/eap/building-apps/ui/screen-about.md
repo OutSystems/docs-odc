@@ -1,6 +1,14 @@
 ---
 summary: OutSystems Developer Cloud (ODC) screen templates and blocks explain reusable layouts, placeholders, and sample data for screens.
-tags: user interface design, screen templates, ui patterns, component library, proof of concept
+tags:
+  - Blocks
+  - Layouts
+  - OutSystems UI
+  - Screens
+  - Templates
+  - UI
+  - UI Patterns
+  - UX
 locale: en-us
 guid: 573b9486-bcb4-4888-9be6-d3e8e96b6dc8
 app_type: mobile apps, reactive web apps

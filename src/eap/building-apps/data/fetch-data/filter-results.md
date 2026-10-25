@@ -1,6 +1,12 @@
 ---
 summary: Explore how to filter query results in OutSystems Developer Cloud (ODC) by adding conditions to Aggregates.
-tags: database queries, data filtering, aggregates
+tags:
+  - Aggregates
+  - AI
+  - Data
+  - Mentor
+  - Mentor Studio
+  - Testing
 locale: en-us
 guid: 2a8244b0-c439-4463-9e98-3c5f2e4d4aa6
 app_type: mobile apps, reactive web apps

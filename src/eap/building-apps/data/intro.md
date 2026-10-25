@@ -1,6 +1,13 @@
 ---
 summary: ODC data management uses entities for visual data modeling and aggregates or SQL for efficient data retrieval across isolated per-stage databases.
-tags: data management, visual modeling, database operations, entities and relationships
+tags:
+  - Aggregates
+  - Data
+  - Data Model
+  - Entities
+  - Mentor Studio
+  - Optimization
+  - SQL
 locale: en-us
 guid: e74f9938-8b24-441b-8512-b3ccfda522b4
 app_type: mobile apps, reactive web apps

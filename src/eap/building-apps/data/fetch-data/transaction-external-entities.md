@@ -1,6 +1,11 @@
 ---
 summary: ODC transactions in external entities are auto-committed per request; you control only the OutSystems database transaction using Exception Handlers.
-tags: external system integration, error handling, database operations, transaction management, service actions
+tags:
+  - Data
+  - Data Integrity
+  - Entities
+  - External Databases
+  - Logic
 guid: 05934d09-1852-40c7-8b4f-cafd0f93f2a3
 locale: en-us
 app_type: mobile apps, reactive web apps
