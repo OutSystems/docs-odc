@@ -21,8 +21,8 @@ coverage-type:
   - apply
   - understand
 topic:
-  - configure-email-settings
-  - create-test-list
+  - configure-email-settings-odc
+  - email-test-list
 isautopublish: true
 ---
 

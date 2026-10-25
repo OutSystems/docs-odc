@@ -21,8 +21,7 @@ figma:
 coverage-type:
   - apply
 topic:
-  - external-idps
-  - idp-openidp
+  - add-oidc-provider
 isautopublish: true
 ---
 

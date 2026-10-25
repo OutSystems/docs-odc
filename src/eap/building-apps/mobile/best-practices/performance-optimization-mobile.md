@@ -22,7 +22,8 @@ coverage-type:
 isautopublish: true
 topic:
   - client-event-fetch
-  - server-vs-client-logic
+  - place-logic-by-device
+  - preconnect-known-domains
 ---
 
 # Best practices for keeping mobile apps responsive

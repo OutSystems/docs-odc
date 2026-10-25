@@ -17,7 +17,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - consume-refresh-methods
+  - configure-rest-runtime
+  - consume-rest-methods
+  - generated-rest-structures
 isautopublish: true
 ---
 

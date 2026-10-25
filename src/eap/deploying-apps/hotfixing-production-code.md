@@ -25,8 +25,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 topic:
-  - hotfix-production
-  - hotfix-strategy-os
+  - apply-production-hotfix
   - portback-hotfix
 isautopublish: true
 ---

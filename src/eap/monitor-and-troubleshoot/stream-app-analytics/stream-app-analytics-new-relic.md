@@ -18,7 +18,7 @@ audience:
   - Architect
 helpids: 
 topic:
-  - configure-new-relic-streaming
+  - stream-to-new-relic-odc
 ---
 
 # Stream observability data to New Relic

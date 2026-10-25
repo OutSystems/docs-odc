@@ -20,8 +20,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - changing-endpoints
-  - app-settings
+  - apply-portal-configurations
 isautopublish: true
 ---
 
