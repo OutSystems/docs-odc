@@ -6,9 +6,9 @@ audience:
   - Platform administrator
 platform-version: odc
 topic:
-  - external-idps
-  - idp-openidp
-  - idp-saml
+  - email-matching-edge-cases
+  - idp-email-verification
+  - idp-profile-matching
 coverage-type:
   - understand
   - evaluate

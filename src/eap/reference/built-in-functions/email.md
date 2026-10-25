@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - how-to-create-emails
+  - create-email-address
   - validate-email-address
 ---
 

@@ -18,7 +18,7 @@ coverage-type:
   - remember
 topic:
   - configure-callagent
-  - service-actions-when-use
+  - service-actions-overview
 ---
 
 # Service actions

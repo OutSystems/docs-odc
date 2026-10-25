@@ -13,8 +13,6 @@ coverage-type:
   - apply
 topic:
   - configure-user-domains
-  - user-types
-  - users-licensing
 audience:
   - Platform administrator
 outsystems-tools:

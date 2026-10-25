@@ -21,7 +21,7 @@ coverage-type:
 topic:
   - gherkin-functional-criteria
   - team-automation-roles
-  - three-amigos-sessions
+  - three-amigos-discussion
 ---
 
 # Test Automation in the Delivery Lifecycle

@@ -22,7 +22,7 @@ coverage-type:
   - remember
   - apply
 topic:
-  - use-search-pattern-odc
+  - use-search-pattern
 ---
 
 # Search

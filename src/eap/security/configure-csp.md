@@ -20,7 +20,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - configure-csp-ios
+  - configure-csp-for-ios
   - csp-misconfiguration-risks
   - csp-mobile-app-propagation
 isautopublish: true

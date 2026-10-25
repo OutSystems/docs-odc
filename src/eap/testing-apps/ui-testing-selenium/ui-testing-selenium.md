@@ -19,7 +19,6 @@ coverage-type:
   - understand
   - apply
 topic:
-  - automated-ui-tests
   - selenium-locators
   - selenium-test-practices
 ---

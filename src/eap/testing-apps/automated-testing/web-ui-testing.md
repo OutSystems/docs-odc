@@ -19,9 +19,9 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - automated-ui-tests
   - page-object-model
-  - ui-testing-strategies
+  - selenium-locators
+  - testing-pyramid
 ---
 
 # Web UI testing
