@@ -15,7 +15,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - integration
+  - import-mcp-tools
+  - set-up-mcp-connection
+  - use-mcp-tools-in-agent
 audience:
   - Developer
   - Tech lead

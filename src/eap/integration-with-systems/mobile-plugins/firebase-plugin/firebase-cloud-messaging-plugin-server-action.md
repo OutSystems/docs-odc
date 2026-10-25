@@ -25,7 +25,7 @@ coverage-type:
 topic:
   - cloud-messaging-actions
   - cloud-messaging-limitations
-  - cloud-messaging-setup
+  - send-push-notifications-odc
 isautopublish: true
 ---
 

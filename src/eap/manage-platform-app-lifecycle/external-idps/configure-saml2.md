@@ -20,7 +20,6 @@ coverage-type:
   - apply
 topic:
   - add-saml-provider-odc
-  - external-idps
   - saml-endpoint-access
   - saml-single-logout
 helpids: 30672, 30673

@@ -19,10 +19,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - data-syncronization
   - generate-rw-sync-action
   - last-write-wins-pattern
-  - offline-synch
 ---
 
 # Read-Write data last Write wins synchronization pattern

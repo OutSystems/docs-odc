@@ -11,7 +11,7 @@ platform-version: odc
 coverage-type:
   - understand
 topic:
-  - integration
+  - choose-tool-source
 audience:
   - Developer
   - Tech lead

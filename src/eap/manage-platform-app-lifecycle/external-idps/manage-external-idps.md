@@ -7,7 +7,6 @@ audience:
 platform-version: odc
 topic:
   - avoid-idp-lockout
-  - external-idps
   - remove-built-in-idp
   - replace-external-idp
 coverage-type:

@@ -17,7 +17,6 @@ audience:
   - Platform administrator
 topic:
   - add-social-accelerator
-  - external-idps
   - social-accelerator-info
 outsystems-tools:
   - odc portal

@@ -12,7 +12,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - integration
+  - set-up-prebuilt-connector
+  - use-connector-tools-in-agent
 audience:
   - Developer
 outsystems-tools:

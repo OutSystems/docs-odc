@@ -23,12 +23,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - creating-app-from-scratch
   - generate-app-from-prompt
   - import-data-model-excel
   - publish-an-app-odc
-  - screen-scaffolding
-  - test-share-app-users
 isautopublish: true
 ---
 
