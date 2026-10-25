@@ -1,8 +1,8 @@
 ---
 summary: Reference for OutSystems Developer Cloud (ODC) agent connection errors (OS-ABRS) that surface when you test or run a connection to an MCP server or an external agent (A2A).
 tags:
-  - AI
   - Agentic
+  - AI
   - MCP
   - Troubleshooting
 guid: a21b483d-d8d4-4857-962c-75b6b1c0bdaa

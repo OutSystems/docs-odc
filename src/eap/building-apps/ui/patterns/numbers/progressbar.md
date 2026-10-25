@@ -1,7 +1,6 @@
 ---
 tags:
   - Front-End
-  - Mobile app
   - OutSystems UI
   - Screens
   - UI

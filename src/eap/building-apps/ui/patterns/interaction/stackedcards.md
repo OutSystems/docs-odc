@@ -1,5 +1,6 @@
 ---
 tags:
+  - Events
   - Mobile app
   - OutSystems UI
   - Screens
