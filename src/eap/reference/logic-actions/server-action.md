@@ -16,7 +16,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - action-properties-reference
+  - odc-action-properties
   - server-action-exposure
 ---
 

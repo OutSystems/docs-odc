@@ -22,8 +22,10 @@ outsystems-tools:
   - odc studio
   - mentor studio
 topic:
-  - data-archiving-cold-data
+  - data-archiving-overview
   - entity-index-selection
+  - implement-historical-archiving
+  - implement-light-archiving
   - timer-best-practices
 isautopublish: true
 ---

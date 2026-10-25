@@ -18,7 +18,7 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - compound-data
+  - compound-data-types
   - data-types
   - datetime-utc-behavior
 isautopublish: true

@@ -21,7 +21,7 @@ coverage-type:
   - remember
   - apply
 topic:
-  - debug-troubleshoot-app-logic
+  - manage-watches
 ---
 
 # Watches

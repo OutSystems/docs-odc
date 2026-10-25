@@ -18,7 +18,9 @@ coverage-type:
   - apply
   - understand
 topic:
-  - app-settings
+  - add-custom-domain
+  - delete-custom-domain
+  - set-custom-domain-default
 isautopublish: true
 ---
 

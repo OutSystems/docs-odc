@@ -19,7 +19,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - deploy-apps-in-lt-portal
+  - deploy-app-to-stage-odc
+  - odc-revision-basics
+  - impact-analysis-report
 helpids: 30685
 isautopublish: true
 ---

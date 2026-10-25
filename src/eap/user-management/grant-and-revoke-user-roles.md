@@ -18,11 +18,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - manage-users
-  - assign-to-org-roles
-  - updating-users
-  - authorization
-  - user-management
+  - assign-asset-scope-roles
+  - assign-end-user-roles-odc
+  - assign-org-scope-role
 isautopublish: true
 ---
 

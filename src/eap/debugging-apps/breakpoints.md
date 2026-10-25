@@ -17,7 +17,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - debug-troubleshoot-app-logic
+  - manage-breakpoints
 ---
 
 # Breakpoints

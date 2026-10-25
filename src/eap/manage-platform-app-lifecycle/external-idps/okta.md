@@ -18,7 +18,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - external-idps
+  - idp-okta
 isautopublish: true
 ---
 

@@ -14,7 +14,7 @@ coverage-type:
   - apply
 content-type: 
 topic:
-  - configure-datadog-streaming
+  - stream-to-datadog-odc
 audience:
   - Platform administrator
   - Tech lead

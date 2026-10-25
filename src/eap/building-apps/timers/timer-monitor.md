@@ -18,7 +18,7 @@ coverage-type:
   - apply
   - unblock
 topic:
-  - monitor-timer-logs
+  - monitor-timer-execution
 isautopublish: true
 ---
 

@@ -20,7 +20,8 @@ audience:
 outsystems-tools:
   - none
 topic:
-  - manage-tech-debt
+  - code-analysis-process
+  - code-quality-basics
 isautopublish: true
 ---
 # Manage technical debt in ODC
