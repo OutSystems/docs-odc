@@ -17,8 +17,7 @@ coverage-type:
   - remember
   - understand
 topic:
-  - data-synchronization
-  - offline-synch
+  - offline-sync-overview
 ---
 
 # Offline data sync patterns

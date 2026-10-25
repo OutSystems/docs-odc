@@ -23,11 +23,9 @@ coverage-type:
   - apply
   - remember
 topic:
-  - app-roles
-  - assign-end-user-roles
-  - create-app-role
-  - restrict-logic-with-roles-odc
-  - secure-screen
+  - add-role-in-studio
+  - assign-end-user-roles-odc
+  - restrict-logic-with-roles
 isautopublish: true
 ---
 

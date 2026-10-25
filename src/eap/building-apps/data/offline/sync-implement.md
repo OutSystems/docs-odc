@@ -17,7 +17,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - offline-sync
+  - implement-manual-sync
+  - manually-trigger-sync
+  - sync-status-feedback-events
 isautopublish: true
 ---
 

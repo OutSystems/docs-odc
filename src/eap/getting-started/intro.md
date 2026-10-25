@@ -21,8 +21,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - outsystems-overview
-  - download-and-set-up
+  - agentic-development-overview
+  - choose-app-type-odc
+  - choose-mentor-tool
 isautopublish: true
 ---
 

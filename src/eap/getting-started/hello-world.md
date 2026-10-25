@@ -24,7 +24,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - creating-app-from-scratch
+  - create-app-with-ai
+  - create-screens-odc
+  - set-screen-access
 isautopublish: true
 ---
 

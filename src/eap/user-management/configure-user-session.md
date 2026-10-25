@@ -20,7 +20,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - session-configuration
+  - configure-session-timeout-odc
+  - refresh-token-rotation
 helpids: 30759
 isautopublish: true
 ---

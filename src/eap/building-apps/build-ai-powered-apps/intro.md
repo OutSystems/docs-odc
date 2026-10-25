@@ -9,11 +9,9 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=7061-614&t=dpsTJPtDSEXmwI6w-1
 topic:
-  - machine-learning
-  - chatbots
-  - sentiment-analisys
-  - outsystems-overview
-  - creating-apps
+  - agent-monitoring-overview
+  - ai-models-overview
+  - reason-act-loop
 outsystems-tools:
   - odc portal
   - forge

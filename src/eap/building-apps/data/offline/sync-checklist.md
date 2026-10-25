@@ -18,8 +18,9 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - data-synchronization
-  - offline-synch
+  - avoid-onsync-loop
+  - complex-mobile-sync
+  - sync-conflict-avoidance
 ---
 
 # Offline sync checklist

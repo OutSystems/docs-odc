@@ -6,9 +6,7 @@ audience:
   - Platform administrator
 platform-version: odc
 topic:
-  - external-idps
-  - idp-openidp
-  - idp-saml
+  - assign-external-idp
 coverage-type:
   - apply
 figma:

@@ -23,8 +23,9 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - built-in-authentication
-  - authorization
+  - authentication-management-overview
+  - odc-authorization-flow
+  - token-lifecycle
 isautopublish: true
 ---
 

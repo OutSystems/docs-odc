@@ -20,7 +20,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - external-idps
+  - configure-microsoft-entra-odc
 isautopublish: true
 ---
 
