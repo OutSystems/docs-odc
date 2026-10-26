@@ -1,10 +1,9 @@
 ---
-summary: OutSystems Developer Cloud (ODC) workflow Start node assigns event triggers and instance labels to launch automated business processes.
+summary: OutSystems Developer Cloud (ODC) workflow Start node triggers workflows from events or schedules and assigns instance labels.
 tags:
   - Business Processes
   - Events
   - Triggers
-  - Troubleshooting
   - Workflows
 locale: en-us
 guid: 43686a97-7a1c-4ae6-a775-bffb57ac2cd9
@@ -26,7 +25,10 @@ isautopublish: true
 
 # Start a workflow
 
-Every workflow in the Workflow editor begins with a **Start** node. This node serves as the entry point that connects your ODC app's user interface to automated business processes. When users interact with your app, such as submitting a loan application or placing an order, these actions trigger events that initiate workflows through the **Start** node.
+Every workflow in the Workflow editor begins with a **Start** node. The **Start** node defines what triggers the workflow, and each time the trigger occurs, ODC creates a new workflow instance. A **Start** node has one of the following trigger types:
+
+* **Event**: An event from an ODC app triggers the workflow. Use an event when a user action or a change in your app must start a business process.
+* **Schedule**: A recurring time that you define triggers the workflow. Use a schedule for routine processes that don't depend on an app action, such as a month-end report or a daily inventory reconciliation.
 
 Using events to trigger workflows follows an [**event-driven architecture**](../events/intro.md) where user actions translate into business process events. For example, when a user submits a loan application through your app's form, it triggers a `LoanApplicationSubmitted` event. The **Start** node receives this event along with all the relevant data (user information, loan amount, documents) and passes it to the subsequent workflow activities for processing.
 
@@ -38,9 +40,10 @@ You can also use [conditional starts](add-conditional-start.md) to handle other 
 
 To trigger the workflow execution, follow these steps:
 
-1. Assign an event to the **Start** node.
+1. Select the **Start** node. In **Start process on**, select how the workflow starts:
 
-    When this event is triggered, the workflow begins.
+    * **Event**: Assign the event that triggers the workflow. When this event is triggered, the workflow begins.
+    * **Schedule**: Set the frequency and the time at which the workflow starts. For more information, refer to [Schedule trigger](#schedule-trigger).
 
     <div class="info" markdown="1">
 
@@ -52,7 +55,25 @@ To trigger the workflow execution, follow these steps:
 
     An instance label uniquely identifies an instance, making it useful when troubleshooting workflow instances and in workflow logs.
 
-    ![Screenshot of instance label expression](images/instance-label-we.png "Instance label")
+    ![Screenshot of instance label expression](images/instance-label-we.png "Instance Label Expression")
+
+## Schedule trigger {#schedule-trigger}
+
+Use a schedule trigger to start a workflow at recurring times without an app event. The following screenshot shows the **Start** panel with **Schedule** selected.
+
+![Screenshot of the Start panel in the Workflow editor with Schedule selected, showing the Weekly frequency, the days of the week, Hour, and Minute fields](images/start-node-schedule-we.png "Start Panel Schedule Trigger")
+
+Select a daily, weekly, or monthly frequency, and then set the time. For a weekly schedule, select one or more days of the week. For a monthly schedule, select one or more days of the month. The **Start** node on the canvas shows the frequency, for example, **Start process on** daily.
+
+### Schedule time zone
+
+Schedules use Coordinated Universal Time (UTC), and the **Start** panel shows the message "Schedules are set in UTC." To run a workflow at a specific local time, convert that time to UTC. For example, to run a workflow at 14:00 in a UTC+2 time zone, set **Hour** to `12` and **Minute** to `00`.
+
+UTC doesn't change with daylight saving time. If your time zone changes its UTC offset, the local time of the run changes with it.
+
+### Change the trigger type
+
+Switching the **Start** node between **Event** and **Schedule** and publishing the workflow creates a new revision. Each workflow instance runs on the revision that created it, so instances that are already running continue on their current revision. The new trigger type applies to instances created on the new revision. For more information, refer to [Multiple revisions of a workflow](../../deploying-apps/deploy-apps.md#workflow-revisions).
 
 ## Instance label {#instance-label}
 
@@ -84,7 +105,7 @@ For a loan request approval, you might want a custom label that describes the in
 "Process with Id" + ProcessInstanceId + "started by a new loan with ID" + Start.NewLoan.LoanId
 ```
 
-![Screenshot of instance label expression](images/instance-label-output-we.png "Instance label")
+![Screenshot of an instance label expression and the resulting instance list entry](images/instance-label-output-we.png "Instance Label Output")
 
 ## Next steps
 

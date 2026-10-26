@@ -1,5 +1,5 @@
 ---
-summary: "OutSystems Developer Cloud (ODC) workflows: build with the workflow editor in ODC Portal, trigger via events, test instances, and deploy."
+summary: "OutSystems Developer Cloud (ODC) workflows: build with the workflow editor in ODC Portal, trigger via events or schedules, test instances, and deploy."
 tags:
   - Deploy
   - Events
@@ -26,7 +26,7 @@ isautopublish: true
 
 # Getting started
 
-To implement your workflow, use the workflow editor, a web-based editor accessible from the ODC Portal, where you have access to a set of low-code nodes that will help you implement the workflow. You can integrate your workflows into your apps through events or service actions. Events start the workflow execution. Workflows can consume business logic from events or service actions to gather information for decision-making activities in the workflow.
+To implement your workflow, use the workflow editor, a web-based editor accessible from the ODC Portal, where you have access to a set of low-code nodes that will help you implement the workflow. You can integrate your workflows into your apps through events or service actions. An event or a schedule starts the workflow execution. Workflows can consume business logic from events or service actions to gather information for decision-making activities in the workflow.
 
 <div class="info" markdown="1">
 
@@ -34,7 +34,7 @@ Workflows support [basic input parameters](../data/data-types.md) except binary 
 
 </div>
 
-Workflows are always triggered by events. To start a workflow, you must always associate an event from the ODC app. For example, if you are implementing a loan approval workflow, you can trigger the workflow when you receive a new loan request by choosing the **NewLoanapplication** event from the ODC app for the **Start** node.
+A workflow starts from an event in an ODC app or on a schedule. For example, if you are implementing a loan approval workflow, you can trigger the workflow when you receive a new loan request by choosing the **NewLoanapplication** event from the ODC app for the **Start** node. To start a workflow at recurring times, select a schedule for the **Start** node instead. For more information, refer to [Start a workflow](start-workflow.md).
 
 ## High-level process for using workflows in your app
 
@@ -68,7 +68,7 @@ To implement a workflow, follow these steps:
 
     </div>
 
-1. From the workflow editor, beginning at the Start node, select the event that will trigger the workflow in your app.
+1. From the workflow editor, beginning at the **Start** node, select the event or the schedule that triggers the workflow.
 
 1. Continue adding steps to the workflow until you reach the End node.
 

@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) workflows automate business processes using a visual editor with event triggers, human activities, and decisions.
+summary: OutSystems Developer Cloud (ODC) workflows automate business processes using a visual editor with event or schedule triggers, human activities, and decisions.
 tags:
   - Business Processes
   - Events
@@ -20,6 +20,7 @@ topic:
   - search-workflow-editor
 coverage-type:
   - understand
+  - apply
   - evaluate
 isautopublish: true
 ---
@@ -28,7 +29,7 @@ isautopublish: true
 
 With Workflows, you can design, implement, and automate [business processes](business-processes.md) such as vacation approval, loan approval, or order management and integrate them in your apps. A workflow is a repeatable process consisting of tasks to be completed in a specific sequence. Workflows introduce automation in your apps by allowing you to design and implement repeatable business processes, automating tasks and interactions that would otherwise require manual intervention. For detailed information about how to implement workflows in ODC, refer to [Implement workflows](workflow-components.md).
 
-Workflows are triggered by events in ODC apps. For detailed information about how to create, trigger, and handle events, refer to [Implement events](../../building-apps/events/implement-events.md).
+A workflow starts from an event in an ODC app or on a schedule. For detailed information about how to create, trigger, and handle events, refer to [Implement events](../../building-apps/events/implement-events.md). To start a workflow at recurring times, such as a daily inventory reconciliation or a month-end report, use a schedule. For more information, refer to [Start a workflow](start-workflow.md#schedule-trigger).
 
 Here are some examples of events that can trigger a workflow:
 
