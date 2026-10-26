@@ -46,62 +46,6 @@ Guardrails are the key enabler for moving agents from experimentation to product
 
 * **Compliance**: Guardrails allow organizations to define baseline safety levels that all developers must adhere to, ensuring consistent governance.
 
-## How guardrails work
-
-The ODC platform uses a predefined architecture to apply safety rules efficiently across all tenants.
-
-* **Rule enforcement**: The platform provides various guardrail types, which you can activate and configure with different response actions.
-
-* **Deterministic assignment**: When you configure a policy in the ODC Portal, the platform generates a unique internal ID based on your specific settings.
-
-* **Runtime enforcement**: The system enforces these rules in real time during agent execution, exclusively on user inputs (prompts), system prompts, and AI model responses. It does not analyze or enforce rules on documents, images, or other files sent to the agent.
-
-To understand the runtime flow, consider the following steps:
-
-1. **Request**: When an agent runs, it sends its unique Guardrail ID to the Runtime Service.
-
-1. **Lookup and apply**: The service locates the corresponding predefined policy in a configuration map and applies it to the request.
-
-1. **Result**: If the input or output violates the policy, the system carries out the defined action. For example, the system might block the response or mask sensitive data.
-
-![Flowchart showing the runtime enforcement process for guardrails, including steps for policy violation detection and response actions.](images/guardrails-runtime-flow-diag.png "Guardrails Runtime Enforcement Flow")
-
-## Regional availability and limitations
-
-Agent guardrails rely on cloud AI infrastructure. Due to variances in regional service availability, the capabilities of guardrails differ depending on the region where your ODC environment is hosted.
-
-### Guardrail coverage tiers by region
-
-Guardrail capabilities are divided into **Enhanced** and **Basic** coverage tiers.
-
-* **Enhanced coverage**: Available in most regions (US, EU, Asia Pacific). Supports over 60 languages and provides optimal performance.
-
-* **Basic coverage**: Restricted to specific regions due to infrastructure constraints. Supports only English, French, and Spanish.
-
-| Coverage tier | Affected regions | Language support |
-| -------------- | ------------------ | ------------------ |
-| **Enhanced** | All regions not listed in Basic coverage tier | **60+ Languages**<br/>(Full Support) |
-| **Basic** | • Canada (Central)<br/>• South America (São Paulo)<br/>• Europe (London) | **English, French, Spanish ONLY**<br/>(Restricted Support) |
-
-<div class="info" markdown="1">
-
-If your environment is hosted in a Basic coverage region, guardrails only function effectively for content in English, French, and Spanish. Prompts or responses in other languages may bypass safety filters.
-
-</div>
-
-### Unsupported regions
-
-Guardrails don't operate in the following regions. The Guardrail Runtime service doesn't run in these regions, so it doesn't enforce safety rules on agent transactions.
-
-* South Africa (Cape Town)
-* Asia Pacific (Hong Kong)
-
-<div class="info" markdown="1">
-
-To determine your ODC environment's region, refer to the information provided when you purchased ODC or contact your account manager.
-
-</div>
-
 ## Guardrail filters
 
 You can configure different dimensions of protection. Guardrails apply only to user inputs (prompts), system prompts, and AI model responses. They don't analyze or enforce rules on documents, images, or other files sent to the agent, even when those files are used by the agent to generate a response. To ensure optimal performance and coverage, enabling a category implicitly covers multiple sub-types.
@@ -116,8 +60,9 @@ You can configure different dimensions of protection. Guardrails apply only to u
 
 ## Custom guardrail policies
 
-Beyond the predefined filter categories, you can define custom guardrail policies tailored to your organization's compliance requirements and proprietary data formats. 
-* Platform administrators configure custom policies at the organizational level in **Management** > **Configure** > **Agent guardrails** in the ODC Portal. 
+Beyond the predefined filter categories, you can define custom guardrail policies tailored to your organization's compliance requirements and proprietary data formats.
+
+* Platform administrators configure custom policies at the organizational level in **Management** > **Configure** > **Agent guardrails** in the ODC Portal.
 * Developers configure custom policies for the agents they own in the agent's **Agent elements** tab.
 
 Three types of custom policies are available: denied topics, word filters, and custom PII patterns. Interventions triggered by custom policies are logged and traced the same way as other guardrail violations, and each is identifiable by the name of the triggering rule.
@@ -167,6 +112,24 @@ When the guardrail detects a violation, it performs one of the following actions
 | **Word Filters** | Yes | No | Yes |
 | **Custom PII Patterns** | Yes | Yes | Yes |
 
+## Guardrail enforcement at runtime {#guardrail-enforcement}
+
+Guardrails check each agent call in real time, before the request reaches the AI model and after the AI model responds.
+
+When an agent with guardrails enabled runs, ODC does the following:
+
+1. Checks the user prompt and the system prompt for policy violations. If the request violates the policy, ODC applies the action you configured. A block action stops the call and raises an exception. A mask or log action lets the request continue.
+
+1. Sends the request to the AI model.
+
+1. Checks the AI model response for policy violations. If the response violates the policy, ODC applies the action you configured.
+
+1. Returns the response to the agent.
+
+The following diagram shows the runtime flow, from the user request to the final response:
+
+![Flowchart showing the runtime enforcement process for guardrails, including steps for policy violation detection and response actions.](images/guardrails-runtime-flow-diag.png "Guardrails Runtime Enforcement Flow")
+
 ## Configuration
 
 You manage guardrails directly in the ODC Portal. To balance governance with flexibility, you configure guardrails at two levels:
@@ -186,6 +149,42 @@ The following diagram shows a possible guardrail configuration by stage:
 ![Diagram illustrating guardrail configuration by stage, detailing severity levels and enforcement priorities for Development, QA, and Production stages.](images/guardrail-stage-configuration-diag.png "Guardrail Stage Configuration")
 
 For step-by-step configuration instructions, refer to [Configure agent guardrails](configure-agent-guardrails.md).
+
+## Regional availability and limitations
+
+Agent guardrails rely on cloud AI infrastructure that isn't available in every region. Guardrail capabilities depend on the **Runtime region** of each stage, so stages in different regions can have different guardrail coverage.
+
+### Guardrail coverage tiers by region
+
+Guardrail capabilities are divided into **Enhanced** and **Basic** coverage tiers.
+
+* **Enhanced coverage**: Available in most regions (US, EU, Asia Pacific). Supports over 60 languages and provides optimal performance.
+
+* **Basic coverage**: Restricted to specific regions due to infrastructure constraints. Supports only English, French, and Spanish.
+
+| Coverage tier | Affected regions | Language support |
+| -------------- | ------------------ | ------------------ |
+| **Enhanced** | All regions not listed in Basic coverage tier | **60+ Languages**<br/>(Full Support) |
+| **Basic** | • Canada (Central)<br/>• South America (São Paulo)<br/>• Europe (London) | **English, French, Spanish ONLY**<br/>(Restricted Support) |
+
+<div class="info" markdown="1">
+
+If a stage runs in a Basic coverage region, guardrails in that stage only function effectively for content in English, French, and Spanish. Prompts or responses in other languages can bypass safety filters.
+
+</div>
+
+### Unsupported regions
+
+Guardrails don't run in the following regions, so ODC doesn't enforce guardrail policies on agents that run there:
+
+* South Africa (Cape Town)
+* Asia Pacific (Hong Kong)
+
+<div class="info" markdown="1">
+
+To check the region of each stage, in the ODC Portal go to **Management** > **Admin** > **Organization** and check the **Runtime region** column in the **Stages** table. For more information, refer to [Verify your regions for compliance and networking](../../manage-platform-app-lifecycle/subscription-console.md#platform-regions).
+
+</div>
 
 ## Associated costs
 

@@ -105,7 +105,7 @@ You need the **View stage** permission to see the full region information on the
 
 </div>
 
-To view your region information, in the ODC Portal go to **Management** > **Organization**. The **Organization** page shows the following regions:
+To view your region information, in the ODC Portal go to **Management** > **Admin** > **Organization**. The **Organization** page shows the following regions:
 
 * **Runtime region**. The geographical region where your apps are hosted and executed. This includes the app's compute resources and data, split across independent [runtime stages](platform-architecture/intro.md#runtime).
 
