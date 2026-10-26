@@ -24,8 +24,9 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - choose-app-type
-  - basic-architecture
+  - choose-app-type-odc
+  - odc-library-overview-odc
+  - workflow-overview
 isautopublish: true
 ---
 

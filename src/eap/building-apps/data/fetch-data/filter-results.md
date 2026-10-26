@@ -21,7 +21,8 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - filter-data
+  - filter-aggregate-data
+  - mentor-studio-logic-prompts
 isautopublish: true
 ---
 

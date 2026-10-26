@@ -16,7 +16,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - document-apis
+  - document-rest-api
 ---
 
 # Document an Exposed REST API

@@ -21,7 +21,6 @@ coverage-type:
 isautopublish: true
 topic:
   - built-in-text-functions
-  - prevent-injection-odc
 ---
 
 # Text

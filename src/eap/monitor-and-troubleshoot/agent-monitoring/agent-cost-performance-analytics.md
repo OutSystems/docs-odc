@@ -7,7 +7,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - agent monitoring
+  - view-agent-token-latency
 app_type: reactive web apps
 platform-version: odc
 audience:

@@ -22,8 +22,6 @@ coverage-type:
   - apply
 topic:
   - conflict-detection-sync-pattern
-  - data-syncronization
-  - offline-synch
 ---
 
 # Read-Write data with conflict detection synchronization pattern

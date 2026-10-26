@@ -7,7 +7,8 @@ coverage-type:
   - understand
   - unblock
 topic:
-  - agent monitoring
+  - answer-relevance-score
+  - safety-score
 app_type: reactive web apps
 platform-version: odc
 audience:

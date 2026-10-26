@@ -21,7 +21,7 @@ audience:
 outsystems-tools:
   - none
 topic:
-  - webservice-authentication
+  - secure-rest-api
 ---
 # Exposed REST services without authentication
 

@@ -20,7 +20,8 @@ coverage-type:
   - apply
   - evaluate
 topic:
-  - filter-data
+  - dynamic-aggregate-sort
+  - sort-aggregate-data
 isautopublish: true
 ---
 
