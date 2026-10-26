@@ -26,7 +26,7 @@ coverage-type:
   - evaluate
 topic:
   - compose-and-send-emails
-  - configure-email-settings
+  - configure-email-settings-odc
   - email-css-compatibility
 isautopublish: true
 ---

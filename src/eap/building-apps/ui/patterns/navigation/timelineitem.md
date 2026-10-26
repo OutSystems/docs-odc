@@ -22,7 +22,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - use-timeline-item-pattern
+  - use-timeline-item-pattern-reactive-web-o11
 ---
 
 # Timeline Item

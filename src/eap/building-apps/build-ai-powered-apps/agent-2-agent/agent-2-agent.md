@@ -12,6 +12,9 @@ figma:
 coverage-type:
   - understand
 topic:
+  - a2a-communication-flow
+  - a2a-vs-mcp
+  - understand-a2a-protocol
 outsystems-tools:
   - odc studio
   - odc portal

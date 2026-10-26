@@ -7,6 +7,9 @@ coverage-type:
   - understand
   - evaluate
 topic:
+  - grounding-data-purpose
+  - state-persistence
+  - system-prompt-purpose
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

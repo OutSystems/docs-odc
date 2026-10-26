@@ -20,6 +20,8 @@ audience:
   - Developer
   - Architect
 topic:
+  - async-agent-calls
+  - raise-agent-timeout
 ---
 
 # Dealing with timeouts on AI agent calls
