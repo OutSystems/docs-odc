@@ -1,7 +1,7 @@
 ---
 guid: 5d10b0f6-098b-4275-b7e2-8acf88e9f016
 locale: en-us
-summary: This use cases guides you how to create a single user and assign a role to it using ODC User and Access management REST APIs.
+summary: OutSystems Developer Cloud (ODC) REST APIs let you create users and assign application roles with user, asset, and role keys.
 figma:
 coverage-type:
   - apply
@@ -16,6 +16,7 @@ tags:
   - End-users
   - REST
   - Roles
+  - Web services
 outsystems-tools:
   - odc studio
 helpids:
@@ -46,10 +47,9 @@ To create a single user and assign a role to the user using ODC REST API, follow
       On successful execution of the API, a new user is created, and the API response contains the newly created **user's key (UUID)**. This key is used in the subsequent steps.  
 
       <div class="info" markdown="1">
+      Users created through the API have a random hidden password that is in line with our password requirements. If you create the user using the API and want the user to set a password and finish the registration process, use the reset password flow. Call [**StartResetPassword**](../../../system-actions/user.md#startresetpassword) to send the verification code email, then call [**FinishResetPassword**](../../../system-actions/user.md#finishresetpassword) with the verification code and the new password.
 
-      If you create the user using the API and want the user to set a password and finish the registration process, use the reset password flow. Call [**StartResetPassword**](../../../system-actions/user.md#startresetpassword) to send the verification code email, then call [**FinishResetPassword**](../../../system-actions/user.md#finishresetpassword) with the verification code and the new password.
-
-      For more information about resetting passwords, refer to [Passwords](../../../../user-management/passwords.md).
+      For more information about our password requirements or about resetting passwords, refer to <https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/passwords/|Passwords>.
 
       </div>
 
