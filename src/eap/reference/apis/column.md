@@ -19,7 +19,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - add-widget-ui-pattern
+  - configure-column-chart
 isautopublish: true
 ---
 

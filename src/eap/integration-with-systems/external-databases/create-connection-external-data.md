@@ -23,6 +23,9 @@ audience:
 coverage-type:
   - remember
   - apply
+topic:
+  - create-odc-external-database-connection
+  - manage-odc-external-database-connections
 isautopublish: true
 ---
 

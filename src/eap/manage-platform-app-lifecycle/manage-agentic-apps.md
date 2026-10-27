@@ -5,6 +5,7 @@ summary: Open or create agentic apps from the Agents page in the ODC Portal.
 coverage-type:
   - understand
 topic:
+  - manage-agentic-apps
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

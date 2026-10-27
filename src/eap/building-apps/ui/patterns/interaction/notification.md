@@ -22,7 +22,8 @@ coverage-type:
   - apply
   - remember
 topic:
-  - add-widget-ui-pattern
+  - notification-reference
+  - use-notification-pattern
 ---
 
 # Notification

@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - odc-library-overview
+  - odc-library-overview-odc
 ---
 
 # Libraries

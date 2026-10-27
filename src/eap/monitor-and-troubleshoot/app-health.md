@@ -6,6 +6,10 @@ tags:
   - Troubleshooting
 locale: en-us
 guid: e190d5fb-6b99-4d9b-a64f-a3b34be3588d
+topic:
+  - agent-monitoring-overview
+  - ai-model-analytics
+  - app-performance-analytics-odc
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/IStE4rx9SlrBLEK5OXk4nm/Monitor-apps?type=design&node-id=3202%3A36&mode=design&t=tBANF8iUm5epKReC-1
 platform-version: odc

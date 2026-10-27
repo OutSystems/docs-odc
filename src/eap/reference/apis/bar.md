@@ -22,6 +22,7 @@ coverage-type:
   - apply
 topic:
   - add-widget-ui-pattern
+  - configure-bar-chart
 isautopublish: true
 ---
 
