@@ -1,5 +1,12 @@
 ---
-tags: ui design, user experience
+tags:
+  - CSS
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
+  - Widgets
 summary: ODC Tooltip UI Pattern lets you display informative text when users hover, click, or tap an element, with configurable position and trigger properties.
 locale: en-us
 guid: 33a42743-0e9c-44c6-b67d-363ec53dc01a

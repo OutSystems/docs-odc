@@ -1,5 +1,12 @@
 ---
-tags: user interface components, user experience design, mobile app design
+tags:
+  - Aggregates
+  - Entities
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - UI Patterns
+  - UX
 summary: Explore how to implement the User Avatar UI Pattern in OutSystems Developer Cloud (ODC) to display user initials or images.
 locale: en-us
 guid: 6b1585c5-c59f-48a2-9bb4-452a9932bbc4

@@ -1,6 +1,13 @@
 ---
 summary: ODC accessibility features in ODC Studio — enable WCAG-compliant focus states, skip-to-content, ARIA roles, and alt text for mobile and web apps.
-tags: accessibility, wcag, aria, ui design, ethical design
+tags:
+  - Accessibility
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - Web
+  - Widgets
 locale: en-us
 guid: 62770c36-d307-4a3a-ba01-acf10299454a
 app_type: mobile apps, reactive web apps

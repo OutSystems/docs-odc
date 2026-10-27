@@ -1,5 +1,12 @@
 ---
-tags: ui patterns, user interface design
+tags:
+  - CSS
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
+  - Widgets
 summary: Tag UI Pattern in OutSystems Developer Cloud (ODC) lets you display statuses, labels, or categories with customizable color, shape, and size.
 locale: en-us
 guid: b2b8939e-3fc0-418b-abfe-cc20d2971442

@@ -1,5 +1,11 @@
 ---
-tags: ui patterns, svg customization
+tags:
+  - CSS
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) supports the Inline SVG UI Pattern for customizing SVG properties and animations in applications.
 locale: en-us
 guid: 6db3a9a0-b82e-430c-b4b6-e5964bcd383f

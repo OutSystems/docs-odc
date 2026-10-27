@@ -1,5 +1,10 @@
 ---
-tags: ui patterns, splide.js integration
+tags:
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) offers a Carousel UI Pattern for displaying images horizontally, utilizing Splide.js library.
 locale: en-us
 guid: 84e84647-8129-4467-ade7-72b6102f9959

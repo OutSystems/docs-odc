@@ -1,5 +1,12 @@
 ---
-tags: ui design patterns, user experience design
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
+  - Widgets
 summary: Explore how to implement the Blank Slate UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interfaces when no data is available.
 locale: en-us
 guid: 8f31ca3f-5223-4225-b292-304330d0e17e
