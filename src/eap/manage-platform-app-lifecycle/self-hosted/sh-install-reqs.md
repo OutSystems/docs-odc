@@ -6,7 +6,7 @@ figma: https://www.figma.com/design/la33iciyGndnV5JRqR359g/Managing-OutSystems-p
 coverage-type:
   - remember
 topic:
-  - self-hosted-network-requirements
+  - self-hosted-network-requirements-odc
   - self-hosted-system-requirements
 app_type: reactive web apps,mobile apps
 platform-version: odc

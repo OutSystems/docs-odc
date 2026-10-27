@@ -8,6 +8,7 @@ coverage-type:
   - understand
   - apply
 topic:
+  - build-image-prompts
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

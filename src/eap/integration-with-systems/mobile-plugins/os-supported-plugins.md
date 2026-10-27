@@ -7,6 +7,8 @@ coverage-type:
   - remember
   - apply
 topic:
+  - install-forge-component
+  - supported-mobile-plugins
 app_type: mobile apps
 platform-version: odc
 audience:

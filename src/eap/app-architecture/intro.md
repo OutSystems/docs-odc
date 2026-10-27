@@ -19,7 +19,9 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - basic-architecture
+  - odc-architecture-overview
+  - odc-container-deployment
+  - odc-library-overview-odc
 isautopublish: true
 ---
 

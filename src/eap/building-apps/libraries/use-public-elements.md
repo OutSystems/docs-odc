@@ -18,7 +18,7 @@ coverage-type:
   - apply
 topic:
   - add-public-elements
-  - odc-library-overview
+  - odc-library-overview-odc
 isautopublish: true
 ---
 

@@ -2,6 +2,8 @@
 guid: fd941531-d146-4f4e-aa3b-58a9eb70832e
 locale: en-us
 summary: 'ODC push notifications best practices for OutSystems Developer Cloud: FCM setup, permission timing, token management, and foreground/background handling.'
+topic:
+  - push-best-practices
 figma:
 coverage-type:
   - evaluate

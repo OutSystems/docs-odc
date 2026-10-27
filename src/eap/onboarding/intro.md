@@ -23,8 +23,9 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
+  - manage-library-update-lifecycles
   - o11-to-odc-overview
-  - odc-library-overview
+  - odc-library-overview-odc
 isautopublish: true
 ---
 # ODC for O11 developers

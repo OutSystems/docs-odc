@@ -24,7 +24,7 @@ isautopublish: true
 topic:
   - library-revision-vs-version
   - mobile-libraries-overview
-  - odc-library-overview
+  - release-library-version
 ---
 
 # Libraries

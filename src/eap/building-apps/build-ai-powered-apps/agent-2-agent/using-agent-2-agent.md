@@ -20,6 +20,8 @@ audience:
   - Developer
   - Platform administrator
 topic:
+  - set-up-a2a-connection
+  - use-a2a-agent-action
 isautopublish: true
 ---
 # Adding external agents in the ODC portal using A2A

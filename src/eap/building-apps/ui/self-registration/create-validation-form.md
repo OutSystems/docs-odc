@@ -22,7 +22,6 @@ topic:
   - build-self-registration-form
   - finish-user-registration
   - passwords
-  - self-registration
   - validate-password-confirmation
 helpids: 
 ---

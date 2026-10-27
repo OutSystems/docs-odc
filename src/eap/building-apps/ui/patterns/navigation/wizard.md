@@ -22,7 +22,7 @@ coverage-type:
   - remember
   - apply
 topic:
-  - use-wizard-pattern
+  - use-wizard-pattern-reactive-web-o11
 ---
 
 # Wizard
