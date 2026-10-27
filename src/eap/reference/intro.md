@@ -3,9 +3,9 @@ summary: "OutSystems Developer Cloud (ODC) language reference: built-in function
 tags:
   - Authentication
   - Data
-  - Developer
   - Libraries
   - Logic
+  - Programming Model
   - SQL
   - Security
 locale: en-us

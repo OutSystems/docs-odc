@@ -14,7 +14,14 @@ audience:
   - Developer
   - Front-end developer
   - Tech lead
-tags: consumer apps,ai agents,session management,user input,agent integration
+tags:
+  - Agentic
+  - AI
+  - End-users
+  - Front-End
+  - Logic
+  - Mobile app
+  - UI
 outsystems-tools:
   - odc studio
 helpids: 

@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) aligns UI patterns with WCAG 2.1, detailing accessibility configurations for Alert and MasterDetail patterns.
-tags: accessibility, ui design, web content accessibility guidelines, aria, ui patterns
+tags:
+  - Accessibility
+  - Best Practices
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
 locale: en-us
 guid: 95cea8e4-df3b-4ed0-9251-d3fdf3825854
 app_type: reactive web apps
