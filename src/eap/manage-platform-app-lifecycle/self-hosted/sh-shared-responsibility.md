@@ -7,6 +7,7 @@ coverage-type:
   - understand
   - remember
 topic:
+  - shared-responsibility-self-hosted
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

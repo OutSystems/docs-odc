@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - built-in-date-functions
+  - built-in-date-functions-odc
 ---
 
 # DateTime
