@@ -16,9 +16,9 @@ tags:
 outsystems-tools:
   - none
 topic:
-  - assign-roles-to-end-user-group
+  - assign-roles-to-end-user-group-odc
   - assign-to-user-groups
-  - create-end-user-group
+  - create-end-user-group-odc
 helpids: 30705
 isautopublish: true
 audience:
