@@ -3,7 +3,6 @@ summary: Reference for OutSystems Developer Cloud (ODC) agent connection errors 
 tags:
   - Agentic
   - AI
-  - MCP
   - Troubleshooting
 guid: a21b483d-d8d4-4857-962c-75b6b1c0bdaa
 locale: en-us
