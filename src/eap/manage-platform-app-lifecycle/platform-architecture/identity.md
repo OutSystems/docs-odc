@@ -85,6 +85,14 @@ As of December 2025, ODC access tokens are being updated to remove PII. This cha
 
 When a user logs out, the platform immediately invalidates their session and refresh tokens, meaning no new access tokens can be issued and the user must re-authenticate. However, because access tokens are self-contained JWTs validated without a server lookup, the platform does not individually revoke them. Any access token issued just before logout remains valid until its natural five-minute expiration. This brief window is standard, secure behavior for stateless validation, keeping exposure strictly limited.
 
+### OIDC issuer configuration
+
+When you configure an external OIDC identity provider, ODC stores the issuer value from the IdP. If the issuer changes on the IdP side, the stored issuer becomes stale. Token validation then fails because the issuer in the token no longer matches the stored issuer, resulting in errors such as `IdentityBrokerException: Wrong Issuer from token`.
+
+To reconcile the configuration when the issuer changes, unassign the IdP from the affected stages, then reassign it. This forces ODC to refresh and validate the issuer configuration.
+
+**Note:** Simply editing and re-saving the IdP configuration does not trigger an update unless actual values change, such as the client secret or custom domain. Configuration changes take effect only when you assign or update an IdP on a stage.
+
 ## User flow
 
 The following diagram shows an example of a user authentication and authorization flow. It shows what happens when a developer using **ODC Studio** (client) accesses a REST API endpoint exposed by **Service 1** (a Platform service).
