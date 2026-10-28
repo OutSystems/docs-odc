@@ -79,7 +79,7 @@ Here are some use cases where you can use workflow for automation:
 
 * Travel reimbursement
 
-## Using workflow editor
+## Workflow editor {#using-workflow-editor}
 
 ODC provides a **workflow editor**, a visual web-based tool for implementing workflows. You can access the workflow editor from the ODC Portal. You implement workflows as a type of asset similar to ODC apps and libraries with an independent lifecycle.
 
@@ -104,8 +104,7 @@ For example, while implementing a human activity in a workflow, you can select a
 
 ### Search in workflow editor
 
-Workflow editor provides search capability which is a single point of entry for various commands and searches simplifying editing and navigation of complex workflows. You can open the search menu using the keyboard shortcut **Ctrl + K (or Cmd + K on a Mac**).
-
+Workflow editor provides search capability which is a single point of entry for various commands and searches simplifying editing and navigation of complex workflows.
 With search, you can do the following:
 
 **Search and execute commands**: In addition to in-built commands, you can also search for a specific flow step (activity) or properties within your workflow.
@@ -114,7 +113,7 @@ With search, you can do the following:
 
 **Add new flow-steps**: Select a flow-step and type add. A list of flow-steps to be added appears, allowing you to insert them into your workflow.
 
-### Managing workflow revisions
+### Workflow revisions {#managing-workflow-revisions}
 
 The workflow editor includes revision history to help you track, manage, and restore previous revisions of your workflows. For more information about how revisions work for workflows, refer to [Revisions](../publishing/revisions.md#workflows).
 
@@ -124,7 +123,7 @@ With revisions history, you can:
 
 * **Discard or restore workflow changes**: Easily discard unpublished workflow changes or restore the workflow to any previous published revision.
 
-### Managing errors in workflow editor
+### Errors in the workflow editor {#managing-errors-in-workflow-editor}
 
 The workflow editor includes a centralized **notification** panel to help you identify, locate, and resolve issues in your workflows.
 
@@ -151,7 +150,7 @@ The **notification** panel eliminates manual searching within large workflows. I
 
 ## Compare workflow revisions
 
-When a workflow has multiple published revisions, you can compare any two revisions side by side. Color coding highlights additions, deletions, and modifications so you know exactly what to keep.
+When a workflow has multiple published revisions, you can compare your work with another revision side by side. Color coding highlights additions, deletions, modifications, and conflicts. When the two revisions have no conflicts, you can merge them and keep the changes from both, instead of keeping one revision and discarding the other.
 
 For more information, refer to [Compare workflow revisions](compare-versions.md).
 

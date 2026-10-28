@@ -42,13 +42,13 @@ Writing a clear and descriptive message can help you and your team understand th
 
 When you publish a workflow, you create a new revision of that workflow. Each revision is stored in the workflow's revision history, allowing you to track changes over time and revert to previous revisions if necessary.
 
-If you have added a custom message during the publish action, this message will be displayed in the revision history alongside the revision details. This helps you and your team understand the purpose of each revision and the changes that were made.
+If you add a custom message when you publish, the message appears in the revision history alongside the revision details. This helps you and your team understand the purpose of each revision and the changes that were made.
 
 ![Screenshot of revision history with custom messages](images/revision-history-messages-pl.png "Revision history with messages")
 
-## Messages in merge conflicts
+## Publish conflict messages {#messages-in-merge-conflicts}
 
-When multiple developers are working on the same workflow, it's possible to encounter merge conflicts when trying to publish changes. If a conflict occurs, you will be prompted to resolve it before you can successfully publish your workflow.
+When another developer publishes a revision of a workflow while you're editing it, publishing your changes causes a publish conflict. The **Publish and replace latest revision?** dialog shows the message of the newer revision, so you know what changed before you decide how to proceed. If the two revisions have no conflicting changes, you can merge both versions. For more information, refer to [Merge revisions](compare-versions.md#merge-revisions).
 
 ![Screenshot of merge conflict message in the workflow editor](images/merge-message-pl.png "Merge conflict message")
 
@@ -56,10 +56,10 @@ Similarly, when you open a workflow that has a newer published revision than you
 
 ![Screenshot of open workflow conflict message in the workflow editor](images/recover-message-pl.png "Open workflow conflict message")
 
-## Comparing your changes before publishing
+## Compare changes before publishing {#comparing-your-changes-before-publishing}
 
 If someone published a newer revision while you were editing, a dialog appears when you click **Publish**.
 
-Click **Compare both versions** to open a side-by-side comparison of your version and the latest published revision before deciding whether to override or cancel.
+Click **Compare both versions** to open a side-by-side comparison of your version and the latest published revision before deciding whether to override, cancel, or merge both versions.
 
 For more information, refer to [Compare revisions when publishing](compare-versions.md#compare-revisions-when-publishing).
