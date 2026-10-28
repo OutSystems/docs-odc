@@ -138,7 +138,7 @@ All the debugging tools covered in this article require a debug build and are un
 
 ### Recommendation
 
-Use the built-in **LogMessage** system action to log diagnostic messages from client actions at **Error**, **Warning**, or **Information** level. Logs appear in ODC Portal under **Monitoring** > **Logs** and are retained for up to four weeks. The action supports offline scenarios: if the device has no connectivity, log entries are queued and sent when connectivity is restored.
+Use the built-in **LogMessage** system action to log diagnostic messages from client actions at **Error**, **Warning**, or **Information** level. Logs appear in ODC Portal under **Monitor** > **Logs** and are retained for up to four weeks. The action supports offline scenarios: if the device has no connectivity, log entries are queued and sent when connectivity is restored.
 
 Call `LogMessage` at meaningful diagnostic points and avoid logging sensitive personal or financial information. For more information about viewing and filtering logs, refer to [Monitoring and troubleshooting apps](../../../monitor-and-troubleshoot/monitor-apps.md#logs).
 

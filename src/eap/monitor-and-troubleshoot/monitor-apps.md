@@ -26,7 +26,7 @@ isautopublish: true
 
 # Monitoring and troubleshooting apps
 
-OutSystems Developer Cloud (ODC) provides a unified experience for monitoring and troubleshooting your apps. The [Logs](#logs),[Traces](#traces) and [Analytics](#analytics) screens are available in ODC Portal under the **Monitoring** section.
+OutSystems Developer Cloud (ODC) provides a unified experience for monitoring and troubleshooting your apps. The [Logs](#logs),[Traces](#traces) and [Analytics](#analytics) screens are available in ODC Portal under the **Monitor** section.
 
 Logs and traces are complementary for getting to the root cause of a problem with an app. While a log helps you identify the problem, the associated trace helps you locate the problem. You can then use this information to help resolve the problem. Traces are also helpful for troubleshooting a performance issue with an app.
 

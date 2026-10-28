@@ -78,12 +78,40 @@ Publishing an app with searchable entities creates the embedding schema and the 
 
 After publish, semantic search keeps embeddings synchronized with your entity data as your app runs. Creating, updating, or deleting a record in a searchable entity generates, updates, or deletes that record's embeddings automatically.
 
+The semantic search service processes these changes asynchronously, so record operations in your app don't wait for embeddings. A change appears in search results after the service finishes processing its embeddings.
+
 ### Full reindex
 
 Some actions trigger a full reindex, covering every existing record in an entity:
 
 * Enabling semantic search on an attribute for the first time.
 * Changing the chunking configuration on an attribute that already has semantic search enabled.
+
+### Indexing time
+
+The semantic search service applies per-tenant rate limits to indexing requests to protect the platform during large loads. Indexing time grows with the number of records.
+
+Load large datasets into the entity before you move an app to production, so that indexing finishes before users search.
+
+### Monitor indexing
+
+ODC writes an information log when a full reindex starts and when it completes. Runtime indexing of individual record changes doesn't produce logs. These logs are the only indexing status information in ODC Portal.
+
+To check the status of a full reindex, do the following:
+
+1. In ODC Portal, select **Logs** under **Monitor**.
+1. In the search box, enter `Embedding sync`.
+
+The logs of a full reindex have the following format:
+
+```
+Embedding sync started for searchable attribute "Product.Description" due to configuration change
+Embedding sync completed for searchable attribute "Product.Description" (10 records, 1s)
+```
+
+The completed log shows the number of records and the time the sync took. For an entity without records, it shows `(entity has no records)` instead.
+
+For more information about the **Logs** screen, refer to [Monitoring and troubleshooting apps](../../../monitor-and-troubleshoot/monitor-apps.md#logs).
 
 ## Regional availability and limitations
 

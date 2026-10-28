@@ -34,7 +34,7 @@ Timer logs display the following:
 
 You can sort the log list by severity and display any combination of errors, warnings, and informational messages.  
 
-To view the logs go to the ODC (OutSystems Developer Cloud) Portal and then from the left Nav panel select **Monitoring** > **Logs**.
+To view the logs go to the ODC (OutSystems Developer Cloud) Portal and then from the left Nav panel select **Monitor** > **Logs**.
 
 Logs also provide detail information for each message. To access the detail information for a message, click on the **message time**. The detail page opens, and you can see:
 

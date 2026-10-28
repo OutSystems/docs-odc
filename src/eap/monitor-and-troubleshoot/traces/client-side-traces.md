@@ -26,6 +26,7 @@ topic:
   - client-side-trace-behavior
   - enable-client-side-traces
   - client-side-trace-limits
+isautopublish: true
 ---
 
 # Client-side traces
@@ -72,7 +73,7 @@ Consider the following information while working with traces:
 
 ### Missing traces or spans
 
-The ODC Portal initially displays traces of the order in which they arrive. Spans in a processing state may appear later with a visual indicator. Select **Monitoring** > **Traces** and click **Refresh** to view the most current information.
+The ODC Portal initially displays traces of the order in which they arrive. Spans in a processing state may appear later with a visual indicator. Select **Monitor** > **Traces** and click **Refresh** to view the most current information.
 
 Backend traces typically arrive first. When client-side traces arrive, they regroup with the backend traces. However, client-side information may sometimes not arrive due to an error or a limit being reached. In these cases, only traces with backend information remain available.
 
