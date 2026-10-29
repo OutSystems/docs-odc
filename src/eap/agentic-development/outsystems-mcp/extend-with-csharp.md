@@ -61,7 +61,7 @@ The following characteristics affect how long the process takes and when it need
 * If generation or publication fails, the validation messages name the cause. Fix the C# and upload again.
 * Mentor can fail to add the library reference to an app. If the agent can't add the dependency, add it to the app in ODC Studio, then continue from your MCP host.
 
-## Related
+## Related resources
 
 The following pages support this workflow:
 

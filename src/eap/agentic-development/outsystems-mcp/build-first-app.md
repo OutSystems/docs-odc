@@ -22,6 +22,7 @@ content-type:
   - tutorial
 audience:
   - Developer
+  - Front-end developer
 topic:
   - creating-apps
 isautopublish: true
@@ -141,7 +142,7 @@ A few parts of building an app run outside your MCP host:
 * You assign end-user roles in ODC Portal. Refer to [Grant and revoke user roles](../../user-management/grant-and-revoke-user-roles.md).
 * To refine the app's layout and styles by hand, open the app in ODC Studio. For more information about Mentor in ODC Studio, refer to [AI development in Mentor Studio](../mentor-studio/how-it-works.md).
 
-## Next steps
+## Related resources
 
 The app is a first version that you change with more prompts.
 
