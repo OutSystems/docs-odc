@@ -7,6 +7,8 @@ coverage-type:
   - evaluate
   - understand
 topic:
+  - decide-odc-extension
+  - o11-odc-interop-overview
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
