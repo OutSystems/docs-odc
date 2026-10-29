@@ -23,9 +23,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - barcode-plugin-reference
-  - using-capacitor-plugins
-  - using-cordova-plugins
+  - barcode-plugin-o11
 isautopublish: true
 ---
 
