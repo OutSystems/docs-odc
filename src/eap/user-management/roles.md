@@ -4,7 +4,7 @@ summary: OutSystems Developer Cloud (ODC) member roles assign cumulative permiss
 locale: en-us
 guid: 766ab743-31f2-4f58-ad91-a4cd0db8ab93
 app_type: mobile apps,reactive web apps
-figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3717-132
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=4576-261&p=f&t=aGWvbdZBABAdUhs1-0
 platform-version: odc
 tags:
   - Authorization
@@ -13,6 +13,7 @@ tags:
   - Roles
   - Security
 audience:
+  - Developer
   - Platform administrator
 outsystems-tools:
   - odc studio
@@ -141,42 +142,42 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Asset management | Debug | Users can view, open and debug assets. | Organization <br/> Asset |
 | Asset management | Change | Users can view, open, debug and publish assets. | Organization <br/> Asset |
 | Asset management | Delete | Users can delete assets. | Organization <br/> Asset |
-| Mentor | Use | Users can use Mentor App Gen to generate or edit apps in ODC Studio. | Organization |
+| Mentor | Use | Users can use Mentor to generate or edit assets. | Organization |
 | Portfolio management | Manage portfolio | Users can rename a portfolio and reorder its stages. | Organization |
-| Portfolio management | Manage stages | Users can rename a stage within a portfolio. Necessary to configure self-hosted stages | Organization |
-| Portfolio management | View stage | View a given stage. | Organization |
+| Portfolio management | Manage stage | Users can rename a stage within a portfolio. Necessary to configure self-hosted stages. | Organization |
+| Portfolio management | View stage | Users can view a given stage. | Organization |
 | Release management | Deploy assets | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Asset |
 | Release management | Release | Users can release an asset, assign a version number (1.0.0), and add release notes. | Organization <br/> Asset |
-| Monitoring | Access asset logs and traces | Users can view asset logs and traces in a given stage. | Organization <br/> Asset |
+| Monitoring | Access asset logs, traces and analytics | Users can view asset logs, traces and access analytics in a given stage. | Organization <br/> Asset |
 | Monitoring | Access user information | Users can view user information connected to a given log or activity. | Organization <br/> Asset |
 | Analyze | Manage code quality findings | Users can comment and change the status of code quality findings. | Organization <br/> Asset |
 | Analyze | View code quality findings | Users can view code quality findings in apps they have permissions to open. | Organization <br/> Asset |
 | Analyze | View evaluations | Users can view runs, results, and reports for evaluations in the Development stage. | Organization |
 | Analyze | Manage evaluations | Users can create, configure, and run evaluations in the Development stage. | Organization |
-| Configuration management | View configurations | Users can view all configurations within this category for the selected stages. | Organization <br/> Asset |
+| Configuration management | View configurations | Users can view all configurations listed below in this table for selected stages. | Organization <br/> Asset |
 | Configuration management | Edit asset configurations | Users can change app or library configurations in a given stage. | Organization <br/> Asset |
-| Configuration management | Configure connections | Users can edit connection configurations in a given stage. | Organization |
+| Configuration management | Configure connections | Users can edit connection and AI models configurations in a given stage. | Organization |
 | Configuration management | Manage domains | Users can create, edit, and delete stage level domains for end-user access. | Organization |
-| Configuration management | Manage Email configurations | Users can create, edit, and delete SMTP emails. | Organization |
-| Configuration management | Manage CSP | The user can create, edit, and delete CSP (Content Security Policy) rules at each stage. | Organization |
+| Configuration management | Manage email configurations | Users can create, edit, and delete SMTP emails. | Organization |
+| Configuration management | Manage CSP | Users can create, edit, and delete CSP (Content Security Policy) rules at each stage. | Organization |
 | Configuration management | Manage app analytics stream | Users can view, create, edit, and delete streams. | Organization |
-| Configuration management | Manage IP filters | Users can create, edit, delete and assign IP rules to apps. | Organization |
+| Configuration management | Manage IP filters | Users can create, edit and delete IP rules and assign to applications. | Organization |
 | Configuration management | Manage private gateways | Users can activate and deactivate private gateways and renew a gateway's access token. | Organization |
 | Configuration management | Manage agent guardrails | Users can configure agent guardrails to be applied to agent elements. | Organization |
-| Connection management | Create | Users can create connections. | Organization |
-| Connection management | Change | Users can edit entities, name, and description. | Organization |
-| Connection management | Delete | Users can delete connections. | Organization |
-| User and access management | View members | View users with organization roles. | Organization |
+| Connection management | Create | Users can create connections and add AI models. | Organization |
+| Connection management | Change | Users can edit connections and AI models. | Organization |
+| Connection management | Delete | Users can delete connections and AI models. | Organization |
+| User and access management | View members | Users can view users with organization roles. | Organization |
 | User and access management | Manage users | View, activate, deactivate, and delete other organization members and end-users. | Organization |
 | User and access management | Manage member access | Users can invite organization members and grant or revoke organization roles. | Organization |
 | User and access management | Manage organization roles | Users can create, edit, and delete organization roles. | Organization |
-| User and access management | Manage authentication | The user with this permission can view and manage the authentication providers to access the organization and apps. | Organization |
+| User and access management | Manage authentication | Users can view and manage the authentication providers to access the organization and apps. | Organization |
 | User and access management | Manage API clients | Users can manage API Clients, create, suspend, delete, change permissions, and rotate secrets.  <br/>**Note:** This permission allows users to create API clients that can modify their own permissions. | Organization |
-| End-user management | View end-users | View users with end-user roles. | Organization <br/> Asset |
+| End-user management | View end-users | Users can view users with end-user roles. | Organization <br/> Asset |
 | End-user management | Manage end-user access | Users can invite users and grant or revoke end-user roles. | Organization <br/> Asset |
-| End-user management | Manage end-user groups | View, create, edit, and delete end-user groups and group mappings. | Organization |
+| End-user management | Manage end-user groups | Users can view, create, edit, and delete end-user groups and group mappings. | Organization |
 | Organization management | Manage organization | Users can edit the organization domain as well as the organization display name. | Organization |
-| Organization management | View audit trail | This permission enables users to view the audit logs. | Organization |
+| Organization management | View audit trail | Users can view the audit trails. | Organization |
 | Organization management | Manage audit trail stream | Users can view, create, edit, and delete audit trail streams. | Organization |
 | Organization management | Manage O11 infrastructures | Provides users access to the OutSystems 11 infrastructures, to enable data and logic interoperability, and app conversions. | Organization |
 | Forge | Install/Update assets | Users can install or update assets from Forge. | Organization |
