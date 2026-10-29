@@ -92,8 +92,6 @@ When a pattern's action is set to **Mask**, detected content is replaced with a 
 
 The combined total of organizational and agent-level custom PII patterns can't exceed 50 per agent.
 
-<!-- WRITER NOTE (2026-07-13): unconfirmed whether the Basic/Enhanced regional coverage tiers described in "Regional availability and limitations" apply to custom PII regex patterns. Neither source document (VM5 PRD, Enterprise Guardrails HLD) addresses this. Confirm with engineering/PM before asserting either way, then remove this note. -->
-
 ## Action to take on detection
 
 When the guardrail detects a violation, it performs one of the following actions based on your configuration:
@@ -189,9 +187,7 @@ To check the region of each stage, in the ODC Portal go to **Management** > **Ad
 
 ## Associated costs
 
-Using guardrails consumes resources based on the volume of text processed. For information on usage limits for your edition, such as the Personal Edition, refer to the [OutSystems Personal Edition FAQ](https://www.outsystems.com/tk/redirect?g=2f0b4814-c8d5-41be-a9bf-c0a15b5cc917).
-
-For detailed information regarding Agent Workbench add-on packs and the underlying cost structure for commercial environments, contact your account manager for provisioning.
+Using guardrails consumes resources based on the volume of text processed. For detailed information regarding Agent Workbench add-on packs and the underlying cost structure for commercial environments, contact your account manager for provisioning.
 
 ## Next steps
 
