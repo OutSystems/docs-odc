@@ -21,7 +21,6 @@ tags:
   - Infrastructure
   - Monitoring
   - OIDC
-  - Security
 outsystems-tools:
   - self hosted configurator
 helpids: 30551, 30563
@@ -46,6 +45,8 @@ The system requirements are:
 * The cluster must be able to provision at least 769 GB of persistent storage. The platform is storage-class agnostic. The installation process reserves this capacity through persistent volume claims (PVCs) for core services such as Vault, NATS, Keycloak, Redis, SeaweedFs, and internal PostgreSQL instances. The installation process creates these PVCs as it installs the services.
 
 * The cluster must be able to reach public endpoints and resolve public hostnames. Refer to the [network requirements](#network-reqs) for more details.
+
+* Stages that belong to the same portfolio must run in the same cluster. If you use more than one cluster, each cluster must meet the cluster requirements in this section and the [network requirements](#network-reqs).
 
 * A PostgreSQL database on major version 16, on release 16.1 to 16.11. This database must be dedicated to the ODC runtime stage it is configured for and should not be used for other purposes. While you have full control over the application data, you must not alter the database schema or its underlying structure. Any manipulation of the schema could lead to application malfunction or data loss that OutSystems will not be able to recover or fix.
 
@@ -118,7 +119,7 @@ The following table lists the details of the necessary outbound connectivity fro
 
 * **Self-hosted IDP:** This is the address of the identity provider (IDP) you manage, used for authentication and authorization services across your apps. Its address is provided to your Self-hosted ODC setup [in this step](install-sh.md#setup-idps).
 
-* **Self-hosted stage database:** Connectivity between the PostgreSQL database and its dedicated stage. Apps in a stage can only access that stage’s database, while the OutSystems services deployed in your cluster can access all stage databases. The database address for each stage is provided to the Self-hosted configurator during setup in [this step](install-sh.md#setup-configurator) and the stage namespaces are returned [just before domain configuration](install-sh.md#configure-domain).
+* **Self-hosted stage database:** Connectivity between the PostgreSQL database and its dedicated stage. Apps in a stage can only access that stage’s database, while the OutSystems services deployed in a cluster can access the databases of all stages that use that cluster. The database address for each stage is provided to the Self-hosted configurator during setup in [this step](install-sh.md#setup-configurator) and the stage namespaces are returned [just before domain configuration](install-sh.md#configure-domain).
 
 * **Introspection over all self-hosted stage databases:** The database introspection service requires connectivity to all the stage databases to support ODC core functions such as generating database update scripts upon app deployment.
 
