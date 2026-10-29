@@ -1,6 +1,7 @@
 ---
 summary: Execute stored procedures from external entities using SQL nodes in OutSystems Developer Cloud (ODC) by obtaining a connectionId from Portal and using the CALL statement.
 tags:
+  - Data
   - Entities
   - External Databases
   - SQL
@@ -33,7 +34,7 @@ Stored procedures let you reuse logic defined in your external database. They're
 
 Stored procedures can’t be created or called for internal entities (the entities created in ODC Studio).
 
-## Retrieve the connectionId {#retrieve-connectionid}
+## Retrieve the `connectionId` {#retrieve-connectionid}
 
 The `CALL` statement requires a `connectionId` that identifies the [connection to the data source done in Portal](../../../../integration-with-systems/external-databases/create-connection-external-data.md).
 
@@ -151,7 +152,7 @@ CALL "connectionId"."actionName" ('test', 123, @dynamic);
 
 ## Oracle
 
-* Stored procedures with custom data type parameters are not supported.
+* Stored procedures with custom data types in their input parameters are not supported. Custom data types in output parameters are supported.
 
 <div class="info" markdown="1">
 
