@@ -176,11 +176,11 @@ The `src` property specifies the origin of the resource. It can be one of the fo
 
 * **Extensibility setting reference**: A reference to a binary setting, typically used for files like configuration binaries.
 Example: `$extensibilitySettings.GoogleServicesJsonBinary`
-**
-* Extensibility resource reference**: A reference to a resource deployed to the target directory.
+
+* **Extensibility resource reference**: A reference to a resource deployed to the target directory.
 Example: `$resources.MyAppResource`
 
-*** OutSystems app image**: A reference to an image stored in the ODC app.
+* **OutSystems app image**: A reference to an image stored in the ODC app.
 Example: `$images.MyAppLogo`
 
 * **File path**: A string representing a file path relative to the root folder of the generated project.
