@@ -46,7 +46,11 @@ The system requirements are:
 
 * The cluster must be able to reach public endpoints and resolve public hostnames. Refer to the [network requirements](#network-reqs) for more details.
 
-* Stages that belong to the same portfolio must run in the same cluster. If you use more than one cluster, each cluster must meet the cluster requirements in this section and the [network requirements](#network-reqs).
+* You can use one cluster or more than one cluster. In a multi-cluster deployment:
+    * Stages of the same portfolio can run in different clusters.
+    * A cluster can host more than one stage as long as the stages belong to the same portfolio.
+
+* Each cluster must meet the cluster requirements in this section and the [network requirements](#network-reqs).
 
 * A PostgreSQL database on major version 16, on release 16.1 to 16.11. This database must be dedicated to the ODC runtime stage it is configured for and should not be used for other purposes. While you have full control over the application data, you must not alter the database schema or its underlying structure. Any manipulation of the schema could lead to application malfunction or data loss that OutSystems will not be able to recover or fix.
 

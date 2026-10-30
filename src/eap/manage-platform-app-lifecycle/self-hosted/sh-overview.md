@@ -79,7 +79,9 @@ Understanding the division of responsibilities is critical for successful deploy
 
 ## Detailed architecture view {#detailed-architecture}
 
-The diagram below expands on the high-level view above, showing how the two main environments (OutSystems Cloud and your self-hosted cluster) are internally organized and how they connect. It depicts a single-cluster deployment. ODC also supports multi-cluster deployments, where stages from different portfolios run in different clusters. Stages that belong to the same portfolio must run in the same cluster.
+The diagram below expands on the high-level view above, showing how the two main environments (OutSystems Cloud and your self-hosted cluster) are internally organized and how they connect. It depicts a single-cluster deployment.
+
+You can run your self-hosted infrastructure in one cluster or in more than one cluster. For more information about multi-cluster deployments, refer to [System requirements](sh-install-reqs.md#system-reqs).
 
 ![Detailed architecture diagram showing OutSystems Cloud with members using ODC Studio, platform services, and the Dev runtime stage pushing images to a container registry, which syncs to a self-hosted Kubernetes cluster that includes CI/CD services, secrets management, monitoring and telemetry, messaging, system storage, network and traffic components, Test and Production runtime stages with dedicated databases, plus external APM and identity provider, with app end users accessing through an ingress controller.](images/sh-detail-arch-diag.png "Detailed architecture of ODC Self-hosted deployment")
 **OutSystems Cloud** hosts the Portal and the platform services that power the development experience: It also runs the Development runtime stage, where the OutSystems runtime services (timers, workflows, app authentication, and others) run under OutSystems management.
