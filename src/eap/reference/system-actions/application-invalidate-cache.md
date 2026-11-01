@@ -16,7 +16,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - invalidate-app-cache
+  - invalidate-odc-cache
 isautopublish: true
 ---
 
