@@ -1,5 +1,5 @@
 ---
-summary: The name '<Name>' is not supported as it begins with a number.
+summary: OutSystems Developer Cloud (ODC) external library naming error, fix C# names that start with numbers and upload a new ZIP.
 tags:
   - C#
   - Extensions
