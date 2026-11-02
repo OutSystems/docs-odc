@@ -1,5 +1,5 @@
 ---
-summary: Mobile app build types in OutSystems Developer Cloud (ODC) cover Simulator, Development, App Store, Ad Hoc, In House, Debug, and Release choices.
+summary: OutSystems Developer Cloud (ODC) mobile build types cover iOS certificates, Android keystores, and app distribution options.
 tags:
   - Android
   - Development lifecycle
@@ -13,11 +13,13 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=9556-43
 audience:
   - Developer
+  - Front-end developer
 outsystems-tools:
   - odc portal
 coverage-type:
-  - understand
   - remember
+  - understand
+  - evaluate
 topic:
   - app-distribution
 isautopublish: true
@@ -34,7 +36,7 @@ For recommendations on which build type to use when testing and debugging your a
 
 Use the following decision flow to identify the right build type for your current stage.
 
-![Flowchart showing iOS and Android build type choices across development, testing, and production stages with required certificates, profiles, and outputs.](images/build-type-selection-diag.png "Mobile build type decision flow")
+![Flowchart showing iOS and Android build type choices across development, testing, and production stages with required certificates, profiles, and outputs.](images/build-type-selection-diag.png "Mobile Build Type Decision Flow")
 
 ## iOS build types
 
@@ -123,7 +125,7 @@ Here are some additional details about In-House build type:
 
 ## Android build types
 
-Android offers two build types. The signing mechanism for Android uses a keystore file instead of the certificate and provisioning profile combination used by iOS.
+Android offers three build types. The signing mechanism for Android uses a keystore file instead of the certificate and provisioning profile combination used by iOS.
 
 ### `Debug` Build type {#android-debug}
 
@@ -143,13 +145,23 @@ If the device blocks the installation because the app was obtained from an unkno
 
 ### `Release` Build type {#android-release}
 
-The Release build type is used to create a production-ready build for distribution through the Google Play Store or other channels. Use this build type when your app is ready for production, and you want to distribute it to end users. Always use the same keystore to sign updates of the same app, because the Google Play Store requires a consistent signing identity across versions.
+The Release build type creates a production-ready APK. Google Play requires the Android App Bundle format for app submissions made after August 2021. Use this build type only for apps that were already submitting APKs to the Google Play Store before that date. Always use the same keystore to sign updates of the same app, to keep a consistent signing identity across versions.
 
 Here are some additional details about Release build type:
 
-* **Output**: APK or AAB file.
+* **Output**: APK file.
 * **Keystore**: Required. You must provide a custom keystore file, the keystore password, an alias name, and the alias password.
-* **Distribution**: Submit to the Google Play Store, distribute through enterprise channels, or share the build file directly.
+* **Distribution**: Distribute through enterprise channels or share the build file directly.
+
+### `Google Play (App Bundle)` Build type {#android-google-play-app-bundle}
+
+The **Google Play (App Bundle)** build type creates a production-ready AAB for publishing to the Google Play Store. Google Play requires this format for app submissions made after August 2021. Use this build type when your app is ready for production and you want to publish it to the Google Play Store.
+
+Here are some additional details about Google Play (App Bundle) build type:
+
+* **Output**: AAB file.
+* **Keystore**: Required.
+* **Distribution**: Submit to the Google Play Store.
 
 ## Related resources
 

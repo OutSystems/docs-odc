@@ -13,8 +13,10 @@ tags:
   - Roles
   - Security
 audience:
+  - Architect
   - Developer
   - Platform administrator
+  - Tech lead
 outsystems-tools:
   - odc studio
   - odc portal
@@ -148,7 +150,8 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Portfolio management | View stage | Users can view a given stage. | Organization |
 | Release management | Deploy assets | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Asset |
 | Release management | Release | Users can release an asset, assign a version number (1.0.0), and add release notes. | Organization <br/> Asset |
-| Monitoring | Access asset logs, traces and analytics | Users can view asset logs, traces and access analytics in a given stage. | Organization <br/> Asset |
+| Release management | Upload to stores | Users can upload a mobile package to an app store. | Organization <br/> Asset |
+| Monitoring | Access asset logs and traces | Users can view asset logs and traces in a given stage. | Organization <br/> Asset |
 | Monitoring | Access user information | Users can view user information connected to a given log or activity. | Organization <br/> Asset |
 | Analyze | Manage code quality findings | Users can comment and change the status of code quality findings. | Organization <br/> Asset |
 | Analyze | View code quality findings | Users can view code quality findings in apps they have permissions to open. | Organization <br/> Asset |

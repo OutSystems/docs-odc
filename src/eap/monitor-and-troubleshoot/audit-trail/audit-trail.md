@@ -242,6 +242,8 @@ ODC tracks the following native mobile build and configuration actions:
 
 * Update mobile app extensibility settings
 
+* Upload package to store
+
 ### OutSystems 11 configuration management
 
 Track changes to your configurations for [O11 and ODC platform interoperability](https://www.outsystems.com/tk/redirect?g=6d794961-6191-4e75-a22d-45b8f8b411e3).
