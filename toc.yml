@@ -251,6 +251,7 @@
             - href: eap/building-apps/ui/creating-screens/screen-creating.md
             - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md
             - href: eap/building-apps/ui/creating-screens/best-practices-screens.md
+            - href: eap/building-apps/ui/configure-container-layout.md
             - href: eap/building-apps/ui/interaction/fetch-display.md
             - href: eap/building-apps/ui/creating-screens/best-practices-fetch-display-data.md
         # Reuse ui

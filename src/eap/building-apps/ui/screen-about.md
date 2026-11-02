@@ -12,7 +12,7 @@ tags:
 locale: en-us
 guid: 573b9486-bcb4-4888-9be6-d3e8e96b6dc8
 app_type: mobile apps, reactive web apps
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2643&t=ZwHw8hXeFhwYsO5V-1
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3101-2643
 platform-version: odc
 audience:
   - Developer
@@ -24,6 +24,7 @@ coverage-type:
 topic:
   - screen-composition
   - screen-template
+isautopublish: true
 ---
 
 # Screens
@@ -32,7 +33,7 @@ A screen is a user interface (UI) element that contains other UI elements (such 
 
 Screen templates come with UI patterns that solve common application use cases. Screen templates help accelerate development by providing common functionalities and consistent look and feel. Screen templates include UI elements, and some include sample data that you can replace. You can immediately publish screens created from a screen template enabling you to see how the screen looks or to use it to show a proof of concept.
 
-![Example of a user interface screen template in OutSystems Developer Cloud Studio](images/ui-screen-template-ss.png "Screen Template Example")
+![Example of a user interface screen template in OutSystems Developer Cloud Studio](images/ui-screen-template-odcs.png "Screen Template Example")
 
 When you create an empty screen, you start with a basic layout to which you add data and UI elements. If you want to create a screen with a specific layout, you might want to start with a screen based on a screen template.
 
@@ -40,12 +41,17 @@ OutSystems provides many types of elements that you can add to your screens such
 
 Here is an example of the [Date Picker](https://outsystemsui.outsystems.com/OutsystemsUiWebsite/PatternDetail?PatternId=190) pattern:
 
-![Screenshot of the Date Picker UI pattern from OutSystems UI component](images/ui-patterns-ss.png "UI Patterns Example")
+![Screenshot of the Date Picker UI pattern from OutSystems UI component](images/ui-patterns-odcs.png "Date Picker Pattern")
 
 To access screen templates and the blank screen layout, go to ODC Studio, select the **Interface tab** > **UI Flows** > then right-click **MainFlow** and click **Add Screen**.
 
 For a **Screen Template**, choose a category (such as Dashboard) and a template (such as Transactions Dashboard) from which you want to start.
 For a blank screen with only a layout, select **Empty**.
+
+For the detailed procedure, refer to
+[Create screen from scratch](creating-screens/create-screen-scratch.md). For
+an overview of all screen-creation methods, including scaffolding, refer to
+[Creating screens](creating-screens/screen-creating.md).
 
 You can replace sample data using one of the following methods:
 
@@ -61,11 +67,12 @@ For example, a page can consist of the main content with text, menu, and footer.
 
 Here is the overview of some UI elements.
 
-| Element     | Location in the IDE   | Description                             | Example                                     |
-| ----------- | --------------------- | --------------------------------------- | ------------------------------------------- |
-| Screen      | UI flows              | Shows as a page.                        | The sign in page.                           |
-| Block       | screens, placeholders | Shows as part of a page.                | The page menu.                              |
-| Placeholder | blocks                | Shows content depending on the context. | Text "Welcome, guest!" or "Welcome, Billy!" |
+| Element     | Location in the IDE           | Description                                             | Example                                               |
+| ----------- | ----------------------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| Screen      | UI flows                      | Shows as a page.                                        | The sign in page.                                     |
+| Block       | screens, placeholders         | Shows as part of a page.                                | The page menu.                                        |
+| Placeholder | blocks                        | Shows content depending on the context.                 | Text "Welcome, guest!" or "Welcome, Billy!"           |
+| Container   | screens, blocks, placeholders | Groups other widgets and controls how they're laid out. | A card that groups a product image, title, and price. |
 
 ### Block
 
@@ -84,6 +91,31 @@ Here are more details about placeholders.
 * Use placeholders to reserve space for content
 * Placeholders show in the screen only when they have some content inside
 * Useful when you define a part of UI that changes depending of the context
+
+### Container
+
+A container's Layout section controls alignment and spacing for that
+container alone, independently of the app's theme. Without it, changing
+layout outside the theme's grid meant writing custom CSS by hand, or
+creating a separate theme just to get a different layout on one screen.
+
+Here are more details about containers.
+
+* You can add a container to a screen, a block, or a placeholder to group other
+    widgets together
+* Use the container's **Layout** section, on the **Styles** tab, to align,
+    distribute, and reflow its child widgets with standard CSS Flexbox or Grid,
+    without writing CSS
+* Nest containers inside each other to build more complex layouts, such as a
+    card grid inside a page section
+
+For the full list of layout properties and step-by-step examples, refer to
+[Configure container layout](configure-container-layout.md). For more
+information about the underlying CSS concepts, refer to the following
+resources:
+
+* [Basic concepts of flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+* [Basic concepts of grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
 
 ### Built-in blocks and placeholders
 

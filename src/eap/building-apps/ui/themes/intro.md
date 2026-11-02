@@ -41,7 +41,7 @@ By default, an app theme is available in every app, enabling you to customize th
 
 In **UI Flows**, you can select a specific theme, giving you a different look and feel.
 
-![Screenshot showing an example of an application theme in a user interface design](images/application-theme-odcs.png "Application Theme Screenshot")
+![Screenshot showing an example of an application theme in a user interface design](images/application-theme-odcs.png "Application Theme Selection")
 
 ## Theme properties {#theme-properties}
 
@@ -64,7 +64,7 @@ Theme properties enable you to define some components of your themes to ensure c
   
   Choose the icon library that aligns with your app’s visual style and helps maintain a consistent look across all UI elements. For detailed information, refer to [Icons](../icons/intro.md).
 
-* **Grid Type** - Every theme is also related to a specific layout. Layouts use a grid system similar to a table to specify content horizontally and vertically. Like tables, a grid layout enables developers to align elements into columns and rows. However, more layouts are possible with CSS grids. It's also easier. For example, a grid container's child elements could position themselves so they overlap and layer, similar to CSS-positioned elements.
+* **Grid Type** - Every theme is also related to a specific layout. Layouts use a grid system similar to a table to specify content horizontally and vertically. Like tables, a grid layout enables developers to align elements into columns and rows. However, more layouts are possible with CSS grids. For example, a grid container's child elements could position themselves so they overlap and layer, similar to CSS-positioned elements. This setting applies at the theme level. A container, placeholder, or form widget can independently use flexbox or grid layout, regardless of the theme's grid Type.
 
 * **Columns** - You can change the number of columns for a layout grid. By default, most apps have 12 columns. However, some designers prefer to use 16 columns. This option enables you to define how the layout columns look in the app.
 
@@ -75,6 +75,8 @@ Theme properties enable you to define some components of your themes to ensure c
 * **Max. Width** - This option affects the display width of your app. For example, if a developer selects the **Grid Type** as `Fluid`, the layout covers the entire width of any screen. The experience can be pretty odd to users with big monitors. Setting the width is most common when using a fluid grid with a maximum of 1366px. But it depends on the use case and the user's usage. However, developers can target better if they know which type of screens their users use.
 
 * **Layout** - In the layout section, you can select which layout you want to use when creating a new screen. For each **UI Flow** you can have a specific theme and layout every time you add a new screen inside that **UI Flow**.
+
+* **Breakpoints** - Defines four fixed breakpoints for responsive Grid layout on containers: **Small**, **Medium**, **Large**, and **Extra Large**. The min-width value for **Small** is fixed at `0`, and the min-width values for the other three breakpoints are editable, but each value must be greater than the previous breakpoint's value. For more information about using breakpoints on a container, refer to [Configure container layout](../configure-container-layout.md).
 
 ## Theme layouts
 
@@ -87,7 +89,7 @@ Theme properties enable you to define some components of your themes to ensure c
 
 The **Theme Editor** is an alternative option to custom CSS. Use the **Theme Editor** to change a few basic properties like primary color, secondary color, font, or font-size. The **Theme Editor** is an option that doesn't require knowledge of CSS. It's a straightforward wizard configuration that gets translated as an app theme. Behind the scenes, every change you make in the **Theme Editor** gets converted into a specific theme with custom CSS inside that you can't change directly.
 
-![Screenshot of the theme editor interface with options to customize primary color, secondary color, font, and font-size](images/theme-editor-ss.png "Theme Editor Screenshot")
+![Screenshot of the theme editor interface with options to customize primary color, secondary color, font, and font-size](images/theme-editor-odcs.png "Theme Editor Options")
 
 ## Theme libraries {#theme-library}
 

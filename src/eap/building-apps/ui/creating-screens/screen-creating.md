@@ -1,7 +1,6 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) screens overview: create screens using templates, scaffolding, or UI flows to ensure consistent app design."
 tags:
-  - Data
   - Layouts
   - Pagination
   - Screens
@@ -20,13 +19,15 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+  - apply
 topic:
   - create-screens-odc
+isautopublish: true
 ---
 
 # Creating screens
 
-This article describes the process you follow to create a screen. When you build an app, you want all your screens to have the same look and feel. When users are familiar with the screen design, they work more efficiently.
+This article describes the process you follow to create a [screen](../screen-about.md). When you build an app, you want all your screens to have the same look and feel. When users are familiar with the screen design, they work more efficiently.
 
 You can create a screen using any of the following methods:
 
@@ -34,13 +35,19 @@ You can create a screen using any of the following methods:
 * From an empty screen template that comes with a basic layout
 * Using scaffolding (accelerators) to add an entity to a screen
 
-<iframe src="https://player.vimeo.com/video/1022161042" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Demo demonstrating how to create a screen.</iframe>
+For the step-by-step procedure to create a screen from an empty layout or a
+screen template, refer to
+[Create screen from scratch](create-screen-scratch.md).
+
+[Demo demonstrating how to create a screen](https://vimeo.com/1022161042).
 
 When a screen is open in the main window (menu block), you can:
 
 * Modify the elements by adding new elements or removing some elements
 * Modify styles to match your corporate styles
-* Change the layout by moving elements to different locations on the screen
+* Change the layout by moving elements to different locations on the screen,
+    or by configuring a container's Flexbox or Grid properties (refer to
+    [Configure container layout](../configure-container-layout.md))
 * Edit the data sources the screen uses to show and edit data
 
 A UI flow is a way to logically group screens. You can build a screen from the default MainFlow and add it to a specific flow. Or, you can select the flow and then create the screen.

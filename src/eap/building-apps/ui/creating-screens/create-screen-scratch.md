@@ -22,6 +22,7 @@ coverage-type:
   - apply
 topic:
   - create-screens-odc
+isautopublish: true
 ---
 
 # Create screen from scratch
@@ -38,6 +39,11 @@ How Screens show in an app to you users depends on the app type:
 
 * In a Web App, Screens render as web pages in a browser.
 * In Mobile Apps, Screens render as screens of a mobile app.
+
+For more information about Screens, Blocks, Placeholders, and Containers,
+refer to [Screens](../screen-about.md). This article covers creating a
+Screen from an empty layout or a Screen Template. For other methods,
+including scaffolding, refer to [Creating screens](screen-creating.md).
 
 ## Creating a Screen
 
@@ -56,7 +62,7 @@ To create a Screen, follow these steps in ODC Studio:
     * **Empty**, to create an empty Screen
     * A Screen Template, to create a Screen based on a template
 
-    ![Dialog in ODC Studio to create a new Screen with options for Empty or Template](images/create-blank-screen-odcs.png "Create Blank Screen Option")
+    ![Dialog in ODC Studio to create a new Screen with options for Empty or Template](images/create-blank-screen-odcs.png "Create Screen Options")
 
 1. Optionally, enter a name in the **Screen name** field.
 

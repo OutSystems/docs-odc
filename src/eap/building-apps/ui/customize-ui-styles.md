@@ -22,6 +22,7 @@ coverage-type:
   - understand
 topic:
   - look-and-feel-overview
+isautopublish: true
 ---
 
 # Customize UI styles
@@ -48,7 +49,7 @@ When styling your app follow your organization's guidelines to make it easier fo
 
 * **Look of widgets** - A widget is a visual element that you can use to design and organize the UI. To help you get started, OutSystems comes with a variety of widgets such as a check box, a button, a table, or an input. You use the Style editor to make changes to a widget.
 * **Cascading Style Sheets (CSS)** - A base CSS comes as part of the UI Framework. You can add new styles, or modify existing ones by copying them from the base CSS. You use the Style sheet editor to make changes to the CSS.  
-* **Layout using a Placeholder** - A layout identifies where you want always position certain elements. You can also define a space for dynamic content using a placeholder. For example, assume users are completing a form and enter their name and address. On the following page, you would use a placeholder to display the name and address.
+* **Layout using a Container or a Placeholder** - A layout identifies where you always want to position certain elements. You can also define a space for dynamic content using a placeholder. For example, assume users are completing a form and enter their name and address. On the following page, you would use a placeholder to display the name and address. Use a container's **Layout** section, on the **Styles** tab, to align, distribute, and reflow child elements with Flexbox or Grid, without writing CSS. For more information, refer to [Configure container layout](configure-container-layout.md).
 * **Themes** - Let you make changes to the look and feel of your app. A theme includes layouts you can use for screens, the global style sheet, the grid definition for positioning, and the size of the elements on the screen. You can add, delete, or modify any of the components that are part of the theme.
 * **Responsive UI** - OutSystems provides a responsive UI which means you can build apps that work on all devices and your apps display correctly. The OutSystems UI theme comes with different rules for each type of device. Using different adaptive patterns and actions, you can define how you want your apps to respond.
 * **Right-to-left (RTL) display** - Most apps display content on the screen from the left to the right. But some languages are read right to left (for example, Arabic and Hebrew). By making a few simple changes such as the locale, OutSystems patterns adjust automatically from left-to-right to right-to-left.
