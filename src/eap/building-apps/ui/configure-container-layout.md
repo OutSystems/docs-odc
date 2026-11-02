@@ -25,7 +25,8 @@ content-type:
   - reference
   - procedure
 topic:
-  - configure-container-layout
+  - configure-flexbox-layout
+  - configure-grid-layout
 isautopublish: true
 ---
 
