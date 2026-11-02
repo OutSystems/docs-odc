@@ -20,8 +20,9 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - manage-sample-data
+  - import-sample-data
   - reference-sample-data
+  - reset-sample-data
 ---
 
 # Sample data
