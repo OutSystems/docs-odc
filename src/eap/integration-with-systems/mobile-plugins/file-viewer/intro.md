@@ -21,8 +21,9 @@ coverage-type:
   - remember
   - apply
 topic:
-  - using-cordova-plugins
-  - using-capacitor-plugins
+  - file-viewer-actions
+  - file-viewer-fallback
+  - file-viewer-resources
 isautopublish: true
 ---
 

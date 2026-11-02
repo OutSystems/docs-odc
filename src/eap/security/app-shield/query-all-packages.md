@@ -17,7 +17,7 @@ coverage-type:
   - apply
   - understand
 topic:
-  - customize-mobile-apps
+  - manage-query-all-packages
 ---
 
 # Query All Packages permission in Android apps using AppShield

@@ -17,7 +17,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - service-studio-overview
+  - keyboard-shortcuts
 isautopublish: true
 ---
 
