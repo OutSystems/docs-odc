@@ -4,6 +4,7 @@ tags:
   - Architecture
   - Infrastructure
   - Microservices
+  - Multi-Tenant
   - REST
   - Security
 locale: en-us
@@ -31,33 +32,33 @@ ODC is cloud-native. This means that the infrastructure of both the development 
 
 A secure cloud-native network connects the cloud-native architecture. The network architecture of the Development, Test and Production stages of the Runtime is identical.
 
-## Key technologies
+## Key technologies {#key-technologies}
 
 The following is an overview of the cloud technologies that OutSystems Developer Cloud (ODC) uses for networking and network security.
 
-### Content delivery network
+### Content delivery network {#content-delivery-network}
 
 The ODC CDN (Content Delivery Network) is a globally distributed set of servers that ensures a low network latency for routing requests. The CDN caches your apps' static files, reducing end-user load times. Files can be static or dynamic. Static files (such as images or JavaScript) don't change often. Dynamic files can change with each user interaction.
 
 The CDN verifies the public key certificate attached to the request: `outsystems.dev` for the Platform and `outsystems.app` or the [custom domain](../domains/custom-domains.md) used for the Runtime.
 
-#### Web application firewall
+#### Web application firewall {#web-application-firewall}
 
 The web application firewall (WAF) runs on the CDN and protects the Platform and the Runtime from common web exploits and bots.
 
 For more information see [Security in OutSystems Developer Cloud](../../security/security.md#web-application-firewall).
 
-### Identity Service
+### Identity service {#identity-service}
 
 The Identity Service verifies that each request comes from an [authenticated and authorized user](identity.md).
 
-### Load balancer
+### Load balancer {#load-balancer}
 
 When the Platform Load Balancer receives a request, it routes it to the target endpoint of the target multi-tenant Platform service. The Load Balancer directs the request to a service container replica using the round-robin method.
 
 When the Runtime Load Balancer receives a request, it routes it to the target endpoint of the target app container. The Load Balancer directs the request to an app container replica in a given Availability Zone (AZ) using the round-robin method.
 
-## Request route
+## Request route {#request-route}
 
 Requests to both the Platform and Runtime first go through the CDN, responsible for routing the request. The WAF runs on the CDN and filters malicious requests. In the case of a Platform request, the request gets routed to the target endpoint of the target multi-tenant Platform service. In the case of a Runtime request, the request gets routed to the target endpoint of the target app. The intermediaries between the CDN and the endpoint are the Identity Service, responsible for user identity authentication and authorization, and Load Balancer.
 
@@ -67,7 +68,7 @@ In the network architecture, the data of both the Platform and Runtime for each 
 
 Requests to external data (available via REST API) get routed through a NAT gateway, one per AZ, each with a public IP address.
 
-### Platform
+### Platform {#platform}
 
 The Platform uses microservices based on REST API. When ODC Studio and ODC Portal send HTTPS requests, the requests reach the secure endpoints that the Platform exposes. The requests use the smallest network bandwidth for the data transfer.
 
@@ -77,7 +78,7 @@ The platform is available at `<customername>.outsystems.dev`.
 
 ![Diagram illustrating the network architecture of the OutSystems Developer Cloud Platform, including CDN, WAF, Identity Service, and Load Balancer components.](images/architecture-network-platform-diag.png "Platform Network Architecture Diagram")
 
-### Runtime
+### Runtime {#runtime}
 
 Apps run as app containers in the Runtime with secure REST API endpoints. HTTPS secures the communication between the client and the browser.
 
