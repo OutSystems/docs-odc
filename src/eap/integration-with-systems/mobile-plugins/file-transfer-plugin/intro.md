@@ -1,6 +1,8 @@
 ---
 summary: 'File transfer plugin for OutSystems Developer Cloud (ODC) mobile apps and PWAs: download and upload files in the background with progress event tracking.'
 tags:
+  - Asynchronous Processes
+  - Blocks
   - Capacitor
   - Cordova
   - Events
