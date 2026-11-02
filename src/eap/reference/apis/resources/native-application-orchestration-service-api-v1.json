@@ -658,6 +658,193 @@
         "x-os-permissions": "API Client needs the **Stage > View stage** permission."
       }
     },
+    "/environments/{environmentKey}/applications/{applicationKey}/configurations/app-store": {
+      "get": {
+        "tags": [
+          "NativeBuildAppStore"
+        ],
+        "summary": "Gets the App Store Connect configurations for the given application.",
+        "description": "Returns the App Store Connect API credentials configured for the application. Secret values are never returned.\n\nAPI Client needs the **Configuration management > View configurations** permission.",
+        "operationId": "GET_NativeBuildAppStore_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppStoreConfigurationResult"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission."
+      },
+      "patch": {
+        "tags": [
+          "NativeBuildAppStore"
+        ],
+        "summary": "Patches the App Store Connect configurations for a given application.",
+        "description": "Updates the App Store Connect API credentials. Omitted fields are left unchanged; providing a field with a null value removes it.\n\nAPI Client needs the **Configuration management > Edit asset configurations** permission.",
+        "operationId": "PATCH_NativeBuildAppStore_Patch",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Partial App Store Connect configuration update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AppStoreConfigurationRequest"
+                  }
+                ],
+                "description": "Request payload model for App Store Connect configurations.\nOmitted fields are left unchanged; providing a field with a null value removes it."
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AppStoreConfigurationRequest"
+                  }
+                ],
+                "description": "Request payload model for App Store Connect configurations.\nOmitted fields are left unchanged; providing a field with a null value removes it."
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Edit asset configurations** permission."
+      }
+    },
     "/environments/{environmentKey}/applications/{applicationKey}/configurations/android": {
       "get": {
         "tags": [
@@ -1201,6 +1388,561 @@
         },
         "x-os-permissions": "API Client needs the **Configuration management > Edit asset configurations** permission."
       }
+    },
+    "/environments/{environmentKey}/applications/{applicationKey}/configurations/play-store": {
+      "get": {
+        "tags": [
+          "NativeBuildPlayStore"
+        ],
+        "summary": "Gets the Google Play store-deployment configurations for the given application.",
+        "description": "Returns the Google Play service-account credentials configured for the application. Secret values are never returned.\n\nAPI Client needs the **Configuration management > View configurations** permission.",
+        "operationId": "GET_NativeBuildPlayStore_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayStoreConfigurationResult"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission."
+      },
+      "patch": {
+        "tags": [
+          "NativeBuildPlayStore"
+        ],
+        "summary": "Patches the Google Play store-deployment configurations for a given application.",
+        "description": "Updates the Google Play service-account credential. Omitted fields are left unchanged; providing a field with a null value removes it.\n\nAPI Client needs the **Configuration management > Edit asset configurations** permission.",
+        "operationId": "PATCH_NativeBuildPlayStore_Patch",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Partial Google Play store-deployment configuration update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PlayStoreConfigurationRequest"
+                  }
+                ],
+                "description": "Request payload model for Google Play store-deployment configurations.\nOmitted fields are left unchanged; providing a field with a null value removes it."
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PlayStoreConfigurationRequest"
+                  }
+                ],
+                "description": "Request payload model for Google Play store-deployment configurations.\nOmitted fields are left unchanged; providing a field with a null value removes it."
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Edit asset configurations** permission."
+      }
+    },
+    "/store-operations/{storeOperationKey}": {
+      "get": {
+        "tags": [
+          "StoreOperations"
+        ],
+        "summary": "Returns the details for a given store operation",
+        "description": "The store operation key is generated when the store operation is created and returned in the\nresponse of the create API. It can also be obtained through the list API.\n\nThe caller needs the StageView permission over the environment and application the operation\nbelongs to. An operation the caller may not see is reported as not found.\n\nAPI Client needs the **Stage > View stage** permission.",
+        "operationId": "GET_StoreOperations_Get",
+        "parameters": [
+          {
+            "name": "storeOperationKey",
+            "in": "path",
+            "description": "Store operation key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The details of the store operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified store operation was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission."
+      }
+    },
+    "/store-operations/{storeOperationKey}/log-messages": {
+      "get": {
+        "tags": [
+          "StoreOperations"
+        ],
+        "summary": "Lists the progress messages of a store upload operation",
+        "description": "Progress messages report the upload's step-by-step status, oldest first. They are scoped to this\noperation alone: a build can be uploaded more than once and each attempt keeps its own messages.\nSupports pagination via limit and offset parameters.\n\nAPI Client needs the **Stage > View stage** permission.",
+        "operationId": "GET_StoreOperations_GetMessages",
+        "parameters": [
+          {
+            "name": "storeOperationKey",
+            "in": "path",
+            "description": "Store operation key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of progress messages for the store operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32TaskProgressMessagePagedListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified store operation was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission."
+      }
+    },
+    "/store-operations": {
+      "get": {
+        "tags": [
+          "StoreOperations"
+        ],
+        "summary": "Lists all store operations for filtering criteria",
+        "description": "Results are returned newest first and can optionally be filtered by application, environment,\nbuild operation, platform, or status. Supports pagination via limit and offset parameters.\n\nWhen an environment key is provided, the caller needs the StageView permission over it.\nOmitting the environment key lists the store operations of the whole tenant and requires\norganization level visibility.\n\nAPI Client needs the **Stage > View stage** permission.",
+        "operationId": "GET_StoreOperations_List",
+        "parameters": [
+          {
+            "name": "applicationKey",
+            "in": "query",
+            "description": "Filter by application key, if provided.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filter by environment key, if provided.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "buildOperationKey",
+            "in": "query",
+            "description": "Filter by build operation key, if provided.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "platform",
+            "in": "query",
+            "description": "Filter by mobile platform, if provided.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/MobilePlatform"
+                }
+              ]
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by store operation status, if provided.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/StoreOperationStatus"
+                }
+              ]
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of store operations matching the filtering criteria.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreOperationResponsePagedListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission."
+      },
+      "post": {
+        "tags": [
+          "StoreOperations"
+        ],
+        "summary": "Initiates a new store upload operation",
+        "description": "This is an asynchronous operation. The response contains the details of the created store\noperation, including its generated key, which can be used to query the operation status.\n\nAPI Client needs the **Release management > Upload to stores** permission.",
+        "operationId": "POST_StoreOperations_Post",
+        "requestBody": {
+          "description": "Details of the store operation request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StoreOperationRequest"
+                  }
+                ],
+                "description": "Store operation request"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StoreOperationRequest"
+                  }
+                ],
+                "description": "Store operation request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "The store operation was accepted and is waiting to be uploaded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment, application or build operation was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The build has no signed artifact yet, its artifact was already deleted, no store configuration exists for its platform, or an upload of that build is already in progress.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Release management > Upload to stores** permission."
+      }
     }
   },
   "components": {
@@ -1434,6 +2176,14 @@
               }
             ],
             "description": "Value data type"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -1449,6 +2199,14 @@
               }
             ],
             "description": "Config Value"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -1462,6 +2220,79 @@
         ],
         "type": "string",
         "description": "AppShield usage in the native build"
+      },
+      "AppStoreConfigurationRequest": {
+        "type": "object",
+        "properties": {
+          "ascPrivateKey": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "App Store Connect API private key (.p8)",
+            "nullable": true
+          },
+          "ascKeyId": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "App Store Connect API key identifier",
+            "nullable": true
+          },
+          "ascIssuerId": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "App Store Connect API issuer identifier",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request payload model for App Store Connect configurations.\nOmitted fields are left unchanged; providing a field with a null value removes it."
+      },
+      "AppStoreConfigurationResult": {
+        "required": [
+          "ascIssuerId",
+          "ascKeyId",
+          "ascPrivateKey"
+        ],
+        "type": "object",
+        "properties": {
+          "ascPrivateKey": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecretConfig"
+              }
+            ],
+            "description": "App Store Connect API private key (.p8). Secret, its value is never returned.",
+            "nullable": true
+          },
+          "ascKeyId": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "App Store Connect API key identifier",
+            "nullable": true
+          },
+          "ascIssuerId": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "App Store Connect API issuer identifier",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Result payload model for App Store Connect configurations."
       },
       "BuildOperationRequest": {
         "type": "object",
@@ -1742,7 +2573,8 @@
           "Building",
           "Shielding",
           "Finished",
-          "Error"
+          "Error",
+          "Canceled"
         ],
         "type": "string",
         "description": "Build status"
@@ -2217,6 +3049,14 @@
               }
             ],
             "description": "Value data type"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -2232,6 +3072,14 @@
               }
             ],
             "description": "Config Value"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -2359,6 +3207,14 @@
               }
             ],
             "description": "Value data type"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -2374,6 +3230,14 @@
               }
             ],
             "description": "Config Value",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
             "nullable": true
           }
         },
@@ -2543,6 +3407,41 @@
         "additionalProperties": false,
         "description": "Contains response page information including totals."
       },
+      "PlayStoreConfigurationRequest": {
+        "type": "object",
+        "properties": {
+          "playServiceAccountJson": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Google Play service-account JSON credential",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request payload model for Google Play store-deployment configurations.\nOmitted fields are left unchanged; providing a field with a null value removes it."
+      },
+      "PlayStoreConfigurationResult": {
+        "required": [
+          "playServiceAccountJson"
+        ],
+        "type": "object",
+        "properties": {
+          "playServiceAccountJson": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecretConfig"
+              }
+            ],
+            "description": "Google Play service-account JSON credential. Secret, its value is never returned.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Result payload model for Google Play store-deployment configurations."
+      },
       "ProblemDetails": {
         "type": "object",
         "properties": {
@@ -2609,6 +3508,14 @@
             ],
             "description": "Value data type"
           },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
+            "nullable": true
+          },
           "isSecret": {
             "type": "boolean",
             "description": "Date string for date field was last updated",
@@ -2617,6 +3524,138 @@
         },
         "additionalProperties": false,
         "description": "Get request secret config value"
+      },
+      "StoreOperationRequest": {
+        "required": [
+          "applicationKey",
+          "buildOperationKey",
+          "environmentKey"
+        ],
+        "type": "object",
+        "properties": {
+          "environmentKey": {
+            "type": "string",
+            "description": "Unique identifier of the environment",
+            "format": "uuid",
+            "nullable": true
+          },
+          "applicationKey": {
+            "type": "string",
+            "description": "Unique identifier of the application",
+            "format": "uuid",
+            "nullable": true
+          },
+          "buildOperationKey": {
+            "type": "string",
+            "description": "Key of the build operation to upload to the store",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Store operation request"
+      },
+      "StoreOperationResponse": {
+        "type": "object",
+        "properties": {
+          "storeOperationKey": {
+            "type": "string",
+            "description": "Unique key for this store operation",
+            "format": "uuid"
+          },
+          "buildOperationKey": {
+            "type": "string",
+            "description": "Key of the source build operation",
+            "format": "uuid"
+          },
+          "platform": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobilePlatform"
+              }
+            ],
+            "description": "Mobile platform targeted by the upload"
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoreOperationStatus"
+              }
+            ],
+            "description": "Current status of the store operation"
+          },
+          "startedDateTime": {
+            "type": "string",
+            "description": "StartedDateTime",
+            "format": "date-time"
+          },
+          "finishedDateTime": {
+            "type": "string",
+            "description": "FinishedDateTime",
+            "format": "date-time",
+            "nullable": true
+          },
+          "estimatedFinishDateTime": {
+            "type": "string",
+            "description": "EstimatedFinishDateTime",
+            "format": "date-time",
+            "nullable": true
+          },
+          "appIdentifier": {
+            "type": "string",
+            "description": "Bundle ID / app identifier the build is published under in the store",
+            "nullable": true
+          },
+          "mobileVersionNumber": {
+            "type": "string",
+            "description": "Semantic version of the app being published",
+            "nullable": true
+          },
+          "mobileVersionCode": {
+            "type": "string",
+            "description": "Build number the app is published under in the store, known from the moment the upload is accepted",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Store operation response"
+      },
+      "StoreOperationResponsePagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreOperationResponse"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "StoreOperationStatus": {
+        "enum": [
+          "Pending",
+          "Validating",
+          "Uploading",
+          "Uploaded",
+          "Failed"
+        ],
+        "type": "string",
+        "description": "Store operation status"
       },
       "StringConfig": {
         "required": [
@@ -2647,6 +3686,14 @@
               }
             ],
             "description": "Value data type"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -2658,6 +3705,14 @@
           "value": {
             "type": "string",
             "description": "Config Value",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata describing the value, such as the name of an uploaded file",
             "nullable": true
           }
         },
@@ -2736,7 +3791,7 @@
   "tags": [
     {
       "name": "public",
-      "description": "Native builder versions operations"
+      "description": "App Store Connect configurations for native builds."
     },
     {
       "name": "BuildOperations"
@@ -2749,6 +3804,9 @@
       "name": "NativeMobileBuilds"
     },
     {
+      "name": "NativeBuildAppStore"
+    },
+    {
       "name": "NativeMobileConfigurations"
     },
     {
@@ -2758,10 +3816,16 @@
       "name": "NativeBuildExtensibilitySettings"
     },
     {
+      "name": "NativeBuildPlayStore"
+    },
+    {
       "name": "NativeBuildValidation"
     },
     {
       "name": "NativeBuildVersions"
+    },
+    {
+      "name": "StoreOperations"
     }
   ]
 }
