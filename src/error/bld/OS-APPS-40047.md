@@ -1,6 +1,7 @@
 ---
 summary: OS-APPS-40047 in OutSystems Developer Cloud (ODC) occurs when a non-Latin app display name normalizes to Module, causing a URL path collision.
 tags:
+  - 1-Click Publish
   - Deploy
   - Mobile app
   - Troubleshooting
