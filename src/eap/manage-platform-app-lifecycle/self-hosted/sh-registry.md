@@ -37,9 +37,9 @@ This article covers the requirements and configuration for a custom OCI registry
 
 The registry must exist and be reachable before you start the Self-hosted configurator. During setup, the configurator asks you to select a provider and enter credentials. The registry provider and endpoint can't be changed after setup.
 
-You can share your OCI registry with other workloads. ODC does not require dedicated credentials. OutSystems stores images under a `self_hosted/` prefix to avoid naming collisions with other content in the registry.
+You can share your OCI registry with other workloads. ODC does not require dedicated credentials. OutSystems stores images under a `self_hosted/` prefix to avoid naming collisions with other content in the registry. This includes the images of your apps, which ODC stores in one repository for each app under the same prefix.
 
-For additional isolation, you can use a registry-level path structure during initial configuration (for example, a Harbor project or a GAR repository path) to scope ODC images to a specific location within the registry (for example, `<registry>/outsystems/<image>`). This is recommended for organizational clarity but is not a functional requirement.
+For additional isolation, you can use a registry-level path structure during initial configuration (for example, a Harbor project or a GAR repository path) to scope ODC images to a specific location within the registry (for example, `<registry>/outsystems/<image>`). For Google Cloud GAR, this path is required. For the endpoint format of each provider, refer to [Provider credentials](#provider-credentials).
 
 ## Requirements {#requirements}
 
@@ -49,7 +49,7 @@ Your custom OCI registry must meet the following requirements:
 * It must be accessible over HTTPS. Custom ports are supported if included in the endpoint URL (for example, `registry.example.com:8443`).
 * It must exist and be reachable from the cluster before you start the Self-hosted configurator.
 
-ODC handles repository creation automatically — you don't need to pre-configure image paths. For AWS ECR, the operator triggers the `CreateRepository` API on the first push, which is why `ecr:CreateRepository` is required. For all other providers (ACR, GAR, Harbor, Artifactory, Docker Hub), image paths are provisioned dynamically on first upload.
+ODC creates and deletes repositories in your registry, so you don't need to pre-configure image paths. ODC creates a repository the first time it stores the images of an app, and deletes repositories it no longer uses, such as the repository of a deleted app. For AWS ECR, ODC calls the `CreateRepository` API before the first push, which is why `ecr:CreateRepository` is required. For all other providers, such as ACR, GAR, Harbor, Artifactory, and Docker Hub, the registry creates the repository on the first push. For the permissions these operations need, refer to [Required registry permissions](#required-permissions).
 
 For Google Artifact Registry, the repository resource itself must be pre-created before setup, since the endpoint URL requires specifying it and IAM is bound at the repository level. Image paths within it are still created automatically.
 
@@ -73,9 +73,36 @@ The named providers (AWS ECR, Azure ACR, Google Cloud GAR) use publicly trusted 
 
 For registries that use a private or self-signed certificate authority, add the CA certificate to the cluster's trusted certificate store before running the Self-hosted configurator.
 
+## Required registry permissions {#required-permissions}
+
+ODC uses your registry credentials to manage both repositories and images. The credentials must allow the following operations:
+
+| Operation | What ODC uses it for |
+| --- | --- |
+| Create repositories | Store the images of an app the first time you deploy the app to a self-hosted stage. |
+| Push images | Sync app and platform images from the ODC cloud registry to your registry. |
+| Pull images | Run app and platform images in your cluster. |
+| List images | Check which images and tags already exist in your registry. |
+| Delete images | Remove images that ODC no longer uses. |
+| Delete repositories | Remove repositories that ODC no longer uses, such as the repository of a deleted app. |
+
+The exact permission names differ by provider. For the permissions to grant on each provider, refer to [Provider credentials](#provider-credentials).
+
+### Credential checks in the Self-hosted configurator {#credential-checks}
+
+When you click **Test connection** or save the registry configuration, the Self-hosted configurator checks every operation in the preceding table against your registry. It pushes a test image, creates and deletes a test repository named `outsystems-validation-test/repository-probe` under the `self_hosted/` prefix, and then removes the test content.
+
+If any check fails, the configurator rejects the credentials and keeps your existing configuration. The error message names the operation that failed and the permission to grant.
+
+<div class="warning" markdown="1">
+
+If your credentials can create repositories but can't delete them, the test repository `self_hosted/outsystems-validation-test/repository-probe` stays in your registry. The error message shows its full path. After you grant the missing permission, delete the test repository manually.
+
+</div>
+
 ## Provider credentials {#provider-credentials}
 
-Set up credentials on your registry provider before you start the Self-hosted configurator. The configurator asks for these during setup and can't proceed without them. Required fields and permissions vary by provider.
+Set up credentials on your registry provider before you start the Self-hosted configurator. The configurator asks for these during setup and can't proceed without them. Required fields and permissions vary by provider. The permissions listed for each provider cover all the operations in [Required registry permissions](#required-permissions).
 
 ### AWS ECR {#aws-ecr}
 
@@ -88,18 +115,21 @@ Before you start the Self-hosted configurator, create an IAM access key for a us
 | **Secret access key** | The corresponding secret access key. |
 | **Credentials expiration** | How long until the credential expires: 30, 90, 180, or 365 days. |
 
-The IAM user or role must have the following permissions. Apply them account-wide (`"Resource": "*"`) — some permissions, such as `ecr:GetAuthorizationToken`, can't be scoped to individual repository ARNs.
+The IAM user or role must have the following permissions. Apply them account-wide with `"Resource": "*"`. Some permissions, such as `ecr:GetAuthorizationToken`, can't be scoped to individual repository ARNs.
 
 * `ecr:GetAuthorizationToken`
 * `ecr:BatchCheckLayerAvailability`
 * `ecr:GetDownloadUrlForLayer`
 * `ecr:BatchGetImage`
+* `ecr:ListImages`
+* `ecr:DescribeImages`
 * `ecr:PutImage`
 * `ecr:InitiateLayerUpload`
 * `ecr:UploadLayerPart`
 * `ecr:CompleteLayerUpload`
 * `ecr:CreateRepository`
 * `ecr:BatchDeleteImage`
+* `ecr:DeleteRepository`
 
 ### Azure ACR {#azure-acr}
 
@@ -113,7 +143,9 @@ Before you start the Self-hosted configurator, create a service principal in Azu
 | **Tenant ID** | (Optional) The Azure Active Directory tenant ID. |
 | **Credentials expiration** | How long until the credential expires: 30, 90, 180, or 365 days. |
 
-Assign the service principal the `AcrPull`, `AcrPush`, and `AcrDelete` roles. You can scope the assignment to the entire registry or restrict it to specific repositories.
+Assign the service principal the `AcrPull`, `AcrPush`, and `AcrDelete` roles. `AcrPush` covers pushing images and creating repositories, and `AcrDelete` covers deleting images and repositories. Scope the assignment to the entire registry, because ODC creates a repository for each app when the app is first deployed.
+
+If your registry uses the **RBAC Registry + ABAC Repository Permissions** role assignment mode, Azure ignores the `AcrPull`, `AcrPush`, and `AcrDelete` roles. Assign the `Container Registry Repository Contributor` role instead, scoped to the entire registry.
 
 ### Google Cloud GAR {#google-cloud-gar}
 
@@ -125,7 +157,9 @@ Before you start the Self-hosted configurator, create a service account and have
 | **Service account key** | The service account JSON key file. |
 | **Credentials expiration** | How long until the credential expires: 30, 90, 180, or 365 days. |
 
-Assign the service account the `roles/artifactregistry.repoAdmin` role, scoped at the repository level through IAM binding. This role covers push, pull, and delete operations. Don't use `roles/artifactregistry.writer`, as it doesn't include delete permissions.
+In Google Cloud GAR, the repositories that ODC creates and deletes are image paths inside the repository in the **Endpoint server** value.
+
+Assign the service account the `roles/artifactregistry.repoAdmin` role, scoped at the repository level through IAM binding. This role covers pushing, pulling, listing, and deleting images, and deleting image paths. Don't use `roles/artifactregistry.writer`. That role doesn't include delete permissions, so the Self-hosted configurator rejects the credentials.
 
 ### Other {#other}
 
@@ -138,15 +172,20 @@ Before you start the Self-hosted configurator, have the following ready from you
 | **Token** | The access token or password. |
 | **Credentials expiration** | How long until the credential expires: 30, 90, 180, or 365 days. |
 
-The token must have push, pull, list, and delete permissions on the target repository.
+The token must allow all the operations in [Required registry permissions](#required-permissions) on the target repository.
 
 The following table shows the credential type and required permissions for common registries that use the Other path.
 
 | Registry | Credential type | Required permissions | Scope |
 | --- | --- | --- | --- |
-| Harbor | Robot account | Push and pull project rights | Specific project |
-| Artifactory | User token | Deploy and Read | Specific repositories |
-| Docker Hub | Personal access token | Read and Write | User namespace |
+| Harbor | Robot account | Repository: List, Pull, Push, and Delete. Artifact: List and Delete. | Specific project |
+| STACKIT Container Registry | Robot account | Repository: List, Pull, Push, and Delete. Artifact: List and Delete. | Specific project |
+| Artifactory | User token | Read, Deploy/Cache, and Delete/Overwrite | Specific repositories |
+| Docker Hub | Personal access token | Read, Write, and Delete | User namespace |
+
+For Harbor, STACKIT Container Registry, and Artifactory, ODC stores images in the project or repository named in the **Endpoint server** value, for example `harbor.example.com/outsystems` or `artifactory.example.com/docker-local`. If the **Endpoint server** value is only the host name, ODC uses a project or repository named `self_hosted`. The project or repository must exist before you start the Self-hosted configurator.
+
+The Self-hosted configurator checks repository deletion for Harbor, STACKIT Container Registry, and Artifactory. Other registries, such as Docker Hub, have no API that ODC uses to delete repositories. For these registries, the configurator returns a warning instead of rejecting the credentials, and the test repository `self_hosted/outsystems-validation-test/repository-probe` stays in your registry. Delete the test repository manually. ODC doesn't delete the repositories of deleted apps on these registries, so delete them manually too.
 
 ## Credentials expiration {#credentials-expiration}
 
@@ -167,7 +206,7 @@ When you update and save new credentials, the sync catches up automatically. No 
 The **Container registry** tab in the Self-hosted configurator settings is available only for custom registry configurations. If you use the OutSystems-managed registry in OpenShift, this tab is not shown.
 To access the settings, reopen the Self-hosted configurator. Refer to [Reopen the Self-hosted configurator](sh-open-configurator.md).
 
-AWS ECR, Azure ACR, and Google Cloud GAR all support multiple active credentials simultaneously, so you can activate new credentials before revoking the old ones — zero-downtime rotation is possible. For **Other** registries, verify this with your provider before rotating.
+AWS ECR, Azure ACR, and Google Cloud GAR all support multiple active credentials simultaneously, so you can activate new credentials before revoking the old ones. This makes zero-downtime rotation possible. For **Other** registries, verify this with your provider before rotating.
 
 To update or rotate your credentials, follow these steps:
 
