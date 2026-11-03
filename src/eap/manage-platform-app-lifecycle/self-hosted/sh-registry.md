@@ -210,7 +210,7 @@ AWS ECR, Azure ACR, and Google Cloud GAR all support multiple active credentials
 
 To update or rotate your credentials, follow these steps:
 
-1. If rotating, generate a new credential on your registry provider first.
+1. If rotating, generate a new credential on your registry provider first. The new credential must have all the permissions in [Required registry permissions](#required-permissions). Otherwise, the Self-hosted configurator rejects it and keeps the current credential.
 1. In the Self-hosted configurator, go to the **Settings** page and select **Container registry**.
 
     ![Self-hosted configurator Container registry tab showing endpoint, username, token, and credentials expiration fields with the Edit button highlighted.](images/sh-manage-registry-edit-shc.png "Editing container registry configuration")
