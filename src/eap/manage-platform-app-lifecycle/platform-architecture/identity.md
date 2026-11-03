@@ -1,5 +1,5 @@
 ---
-summary: ODC Identity Service architecture uses JWT and OIDC to broker authentication via IdP, manage token lifecycle, and enforce authorization across Platform and apps.
+summary: OutSystems Developer Cloud (ODC) Identity Service uses JWT and OIDC for authentication, token rotation, and app authorization.
 tags:
   - Architecture
   - Authentication
@@ -75,13 +75,7 @@ ODC includes built-in protection against session fixation attacks, where an atta
 
 The access tokens are short-lived JWTs with a five-minute lifetime and contain no Personally Identifiable Information (PII), apart from database keys and the data required by the ODC OIDC broker. When an access token expires, ODC uses the refresh token to silently issue a new access token. Refresh tokens are single-use: each time a refresh token is used, ODC immediately invalidates it and issues both a new access token and a new refresh token. If the same refresh token is used a second time, the entire session is invalidated as a protection against token reuse. For more details, refer to [Configure user session](../../user-management/configure-user-session.md).
 
-As of December 2025, ODC access tokens are being updated to remove PII. This change is applied progressively per tenant and takes effect after an identity environment configuration change. For example:
-
-* Assigning or updating an IdP
-* Adding or changing a custom domain
-* creating a client
-* Updating a secret
-* Publishing a mobile app
+To get information about the signed-in user in your apps, use the [GetUserProfile](../../reference/system-actions/user.md#getuserprofile) client action instead of reading it from the access token.
 
 When a user logs out, the platform immediately invalidates their session and refresh tokens, meaning no new access tokens can be issued and the user must re-authenticate. However, because access tokens are self-contained JWTs validated without a server lookup, the platform does not individually revoke them. Any access token issued just before logout remains valid until its natural five-minute expiration. This brief window is standard, secure behavior for stateless validation, keeping exposure strictly limited.
 
