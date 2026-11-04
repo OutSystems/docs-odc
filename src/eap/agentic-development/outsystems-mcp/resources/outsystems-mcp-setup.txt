@@ -264,7 +264,11 @@ Continue with the Sign in section.
 
 ### Claude Desktop
 
-Use these steps when the user works in the **Chat** tab of Claude Desktop. A user in the **Code** tab follows the Claude Code section. The built-in custom connector doesn't complete the OutSystems sign-in, so these steps use the `mcp-remote` local proxy. The **Chat** tab has no shell or file access, so give the user each step.
+Use these steps when the user works in the **Chat** tab of Claude Desktop. A user in the **Code** tab follows the Claude Code section.
+
+The **Chat** tab has no shell or file access, so the user runs each of these steps by hand. If the user has a paid Claude plan, recommend the **Code** tab instead, because you run the setup steps there. To switch, the user opens the **Code** tab, starts a session in the folder that holds this guide, and runs the guide again. If the user stays in the **Chat** tab, continue with these steps.
+
+The built-in custom connector doesn't complete the OutSystems sign-in, so these steps use the `mcp-remote` local proxy. Give the user each step.
 
 1. Check that Node.js is installed by running the following command:
 
