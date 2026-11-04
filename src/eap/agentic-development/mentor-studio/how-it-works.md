@@ -3,7 +3,6 @@ summary: In ODC Studio, Mentor Studio generates and modifies web app, library, a
 tags:
   - AI
   - Agentic
-  - Best Practices
   - Mentor
   - Mentor Studio
   - Workflows
@@ -76,7 +75,16 @@ You don't have to rely on the selection. To act on a different element, name it 
 
 Mentor Web already supports [uploading a requirement document](../mentor-web/requirements-doc.md) to generate a whole app. Attach a file to a Mentor Studio prompt for the same document-grounded approach, scoped to the app you have open. Mentor processes both the text and the images in the file and uses them, together with your selection and open view, to generate screens with data bindings, entities and attributes that reuse your existing data model, and the actions that connect them.
 
-Attach a file in `.pdf`, `.docx`, `.txt`, `.json`, `.md`, `.csv`, `.png`, `.jpg`, or `.jpeg` format, up to 5 MB per file. Attach up to 3 files in the same prompt.
+Attach a file in one of the following formats:
+
+* **Documents:** `.pdf`, `.docx`, `.rtf`, `.txt`, `.md`
+* **Data and configuration:** `.json`, `.csv`, `.tsv`, `.xml`, `.yaml`, `.yml`
+* **Logs:** `.log`
+* **Source code and scripts:** `.py`, `.sql`, `.java`, `.js`, `.jsx`, `.sh`, `.bash`
+* **Web files:** `.htm`, `.html`, `.css`
+* **Images:** `.png`, `.jpg`, `.jpeg`
+
+Attach up to 3 files in the same prompt. Mentor rejects images larger than 3.75 MB and other files larger than 4.5 MB.
 
 Attach a file for tasks such as the following:
 
@@ -84,7 +92,10 @@ Attach a file for tasks such as the following:
 * Build a data model from an ERD or table definition.
 * Generate a screen from a Figma export or mockup, with a matching layout, containers, and widgets.
 * Debug an issue from a pasted error log.
-* Build an integration from an API response sample.
+* Build an integration from an API response sample or an OpenAPI, YAML, or XML definition.
+* Build a data model from a SQL schema.
+* Recreate legacy logic from a Java, Python, or JavaScript source file as a server action.
+* Generate or restyle a screen from HTML or CSS.
 
 Attach the file from the Mentor panel, then describe what you want Mentor to do with it, for example "Using the attached OrderRequirements.docx, create the OrderIntake screen and the data model it describes."
 
@@ -98,7 +109,7 @@ Mentor doesn't always reuse an existing entity or attribute when the name in you
 
 Mentor also can't surface or reuse an element referenced in your document when that element is private to another app outside your ODC Roles. For more information about public elements, refer to [Reuse tenant public elements](capabilities.md#reuse-public-elements).
 
-The attached file content becomes part of the prompt, so it's subject to the same data-handling guidance as the rest of your prompt. For attachment-specific constraints, such as file size limits, refer to [Known limitations](../ai-limitations.md). For how ODC logs prompts, including attached file content, refer to [Prompt logging](../security-safeguards.md#prompt-logging).
+The attached file content becomes part of the prompt, so it's subject to the same data-handling guidance as the rest of your prompt. For how ODC logs prompts, including attached file content, refer to [Prompt logging](../security-safeguards.md#prompt-logging).
 
 ## The workflow {#workflow}
 

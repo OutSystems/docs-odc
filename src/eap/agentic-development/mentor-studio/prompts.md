@@ -135,7 +135,7 @@ Use these prompts to reuse public elements that other apps expose in the tenant.
 
 ## Attach a file {#attach-file}
 
-Use these prompts to ground a request in an attached file, such as a requirement spec, entity relationship diagram (ERD), screen mockup, error log, or API response sample. Attach the file to your prompt in the Mentor panel, then describe what you want Mentor to do with it. For supported file types and what to avoid in an attached file, refer to [Attach a file as context](how-it-works.md#attach-file).
+Use these prompts to ground a request in an attached file, such as a requirement spec, entity relationship diagram (ERD), screen mockup, error log, API response sample, SQL schema, source code file, or HTML file. Attach the file to your prompt in the Mentor panel, then describe what you want Mentor to do with it. For supported file types and what to avoid in an attached file, refer to [Attach a file as context](how-it-works.md#attach-file).
 
 ### Data model from an ERD {#data-model-erd}
 
@@ -156,6 +156,21 @@ Use these prompts to ground a request in an attached file, such as a requirement
 
 * Basic: Use the attached `error-log.txt` and explain the error.
 * Detailed: Use the attached `error-log.txt` and identify which node in the CreateOrder action raised the `Null object reference` exception. Suggest a fix that adds a null check before the OrderItems aggregate runs.
+
+### Data model from a SQL schema {#data-model-sql}
+
+* Basic: Use the attached `schema.sql` and create the entities it defines.
+* Detailed: Use the attached `schema.sql` and create the Invoice entity with InvoiceNumber (Text), IssueDate (Date), and Total (Currency), and the InvoiceLine entity with Quantity (Integer) and UnitPrice (Currency) in a one-to-many relationship with Invoice. Reuse the existing Customer entity instead of creating a new one.
+
+### Server action from legacy code {#action-from-legacy-code}
+
+* Basic: Use the attached `CalculateDiscount.java` and create a server action that implements the same rules.
+* Detailed: Use the attached `CalculateDiscount.java` and create a server action named CalculateDiscount with the OrderTotal (Currency) and CustomerTier (Text) input parameters and a Discount (Currency) output parameter. Implement the tier rules from the file with an If element for each tier.
+
+### Screen from HTML or CSS {#screen-from-web-files}
+
+* Basic: Use the attached `OrderForm.html` and create the screen it describes.
+* Detailed: Use the attached `OrderForm.html` and create the OrderForm screen with the form fields, labels, and buttons it contains. Bind the fields to the Order entity and reuse the existing Customer entity for the customer field.
 
 ## Add documentation {#add-docs}
 

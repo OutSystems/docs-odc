@@ -71,6 +71,9 @@ Mentor Studio supports a range of development tasks. The following table describ
 | Generate a screen from a design | Attach a Figma export or mockup to generate a screen with a matching layout, containers, and widgets | "Use the attached OrderDashboard.png and create the OrderDashboard screen it shows." |
 | Debug from a pasted log | Attach an error log to identify the cause of a failure | "Use the attached error-log.txt and explain why the CreateOrder action is failing." |
 | Create an integration from a document | Attach an API response sample to generate the structures and logic that consume it | "Use the attached ApiResponseSample.json and create a structure that matches the response it describes, then create a server action that calls the endpoint and maps the response to the new structure." |
+| Build a data model from a SQL schema | Attach a `.sql` file with table definitions to generate entities, attributes, and relationships that reuse your existing data model | "Use the attached schema.sql and create the entities it defines, reusing the existing Customer entity." |
+| Recreate legacy logic | Attach a Java, Python, or JavaScript source file to recreate its business rules as a server action | "Use the attached CalculateDiscount.java and create a server action that implements the same rules." |
+| Generate or restyle a screen from web files | Attach an HTML or CSS file to generate a screen with a matching structure or to apply its styles | "Use the attached OrderForm.html and create the OrderForm screen it describes." |
 
 ## Reuse tenant public elements {#reuse-public-elements}
 
