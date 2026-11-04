@@ -1,7 +1,7 @@
 ---
 guid: a466cba7-5b65-4b7d-b053-c365a483e592
 locale: en-us
-summary: Explore troubleshooting tips for user interoperability between ODC and O11 apps.
+summary: OutSystems Developer Cloud (ODC) user interoperability troubleshooting fixes invalid email errors and missing app permissions after O11 SSO.
 figma: https://www.figma.com/design/rWH1MmckD8Wz3H9D2QQEiT/Platform-Unification-EAP?node-id=37-110
 coverage-type:
   - unblock

@@ -1,7 +1,7 @@
 ---
 guid: b0525131-2654-4a11-a191-3a66ee7de19f
 locale: en-us
-summary: O11 and ODC single sign-on app adjustments include coordinating sessions and handling logout redirects for external IdP authentication.
+summary: OutSystems 11 (O11) and OutSystems Developer Cloud (ODC) SSO app adjustments coordinate sessions and route logout with GetExternalLogoutURL.
 figma: https://www.figma.com/design/rWH1MmckD8Wz3H9D2QQEiT/Platform-Unification-EAP?node-id=270-134
 coverage-type:
   - apply

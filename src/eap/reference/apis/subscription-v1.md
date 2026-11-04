@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) Subscription API v1 REST endpoints for retrieving subscription, entitlement, and usage data by asset and environment.
+summary: OutSystems Developer Cloud (ODC) Subscription API v1 reference for retrieving subscription, entitlement, and usage data by asset and environment.
 locale: en-us
 guid: 08ef70f0-cf2d-4239-9d69-2f68c0cf7e18
 app_type: mobile apps, reactive web apps
