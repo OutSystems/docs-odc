@@ -5592,6 +5592,14 @@
             "type": "boolean",
             "description": "Gets or sets a value indicating whether permission applies to a specific portfolio."
           },
+          "requiredPortfolioTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PortfolioType"
+            },
+            "description": "Gets or sets the portfolio types this permission requires. Empty means the permission is unrestricted;\notherwise it is only assignable/visible to tenants that own a portfolio of one of these types.",
+            "nullable": true
+          },
           "allowedScopes": {
             "type": "array",
             "items": {
@@ -5648,6 +5656,16 @@
           "SAME_PORTFOLIO",
           "MAIN_PORTFOLIO",
           "ALL_PORTFOLIO"
+        ],
+        "type": "string"
+      },
+      "PortfolioType": {
+        "enum": [
+          "Cloud",
+          "Hybrid",
+          "SelfHosted",
+          "O11Cloud",
+          "O11SelfManaged"
         ],
         "type": "string"
       },
@@ -6347,7 +6365,7 @@
   ],
   "tags": [
     {
-      "name": "private"
+      "name": "internal"
     },
     {
       "name": "action-tokens"
@@ -6357,6 +6375,9 @@
     },
     {
       "name": "application-roles"
+    },
+    {
+      "name": "private"
     },
     {
       "name": "bcdr"
