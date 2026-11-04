@@ -3615,6 +3615,11 @@
             "type": "string",
             "description": "Build number the app is published under in the store, known from the moment the upload is accepted",
             "nullable": true
+          },
+          "storeUploadLogUrl": {
+            "type": "string",
+            "description": "Time-limited URL to download the full store upload log. Null until the upload job has written its log.",
+            "nullable": true
           }
         },
         "additionalProperties": false,
