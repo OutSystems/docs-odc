@@ -1,7 +1,7 @@
 ---
 guid: 4e24c9ec-1d93-42e6-9655-4609a585b73e
 locale: en-us
-summary: Implement Capacitor plugins on Android using Kotlin/Java for OutSystems Developer Cloud (ODC), including code examples for barcode scanner and configuring dependencies.
+summary: Android Capacitor plugins for OutSystems Developer Cloud (ODC), implement Kotlin or Java methods such as barcode scanning.
 figma:
 coverage-type:
   - apply
