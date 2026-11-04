@@ -14,7 +14,6 @@ audience:
 tags:
   - Authentication
   - Infrastructure
-  - Security
   - Settings
 outsystems-tools:
   - self hosted configurator

@@ -1,11 +1,13 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) app and library properties: edit details, validation messages, and advanced settings in ODC Studio."
 tags:
+  - Forms
   - Libraries
   - Mobile app
   - Screens
   - Settings
   - Themes
+  - UI
 locale: en-us
 guid: 5923266e-a350-4775-a6ea-8c6882b8755c
 app_type: mobile apps, reactive web apps

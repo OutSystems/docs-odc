@@ -15,11 +15,11 @@ audience:
   - Tech lead
 tags:
   - Authentication
+  - Authorization
   - End-user Authentication
   - End-users
   - Groups
   - IdP
-  - OIDC
   - SSO
 outsystems-tools:
   - none

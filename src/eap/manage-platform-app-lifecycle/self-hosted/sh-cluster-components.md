@@ -15,6 +15,7 @@ audience:
 tags:
   - Architecture
   - CI/CD
+  - Deploy
   - Infrastructure
   - Monitoring
   - Security

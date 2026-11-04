@@ -1,6 +1,7 @@
 ---
 summary: Learn how to submit and manage reusable software assets to Forge using OutSystems Developer Cloud (ODC).
 tags:
+  - Best Practices
   - Forge
   - Libraries
 locale: en-us

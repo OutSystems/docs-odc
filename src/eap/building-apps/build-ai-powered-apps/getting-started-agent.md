@@ -16,6 +16,8 @@ audience:
 tags:
   - Agentic
   - AI
+  - Logic
+  - Testing
 outsystems-tools:
   - odc studio
 helpids:

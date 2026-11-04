@@ -15,8 +15,9 @@ audience:
   - Tech lead
   - Developer
 tags:
-  - AI
   - Agentic
+  - AI
+  - Data
   - Quality Assurance
   - Testing
 outsystems-tools:
