@@ -89,7 +89,7 @@
           {
             "name": "since",
             "in": "query",
-            "description": "Start date for usage data (ISO 8601 format)",
+            "description": "Start date for usage data, in UTC whole seconds: yyyy-MM-ddTHH:mm:ssZ",
             "schema": {
               "type": "string"
             }
@@ -97,7 +97,7 @@
           {
             "name": "to",
             "in": "query",
-            "description": "End date for usage data (ISO 8601 format)",
+            "description": "End date for usage data, in UTC whole seconds: yyyy-MM-ddTHH:mm:ssZ",
             "schema": {
               "type": "string"
             }
@@ -136,6 +136,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UnifiedEntitlementByAssetBlockPagedListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -264,7 +274,7 @@
           {
             "name": "since",
             "in": "query",
-            "description": "Start date for usage data (ISO 8601 format)",
+            "description": "Start date for usage data, in UTC whole seconds: yyyy-MM-ddTHH:mm:ssZ",
             "schema": {
               "type": "string"
             }
@@ -272,7 +282,7 @@
           {
             "name": "to",
             "in": "query",
-            "description": "End date for usage data (ISO 8601 format)",
+            "description": "End date for usage data, in UTC whole seconds: yyyy-MM-ddTHH:mm:ssZ",
             "schema": {
               "type": "string"
             }
@@ -309,6 +319,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/EntitlementUsageItemListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -525,7 +545,7 @@
           {
             "name": "since",
             "in": "query",
-            "description": "Start date for usage data (ISO 8601 format)",
+            "description": "Start date for usage data, in UTC whole seconds: yyyy-MM-ddTHH:mm:ssZ",
             "schema": {
               "type": "string"
             }
@@ -533,7 +553,7 @@
           {
             "name": "to",
             "in": "query",
-            "description": "End date for usage data (ISO 8601 format)",
+            "description": "End date for usage data, in UTC whole seconds: yyyy-MM-ddTHH:mm:ssZ",
             "schema": {
               "type": "string"
             }
@@ -570,6 +590,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/EntitlementUsageItemListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
