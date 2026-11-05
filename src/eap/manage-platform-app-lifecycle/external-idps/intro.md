@@ -24,9 +24,7 @@ coverage-type:
   - apply
 topic:
   - external-idp-system-limits
-  - external-idps
   - idp-assignment-scopes
-  - idp-openidp
   - self-hosted-idp-requirements
 helpids: 30707
 isautopublish: true

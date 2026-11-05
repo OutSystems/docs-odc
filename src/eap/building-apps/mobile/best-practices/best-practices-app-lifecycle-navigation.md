@@ -22,7 +22,7 @@ outsystems-tools:
 helpids:
 topic:
   - app-lifecycle-transitions
-  - deep-link-handling
+  - deep-link-handling-odc
   - system-back-navigation
 isautopublish: true
 ---
