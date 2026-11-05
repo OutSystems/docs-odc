@@ -44,13 +44,9 @@ To use **OutSystems AppShield**, you must have a [license](../../manage-platform
 
 </div>
 
-By using **AppShield**, you can prevent:
+**AppShield** prevents code injection, screenshots of app data, and data hijacking.
 
-* Code from being injected into your app.
-* Users from taking screenshots of the data.
-* Data from being hijacked.
-
-When the user launches a hardened app, the app performs multiple checks. Some examples of these checks are root and repackaging detection meaning the app takes slightly more time to launch, especially when starting for the first time. The start time varies depending on multiple factors, such as device hardware and app complexity.
+When the user launches a hardened app, the app performs multiple checks. These checks include root and repackaging detection, and they increase the app launch time, especially the first time the app starts. The start time varies depending on multiple factors, such as device hardware and app complexity.
 
 To ensure your app users have protection against the latest security vulnerabilities, **OutSystems** provides continuous updates to **AppShield**.
 
@@ -84,15 +80,15 @@ To keep your apps and data secure, OutSystems recommends that you always use the
 
 ## Prerequisites
 
-To ensure the integrity and protection of your apps with **AppShield**, you must meet the following requirements.
+To ensure the integrity and protection of your apps with **AppShield**, you must meet the following requirements:
 
 * You have a license for **AppShield**.
 
 * You're using MABS 9.0 or later.
 
-    For more information about the supported operating systems, see [MABS and mobile operating systems life cycles](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions).
+    For more information about the supported operating systems, refer to [MABS and mobile operating systems life cycles](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions).
 
-## How to enable AppShield on your mobile apps
+## Enable AppShield on your mobile apps
 
 To protect your mobile app using the AppShield plugin, follow these steps:
 
@@ -108,14 +104,14 @@ To protect your mobile app using the AppShield plugin, follow these steps:
 
 Note the following:
 
-* All AppShield capabilities, except [Screen reader](protection-features-description.md#android-screen-reader), [Keylogger](protection-features-description.md#keylogger-protection), [Tapjacking](protection-features-description.md#tapjacking-protection), and [Private space](protection-features-description.md#private-space-detection) detection are enabled by default.
-* If any additional configuration is needed, go to the [Configuration](#configuration) section.
-* The app file size increases after hardening the security.
-* MABS takes more time to create a hardened build.
+* AppShield enables all capabilities by default, except [Screen reader](protection-features-description.md#android-screen-reader), [Keylogger](protection-features-description.md#keylogger-protection), [Tapjacking](protection-features-description.md#tapjacking-protection), and [Private space](protection-features-description.md#private-space-detection) detection.
+* You can set additional configuration in the [Configuration](#configuration) section.
+* Hardening increases the app file size.
+* Hardening increases the time MABS takes to create a build.
 
 <div class="info" markdown="1">
 
-To learn more about adding mobile plugins to your app, see [Adding plugins](../../integration-with-systems/mobile-plugins/intro.md).
+For more information about adding mobile plugins to your app, refer to [Adding plugins](../../integration-with-systems/mobile-plugins/intro.md).
 
 </div>
 
@@ -125,7 +121,7 @@ These are the features you can use with the current release of the **AppShield**
 
 ### Android
 
-Protections that are available for Android builds.
+AppShield provides the following protections for Android builds:
 
 * Root detection
 * Repackaging detection
@@ -143,7 +139,7 @@ Protections that are available for Android builds.
 
 ### iOS
 
-Protections that are available for iOS builds.
+AppShield provides the following protections for iOS builds:
 
 * Jailbreak detection
 * Repackaging detection
@@ -156,107 +152,83 @@ Protections that are available for iOS builds.
 
 **AppShield** is on by default when you install the plugin. You can turn it off in one or more environments for testing purposes.
 
-### Settings
+### Recommended method to set AppShield options
 
-* To turn off **AppShield** in one or more environments, edit the **DisableAppShielding** settings in **ODC Portal** for the environment. For example, turning off the plugin in the development environment lets you run the app in emulators or debug the app.
+OutSystems recommends that you set **AppShield** options as extensibility settings in **ODC Portal**. You set the value for each environment, so the same app can behave differently in development and production.
 
-If your application still specifies the configuration on its extensibility configuration and you're using a plugin version compatible with the settings, the application configuration will take precedence over the settings. OutSystems recommends that you revise this extensibility and consider removing it.
+Extensibility settings are available for options that have **Yes** in the **Extensibility setting** column of the [Configuration reference](#configuration-ref). For these options, use extensibility settings. For more information about editing extensibility settings in ODC Portal, refer to [Extensibility settings](../../building-apps/mobile/configuring-mobile-apps.md#configure-extensibility-settings).
 
-Refer to the Configuration Reference section to know all available options.
+You can also define preferences in the extensibility configuration of your app. A preference takes precedence over the extensibility setting with the same name, and the preference value applies to every environment. If your app already defines such a preference, remove it so that the extensibility setting applies. Define a preference only for the options that have no extensibility setting: `AddTrustedKeyboardSigner`, `AddTrustedScreenReaderSigner`, `ApplicationSignerCertificate`, and `AppShieldObfuscationRules`. If you use a plugin version that doesn't support extensibility settings, also define a preference.
 
-### Using extensibility configuration
+### Turn off AppShield in an environment
 
-Here is an example of the JSON for **Extensibility Configurations**. You can use different sections for iOS and Android.
+To turn off **AppShield** in one or more environments, edit the **DisableAppShielding** extensibility setting in **ODC Portal** for the environment. For example, turning off the plugin in the development environment lets you run the app in emulators or debug the app.
 
-```
+### Extensibility configuration
+
+Use the extensibility configuration for the options that have no extensibility setting. The following example whitelists a third-party keyboard and a third-party screen reader for Android. Preferences in the `android` section apply only to Android, and preferences in the `ios` section apply only to iOS.
+
+```javascript
 {
-    "preferences": {
-        "global": [
-            {
-                "name": "DisableAppShielding",
-                "value": "false"
-            },
-            {
-                "name": "AllowJailbrokenRootedDevices",
-                "value": "false"
-            },
-            {
-                "name": "ExitOnURL",
-                "value": "https://example.com/protectionblocker/landing-page"
+    "appConfigurations": {
+        "cordova": {
+            "preferences": {
+                "android": {
+                    "AddTrustedKeyboardSigner": "KEYBOARD_SIGNER",
+                    "AddTrustedScreenReaderSigner": "SCREEN_READER_SIGNER"
+                }
             }
-        ],
-        "android": [
-            {
-                "name": "AllowJailbrokenRootedDevices",
-                "value": "true"
-            },
-            {
-                "name": "AllowScreenshot",
-                "value": "false"
-            },
-            {
-                "name": "BlockUntrustedKeyboards",
-                "value": "true"
-            },
-            {
-                "name": "BlockUntrustedScreenreaders",
-                "value": "true"
-            }
-        ],
-        "ios": [
-            {
-                "name": "AllowJailbrokenRootedDevices",
-                "value": "true"
-            },
-            {
-                "name": "AllowScreenshot",
-                "value": "false"
-            }
-        ]
+        }
     }
 }
 ```
 
+Replace the following:
+
+* `KEYBOARD_SIGNER`: The signer of the third-party keyboard that you want to whitelist
+* `SCREEN_READER_SIGNER`: The signer of the third-party screen reader that you want to whitelist
+
+The `AddTrustedKeyboardSigner` and `AddTrustedScreenReaderSigner` options apply only when the `BlockUntrustedKeyboards` and `BlockUntrustedScreenreaders` extensibility settings are set to true.
+
 ### AppShield obfuscation rules
 
-Regardless of whether the AppShield version you're using has settings or not, if you need to configure your own obfuscation rules for Android, you must use the `AppShieldObfuscationRules` as an extensibility configuration on your application.
+To configure your own obfuscation rules for Android, you must set the `AppShieldObfuscationRules` preference in the extensibility configuration of your app, because this option has no extensibility setting. For more information, refer to [Creating custom obfuscation rules](obfuscate-custom-rules.md).
 
 ### Configuration reference {#configuration-ref}
 
-These are the values available in the **AppShield** configuration JSON.
+The following table lists the values available in the **AppShield** configuration JSON. The **Extensibility setting** column shows whether the plugin also defines the value as an extensibility setting that you can edit in **ODC Portal**.
 
-| Configuration | Type | Default Value | OS | Description |
-| ------------------------------- | ------------ | ------------- | ------------ | ------------------------------------------------------------------------------------------------- |
-| AddTrustedKeyboardSigner | Text | | Android | If BlockUntrustedKeyboards is set to True, this option can whitelist a third-party keyboard. This option must be added for each keyboard software that you want to add to the whitelist. |
-| AddTrustedScreenReaderSigner | Text | | Android | If BlockUntrustedScreenreaders is set to True, this option can whitelist a third-party screen reader. This option must be added for each screen reader software that you want to add to the whitelist. |
-| AllowJailbrokenRootedDevices | Boolean | false | iOS, Android | If set to True, users can run the app on the jailbroken devices. |
-| AllowPrivateSpace | Boolean | true | Android | If set to false, the application is blocked from running if the application was started from a private space or a work profile. |
-| AllowScreenshot | Boolean | false | iOS, Android | If set to True, users can take screenshots of the app. |
-| AllowTapjacking | Boolean | true | Android | If set to false, the application will detect tapjacking attempts and remove the malicious overlay entirely for apps running on Android 12 and above or block inputs to the overlay for versions below Android 12. |
-| AllowIOSAppOnMacOSX | Boolean | false | iOS | If set to true, the application is allowed to run on macOS via Catalyst or as an iPhone app on Mac. When set to false (default), the application exits when it detects it is running on macOS. You can configure an exit URL to redirect users when the app exits. For more information, see the documentation on [configuring an exit URL for a blocked app](ExitOnUrl.md). macOS provides greater access to debugging and reverse engineering tools than a standard iOS device. Enable only if your app is designed to support macOS and your target audience requires it. |
-| ApplicationSignerCertificate | Text(Base64) | | iOS, Android | Adds the given certificate to the accepted signers whitelist of the final package. This option must be added for each certificate that you want to add to the whitelist. |
-| AppShieldDebugMode | Boolean | false | iOS, Android | If set to True, the shielding process is applied in debug mode, keeping debugging options used in Debug and Development builds. Used for extended developer troubleshooting. Builds with this option can't be uploaded to the Store, and, on Android, they need to be installed using `adb install` with the `-t` option. |
-| AppShieldObfuscationRules | Text(base64) | | Android | Custom rules for obfuscation. See [Creating custom obfuscation rules](obfuscate-custom-rules.md). |
-| BlockDeveloperMode | Boolean | false | iOS, Android | If set to True, the application is blocked from running on iOS devices that have Developer Mode enabled and Android devices with Developer Options unlocked. |
-| BlockUntrustedKeyboards | Boolean | false | Android | If set to True, untrusted keyboards are detected and blocked. |
-| BlockUntrustedScreenreaders | Boolean | false | Android | If set to True, untrusted screen readers are detected and blocked. |
-| BlockMemoryScan | Boolean | true | Android | If set to true, the application shuts down when it detects unauthorized memory scanning or dumping activity. This protects sensitive data stored in memory, such as encryption keys or session tokens, from being extracted or manipulated by attackers. |
-| BlockUnlockedBootloader | Boolean | true | Android | If set to true, the application exits when it detects that the device bootloader is unlocked. An unlocked bootloader may indicate the device is running a custom or potentially malicious OS. You can optionally configure an exit URL to redirect users when the app exits. For more information, see the documentation on [configuring an exit URL for a blocked app](ExitOnUrl.md). |
-| BlockCodeTraceDetection | Boolean | true | Android | If set to true, the application terminates when it detects runtime code tracing activity. Code tracers follow application threads at runtime to capture native instructions, and are commonly used to reverse engineer apps and extract business logic. |
-| BlockNonSystemOverlays | Boolean | true | Android | If set to true, the application prevents non-system overlays from appearing over it and removes any existing non-system overlays while the app is in use. This protects against tapjacking attacks, where malicious overlays trick users into interacting with hidden content. |
-| BlockEmulator | Boolean | true | iOS, Android | If set to true, the application exits when it detects it is running in an emulator or simulator.  You can optionally configure an exit URL to redirect users when the app exits. For more information, see the documentation on [configuring an exit URL for a blocked app](ExitOnUrl.md). Developers and testers commonly use emulators and simulators during development. Enable this in production builds where emulator access is not expected or permitted. |
-| BlockEmulatedInput | Boolean | false | Android | If set to true, the application blocks inputs injected to the screen by emulated or automated sources. You can also configure the app to exit when emulated input is detected by setting an exit URL. For more information, see the documentation on [configuring an exit URL for a blocked app](ExitOnUrl.md). Some accessibility tools, such as switch access or assistive input devices, rely on emulated input methods and may be incorrectly blocked when this setting is enabled. Enable this only if your target audience does not rely on such tools. |
-| BlockScreenMirroring | Boolean | false | Android | If set to true, the application detects when the device screen is being mirrored to an external display and blocks it by drawing a blank view on secondary displays. Users who legitimately cast their screen, such as for presentations or streaming to a TV via Chromecast or MiraCast, will have their mirrored display go blank while the app is in use. Enable this only if your app handles sensitive data that must be prevented from appearing on external displays. |
-| BlockVPN | Boolean | false | Android | If set to true, the application exits when it detects that a VPN is active on the device. You can optionally configure an exit URL to redirect users when the app exits. For more information, see the documentation on [configuring an exit URL for a blocked app](ExitOnUrl.md). Enterprise users or users who rely on VPNs for privacy may be unexpectedly blocked. Enable this only if your app operates in environments where VPN usage is not permitted. |
-| BlockHiddenSEPolicyArtifacts | Boolean | false | Android | If set to true, the application verifies the device's SELinux policy artifacts. If hidden artifacts indicating a tampered or compromised security policy are detected, the app will close. This covers advanced rooting and root-hiding techniques, including Magisk and KernelSU setups with modules such as TrickyStore. Note: all LineageOS devices ship with a modified SELinux policy. When this setting is enabled, end users on LineageOS devices will be blocked, including on unrooted devices. |
-| DisableAppShielding | Boolean | false | iOS, Android | Activates or deactivates App Shield. |
-| ExitOnURL | URL value | | iOS, Android | If an app feature is blocked due to a configured policy of the **AppShield** plugin, the default browser opens the URL where the problem may be explained. For more information, refer to [ExitOnURL](ExitOnUrl.md). |
-| RemoveQueryAllPackagesPermission | Boolean | true (false for versions below 1.5.1) | Android | If set to True, it removes the app's ability to check other installed applications. For more information, see [here](query-all-packages.md). |
-| android | JSON value | | Android | The key denoting values that apply to Android devices. |
-| global | JSON value | | iOS, Android | Settings in this section apply to both Android and iOS builds. |
-| ios | JSON value | | iOS | The key denoting values that apply to iOS devices. |
+| Configuration | Type | Default value | OS | Extensibility setting | Description |
+| ------------------------------- | ------------ | ------------- | ------------ | ------- | ------------------------------------------------------------------------------------------------- |
+| `AddTrustedKeyboardSigner` | Text | | Android | No | If `BlockUntrustedKeyboards` is set to `true`, this option can whitelist a third-party keyboard. Add this option for each keyboard software that you want to add to the whitelist. |
+| `AddTrustedScreenReaderSigner` | Text | | Android | No | If `BlockUntrustedScreenreaders` is set to `true`, this option can whitelist a third-party screen reader. Add this option for each screen reader software that you want to add to the whitelist. |
+| `AllowJailbrokenRootedDevices` | Boolean | `false` | iOS, Android | Yes | If set to `true`, users can run the app on the jailbroken devices. |
+| `AllowPrivateSpace` | Boolean | `true` | Android | Yes | If set to `false`, the application is blocked from running if the application was started from a private space or a work profile. |
+| `AllowScreenshot` | Boolean | `false` | iOS, Android | Yes | If set to `true`, users can take screenshots of the app. |
+| `AllowTapjacking` | Boolean | `true` | Android | Yes | If set to `false`, the application detects tapjacking attempts and remove the malicious overlay entirely for apps running on Android 12 and above or block inputs to the overlay for versions below Android 12. |
+| `AllowIOSAppOnMacOSX` | Boolean | `false` | iOS | Yes | If set to `true`, the application is allowed to run on macOS via Catalyst or as an iPhone app on Mac. When set to `false` (default), the application exits when it detects it is running on macOS. You can configure an exit URL to redirect users when the app exits. For more information about configuring an exit URL, refer to [Configuring an exit URL for a blocked app](ExitOnUrl.md). macOS provides greater access to debugging and reverse engineering tools than a standard iOS device. Enable only if your app is designed to support macOS and your target audience requires it. |
+| `ApplicationSignerCertificate` | Text(Base64) | | iOS, Android | No | Adds the given certificate to the accepted signers whitelist of the final package. To add more than one certificate, separate the values with a semicolon. |
+| `AppShieldDebugMode` | Boolean | `false` | iOS, Android | Yes | If set to `true`, the shielding process is applied in debug mode, keeping debugging options used in Debug and Development builds. Used for extended developer troubleshooting. Builds with this option can't be uploaded to the Store, and, on Android, they need to be installed using `adb install` with the `-t` option. |
+| `AppShieldObfuscationRules` | Text(base64) | | Android | No | Custom rules for obfuscation. For more information, refer to [Creating custom obfuscation rules](obfuscate-custom-rules.md). |
+| `BlockDeveloperMode` | Boolean | `false` | iOS, Android | Yes | If set to `true`, the application is blocked from running on iOS devices that have Developer Mode enabled and Android devices with Developer Options unlocked. |
+| `BlockUntrustedKeyboards` | Boolean | `false` | Android | Yes | If set to `true`, untrusted keyboards are detected and blocked. |
+| `BlockUntrustedScreenreaders` | Boolean | `false` | Android | Yes | If set to `true`, untrusted screen readers are detected and blocked. Screen readers that come preinstalled on the device as system apps, such as TalkBack, are always trusted and are not blocked. Screen readers installed from an app store or other sources are checked and blocked if untrusted. |
+| `BlockMemoryScan` | Boolean | `true` | Android | Yes | If set to `true`, the application shuts down when it detects unauthorized memory scanning or dumping activity. This protects sensitive data stored in memory, such as encryption keys or session tokens, from being extracted or manipulated by attackers. |
+| `BlockUnlockedBootloader` | Boolean | `true` | Android | Yes | If set to `true`, the application exits when it detects that the device bootloader is unlocked. An unlocked bootloader indicates that the device can run a custom OS. You can optionally configure an exit URL to redirect users when the app exits. For more information about configuring an exit URL, refer to [Configuring an exit URL for a blocked app](ExitOnUrl.md). |
+| `BlockCodeTraceDetection` | Boolean | `true` | Android | Yes | If set to `true`, the application terminates when it detects runtime code tracing activity. Code tracers follow application threads at runtime to capture native instructions, and are commonly used to reverse engineer apps and extract business logic. |
+| `BlockNonSystemOverlays` | Boolean | `true` | Android | Yes | If set to `true`, the application prevents non-system overlays from appearing over it and removes any existing non-system overlays while the app is in use. This protects against tapjacking attacks, where malicious overlays trick users into interacting with hidden content. |
+| `BlockEmulator` | Boolean | `true` | iOS, Android | Yes | If set to `true`, the application exits when it detects it is running in an emulator or simulator.  You can optionally configure an exit URL to redirect users when the app exits. For more information about configuring an exit URL, refer to [Configuring an exit URL for a blocked app](ExitOnUrl.md). Developers and testers commonly use emulators and simulators during development. Enable this in production builds where emulator access is not expected or permitted. |
+| `BlockEmulatedInput` | Boolean | `false` | Android | Yes | If set to `true`, the application blocks inputs injected to the screen by emulated or automated sources. You can also configure the app to exit when emulated input is detected by setting an exit URL. For more information about configuring an exit URL, refer to [Configuring an exit URL for a blocked app](ExitOnUrl.md). Some accessibility tools, such as switch access or assistive input devices, rely on emulated input methods and can be blocked incorrectly when this setting is enabled. Enable this only if your target audience does not rely on such tools. |
+| `BlockScreenMirroring` | Boolean | `false` | Android | Yes | If set to `true`, the application detects when the device screen is being mirrored to an external display and blocks it by drawing a blank view on secondary displays. Users who legitimately cast their screen, such as for presentations or streaming to a TV via Chromecast or MiraCast, have their mirrored display go blank while the app is in use. Enable this only if your app handles sensitive data that must be prevented from appearing on external displays. |
+| `BlockVPN` | Boolean | `false` | iOS, Android | Yes | If set to `true`, the application exits when it detects that a VPN is active on the device. You can optionally configure an exit URL to redirect users when the app exits. For more information about configuring an exit URL, refer to [Configuring an exit URL for a blocked app](ExitOnUrl.md). Enterprise users or users who rely on VPNs for privacy can be blocked unexpectedly. Enable this only if your app operates in environments where VPN usage is not permitted. |
+| `BlockHiddenSEPolicyArtifacts` | Boolean | `false` | Android | Yes | If set to `true`, the application verifies the device's SELinux policy artifacts. If hidden artifacts indicating a tampered or compromised security policy are detected, the app closes. This covers advanced rooting and root-hiding techniques, including Magisk and KernelSU setups with modules such as TrickyStore. All LineageOS devices ship with a modified SELinux policy. When this setting is enabled, end users on LineageOS devices are blocked, including on unrooted devices. |
+| `DisableAppShielding` | Boolean | `false` | iOS, Android | Yes | Activates or deactivates AppShield. |
+| `ExitOnURL` | URL value | | iOS, Android | Yes | If an app feature is blocked due to a configured policy of the **AppShield** plugin, the default browser opens the URL where the problem is explained. For more information, refer to [ExitOnURL](ExitOnUrl.md). |
+| `RemoveQueryAllPackagesPermission` | Boolean | `true` (`false` for versions below 1.5.1) | Android | Yes | If set to `true`, AppShield removes the app's ability to check other installed applications. For more information, refer to [Manage the `QUERY_ALL_PACKAGES` permission for Google Play compliance](query-all-packages.md). |
+| `android` | JSON value | | Android | | The key denoting values that apply to Android devices. |
+| `ios` | JSON value | | iOS | | The key denoting values that apply to iOS devices. |
 
-## Check if app with AppShield builds successfully {#check-app-builds}
+## Check that an app with AppShield builds successfully {#check-app-builds}
 
 To ensure that your build passes the shield phase, check your [app’s build logs](../../building-apps/mobile/creating-mobile-package.md#download-mobile-app-build-logs--download-mobile-app-build-logs).
 
@@ -268,90 +240,139 @@ The shield phase occurs after the build phase, and a message at the end of the l
 
 ## Obfuscation
 
-The limitations that are specific to the obfuscation.
+Obfuscation has the following limitations:
 
-* The plugin obfuscates only the supported **OutSystems** mobile plugins.
-* The plugin obfuscates native Android logs in ODC Portal. You need to use an external tool to deobfuscate the logs.
-* JavaScript files obfuscation isn't supported.
-* Native iOS bitcode obfuscation isn't supported.
-* You need to contact Support to get the mapping files.
+* Obfuscation applies only to the supported **OutSystems** mobile plugins.
+* Obfuscation of JavaScript files isn't supported.
+* Obfuscation of native iOS bitcode isn't supported.
+* Deobfuscation of the native Android logs that the plugin obfuscates in ODC Portal requires an external tool.
+* Access to the mapping files requires contacting Support.
 
 ### String binding {#string-binding}
 
-On Android apps, bindings are created between AppShield and the app so that the presence of AppShield is required for the app to execute normally. The binding process modifies classes by extracting and removing values (i.e., constants) from the application code. When the app is launched, AppShield provides these values for the app only if the configured Shield security policy is satisfied.
+On Android apps, bindings are created between AppShield and the app so that the presence of AppShield is required for the app to execute normally. The binding process modifies classes by extracting and removing values, that is, constants, from the application code. When the app launches, AppShield provides these values to the app only if the configured Shield security policy is satisfied.
 
 The strength of the binding depends on the number of constants removed from the app and the distribution of removed constants across the code base. AppShield adds the removed constants to the encrypted runtime data.
 
-By default, Android apps have the binding active. You can configure this feature using the mechanism explained in the [custom obfuscation rules page](obfuscate-custom-rules.md).
+By default, Android apps have the binding active. For more information about configuring string binding, refer to [Creating custom obfuscation rules](obfuscate-custom-rules.md).
 
 ## Whitelist signing certificates
 
-One of the security features of **AppShield** is repackaging detection, which prevents the re-signing of the app package.
-However, there are some situations where a re-signing of the application is desired and/or required (for example, the Google Play App Signing is required when uploading .aab to the Google Play Store).
-For those reasons, **AppShield** allows to whitelist certificates, so that a given signature is considered safe within the repackaging security analysis.
+If you re-sign your app with a different certificate after you build it, **AppShield** repackaging detection treats the app as repackaged. The app then crashes on startup with a repackaging exception. To prevent this, whitelist the certificate that re-signs the app.
 
-### How to obtain the signing certificate {#obtain-the-signing-certificate}
+Repackaging detection is one of the security features of **AppShield**. It flags packages signed with an unrecognized certificate. For example, Google Play App Signing re-signs the app with a different certificate when you upload an `.aab` file to the Google Play Store. **AppShield** whitelists the certificate of the keystore provided to MABS automatically. Whitelist only the certificates that re-sign the app afterward.
 
-#### For iOS
+When you whitelist a certificate, **AppShield** considers packages signed with that certificate safe during the repackaging analysis.
 
-If you have the **PKCS12 file**, do the following:
+### Obtain the signing certificate {#obtain-the-signing-certificate}
 
-1. Run the command `keytool -storetype PKCS12 -keystore <pkcs12-file> -storepass <store-pass> -alias <alias> -exportcert -rfc > certificate.pem`. You should now have a **certificate.pem** file. An alternative is to run the command `openssl pkcs12 -in <pcks12-file> -nokeys -password pass:<password> -out certificate.pem`. Depending on the certificate and the openssl version, the `-legacy` option might be required.
+To get the certificate value, export the certificate to a `certificate.pem` file, and then copy the certificate text from that file. The export steps depend on the platform and on where the certificate is stored.
 
-1. Open the **certificate.pem** file in a text editor and copy the content between **-BEGIN CERTIFICATE-** and **-END CERTIFICATE-**.
+#### Export the certificate for iOS
 
-#### For Android
+If you have the PKCS12 file, do the following:
 
-If you have the **Keystore file**, do the following:
+1. Export the certificate to a `certificate.pem` file by running the following command:
 
-1. Run the command `keytool -keystore <keystore-file> -storepass <store-pass> -alias <alias> -exportcert -rfc > certificate.pem`. You should now have a **certificate.pem** file.
+    ```
+    keytool -storetype PKCS12 -keystore PKCS12_FILE -storepass STORE_PASSWORD -alias ALIAS -exportcert -rfc > certificate.pem
+    ```
 
-1. Open the **certificate.pem** file in a text editor and copy the content between **-BEGIN CERTIFICATE-** and **-END CERTIFICATE-**.
+    Replace the following:
 
-If the signing certificate is the **App Signing Certificate** from the Google Play App Signing feature, do the following:
+    * `PKCS12_FILE`: The path to the PKCS12 file
+    * `STORE_PASSWORD`: The password of the PKCS12 file
+    * `ALIAS`: The alias of the certificate in the PKCS12 file
 
-1. From Google Play Console download the **App Signing Certificate** available in the **App Signing** fragment.
+1. Optional. To use `openssl` instead of `keytool`, run the following command:
 
-1. Convert the **.der** file to **.pem** by running the command `openssl x509 -inform der -in deployment_cert.der -out certificate.pem`. You should now have a **certificate.pem** file.
+    ```
+    openssl pkcs12 -in PKCS12_FILE -nokeys -password pass:STORE_PASSWORD -out certificate.pem
+    ```
 
-1. Open the **certificate.pem** file in a text editor and copy the content between **-BEGIN CERTIFICATE-** and **-END CERTIFICATE-**.
+    Some certificates and openssl versions require the `-legacy` option.
 
-### How to whitelist the signing certificate
+Continue with [Copy the certificate value](#copy-the-certificate-value).
 
-You can whitelist signing certificates using the `ApplicationSignerCertificate` preference. The value of the preference must be the signing certificate obtained by following the steps in the [How to obtain the signing certificate](#obtain-the-signing-certificate) section.
+#### Export the certificate for Android
 
-The `ApplicationSignerCertificate` preference can be specified multiple times. Each certificates provided in the value of that preference will be whitelisted by AppShield. This means that AppShield will detect applications signed with any of those certificates as secure.
+If you have the keystore file, do the following:
 
-With the `ApplicationSignerCertificate` feature, the certificate of the keystore provided to MABS is also whitelisted. This means that the app retrieved from MABS can be directly installed on any device (because the application will be signed with a trusted certificate).
+1. Export the certificate to a `certificate.pem` file by running the following command:
 
-In the **Android and/or iOS section** of the [Extensibility Configurations JSON](../../building-apps/mobile/extensibility-configurations-json-schema.md), add the **name** with `ApplicationSignerCertificate` and the **value** with the public key. Here is an example:
+    ```
+    keytool -keystore KEYSTORE_FILE -storepass STORE_PASSWORD -alias ALIAS -exportcert -rfc > certificate.pem
+    ```
 
-```json
+    Replace the following:
+
+    * `KEYSTORE_FILE`: The path to the keystore file
+    * `STORE_PASSWORD`: The password of the keystore file
+    * `ALIAS`: The alias of the certificate in the keystore file
+
+If the certificate is the **App Signing Certificate** from the Google Play App Signing feature, do the following:
+
+1. In Google Play Console, download the **App Signing Certificate** from the **App Signing** section. The downloaded file has the `.der` extension.
+
+1. Convert the downloaded file to a `certificate.pem` file by running the following command:
+
+    ```
+    openssl x509 -inform der -in DER_FILE -out certificate.pem
+    ```
+
+    Replace `DER_FILE` with the path to the downloaded `.der` file.
+
+Continue with [Copy the certificate value](#copy-the-certificate-value).
+
+#### Copy the certificate value {#copy-the-certificate-value}
+
+The `certificate.pem` file contains the certificate between a `-----BEGIN CERTIFICATE-----` line and a `-----END CERTIFICATE-----` line. To get the value for the `ApplicationSignerCertificate` preference, do the following:
+
+1. Open the `certificate.pem` file in a text editor.
+
+1. Copy the text between the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines. Don't include these two lines.
+
+1. Remove the line breaks so the copied text is a single line.
+
+### Whitelist the signing certificate
+
+You can whitelist signing certificates using the `ApplicationSignerCertificate` preference. This option has no extensibility setting, so you set it as a preference in the extensibility configuration. Set the value of the preference to the certificate value that you get by following the steps in the [Obtain the signing certificate](#obtain-the-signing-certificate) section.
+
+To whitelist more than one certificate for a platform, separate the certificate values with a semicolon (`;`) in the value of the `ApplicationSignerCertificate` preference. **AppShield** treats applications signed with any of those certificates as secure.
+
+**AppShield** whitelists the certificate of the keystore provided to MABS automatically. You can install the app retrieved from MABS directly on any device.
+
+In the [app extensibility configurations JSON](../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md), add the preference to `appConfigurations.cordova.preferences`. To whitelist a certificate for a single platform, add the preference to the `android` section for an Android certificate, or to the `ios` section for an iOS certificate. Set the preference name to `ApplicationSignerCertificate` and its value to the certificate value. For more information about where to edit the extensibility configuration, refer to [Configuration](#configuration).
+
+The following example whitelists two certificates for Android and three for iOS. Each platform has a single value, and semicolons separate the certificates:
+
+```javascript
 {
-    "preferences": {
-        "android": [
-            {
-                "name": "ApplicationSignerCertificate",
-                "value": "[public-key-certificate-1];[public-key-certificate-2]"
+    "appConfigurations": {
+        "cordova": {
+            "preferences": {
+                "android": {
+                    "ApplicationSignerCertificate": "ANDROID_CERTIFICATE_VALUE_1;ANDROID_CERTIFICATE_VALUE_2"
+                },
+                "ios": {
+                    "ApplicationSignerCertificate": "IOS_CERTIFICATE_VALUE_1;IOS_CERTIFICATE_VALUE_2;IOS_CERTIFICATE_VALUE_3"
+                }
             }
-        ],
-        "ios": [
-            {
-                "name": "ApplicationSignerCertificate",
-                "value": "[public-key-certificate-3];[public-key-certificate-4];[public-key-certificate-5]"
-            }
-        ]
+        }
     }
 }
 ```
 
-After these changes steps, generate a new build of your mobile app.
+Replace the following:
+
+* `ANDROID_CERTIFICATE_VALUE_1` and `ANDROID_CERTIFICATE_VALUE_2`: The certificate values of the two Android certificates
+* `IOS_CERTIFICATE_VALUE_1`, `IOS_CERTIFICATE_VALUE_2`, and `IOS_CERTIFICATE_VALUE_3`: The certificate values of the three iOS certificates
+
+After you update the extensibility configuration, generate a new build of your mobile app.
 
 ## Limitations {#limitations}
 
-**AppShield** has the following limitations:
-
-* After MABS creates a build with the **AppShield** plugin active and signs the build, you can't sign that build again manually because the app would recognize that as a sign of tampering.
+**AppShield** isn't compatible with the Automatic Protection service of Google Play. The service injects additional code into the app, which makes **AppShield** trigger a repackaging exception. Disable Automatic Protection in Google Play for apps that use **AppShield**.
 
 ## Related resources {#related}
 

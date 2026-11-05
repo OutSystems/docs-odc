@@ -1,14 +1,17 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports configuring an "Exit URL" in mobile apps using AppShield for security-related shutdowns.
 tags:
+  - Android
+  - iOS
   - Mobile app
   - Plugins
   - Security
+  - Settings
 locale: en-us
 guid: 4afd7e48-139b-4672-a1f9-ec8a1aadac75
 app_type: mobile apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4725%3A140&mode=design&t=olEoleG2T5cjfzpt-1
+figma:
 audience:
   - Developer
   - Front-end developer
@@ -30,7 +33,7 @@ Applies only to Mobile Apps.
 
 </div>
 
-If an app with the AppShield security plugin detects modification or tempering, the app shuts down. You can use the AppShield **ExitOnURL** configuration to inform the user of the reason. The **ExitOnURL** lets you define an **Exit URL** that the app opens in the default browser. It also lets you explain the issue to the app users.
+If an app with the AppShield security plugin detects modification or tampering, the app shuts down. You can use the AppShield **ExitOnURL** extensibility setting to inform the user of the reason. The **ExitOnURL** lets you define an **Exit URL** that the app opens in the default browser. It also lets you explain the issue to the app users.
 
 ## Prerequisites
 
@@ -49,30 +52,19 @@ If the app shuts down due to security concerns, it loads the URL only if you con
 
 ## Define and enable your exit URL
 
-To enable the `ExitOnURL` feature, first copy the JSON code snippet below and continue with the following steps:
+To enable the `ExitOnURL` feature, set the **ExitOnURL** extensibility setting. Because it's an extensibility setting, you can use a different exit URL in each environment. For more information about editing extensibility settings, refer to [Extensibility settings](../../building-apps/mobile/configuring-mobile-apps.md#configure-extensibility-settings). Do the following:
 
-```javascript
-{
-    "preferences": {
-        "global": [
-            {
-                "name": "ExitOnURL",
-                "value": "https://example.com/protectionblocker/landing-page"
-            }
-        ]
-    }
-}
-```
-
-1. From **ODC Studio**, go to the **Interface** tab, select the app name, and click **…** on the right side of the **Extensibility Configuration** field to open the **Extensibility Configuration** window. Then paste the JSON code snippet in the window to define the `ExitOnURL` property as a new global preference.
-
-    ![Screenshot showing where to paste the ExitOnURL JSON code snippet in the ODC Studio Extensibility Configuration window](images/extensibility-configuration-appshield-odcs.png "Extensibility Configuration in ODC Studio")
-
-1. In the `ExitOnURL` value string, replace `example.com` with the correct domain name and `landing-page` with the path and name that suits your needs. A typical **Exit URL** may be `https://example.com/errors/protectionblocker/why-cant-i-use-my-app`. Then click **Close**.
+1. In **ODC Portal**, set the **ExitOnURL** extensibility setting to the exit URL, for example `https://example.com/protectionblocker/landing-page`. Replace `example.com` with your domain name and `landing-page` with the path of your landing page.
 
     <div class="info" markdown="1">
 
     The **Exit URL** value must not contain any URL parameters. For example, appending `&param=1` to the **Exit URL** value prevents the app from loading the page.
+
+    </div>
+
+    <div class="info" markdown="1">
+
+    If the extensibility configuration of your app defines an `ExitOnURL` preference, the preference takes precedence over the extensibility setting. Remove the preference so that the extensibility setting applies.
 
     </div>
 

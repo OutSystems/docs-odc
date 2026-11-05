@@ -1,9 +1,11 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enhances mobile app security with comprehensive protection features via the AppShield plugin.
+summary: OutSystems Developer Cloud (ODC) AppShield protection features cover root detection, code injection, obfuscation, tapjacking, and screen mirroring.
 tags:
   - Android
   - iOS
   - Mobile app
+  - Native App
+  - Plugins
   - Security
 locale: en-us
 guid: 09e87858-f0f8-48c8-bbc1-2d2dcb4a0980
@@ -17,6 +19,7 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+isautopublish: true
 ---
 
 # AppShield protection features
@@ -38,7 +41,7 @@ There are three sections:
 
 Protection is available for both iOS and Android apps.
 
-### Root/Jailbreak detection
+### Root/jailbreak detection
 
 * **What it does:** Check if the device has privilege escalation enabling features by evaluating artifacts that provide high levels of certainty that the device is rooted.
 * **What happens:** On positive detections, block the app from running. If **ExitOnURL** is configured, a URL, which the app developer can use to inform the app end-user, is opened upon blocking the app. See [Configuring an exit URL for a blocked app](ExitOnUrl.md)
@@ -62,7 +65,7 @@ Protection is available for both iOS and Android apps.
 * **What happens:** On positive detections, block the app from running. If **ExitOnURL** is configured, a URL, which the app developer can use to inform the app end-user, is opened upon blocking the app. See [Configuring an exit URL for a blocked app](ExitOnUrl.md)
 * **Is it configurable?:** No.
 
-### Screenshot protection
+### Screenshot protection {#screenshot-protection}
 
 * **What it does:** Blocks the creation of both user and system screenshots.
 * **What happens:** On positive detections, block screenshots by showing a black screen instead.
@@ -72,7 +75,7 @@ Protection is available for both iOS and Android apps.
 
 Protection is available specific to Android apps.
 
-### Code Obfuscation
+### Code obfuscation
 
 * **What it does:** Applies native mobile code obfuscation to include encryption and static data scrambling.
 * **What happens:** Hinders readability of the native code of your application for external agents or attackers.
@@ -86,45 +89,53 @@ Protection is available specific to Android apps.
 
 ### Keylogger protection
 
-* **What it does:** Applies a combination of protection features to block keylogging. The first uses Screen reader blocking (see [Screen Reader Protection](#android-screen-reader) to prevent keylogging through screen readings. The second uses screenshot protection to prevent keylogging through screenshot analysis. (see [Screenshot protection](#android-screenshot)).
+* **What it does:** Applies a combination of protection features to block keylogging. The first uses Screen reader blocking (see [Screen Reader Protection](#android-screen-reader)) to prevent keylogging through screen readings. The second uses screenshot protection to prevent keylogging through screenshot analysis. (see [Screenshot protection](#screenshot-protection)).
 
-### Screen reader detection { #android-screen-reader }
+### Screen reader detection {#android-screen-reader}
 
 * **What it does:** Detects and blocks untrusted screen readers. Malware usually uses screen readers to abuse the accessibility permissions of a device.
-* **What happens:** On positive detections, block screen readers. In case the screen reader could not be blocked, it will block the app from running. If **ExitOnURL** is configured, a URL will open when blocking the app. The URL can be used to inform end-users about the occurrence. See [Configuring an exit URL for a blocked app](ExitOnUrl.md) for more information.
-* **Is it configurable?:** Yes. By default, this feature is disabled because Screen Reader detection might affect apps that use features for accessibility. To activate it, you must add the extensibility "BlockUntrustedScreenreaders" with the value “true”. See the following example:
+* **What happens:** On positive detections, block screen readers. If the app can't block the screen reader, it blocks the app from running. If **ExitOnURL** is configured, a URL opens when the app is blocked. The URL can be used to inform end-users about the occurrence. See [Configuring an exit URL for a blocked app](ExitOnUrl.md) for more information.
+* **Is it configurable?:** Yes. By default, this feature is disabled because Screen Reader detection might affect apps that use features for accessibility. To activate it, you must set the **BlockUntrustedScreenreaders** extensibility setting to `true` in **ODC Portal**.
 
+After activating this feature, all screen readers, except system ones, are blocked. To allow the use of some specific screen reader software, add the `AddTrustedScreenReaderSigner` preference to the extensibility configuration of your app, because this option has no extensibility setting. Set its value to the hash value of the screen reader software you want to allow. You can allow multiple screen reader software by adding the hash values separated by semicolons. The following example shows the preference:
+
+```javascript
 {
-    "name": "BlockUntrustedScreenreaders",
-    "value": "true"
-},
-
-After activating this feature, all screen readers, except system ones, are blocked. To allow the use of some specific screen reader software, you need to add the  "AddTrustedScreenReaderSigner" extensibility with the hash value of the screen reader software you want to allow. You can allow multiple screen reader software by adding the hash value as many times as needed separating them by semicolons. See the following example:
-
-{
-    "name": "AddTrustedScreenReaderSigner",
-    "value": "16a14259f274eaafc190a0fcffa3a59c822b99d09f259e0ed3147c01e24b0179;b6bf61861c71c93ad26d84fc3e5e2c1ddb662ffb9f871904be8f5697adb0c5e0"
-},
+    "appConfigurations": {
+        "cordova": {
+            "preferences": {
+                "android": {
+                    "AddTrustedScreenReaderSigner": "16a14259f274eaafc190a0fcffa3a59c822b99d09f259e0ed3147c01e24b0179;b6bf61861c71c93ad26d84fc3e5e2c1ddb662ffb9f871904be8f5697adb0c5e0"
+                }
+            }
+        }
+    }
+}
+```
 
 For more information, see [how to get the application hash](#how-to-get-the-application-hash)
 
-### Untrusted keyboard detection { #android-untrusted-keyboard }
+### Untrusted keyboard detection {#android-untrusted-keyboard}
 
 * **What it does:** Detects and blocks untrusted keyboards. All system installed keyboards are trusted if the device's firmware is trusted (i.e. the device is not rooted).
-* **What happens:** On positive detections, block the app from running. If **ExitOnURL** is configured, a URL will open when blocking the app. The URL can be used to inform end-users about the occurrence. See [Configuring an exit URL for a blocked app](ExitOnUrl.md) for more information.
-* **Is it configurable?:** Yes. By default, this feature is disabled. To activate it, add the extensibility "BlockUntrustedKeyboards" with the value “true”. See the following example:
+* **What happens:** On positive detections, block the app from running. If **ExitOnURL** is configured, a URL opens when the app is blocked. The URL can be used to inform end-users about the occurrence. See [Configuring an exit URL for a blocked app](ExitOnUrl.md) for more information.
+* **Is it configurable?:** Yes. By default, this feature is disabled. To activate it, set the **BlockUntrustedKeyboards** extensibility setting to `true` in **ODC Portal**.
 
+To allow the use of some specific keyboard software, add the `AddTrustedKeyboardSigner` preference to the extensibility configuration of your app, because this option has no extensibility setting. Set its value to the hash value of the keyboard software that you want to allow. You can allow multiple keyboard software by adding the hash values separated by semicolons. The following example shows the preference:
+
+```javascript
 {
-    "name": "BlockUntrustedKeyboards",
-    "value": "true"
-},
-
-To allow the use of some specific keyboard software, you need to add the "AddTrustedKeyboardSigner" extensibility with the hash value of the  keyboard software that you want to allow. You can allow multiple keyboard software by adding the hash value as many times as needed separating them by semicolons. See the following example:
-
-{
-    "name": "AddTrustedKeyboardSigner",
-    "value": "ea43e0f05f6ef9e5d16283d90504749d4e03630de7ea792c70f72b9be6c02e5e;9ac6ca814a945e5aaed450614a99427912f4d2751fb044ea2250e940e1e95e46"
-},
+    "appConfigurations": {
+        "cordova": {
+            "preferences": {
+                "android": {
+                    "AddTrustedKeyboardSigner": "ea43e0f05f6ef9e5d16283d90504749d4e03630de7ea792c70f72b9be6c02e5e;9ac6ca814a945e5aaed450614a99427912f4d2751fb044ea2250e940e1e95e46"
+                }
+            }
+        }
+    }
+}
+```
 
 For more information, see [how to get the application hash](#how-to-get-the-application-hash)
 
@@ -134,13 +145,13 @@ For more information, see [how to get the application hash](#how-to-get-the-appl
 * **What happens:** On positive detections, block the app from running. If **ExitOnURL** is configured, a URL, which the app developer can use to inform the app end-user, is opened upon blocking the app. See [Configuring an exit URL for a blocked app](ExitOnUrl.md)
 * **Is it configurable?:** No.
 
-### Tapjacking protection { #tapjacking-protection }
+### Tapjacking protection {#tapjacking-protection}
 
 * **What it does:** Blocks an attack vector where a user is tricked into granting permissions to a malicious app by unintentionally selecting a security-relevant control that was hidden behind a valid control of the another app.  
-* **What happens:** The application will check for malicious overlays and remove the overlay entirely for apps running on Android 12 and above or block inputs to the overlay for versions below Android 12.
+* **What happens:** The application checks for malicious overlays and remove the overlay entirely for apps running on Android 12 and above or block inputs to the overlay for versions below Android 12.
 * **Is it configurable?:** Yes, this protection feature can be disabled. See [AppShield Configuration](intro.md#configuration)
 
-### Private Space Detection { #private-space-detection }
+### Private space detection {#private-space-detection}
 
 * **What it does:** Blocks an app from running if the app is installed on a private space or a work profile.  
 * **What happens:** On positive detections block the app from running. If **ExitOnURL** is configured, a URL, which the app developer can use to inform the app end-user, is opened upon blocking the app. See [Configuring an exit URL for a blocked app](ExitOnUrl.md)

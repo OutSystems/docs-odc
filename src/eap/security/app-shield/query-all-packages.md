@@ -2,8 +2,11 @@
 summary: Manage QUERY_ALL_PACKAGES permission in Android apps using AppShield on OutSystems Developer Cloud (ODC) for Google Play compliance.
 tags:
   - Android
+  - Deploy
   - Mobile app
+  - Plugins
   - Security
+  - Settings
 locale: en-us
 guid: c8e9533c-1f33-407f-b3f6-523ac67ad126
 app_type: mobile apps
@@ -18,9 +21,10 @@ coverage-type:
   - understand
 topic:
   - manage-query-all-packages
+isautopublish: true
 ---
 
-# Query All Packages permission in Android apps using AppShield
+# Manage the `QUERY_ALL_PACKAGES` permission for Google Play compliance
 
 <div class="info" markdown="1">
 
@@ -43,15 +47,13 @@ To ensure your apps are complaint, follow one of these options for each app:
 
 * Otherwise, remove the **QUERY_ALL_PACKAGES** permission from your app. Check how to [remove the permission request from your app](#no-query)
 
-## Keep the QUERY_ALL_PACKAGES permission and provide a declaration { #query }
+## Keep the QUERY_ALL_PACKAGES permission and provide a declaration {#query}
 
 If your application requires PCI compliance, continue to use the QUERY_ALL_PACKAGES permission and ask Google for permission to use the permission. Do the following:
 
 1. Ensure you are using AppShield Plugin version 1.0 or higher.
 
-1. Add the following preference to your app's **Extensibility Options**:
-
-        "RemoveQueryAllPackagesPermission":"false"
+1. In **ODC Portal**, set the **RemoveQueryAllPackagesPermission** extensibility setting to `false`.
 
 1. Generate a new Android package for your app and submit your updated app to Google Play.
 
@@ -59,14 +61,12 @@ If your application requires PCI compliance, continue to use the QUERY_ALL_PACKA
 
         This application requires using the QUERY_ALL_PACKAGES for Payment Card Industry compliance (PCI) purposes. This software implements a required mechanism to determine whether or not the device contains one or more apps originating from non-trusted sources. Such sources can be third-party app stores, or locally side-loaded apps. The information is only processed inside the app for this purpose.
 
-## Remove the QUERY_ALL_PACKAGES permission from your app { #no-query }
+## Remove the QUERY_ALL_PACKAGES permission from your app {#no-query}
 
 If your app doesn't require PCI compliance, remove the QUERY_ALL_PACKAGES permission from your app by doing the following:
 
 1. Ensure you are using AppShield Plugin version 1.0 or higher.
 
-1. Add the following preference to your app's **Extensibility Options**:
-
-        "RemoveQueryAllPackagesPermission":"true"
+1. In **ODC Portal**, set the **RemoveQueryAllPackagesPermission** extensibility setting to `true`.
 
 1. Generate a new Android package for your app and submit your updated app to Google Play.

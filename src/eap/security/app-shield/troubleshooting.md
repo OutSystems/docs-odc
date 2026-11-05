@@ -70,7 +70,7 @@ If this occurs, contact Google directly and explain that the app exited for secu
 
 ### iOS
 
-On iOS, it isn't possible to have such logs. Thus, the best way to troubleshoot the reason for an app crash from AppShield protection features is to implement the **[ExitOnURL](ExitOnUrl.md)** configuration to inform the user of the reason. The **ExitOnURL** lets you define an **Exit URL** which the app opens in the default browser. It also lets you explain the issue to the app users.
+iOS doesn't provide such logs. To find the reason for an app crash from AppShield protection features, set the **ExitOnURL** extensibility setting to inform the user of the reason. For more information, refer to [ExitOnURL](ExitOnUrl.md). The **ExitOnURL** lets you define an **Exit URL** that the app opens in the default browser. It also lets you explain the issue to the app users.
 
 ## Shutdown reasons
 

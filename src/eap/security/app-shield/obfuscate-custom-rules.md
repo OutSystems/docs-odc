@@ -1,7 +1,11 @@
 ---
 summary: Explore how to create and implement custom obfuscation rules for non-OutSystems plugins in OutSystems Developer Cloud (ODC).
 tags:
+  - Cordova
+  - Extensions
+  - Java
   - Mobile app
+  - Native App
   - Plugins
   - Security
 locale: en-us
@@ -62,21 +66,23 @@ If you are using a plugin that needs specific rules on distinct Shielded apps, y
 1. Rules defined in the plugin/library extensibility configuration are appended
 1. Rules from the app (default or replaced) always come first in the final rules file
 
-If you want to configure specific rules for a custom plugin, you can also add the `AppShieldObfuscationRules` preference on your plugin, like so:
+To configure specific rules for a custom plugin, add the `AppShieldObfuscationRules` preference to the `pluginConfigurations.cordova.preferences` property of the library extensibility configuration, as follows:
 
-```
+```javascript
 {
-    "plugin": <your plugin object>,
-    "preferences": {
-        "android": [
-            {
-                "name": "AppShieldObfuscationRules",
-                "value": [Rules in Base 64]
+    "pluginConfigurations": {
+        "cordova": {
+            "preferences": {
+                "android": {
+                    "AppShieldObfuscationRules": "BASE64_ENCODED_RULES"
+                }
             }
-        ]
+        }
     }
 }
 ```
+
+Replace `BASE64_ENCODED_RULES` with the Base64 encoding of your custom obfuscation rules.
 
 ## Create your own obfuscation rules
 
@@ -204,20 +210,21 @@ To enable custom code obfuscation, follow these steps to add a property to the E
 
 1. From ODC Studio, select **your app name**, go to the properties, and double-click **Extensibility Configuration**.
 
-    ![Screenshot of the Extensibility Configuration field in ODC Studio for adding custom obfuscation rules](images/extensibility-configurations-odcs.png "Extensibility Configurations in ODC Studio")
+    ![Screenshot of the Extensibility Configuration field in ODC Studio for adding custom obfuscation rules](images/extensibility-configurations-odcs.png "Extensibility Configuration Field")
 
-1. In the **Extensibility Configuration** field, enter the obfuscation property as a new global preference. Call the new property in the Extensibility Configuration JSON **AppShieldObfuscationRules**, and its value is a base64 encoding of your custom obfuscation rules. The following code snippet is an example of the JSON implementation.
+1. In the **Extensibility Configuration** field, enter the obfuscation property as a Cordova preference. Name the property `AppShieldObfuscationRules` and set its value to the Base64 encoding of your custom obfuscation rules. The following code snippet is an example of the JSON implementation.
 
         {
-            "preferences": {
-                "global": [
-                    {
-                        "name": "AppShieldObfuscationRules",
-                        "value": (bases64-encoded rules)
+            "appConfigurations": {
+                "cordova": {
+                    "preferences": {
+                        "AppShieldObfuscationRules": "BASE64_ENCODED_RULES"
                     }
-                ]
+                }
             }
         }
+
+    Replace `BASE64_ENCODED_RULES` with the Base64 encoding of your custom obfuscation rules.
 
 <div class="info" markdown="1">
 
