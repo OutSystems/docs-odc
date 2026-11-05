@@ -84,18 +84,31 @@ The way you configure scopes differs slightly depending on the authentication pr
 
 In a self-hosted tenant, end users of every stage must authenticate through an external OIDC identity provider. This includes the Development stage, which runs in the OutSystems Cloud. If a stage has no external IdP assigned, the pre-built login screen has nothing to show and app authentication fails.
 
-The built-in provider is only available for IT-user sign-in to the ODC Portal and ODC Studio. It cannot be used for end-user authentication in any stage.
+The built-in provider is only available for IT-user sign-in to the ODC Portal and ODC Studio. It can't be used for end-user authentication in any stage.
 
 Two separate OIDC connector configurations are required, one for each deployment context:
 
-* **For Cloud**: Assigned to the Development stage. Requires a client secret (private client).
-* **For self-hosted**: Assigned to Test and Production stages. Does **not** require a client secret (public client).
+* **For Cloud**: Assigned to the Development stage. Requires a private client with a client secret.
+* **For self-hosted**: Assigned to Test and Production stages. Requires a public client without a client secret.
 
-A connector created as one type cannot be assigned to stages of the other type.
+A connector created as one type can't be assigned to stages of the other type.
+
+For self-hosted stages, register the app in your IdP as a public client and don't configure a client secret in ODC Portal. If the IdP app is a confidential client, the IdP rejects the token request because the request has no client secret, and users can't sign in. For example, in Microsoft Entra ID, turn on **Allow public client flows** in the **Authentication** settings of the app registration.
 
 The same underlying IdP service can back both connectors. A common setup uses one IdP service with two app registrations: one for Development and one shared across Test and Production.
 
 To add each connector type, go to **ODC Portal** > **Management** > **Govern** > **Identity providers**. In the **Add Provider** dropdown, select **OpenID Connect** under the relevant section (**For Cloud** or **For self-hosted**). After adding both connectors, assign each to its corresponding stage.
+
+### End-user permissions in self-hosted tenants {#idp-self-hosted-claims}
+
+In a self-hosted tenant, ODC grants end-user permissions based on a claim that your IdP sends. Map the claim to an end-user group, as described in [IdP and end-user group mapping](end-user-group-mapping.md). Cloud stages also support claim mapping, but it's optional there.
+
+The claim must meet the following requirements:
+
+* The claim is in the ID token that your IdP issues. ODC doesn't read claims from the UserInfo endpoint.
+* The claim value is a string. For multiple values, use a string with a delimiter, such as `marketing,sales`, and enter that delimiter in the **Delimiter** field when you create the group mapping. A JSON array isn't supported.
+
+If the claim is missing from the ID token or is an array, users sign in but ODC doesn't grant them any app roles. For more information, refer to [Group claims](end-user-group-mapping.md#group-claims).
 
 ## System considerations {#system-considerations}
 
@@ -119,7 +132,7 @@ If your IdP can't be exposed to the public internet, allowlist the ODC Identity 
     Expected: https://login.microsoftonline.com/{tenantid}/v2.0
     ```
 
-* Only the `client_secret_post` authentication method is supported for providers used in cloud stages. In self-hosted tenants, providers configured **For self-hosted** are public clients and do not use a client secret.
+* Only the `client_secret_post` authentication method is supported for providers used in cloud stages. In self-hosted tenants, providers configured **For self-hosted** must be public clients, and you don't configure a client secret for them.
 
 * Only the Authorization Code flow with PKCE is supported. Implicit and hybrid flows are not supported.
 

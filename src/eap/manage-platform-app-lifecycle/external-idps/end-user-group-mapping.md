@@ -35,7 +35,7 @@ You can map identity claims (for example, **group**) from your IdP to [end-user 
 
 <div class="info" markdown="1">
 
-This feature requires your IdP to include the claims you choose to map on in the token it issues. If you map IdP groups, your IdP must support and emit group claims, and you may need to configure it to send them during authentication.
+This feature requires your IdP to include the claims you choose to map on in the ID token it issues. ODC doesn't read claims from the UserInfo endpoint. If you map IdP groups, configure your IdP to include the claim that holds the user's group membership in the ID token. The claim name depends on your IdP.
 
 You can only map [end-users](../../user-management/intro.md#end-users). You can't map [members (IT-users)](../../user-management/intro.md#members-it-users) with organization roles, such as Admin or Developer.
 
@@ -92,6 +92,8 @@ In this example, the claim indicates that the user belongs to the `marketing` gr
 If your IdP sends multiple group values in a single claim, it may use a delimiter to separate them (for example, a comma, semicolon, or pipe character). The **claim value delimiter** is the character or sequence of characters used to split the claim value into individual groups.
 
 For SAML providers, the comma (`,`) is the supported character to separate multiple group values in a single claim.
+
+The claim value must be a string, even when it holds several groups. ODC doesn't support a JSON array, such as the array that some IdPs emit for a built-in group claim. If your IdP can't send the groups as a string, map a different claim that carries them as a delimited string.
 
 The maximum claim length is as follows:
 
