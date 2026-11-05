@@ -6,8 +6,7 @@ figma: https://www.figma.com/design/tBZkZppoX8yflqZ57AJrtt/File-Data-Preview?nod
 coverage-type:
   - understand
 topic:
-  - edit-data-service-studio
-  - file-storage
+  - file-data-preview
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

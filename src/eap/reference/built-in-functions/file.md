@@ -18,7 +18,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - file-storage
+  - file-built-in-functions
 isautopublish: true
 ---
 

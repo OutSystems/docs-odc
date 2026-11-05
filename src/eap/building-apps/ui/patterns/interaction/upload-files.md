@@ -7,7 +7,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - file-storage
+  - odc-upload-size-limit
+  - unsaved-upload-lifecycle
+  - use-upload-widget-odc
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

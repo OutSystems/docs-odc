@@ -19,7 +19,9 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - file-storage
+  - check-file-exists
+  - copy-file-ownership
+  - generate-signed-urls
 isautopublish: true
 ---
 

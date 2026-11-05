@@ -7,7 +7,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - file-storage
+  - configure-image-caching
+  - display-cloud-images
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

@@ -7,7 +7,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - file-storage
+  - use-download-node
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

@@ -8,7 +8,9 @@ coverage-type:
   - apply
   - evaluate
 topic:
-  - file-storage
+  - expired-signed-url-idle-screens
+  - generate-signed-urls
+  - signed-url-safe-usage
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
