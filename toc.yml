@@ -224,6 +224,13 @@
                 - href: eap/building-apps/data/data-best-practices/batch-integration/parallel.md
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
+        # The File data type
+        - href: eap/building-apps/data/binaries/binaries-native-cloud.md
+        - topics:
+            - href: eap/building-apps/data/binaries/file-reference-lifecycle.md
+            - href: eap/building-apps/data/binaries/file-signed-urls.md
+            - href: eap/building-apps/data/binaries/file-data-preview.md
+            - href: eap/building-apps/data/binaries/working-with-file-in-external-logic.md
         - href: eap/building-apps/data/convert-data-types.md
         - href: eap/building-apps/data/structure-create-use.md  
         - href: eap/building-apps/data/client-variable.md  
@@ -301,6 +308,8 @@
                     - href: eap/building-apps/ui/patterns/interaction/data-grid/data-grid-save.md
                 - href: eap/building-apps/ui/patterns/interaction/datepicker.md
                 - href: eap/building-apps/ui/patterns/interaction/datepickerrange.md
+                - href: eap/building-apps/ui/patterns/interaction/display-images.md
+                - href: eap/building-apps/ui/patterns/interaction/download-files.md
                 - href: eap/building-apps/ui/patterns/interaction/dropdownsearch.md
                 - href: eap/building-apps/ui/patterns/interaction/dropdowntags.md
                 - href: eap/building-apps/ui/patterns/interaction/floatingactions.md
@@ -316,6 +325,7 @@
                 - href: eap/building-apps/ui/patterns/interaction/sidebar.md
                 - href: eap/building-apps/ui/patterns/interaction/stackedcards.md
                 - href: eap/building-apps/ui/patterns/interaction/timepicker.md
+                - href: eap/building-apps/ui/patterns/interaction/upload-files.md
                 - href: eap/building-apps/ui/patterns/interaction/video.md
             - href: eap/building-apps/ui/patterns/navigation/intro.md
             - topics:
@@ -1044,6 +1054,7 @@
     - topics:
         - href: eap/reference/system-actions/auth.md
         - href: eap/reference/system-actions/user.md
+        - href: eap/reference/system-actions/file.md
         - href: eap/reference/system-actions/workflows.md
         - href: eap/reference/system-actions/get-default-domain.md
         - href: eap/reference/system-actions/application-invalidate-cache.md
@@ -1053,6 +1064,7 @@
         - href: eap/reference/built-in-functions/data-conversion.md
         - href: eap/reference/built-in-functions/dateandtime.md
         - href: eap/reference/built-in-functions/email.md
+        - href: eap/reference/built-in-functions/file.md
         - href: eap/reference/built-in-functions/format.md
         - href: eap/reference/built-in-functions/math.md
         - href: eap/reference/built-in-functions/numeric.md

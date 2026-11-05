@@ -2,8 +2,11 @@
 summary: OutSystems Developer Cloud (ODC) enables data editing directly within ODC Studio, facilitating real-time app testing and stakeholder demonstrations.
 tags:
   - Data
+  - Data Integrity
   - Data Model
   - Entities
+  - Logic
+  - Mentor Studio
   - Testing
 locale: en-us
 guid: 7d4d3bb7-5419-482d-8feb-747de019a7a0
@@ -99,7 +102,7 @@ Additionally, foreign key cells for the User entity don't show values or suggest
 
 You must have the App management **Change** permission for the app
 
-![Image displaying the change permission settings for app management in ODC Studio](images/edit-data-change-permission-odcs.png "App Management Change Permission in ODC Studio")
+![Screenshot of the App management Change permission setting in ODC Portal](images/edit-data-change-permission-pl.png "App Management Change Permission")
 
 Learn how to [add a record or row](#add-a-record-or-row), [delete a record or row](#delete-a-record-or-row), and [modify a record's attribute](#modify-a-records-attribute) in ODC Studio.
 
@@ -115,7 +118,7 @@ To add a record or row, follow these steps:
 
 1. Click **Add row**.
 
-    ![Image showing mandatory fields highlighted with red outlines in ODC Studio data editing interface](images/edit-data-mandatory-fields-odcs.png "Mandatory Fields Highlighted in ODC Studio")
+    ![Screenshot of mandatory fields highlighted with red outlines in the ODC Studio data editing interface](images/edit-data-mandatory-fields-odcs.png "Mandatory Fields Highlighted in ODC Studio")
 
     **Note:** If any cell has a red outline, it means that those fields are mandatory and you must fill them in. To understand each issue, hover over the highlighted cell.
 
@@ -137,7 +140,7 @@ To delete a record or row, follow these steps:
 
 1. You can delete more than one row at a time. Once you've  finished your changes, click **Apply**.
 
-    ![Image displaying the Apply button to confirm row deletion in ODC Studio](images/edit-data-delete-row-apply-odcs.png "Applying Row Deletion in ODC Studio")
+    ![Screenshot of the Apply button to confirm row deletion in ODC Studio](images/edit-data-delete-row-apply-odcs.png "Apply Button for Row Deletion")
 
 ## Modify a record's attribute
 
@@ -160,6 +163,7 @@ To modify a record's attribute or cell, follow these steps:
     * For a **Date Time** cell, enter a time using the YYYY-MM-DD HH:MM:SS format, for example, 1988-08-28 23:59:59.
     * For a **Boolean** cell, select either True or False.
     * For a **Binary** cell, select and upload a file.
+    * For a **File** cell, refer to [Preview file data in ODC Studio](binaries/file-data-preview.md). **File** cells are read-only in this dialog.
     * For an entity identifier cell, select a value from the dropdown.
     * For a static entity identifier cell, select a value from the dropdown.
 

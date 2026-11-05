@@ -3,10 +3,10 @@ summary: OutSystems Developer Cloud (ODC) data mashup queries cover cross-databa
 tags:
   - Aggregates
   - Best Practices
+  - External Databases
   - Indexes
   - Optimization
   - Performance
-  - Sorting
   - SQL
 guid: eb941889-6a5e-4e81-a570-80321841e5c1
 locale: en-us
@@ -15,7 +15,6 @@ platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5399%3A383&mode=design&t=SWFFXJVfxBN7UhUU-1
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
   - mentor studio
@@ -35,7 +34,7 @@ To better understand Joins in OutSystems, refer to the [Supported Join Types](su
 
 You can define a left join using the With or Without join type. You effectively create a right join by swapping the entities, moving the one on the right to the left.
 
-![Diagram showing different types of database joins: Left Join, Right Join, Inner Join, and Full Outer Join.](images/different-joins.png "Different Types of Joins")
+![Diagram showing different types of database joins: Left Join, Right Join, Inner Join, and Full Outer Join.](images/different-joins-diag.png "Different Types of Joins")
 
 To write better queries, you need to understand the following joins:
 
@@ -111,6 +110,7 @@ Check the query against the guidance in this page. The platform guarantees that 
 * The filters follow [Filters](#filters), with predicates for each entity combined with AND.
 * The aggregate functions and grouping follow [Aggregate functions and grouping](#aggregate-functions-and-grouping).
 * The query selects only the attributes that the mashup uses and avoids binary data and large text attributes.
+* The query excludes **File** attributes, because the File type isn't supported in mashup queries. For more information, refer to [File data type](../binaries/binaries-native-cloud.md#quick-facts).
 * The query works at runtime, not only in Test Query. Entities in other environments can hold more records than the development environment.
 
 ## Supported use cases

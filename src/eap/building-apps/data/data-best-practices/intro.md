@@ -1,11 +1,13 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) data management best practices for settings, indexes, archiving, purging, and batch processing."
 tags:
+  - Batch Processing
   - Best Practices
   - Data
   - Entities
   - Indexes
   - Performance
+  - Settings
 guid: 858e8c87-2c13-4803-b279-008726bb77ea
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -90,6 +92,28 @@ Fetching and updating entities with large text or binary data attributes can be 
 ### Benefits
 
 Isolating large text and binary data in separate entities reduces the load on the master entity. Particularly if the large text and binary data attributes are rarely accessed, this practice results in **faster fetches and updates** over the master entity.
+
+## Choose between file and BinaryData for storing binary content { #choose-file-binarydata }
+
+ODC has two data types for binary content: **File**, which stores content in cloud storage, and **BinaryData**, which stores content in runtime memory. Refer to [The File data type](../binaries/binaries-native-cloud.md) for background on how the two types differ.
+
+### Recommendations
+
+* **Use File when**:
+    * You store the binary content in an entity attribute.
+    * The content is larger than a few megabytes.
+    * Server actions pass the content between each other or return it to the browser.
+    * You need to support uploads larger than 29 MB.
+* **Use BinaryData when**:
+    * You are working with small, transient binary data in memory, for example, the output of an encryption or Base64 operation.
+    * You are using a system action or library that accepts **BinaryData** and does not yet accept **File**.
+    * You need to store binary content in a Local Storage entity in a mobile app.
+
+You can't change an existing attribute between **BinaryData** and **File**. For more information, refer to [Replace a BinaryData attribute with a file attribute](../binaries/binaries-native-cloud.md#replace-binarydata).
+
+### Benefits
+
+Choosing the right type for each use case avoids the memory pressure and request-size limits of storing large binary content in the database, while keeping small, transient binary data simple to work with in memory.
 
 ## Implement data purging and archiving strategies when dealing with a large volume of data { #data-purging-archiving }
 

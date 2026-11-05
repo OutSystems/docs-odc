@@ -1,7 +1,7 @@
 ---
 guid: b80a6b0e-69be-435d-85bc-29c194c28126
 locale: en-us
-summary: This articles explains the best practices for using external libraries.
+summary: OutSystems Developer Cloud (ODC) external libraries best practices for ILogger logging, stateless code, memory cleanup, and private gateway access
 figma:
 coverage-type:
   - evaluate
@@ -16,11 +16,15 @@ audience:
   - Architect
   - Tech lead
 tags:
+  - .NET
   - Architecture
   - Best Practices
+  - C#
   - Libraries
   - Logging
   - Private Gateway
+  - Security
+  - Troubleshooting
 helpids:
 outsystems-tools:
   - none
@@ -165,3 +169,5 @@ For more related resources, refer to the following articles:
 * [Extend your apps with custom code](intro.md)
 
 * [External libraries SDK README](README.md)
+
+* [Working with file values in external libraries](../data/binaries/working-with-file-in-external-logic.md)

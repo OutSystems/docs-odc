@@ -1,5 +1,5 @@
 ---
-summary: Explore built-in functions in OutSystems Developer Cloud (ODC) to enhance app logic with safe, exception-free operations.
+summary: OutSystems Developer Cloud (ODC) built-in functions cover math, text, date, and data conversion, returning default values instead of exceptions.
 tags:
   - Logic
 locale: en-us
@@ -13,9 +13,11 @@ audience:
 outsystems-tools:
   - odc studio
 coverage-type:
+  - remember
   - understand
 topic:
   - function-default-values
+isautopublish: true
 ---
 
 # Built-in functions
@@ -28,6 +30,7 @@ When designing the business logic of your apps, you can use built-in functions. 
 * [Date and Time](<dateandtime.md>)
 * [Data Conversion](<data-conversion.md>)
 * [Format](<format.md>)
+* [File](file.md)
 * [Email](<email.md>)
 * [URL](<url.md>)
 * [Organization](<organization.md>)

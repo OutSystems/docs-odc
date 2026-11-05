@@ -1,7 +1,11 @@
 ---
-summary: OutSystems Developer Cloud (ODC) features built-in system actions accessible through the Logic tab for both client and server actions.
+summary: OutSystems Developer Cloud (ODC) system actions reference covers authentication, user, file, workflow, domain, and cache operations in ODC Studio.
 tags:
+  - Authentication
+  - Caching
+  - Domains
   - Logic
+  - Workflows
 locale: en-us
 guid: aa9a8492-66f1-4051-bdb2-509283be09cf
 app_type: mobile apps, reactive web apps
@@ -30,6 +34,7 @@ Here are the system actions available in ODC:
 
 * [Authentication system actions](auth.md)
 * [User system actions](user.md)
+* [File system actions](file.md)
 * [Workflows system actions](workflows.md)
 * [GetDefaultDomain server action](get-default-domain.md)
 * [ApplicationInvalidateCache server action](application-invalidate-cache.md)

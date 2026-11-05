@@ -2,6 +2,9 @@
 summary: OutSystems Developer Cloud (ODC) data types cover default values, constraints, conversions, and UTC DateTime behavior.
 tags:
   - Data
+  - Data Model
+  - Entities
+  - Mobile app
 locale: en-us
 guid: 651e9382-9db0-4150-ad11-c160aa9c9835
 app_type: mobile apps, reactive web apps
@@ -41,6 +44,7 @@ You can convert data into another data type using built-in functions. To learn m
 | Type | Default Value | Example | Comment |
 | --- | --- | --- | --- |
 | Binary Data | Byte array with no elements | n/a | |
+| File | n/a (Default Value property is disabled for File attributes; use `NullFile()` in logic) | n/a | Points to content in cloud storage rather than storing it in-memory. Refer to [The File data type](binaries/binaries-native-cloud.md) and [File built-in functions](../../reference/built-in-functions/file.md). |
 | Boolean | `false` | `true` or `false` | |
 | Currency | `0.0` | `545870.025` | See Decimal type. |
 | Date | `#1900-01-01#` | `#1988-08-28#` | The  supported range is [#1900-01-01#, #3000-12-31#] |
@@ -74,11 +78,11 @@ This adjustment accounts for Daylight Saving Time (DST). For instance, if a user
 * April 18, 2022, 5:00 am in Boston, MA.
 * April 18, 2022, 10:00 am in Lisbon, Portugal.
 
-![Diagram illustrating how time is saved in UTC format in ODC](images/utc-save-to-server-diag.png "Saving time in UTC in ODC")
+![Diagram illustrating how time is saved in UTC format in ODC](images/utc-save-to-server-diag.png "Saving Time in UTC in ODC")
 
 When built-in functions are called, the server returns the data to the devices. The DateTime displays on both devices in the local time.
 
-![Diagram showing the process of getting time in UTC format from the server in ODC](images/utc-get-from-server-diag.png "Getting time in UTC in ODC")
+![Diagram showing the process of getting time in UTC format from the server in ODC](images/utc-get-from-server-diag.png "Getting Time in UTC in ODC")
 
 The following guidelines provide additional details on handling date and time data:
 

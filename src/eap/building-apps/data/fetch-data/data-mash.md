@@ -5,6 +5,7 @@ tags:
   - Data
   - Entities
   - External Databases
+  - Mentor Studio
   - SQL
 locale: en-us
 guid: 49e82c30-f818-4e76-9961-1ccae5852e4e
@@ -13,7 +14,6 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
   - mentor studio
@@ -52,6 +52,7 @@ The platform guarantees that the model is valid, and you decide whether the aggr
 * The join type matches your requirement. In OutSystems, Only With is an inner join, With or Without is a left join, and With is a full join. In mashup queries, use With or Without instead of Only With. For more information, refer to [Writing better queries in data mashup](queries.md).
 * The join condition is a full or partial equi-join, with equality between the attributes of the two sources. Literals and dynamic parameters are in a filter and not in the join condition.
 * The aggregate selects only the attributes the mashup uses, and excludes binary data and large text attributes.
+* The aggregate excludes **File** attributes, because the File type isn't supported in mashup queries. For more information, refer to [File data type](../binaries/binaries-native-cloud.md#quick-facts).
 * The aggregate returns the combined records that you expect. Test Query and runtime results can differ, so also confirm the result in the published app. For more information, refer to [understand Test Query results](test-query-runtime.md).
 
 ## Create a data mashup manually in ODC Studio

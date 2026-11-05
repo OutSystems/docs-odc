@@ -1,12 +1,13 @@
 ---
-summary: OutSystems Developer Cloud (ODC) External Libraries SDK enables the extension of ODC apps with custom .NET code.
+summary: OutSystems External Libraries SDK helps you build ODC external libraries with C# attributes, NuGet packages, templates, and ZIP publishing.
 tags:
   - .NET
   - C#
   - Libraries
+  - Logging
   - Logic
+  - NuGet
   - Templates
-  - Troubleshooting
 locale: en-us
 guid: 955feaca-cda0-492f-9b84-d5c89281692e
 app_type: mobile apps, reactive web apps
@@ -142,6 +143,10 @@ This approach provides detailed tracing information that helps with monitoring a
 
 For detailed information about errors, refer to [External libraries SDK errors](../../../error/elg/intro.md).
 
+### Working with file values
+
+External library functions support the **File** data type as input and output parameters. To work with **File** values in your custom code, declare parameters of type `IOSFile`. For information about declaring **File** parameters, reading and writing file content, handling errors, and unit testing, refer to [Working with file values in external libraries](../data/binaries/working-with-file-in-external-logic.md).
+
 1. Once the code is successfully built, save the project and publish it.
 
     To publish the code follow these steps:
@@ -188,7 +193,7 @@ The basic template covers simple use case for checking the validity of your Inte
 
     UML diagram:
 
-    ![Basic UML diagram](images/sdk-readme-basic-uml-diag.png "Basic UML diagram")
+    ![UML diagram of the basic IBAN Checker project, showing the IIbanChecker interface, IbanChecker class, and Iban struct with their properties and methods](images/sdk-readme-basic-uml-diag.png "Basic IBAN Checker UML Diagram")
 
 1. Edit the code to meet your use case. If your project requires unit tests, modify the examples found in `../OutSystems.IbanChecker.UnitTests/IbanCheckerTests.cs` accordingly.
 
