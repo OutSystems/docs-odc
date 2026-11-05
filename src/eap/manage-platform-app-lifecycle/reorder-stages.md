@@ -1,8 +1,11 @@
 ---
 summary: Change the order of the stages in your ODC organization or portfolio.
 tags:
-  - Settings
+  - Deploy
+  - Development lifecycle
   - Lifecycle
+  - Settings
+  - Sorting
 locale: en-us
 guid: d3ba6953-1b6a-4990-b522-8119cf56b06a
 app_type: mobile apps, reactive web apps

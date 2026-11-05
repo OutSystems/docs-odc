@@ -1,13 +1,13 @@
 ---
 summary: Portfolios let you group and isolate assets with different non-functional requirements within a single OutSystems Developer Cloud (ODC) organization.
 tags:
+  - Architecture
   - CI/CD
   - Deploy
   - Development lifecycle
+  - Infrastructure
   - Libraries
   - Lifecycle
-  - Roles
-  - Security
 locale: en-us
 guid: ee0893f1-cfcd-466b-91b1-e177a2a717e4
 app_type: mobile apps, reactive web apps

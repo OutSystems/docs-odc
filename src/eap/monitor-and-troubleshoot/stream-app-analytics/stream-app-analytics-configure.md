@@ -1,9 +1,12 @@
 ---
 summary: Configure streams in OutSystems Developer Cloud (ODC) Portal to send observability data to APM tools with server details and authentication.
 tags:
+  - Authentication
   - Logging
   - Monitoring
   - Settings
+  - Testing
+  - Troubleshooting
 guid: 512ce9da-a8bc-42b5-87a3-091e80535a06
 locale: en-us
 app_type: mobile apps,reactive web apps

@@ -2,6 +2,7 @@
 summary: Understand how installing and updating Forge assets works in a multi-portfolio organization in OutSystems Developer Cloud (ODC).
 tags:
   - Forge
+  - Lifecycle
 locale: en-us
 guid: 2f5b8a1c-9d3e-4c61-8e7a-3b5d8f1a2c9e
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,9 @@
 ---
-tags: REST
+tags:
+  - Domains
+  - Performance
+  - REST
+  - Web services
 guid: 00b00239-a7db-4759-be9c-47c3d59255fb
 locale: en-us
 app_type: mobile apps, reactive web apps

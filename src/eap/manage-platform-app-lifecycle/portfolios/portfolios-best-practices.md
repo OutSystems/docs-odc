@@ -2,7 +2,9 @@
 summary: "OutSystems Developer Cloud (ODC) asset portfolio best practices: dependency planning, libraries, REST APIs, and least-privilege permissions."
 tags:
   - Architecture
+  - Authorization
   - Best Practices
+  - Data
   - Libraries
   - REST
   - Security

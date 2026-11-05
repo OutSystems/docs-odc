@@ -19,8 +19,8 @@ tags:
   - Android
   - Architecture
   - Capacitor
+  - iOS
   - JavaScript
-  - Mobile app
   - Native App
   - Plugins
 outsystems-tools:

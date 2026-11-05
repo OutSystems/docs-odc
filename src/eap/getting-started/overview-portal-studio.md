@@ -4,7 +4,7 @@ tags:
   - 1-Click Publish
   - AI
   - Debugging
-  - Mentor
+  - Deploy
   - Mentor Studio
   - Mentor Web
   - UI
