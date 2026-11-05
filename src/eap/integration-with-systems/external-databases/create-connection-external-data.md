@@ -6,6 +6,7 @@ tags:
   - Entities
   - External Databases
   - Private Gateway
+  - SQL
 guid: 32004a44-1a95-46b2-abcb-88ad76f51961
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -118,7 +119,7 @@ After connecting to an external database, select the entity names and attributes
 
 1. From the ODC Portal navigation menu, select **Integrate** > **Connections**. Identify the connection you want to edit, and select **Import**. <br/>The connection screen displays the available entities retrieved from the database.
 
-    ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity-pp.png "External Database Entities Selection")
+    ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity-pl.png "External Database Entities Selection")
 
 1. From the **Entity** name column, select the entities and attributes you want to use.
 1. Click **Save** to confirm.
@@ -188,8 +189,9 @@ You can use advanced parameters to add additional parameters for a database conn
     * `maxLifetimeMinutes` is the maximum amount of time in minutes that a connection may be used for
         * After this time has elapsed, the connection is not used to execute any new queries and is eventually closed
         * Default value of `0` which means that connections are open indefinitely provided that they are healthy and do not remain idle for longer than `minIdleMinutes`
-    * `maxConnectionPoolSize` is the maximum number of connections that can be open (in use or idle) at any given time
-        * Default and maximum supported value of 400, as it was the best performer in OutSystems performance tests
+    * `maxConnectionPoolSize` is the maximum number of connections that can be open (in use or idle) at any time **per connection**.
+        * The default and maximum supported value is 400, based on OutSystems performance tests. Values above 400 degrade performance.
+        * The limit applies to each connection separately. Apps and business domains that share one connection compete for the same 400 connections. To get more capacity or isolate workloads, create additional connections to the same database (for example, one per app or domain). Each has its own pool. Make sure your database can handle the combined connections from all of them.
     * `minConnectionPoolSize` is the number of connections that must always be available (idle) in the pool
         * Default value of `0` which means that all idle connections will eventually be closed after an extended period of inactivity
         * Must be less than or equal to `maxConnectionPoolSize`
@@ -200,7 +202,7 @@ You can use advanced parameters to add additional parameters for a database conn
     If you don't specify `Pagesize`, OutSystems applies a default of `1000` to help keep each response within the maximum allowed body size (10 MB). Very large page sizes produce responses above that limit and may result in a `Bad gateway` error.
 * For **SAP OData**, if your server uses a self-signed certificate, add the `SSLServerCert=*` parameter to the additional parameters to bypass certificate validation. This parameter also applies to the metadata requests used to retrieve navigation properties (for example, during deep insert), so catalog discovery completes successfully instead of failing with a certificate verification error.
 
-![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database Additional Parameters")
+![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pl.png "External Database Additional Parameters")
 
 ## AI search service connection parameters
 
