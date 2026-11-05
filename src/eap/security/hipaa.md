@@ -13,6 +13,7 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Architect
+  - Developer
   - Tech lead
 tags:
   - Security

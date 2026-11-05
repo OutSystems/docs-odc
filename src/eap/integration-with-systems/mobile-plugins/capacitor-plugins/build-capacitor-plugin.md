@@ -14,6 +14,7 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
+  - Front-end developer
 tags:
   - Android
   - Capacitor
