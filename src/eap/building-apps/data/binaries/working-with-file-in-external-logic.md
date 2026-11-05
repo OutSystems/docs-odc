@@ -283,7 +283,7 @@ Outside ODC, there's no file storage for the FileStorage SDK to connect to. `Fil
 
 The [advanced IBAN checker template](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates/advanced) includes the following test helpers in the `FileStorageTesting` folder of its unit test project:
 
-* **InMemoryFileStorage.cs**: an in-memory implementation of the full `IFileStorage` interface. Like the FileStorage SDK, it stores metadata keys in lowercase, matches them regardless of casing, and ignores a `FileName` key in `additionalUserData`. Unlike the FileStorage SDK, it doesn't validate metadata, so it merges keys that differ only in casing instead of throwing an `ArgumentException` exception.
+* **InMemoryFileStorage.cs**: an in-memory implementation of the full `IFileStorage` interface. Like the FileStorage SDK, it stores metadata keys in lowercase, matches them regardless of casing, rejects keys that differ only in casing with an `ArgumentException` exception, and ignores a `FileName` key in `additionalUserData`. Unlike the FileStorage SDK, it doesn't check any other metadata rule.
 * **InMemoryFileStorageTests.cs**: optional unit tests for `InMemoryFileStorage`.
 
 <div class="warning" markdown="1">
