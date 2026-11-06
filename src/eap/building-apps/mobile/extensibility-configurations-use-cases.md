@@ -152,7 +152,7 @@ window.handleOpenURL = function (url) {
 
 To apply this change for the users you must [publish and generate a new mobile application](creating-mobile-package.md) and distribute it.
 
-## Plugin configuration use cases {plugin-use-cases}
+## Plugin configuration use cases {#plugin-use-cases}
 
 The [Library extensibility configuration reference](extensibility-configurations/extensibility-lib-reference.md) describes a JSON schema for mobile libraries that wrap Cordova plugins, Capacitor plugins, or both.
 

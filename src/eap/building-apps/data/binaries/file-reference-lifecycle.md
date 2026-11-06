@@ -34,6 +34,12 @@ When you add a **File** attribute to an entity, ODC stores the file content in c
 
 For background on the **File** type and how it differs from **BinaryData**, refer to [The File data type](binaries-native-cloud.md). For the **File** reference's properties and where the **File** type isn't available, refer to the quick facts in that article.
 
+<div class="info" markdown="1">
+
+The **File** type isn't supported in ODC Self-hosted.
+
+</div>
+
 ## Working with file references
 
 This section covers how a **File** reference behaves while you build your app: in entities, in aggregates, and in client logic.
@@ -98,7 +104,7 @@ A local file must be uploaded before you can save its reference to an entity att
 
 This section covers what happens to File content over time once your app is live: deletion timing, disaster recovery, and storage monitoring.
 
-### Disaster recovery
+### Disaster recovery {#disaster-recovery}
 
 File storage follows the same disaster recovery posture as your environment's database. The platform manages this for you as part of its standard DR strategy.
 

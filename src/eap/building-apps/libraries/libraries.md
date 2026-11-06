@@ -51,7 +51,7 @@ In a multi-portfolio organization, libraries are the primary mechanism for shari
 
 OutSystems Developer Cloud (ODC) elevates the general-purpose library and mobile library to  top-level assets. They exist at the same level as web apps and mobile apps and have an independent lifecycle. For detailed information about how to think about libraries in the context of your app's architecture, refer to [App Architecture](../../app-architecture/intro.md#libraries-in-odc--libraries-).
 
-## Mobile libraries {mobile-libraries}
+## Mobile libraries {#mobile-libraries}
 
 Mobile libraries are a specialized type of library designed specifically for mobile apps. General-purpose libraries provide reusable UI and logic elements for web apps. Mobile libraries serve as the core reusable component for mobile-specific requirements, such as native capabilities and extensibility.
 
@@ -95,7 +95,7 @@ In ODC Studio, If you have an existing general-purpose library that includes ext
 
 </div>
 
-## Libraries versioning {libraries-versioning}
+## Libraries versioning {#libraries-versioning}
 
 Versioning enables systematic updates and integration of your library's elements into apps and other libraries within your organization. This **ensures consistency and prevents unexpected breaking changes** within the development environment. Versioning applies to all types of libraries in ODC organization: libraries you create, system libraries that OutSystems provides (OutSystems UI, for example), and [external logic libraries](../external-logic/intro.md).
 
@@ -109,7 +109,7 @@ Conversely, you set the version number during a library's release and it represe
 
 Understanding the distinction and impact of revision and version numbers is key. Proper versioning ensures that changes in a library don't disrupt its consumers, allowing developers to modify libraries without inadvertently affecting dependent apps. Consuming a library at a specific version is important for maintaining app stability and reliability, enabling controlled and gradual adaptations to changes and reducing the risks associated with updates.
 
-### Test a revision of a library
+### Test a revision of a library {#test-a-revision-of-a-library}
 
 After creating a library, you can test it by publishing the library. When you publish your library, pop-up dialog displays an option to test a library inside an app. You can create a new app or use an existing app to test the library. All public elements from the library are available in the app. While the test app is opened in ODC Studio, after every new publish of the library, the app is updated to the latest library revision. All public elements are added to the app.
 

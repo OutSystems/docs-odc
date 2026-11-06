@@ -38,6 +38,12 @@ This article explains how signed URLs work, how to generate them in your app, an
 
 For background on the **File** type and how it differs from **BinaryData**, refer to [The File data type](binaries-native-cloud.md).
 
+<div class="info" markdown="1">
+
+The **File** type isn't supported in ODC Self-hosted.
+
+</div>
+
 ## What a signed URL is
 
 A signed URL is a URL with an access grant embedded in its query string. The grant encodes two things: the specific file the URL is valid for and an expiry time. Anyone who holds the URL can fetch the file directly from cloud storage without presenting credentials.
@@ -54,7 +60,7 @@ For the inputs and outputs of both actions, refer to [File system actions](../..
 
 A signed URL works for a file that another app in the same environment owns. Files from the same environment are shared between its apps for reading and downloading. To keep such a file, copy it into your app before you store it in an entity. For more information, refer to the [CopyFile](../../../reference/system-actions/file.md#copyfile) server action.
 
-### Set the Content-Disposition header safely
+### Set the Content-Disposition header safely {#set-the-content-disposition-header-safely}
 
 The **ContentDisposition** value of the **ResponseHeaders** input is sent to the client as an HTTP response header. When you build the value from data that users supply, such as a file name, a crafted value can inject extra header content. Encode the file name before you add it to the value, and use the `filename*=UTF-8''` form:
 

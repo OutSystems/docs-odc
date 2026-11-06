@@ -5,6 +5,7 @@ summary: OutSystems Developer Cloud (ODC) File data type stores large content in
 figma:
 coverage-type:
   - understand
+  - apply
   - evaluate
 topic:
   - file-storage
@@ -29,6 +30,12 @@ isautopublish: true
 # File data type
 
 **File** is a data type for large content, whether text or binary, such as images, PDFs, and other files, that ODC stores in cloud storage instead of the database. It acts as a reference, not a container: instead of holding bytes in memory, a **File** value points to content in object storage and loads it on demand.
+
+<div class="info" markdown="1">
+
+The **File** type isn't supported in ODC Self-hosted.
+
+</div>
 
 ## Why use the file type
 
@@ -76,11 +83,10 @@ To replace a **BinaryData** attribute with a **File** attribute, do the followin
 1. Run your migration logic to copy the content from the old attribute to the new attribute, for example, with a timer.
 1. After the migration finishes, delete the old **BinaryData** attribute and publish the app again.
 
-## Quick facts
+## Quick facts {#quick-facts}
 
 A **File** value carries the following properties, size limit, and restrictions.
 
-* **Self-Hosted environments**: the File type isn't available on ODC Self-Hosted.
 * **Properties**:
     * **MIMEType**: the media type of the file, for example, `application/pdf`.
     * **Size**: the file size in bytes.

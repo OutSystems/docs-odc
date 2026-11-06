@@ -24,7 +24,13 @@ isautopublish: true
 
 # File
 
-This reference lists the built-in functions that work with **File** values. They're in the **File** folder under **Built-in Functions** in the expression editor in ODC Studio. The File type isn't available on ODC Self-Hosted. For more information, refer to [File data type](../../building-apps/data/binaries/binaries-native-cloud.md#quick-facts).
+This reference lists the built-in functions that work with **File** values. They're in the **File** folder under **Built-in Functions** in the expression editor in ODC Studio. For more information, refer to [File data type](../../building-apps/data/binaries/binaries-native-cloud.md).
+
+<div class="info" markdown="1">
+
+The **File** type isn't supported in ODC Self-hosted.
+
+</div>
 
 The following table lists the File built-in functions. Select a function name to go to its description.
 
@@ -36,7 +42,7 @@ The following table lists the File built-in functions. Select a function name to
 | [NullFile](#nullfile)() | Returns a null File value. |
 | [Size](#size)(File) | Returns the size of a file in bytes. |
 
-## `IsOwnedByCurrentApp`
+## `IsOwnedByCurrentApp` {#isownedbycurrentapp}
 
 Checks if a file is owned by the current app. Returns `True` if the file exists and is local to the app. Returns `False` if the file is null, invalid, or owned by another app.
 
@@ -66,7 +72,7 @@ Type: Boolean
 IsOwnedByCurrentApp(Entity.Attribute) = True
 ```
 
-## `IsTemp`
+## `IsTemp` {#istemp}
 
 Checks if a file is in temporary storage and hasn't been persisted. Returns `True` if the file is temporary. Returns `False` if the file is persisted, null, or invalid.
 
@@ -94,7 +100,7 @@ Type: Boolean
 IsTemp(Entity.Attribute) = True
 ```
 
-## `MIMEType`
+## `MIMEType` {#mimetype}
 
 Returns the MIME type of a file.
 
@@ -120,7 +126,7 @@ Type: Text
 MIMEType(MyFile) = "application/pdf"
 ```
 
-## `NullFile`
+## `NullFile` {#nullfile}
 
 Returns a null File value. Use it to represent a file reference that points to no file. For more information about empty **File** values, refer to [The File data type](../../building-apps/data/binaries/binaries-native-cloud.md#quick-facts).
 
@@ -140,7 +146,7 @@ Type: File
 MyFile = NullFile()
 ```
 
-## `Size`
+## `Size` {#size}
 
 Returns the size of a file in bytes.
 

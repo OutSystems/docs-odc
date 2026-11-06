@@ -38,7 +38,7 @@ Before you can run evaluations against your target agentic apps, they must be re
 
 <div class="info" markdown="1">
 
-Agent evaluations isn't currently supported in ODC Self hosted.
+Agent evaluations isn't supported in ODC Self-hosted.
 
 </div>
 

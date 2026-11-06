@@ -3,7 +3,11 @@ summary: ODC extensibility configurations universal JSON schema supports Capacit
 tags:
   - Capacitor
   - Cordova
+  - Extensions
+  - Libraries
   - Mobile app
+  - Native App
+  - Plugins
 locale: en-us
 guid: 941e56cf-aacf-43bf-9d1c-f131565036e6
 app_type: mobile apps
@@ -21,6 +25,7 @@ coverage-type:
 topic:
   - customize-mobile-apps
 helpids: 30664
+isautopublish: true
 ---
 
 # Universal extensibility configurations JSON schema
@@ -41,7 +46,7 @@ OutSystems recommends adopting the universal schema because of the following ben
 
 This screenshot illustrates auto-complete support for JSON while configuring your apps through **Extensibility**.
 
-![Screenshot showing auto-complete support for JSON configuration in OutSystems Developer Cloud.](images/extensibility-auto-complete-odcs-pl.png "Auto-complete Support for JSON Configuration")
+![Screenshot showing auto-complete support for JSON configuration in OutSystems Developer Cloud.](images/extensibility-auto-complete-odcs.png "Auto-complete Support for JSON Configuration")
 
 The [Cordova-based extensibility configuration schema](legacy-extensibility-configuration.md) doesn't have separate app and library contexts and doesn't support build actions.
 
@@ -51,7 +56,7 @@ The support for the Cordova-based schema will be deprecated soon. OutSystems rec
 
 </div>
 
-## Schema requirements by MABS version {schema-mabs-versions}
+## Schema requirements by MABS version {#schema-mabs-versions}
 
 The extensibility configuration schema you must use depends on your MABS version:
 

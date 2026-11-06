@@ -29,6 +29,12 @@ isautopublish: true
 
 When an entity or Aggregate has a **File** attribute, ODC Studio previews the file's metadata instead of its content. Understanding this preview format helps you interpret **File** values while you inspect data, test queries, or debug your app.
 
+<div class="info" markdown="1">
+
+The **File** type isn't supported in ODC Self-hosted.
+
+</div>
+
 ## Preview file values in Edit Data
 
 When you open **Edit Data** for an entity with a **File** attribute, ODC Studio shows the attribute's metadata instead of its content, formatted as `MIMEType`. For example, a PNG image previews as `image/png (4107463 bytes)`. To learn how to open **Edit Data**, refer to [Edit data in ODC Studio](../edit-data.md).

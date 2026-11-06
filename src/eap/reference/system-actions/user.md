@@ -4,6 +4,7 @@ tags:
   - Authentication
   - End-user Authentication
   - End-users
+  - External Authentication
   - IdP
 locale: en-us
 guid: 0889c9fd-98dc-489d-a8ed-bea68946f0ac
@@ -31,7 +32,7 @@ User actions for built-in and/or external identity providers.
 
 ## Actions
 
-### ChangePassword
+### `ChangePassword` {#changepassword}
 
 #### Client action
 
@@ -57,7 +58,7 @@ Allows a logged-in user to change their password. Changing passwords for users w
 :   Type: [ChangePasswordResult](#changepasswordresult)
     Result of the password change action. Returns boolean values for the complexity policy failed if unsuccessful.
 
-### FinishResetPassword
+### `FinishResetPassword` {#finishresetpassword}
 
 #### Client action
 
@@ -85,7 +86,7 @@ Finalizes the reset password operation, using a verification code that can be re
 
 **Note:** Remember that the password reset action is only supported for active users.
 
-### FinishUserRegistration
+### `FinishUserRegistration` {#finishuserregistration}
 
 #### Client action
 
@@ -125,7 +126,7 @@ If you create the user using the User and Access Management REST APIs, use the r
 :   Type: [FinishUserRegistrationResult](#finishuserregistrationresult)  
     Result of the user registration action. Returns a user identifier if the user was successfully registered. Returns a failure reason if unsuccessful.
 
-### FinishUpdateEmail
+### `FinishUpdateEmail`
 
 #### Client action
 
@@ -147,7 +148,7 @@ Finalizes the update email operation, using a verification code.
 :   Type: [FinishUpdateEmailFailureReason](#finishupdateemailfailurereason)  
     Contains the reason for failure if the action is not successful.
 
-### GetPasswordComplexityPolicy
+### `GetPasswordComplexityPolicy` {#getpasswordcomplexitypolicy}
 
 #### Client action
 
@@ -159,11 +160,11 @@ Gets the configured password policy for the built-in identity provider. Used to 
 :   Type: [PasswordComplexityPolicy](#passwordcomplexitypolicy)  
     Result of the password policy action. Returns boolean values for the password complexity criteria.
 
-### GetUserProfile
+### `GetUserProfile` {#getuserprofile}
 
 #### Client action
 
-Returns logged-in user's information from the identity provider and updates the [User entity](#user-1) with that information.
+Returns logged-in user's information from the identity provider and updates the [User entity](#user) with that information.
 
 #### Outputs
 
@@ -171,7 +172,7 @@ Returns logged-in user's information from the identity provider and updates the 
 :   Type: [UserInfo](#userinfo)  
     User information.
 
-### IsExternalUser
+### `IsExternalUser` {#isexternaluser}
 
 #### Client action
 
@@ -183,7 +184,7 @@ Function that validates if the logged-in user is from an external identity provi
 :   Type: Boolean.
     True if the logged user is an external user.
 
-### StartResetPassword { startresetpassword }
+### `StartResetPassword` {#startresetpassword}
 
 #### Server action
 
@@ -200,10 +201,10 @@ Resetting passwords for members with access to ODC Portal isn't supported throug
 #### Outputs
 
 **StartResetPasswordResult**
-:   Type: [StartResetPasswordResult](#startpasswordresetresult)
+:   Type: [StartResetPasswordResult](#startresetpasswordresult)
     Result of the action. Returns the verification code if successful.
 
-### StartUpdateEmail {#startupdateemail}
+### `StartUpdateEmail` {#startupdateemail}
 
 #### Server action
 
@@ -231,7 +232,7 @@ The user's email cannot be removed from their profile.
 :   Type: [StartUpdateEmailFailureReason](#startupdateemailfailurereason)
     Contains the reason for failure if the action isn't successful.
 
-### StartUserRegistration
+### `StartUserRegistration` {#startuserregistration}
 
 #### Server action
 
@@ -255,7 +256,7 @@ Registers the user in the built-in identity provider by creating the user as act
 :   Type: [StartUserRegistrationResult](#startuserregistrationresult)  
     Result of the user registration action.
 
-### UpdateUserProfile
+### `UpdateUserProfile`
 
 #### Server action
 
@@ -273,7 +274,7 @@ Allows a logged-in user to edit profile information. User can't change user emai
 :   Type: [UpdateUserResult](#updateuserresult)  
     Result of the update user action. Returns the failure reason if unsuccessful.
 
-### ValidatePasswordComplexity
+### `ValidatePasswordComplexity` {#validatepasswordcomplexity}
 
 #### Client action
 
@@ -293,7 +294,7 @@ Validates a user's password with the password complexity policy. The client acti
 
 ## Structures
 
-### ChangePasswordResult
+### `ChangePasswordResult` {#changepasswordresult}
 
 #### Attributes
 
@@ -303,7 +304,7 @@ Success
 ChangePasswordFailureReason
 :   Type: ChangePasswordFailureReason
 
-### FinishPasswordResetResult
+### `FinishPasswordResetResult` {#finishpasswordresetresult}
 
 #### Attributes
 
@@ -313,7 +314,7 @@ Success
 FinishResetPasswordFailureReason
 :   Type: FinishResetPasswordFailureReason
 
-### FinishUserRegistrationResult
+### `FinishUserRegistrationResult` {#finishuserregistrationresult}
 
 #### Attributes
 
@@ -326,7 +327,7 @@ UserId
 FinishUserRegistrationFailureReason
 :   Type: FinishUserRegistrationFailureReason
 
-### PasswordComplexityPolicy
+### `PasswordComplexityPolicy` {#passwordcomplexitypolicy}
 
 #### Attributes
 
@@ -345,7 +346,7 @@ NumberRequired
 SpecialCharacterRequired
 :   Type: Boolean
 
-### PasswordValidationResult
+### `PasswordValidationResult` {#passwordvalidationresult}
 
 #### Attributes
 
@@ -367,7 +368,7 @@ MissingNumber
 MissingSpecialCharacter
 :   Type: Boolean
 
-### StartResetPasswordResult
+### `StartResetPasswordResult` {#startresetpasswordresult}
 
 #### Attributes
 
@@ -377,7 +378,7 @@ Success
 VerificationCode
 :   Type: Text
 
-### StartUpdateEmailResult
+### `StartUpdateEmailResult` {#startupdateemailresult}
 
 #### Attributes
 
@@ -387,28 +388,28 @@ Success
 VerificationCode
 :   Type: Text
 
-### StartUpdateEmailFailureReason
+### `StartUpdateEmailFailureReason` {#startupdateemailfailurereason}
 
 #### Attributes
 
 InvalidEmail
 :   Type: Boolean
 
-### FinishUpdateEmailResult
+### `FinishUpdateEmailResult` {#finishupdateemailresult}
 
 #### Attributes
 
 Success
 :   Type: Boolean
 
-### FinishUpdateEmailFailureReason
+### `FinishUpdateEmailFailureReason` {#finishupdateemailfailurereason}
 
 #### Attributes
 
 InvalidVerificationCode
 :   Type: Boolean
 
-### FinishResetPasswordFailureReason
+### `FinishResetPasswordFailureReason`
 
 #### Attributes
 
@@ -421,7 +422,7 @@ InvalidVerificationCode
 InvalidEmail
 :   Type: Boolean
 
-### UserInfo
+### `UserInfo` {#userinfo}
 
 #### Attributes
 
@@ -434,7 +435,7 @@ Email
 PhotoURL
 :   Type: Text
 
-### StartUserRegistrationResult
+### `StartUserRegistrationResult` {#startuserregistrationresult}
 
 #### Attributes
 
@@ -459,7 +460,7 @@ VerificationCode
 UserId
 :   Type: User Identifier
 
-### UserUpdateInfo
+### `UserUpdateInfo` {#userupdateinfo}
 
 #### Attributes
 
@@ -469,7 +470,7 @@ Name
 PhotoURL
 :   Type: Text
 
-### UpdateUserResult
+### `UpdateUserResult` {#updateuserresult}
 
 #### Attributes
 
@@ -484,7 +485,7 @@ UpdateUserFailureReason
 
 ## Entities
 
-### User
+### `User` {#user}
 
 The end-user of the apps.
 

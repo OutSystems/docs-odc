@@ -103,7 +103,7 @@ The following table describes each upgrade message. These upgrade messages do no
 | **Upgrade Required** | Displayed when the app detects a mandatory upgrade is available. |
 | **Upgrade Required with Data Loss** | Displayed when a mandatory upgrade is available and the upgrade causes local data loss. |
 
-### Advanced settings {advanced-settings}
+### Advanced settings {#advanced-settings}
 
 You can use the **Advanced settings** page to configure default behaviors and required resources for your app.
 
@@ -127,11 +127,11 @@ For detailed information about settings specific to mobile apps, refer to [Mobil
 
 On the **Details** page, you can configure your general-purpose library and mobile library's identity and branding. For detailed information, refer to [Details](#details-app-details)
 
-### Messages {library-messages}
+### Messages {#library-messages}
 
 On the **Messages** page, you can customize the validation messages that appear when end users submit invalid input in forms. The available messages for general-purpose library and mobile library are the same as the app [Messages](#messages-app-messages).
 
-### Advanced settings {library-properties}
+### Advanced settings {#library-properties}
 
 On the **Advanced settings** page, you can configure default behaviors and required resources for your library. The available settings for general-purpose library and mobile library are the same as the app [Advanced settings](#advanced-settings-advanced-settings).
 

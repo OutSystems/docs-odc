@@ -32,6 +32,12 @@ External library functions support the **File** data type as input and output pa
 
 For general information about creating, building, and publishing an External Library, refer to [External libraries SDK README](../../external-logic/README.md).
 
+<div class="info" markdown="1">
+
+The **File** type isn't supported in ODC Self-hosted.
+
+</div>
+
 ## Prerequisites
 
 Before you add **File** parameters to an External Library, make sure your project meets the following requirements:
@@ -202,7 +208,7 @@ private Task<IOSFile> ProcessLinesAsync(IOSFile inputFile, CancellationToken can
 
 In the example, `Process` stands for the logic that handles each line.
 
-## Store and read file metadata
+## Store and read file metadata {#store-and-read-file-metadata}
 
 Every create method accepts an optional `additionalUserData` dictionary. The FileStorage SDK stores these key-value pairs with the file.
 

@@ -29,7 +29,13 @@ isautopublish: true
 
 Use the File system actions to generate access URLs for **File** values, copy a file into your app, and check whether a file exists in cloud storage. The actions are in the **(System)** folder under **Server Actions** in the Logic tab in ODC Studio.
 
-These actions are server actions. They don't appear in the **(System)** folder under **Client Actions**. The File type isn't available on ODC Self-Hosted. For more information, refer to [File data type](../../building-apps/data/binaries/binaries-native-cloud.md#quick-facts).
+These actions are server actions. They don't appear in the **(System)** folder under **Client Actions**. For more information, refer to [File data type](../../building-apps/data/binaries/binaries-native-cloud.md).
+
+<div class="info" markdown="1">
+
+The **File** type isn't supported in ODC Self-hosted.
+
+</div>
 
 The following table lists the File system actions. Select an action name to go to its description.
 
@@ -42,7 +48,7 @@ The following table lists the File system actions. Select an action name to go t
 
 ## Actions
 
-### `GetFileSignedURL`
+### `GetFileSignedURL` {#getfilesignedurl}
 
 #### Server action
 
@@ -80,7 +86,7 @@ Generates a signed URL to access a stored file. The URL grants temporary access 
 :   Type: Text.
     Reason for a failure while generating the URL.
 
-### `GetMultipleFilesSignedURLs`
+### `GetMultipleFilesSignedURLs` {#getmultiplefilessignedurls}
 
 #### Server action
 
@@ -116,7 +122,7 @@ Use this action when a screen renders a collection of files, such as the images 
 :   Type: Text.
     Reason for a failure while generating the URLs.
 
-### `CopyFile`
+### `CopyFile` {#copyfile}
 
 #### Server action
 
@@ -140,7 +146,7 @@ ODC deletes a temporary file that you don't store in an entity. For more informa
 
 If the input file is empty, **CopyFile** returns an empty file.
 
-### `FileExists`
+### `FileExists` {#fileexists}
 
 #### Server action
 
@@ -160,7 +166,7 @@ Checks whether a file exists in cloud storage. **FileExists** is a function, so 
 
 ## Structures
 
-### `FileURLRequest`
+### `FileURLRequest` {#fileurlrequest}
 
 Bundles a file with its response header settings. Use it as the item type of the **Files** input of [GetMultipleFilesSignedURLs](#getmultiplefilessignedurls).
 
@@ -172,7 +178,7 @@ Bundles a file with its response header settings. Use it as the item type of the
 :   Type: [ResponseHeaders](#responseheaders). Optional.
     Settings that control how the delivery layer and the client device cache and present the file.
 
-### `ResponseHeaders`
+### `ResponseHeaders` {#responseheaders}
 
 Overrides the default HTTP response headers that control how the delivery layer caches and serves the file.
 

@@ -72,7 +72,7 @@ Authentication and authorization in ODC ensure secure access to resources by ver
 
 ![Diagram illustrating the authentication and authorization process in ODC](images/authentication-authorization-diag.png "Authentication and authorization in ODC")
 
-### Authentication { authentication }
+### Authentication {#authentication}
 
 Authentication verifies a user’s identity before granting access. ODC supports the following mechanisms:
 
