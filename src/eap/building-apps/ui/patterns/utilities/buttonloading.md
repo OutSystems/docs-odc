@@ -20,7 +20,8 @@ coverage-type:
   - apply
   - remember
 topic:
-  - add-widget-ui-pattern
+  - button-loading-reference
+  - use-button-loading-pattern
 ---
 
 # Button Loading

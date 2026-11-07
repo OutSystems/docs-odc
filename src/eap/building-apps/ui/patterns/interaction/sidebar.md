@@ -21,7 +21,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - add-widget-ui-pattern
+  - sidebar-pattern-setup
 ---
 
 # Sidebar

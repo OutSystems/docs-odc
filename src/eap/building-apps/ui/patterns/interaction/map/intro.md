@@ -20,7 +20,8 @@ coverage-type:
   - apply
   - remember
 topic:
-  - add-widget-ui-pattern
+  - map-component-overview
+  - static-map-usage
 ---
 
 # Map

@@ -6,7 +6,9 @@ figma: https://www.figma.com/design/O9hMfWITwZGNygzmq9tF3R/File-Data-Model-ODC?n
 coverage-type:
   - understand
 topic:
-  - file-storage
+  - aggregate-file-results
+  - file-reference-lifecycle
+  - file-storage-operations
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

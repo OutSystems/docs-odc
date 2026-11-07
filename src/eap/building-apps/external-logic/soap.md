@@ -19,6 +19,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
+  - consume-soap-in-library
   - legacy-systems-integration
 isautopublish: true
 ---
