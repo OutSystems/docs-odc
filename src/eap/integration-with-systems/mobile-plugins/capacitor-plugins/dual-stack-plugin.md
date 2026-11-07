@@ -13,7 +13,9 @@ tags:
   - Native App
   - Plugins
 audience:
+  - Architect
   - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal
