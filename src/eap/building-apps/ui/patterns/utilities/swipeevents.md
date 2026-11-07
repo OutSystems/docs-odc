@@ -1,5 +1,7 @@
 ---
 tags:
+  - Events
+  - Front-End
   - Mobile app
   - OutSystems UI
   - UI

@@ -16,6 +16,7 @@ tags:
   - Authorization
   - OAuth
   - REST
+  - Security
 outsystems-tools:
   - odc studio
 helpids:

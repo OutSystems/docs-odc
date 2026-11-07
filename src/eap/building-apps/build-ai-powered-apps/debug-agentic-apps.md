@@ -5,6 +5,8 @@ summary: Debug end-to-end flows that call AI agents by running separate debuggin
 tags:
   - Agentic
   - Debugging
+  - Troubleshooting
+  - Workflows
 platform-version: odc
 app_type: mobile apps,reactive web apps
 audience:

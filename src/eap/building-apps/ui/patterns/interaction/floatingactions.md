@@ -1,6 +1,8 @@
 ---
 tags:
+  - Front-End
   - OutSystems UI
+  - Screens
   - UI
   - UI Patterns
   - Widgets

@@ -1,6 +1,8 @@
 ---
 summary: Implement parallel paths in workflows to enhance task completion speed, scalability, and fault tolerance using OutSystems Developer Cloud (ODC).
 tags:
+  - Asynchronous Processes
+  - Business Processes
   - Workflows
 guid: c5650f38-6880-48fc-bfb5-8fc2687941f4
 locale: en-us

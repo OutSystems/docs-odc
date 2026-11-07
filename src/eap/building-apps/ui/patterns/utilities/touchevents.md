@@ -1,6 +1,7 @@
 ---
 tags:
   - Events
+  - Front-End
   - JavaScript
   - Mobile app
   - OutSystems UI
