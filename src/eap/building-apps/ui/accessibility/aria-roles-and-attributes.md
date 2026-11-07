@@ -3,7 +3,10 @@ summary: ARIA roles and attributes in OutSystems Developer Cloud (ODC) let you a
 tags:
   - Accessibility
   - OutSystems UI
+  - Roles
+  - UI
   - UI Patterns
+  - Widgets
 locale: en-us
 guid: 2dd1e5f8-9198-4f04-bc61-6a62073113e5
 app_type: reactive web apps, mobile apps

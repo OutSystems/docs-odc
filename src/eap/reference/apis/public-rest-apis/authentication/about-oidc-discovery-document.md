@@ -4,6 +4,7 @@ tags:
   - Authentication
   - End-user Authentication
   - OIDC
+  - OAuth
 outsystems-tools:
   - odc portal
 guid: 5a77f214-dc04-4629-ac04-cd51a89e5843

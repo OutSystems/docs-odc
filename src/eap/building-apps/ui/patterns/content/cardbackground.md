@@ -1,5 +1,7 @@
 ---
 tags:
+  - CSS
+  - Front-End
   - OutSystems UI
   - UI
   - UI Patterns

@@ -14,8 +14,12 @@ audience:
   - Platform administrator
 tags:
   - Authentication
+  - Authorization
+  - External Authentication
   - Infrastructure
+  - Roles
   - Security
+  - Settings
 outsystems-tools:
   - odc portal
   - lifetime

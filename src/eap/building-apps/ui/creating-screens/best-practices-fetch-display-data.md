@@ -3,6 +3,7 @@ summary: "OutSystems Developer Cloud (ODC) data fetching best practices: use agg
 tags:
   - Aggregates
   - Best Practices
+  - Optimization
   - Pagination
   - Performance
   - Screens

@@ -1,6 +1,7 @@
 ---
 summary: OutSystems Developer Cloud (ODC) Calendar Plugin gives mobile apps access to device calendars to create, delete, find, and open events.
 tags:
+  - Android
   - Capacitor
   - Cordova
   - Events

@@ -6,8 +6,11 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 tags:
+  - 1-Click Publish
   - Best Practices
+  - Data Model
   - Entities
+  - Events
   - Modular Programming
   - Screens
 audience:
