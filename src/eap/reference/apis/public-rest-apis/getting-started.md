@@ -1,5 +1,5 @@
 ---
-summary: In this article you will learn how to make your first API call.
+summary: OutSystems Developer Cloud (ODC) REST APIs use OAuth 2.0 client credentials to authenticate and make a User Management API call.
 tags:
   - Authentication
   - OAuth

@@ -1,5 +1,5 @@
 ---
-summary: This article provides a list of use cases for the ODC REST APIs.
+summary: ODC REST APIs cover user access, asset governance, CI/CD automation, and external library uploads.
 tags:
   - CI/CD
   - REST

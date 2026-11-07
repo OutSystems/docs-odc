@@ -1,5 +1,5 @@
 ---
-summary: This article provides conceptual information about ODC REST API authentication and authorization.
+summary: OutSystems Developer Cloud (ODC) REST API authentication covers OAuth 2.0, OIDC, access tokens, and client credentials.
 tags:
   - Authentication
   - Authorization

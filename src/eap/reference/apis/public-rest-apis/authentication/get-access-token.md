@@ -1,5 +1,5 @@
 ---
-summary: Learn how to get an access token using the client credentials.
+summary: OutSystems Developer Cloud (ODC) access tokens use OAuth 2.0 client credentials, Discovery metadata, and encrypted storage for public REST API calls.
 tags:
   - Authentication
   - OAuth

@@ -1,5 +1,5 @@
 ---
-summary: This article describes the Organization REST API endpoint details.
+summary: OutSystems Developer Cloud (ODC) Organization API reference lists environment configuration endpoints, parameters, and response schemas.
 locale: en-us
 guid: 1699dfce-2d5b-4ea5-83b8-5caf436d756c
 app_type: mobile apps, reactive web apps
