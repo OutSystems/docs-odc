@@ -4,6 +4,7 @@ tags:
   - JavaScript
   - Logging
   - Mobile app
+  - Web
 summary: OutSystems Developer Cloud (ODC) Logger JavaScript API reference for Mobile and Reactive Web Apps, covering the log and error functions.
 locale: en-us
 guid: bdfd5092-a26c-4029-b211-276cefce2ae0
