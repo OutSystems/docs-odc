@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) platform and app management covers the tools and processes for overseeing your apps' full lifecycle.
+summary: OutSystems Developer Cloud (ODC) app management covers platform oversight and application lifecycle tasks.
 tags:
   - Development lifecycle
   - Lifecycle

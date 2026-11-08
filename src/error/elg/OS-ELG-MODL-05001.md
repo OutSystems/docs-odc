@@ -1,5 +1,5 @@
 ---
-summary: File does not contain a valid compiled external library, or the compiled assembly was not built using a supported .NET version.
+summary: OutSystems Developer Cloud (ODC) external library errors require a supported .NET version and a correctly packaged C# ZIP before publishing.
 tags:
   - .NET
   - C#

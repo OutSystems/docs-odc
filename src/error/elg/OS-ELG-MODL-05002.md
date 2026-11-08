@@ -1,5 +1,5 @@
 ---
-summary: No OSInterface found in your file. Make sure only one interface decorated with OSInterface is defined.
+summary: ODC external library errors, fix missing OSInterface attributes and upload a new ZIP file to publish your C# library.
 tags:
   - C#
   - Libraries
