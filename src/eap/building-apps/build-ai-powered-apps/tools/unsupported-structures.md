@@ -12,6 +12,7 @@ platform-version: odc
 coverage-type:
   - understand
   - apply
+  - unblock
 topic:
   - fix-unsupported-mcp-tool
   - mcp-omitted-fields
