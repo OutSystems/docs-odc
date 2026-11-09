@@ -17,7 +17,7 @@ outsystems-tools:
 coverage-type:
   - unblock
 topic:
-  - install-forge-component
+  - upload-forge-asset
 ---
 
 # OS-FRGE-AST-50002

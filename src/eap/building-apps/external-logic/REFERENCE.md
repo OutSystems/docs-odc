@@ -16,7 +16,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - legacy-systems-integration
+  - configure-sdk-attributes
 ---
 
 # External Libraries SDK REFERENCE

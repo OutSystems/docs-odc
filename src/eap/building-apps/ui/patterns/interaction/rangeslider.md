@@ -19,7 +19,7 @@ coverage-type:
   - remember
   - apply
 topic:
-  - add-widget-ui-pattern
+  - use-range-slider-pattern
 ---
 
 # Range Slider

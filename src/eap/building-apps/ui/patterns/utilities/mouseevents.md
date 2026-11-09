@@ -19,7 +19,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - add-widget-ui-pattern
+  - use-mouse-events-pattern
 ---
 
 # Mouse Events
