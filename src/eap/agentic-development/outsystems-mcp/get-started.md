@@ -5,7 +5,6 @@ tags:
   - AI
   - Authentication
   - Plugins
-  - Troubleshooting
 guid: 3d7c70ce-dbd2-47ee-a927-76b6009b0b84
 locale: en-us
 app_type: reactive web apps
@@ -15,7 +14,6 @@ outsystems-tools:
   - claude code
 coverage-type:
   - apply
-  - unblock
 content-type:
   - procedure
 audience:
@@ -46,7 +44,7 @@ Give the guided setup file to your AI tool, and it sets up OutSystems MCP with y
 
 In Claude Code, the `@` reference attaches the file. In AWS Kiro, name the file in the prompt. In other AI tools, attach or name the file the way the tool does.
 
-The guided setup file supports Claude Code, including in the **Code** tab of Claude Desktop, AWS Kiro, Cursor, and GitHub Copilot. The **Code** tab requires a paid Claude plan. For the **Chat** tab of Claude Desktop, which has no shell or file access, refer to [Connect Claude Desktop](connect-mcp-hosts.md#connect-claude-desktop).
+The guided setup file supports Claude Code, including in the **Code** tab of Claude Desktop, AWS Kiro, Cursor, and GitHub Copilot. The **Code** tab requires a paid Claude plan. The **Chat** tab of Claude Desktop has no shell or file access, so use the **Code** tab or another supported tool.
 
 ## Prerequisites for the manual steps {#prerequisites}
 

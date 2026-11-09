@@ -1,5 +1,5 @@
 ---
-summary: Connect your MCP host to the OutSystems MCP server, with setup for Claude Code, AWS Kiro, Cursor, GitHub Copilot, and Claude Desktop.
+summary: Connect your MCP host to the OutSystems MCP server, with setup for Claude Code, AWS Kiro, Cursor, and GitHub Copilot.
 tags:
   - Agentic
   - AI
@@ -28,7 +28,7 @@ isautopublish: true
 
 # Connect MCP hosts to OutSystems MCP
 
-This page shows you how to connect your MCP host, the AI application you work in, to the OutSystems MCP server. It covers Claude Code, Cursor, AWS Kiro, GitHub Copilot, and Claude Desktop, and the settings any other MCP host needs. Each MCP host also loads the OutSystems skill, the instructions that tell the agent how to use the OutSystems tools. The install steps differ per MCP host, and each MCP host has its own section on this page. After you connect, refer to [Get started with OutSystems MCP](get-started.md) to authenticate and run a first request. For the terms this page uses, such as MCP host, OutSystems skill, OutSystems plugin, and OutSystems Power, refer to [Agentic development terminology](../agentic-development-terminology.md).
+This page shows you how to connect your MCP host, the AI application you work in, to the OutSystems MCP server. It covers Claude Code, Cursor, AWS Kiro, and GitHub Copilot, and the settings any other MCP host needs. Each MCP host also loads the OutSystems skill, the instructions that tell the agent how to use the OutSystems tools. The install steps differ per MCP host, and each MCP host has its own section on this page. After you connect, refer to [Get started with OutSystems MCP](get-started.md) to authenticate and run a first request. For the terms this page uses, such as MCP host, OutSystems skill, OutSystems plugin, and OutSystems Power, refer to [Agentic development terminology](../agentic-development-terminology.md).
 
 <div class="info" markdown="1">
 
@@ -51,6 +51,8 @@ For the MCP hosts OutSystems validates, refer to [Supported MCP hosts](outsystem
 ## Connect Claude Code
 
 Claude Code is a validated MCP host. You connect it with the OutSystems plugin, which registers the OutSystems MCP server and delivers the OutSystems skill. To install the plugin, sign in, and run a first request in one path, follow [Get started with OutSystems MCP](get-started.md).
+
+The **Code** tab of Claude Desktop runs Claude Code, so the same steps apply there. The **Code** tab requires a paid Claude plan.
 
 ## Connect AWS Kiro
 
@@ -173,52 +175,6 @@ To connect in the Copilot CLI, register the server and reload the config:
 
 1. In a running session, type `/mcp reload` to load the server, then make an OutSystems request to start the OAuth flow.
 
-## Connect Claude Desktop
-
-Claude Desktop connects through the `mcp-remote` local proxy, which completes the OAuth flow with an OutSystems tenant.
-
-1. Confirm Node.js with `npx` is available, then install the proxy:
-
-        npm install -g mcp-remote
-
-1. Add the server to the Claude Desktop configuration file. The file is at one of these paths:
-
-    * macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-    * Windows: `%APPDATA%\Claude\claude_desktop_config.json`
-    * Linux: `~/.config/Claude/claude_desktop_config.json`
-
-    Read the file first, keep every other entry, then add the `outsystems` entry under `mcpServers`. Use the shape for your operating system.
-
-    On macOS and Linux:
-
-        {
-          "mcpServers": {
-            "outsystems": {
-              "command": "npx",
-              "args": ["mcp-remote", "https://TENANT_HOSTNAME/mcp"]
-            }
-          }
-        }
-
-    On Windows:
-
-        {
-          "mcpServers": {
-            "outsystems": {
-              "command": "cmd",
-              "args": ["/c", "npx mcp-remote https://TENANT_HOSTNAME/mcp"]
-            }
-          }
-        }
-
-1. Restart Claude Desktop. The first OutSystems tool call opens a browser for OAuth.
-
-<div class="info" markdown="1">
-
-To get the OutSystems skill in Claude Desktop, install the plugin from the same marketplace as Claude Code. Plugins require a paid plan.
-
-</div>
-
 ## Connect another MCP host
 
 Other MCP hosts connect to the same endpoint with a generic setup. The OutSystems MCP server is a standard MCP endpoint over the Streamable HTTP transport with OAuth and Dynamic Client Registration, so MCP hosts that support this transport connect to it. The MCP hosts listed on this page are the ones OutSystems validates.
@@ -238,7 +194,6 @@ OutSystems updates the OutSystems MCP server on the tenant side. You update the 
 
     The first command refreshes Claude Code's copy of the OutSystems marketplace. The second command compares your installed plugin with that copy and installs the newer version. Run on its own, the second command compares with the old copy and reports that you already have the latest version.
 
-* **Claude Desktop:** Uninstall the OutSystems plugin, reinstall it from the same marketplace, and restart Claude Desktop.
 * **AWS Kiro:** Update the OutSystems Power from the Powers panel. To reinstall the latest version, uninstall the Power and import it again from the same URL.
 * **Cursor CLI and GitHub Copilot:** The saved skill file keeps the version you installed. Download the current [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) or [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) again, and replace the saved copy.
 * **Cursor app:** A team administrator refreshes the `OutSystems/outsystems-mcp` import under **Plugins** > **Team Marketplaces** in the Cursor dashboard.

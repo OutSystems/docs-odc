@@ -105,7 +105,7 @@ For a PE tenant, skip the conditions about OutSystems MCP and the ODC role, beca
 * OutSystems MCP is enabled for the tenant. If it isn't, the user's administrator must enable it.
 * The user's ODC role allows the work they plan to do, such as **Asset management** > **Create** or **Change**, and **Release management** > **Deploy assets**.
 * The AI tool and a web browser run on the same machine, because the sign-in redirect uses a local loopback address. If the AI tool runs on a remote machine, such as an SSH session, a container, or a virtual machine, tell the user to paste a callback URL back to you in the Sign in section.
-* The user's plan includes the AI tool. Claude Desktop's **Code** tab requires a paid Claude plan.
+* The user's plan includes the AI tool. Claude Code, including the **Code** tab of Claude Desktop, requires a paid Claude plan.
 
 ## Identify the AI tool
 
@@ -117,7 +117,7 @@ This section routes you to the configuration steps for the user's AI tool. Ask w
 | Cursor | Cursor |
 | AWS Kiro | AWS Kiro |
 | GitHub Copilot, in VS Code or the Copilot CLI | GitHub Copilot |
-| Claude Desktop, **Chat** tab | Claude Desktop |
+| Claude Desktop, **Chat** tab | Claude Desktop Chat tab |
 | Any other tool that supports remote MCP over HTTP | Another AI tool |
 
 ## Configure the AI tool
@@ -132,7 +132,7 @@ Use these steps when the user works in Claude Code. The OutSystems plugin regist
 
         claude --version
 
-    If the command isn't found, the Claude Code command-line tool isn't available in this session. Tell the user to install it from the [Claude Code quickstart](https://code.claude.com/docs/en/quickstart), and then restart this guide. A user who works only in the **Chat** tab of Claude Desktop follows the Claude Desktop section instead.
+    If the command isn't found, the Claude Code command-line tool isn't available in this session. Tell the user to install it from the [Claude Code quickstart](https://code.claude.com/docs/en/quickstart), and then restart this guide. A user who works in the **Chat** tab of Claude Desktop follows the Claude Desktop Chat tab section instead.
 
 1. Add the OutSystems marketplace:
 
@@ -262,61 +262,16 @@ To connect in the Copilot CLI, do the following:
 
 Continue with the Sign in section.
 
-### Claude Desktop
+### Claude Desktop Chat tab
 
-Use these steps when the user works in the **Chat** tab of Claude Desktop. A user in the **Code** tab follows the Claude Code section.
+Use this section when the user works in the **Chat** tab of Claude Desktop. The **Chat** tab has no shell or file access, so it can't run the setup steps.
 
-The **Chat** tab has no shell or file access, so the user runs each of these steps by hand. If the user has a paid Claude plan, recommend the **Code** tab instead, because you run the setup steps there. To switch, the user opens the **Code** tab, starts a session in the folder that holds this guide, and runs the guide again. If the user stays in the **Chat** tab, continue with these steps.
+Tell the user to continue in one of the following tools, and then follow the section for that tool:
 
-The built-in custom connector doesn't complete the OutSystems sign-in, so these steps use the `mcp-remote` local proxy. Give the user each step.
+* The **Code** tab of Claude Desktop, or Claude Code in a terminal. Both require a paid Claude plan. Follow the Claude Code section.
+* Cursor, AWS Kiro, or GitHub Copilot. Follow the section for the tool, and check that the user's plan includes it.
 
-1. Check that Node.js is installed by running the following command:
-
-        npx --version
-
-    If the command fails, ask the user to install Node.js first. Without Node.js, the server fails to connect and shows no error.
-
-1. Install the proxy at the pinned version. Use exactly this version, and don't use an unversioned name or `@latest`.
-
-        npm install -g mcp-remote@0.14.3
-
-1. Open the Claude Desktop configuration file for the user's operating system:
-
-    * macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-    * Windows: `%APPDATA%\Claude\claude_desktop_config.json`
-    * Linux: `~/.config/Claude/claude_desktop_config.json`
-
-    Keep every existing key. Don't paste the file's contents back into the chat, because other entries can hold other servers' credentials. Add or replace only the `outsystems` entry.
-
-    On macOS and Linux, use the following entry:
-
-        {
-          "mcpServers": {
-            "outsystems": {
-              "command": "npx",
-              "args": ["mcp-remote@0.14.3", "https://TENANT_HOSTNAME/mcp"]
-            }
-          }
-        }
-
-    On Windows, use the following entry:
-
-        {
-          "mcpServers": {
-            "outsystems": {
-              "command": "cmd",
-              "args": ["/c", "npx mcp-remote@0.14.3 https://TENANT_HOSTNAME/mcp"]
-            }
-          }
-        }
-
-1. Ask the user to restart Claude Desktop. The app has no authenticate tool, so the sign-in window opens when the first OutSystems call runs. Don't wait for a window before a call runs.
-
-If the server doesn't connect after the restart, the app can't find `npx`. On macOS and Linux, replace the `command` value with the full path that `which npx` prints. On Windows, replace `npx` inside the `/c` argument with the path that `where npx` prints for the `.cmd` file, and put the path in quotes when it contains a space. Then restart the app again. If the server still doesn't connect, refer the user to the troubleshooting section of the [OutSystems MCP repository](https://github.com/OutSystems/outsystems-mcp#troubleshooting).
-
-To add the OutSystems skill, install the `outsystems` plugin from the `OutSystems/outsystems-mcp` marketplace through the app's plugin install flow. Plugins require a paid plan.
-
-Continue with the Sign in section.
+In the new tool, the user opens the folder that holds this guide, starts a session, and runs the guide again. If the user has none of these tools, stop and tell the user that OutSystems MCP setup needs one of them.
 
 ### Another AI tool
 
