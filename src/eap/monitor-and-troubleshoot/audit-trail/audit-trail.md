@@ -190,11 +190,21 @@ Track how you grant and revoke access within your organization. This includes bo
 
 * Unassign users from  end user group
 
+### Portfolio management
+
+Track portfolio-level changes, such as renaming a portfolio or changing the order of its stages. These events are portfolio-scoped.
+
+* Update portfolio (`UpdatePortfolio`)
+
+* Reorder stages (`ReorderEnvironments`)
+
 ### Stage management
 
-Track stage-level changes, such as renaming a stage or changing stage order within a portfolio.
+Track stage-level changes, such as renaming a stage or requesting to wake up a hibernated stage.
 
 * Update stage (`UpdateEnvironment`)
+
+* Wake up stage (`Awake`)
 
 ### Asset management
 
