@@ -1540,19 +1540,227 @@
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
       }
     },
+    "/groups/{key}/claim-mappings": {
+      "post": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Creates a new group IdP mapping.",
+        "description": "Creates a group mapping.\nReturns the key of the newly created group mapping.\nRequires the `AppGroupManage` permission.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "GroupIdpClaimMapping_CreateGroupIdpClaimMapping",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the group.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Identity provider and claim to map to the group.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/GroupIdpClaimMappingRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/GroupIdpClaimMappingRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupIdpClaimMappingCreateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      },
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Queries group IdP mappings.",
+        "description": "Searches and retrieves the list of group IdP mappings that match the conditions passed.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "GroupIdpClaimMapping_QueryGroupIdpClaimMappings",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the group for the IdP mapping object to query.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "identityProviderKey",
+            "in": "query",
+            "description": "Key of the IdP to filter mappings by.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupIdpClaimMappingResponsePaginatedResponseApi"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      }
+    },
     "/groups/{key}/claim-mappings/{mappingKey}": {
       "delete": {
         "tags": [
           "groups"
         ],
-        "summary": "Delete a Group Idp Mapping.",
-        "description": "Delete a specified Group Idp Mapping object using its key.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "summary": "Deletes a group IdP mapping.",
+        "description": "Deletes a specified group IdP mapping object using its key.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "GroupIdpClaimMapping_DeleteGroupIdpClaimMapping",
         "parameters": [
           {
             "name": "key",
             "in": "path",
-            "description": "The key of the Group for the Idp Mapping object to delete.",
+            "description": "The key of the group for the IdP mapping object to delete.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1562,7 +1770,7 @@
           {
             "name": "mappingKey",
             "in": "path",
-            "description": "Claim Mapping key.",
+            "description": "Claim mapping key.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1570,6 +1778,208 @@
             }
           }
         ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      },
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Gets a group IdP mapping.",
+        "description": "Returns information of a given group IdP mapping.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "GroupIdpClaimMapping_ReadGroupIdpClaimMapping",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the group.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "mappingKey",
+            "in": "path",
+            "description": "Claim mapping key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupIdpClaimMappingResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      },
+      "put": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Updates a group IdP mapping.",
+        "description": "Updates a group IdP mapping object.\nRequires the `AppGroupManage` permission.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "GroupIdpClaimMapping_UpdateAppGroupIdpClaimMapping",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the group for the IdP mapping to update.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "mappingKey",
+            "in": "path",
+            "description": "Claim mapping key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New identity provider and claim for the mapping.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/GroupIdpClaimMappingRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/GroupIdpClaimMappingRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
         "responses": {
           "204": {
             "description": "No Content"
@@ -2313,7 +2723,7 @@
           {
             "name": "scopes",
             "in": "query",
-            "description": "Optional. Comma-separated. `Organization` returns users with an Organization-scoped assignment of the role; `Asset` returns users with an Asset-scoped assignment. Both together (or omitted) returns all.",
+            "description": "Optional. Comma-separated. `Organization` returns users with an Organization-scoped assignment of the role; `Asset` returns users with an Asset-scoped assignment; `Team` returns users with a Team-scoped assignment. All together (or omitted) returns all.",
             "schema": {
               "type": "array",
               "items": {
@@ -2325,6 +2735,18 @@
             "name": "assetKeys",
             "in": "query",
             "description": "Optional. Comma-separated list of asset keys. Only returns users with an Asset-scoped assignment of the role for any of the specified assets.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "teamKeys",
+            "in": "query",
+            "description": "Optional. Comma-separated list of team keys. Only returns users with a Team-scoped assignment of the role for any of the specified teams.",
             "schema": {
               "type": "array",
               "items": {
@@ -3016,7 +3438,7 @@
           {
             "name": "scopes",
             "in": "query",
-            "description": "Optional. Comma-separated. `Organization` returns roles assigned in Organization scope; `Asset` returns roles assigned in Asset scope. Both together (or omitted) returns all.",
+            "description": "Optional. Comma-separated. `Organization` returns roles assigned in Organization scope; `Asset` returns roles assigned in Asset scope; `Team` returns roles assigned in Team scope. All together (or omitted) returns all.",
             "schema": {
               "type": "array",
               "items": {
@@ -3516,7 +3938,7 @@
           "users"
         ],
         "summary": "Creates a new user.",
-        "description": "Creates a new user by specifying the user information, such as name, email, photo URL, and active status.\n\nTo let the user sign in with the built-in identity provider, set `addToBuiltInIdentityProvider` to `true`. The built-in identity provider identifies users by email, not by username.\n\nTo link the user to an external identity provider at creation time, provide `identityProviderKey`. ODC creates a `UserIdpProfile` for that provider and stores `username` and `subject` on it. ODC uses those values to match the user the first time they sign in through that provider.\n\nWithout `identityProviderKey`, ODC ignores `username` and `subject`, and the user profile has no username. A username belongs to one identity provider, and the `PATCH /users/{ key }` method doesn't update it.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "\nCreates a new user by specifying the user information, such as name, email, photo URL, and active status.\n\nTo let the user sign in with the built-in identity provider, set `addToBuiltInIdentityProvider` to `true`. The built-in identity provider identifies users by email, not by username.\n\nTo link the user to an external identity provider at creation time, provide `identityProviderKey`. ODC creates a `UserIdpProfile` for that provider and stores `username` and `subject` on it. ODC uses those values to match the user the first time they sign in through that provider.\n\nWithout `identityProviderKey`, ODC ignores `username` and `subject`, and the user profile has no username. A username belongs to one identity provider, and the `PATCH /users/{ key }` method doesn't update it.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "UserProfile_CreateUser",
         "requestBody": {
           "description": "The user object with the necessary information.",
@@ -4560,17 +4982,17 @@
           "name": {
             "minLength": 1,
             "type": "string",
-            "description": "Gets or sets Name of the claim to match in the foreign token."
+            "description": "Name of the claim to match in the token."
           },
           "valueDelimiter": {
             "type": "string",
-            "description": "Gets or sets string to split the foreign claim value on.",
+            "description": "String used to split the claim value into separate values. If omitted, the value isn't split.",
             "nullable": true
           },
           "value": {
             "minLength": 1,
             "type": "string",
-            "description": "Gets or sets exact match string for the entire foreign claim value or one of the, split elements if a delimiter was specified."
+            "description": "Exact value to match. With a delimiter, a match on any one of the split values counts. Without one, the entire claim value must match."
           }
         },
         "additionalProperties": false
@@ -4740,6 +5162,20 @@
         },
         "additionalProperties": false
       },
+      "GroupIdpClaimMappingCreateResponse": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Claim mapping identifier.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
       "GroupIdpClaimMappingEmbedded": {
         "required": [
           "foreignClaim",
@@ -4770,6 +5206,101 @@
             "type": "string",
             "description": "The last updated date field.",
             "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupIdpClaimMappingRequest": {
+        "type": "object",
+        "properties": {
+          "providerKey": {
+            "type": "string",
+            "description": "Key of the IdP that issues the claim.",
+            "format": "uuid"
+          },
+          "foreignClaim": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ForeignClaimModel"
+              }
+            ],
+            "description": "Claim to match in tokens from the IdP.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupIdpClaimMappingResponse": {
+        "required": [
+          "environmentKey",
+          "foreignClaim",
+          "groupKey",
+          "key",
+          "providerKey"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Claim mapping identifier.",
+            "format": "uuid"
+          },
+          "providerKey": {
+            "type": "string",
+            "description": "The key of the associated IdP object.",
+            "format": "uuid"
+          },
+          "groupKey": {
+            "type": "string",
+            "description": "Group this mapping assigns.",
+            "format": "uuid"
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Environment key this mapping belongs to.",
+            "format": "uuid"
+          },
+          "foreignClaim": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ForeignClaimModel"
+              }
+            ],
+            "description": "Foreign Claim."
+          },
+          "lastUpdatedDate": {
+            "type": "string",
+            "description": "The last updated date field.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The portfolio key associated with the environment.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupIdpClaimMappingResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupIdpClaimMappingResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
             "nullable": true
           }
         },
@@ -5242,7 +5773,8 @@
       "OrganizationRoleAssignmentScope": {
         "enum": [
           "Organization",
-          "Asset"
+          "Asset",
+          "Team"
         ],
         "type": "string",
         "description": "API query scope for listing a user's organization role assignments."
