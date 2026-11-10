@@ -637,9 +637,6 @@
         - href: eap/building-apps/seo/custom-404.md
         - href: eap/building-apps/seo/remove-ts-query-strings.md
 
-    # ODC Solutions
-    - href: eap/building-apps/solutions/introduction-to-solutions.md
-  
 # Debugging apps
 - href: eap/debugging-apps/intro.md
 - topics:
@@ -716,6 +713,20 @@
     - topics:
         - href: eap/integration-with-systems/javascript/async.md
         - href: eap/integration-with-systems/javascript/use-external-lib.md
+
+# Solutions
+- href: eap/building-apps/solutions/introduction-to-solutions.md
+- topics:
+    - href: eap/building-apps/solutions/install-and-manage-solutions.md
+    - href: eap/building-apps/solutions/agentic-industry-solutions.md
+    - topics:
+        # Agentic First Notice of Loss
+        - href: eap/building-apps/solutions/agentic-claims-modernization/claims-overview.md
+        - topics:
+            - href: eap/building-apps/solutions/agentic-claims-modernization/claims-get-started.md
+            - href: eap/building-apps/solutions/agentic-claims-modernization/claims-solution-architecture.md
+            - href: eap/building-apps/solutions/agentic-claims-modernization/claims-flow-and-status.md
+            - href: eap/building-apps/solutions/agentic-claims-modernization/claims-agents.md
 
 # Extending O11 with ODC
 - href: extending-o11-odc/extend-o11-odc.md
