@@ -14,7 +14,9 @@ audience:
   - Architect
   - Tech lead
 tags:
+  - Best Practices
   - Security
+  - Web services
 outsystems-tools:
   - odc portal
   - odc studio
