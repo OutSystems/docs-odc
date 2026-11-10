@@ -8,7 +8,8 @@ coverage-type:
   - apply
   - evaluate
 topic:
-  - file-storage
+  - file-vs-binarydata
+  - migrate-binarydata
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
