@@ -181,7 +181,7 @@ Use these steps when the user works in Cursor. Cursor loads the OutSystems skill
           }
         }
 
-1. Install the OutSystems skill. Download the [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) and save its exact contents as `AGENTS.md` in the workspace root. Don't retype or summarize the file. Don't save it in `.cursor/rules/`, because Cursor loads only `.mdc` files with rule frontmatter from that folder. If `AGENTS.md` already holds an OutSystems skill, tell the user and don't add a second copy. If it holds other content, don't merge by hand. Tell the user and ask where to save the skill file.
+1. Install the OutSystems skill. Download the [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) and save its exact contents as `AGENTS.md` in the workspace root. Don't retype or summarize the file. Don't save it in `.cursor/rules/`, because Cursor loads only `.mdc` files with rule frontmatter from that folder. If `AGENTS.md` already holds an OutSystems skill for ODC, tell the user and don't add a second copy. If `AGENTS.md` holds other content, keep that content and add the exact contents of the Cursor skill file to the end of `AGENTS.md`.
 1. Run the following commands in a terminal. Run the second command only when the first command shows `outsystems` as needing approval. The third command opens the default browser for sign-in.
 
         agent mcp list
@@ -249,7 +249,7 @@ To connect in VS Code, do the following:
           }
         }
 
-1. Download the [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) and save its exact contents as `.github/copilot-instructions.md` in the workspace. Don't retype or summarize the file.
+1. Download the [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) and save its exact contents as `.github/copilot-instructions.md` in the workspace. Don't retype or summarize the file. If `.github/copilot-instructions.md` already holds an OutSystems skill for ODC, tell the user and don't add a second copy. If the file holds other content, keep that content and add the exact contents of the Copilot skill file to the end.
 1. Start the server from the MCP configuration. A browser window opens for sign-in.
 
 To connect in the Copilot CLI, do the following:
@@ -305,7 +305,7 @@ An authorization code works once. If sign-in fails, start it again, and don't re
 
 This section confirms that the AI tool reaches the user's tenant.
 
-Ask only the following question: "Which environments do I have in OutSystems?"
+Ask only the following question: "Which environments do I have in my ODC tenant?"
 
 Run the question in the session where the user works. If that session has no OutSystems tools because it started before sign-in, ask the user to restart the AI tool, as the Sign in section describes. A separate session isn't a substitute, because it doesn't show the user whether their own session works.
 
@@ -352,7 +352,7 @@ This section tells the user what they can do next. Setup only reads from the ten
 
 Offer the following tasks:
 
-* List the apps in the tenant by asking: "List my apps in OutSystems."
+* List the apps in the tenant by asking: "List my apps in my ODC tenant."
 * Build a first app, an IT help desk, by following a tutorial with a sample prompt file.
 * Change an existing app. For more information, refer to [Evolve an existing app](https://www.outsystems.com/tk/redirect?g=079fe95f-09ff-4cbd-901b-a7b6c6c488a8).
 

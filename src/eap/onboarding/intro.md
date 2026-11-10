@@ -6,7 +6,7 @@ tags:
   - Deploy
   - Development lifecycle
   - Libraries
-  - Mobile app
+  - Mentor
   - Workflows
 locale: en-us
 guid: cb10aa0f-4e5b-4a29-92ce-03fbc813bc14
@@ -33,6 +33,8 @@ isautopublish: true
 This article summarizes differences in functionality and features that developers familiar with OutSystems 11 (O11) may find helpful when learning about OutSystems Developer Cloud (ODC).
 
 In ODC, you build apps with agentic development. You describe the app in natural language, and Mentor generates or modifies it. You apply your O11 modeling experience to review the data model, screens, and logic that Mentor produces. The differences in the following sections apply whether you build with Mentor or by hand in ODC Studio. For more information about the development paths, refer to [Agentic development](../agentic-development/intro.md).
+
+You can also work with Mentor from the AI application you use, such as Claude Code or Cursor, through OutSystems MCP. If that application also connects to O11, refer to [Use OutSystems MCP in ODC alongside O11](../agentic-development/outsystems-mcp/use-with-o11.md).
 
 ## App development
 

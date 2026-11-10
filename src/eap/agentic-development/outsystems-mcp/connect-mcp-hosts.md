@@ -1,5 +1,5 @@
 ---
-summary: Connect your MCP host to the OutSystems MCP server, with setup for Claude Code, AWS Kiro, Cursor, and GitHub Copilot.
+summary: OutSystems MCP setup connects Claude Code, AWS Kiro, Cursor, and GitHub Copilot to OutSystems Developer Cloud (ODC) with OAuth.
 tags:
   - Agentic
   - AI
@@ -41,12 +41,14 @@ The steps on this page assume that you're comfortable with command-line tools an
 You need the following for any MCP host:
 
 * An OutSystems tenant with OutSystems MCP enabled for your organization. Access is gated server-side, so confirm this with your administrator before you install. If a call later returns a `tenant_not_allowed` rejection, refer to [Verify the connection](get-started.md#verify-the-connection) for the cause and the resolution.
-* Your OutSystems tenant hostname. Replace `TENANT_HOSTNAME` with the host part of your OutSystems URL, for example `mycompany.outsystems.dev`.
+* Your ODC tenant hostname. Replace `TENANT_HOSTNAME` with the host part of your ODC Portal URL, for example `mycompany.outsystems.dev`.
 * A web browser on the same machine as your MCP host. The sign-in redirect goes to a local loopback address, so run the MCP host and the browser on one machine.
 
 The OutSystems MCP server supports OAuth Dynamic Client Registration, so your MCP host registers its own OAuth client and gets a client ID and callback port automatically. Setting a fixed client ID or callback port makes two sessions contend for the same port, so only the first session signs in.
 
 For the MCP hosts OutSystems validates, refer to [Supported MCP hosts](outsystems-mcp-overview.md#supported-mcp-hosts).
+
+If your MCP host also connects to OutSystems 11 (O11), refer to [Use OutSystems MCP in ODC alongside O11](use-with-o11.md) before you install.
 
 ## Connect Claude Code
 
@@ -97,7 +99,12 @@ Add the OutSystems MCP server to the Cursor configuration, then install the OutS
 
     Use `mcpServers` as the key and omit `type`. Cursor reads the transport from the URL. An entry copied from another MCP host's configuration file uses that host's keys, and Cursor skips it silently.
 
-1. Install the OutSystems skill. Save the [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) to `AGENTS.md` in your workspace root, which Cursor loads for the agent. Cursor loads `.mdc` files with rule frontmatter from `.cursor/rules/`, so a plain Markdown copy saved there is ignored.
+1. Install the OutSystems skill. Cursor loads `AGENTS.md` in your workspace root for the agent. `AGENTS.md` can already hold other instructions, so check whether it exists before you save the skill:
+
+    * If `AGENTS.md` doesn't exist, save the [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) as `AGENTS.md`.
+    * If `AGENTS.md` exists, keep its content and add the text of the Cursor skill file to the end of `AGENTS.md`.
+
+    Cursor loads `.mdc` files with rule frontmatter from `.cursor/rules/`, so a plain Markdown copy saved there is ignored.
 
 ### Sign in from the Cursor IDE
 
@@ -106,7 +113,7 @@ Cursor starts the sign-in when it loads the server entry. To sign in and confirm
 1. Save `mcp.json`. Cursor opens your default browser.
 1. Complete the sign-in in the browser.
 1. In Cursor, open the **MCPs** tab and select `outsystems`. Confirm that **Local** shows **Connected** under **Environments**.
-1. Confirm the connection by asking `list 10 of my outsystems apps` in Cursor chat.
+1. Confirm the connection by asking `list 10 of my apps in my ODC tenant` in Cursor chat.
 
 ### Sign in from the Cursor CLI
 
@@ -132,7 +139,7 @@ The Cursor CLI provides the `agent` command. To install it, approve the server, 
 
 1. Confirm the connection by running the following command in the terminal:
 
-        agent "list 10 of my outsystems apps"
+        agent "list 10 of my apps in my ODC tenant"
 
 ### Install the plugin for a team
 
@@ -163,7 +170,10 @@ To connect in VS Code, add the server and the OutSystems skill, then start the s
 
     Use `servers` as the key. VS Code registers its own client through Dynamic Client Registration, so omit `oauth.clientId`.
 
-1. Install the OutSystems skill. Save the [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) to `.github/copilot-instructions.md` in your workspace.
+1. Install the OutSystems skill. VS Code loads `.github/copilot-instructions.md` in your workspace, and the file can already hold other instructions, so check whether it exists before you save the skill:
+
+    * If `.github/copilot-instructions.md` doesn't exist, save the [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) as `.github/copilot-instructions.md`.
+    * If the file exists, keep its content and add the text of the Copilot skill file to the end.
 
 1. Start the server from the MCP configuration. A browser opens for OAuth on the first connection.
 
@@ -195,7 +205,7 @@ OutSystems updates the OutSystems MCP server on the tenant side. You update the 
     The first command refreshes Claude Code's copy of the OutSystems marketplace. The second command compares your installed plugin with that copy and installs the newer version. Run on its own, the second command compares with the old copy and reports that you already have the latest version.
 
 * **AWS Kiro:** Update the OutSystems Power from the Powers panel. To reinstall the latest version, uninstall the Power and import it again from the same URL.
-* **Cursor CLI and GitHub Copilot:** The saved skill file keeps the version you installed. Download the current [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) or [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) again, and replace the saved copy.
+* **Cursor CLI and GitHub Copilot:** The saved skill file keeps the version you installed. Download the current [Cursor skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/cursor/skills/outsystems/SKILL.md) or [Copilot skill file](https://raw.githubusercontent.com/OutSystems/outsystems-mcp/refs/heads/main/copilot/skill.md) again, and replace the text you saved. If you added the skill to the end of an existing file, replace only the text you added.
 * **Cursor app:** A team administrator refreshes the `OutSystems/outsystems-mcp` import under **Plugins** > **Team Marketplaces** in the Cursor dashboard.
 
 ### Upgrade an earlier Claude Code setup

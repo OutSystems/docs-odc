@@ -159,4 +159,5 @@ The following pages cover OutSystems MCP topics in more depth:
 * For terms such as MCP client and OutSystems plugin, refer to [Agentic development terminology](../agentic-development-terminology.md).
 * For the request path from your MCP host to ODC, refer to [OutSystems MCP request architecture](architecture.md).
 * For per-host setup, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md).
+* For an MCP host that also connects to OutSystems 11 (O11), refer to [Use OutSystems MCP in ODC alongside O11](use-with-o11.md).
 * To send feedback about OutSystems MCP, refer to [Give feedback on OutSystems MCP](give-feedback.md).
