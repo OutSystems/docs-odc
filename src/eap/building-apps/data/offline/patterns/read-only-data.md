@@ -11,6 +11,7 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7907-1038
 audience:
   - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - forge
