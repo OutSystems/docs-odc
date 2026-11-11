@@ -41,12 +41,12 @@ You can build emails and the logic that sends them by describing them to Mentor 
 
 In **ODC Studio** you define how you want to send emails. When working with the display of the content, you can use or define new templates. By default, ODC uses a light theme which is an industry standard and is automatically set for you.
 
-When defining how to send the email, developers can:
+To send emails from your app, you can do the following:
 
-* Create server and service actions to send emails.
-* Create parameters in actions to pass information.
-* Define timers to send an email at a specific time.
-* Define manual triggers by creating a send email button or automate the sending of emails such as a confirmation of registration.
+* Create a server action or a service action that runs the **Send Email** action.
+* Add input parameters to the action to pass information to the Email.
+* Call the action from your app logic, for example when a user clicks a button or submits a form.
+* Call the action from a Timer to send an email at a specific time.
 
 Developers can also use **widgets** (GUI elements to create and display the content) in an email to:
 
@@ -86,6 +86,15 @@ The following sections cover the more technical details related to the emails in
 
 In ODC Studio, you first define the structure of the email and the expressions the platform evaluates to generate the email content. Then, ODC turns the structure into a HTML template, evaluates the expressions, replaces the content, and creates the final HTML. Finally, ODC sends the email message using the configurations you provide in the ODC Portal.
 
+### Email sending behavior {#email-sending-behavior}
+
+How ODC sends emails determines where you place **Send Email** in your logic and how you handle its result. **Send Email** works like a call to any other integration, with the following behavior:
+
+* **Synchronous call.** The flow waits while ODC sends the message to the SMTP server. When the SMTP server accepts the message, the flow continues to the next node.
+* **Immediate sending.** ODC doesn't queue emails. ODC sends the email as soon as **Send Email** runs, and doesn't cancel the email if logic that runs after **Send Email** fails.
+* **Exception on failure.** If sending fails, **Send Email** raises an exception. Handle the exception in your logic. For more information, refer to [Handling exceptions](../handling-exceptions/handle-exceptions.md). If your use case requires retries, build the retry logic in your app.
+* **Sent means accepted.** Sending succeeds when the SMTP server accepts the message. ODC doesn't track delivery to the recipient or bounces, and doesn't keep a status, history, or message ID for sent emails.
+
 ### Data considerations
 
 You can create content for emails by using input parameters, local variables and the scope of the Email widgets expressions. Elements like Aggregates, Data Actions, or Client Variables aren't available in the scope of an Email element.
@@ -106,7 +115,9 @@ Google Gmail clips messages if the HTML code is larger than 102 KB. OutSystems r
 
 ### SMTP server configurations
 
-To send emails from your app you need to configure your SMTP server on the ODC Portal. The SMTP policy of your server might limit sending of the emails that can cause errors. For example, you might have a maximum number of addresses in To / From, or policy may limit the port number, body message size, or prevent concurrent emails.
+To send emails from your app, configure your SMTP server in ODC Portal. The policy of your SMTP server can limit sending and cause errors. For example, the policy can limit the number of addresses in the **To** and **From** fields, the port number, or the body message size, or prevent concurrent emails.
+
+ODC doesn't apply sending quotas or throughput limits to your apps. The SMTP server defines any limits on how many emails your apps send.
 
 ## Correct email output
 
@@ -118,6 +129,7 @@ The platform guarantees that the model is valid, and you decide whether an email
 * **Size.** The HTML of the Email stays under 102 KB, because Gmail clips larger messages. The Email starts with basic styles, without the CSS from OutSystems UI.
 * **CSS support.** The content displays correctly in the email clients that your users have, because CSS support differs between email clients.
 * **SMTP policy.** The sending respects the policy of the SMTP server, such as limits on the number of addresses, the port, the body size, or concurrent emails.
+* **Sending logic.** The **Send Email** action runs after the logic it depends on, because ODC sends the email as soon as **Send Email** runs. The logic handles the exception that **Send Email** raises when sending fails. For more information, refer to [Email sending behavior](#email-sending-behavior).
 
 ## Related resources
 

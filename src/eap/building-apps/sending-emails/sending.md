@@ -25,10 +25,9 @@ isautopublish: true
 
 # Sending emails
 
-Email is a fundamental component of app development, serving as a channel for communicating directly with your users. In OutSystems, you can design, build, and send emails to handle communication workflows. When designing an app to send emails to your users, consider the following types of actions::
+Email is a fundamental component of app development, serving as a channel for communicating directly with your users. In OutSystems, you can design, build, and send emails to handle communication workflows.
 
-* **Sending emails** - This is a generic action. ODC takes the Email you create in OutSystems Developer Cloud (ODC) Studio, renders it as an email, and then sends it to the users inbox.
-* **Triggering emails** -  This event initiates sending an email. It's usually an automated action, but you can trigger sending an email manually in the Portal.
+To send an Email from your app, create a server action that runs the **Send Email** action, and then call the server action from your app logic. When **Send Email** runs, ODC renders the Email you create in ODC Studio and sends it to the recipients.
 
 ## Create logic for sending emails with Mentor Studio
 
@@ -41,7 +40,7 @@ In your prompt, include the following:
 * The input parameters that the Email requires
 * The input parameter for the **To** field of the **Send Email** action
 
-To trigger the sending from a screen, also name the widget and the screen.
+To call the server action from a screen, also name the widget and the screen.
 
 For example, the following sentences form one prompt:
 
@@ -58,7 +57,8 @@ The platform guarantees that the model is valid, and you decide whether the logi
 * The server action has an input parameter for each parameter that the Email requires, and an input parameter for the **To** property.
 * The **To** property and the Email parameters of the **Send Email** action have the values you intend.
 * The **From** property is unchanged unless you intend to change it. Most spam algorithms reject emails with a misconfigured **From** field.
-* The logic that triggers the sending calls the server action and provides the input parameters that the action requires. For transactional emails, one wrapper server action contains both the business logic and the email logic. For more information, refer to [Best practices for logic](../logic/best-practices-logic.md).
+* The logic that calls the server action provides the input parameters that the action requires.
+* The **Send Email** action runs after the logic it depends on, because ODC sends the email as soon as **Send Email** runs and doesn't cancel the email if later logic fails. For more information, refer to [Email sending behavior](intro.md#email-sending-behavior).
 
 ## Create logic for sending emails manually in ODC Studio {#creating-logic-for-sending-emails}
 
@@ -88,42 +88,39 @@ To create logic that sends an email manually, go to ODC Studio and follow these 
 
     </div>
 
-Your app is now ready to send the email. Next, create logic to trigger sending the email.
+Your app is now ready to send the email. Next, call the server action from your app logic.
 
-## Triggering emails
+## Call the server action that sends the email
 
-Apps often need to send emails automatically. This automation typically falls into two categories:
+Call the server action from the logic that runs when your app needs to send the email. Apps often send an email in response to a user action, such as a registration confirmation, a password reset, or a purchase receipt. The following examples show how to send an email when a user clicks a button and after a user submits a form.
 
-* **Transactional emails**: Sent immediately in response to a user's action (for example, a registration confirmation, password reset, or purchase receipt).
-* **Batch or scheduled emails**: Sent by a background process without any user present (for example, a daily report or a weekly newsletter).
+### Send an email when a user clicks a button
 
-This guide focuses on the first category: transactional emails. A common example is the app automatically sending a confirmation email as soon as a user fills out an event registration form.
+To send an email when a user clicks a button, for example to test the app, add a **Button** widget (1) with an **On Click** event that calls a client action (2).
 
-### Trigger emails manually
-
-You can manually trigger the sending of an email when you test the app or when you have use cases that require it. For example, you might have a **Button** widget (1) that has  an **On Click** event to call a client action (2).
-
-![User interface showing a button widget to manually trigger an email in ODC Studio](images/trigger-email-manually-ui-odcs.png "Trigger Email Manually UI")
+![User interface showing a button widget that sends an email in ODC Studio](images/trigger-email-manually-ui-odcs.png "Button That Sends an Email")
 
 In the client action, you can call the server action that sends the email (3). For this to work, you must provide the input parameters required by the action. In the feedback message from the UI (4), you can notify users that the app called the logic to send the message.
 
-![Screenshot of the client action logic to manually trigger sending an email in ODC Studio](images/trigger-email-manually-logic-odcs.png "Trigger Email Manually Logic")
+![Screenshot of the client action logic that calls the server action to send an email in ODC Studio](images/trigger-email-manually-logic-odcs.png "Client Action That Sends an Email")
 
-### Triggering transactional emails in response to user actions
+### Send an email after a user submits a form
 
-There are many use cases where you might want to send emails as a result of an action. Consider an event registration, where users who want to attend the event need to fill in the registration details in a form.
+Consider an event registration, where users who want to attend the event fill in the registration details in a form.
 
 ![Sample screen of an event registration form in ODC Studio](images/sample-screen-ss.png "Sample Event Registration Screen")
 
-The logic for new registrations checks if the user entered valid information (1). If the information is valid, the logic handles the registration request (2) and then triggers sending the confirmation email (3).
+The logic for new registrations checks if the user entered valid information (1). If the information is valid, the logic handles the registration request (2) and then sends the confirmation email (3).
 
 <div class="info" markdown="1">
 
-The pattern shown here is simplified for demonstration. It is best practice to avoid calling multiple server actions from a single client action. Instead, create one wrapper server action that contains both the registration and email logic. This improves performance and maintainability. For more details, refer to the [Best practices for logic](../logic/best-practices-logic.md).
+The pattern shown here is simplified for demonstration. To improve performance and maintainability, avoid calling multiple server actions from a single client action. Instead, create one wrapper server action that runs the registration logic first and then the **Send Email** action. ODC sends the email as soon as **Send Email** runs. With **Send Email** after the registration logic, the app sends the confirmation only after the registration logic completes.
+
+For more information, refer to [Avoid multiple server calls in a client action flow](../logic/best-practices-logic.md#multiple-server-calls) and [Email sending behavior](intro.md#email-sending-behavior).
 
 </div>
 
-![Screenshot of the logic flow handling new event registration and triggering a confirmation email in ODC Studio](images/sample-logic-new-registration-ss.png "Logic for New Registration")
+![Screenshot of the logic flow handling new event registration and sending a confirmation email in ODC Studio](images/sample-logic-new-registration-ss.png "Logic for New Registration")
 
 ## Related resources
 
