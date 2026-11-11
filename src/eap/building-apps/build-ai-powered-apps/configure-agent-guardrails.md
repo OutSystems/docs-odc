@@ -35,11 +35,11 @@ For an overview of agent guardrail concepts and filter types, refer to [Agent gu
 
 Before you configure agent guardrails, ensure that you have:
 
-* **Required permissions**: The **Manage agent guardrails** permission at the organization level. For more information about permissions, refer to [Roles and permissions for members](../../user-management/roles.md).
+* **Required permissions for stage-level guardrails**: To configure baseline guardrails at the stage (tenant or portfolio) level, you must have the **Manage agent guardrails** permission at the organization level. For more information about permissions, refer to [Roles and permissions for members](../../user-management/roles.md).
 
 * **ODC Portal access**: Administrative access to the ODC Portal with your organization credentials.
 
-* **AI agents**: At least one AI agent created in your organization. If you need to create agents first, refer to [Creating an agent](create-agent.md).
+* **AI agents**: At least one AI agent created in your organization. Any developer can configure guardrails for their agents, regardless of the **Manage agent guardrails** permission. If you need to create agents first, refer to [Creating an agent](create-agent.md).
 
 <div class="info" markdown="1">
 
