@@ -56,8 +56,8 @@ Create a configuration file that only agent runs use. Your own Claude Code sessi
 
 1. Download the token script for your operating system, and save it in a folder outside your code repositories:
 
-    * [odc-mcp-token.sh](https://github.com/OutSystems/docs-odc/blob/main/src/eap/agentic-development/outsystems-mcp/resources/odc-mcp-token.sh) for macOS and Linux. Make the file executable with `chmod +x odc-mcp-token.sh`.
-    * [odc-mcp-token.ps1](https://github.com/OutSystems/docs-odc/blob/main/src/eap/agentic-development/outsystems-mcp/resources/odc-mcp-token.ps1) for Windows.
+    * [odc-mcp-token.sh](resources/odc-mcp-token.sh) for macOS and Linux. Make the file executable with `chmod +x odc-mcp-token.sh`.
+    * [odc-mcp-token.ps1](resources/odc-mcp-token.ps1) for Windows.
 
     The script requests an access token with the API client credentials and prints it as an `Authorization` header. The script stores nothing on disk.
 
