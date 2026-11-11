@@ -1,8 +1,8 @@
 ---
 summary: Set up OutSystems MCP in Claude Code with a guided file or manual steps, sign in, and confirm the connection with a first request.
 tags:
-  - Agentic
   - AI
+  - Agentic
   - Authentication
   - Plugins
 guid: 3d7c70ce-dbd2-47ee-a927-76b6009b0b84
@@ -27,7 +27,7 @@ isautopublish: true
 
 This page shows you how to connect Claude Code, your MCP host, to OutSystems MCP from a terminal. You install the plugin, sign in, and run a first request.
 
-To have an AI tool guide you instead, refer to [Use the guided setup file](#guided-setup). To use another MCP host, such as Cursor or AWS Kiro, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md). For the MCP hosts that OutSystems validates, refer to [Supported MCP hosts](outsystems-mcp-overview.md#supported-mcp-hosts). If your MCP host also connects to OutSystems 11 (O11), refer to [Use OutSystems MCP in ODC alongside O11](use-with-o11.md).
+To have an AI tool guide you instead, refer to [Use the guided setup file](#guided-setup). To use another MCP host, such as Cursor or AWS Kiro, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md). For the MCP hosts that OutSystems validates, refer to [Supported MCP hosts](outsystems-mcp-overview.md#supported-mcp-hosts). If your MCP host also connects to OutSystems 11 (O11), refer to [Use OutSystems MCP in ODC alongside O11](use-with-o11.md). To connect an agent that runs without a person present, refer to [Connect unattended agents to OutSystems MCP with an API client](connect-unattended-agents.md).
 
 ## Use the guided setup file {#guided-setup}
 

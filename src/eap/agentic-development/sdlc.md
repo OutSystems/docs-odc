@@ -1,13 +1,13 @@
 ---
 summary: Agentic development integrates into the ODC software development lifecycle across generation, testing, deployment, maintenance, and governance.
 tags:
-  - AI
   - Agentic
+  - AI
   - Deploy
   - Development lifecycle
   - Mentor
   - Mentor Studio
-  - Mentor Web
+  - Testing
 guid: 7c3b8a4f-2d1e-4b9a-9e7f-6a5d3c2b1f0e
 locale: en-us
 app_type: reactive web apps
@@ -80,6 +80,8 @@ Enabling or disabling this permission has no effect on who can access Mentor Web
 Role changes that grant or revoke the **Mentor** > **Use** permission appear in your organization's audit trail alongside other role changes.
 
 For more information about the Mentor permission and how to assign it through roles, refer to [Roles and permissions for members (IT-users)](../user-management/roles.md). For more information about reviewing access changes, refer to [Audit trails](../monitor-and-troubleshoot/audit-trail/audit-trail.md).
+
+For an unattended agent that connects to OutSystems MCP with an API client, administrators grant **Mentor** > **Use** in the permissions of the API client. For more information, refer to [Connect unattended agents to OutSystems MCP with an API client](outsystems-mcp/connect-unattended-agents.md).
 
 ## Related resources
 

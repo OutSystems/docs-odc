@@ -48,6 +48,8 @@ The OutSystems MCP server supports OAuth Dynamic Client Registration, so your MC
 
 For the MCP hosts OutSystems validates, refer to [Supported MCP hosts](outsystems-mcp-overview.md#supported-mcp-hosts).
 
+To connect an agent that runs without a person present, such as in a continuous integration (CI) pipeline, refer to [Connect unattended agents to OutSystems MCP with an API client](connect-unattended-agents.md).
+
 If your MCP host also connects to OutSystems 11 (O11), refer to [Use OutSystems MCP in ODC alongside O11](use-with-o11.md) before you install.
 
 ## Connect Claude Code

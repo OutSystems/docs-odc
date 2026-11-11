@@ -34,7 +34,9 @@ With OutSystems MCP, every operation runs under the same governance as operation
 
 ## Identity and access
 
-Every operation runs under your own identity. You sign in to your tenant as your ODC user, each tool call carries your OAuth bearer token, and OutSystems authorizes the operation against that user's roles. An operation requires the same role permissions as the equivalent action in ODC Portal. If you lack the permission, the operation fails the same way it fails in ODC Portal. OutSystems enforces these checks on every tool call, whichever agent or MCP host sends it.
+Every operation runs under the identity that signs in to OutSystems MCP. You sign in to your tenant as your ODC user, each tool call carries your OAuth bearer token, and OutSystems authorizes the operation against that user's roles. An agent that runs without a person present can authenticate with an ODC API client instead, and its operations run under the API client and its permissions. For more information, refer to [Connect unattended agents to OutSystems MCP with an API client](connect-unattended-agents.md).
+
+An operation requires the same permissions as the equivalent action in ODC Portal. If the identity lacks the permission, the operation fails the same way it fails in ODC Portal. OutSystems enforces these checks on every tool call, whichever agent or MCP host sends it.
 
 ## Confirmation of state-changing operations {#confirming-state-changing-operations}
 

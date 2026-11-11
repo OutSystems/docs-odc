@@ -43,7 +43,7 @@ OutSystems MCP uses the Model Context Protocol (MCP), an open protocol that conn
 
 OutSystems MCP has two parts:
 
-* **OutSystems MCP server:** A remote MCP server that OutSystems hosts for your tenant. The server authenticates every request as your ODC user and applies the same role permissions as ODC Portal, whichever MCP host sends the request.
+* **OutSystems MCP server:** A remote MCP server that OutSystems hosts for your tenant. The server authenticates every request as your ODC user, or as an API client for an unattended agent. It applies the same permissions as ODC Portal, whichever MCP host sends the request.
 * **OutSystems skill:** Instructions that tell the agent how to use the OutSystems tools. Your MCP host loads the skill.
 
 To have an AI agent in an app you build call an external MCP server, refer to [Use MCP servers](../../building-apps/build-ai-powered-apps/tools/mcp-connectors.md).

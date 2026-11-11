@@ -1,5 +1,5 @@
 ---
-summary: How an MCP host connects to the OutSystems platform, from the MCP client in the host to the OutSystems MCP server and on to Context, Platform, and Mentor Services.
+summary: OutSystems Developer Cloud (ODC) MCP architecture explains request routing, identity permissions, and Context, Platform, and Mentor Services.
 tags:
   - Agentic
   - AI
@@ -30,7 +30,7 @@ isautopublish: true
 
 # OutSystems MCP request architecture
 
-With OutSystems MCP, every request from your MCP host reaches OutSystems through a single governed entry point. The MCP host is the AI application you work in, such as Claude Code or Cursor. Inside it, an MCP client maintains a signed-in remote connection to the OutSystems MCP server. From there, OutSystems authenticates every request as your ODC user, applies that user's role permissions as in ODC Portal, and routes the work to the service that performs it.
+With OutSystems MCP, every request from your MCP host reaches OutSystems through a single governed entry point. The MCP host is the AI application you work in, such as Claude Code or Cursor. Inside it, an MCP client maintains a signed-in remote connection to the OutSystems MCP server. From there, OutSystems authenticates every request as your ODC user, or as an API client for an unattended agent. It applies the permissions of that identity as in ODC Portal and routes the work to the service that performs it.
 
 This page describes that path end to end. It covers where the MCP host and its MCP client run, how requests enter the platform, and which services do the work. The following diagram shows how the parts fit together.
 
@@ -56,7 +56,7 @@ flowchart TB
         CF(Amazon CloudFront):::process
         GW("<b>OutSystems MCP server</b><br/><span style='font-size:12px;color:#0A141E'>Single governed entry point</span>"):::decision
         GUARD("<b>Guardrails</b><br/><span style='font-size:12px;color:#686E76'>Same roles as ODC Portal</span>"):::annotation
-        SEC("<b>Security and access</b><br/><span style='font-size:12px;color:#686E76'>Authenticated as your ODC user</span>"):::annotation
+        SEC("<b>Security and access</b><br/><span style='font-size:12px;color:#686E76'>Authenticated as an ODC user or API client</span>"):::annotation
         CTX("<b>Context Services</b><br/><span style='font-size:12px;color:#686E76'>Apps, entities, integrations, screens</span>"):::process
         PLAT("<b>Platform Services</b><br/><span style='font-size:12px;color:#686E76'>Deploy, roll back, impact analysis</span>"):::process
         MSVC("<b>Mentor Services</b><br/><span style='font-size:12px;color:#686E76'>Delegates building and editing to Mentor</span>"):::process
@@ -89,8 +89,8 @@ Claude Desktop connects through a local `mcp-remote` proxy. In that setup, the M
 
 Every tool call enters the platform through one place, the OutSystems MCP server, fronted by Amazon CloudFront. The following controls apply to every request that passes through the server:
 
-* **Security and access:** OutSystems authenticates each request as your ODC user, derived from your signed-in identity.
-* **Guardrails:** The same roles that govern your work in ODC Portal apply to every request.
+* **Security and access:** OutSystems authenticates each request as your ODC user, derived from your signed-in identity. For an unattended agent, OutSystems authenticates each request as the API client that the agent uses. For more information, refer to [Connect unattended agents to OutSystems MCP with an API client](connect-unattended-agents.md).
+* **Guardrails:** The same permissions that govern work in ODC Portal apply to every request.
 
 Because every call goes through this single entry point, the same controls govern every operation, regardless of which MCP host started it.
 
