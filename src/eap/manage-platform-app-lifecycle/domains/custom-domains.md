@@ -74,7 +74,7 @@ If customers are routing traffic through a reverse proxy, they must configure it
 
 </div>
 
-ODC generates a public X.509 certificate to enable TLS communication over the domain. The generated certificate is valid for 395 days. If the provided CNAME records remain in the domain's DNS records, ODC automatically renews the certificate before expiry.
+ODC generates a public X.509 certificate to enable TLS communication over the domain. The generated certificate is valid for 198 days and renews 45 days before expiry. If the provided CNAME records remain in the domain's DNS records, ODC automatically renews the certificate before expiry.
 
 ### Add a CNAME record to your domain's DNS records  {#add-cname-box}
 
@@ -101,7 +101,7 @@ Before setting a custom domain as the default domain, read [Planning domain chan
 
 To set a custom domain as the default domain, follow the [Add a custom domain](#add-custom-domain) steps. Once the domain is active, click the ellipsis menu, and select **Set as default**.
 
-![Set domain as default](images/set-default-domain-odcs.png "Set as Default Domain")
+![Set domain as default](images/set-default-domain-pl.png "Set as Default Domain")
 
 ## Developing apps with custom domains {#developing-apps}
 
