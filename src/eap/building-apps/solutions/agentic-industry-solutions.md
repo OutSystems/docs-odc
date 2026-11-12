@@ -23,7 +23,7 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - agentic-industry-solutions-overview
+  - agentic-solutions
 isautopublish: true
 ---
 

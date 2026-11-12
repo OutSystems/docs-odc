@@ -17,7 +17,7 @@ content-type:
 coverage-type:
   - understand
 topic:
-  - agentic-claims-modernization-claims-flow
+  - claim-flow-and-statuses
 isautopublish: true
 ---
 

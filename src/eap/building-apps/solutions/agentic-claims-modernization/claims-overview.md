@@ -22,7 +22,9 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - agentic-claims-modernization-overview
+  - claim-flow-and-statuses
+  - claims-agent-roles
+  - claims-solution-overview
 isautopublish: true
 ---
 

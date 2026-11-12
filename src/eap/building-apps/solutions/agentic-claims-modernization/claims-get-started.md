@@ -25,7 +25,7 @@ content-type:
 coverage-type:
   - apply
 topic:
-  - agentic-claims-modernization-setup
+  - claims-solution-setup
 isautopublish: true
 ---
 

@@ -18,7 +18,8 @@ content-type:
 coverage-type:
   - understand
 topic:
-  - agentic-claims-modernization-claims-agents
+  - assess-claim-fraud
+  - claims-agent-roles
 isautopublish: true
 ---
 
