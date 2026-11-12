@@ -12,6 +12,8 @@ figma:
 coverage-type:
   - unblock
   - remember
+topic:
+  - code-analysis-process
 audience:
   - Developer
 outsystems-tools:
