@@ -20,7 +20,7 @@ content-type:
 coverage-type:
   - understand
 topic:
-  - agentic-claims-modernization-solution-architecture
+  - claims-solution-overview
 isautopublish: true
 ---
 
