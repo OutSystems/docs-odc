@@ -1,11 +1,13 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) sitemap.xml and robots.txt: use a REST API to generate dynamic sitemaps and static files to control crawler access."
 tags:
+  - Domains
   - Front-End
   - Optimization
   - REST
   - Screens
   - Web
+  - Web services
 guid: 7e883e55-675d-4cb8-a0b5-805d2eaf60dd
 locale: en-us
 app_type: mobile apps, reactive web apps
