@@ -1,5 +1,5 @@
 ---
-summary: Evolve an existing OutSystems app from your MCP host by inspecting it, delegating a change to Mentor, then publishing and deploying the result across stages.
+summary: OutSystems Developer Cloud (ODC) app evolution uses MCP to inspect models, delegate Mentor edits, publish revisions, and deploy across stages.
 tags:
   - Agentic
   - Data Model
@@ -22,6 +22,7 @@ content-type:
   - process
 audience:
   - Developer
+  - Platform administrator
 topic:
   - creating-apps
 isautopublish: true
@@ -101,6 +102,8 @@ Publishing changes tenant state. The publish tool description instructs the agen
 When the publish completes, the agent reports the publication key, status, revision number, and any messages. Confirm that the revision number increased. A failed publish stays failed until you publish again. Read the build messages, fix the cause, then publish.
 
 Publish an app again only after its previous publish finishes. Two publishes of the same app that build at the same time can leave the app unable to publish, until you recover it in ODC Studio. When the agent reports a publish result as indeterminate, the publish can still be building. Ask the agent to check the publish status again instead of publishing again. Without changes through Mentor in the session, there's nothing new to publish. In that case, deploy an existing revision directly.
+
+If someone else published a newer revision of the app after your session loaded it, Mentor merges non-overlapping changes and declines to publish overlapping ones. For more information, refer to [Concurrent changes to an app](mentor-delegation.md#concurrent-changes-to-an-app).
 
 ## Deploy to another stage
 

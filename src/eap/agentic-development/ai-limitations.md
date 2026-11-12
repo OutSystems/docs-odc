@@ -70,7 +70,7 @@ The following limitations apply when modifying existing apps through Mentor Stud
 
 Mentor Studio modifies app elements but doesn't perform stage-level operations, such as deployments.
 
-* **App elements only.** Mentor Studio generates and modifies logic, UI, and data within the app. ODC Studio operations such as one-click publish, changing preferences, and managing dependencies are not supported through Mentor.
+* **App elements only.** Mentor Studio generates and modifies logic, UI, and data within the app. ODC Studio operations such as one-click publish and changing preferences aren't supported through Mentor.
 
 ### Context awareness {#context-awareness}
 

@@ -53,6 +53,23 @@ Close a session once its work is published, or once you no longer need it. An op
 
 If a session returns wrong or empty results, or references something that doesn't exist, cancel the turn, close the session, and then start a new session. A new session loads the current app model.
 
+## Concurrent changes to an app
+
+If someone else publishes a newer revision of an app after your session loads it, the next publish from your session reconciles the two revisions. The result depends on whether the changes overlap:
+
+* **Changes that don't overlap:** Mentor merges your changes with the newer revision and publishes the result as a new revision. The run reports the revision that Mentor merged with.
+* **Changes that overlap:** Mentor doesn't publish. The run reports the newer revision and the user who published it, and the agent asks you how to proceed.
+
+For example, adding an entity in one session and a screen in another doesn't overlap. Changing the title of the same screen in both sessions does.
+
+When the changes overlap, you choose one of the following:
+
+1. Compare the two revisions side by side, and review the differences before you publish.
+1. Publish your changes over the newer revision, which discards the changes in that revision.
+1. Load the latest published revision into the session, which discards your unpublished changes.
+
+Publish over the newer revision or load the latest revision only when you intend to discard those changes.
+
 ## Task sequence for delegated edits {#why-this-matters-for-your-prompts}
 
 The agent sends each edit to Mentor, which modifies the model. Treat each task as a sequence: inspect the app, delegate the edit to Mentor, then publish to persist the change. Across a multi-step change, publish between major steps to keep your changes.
