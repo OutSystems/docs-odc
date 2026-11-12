@@ -486,8 +486,8 @@
           "Built-In Domains"
         ],
         "summary": "Checks if the given built-in domain prefix is available in the given environment (stage).",
-        "description": "Used to validate prefixes before creating a built-in domain.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
-        "operationId": "EnvironmentConfigurations_CheckBuiltinDomainAvailability",
+        "description": "Used to validate prefixes before creating a built-in domain.\n\n<b>Deprecated:</b> use `POST /environment-configurations/v2/environments/{environmentKey}/builtin-domains/availability` instead.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "EnvironmentBuiltinDomains_CheckBuiltinDomainAvailability",
         "parameters": [
           {
             "name": "environmentKey",
@@ -584,6 +584,7 @@
             }
           }
         },
+        "deprecated": true,
         "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
       }
     },
@@ -593,8 +594,8 @@
           "Built-In Domains"
         ],
         "summary": "Removes a built-in domain prefix from the environment. The primary domain cannot be deleted.",
-        "description": "Other environments are not affected.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
-        "operationId": "EnvironmentConfigurations_Delete",
+        "description": "Other environments are not affected.\n\n<b>Deprecated:</b> use `DELETE /environment-configurations/v2/environments/{environmentKey}/builtin-domains/{builtinDomainPrefix}` instead.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
+        "operationId": "EnvironmentBuiltinDomains_Delete",
         "parameters": [
           {
             "name": "environmentKey",
@@ -680,6 +681,7 @@
             "description": "No Content"
           }
         },
+        "deprecated": true,
         "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
       },
       "patch": {
@@ -687,8 +689,8 @@
           "Built-In Domains"
         ],
         "summary": "Sets the given built-in domain prefix as primary for the environment, resetting all other prefixes to non-primary.",
-        "description": "The primary prefix is the default built-in domain in this environment.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
-        "operationId": "EnvironmentConfigurations_PatchPrimary",
+        "description": "The primary prefix is the default built-in domain in this environment.\n\n<b>Deprecated:</b> use `PATCH /environment-configurations/v2/environments/{environmentKey}/builtin-domains/{builtinDomainPrefix}` instead.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
+        "operationId": "EnvironmentBuiltinDomains_PatchPrimary",
         "parameters": [
           {
             "name": "environmentKey",
@@ -774,6 +776,191 @@
             "description": "OK"
           }
         },
+        "deprecated": true,
+        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/builtin-domains": {
+      "get": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Retrieves the list of built-in domain prefixes for the given environment.",
+        "description": "Results are paginated.\n\n<b>Deprecated:</b> use `GET /environment-configurations/v2/environments/{environmentKey}/builtin-domains` instead.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "EnvironmentBuiltinDomains_GetBuiltinDomains",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The key of the environment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuiltInDomainPrefixResponsePagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      },
+      "post": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Adds a new built-in domain prefix to the environment.",
+        "description": "Operates at environment scope.\n\n<b>Deprecated:</b> use `POST /environment-configurations/v2/environments/{environmentKey}/builtin-domains` instead.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
+        "operationId": "EnvironmentBuiltinDomains_Post",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The key of the environment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The request containing the built-in domain prefix to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainPrefixRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainPrefixRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "deprecated": true,
         "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
       }
     },
@@ -934,188 +1121,6 @@
           },
           "204": {
             "description": "No Content"
-          }
-        },
-        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
-      }
-    },
-    "/environments/{environmentKey}/builtin-domains": {
-      "get": {
-        "tags": [
-          "Built-In Domains"
-        ],
-        "summary": "Retrieves the list of built-in domain prefixes for the given environment.",
-        "description": "Results are paginated.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
-        "operationId": "EnvironmentConfigurations_GetBuiltinDomains",
-        "parameters": [
-          {
-            "name": "environmentKey",
-            "in": "path",
-            "description": "The key of the environment.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BuiltInDomainPrefixResponsePagedListResponse"
-                }
-              }
-            }
-          }
-        },
-        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
-      },
-      "post": {
-        "tags": [
-          "Built-In Domains"
-        ],
-        "summary": "Adds a new built-in domain prefix to the environment.",
-        "description": "Operates at environment scope.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
-        "operationId": "EnvironmentConfigurations_Post",
-        "parameters": [
-          {
-            "name": "environmentKey",
-            "in": "path",
-            "description": "The key of the environment.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "The request containing the built-in domain prefix to add.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/BuiltinDomainPrefixRequest"
-                  }
-                ]
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/BuiltinDomainPrefixRequest"
-                  }
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Conflict",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "201": {
-            "description": "Created"
           }
         },
         "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
@@ -2516,15 +2521,19 @@
   ],
   "tags": [
     {
+      "name": "Client Certificates",
+      "description": "Endpoints to manage client certificates used for outbound mTLS"
+    },
+    {
+      "name": "private",
+      "description": ""
+    },
+    {
       "name": "Domains",
       "description": "Manage custom domains for environments."
     },
     {
       "name": "public"
-    },
-    {
-      "name": "private",
-      "description": ""
     },
     {
       "name": "Built-In Domains",
