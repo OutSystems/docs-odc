@@ -22,6 +22,8 @@ coverage-type:
   - remember
   - apply
   - unblock
+topic:
+  - custom-db-certificates
 isautopublish: true
 ---
 

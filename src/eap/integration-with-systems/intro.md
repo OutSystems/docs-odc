@@ -20,7 +20,7 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - integration-pattern-basics
+  - odc-integration-options
 ---
 
 # Integration with external systems
