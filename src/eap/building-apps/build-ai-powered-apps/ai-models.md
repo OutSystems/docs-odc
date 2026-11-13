@@ -1,7 +1,10 @@
 ---
-summary: Integrate AI models and search services into mobile apps and reactive web apps using OutSystems Developer Cloud (ODC).
+summary: OutSystems Developer Cloud (ODC) AI model connections cover trial and custom models, usage limits, search services, and RAG grounding.
 tags:
   - AI
+  - Private Gateway
+  - REST
+  - Web services
 guid: 387270e4-2dc7-4c82-a8fc-3f0a0139eb98
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -15,6 +18,7 @@ coverage-type:
 audience:
   - Developer
   - Front-end developer
+  - Platform administrator
 topic:
   - custom-model-connections-odc
   - manage-ai-model-connections
@@ -30,7 +34,7 @@ You manage your AI model connections within ODC. This includes adding new connec
 
 Once an AI model connection is configured, you can create logic in ODC Studio to call the model. These calls can range from text prompts to complex input parameter interactions. This includes using features like tools associated with the LLM or specific parameters defined in the contract for custom model connections.
 
-To retrieve information from a configured knowledge base connection such as Azure AI Search, Amazon Kendra, or custom search providers, [you call a specific service action provided by ODC](add-ai-search-services.md). This action performs a semantic search, fetching data based on the meaning and intent of your query rather than just keywords. You typically use this retrieved data within your app logic by passing it as context to a configured AI model to enhance quality and grounding, effectively implementing the Retrieval-augmented generation (RAG) pattern.
+To ground the answers of an AI model in your content, your app retrieves relevant passages and passes them to the model as context. This pattern is called retrieval-augmented generation (RAG). For content stored in ODC, such as app data, app files, and documents in knowledge bases, use [semantic search](semantic-search/semantic-search-overview.md). For content indexed in an external search service, such as Azure AI Search or Amazon Kendra, [add a search service connection](add-ai-search-services.md) and call the search action that ODC provides.
 
 ![Diagram showing three steps: 1. Set up your AI Service (Cloud Provider), 2. Integrate AI models and search services (ODC Portal), 3. Add AI models and search services (ODC Studio).](images/steps-diag.png "Steps to Integrate AI Models and Search Services")
 
@@ -56,9 +60,7 @@ For more information, download and inspect the [Swagger file](resources/swagger.
 
 ## Search services connections
 
-ODC lets you connect your apps to external knowledge bases using AI search services. This capability enables your apps to retrieve information from Azure AI Search, AWS Kendra, or custom data sources that conform to an API contract. You manage these connections within ODC. The main purpose is to facilitate (RAG) patterns within your app's logic; you retrieve relevant context from a knowledge base and then provide that context alongside your prompt to an AI model (LLM) call, leading to more accurate responses.
-
-To retrieve information from a configured knowledge base connection, you call a specific service action provided by ODC from your app. This action fetches data based on your query. You typically use this retrieved data within your app logic by passing it as the context in a subsequent call to a configured AI model, effectively implementing the RAG pattern.
+A search service connection links your apps to Azure AI Search, Amazon Kendra, or a custom data source that conforms to an API contract. You manage the connections in the ODC Portal, and your app calls the search action of each connection in ODC Studio. For more information, refer to [Integrating AI models and search services](integrate-ai-models-logic-rag.md).
 
 ## Next steps
 

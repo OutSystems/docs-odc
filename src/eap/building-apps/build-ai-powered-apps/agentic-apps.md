@@ -16,11 +16,14 @@ audience:
   - Developer
   - Tech lead
 tags:
-  - Agentic
   - AI
+  - Agentic
+  - Data
+  - Workflows
 outsystems-tools:
   - odc studio
 helpids: 30646, 30647, 30649, 30650
+isautopublish: true
 ---
 
 # Agentic apps in ODC
@@ -58,7 +61,7 @@ Key AI fundamentals help ensure AI models within an agent operate effectively an
 Grounding means providing an AI model with relevant, factual, real-world context and data specific to the task. AI models are powerful but generic. Without grounding, their responses might be abstract, irrelevant, or incorrect for your use case.
 
 * **Why it matters for agents:** Agents often use dynamic, business-specific information. Grounding ensures the AI model operates within your app's data and rules. For example, if an agent processes customer orders, grounding involves providing details like current inventory, customer history, or product specifications.
-* **How it works in ODC agents:** In ODC, the `GetGroundingData` action (part of the AgentTask logic) retrieves and prepares this contextual information. Sources can include internal aggregates, search services (RAG), or external tools. This data becomes part of the input to the AI model, allowing it to make more informed and accurate decisions or generate more relevant outputs. For more information, see [Creating an AI agent in ODC Studio](create-agent.md).
+* **How it works in ODC agents:** In ODC, the `GetGroundingData` action (part of the AgentTask logic) retrieves and prepares this contextual information. Sources can include internal aggregates, [semantic search](semantic-search/semantic-search-overview.md) over entity attributes and knowledge bases, external search services (RAG), or external tools. This data becomes part of the input to the AI model, allowing it to make more informed and accurate decisions or generate more relevant outputs. For more information, refer to [Creating an agent in ODC Studio](create-agent.md).
 * **Benefits:** Grounding improves the accuracy, relevance, and reliability of the AI model's outputs. It prevents the AI from providing generic responses by tethering its understanding to your app's reality.
 
 ### System prompts { #system-prompts }

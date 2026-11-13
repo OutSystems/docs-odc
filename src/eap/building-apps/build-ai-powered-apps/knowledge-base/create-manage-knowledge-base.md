@@ -1,9 +1,10 @@
 ---
-summary: "OutSystems Developer Cloud (ODC) knowledge bases: create, edit, delete, upload files, and integrate using server actions in ODC Studio."
+summary: Create a knowledge base in the ODC Portal, upload files in each stage, check the indexing status, and edit or delete the knowledge base.
 tags:
   - Agentic
   - AI
   - Data
+  - Indexes
   - Lifecycle
 guid: 7dddda4b-4ac3-4cb5-8655-f041749e3bd7
 locale: en-us
@@ -23,115 +24,135 @@ topic:
   - add-kb-server-action
   - manage-kb-lifecycle
 ---
+
 # Create and manage a knowledge base in the ODC Portal
 
-This article explains how to manage the full life cycle of a knowledge base in the ODC Portal: create, view, edit settings, and delete.
+To give agents and apps a set of curated documents to search, you create a knowledge base in the ODC Portal and upload the documents to it. After the platform indexes the files, developers call the generated `SearchKB<KnowledgeBaseName>` action from their apps in ODC Studio. This page describes how to create a knowledge base, upload files, view the indexing status, edit the name and description, and delete a knowledge base.
+
+You set the knowledge base and its data source configuration, including the chunk method, once for all stages. You upload the files separately in each stage, and each stage indexes and searches only its own files. For more information about the structure of a knowledge base and stage isolation, refer to [Knowledge bases in ODC](knowledge-bases-overview.md).
 
 ## Prerequisites
 
-Before you begin, confirm the following:
+Confirm the following before you create a knowledge base:
 
-* You are using ODC Studio 1.7.15 or later, which supports knowledge base search server actions.
-* You understand that each stage has its own files, storage area, and search index.
-* You understand the [data transaction constraints](knowledge-bases-overview.md#regional-availability-and-limitations).
-* You are aware of the different chunking strategies and how they affect search results. See [Chunking strategies](chunking-strategy-reference.md) for details.
+* The runtime region of each stage where you use the knowledge base supports knowledge bases. For the list of regions, refer to [Regions and languages for semantic search](../semantic-search/search-regions-languages.md).
+* You chose a chunk method for your documents, because you can't change it after you create the knowledge base. For more information, refer to [Chunk methods in ODC](../semantic-search/chunk-methods.md).
+* Your role includes the permissions for the tasks that you perform.
+
+Each task on this page requires a permission. The following table lists the permission for each task. The built-in Administrator role includes all of them. The platform checks the permissions in the Development stage of the portfolio for tasks in every stage, so your role must include them for the Development stage.
+
+| Task | Permission |
+| --- | --- |
+| Create a knowledge base | **Configuration management** > **Edit asset configurations** |
+| Upload files to a knowledge base | **Configuration management** > **Edit asset configurations** |
+| View knowledge base details | **Configuration management** > **View configurations** or **Edit asset configurations** |
+| Edit knowledge base settings | **Configuration management** > **Edit asset configurations** |
+| Delete a knowledge base | **Configuration management** > **Edit asset configurations** |
+
+For more information about permissions and custom roles, refer to [Roles and permissions for members (IT-users)](../../../user-management/roles.md).
 
 ## Create a knowledge base
 
+A knowledge base needs a name, a description, and a data source with a chunk method. The data source configuration is shared by all stages and can't change after you create the knowledge base.
+
 1. In the ODC Portal, in the left navigation, go to **Integrate** > **Knowledge bases**.
 1. Click **Create knowledge base**.
-    ![ODC Portal showing the Integrate menu with Knowledge bases selected and the Create knowledge base button](images/knowledge-base-step1-pl.png "Create Knowledge Base Button")
-1. Enter a **Name** for the knowledge base. Use a name that clearly identifies the document set, for example, `HR Policies` or `Legal Contracts`.
-1. Enter a **Description** to help other users understand what this knowledge base contains. This is also important to help the agent understand the context. Then click **Continue**.
-    ![Create knowledge base form with Name and Description fields for identifying the knowledge base](images/knowledge-base-step2-pl.png "Knowledge Base Details Form")
-1. On the Data source configuration screen, fill in the Data source Name and Description (optional), and select your Chunking configuration. Then click **Continue**.
 
-    Keep in mind that the data source configuration and chunking strategy can't be changed after the knowledge base is created and it's shared by all stages.
+    ![Knowledge bases page in the ODC Portal without knowledge bases, with the create knowledge base button highlighted](images/knowledge-base-step1-pl.png "Create Knowledge Base Button")
 
-    ![Data source configuration screen with fields for Data source Name, Description, and Chunking configuration selection](images/knowledge-base-step3-pl.png "Data Source Configuration Screen")
+1. In **Knowledge base details**, enter a **Name** for the knowledge base, up to 42 characters. Use a name that identifies the document set, for example, `HR Policies` or `Legal Contracts`.
+1. Enter a **Description** that states what the knowledge base contains and who uses it, and then click **Continue**. ODC Studio shows the description with the knowledge base reference in apps that use the knowledge base.
 
-1. Review your settings and click **Publish and create knowledge base** to create the knowledge base.
-        ![Knowledge base configuration review screen with the Publish and create knowledge base button](images/knowledge-base-step4-pl.png "Review Knowledge Base Configuration")
+    ![Knowledge base details step of the Create knowledge base wizard, with the Name and Description fields and the Continue button](images/knowledge-base-step2-pl.png "Knowledge Base Details Form")
 
-The knowledge base is created and appears in the list. It's empty until you upload files to it.
+1. In **Data source configuration**, enter a **Name** for the data source. The **Description** of the data source is optional.
+1. In **Chunking method**, select the chunk method for the files, and then click **Continue**.
+
+    ![Data source configuration step of the Create knowledge base wizard, with the data source Name, Description, and Chunking method fields](images/knowledge-base-step3-pl.png "Data Source Configuration Screen")
+
+1. In **Review and create**, check the knowledge base details and the data source configuration, and then click **Publish and create knowledge base**.
+
+    ![Review and create step of the Create knowledge base wizard, with the Publish and create knowledge base button](images/knowledge-base-step4-pl.png "Review Knowledge Base Configuration")
+
+The knowledge base appears in the list with the **Ready** status. It has no files until you upload them in each stage.
 
 ## Upload files to a knowledge base
 
+Each stage has its own files, so upload the files in every stage where an agent or app searches the knowledge base. The platform indexes each file after the upload, and the status of each file shows when the file is searchable.
+
 1. In the ODC Portal, go to **Integrate** > **Knowledge bases**.
-1. Double-click the card of the knowledge base you want to upload files to. This opens the knowledge base details view.
-1. In this screen you can see a list of all the data sources associated with the knowledge base. Click the **...** icon next to the data source you want to upload files to, and select **Open data source**.
-    ![Knowledge base details screen showing data sources with the menu icon and Open data source option highlighted](images/open-data-source-pl.png "Open Data Source Option")
-1. In the data source details screen you can see a list of all files that exist on the data source, along with their ingestion status. To add new files, click **Upload files**.
-    ![Data source details screen displaying file list with ingestion status and the Upload files button](images/upload-files-pl.png "Data Source Details with Upload")
-1. Select the files you want to upload and click **Upload**.
+1. On the card of the knowledge base, click **...**, and select **Open knowledge base**.
+1. In the stage selector, select the stage to upload the files to.
+1. On the **Data Sources** tab, click **...** next to the data source, and select **Open data source**.
 
-    ![File selection dialog for choosing files to upload to the knowledge base](images/upload-files-detail-pl.png "File Upload Selection Dialog")
+    ![Knowledge base page with the Data Sources tab, and the Open data source option highlighted in the menu of a data source](images/open-data-source-pl.png "Open Data Source Option")
 
-    A notification appears in the bottom right corner of the portal indicating that the files are being processed.
-    The ingestion process can take several minutes depending on the number and size of files uploaded. You can continue to work in the portal while the ingestion is running.
+1. Click **Upload files**.
 
-    ![Upload status notification in the bottom right corner of the ODC Portal indicating files are being processed](images/upload-status-pl.png "Upload Status Notification")
+    ![Data source page without files, with the Upload files button highlighted](images/upload-files-pl.png "Data Source Upload Files Button")
 
-1. When the files are successfully uploaded, the status for each file changes to **Succeeded**. If any files fail to upload, the ingestion status changes to **Failed**.
-    ![File list showing upload complete with Succeeded status displayed for each successfully uploaded file](images/upload-complete-pl.png "Upload Complete Status")
-1. The files that were successfully uploaded are now available for use in your knowledge base. You can view the details of the files and their status on the Data source details screen.
-    ![Data source details screen displaying the list of successfully uploaded files with their ingestion status](images/uploaded-files-list-pl.png "Uploaded Files List View")
+1. In the **Upload files** dialog, click **Browse** or drag the files to the dialog, and then click **Upload**. The dialog lists the supported file types and the maximum size of each file.
+
+    ![Upload files dialog with the Browse button, a selected PDF file, and the Upload button](images/upload-files-detail-pl.png "File Upload Selection Dialog")
+
+    The **Uploading files** panel shows the progress of each upload. You can continue to work in the ODC Portal while the upload and the indexing run. Indexing takes longer for more files and for larger files.
+
+    ![Uploading files panel in the ODC Portal with one file upload in progress](images/upload-status-pl.png "Upload Status Notification")
+
+1. To check the indexing, on the **Files** tab of the data source, click **Refresh**. A file has the **Indexing** status while the platform processes it, and the **Indexed** status when it's searchable.
+
+    ![Data source page with an uploaded file in the Indexing status, and the Uploading files panel showing the file as Uploaded](images/upload-complete-pl.png "File Indexing Status")
 
 ## View knowledge base details
 
-To see the files and ingestion status for a knowledge base:
+The knowledge base page shows the status of the knowledge base, its data sources, and the search action that the platform generates. Each data source shows its files and their status in each stage.
 
 1. In the ODC Portal, go to **Integrate** > **Knowledge bases**.
-1. Double-click the card of the knowledge base you want to inspect.
+1. On the card of the knowledge base, click **...**, and select **Open knowledge base**.
+1. In the stage selector, select the stage.
 
-The knowledge base detail view shows:
+The knowledge base page shows the following details for the stage:
 
-* The list of uploaded files and the ingestion status of each file (pending, running, succeeded, or failed).
-* Summary counts for chunks, embeddings, and vectors currently indexed.
+* The status of the knowledge base, next to its name.
+* **Indexed files**: The number of indexed files out of the uploaded files.
+* **Element**: The name of the `SearchKB<KnowledgeBaseName>` action.
+* **Data Sources**: The data sources of the knowledge base, with the type and the status of each one.
+
+To see the files of a data source, open the data source and select the **Files** tab. The tab lists each file with its status, size, and last update. To find the files with a given status, use the **Status** filter.
 
 ## Edit knowledge base settings
 
-You can change the name and description of a knowledge base at any time. You can't change the stage a knowledge base belongs to.
+To keep the name and the description of a knowledge base in line with its content, edit them in the ODC Portal. The knowledge base is shared by all stages, so the change applies to every stage.
 
 1. In the ODC Portal, go to **Integrate** > **Knowledge bases**.
-1. Click the **...** icon next to the name of the knowledge base you want to edit.
-1. Click **Edit knowledge base details**.
-    ![Knowledge base action menu showing the Edit knowledge base details option](images/edit-kb-pl.png "Edit Knowledge Base Option")
-1. Update the **Name** or **Description** as needed.
+1. On the card of the knowledge base, click **...**, and select **Edit knowledge base details**.
+
+    ![Menu of a knowledge base card with the Edit knowledge base details option highlighted](images/edit-kb-pl.png "Edit Knowledge Base Option")
+
+1. Change the **Name** or the **Description**.
 1. Click **Save**.
 
-Keep in mind that renaming a knowledge base doesn't affect how developers reference it in ODC Studio. The Studio XIF is generated from the knowledge base identifier, not the display name.
+Renaming a knowledge base changes the name of its `SearchKB<KnowledgeBaseName>` action. The action keeps the identifier of the knowledge base, so apps that use it keep working and show the new name the next time you publish them.
 
 ## Delete a knowledge base
 
-Deleting a knowledge base permanently removes it, all uploaded files, and all indexed content (chunks, embeddings, and vectors) for that stage. This action can't be undone.
+You can't delete a knowledge base while an app or agent references it. Remove the references from the apps and agents, and then delete the knowledge base.
+
+<div class="warning" markdown="1">
+
+Deleting a knowledge base permanently removes it from every stage, with its uploaded files, its chunks, and their embeddings. You can't undo the deletion.
+
+</div>
 
 1. In the ODC Portal, go to **Integrate** > **Knowledge bases**.
-1. Click the **...** icon next to the name of the knowledge base you want to delete.
-1. Click **Delete knowledge base**.
-    ![Knowledge base action menu showing the Delete knowledge base option](images/delete-kb-pl.png "Delete Knowledge Base Option")
-1. In the confirmation dialog, type the knowledge base name to confirm, then click **Delete permanently**.
-        ![Delete confirmation dialog requiring the knowledge base name to be entered to confirm permanent deletion](images/delete-kb-confirmation-pl.png "Delete Confirmation Dialog")
+1. On the card of the knowledge base, click **...**, and select **Delete knowledge base**.
 
-Keep in mind that any agent or app that references this knowledge base fails at runtime after deletion. Notify developers before deleting a knowledge base that's in active use.
+    ![Menu of a knowledge base card with the Delete knowledge base option highlighted](images/delete-kb-pl.png "Delete Knowledge Base Option")
 
-## Calling a knowledge base from an app
+1. In the confirmation dialog, enter the name of the knowledge base, and then click **Delete permanently**.
 
-For every knowledge base an user creates and publishes in the ODC Portal, the platform generates a **Server Action** that developers can add to their apps in ODC Studio.
-This action runs semantic search on that knowledge base's indexed content, no manual API wiring or custom integration code required.
+    ![Delete confirmation dialog with a field for the knowledge base name and the Delete permanently button](images/delete-kb-confirmation-pl.png "Delete Confirmation Dialog")
 
-### Add the server action to your app
+## Call a knowledge base from an app
 
-1. In ODC Studio, your Agentic app.
-1. In the app tree, right-click and select [**Add public element**](../../libraries/use-public-elements.md), or use the equivalent toolbar action.
-1. In the All sources drop-down, filter by the Knowledge Base name you want to use.
-1. Then pick up server action with the name `SearchKB<KnowledgeBaseName>`. The **Source** column shows the originating knowledge base, and the **Description** column shows the description of the elements.
-1. Select the action and click **Add**.
-
-The server action now appears under **Server Actions** in your app's Logic tab, ready to drag into any flow. For example you can call in a CallAgent [Action calling](../function-calling.md).
-
-## Things to keep in mind
-
-* **One action per knowledge base.** If an IT-user deletes and recreates a knowledge base with the same name, you may need to re-add the server action, since the underlying identifier changes even if the display name doesn't.
-* **Renaming in the Portal doesn't break your app.** The server action reference in Studio is tied to the knowledge base's internal identifier, not its display name — so an user renaming a knowledge base in the Portal doesn't require you to re-add the action.
-* **Stage awareness.** The knowledge base you search is scoped to the stage your app is running in. An app published to PROD searches the content that exists in production, and not in any other stage.
+For every knowledge base that you create and publish in the ODC Portal, the platform generates a `SearchKB<KnowledgeBaseName>` server action that you add to your app in ODC Studio. To add and call the action, refer to [Add semantic search to your app](../semantic-search/add-semantic-search.md).

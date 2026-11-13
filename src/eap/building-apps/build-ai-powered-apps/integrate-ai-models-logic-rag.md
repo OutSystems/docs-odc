@@ -20,6 +20,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 helpids:
+isautopublish: true
 ---
 
 # Integrating AI models and search services
@@ -42,14 +43,14 @@ The following video walks you through adding and configuring AI models, using AI
 
 First, you must find the specific Server Action ODC creates for your model.
 
-1. **Find the connection name:** In the ODC Portal, navigate to **INTEGRATE > AI models**. Select your model and check the **Name** field in its **Details**, referred to here as **(model name)**. 
+1. **Find the connection name:** In the ODC Portal, navigate to **INTEGRATE > AI models**. Select your model and check the **Name** field in its **Details**, referred to here as **(model name)**.
 1. **Find the Server Action in ODC Studio:** In ODC Studio, go to the **Logic** tab. Under **Server Actions** looks for the action named **Call(model name)**.
 1. **Add it as public element if missing:** If you can't find the Server Action, add it as a [public element](../../app-architecture/reuse-elements.md#public-elements)
 
 This section explains how to call a configured AI model from your ODC app logic. This is how the interaction generally works when your ODC app logic communicates with an AI model using the provided structures:
 
 1. **Prepare the request:** When a user provides input (like typing a question into your app), your app logic in ODC Studio needs to package this information correctly for the AI model. This involves creating the **Request** data structure. The most important part is the **Request.Messages** field, which is a list of **Message** structures. For a simple prompt, you typically add one **Message** to this list where:
-    * Set **Role** to `user` to indicate the message is from the end user.
+    * Set **Role** to `user`, which indicates that the message comes from the end user.
     * **Content** contains the actual **text input from the user**.
     * For multi-turn conversations, you would include previous user and assistant messages in this list as well.
 
@@ -66,6 +67,8 @@ This section explains how to call a configured AI model from your ODC app logic.
 ## Implementing AI search calls for RAG
 
 This section explains how to call a configured AI Search connection from your ODC app logic, typically to retrieve context for RAG.
+
+To retrieve context from content stored in ODC, such as entity data, files in entities, and documents in a knowledge base, use semantic search instead of an external search service. For more information, refer to [Semantic search in ODC](semantic-search/semantic-search-overview.md).
 
 **Prerequisite:** A [configured connection](add-ai-search-services.md#add-a-search-service) to your AI Search service (like Azure AI Search, Amazon Kendra, or a custom provider) in the ODC Portal under **Connections**.
 

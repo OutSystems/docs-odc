@@ -120,19 +120,27 @@
             - href: eap/building-apps/build-ai-powered-apps/agent-2-agent/agent-2-agent.md
             - topics:
                 - href: eap/building-apps/build-ai-powered-apps/agent-2-agent/using-agent-2-agent.md
-            - href: eap/building-apps/build-ai-powered-apps/semantic-search/semantic-search-intro.md
-            - topics:
-                - href: eap/building-apps/build-ai-powered-apps/semantic-search/using-semantic-search.md
-            - href: eap/building-apps/build-ai-powered-apps/knowledge-base/knowledge-bases-overview.md
-            - topics:
-                - href: eap/building-apps/build-ai-powered-apps/knowledge-base/create-manage-knowledge-base.md
-                - href: eap/building-apps/build-ai-powered-apps/knowledge-base/chunking-strategy-reference.md
             # MCPs and other tools
             - href: eap/building-apps/build-ai-powered-apps/tools/intro.md
             - topics:
                 - href: eap/building-apps/build-ai-powered-apps/tools/mcp-connectors.md
                 - href: eap/building-apps/build-ai-powered-apps/tools/prebuilt-connectors.md
                 - href: eap/building-apps/build-ai-powered-apps/tools/unsupported-structures.md
+    - topics:
+        - href: eap/building-apps/build-ai-powered-apps/semantic-search/semantic-search-overview.md
+        - topics:
+            - href: eap/building-apps/build-ai-powered-apps/semantic-search/search-over-text-attributes.md
+            - href: eap/building-apps/build-ai-powered-apps/semantic-search/search-over-files.md
+            - href: eap/building-apps/build-ai-powered-apps/semantic-search/chunk-methods.md
+            - href: eap/building-apps/build-ai-powered-apps/knowledge-base/knowledge-bases-overview.md
+            - topics:
+                - href: eap/building-apps/build-ai-powered-apps/knowledge-base/create-manage-knowledge-base.md
+            - href: eap/building-apps/build-ai-powered-apps/semantic-search/implementing-semantic-search.md
+            - topics:
+                - href: eap/building-apps/build-ai-powered-apps/semantic-search/make-attributes-searchable.md
+                - href: eap/building-apps/build-ai-powered-apps/semantic-search/add-semantic-search.md
+            - href: eap/building-apps/build-ai-powered-apps/semantic-search/search-inputs-results.md
+            - href: eap/building-apps/build-ai-powered-apps/semantic-search/search-regions-languages.md
       # AI Agent Builder
         - href: eap/building-apps/use-ai/intro.md
         - topics:

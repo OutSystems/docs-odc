@@ -31,6 +31,12 @@ isautopublish: true
 
 This document explains adding search services like Azure AI Search, Amazon Kendra, or custom connections within your ODC environment to power RAG for generative AI search experiences. This integration lets your AI models access and ground their responses in your organization's specific knowledge base. This guide targets developers familiar with the basic concepts of ODC who want to enhance their AI apps with external knowledge.
 
+<div class="info" markdown="1">
+
+If your content lives in ODC, such as app data, app files, or knowledge base documents, use native semantic search instead. For more information, refer to [Native and external search](semantic-search/semantic-search-overview.md#native-and-external-search).
+
+</div>
+
 ## Prerequisites
 
 Before adding a configured connection to your search service provider:

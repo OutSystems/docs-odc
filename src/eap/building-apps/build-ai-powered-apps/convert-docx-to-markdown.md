@@ -66,7 +66,7 @@ To convert a file to Markdown, follow these steps:
 
 1. Store the Markdown and metadata in a data entity, pass them to the next step in your flow, or use them in any downstream logic. For more information, refer to [Use the extracted Markdown in an agent](#use-the-markdown-in-an-agent).
 
-1. Optional: For long documents, chunk the Markdown and generate embeddings so your app can retrieve only the most relevant passages at runtime, instead of processing the full text in every request. The simplest path in ODC is to store the Markdown in an entity attribute and enable [semantic search](semantic-search/semantic-search-intro.md) on that attribute, which handles chunking and embeddings for you.
+1. Optional: For long documents, split the Markdown into chunks and generate embeddings, so your app retrieves only the passages that match a request instead of processing the full text every time. To have ODC create the chunks and the embeddings, store the Markdown in a text attribute of an entity and enable [semantic search](semantic-search/search-over-text-attributes.md) on that attribute.
 
 ## Use the extracted Markdown in an agent {#use-the-markdown-in-an-agent}
 

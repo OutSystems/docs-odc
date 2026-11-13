@@ -1,13 +1,12 @@
 ---
-summary: Knowledge bases in OutSystems Developer Cloud (ODC) store and semantically index documents so agents and apps retrieve relevant content using RAG at runtime.
+summary: Knowledge bases in ODC index curated documents so agents and apps ground their answers in them. Learn about indexing, search results, file types, and stages.
 tags:
-  - Agentic
   - AI
+  - Agentic
   - Architecture
   - Data
   - Infrastructure
   - Indexes
-  - Security
 guid: aa426959-c1c6-474e-b905-8d96e799a15f
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -20,94 +19,66 @@ topic:
   - kb-stage-isolation
   - knowledge-base-overview
 audience:
-  - Tech lead
   - Developer
+  - Platform administrator
+  - Tech lead
 isautopublish: true
 outsystems-tools:
   - odc portal
 ---
+
 # Knowledge bases in ODC
 
-<div class="info" markdown="1">
+An AI model answers from its general training data. To ground the answers of agents and apps in your organization's documents, such as policies, manuals, and product guides, store the documents in a knowledge base. A knowledge base is a curated set of documents that an administrator uploads and manages in the ODC Portal, separate from the app data. The platform indexes the documents and generates a search action that agents and apps call at runtime.
 
-Knowledge bases are in Beta. For more information about Beta features, refer to [OutSystems product releases](https://success.outsystems.com/support/release_notes/outsystems_product_releases/#beta). If you want to try this new capability contact your OutSystems account team.
-
-</div>
-
-A **knowledge base** is a curated set of documents that you upload and manage in the ODC Portal. The platform ingests those documents, processes them into a searchable form, and exposes semantic search over those files so your agents and apps can retrieve relevant content at runtime.
-
-That way, instead of relying only on a language model’s general knowledge, your agentic flows and apps can query a knowledge base and ground answers in your organization’s documents.
-
-## How do knowledge bases work
-
-When you upload a file to a knowledge base, the platform automatically runs it through an **ingestion pipeline** where:
-
-1. Splits the document into smaller pieces called chunks.
-1. Converts each chunk into a numerical representation called an embedding, a vector that captures the meaning of the text.
-1. Stores embeddings in a vector index that it uses to find the most relevant chunks for a given query.
-
-At runtime, when a developer calls knowledge base search from an agent or app, the platform compares the query against the vector index and returns the most semantically relevant chunks. This process is called **retrieval-augmented generation (RAG)**.
-
-## Supported file types and sizes
-
-Knowledge bases accept the following file types:
-
-| File type | Extension |
-| --- | --- |
-| PDF | `.pdf` |
-| Microsoft Word | `.docx` |
-| Microsoft PowerPoint | `.pptx` |
-| Web pages | `.html`, `.htm` |
-| Plain text | `.txt` |
-| Markdown | `.md` |
-| Comma-separated values | `.csv` |
-
-Note that files can't be bigger than 20MB.
-
-## Supported languages
-
-ODC doesn't block files by language. If the file type is supported and has selecteble text, all the document text is extracted, indexed and can be searched.
-
-Languages we cannot name are still indexed, but search works best for English content. So, if you are using other language than English, expect less quality in search results.
-
-For scanned PDFs (with image-only pages, no selectable text), ODC only supports English and Chinese. Other scripts on a supported file but with images of text are not supported and may be extracted as empty or unreadable text.
-
-## Stage isolation
-
-Each stage, Development, Quality Assurance, and Production, has its own files, storage area, and search index.
-
-Documents uploaded in your Development stage never appear in Production stage search results and vice versa.
-This stage isolation ensures that knowledge bases in each stage are independent and don't interfere with one another.
-
-However, knowledge bases don't automatically copy between stages. To use the same knowledge base in multiple stages, create and upload files to each stage separately
-
-Also, the data source configuration remains the same across stages. You set the chunking configuration during knowledge base creation, and you can't modify it afterward.
-
-## Regional availability and limitations
-
-Knowledge bases rely on cloud AI infrastructure. Due to regional differences in service availability, knowledge base functions differently in the way it handles data, depending on where your ODC environment is hosted.
+This page describes how the platform indexes and searches a knowledge base, the files it accepts, and how stages affect it. For a comparison with semantic search over app data and app files, refer to [Semantic search in ODC](../semantic-search/semantic-search-overview.md).
 
 <div class="info" markdown="1">
 
-**Knowledge bases are available for all customers in all regions.** It's recommend that you read this section carefully, as there are some regional constraints.
+Knowledge bases aren't available in every region, and the language of a document affects the results. Before you create a knowledge base, check your region and your content language in [Regions and languages for semantic search](../semantic-search/search-regions-languages.md).
 
 </div>
 
-### Unsupported regions
+## Knowledge base use cases
 
-ODC semantic search triggers cross-region data transfers in the following regions:
+Use a knowledge base when an administrator curates the documents and keeps them separate from the records that your app creates. Several agents or apps can answer from the same set. The following scenarios use a knowledge base:
 
-* Cape Town (af-south-1)
-* Hong Kong (ap-east-1)
-* Jakarta (ap-southeast-3)
-* Singapore (ap-southeast-1)
-* Tel Aviv (il-central-1)
-* UAE (me-central-1)
+* An HR assistant answers employee questions from the company policies.
+* Several support agents ground their answers in the same set of product guides.
+* An app answers questions about internal standards that a documentation team maintains.
 
-If you need to maintain data residency compliance, avoid deploying knowledge bases within these territories. In case you still want to use knowledge bases in one of these regions, note that the data is routed to the European region (eu-central-1) and then back to your region. However, no data is stored outside of your region. This constraint is due to the embedding model not being deployed in these regions.
+## Knowledge base structure
 
-<div class="info" markdown="1">
+A knowledge base is one asset that exists in every stage. You create it once, and its configuration applies to all stages, such as Development, QA, and Production. The content differs by stage. Each stage has its own files, storage area, and search index, so the documents that you upload in one stage appear only in the search results of that stage.
 
-To determine your ODC environment's region, refer to the information provided when you purchased ODC or contact your account manager.
+Entities follow the same model. An entity has the same attributes in every stage, and the database of each stage holds its own records.
 
-</div>
+The shared configuration keeps an app consistent when you deploy it. An app that calls the `SearchKB<KnowledgeBaseName>` action in the Development stage calls the same action, with the same parameters, after you deploy it to the QA and Production stages. In each stage, the action searches the files indexed in that stage.
+
+Each part of a knowledge base is either shared by all stages or separate in each stage. The following table shows the scope of each part.
+
+| Part | Contains | Scope |
+| --- | --- | --- |
+| Knowledge base | The name, the description, and the generated `SearchKB<KnowledgeBaseName>` action | Shared by all stages |
+| Data source | The data source configuration: the name, the description, the data source type **Upload files**, and the chunk method | Shared by all stages |
+| Files | The files that an administrator uploads to the data source, their status, and the search index | Separate in each stage |
+
+The platform doesn't copy files between stages. To use the same documents in several stages, upload them to the data source in each stage. In the ODC Portal, select a stage in the stage selector to see the files of that stage and their status. For more information, refer to [Upload files to a knowledge base](create-manage-knowledge-base.md#upload-files-to-a-knowledge-base).
+
+## Indexing for knowledge bases
+
+When an administrator uploads a file to a knowledge base, the platform extracts the text and splits it into chunks. The platform then generates an embedding for each chunk and stores the embeddings in a vector store. The platform processes each file in the background and indexes it completely or not at all, so a file is either fully searchable or absent from the results. The ODC Portal shows the status of each file. For more information, refer to [Upload files to a knowledge base](create-manage-knowledge-base.md#upload-files-to-a-knowledge-base).
+
+The chunk method sets how the platform splits the text of each file. You choose the chunk method in the data source configuration when you create the knowledge base. The chunk method applies to all stages, and you can't change it afterward. Knowledge bases offer the same chunk methods as File attributes. For more information, refer to [Chunk methods in ODC](../semantic-search/chunk-methods.md).
+
+## Search results for knowledge bases
+
+For each knowledge base, the platform generates a server action named `SearchKB<KnowledgeBaseName>`. An agent or app calls the action with a query, and the action returns the chunks whose meaning is closest to the query, ranked by score. Using the retrieved chunks as context for the answers of an AI model is called retrieval-augmented generation (RAG).
+
+To add the action to an app and call it, refer to [Search a knowledge base](../semantic-search/add-semantic-search.md#search-a-knowledge-base). For the fields of the request and the results, refer to [Semantic search inputs and results](../semantic-search/search-inputs-results.md).
+
+## File types and sizes for knowledge bases
+
+Knowledge bases accept the same file types as File attributes, such as PDF, Microsoft Word, and Markdown files. For the full list, refer to [File types for File attributes](../semantic-search/search-over-files.md#file-types-for-file-attributes).
+
+For the maximum file size, refer to [Semantic search and knowledge bases in OutSystems system requirements for ODC](../../../getting-started/system-requirements.md#semantic-search-and-knowledge-bases).

@@ -292,6 +292,29 @@ The Mentor limits are:
 | App Generator max apps generated per minute | 2 | The maximum number of apps that can be generated in a minute. |
 | App Editor tab per user and app | 1 | The maximum number of App Editor tabs that can be opened per user and app |
 
+### Semantic search and knowledge bases
+
+Semantic search over text attributes, semantic search over File attributes, and knowledge bases have usage limits and a maximum file size. Each limit is one of the following types:
+
+* **Soft limit**: The feature keeps working when your usage reaches the limit.
+* **Hard limit**: The platform doesn't process content above the limit.
+
+The platform counts the usage limits for each tenant instead of for each stage.
+
+The semantic search and knowledge base limits are:
+
+| **Name** | **Limit** | **Type** | **Description** |
+| ---------------------------------------- | :-------: | :--------: | ----------------------------------------------------------------------------------------------------------------------- |
+| Query executions per day | 5 000 | Soft limit | The maximum number of query executions per day. Semantic search over text attributes, semantic search over File attributes, and knowledge bases share this limit. |
+| Indexed storage for semantic search over File attributes (GB) | 5 | Soft limit | The maximum size of the index for semantic search over File attributes. |
+| Indexed storage for knowledge bases (GB) | 5 | Soft limit | The maximum size of the index for knowledge bases. |
+| File size for semantic search over File attributes (MB) | 20 | Hard limit | The maximum size of a file that the platform indexes in a searchable File attribute. The platform skips larger files and writes an entry in the app logs. |
+| Knowledge base file size (MB) | 20 | Hard limit | The maximum size of a file that you upload to a knowledge base. |
+
+Semantic search over File attributes and knowledge bases count their indexed storage separately from each other.
+
+Semantic search over text attributes stores its index in the app database. The index counts toward the database storage of each stage and has no separate storage limit. For more information, refer to [Resource types and capacity limits](capacity-limits.md#resource-type-capacity-limit).
+
 ### ODC REST APIs
 
 For information about ODC API rate limits, refer to [Rate limits for the APIs](../reference/apis/public-rest-apis/rate-limiting.md).
