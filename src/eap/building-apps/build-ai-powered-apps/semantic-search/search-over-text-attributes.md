@@ -6,6 +6,9 @@ figma:
 coverage-type:
   - understand
 topic:
+  - configure-text-attributes
+  - interpret-search-results
+  - monitor-text-indexing
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

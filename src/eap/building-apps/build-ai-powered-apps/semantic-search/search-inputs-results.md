@@ -14,7 +14,8 @@ figma:
 coverage-type:
   - remember
 topic:
-  - semantic-search-inputs-results
+  - configure-search-inputs
+  - interpret-search-results
 audience:
   - Developer
   - Tech lead

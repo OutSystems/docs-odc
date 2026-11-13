@@ -7,7 +7,8 @@ coverage-type:
   - apply
   - understand
 topic:
-  - customize-mobile-apps
+  - android-build-actions
+  - ios-build-actions
 app_type: mobile apps
 platform-version: odc
 audience:

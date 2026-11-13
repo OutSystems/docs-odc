@@ -13,7 +13,8 @@ coverage-type:
   - remember
   - understand
 topic:
-  - semantic-search-regional-availability
+  - semantic-search-language-support
+  - semantic-search-regions
 audience:
   - Architect
   - Developer

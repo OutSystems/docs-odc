@@ -17,7 +17,8 @@ coverage-type:
   - apply
   - understand
 topic:
-  - semantic-search-process
+  - implement-semantic-search
+  - test-semantic-search
 audience:
   - Architect
   - Developer

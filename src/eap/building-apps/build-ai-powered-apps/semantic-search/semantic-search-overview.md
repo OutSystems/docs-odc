@@ -16,7 +16,7 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - choose-search-approach
+  - choose-search-option
 audience:
   - Architect
   - Developer

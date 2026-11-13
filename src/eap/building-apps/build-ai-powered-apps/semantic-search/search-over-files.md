@@ -14,7 +14,8 @@ figma:
 coverage-type:
   - understand
 topic:
-  - semantic-search-file-attributes
+  - configure-file-attributes
+  - understand-file-search
 audience:
   - Architect
   - Developer
