@@ -2,8 +2,11 @@
 summary: OS-DFQE-40004 in OutSystems Developer Cloud (ODC) covers connection test failures for SQL Server, Oracle, SAP OData, and Salesforce.
 tags:
   - External Databases
+  - Private Gateway
   - SQL
+  - Testing
   - Troubleshooting
+  - Web services
 guid: 8e453a94-9438-4613-ae63-ef702970fd77
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -18,6 +21,7 @@ coverage-type:
   - unblock
 topic:
   - connection-test-errors
+isautopublish: true
 ---
 
 # OS-DFQE-40004
@@ -78,7 +82,8 @@ Ask a Server admin to give you access to the database.
 #### Recommended action
 
 1. Verify the server address and port number are correct.
-1. If the address and port number are correct, as a quick temporary fix, add `trustServerCertificate=true` to the **Additional parameters** input. It's important to contact your IT department to fix the server's certificate.
+1. If the server uses a certificate from a private certificate authority or a self-signed certificate, upload the certificate in ODC Portal. For more information, refer to [Use custom certificates in external database connections](../../eap/integration-with-systems/external-databases/custom-certificates.md).
+1. If the address and port number are correct and you can't upload the certificate, as a quick temporary fix, add `trustServerCertificate=true` to the **Additional parameters** input. It's important to contact your IT department to fix the server's certificate.
 
 ### Invalid connection string syntax
 

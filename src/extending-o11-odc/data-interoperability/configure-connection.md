@@ -15,11 +15,13 @@ audience:
   - Tech lead
   - Platform administrator
 tags:
+  - Asynchronous Processes
   - Data
   - Data Model
   - Entities
   - External Databases
   - Infrastructure
+  - Private Gateway
 outsystems-tools:
   - odc portal
 helpids:
@@ -114,7 +116,7 @@ To create the data connection, follow these steps:
 
         * Set the **Username** and **Password** of the dedicated database user for interoperability created during [the initial setup](data-interop-self-managed.md#setup).
 
-        * For SQL Server, set the **Server**, **Port**, and **Database** for each O11 environment. To allow the client to bypass certificate validation, add `trustServerCertificate=true;` to the **Additional parameters** field.
+        * For SQL Server, set the **Server**, **Port**, and **Database** for each O11 environment. If the server uses a certificate from a private certificate authority or a self-signed certificate, upload the certificate in ODC Portal. For more information, refer to [Use custom certificates in external database connections](../../eap/integration-with-systems/external-databases/custom-certificates.md). To allow the client to bypass certificate validation instead, add `trustServerCertificate=true;` to the **Additional parameters** field.
 
         * For Oracle, set the **Host**, **Port**, and **Service name** for each O11 environment.
 

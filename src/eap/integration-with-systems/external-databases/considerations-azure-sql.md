@@ -41,14 +41,14 @@ Consider the following when you connect to an Azure SQL Managed Instance.
     As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.
 
 * When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) in the username input.
-* When creating the Azure SQL connection in ODC Portal, in the Additional Parameters input, you might need to add `encrypt=true;trustServerCertificate=true;`.
+* When creating the Azure SQL connection in ODC Portal, in the Additional Parameters input, you might need to add `encrypt=true;trustServerCertificate=true;`. If your instance uses a certificate from a private certificate authority, upload the certificate instead of adding `trustServerCertificate=true;`. For more information, refer to [Use custom certificates in external database connections](custom-certificates.md).
 
 ## Non-managed instances
 
 Consider the following when you connect to an Azure SQL non-Managed Instance.
 
 * When creating the Azure SQL connection in ODC Portal, use the format `username@instance-name` in the username input.
-* When creating the Azure SQL connection in ODC Portal, in the Additional Parameters input, you might need to add `trustServerCertificate=true;`.
+* When creating the Azure SQL connection in ODC Portal, in the Additional Parameters input, you might need to add `trustServerCertificate=true;`. If your instance uses a certificate from a private certificate authority, upload the certificate instead of adding `trustServerCertificate=true;`. For more information, refer to [Use custom certificates in external database connections](custom-certificates.md).
 
 ## Authenticate with Microsoft Entra ID
 
