@@ -704,6 +704,7 @@
         - href: eap/integration-with-systems/consume_rest/refresh-rest-service.md
         - href: eap/integration-with-systems/consume_rest/unsupported-use-cases.md
         - href: eap/integration-with-systems/consume_rest/handling-rest-errors.md
+        - href: eap/integration-with-systems/consume_rest/consume-multipart-form-data.md        
         
     # Exposing REST APIs
     - href: eap/integration-with-systems/exposing_rest/intro.md

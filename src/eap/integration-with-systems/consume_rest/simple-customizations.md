@@ -2,6 +2,7 @@
 summary: Explore how to customize REST API requests and responses using callbacks in OutSystems Developer Cloud (ODC).
 tags:
   - REST
+  - Web services
 locale: en-us
 guid: 182ad24a-5cfb-4a67-a9b2-b5c8dc83ef4c
 app_type: mobile apps, reactive web apps
@@ -59,6 +60,16 @@ To customize the request before it's sent, follow these steps:
     Request header values must contain only ASCII characters.
 
     </div>
+
+### Customize the parts of a multipart/form-data request { #multipart}
+
+To customize specific parts of a [multipart/form-data request](consume-multipart-form-data.md) inside the **OnBeforeRequest** callback, such as adding, removing, or editing parts, you can use the **RequestParts** attribute that represents a **RequestPart** list.
+
+![Screenshot of the RequestParts attribute in the REST API editor](images/requestparts-odcs.png "RequestParts Attribute")
+
+The following example shows the logic flow of an **OnBeforeRequest** callback that appends, removes, and edits a part from the request. In this example, you are editing the **Request.RequestParts** list.
+
+![Example logic flow in an OnBeforeRequest callback showing how to append, remove, and edit parts of a request](images/requestparts-action-odcs.png "OnBeforeRequest Callback Logic Flow")
 
 ### Example use case: Adding a header for token-based authentication
 
