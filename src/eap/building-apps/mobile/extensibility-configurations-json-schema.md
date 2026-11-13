@@ -19,7 +19,8 @@ coverage-type:
   - remember
 topic:
   - app-extensibility-use-cases
-  - plugin-extensibility-use-cases
+  - library-plugin-build-actions
+  - library-plugin-sources
 helpids: 30680
 ---
 

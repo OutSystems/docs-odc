@@ -9,8 +9,8 @@ coverage-type:
   - unblock
 topic:
   - adapt-cordova-hooks-apis
+  - decide-dual-stack-need
   - migrate-cordova-settings
-  - plugin-extensibility-use-cases
 app_type: mobile apps
 platform-version: odc
 audience:
