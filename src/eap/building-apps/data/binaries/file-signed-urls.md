@@ -21,6 +21,7 @@ audience:
 tags:
   - Authorization
   - Best Practices
+  - File Storage
   - Security
 outsystems-tools:
   - odc studio

@@ -53,6 +53,10 @@ Entities can have different relationships between other entities and static enti
 
 To learn more about data modeling, refer to [data modeling](modeling.md).
 
+## Storing files and large content
+
+To store files such as images and PDFs, use the **File** data type. The **File** type keeps content in managed file storage instead of the database and supports files up to 2 GB. For more information, refer to [File data type](binaries/binaries-native-cloud.md).
+
 ## Retrieving data
 
 Aggregate is a recommended tool for getting data from the database to your app. Aggregates can contain one or more entities and provide filtering and sorting. ODC optimizes Aggregates for fast and efficient retrieval of data.

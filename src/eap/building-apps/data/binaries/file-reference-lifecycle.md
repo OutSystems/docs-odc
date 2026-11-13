@@ -22,8 +22,8 @@ tags:
   - Data Integrity
   - Data Model
   - Entities
+  - File Storage
   - Lifecycle
-  - Monitoring
 outsystems-tools:
   - odc studio
 helpids:

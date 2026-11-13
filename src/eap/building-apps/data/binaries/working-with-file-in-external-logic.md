@@ -17,9 +17,9 @@ tags:
   - .NET
   - C#
   - Extensions
+  - File Storage
   - Libraries
   - Lifecycle
-  - NuGet
   - Testing
 outsystems-tools:
   - visual studio

@@ -17,6 +17,7 @@ tags:
   - Data
   - Debugging
   - Entities
+  - File Storage
   - SQL
   - Testing
 outsystems-tools:

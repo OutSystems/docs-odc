@@ -18,6 +18,7 @@ audience:
   - Front-end developer
 tags:
   - Caching
+  - File Storage
   - Screens
   - Security
   - UI

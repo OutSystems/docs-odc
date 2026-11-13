@@ -220,7 +220,7 @@ The general platform limits are:
 | Service action timeout (seconds) | 100 | The time a service action waits for a response before timing out. |
 | Timer execution timeout (minutes) | 60 | The maximum time a timer can execute. |
 | Entity Action Execution duration (seconds) | 30 | The maximum execution duration of a single Entity Action in seconds. |
-| Upload request size (MB) | 28.6 | The maximum file size allowed when uploading. |
+| Upload request size (MB) | 28.6 | The maximum file size allowed when uploading. To upload larger files, use the **File** data type, which supports files up to 2 GB. For more information, refer to [File data type](../building-apps/data/binaries/binaries-native-cloud.md). |
 | End-user session | Configurable | The maximum session duration for end-users accessing apps depends on the session settings configured for each stage. You can [configure session duration and idle timeout](../user-management/configure-user-session.md) per stage. |
 | Member session (hours) | 12 | The maximum session duration for members (IT-users) accessing the ODC Portal and ODC Studio. This value can't be changed. Applies to your whole organization. |
 | Invitation verification token (days) | 7 | The maximum duration the verification token is valid for the user to complete their registration. |

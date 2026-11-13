@@ -2,6 +2,7 @@
 summary: OutSystems Developer Cloud (ODC) File system actions generate signed URLs, copy files into your app, and check whether a file exists in cloud storage.
 tags:
   - Data
+  - File Storage
   - Logic
   - Security
 locale: en-us

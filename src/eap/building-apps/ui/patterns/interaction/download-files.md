@@ -14,6 +14,7 @@ audience:
   - Developer
   - Front-end developer
 tags:
+  - File Storage
   - Front-End
   - Logic
   - Mobile app

@@ -1,7 +1,7 @@
 ---
 guid: d001af5a-0dca-4394-a783-6e4dfdf884ad
 locale: en-us
-summary: OutSystems Developer Cloud (ODC) File data type stores large content in cloud storage and supports 2 GB files, unlike BinaryData.
+summary: The ODC File data type stores large files, such as images and PDFs, up to 2 GB in managed file storage instead of the database.
 figma:
 coverage-type:
   - understand
@@ -21,6 +21,7 @@ tags:
   - Data
   - Data Model
   - Entities
+  - File Storage
   - Lifecycle
   - Performance
 outsystems-tools:
@@ -30,7 +31,7 @@ isautopublish: true
 ---
 # File data type
 
-**File** is a data type for large content, whether text or binary, such as images, PDFs, and other files, that ODC stores in cloud storage instead of the database. It acts as a reference, not a container: instead of holding bytes in memory, a **File** value points to content in object storage and loads it on demand.
+**File** is the data type for managed file storage in ODC. It stores large content, whether text or binary, such as images, PDFs, and other files, in cloud storage instead of the database. You upload, download, and display **File** content with the **Upload** widget, the **Download** node, and the **Image** widget. A **File** value acts as a reference, not a container: instead of holding bytes in memory, it points to content in object storage and loads it on demand.
 
 <div class="info" markdown="1">
 

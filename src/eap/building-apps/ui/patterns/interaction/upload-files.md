@@ -18,6 +18,7 @@ audience:
   - Tech lead
 tags:
   - Authentication
+  - File Storage
   - Lifecycle
   - Screens
   - UI

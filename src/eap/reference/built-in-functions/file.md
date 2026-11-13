@@ -1,7 +1,8 @@
 ---
-summary: OutSystems Developer Cloud (ODC) File built-in functions return the size, MIME type, ownership, and temporary state of a File value, and create an empty File.
+summary: OutSystems Developer Cloud (ODC) File functions check ownership and temporary storage, return MIME types and sizes, and provide null File values.
 tags:
   - Data
+  - File Storage
   - Logic
 locale: en-us
 guid: 83d3decf-cb7f-48d1-aa28-30d84914a4be
