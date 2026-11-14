@@ -18,6 +18,7 @@ tags:
   - Logic
   - REST
   - Security
+  - Web services
 outsystems-tools:
   - odc studio
   - service studio
