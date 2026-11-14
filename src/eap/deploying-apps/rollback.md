@@ -11,6 +11,8 @@ figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node
 coverage-type:
   - understand
   - apply
+topic:
+  - rollback-app-version-odc
 audience:
   - Developer
   - Platform administrator
