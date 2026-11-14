@@ -12,6 +12,7 @@ app_type: mobile apps, reactive web apps
 figma:
 platform-version: odc
 audience:
+  - Architect
   - Developer
 outsystems-tools:
   - odc studio
