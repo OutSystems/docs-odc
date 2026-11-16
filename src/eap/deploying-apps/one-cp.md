@@ -6,7 +6,6 @@ tags:
   - Deploy
   - Development lifecycle
   - Libraries
-  - Lifecycle
   - Mentor
   - Mentor Studio
 locale: en-us
@@ -50,14 +49,7 @@ In a multi-portfolio organization, refer to [Asset deployment with multiple port
 
 </div>
 
-Stages other than Development run release builds, which package a revision as a container image. Each deployment fetches the existing build and runs the database scripts for the target stage. When you deploy your app from the Development stage to the QA stage, ODC follows these steps:
-
-1. ODC retrieves the release build for the selected revision of the app.
-1. ODC generates and executes the database scripts for the QA stage.
-1. ODC updates app configurations for the QA stage as per your updates in the ODC Portal.
-1. ODC integrates the updated configurations into the container image and deploys it to the QA stage.
-
-The **Deployments** screen shows these steps for each deployment, to Production as well as QA.
+Stages other than Development run release builds, which package a revision as a container image. For the steps that run during a deployment, refer to [Release build deployment flow](deploy-apps.md#deployment-flow).
 
 ## Publishing a library {#publishing-library}
 

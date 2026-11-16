@@ -100,6 +100,19 @@ Your asset is deployed to your selected stage. To roll back an update from a sta
 
 For more information about the impact analysis report, refer to [Understanding the impact analysis report](#understanding-the-impact-analysis-report).
 
+### Release build deployment flow {#deployment-flow}
+
+Each deployment to a stage other than Development fetches the existing release build and runs the database scripts for the target stage. When you deploy your app from the Development stage to the QA stage, ODC follows these steps:
+
+1. ODC retrieves the release build for the selected revision of the app.
+1. ODC generates and executes the database scripts for the QA stage.
+1. ODC updates app configurations for the QA stage as per your updates in the ODC Portal.
+1. ODC integrates the updated configurations into the container image and deploys it to the QA stage.
+
+The **Deployments** screen shows these steps for each deployment, to both Production and QA.
+
+![Swimlane diagram of a deployment to a stage other than Development, with the deploying user in ODC Portal and the ODC platform as lanes. In phase 1, the user selects the stage and revision and starts the deployment. In phase 2, the platform retrieves the release build, generates and runs the database scripts, and updates the app configurations set in the ODC Portal. In phase 3, the platform integrates the configurations into the container image and deploys it to the target stage, and the user tracks the deployment on the Deployments screen.](images/deploy-release-build-diag.png "Release build deployment diagram")
+
 ## Deployment considerations for agentic apps {#deploy-agentic}
 
 Agentic apps follow the standard ODC continuous delivery model. They're built and containerized in the Development stage, and that exact container is promoted to subsequent stages. However, due to their autonomous nature, specific rules apply to their deployment and dependencies.
