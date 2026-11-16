@@ -13,6 +13,7 @@ content-type:
   - procedure
 audience:
   - Developer
+  - Front-end developer
 coverage-type:
   - apply
 topic:

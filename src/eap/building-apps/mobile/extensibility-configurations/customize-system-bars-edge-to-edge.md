@@ -14,6 +14,7 @@ figma:
 platform-version: odc
 audience:
   - Developer
+  - Front-end developer
 coverage-type:
   - apply
 topic:
