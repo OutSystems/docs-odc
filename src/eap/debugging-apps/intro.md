@@ -20,8 +20,8 @@ coverage-type:
   - understand
   - apply
 topic:
-  - debug-mobile-issues
-  - debug-with-breakpoints
+  - choose-mobile-debugging-environment
+  - debug-app-logic
   - inspect-network-traffic
 isautopublish: true
 ---
