@@ -1,8 +1,10 @@
 ---
 summary: ODC default app for a custom domain loads a reactive web app at the root URL. Configure it and manage redirects in ODC Portal.
 tags:
+  - Deploy
   - Domains
   - End-users
+  - Settings
   - Web
 locale: en-us
 guid: c518c071-ef6a-4c10-b947-2fd93f6dc4d2
@@ -67,11 +69,17 @@ To set a default app, follow these steps:
 
     ![ODC Portal Default App section showing the Redirect options: Permanent using HTTP 301, Temporary using HTTP 302, and No redirect.](images/default-app-redirect-pl.png "Redirect options in the Default App section")
 
-    * **Permanent (301)**: Redirects `www.example.com/AppName` to `www.example.com`. Recommended for production. This is the default setting.
+    * **Permanent (301)**: Redirects `www.example.com/AppName` to `www.example.com`. This is the default setting.
 
     * **Temporary (302)**: Same redirect, but signals a temporary arrangement to browsers and search engines. Use for testing or short-term promotions.
 
     * **No redirect**: No redirect. The app loads at both the root URL and its full path.
+
+    <div class="warning" markdown="1">
+
+    Browsers and content delivery networks cache permanent redirects. Changing the redirect type later does not immediately stop redirects that users already loaded. Set the redirect to **Temporary (302)** while you test the app, and switch to **Permanent** only after you confirm the redirect works as intended.
+
+    </div>
 
 1. Click **Save**.
 
@@ -112,6 +120,12 @@ Built-in functions such as `GetURLHost` and `GetRelativeURL` return the URL of t
 ### Deleting or undeploying the default app
 
 If you delete or undeploy the default app for a domain, ODC displays a warning. If you confirm, ODC deletes or undeploys the app, the domain loses its default app. The root URL returns an error until you set a new default app.
+
+### Redirect type changes
+
+Changing the redirect type takes effect only after you republish the app. Going from **Temporary (302)** to **Permanent (301)** or **No redirect** takes effect immediately, because browsers do not keep temporary redirects in their cache.
+
+Going from **Permanent (301)** to **Temporary (302)** or **No redirect** does not take effect immediately for users whose browsers or CDNs already cached the permanent redirect. Those users continue to be redirected until their cached response expires. To restore access, users must clear their browser cache.
 
 ## Related resources
 
