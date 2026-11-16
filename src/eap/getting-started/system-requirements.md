@@ -133,6 +133,12 @@ ODC supports the following client-side trace request limits:
 
 ### Supported external data sources
 
+<div class="info" markdown="1">
+
+OutSystems only supports database versions that are supported by their respective vendor.
+
+</div>
+
 The following versions of systems are supported to integrate with ODC using [Data Fabric](../integration-with-systems/external-databases/intro.md):
 
 * **Microsoft SQL Server**:
