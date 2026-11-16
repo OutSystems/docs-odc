@@ -19,6 +19,8 @@ tags:
   - Web services
 outsystems-tools:
   - odc portal
+topic:
+  - portfolio-api-v1-docs
 isautopublish: true
 ---
 # Portfolio API v1 - deprecated
