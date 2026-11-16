@@ -34,7 +34,7 @@ To run ODC Self-hosted, your infrastructure must meet specific baseline requirem
 
 The system requirements are:
 
-* A Kubernetes cluster running Kubernetes version 1.33 or 1.34 on any CNCF-conformant distribution (such as OpenShift, AKS, EKS, or GKE, for example). The version must be within your distribution vendor's standard support window. Refer to your distribution vendor's release documentation for available patch versions.
+* A Kubernetes cluster running Kubernetes version 1.34 on any CNCF-conformant distribution (such as OpenShift, AKS, EKS, or GKE, for example). The version must be within your distribution vendor's standard support window. Refer to your distribution vendor's release documentation for available patch versions.
 
 * The cluster must be deployed on x86 architecture. ARM-based clusters are not supported.
 
