@@ -29,7 +29,7 @@ isautopublish: true
 
 While short prompts are good for generating straightforward apps and making quick changes, a requirement document provides a structured specification for more complex apps. This "scaffold and refine" workflow lets you provide detailed requirements that ODC can interpret consistently, producing a more accurate blueprint for your review.
 
-Use a well-structured document to define a detailed data model, establish specific roles and permissions, and lay out your screen requirements from the start. Requirement documents are one of two input methods in the [app generation workflow](how-it-works.md).
+Use a well-structured document to define a detailed data model, establish specific roles and permissions, and lay out your screen requirements from the start. Requirement documents are one of two input methods in the [Mentor Web app generation workflow](how-it-works.md).
 
 ![Best practices for requirement documents: formats, structure, settings, integrations, focus, relevance](images/requirement-best-practices-ams.png "Best Practices for Requirement Documents")
 

@@ -32,7 +32,7 @@ isautopublish: true
 
 # Types of apps you can build
 
-OutSystems Developer Cloud (ODC) supports several top-level asset types: Web apps, Mobile apps, Agentic apps, libraries, and workflows. You select the type when you create the asset. **Agentic development** through Mentor Web and Mentor Studio is the default build path for Web apps, and Mentor Studio extends to libraries and Agentic apps. The visual editor in ODC Studio is available for every type. For the full list of assets each AI tool supports, refer to [Agentic development](../agentic-development/intro.md).
+OutSystems Developer Cloud (ODC) supports several top-level asset types: Web apps, Mobile apps, Agentic apps, libraries, and workflows. You select the type when you create the asset. **Agentic development** through Mentor Web and Mentor Studio is the default build path for Web apps, and Mentor Studio extends to libraries and Agentic apps. You can also build from your MCP host with OutSystems MCP. The visual editor in ODC Studio is available for every type. For the full list of assets each AI tool supports, refer to [Agentic development](../agentic-development/intro.md).
 
 ![Screenshot of the 'What would you like to create?' window in OutSystems Developer Cloud with options to create different types of apps](images/types-of-apps-odcs.png "ODC App Creation Options")
 
@@ -40,7 +40,7 @@ OutSystems Developer Cloud (ODC) supports several top-level asset types: Web app
 * Select **Mobile app** if you want to create an app to submit to Apple App Store or Google Play. You can also distribute a mobile app as a downloadable package to a group of users or as a Progressive Web App (PWA).
 * Select **Agentic app** if you want to build an app that uses AI at runtime to perform tasks, automate workflows, or handle complex, multi-step interactions.
 
-The runtime type and the build approach are independent choices. An **Agentic app** is the runtime type: an app that calls AI when users run it. **Agentic development** is how you build apps with AI assistance from Mentor Web or Mentor Studio. The two are independent. You can build an Agentic app manually, or use agentic development to produce a Web app.
+The runtime type and the build approach are independent choices. An **Agentic app** is the runtime type: an app that calls AI when users run it. **Agentic development** is how you build apps with AI assistance from Mentor Web, Mentor Studio, or OutSystems MCP. The two are independent. You can build an Agentic app manually, or use agentic development to produce a Web app.
 
 ## What's a Web app?
 

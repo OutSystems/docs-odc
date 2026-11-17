@@ -1,8 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) Mentor Web and Mentor Studio limitations, covering session persistence, blueprint phases, and editor restrictions.
 tags:
-  - AI
   - Agentic
+  - AI
   - Mentor
   - Mentor Studio
   - Mentor Web
@@ -32,7 +32,7 @@ isautopublish: true
 
 Agentic development uses generative AI, so its output is non-deterministic and varies with task complexity. Some limitations come from how generative AI works; others come from how OutSystems has built AI assistance in ODC. Review results and refine as you go.
 
-This page documents current constraints for both app generation and development in ODC Studio. Review these limitations alongside the capabilities for [Mentor Web](mentor-web/capabilities.md) and [Mentor Studio](mentor-studio/capabilities.md) when planning projects that use agentic development.
+This page documents constraints for Mentor Web and Mentor Studio, which cover app generation and development in ODC Studio. Review these limitations alongside the capabilities for [Mentor Web](mentor-web/capabilities.md) and [Mentor Studio](mentor-studio/capabilities.md) when planning projects that use these paths. For more information about the limits that apply when you work from an MCP host, refer to [Platform limits](../getting-started/system-requirements.md#platform-limits).
 
 ## App generation (Mentor Web) {#app-generation}
 
@@ -70,7 +70,7 @@ The following limitations apply when modifying existing apps through Mentor Stud
 
 Mentor Studio modifies app elements but doesn't perform stage-level operations, such as deployments.
 
-* **App elements only.** Mentor Studio generates and modifies logic, UI, and data within the app. ODC Studio operations such as one-click publish and changing preferences aren't supported through Mentor.
+* **App elements only.** Mentor Studio generates and modifies logic, UI, and data within the app. ODC Studio operations such as one-click publish and changing preferences aren't supported through Mentor Studio.
 
 ### Context awareness {#context-awareness}
 

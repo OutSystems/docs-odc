@@ -33,7 +33,7 @@ isautopublish: true
 
 Mentor builds and modifies OutSystems assets through conversation. For the asset types Mentor builds, refer to the scope in [Capabilities and patterns for Mentor Studio](mentor-studio/capabilities.md#scope) and [Capabilities and patterns for Mentor Web](mentor-web/capabilities.md). Mentor interprets your intent, plans the work, and applies the changes. This page explains what Mentor is, how it works, and how you stay in control.
 
-You use Mentor through three paths. Mentor Web creates apps in ODC Portal, and Mentor Studio modifies assets in ODC Studio. With OutSystems MCP, the agent in your MCP host, such as Claude Code or Cursor, delegates app changes to Mentor. For how that delegation works, refer to [Delegation to Mentor](outsystems-mcp/mentor-delegation.md).
+You use Mentor through three paths. Mentor Web creates apps in ODC Portal, and Mentor Studio modifies assets in ODC Studio. With OutSystems MCP, the agent in your MCP host, such as Claude Code or Cursor, delegates app changes to Mentor. For how that delegation works, refer to [Delegation to Mentor](outsystems-mcp/mentor-delegation.md). For more information about how Mentor relates to each path, refer to [Mentor and the development paths](mentor-and-development-paths.md).
 
 ## Mentor's agents
 
@@ -71,7 +71,7 @@ A clear, explicit prompt combined with relevant context produces more accurate r
 
 ## Your control over changes
 
-You stay in control of every change. Mentor prompts you to accept a structural proposal before it builds, applies smaller changes directly, and returns the result for you to review before you continue.
+You stay in control of every change. In Mentor Web and Mentor Studio, Mentor prompts you to accept a structural proposal before it builds. It applies smaller changes directly and returns the result for you to review before you continue. With OutSystems MCP, the agent in your MCP host sends the request. The OutSystems tool descriptions instruct the agent to restate publish, deploy, and rollback operations and wait for your confirmation. For more information, refer to [Governance in OutSystems MCP](outsystems-mcp/governance.md).
 
 * **Plan when it matters.** Mentor proposes a plan for complex changes, such as those that span multiple elements. It applies a simple, self-contained change directly. For how to read and act on a plan in Mentor Studio, refer to [Review and accept the plan](mentor-studio/how-it-works.md#accept-plan).
 * **Clarify at decision points.** The agents use reasonable defaults and state their assumptions. They ask a clarifying question only when a wrong guess would cause significant rework or change the architecture.
@@ -92,7 +92,7 @@ Mentor supports common app patterns, and the supported range depends on which to
 
 Mentor generates data models, screens with standard UI patterns, roles and entity-level authorization, and basic logic and navigation. When you work on an existing asset, it also explains elements and suggests fixes. For the patterns each tool supports, refer to [Capabilities and patterns for Mentor Web](mentor-web/capabilities.md) and [Capabilities and patterns for Mentor Studio](mentor-studio/capabilities.md).
 
-Mentor Web supports common app patterns. Mentor Studio works in the full development environment and supports more complex changes. When a task exceeds what Mentor supports, you finish it in ODC Studio. These limits expand across releases. For the constraints, refer to [Known limitations](ai-limitations.md).
+Mentor Web supports common app patterns. Mentor Studio works in the full development environment and supports more complex changes. When a task exceeds what Mentor supports, you finish it in ODC Studio. These limits expand across releases. For the constraints, refer to [Known limitations](ai-limitations.md). For more information about what OutSystems MCP covers and where its scope stops, refer to [OutSystems MCP](outsystems-mcp/outsystems-mcp-overview.md).
 
 ## Related resources
 
@@ -101,5 +101,6 @@ Mentor supports development across the lifecycle. The following resources cover 
 * For the components that underpin agentic development, including the OutSystems Model, refer to [Architecture](architecture.md). For the tenant index Mentor reads, refer to [Enterprise Context Graph](context-graph.md).
 * For creating apps in Mentor Web, refer to [AI app generation in Mentor Web](mentor-web/how-it-works.md).
 * For modifying assets in Mentor Studio, refer to [AI development in Mentor Studio](mentor-studio/how-it-works.md).
+* For building and changing apps from your MCP host, refer to [OutSystems MCP](outsystems-mcp/outsystems-mcp-overview.md).
 * For the conceptual shift to prompt-based development, refer to [Thinking with AI](thinking-with-ai.md).
 * For prompting strategies that apply across all Mentor tools, refer to [Effective prompts for Mentor](effective-prompts.md).

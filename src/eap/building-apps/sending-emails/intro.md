@@ -37,7 +37,7 @@ In OutSystems Developer Cloud (ODC), email is a way to get information from your
 
 In OutSystems, email is a UI element that lets you design and manage the content of email messages. To create, send, and configure emails, you use both ODC Studio and ODC Portal. Emails are sent using SMTP. In ODC Portal, you can define the configuration and can create different configurations for each stage. At the app level you can change the test email addresses.
 
-You can build emails and the logic that sends them by describing them to Mentor Studio and validating the result, or manually in ODC Studio. Whichever way you build, a correct result has the same characteristics. For more information, refer to [Correct email output](#correct-email-output).
+You can build emails and the logic that sends them by describing them to Mentor Studio and validating the result, or manually in ODC Studio. Whichever way you build, a correct result has the same characteristics. For more information, refer to [Correct email output](#correct-email-output). For more information about how Mentor works with an AI tool such as Claude Code or Cursor, refer to [Mentor and the development paths](../../agentic-development/mentor-and-development-paths.md).
 
 In **ODC Studio** you define how you want to send emails. When working with the display of the content, you can use or define new templates. By default, ODC uses a light theme which is an industry standard and is automatically set for you.
 

@@ -51,7 +51,7 @@ One difference to note: ODC uses a cloud-native, stage-based deployment model. A
 
 ## Generate and transition to ODC Studio
 
-The workflow follows the same generate-review-refine cycle described in [Thinking with AI](thinking-with-ai.md). You provide prompts or requirement documents, review the blueprint, generate the app, and refine through iteration. When your app needs capabilities beyond common patterns, such as custom actions, advanced aggregates, external integrations, or complex business logic, you build them in ODC Studio with Mentor Studio or manual development.
+The workflow follows the same generate-review-refine cycle described in [Thinking with AI](thinking-with-ai.md). You provide prompts or requirement documents, review the blueprint, generate the app, and refine through iteration. When your app needs capabilities beyond common patterns, such as custom actions, advanced aggregates, external integrations, or complex business logic, you build them in ODC Studio with Mentor Studio or manual development. With OutSystems MCP, the agent in your MCP host builds and changes the app through Mentor, and the same lifecycle controls apply. For more information, refer to [OutSystems MCP](outsystems-mcp/outsystems-mcp-overview.md).
 
 ## Test, deploy, and maintain
 
@@ -73,7 +73,7 @@ Beyond app-level governance, administrators control who can use the Mentor tools
 
 <div class="info" markdown="1">
 
-Enabling or disabling this permission has no effect on who can access Mentor Web or Mentor Studio. OutSystems is rolling out Mentor access enforcement in phases, starting with this permission so administrators can configure their custom roles ahead of enforcement.
+Enabling or disabling this permission has no effect on who can access Mentor. OutSystems is rolling out Mentor access enforcement in phases, starting with this permission so administrators can configure their custom roles ahead of enforcement.
 
 </div>
 

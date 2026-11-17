@@ -30,7 +30,7 @@ isautopublish: true
 
 You can use **Timers** to execute asynchronous logic in your OutSystems application. This is useful when running batch tasks like sending emails at a predetermined time, or when executing logic to configure an application after its deployment.
 
-You create a Timer by describing it to Mentor Studio and validating the result, or manually in ODC Studio. For the steps, refer to [Create and run Timers](timer-create-run.md). For what a correct result looks like, refer to [Correct Timer output](#correct-timer-output).
+You create a Timer by describing it to Mentor Studio and validating the result, or manually in ODC Studio. For the steps, refer to [Create and run Timers](timer-create-run.md). For what a correct result looks like, refer to [Correct Timer output](#correct-timer-output). For more information about how Mentor works with an AI tool such as Claude Code or Cursor, refer to [Mentor and the development paths](../../agentic-development/mentor-and-development-paths.md).
 
 ## How Timers work
 

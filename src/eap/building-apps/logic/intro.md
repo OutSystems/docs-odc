@@ -1,7 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) apps implement logic through actions. Build them with Mentor Studio or manually in ODC Studio.
 tags:
+  - AI
+  - Best Practices
   - Logic
+  - Mentor
+  - Mentor Studio
   - Programming Model
 locale: en-us
 guid: 4968c372-2dc8-4131-8f37-7951fec8f431
@@ -27,7 +31,7 @@ isautopublish: true
 
 In OutSystems, the logic of your apps is implemented through **Actions**. While developing your apps, you can create your own custom actions and use the actions OutSystems provides you.
 
-You build logic by describing the change to Mentor Studio and validating what it proposes, or by building the elements manually in ODC Studio. For more information, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md).
+You build logic by describing the change to Mentor Studio and validating what it proposes, or by building the elements manually in ODC Studio. For more information, refer to [Modify an app with AI in ODC Studio](../../agentic-development/mentor-studio/modify-app.md). For more information about how Mentor works with an AI tool such as Claude Code or Cursor, refer to [Mentor and the development paths](../../agentic-development/mentor-and-development-paths.md).
 
 ## Correct logic output
 

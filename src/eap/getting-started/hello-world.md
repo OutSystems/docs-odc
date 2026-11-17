@@ -34,13 +34,13 @@ isautopublish: true
 
 A Hello, world! app is the simplest application a developer can build. It displays a single line of text and verifies that the tooling, the editor, and the deployment pipeline all work together. In ODC, that means a Web app with one screen showing the text Hello, world!.
 
-In this tutorial you create and publish that app. ODC offers three paths to the same outcome, each at a different level of AI assistance:
+In this tutorial you create and publish that app in one of three ways, each at a different level of AI assistance:
 
 * **Build with Mentor Web.** Generate the entire app from one natural-language prompt or an uploaded requirements document. Mentor Web produces, publishes, and opens the app for you.
 * **Build with Mentor Studio.** Create an empty app shell in ODC Portal, then prompt Mentor Studio inside ODC Studio to add the screen and publish.
 * **Build manually.** Assemble the same app in the visual editor, click by click. Use this path when you want to see where each element lives.
 
-All three paths share the same prerequisites and end with the same published app.
+All three share the same prerequisites and end with the same published app. For more information about building an app from an AI tool such as Claude Code or Cursor instead, refer to [Build your first app](../agentic-development/outsystems-mcp/build-first-app.md).
 
 ## Prerequisites
 

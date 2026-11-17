@@ -33,6 +33,6 @@ isautopublish: true
 
 OutSystems Developer Cloud (ODC) redefines the developer experience by enabling organizations to build cloud applications that scale. OutSystems combines state-of-the-art, cloud-native architecture and modern CI/CD practices.
 
-You build apps in ODC with agentic development. You describe requirements in natural language, and ODC generates or modifies the app. To create an app from a prompt, use Mentor Web in the ODC Portal. To extend and refine an app, use Mentor Studio in ODC Studio. To work from your own AI tool, such as Claude Code or Cursor, use OutSystems MCP. For more information about the development paths, refer to [Agentic development](../agentic-development/intro.md).
+You build apps in ODC with agentic development. You describe requirements in natural language, and ODC generates or modifies the app. To create an app from a prompt, use Mentor Web in the ODC Portal. To extend and refine an app, use Mentor Studio in ODC Studio. To work from your own AI tool, such as Claude Code or Cursor, use OutSystems MCP. For more information about the development paths and how Mentor relates to each, refer to [Agentic development](../agentic-development/intro.md) and [Mentor and the development paths](../agentic-development/mentor-and-development-paths.md).
 
 To build or edit an app by hand, use the visual editor in ODC Studio, the OutSystems IDE. Agentic development and the visual editor produce the same app model. You switch between them at any point. You deploy and manage apps from the ODC Portal.

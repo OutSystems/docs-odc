@@ -21,6 +21,7 @@
     # How agentic development works
     - href: eap/agentic-development/coding-agents.md
     - topics:
+        - href: eap/agentic-development/mentor-and-development-paths.md
         - href: eap/agentic-development/architecture.md
         - href: eap/agentic-development/context-graph.md
         - href: eap/agentic-development/odc-ai-and-platform.md

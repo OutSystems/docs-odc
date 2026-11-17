@@ -157,3 +157,4 @@ The strategies on this page apply to all Mentor interactions. However, each tool
 
 * **Mentor Web**: For UI pattern prompts and app generation examples, refer to [Prompts for Mentor Web](mentor-web/prompts.md).
 * **Mentor Studio**: For logic and modification prompts, refer to [Prompts for Mentor Studio](mentor-studio/prompts.md).
+* **OutSystems MCP**: For example prompts to give the agent in your MCP host, refer to [Build your first app](outsystems-mcp/build-first-app.md) and [Evolve an existing app](outsystems-mcp/evolve-app.md).

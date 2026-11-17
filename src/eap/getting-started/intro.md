@@ -31,7 +31,7 @@ isautopublish: true
 
 OutSystems Developer Cloud (ODC) is a cloud-native, AI-first app development platform. You describe the app you want and ODC generates a working Web app, Mobile app, Agentic app, or business workflow in minutes. AI-built apps are enterprise-grade by default: they inherit the platform's compiler, delivery pipeline, security, observability, governance, and scalable runtime. ODC takes you from idea to production in weeks, with the same standards applied whether you built with AI or by hand.
 
-Two tools deliver the AI side. **Mentor Web** in ODC Portal generates a new app from a natural-language prompt. **Mentor Studio** inside ODC Studio extends and refines an open app through conversation. Both sit alongside the visual editor, so you choose AI, manual, or a mix at any point. For an overview of the AI path, refer to [Agentic development](../agentic-development/intro.md).
+Mentor Web, Mentor Studio, and OutSystems MCP deliver the AI side. **Mentor Web** in ODC Portal generates a new app from a natural-language prompt. **Mentor Studio** inside ODC Studio extends and refines an open app through conversation. **OutSystems MCP** lets the agent in your MCP host, such as Claude Code or Cursor, build and change apps. All three sit alongside the visual editor, so you choose AI, manual, or a mix at any point. For more information about the AI paths and how Mentor relates to each, refer to [Agentic development](../agentic-development/intro.md) and [Mentor and the development paths](../agentic-development/mentor-and-development-paths.md).
 
 ## Access the ODC Portal
 

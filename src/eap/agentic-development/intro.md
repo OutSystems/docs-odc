@@ -49,6 +49,8 @@ Choose the path that matches where you work and what you want to accomplish. If 
 | [OutSystems MCP](outsystems-mcp/outsystems-mcp-overview.md) | Build, evolve, and deploy apps | Your MCP host, such as Claude Code or Cursor | You work in an AI tool, or you combine OutSystems with other tools, such as Jira or Figma, in one workflow. | [Get started with OutSystems MCP](outsystems-mcp/get-started.md) |
 | [Mentor Web](mentor-web/how-it-works.md) | Create new apps from requirements | ODC Portal | You start a new app from a prompt or a requirements document. | [Create an app with AI](mentor-web/create-app.md) |
 
+For more information about how Mentor relates to each path, refer to [Mentor and the development paths](mentor-and-development-paths.md).
+
 ## Platform foundation
 
 Agentic development is the app development capability within OutSystems Agentic Systems Engineering, the approach to building governed, enterprise-ready agentic systems. Every path builds on the same platform, so the same guarantees hold whichever one you use. The compiler applies the same security, performance, and architecture standards to the app model, whether AI or a developer built it. The same governance policies and roles apply to every path.

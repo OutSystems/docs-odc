@@ -116,5 +116,5 @@ At the bottom of your screen, several tabs show additional information:
 ## Related resources
 
 * [Getting started](intro.md) for the platform overview and the AI-first build paths.
-* [Agentic development](../agentic-development/intro.md) for how Mentor Web and Mentor Studio work.
+* [Agentic development](../agentic-development/intro.md) for how Mentor Web, Mentor Studio, and OutSystems MCP work.
 * [ODC Studio Overview](https://www.outsystems.com/training/courses/233/odc-studio-overview/) online course.

@@ -1,9 +1,10 @@
 ---
-summary: "OutSystems Developer Cloud (ODC) agentic development: Mentor, the OutSystems Model, and the compiler form the Enterprise Context Graph."
+summary: "OutSystems Developer Cloud (ODC) agentic development architecture connects Mentor, the OutSystems Model, compiler, and Enterprise Context Graph."
 tags:
   - Agentic
   - AI
   - Architecture
+  - Data Model
   - Mentor
   - Mentor Studio
   - Mentor Web
@@ -99,7 +100,7 @@ The key difference is context. Mentor Studio reads the existing app and generate
 
 ## How the tools work together
 
-Both tools work with the same app model. Mentor Web creates new apps and supports iteration. Mentor Studio gives you the full development environment for changes of any complexity. You can switch between them as needed.
+Mentor Web, Mentor Studio, and OutSystems MCP work with the same app model. Mentor Web creates new apps and supports iteration. Mentor Studio gives you the full development environment for changes of any complexity. With OutSystems MCP, the agent in your MCP host builds and changes apps through Mentor. You can switch between them as needed.
 
 A typical workflow might be:
 

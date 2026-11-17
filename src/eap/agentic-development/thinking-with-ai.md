@@ -97,3 +97,4 @@ This article covers the mindset for prompt-based development. The following reso
 * For the technical architecture behind agentic development, including Mentor and the OutSystems Model, refer to [Architecture](architecture.md).
 * For the app creation workflow in Mentor Web, including the blueprint validation step, refer to [How AI app generation works](mentor-web/how-it-works.md).
 * For the app modification workflow in Mentor Studio, refer to [AI development in Mentor Studio](mentor-studio/how-it-works.md).
+* For the workflow of building and changing apps from an MCP host, refer to [OutSystems MCP](outsystems-mcp/outsystems-mcp-overview.md).
