@@ -1,7 +1,9 @@
 ---
 summary: Accordion UI Pattern in ODC lets you build collapsible content sections with AccordionItem widgets, configurable icons, and MultipleItems support.
 tags:
+  - Accessibility
   - Front-End
+  - JavaScript
   - OutSystems UI
   - UI
   - UI Patterns
@@ -17,11 +19,13 @@ audience:
 outsystems-tools:
   - odc studio
 coverage-type:
-  - apply
   - remember
+  - apply
+  - unblock
 topic:
   - accordion-reference
   - use-accordion-pattern
+isautopublish: true
 ---
 
 # Accordion
@@ -34,29 +38,29 @@ Applies to the OutSystems UI framework only.
 
 You can use the Accordion UI Pattern to allow users expand and hide content when clicked.
 
-**How to use the Accordion UI Pattern**
+## How to use the accordion UI pattern
 
 1. In ODC Studio, in the Toolbox, search for `Accordion`.
 
     The Accordion widget is displayed.
 
-    ![Screenshot of the Accordion widget in the ODC Studio Toolbox](images/accordion-widget-ss.png "Accordion Widget in ODC Studio Toolbox")
+    ![Screenshot of the Accordion widget in the ODC Studio Toolbox](images/accordion-widget-odcs.png "Accordion Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Accordion widget into the Main Content area of your application's screen.
 
-    ![Dragging the Accordion widget into the Main Content area of an application screen](images/accordion-dragwidget-ss.png "Dragging Accordion Widget to Screen")
+    ![Dragging the Accordion widget into the Main Content area of an application screen](images/accordion-dragwidget-odcs.png "Dragging Accordion Widget to Screen")
 
     **Note:** By default, the Accordion widget contains 3 **AccordionItem** widgets. You can add or delete Accordion Items as required.
 
 1. Add the relevant content to the **AccordionItem** placeholders. In this example, some FAQs are added.
   
-    ![Adding FAQ content to AccordionItem placeholders in the Accordion widget](images/accordion-addcontent-ss.png "Adding Content to AccordionItem Placeholders")
+    ![Adding FAQ content to AccordionItem placeholders in the Accordion widget](images/accordion-addcontent-odcs.png "Adding Content to AccordionItem Placeholders")
 
 1. On the **Properties** tab, you can customize the Accordion's look and feel by setting any of the (optional) properties.
 
-    ![Customizing the Accordion's appearance through the Properties tab in ODC Studio](images/accordion-properties-ss.png "Accordion Properties Tab")
+    ![Customizing the Accordion's appearance through the Properties tab in ODC Studio](images/accordion-properties-odcs.png "Accordion Properties Tab")
 
-    ![Setting properties for individual Accordion Items in ODC Studio](images/accordion-properties-item-ss.png "Accordion Item Properties")
+    ![Setting properties for individual Accordion Items in ODC Studio](images/accordion-properties-item-odcs.png "AccordionItem Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 
@@ -69,7 +73,7 @@ After following these steps and publishing the app, you can test the pattern in 
 | MultipleItems (Boolean): Optional | If True, you can have multiple Accordion Items expanded simultaneously. Default value is False. |
 | ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/> <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
 
-### Accordion Item
+### Accordion item
 
 | Property | Description |
 | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -78,3 +82,80 @@ After following these steps and publishing the app, you can test the pattern in 
 | IconPosition (AccordionIconPosition): Optional | Set the position of the accordion icon. By default, the icon diplays on the right. |
 | IsDisabled (Boolean): Optional | If True, the Accordion item can't be expanded when clicked. Default value is False. |
 | ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/> <ul><li>Blank No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied. </li></ul>You can also use the classes available on the OutSystems UI. |
+
+## Accessibility – WCAG 2.2 AA compliance {#accessibility}
+
+Starting with OutSystems UI version **2.29.0**, the **Accordion** is compliant with WCAG 2.2 AA accessibility standards by default. No changes or manual work are required. If you customized the pattern, validate your implementation to ensure it still meets accessibility requirements.
+
+<div class="info" markdown="1">
+
+**For versions earlier than 2.29.0**: If you use an OutSystems UI version earlier than **2.29.0** and manually applied accessibility fixes as described below, remove the manual code added by following the steps in this section before updating to version **2.29.0**.
+
+</div>
+
+### Manual fix required (for versions before 2.29.0)
+
+#### Assign list roles in the Accordion
+
+By default, the **Accordion** UI Pattern used together with a **List** Widget doesn't expose the correct roles for assistive technologies.
+
+Assigning `list` and `listitem` roles ensures that screen readers interpret the structure properly, improving navigation and context for users who rely on assistive tools.
+
+<div class="info" markdown="1">
+
+If using Accordion Item pattern without Accordion pattern adapt the following instructions and the script to create the action in Accordion Item Initialized Event.
+
+</div>
+
+1. In **ODC Studio**, go to the **Interface** tab and select the **Screen/Block** where you use the **Accordion**.
+
+1. In the **Accordion** properties, under **Event Initialized**, select **New Client Action** and name it `AccordionInitialized`.
+
+    ![Create a new client action in ODC Studio](images/accordion-accordioninitialized-odcs.png "Creating a new client action")
+
+1. In **AccordionInitialized**, add a **JavaScript** node.
+
+    ![Example of adding a JavaScript node to AccordionInitialized action in ODC Studio](images/accordion-addjsnode-odcs.png "Adding a JavaScript node to AccordionInitialized action")
+
+1. Add the following code to apply correct list semantics:
+
+    ```javascript
+    const accordionItems = document.querySelectorAll("#"+ $parameters.WidgetId +" .osui-accordion .osui-accordion-item");
+    if (!accordionItems) return;
+
+    accordionItems.forEach(accordionItem => {
+        let retryHandle;
+
+        function applyRoles(currListEl) {
+            if (!currListEl) return;
+            currListEl.setAttribute('role', 'list');
+            const items = currListEl.querySelectorAll(':scope > *');
+            items.forEach(item => item.setAttribute('role', 'listitem'));
+        }
+
+        function waitListRender() {
+            const listEl = document.querySelector("#"+ $parameters.WidgetId +".osui-accordion .list");
+            if (listEl) {
+                applyRoles(listEl);
+                if (retryHandle) {
+                    clearTimeout(retryHandle);
+                }
+            } else {
+                retryHandle = setTimeout(waitListRender, 100);
+            }
+        }
+
+        // Start the process
+        waitListRender();
+    });
+    ```
+
+1. Publish the app
+
+#### Result
+
+After completing these steps, any **List** inside an **Accordion** correctly exposes `list` and `listitem` roles.
+
+Screen readers can now identify and announce list items accurately, improving both structure and usability for people who navigate using assistive technologies.
+
+Test the pattern in your app to confirm the update.

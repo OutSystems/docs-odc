@@ -1,7 +1,9 @@
 ---
 tags:
+  - Accessibility
   - Front-End
   - OutSystems UI
+  - UI
   - UI Patterns
   - Widgets
 summary: Lightbox Image UI Pattern in ODC opens thumbnail images in full screen mode, with step-by-step setup, grouping, zoom, and URL properties.
@@ -21,6 +23,7 @@ coverage-type:
 topic:
   - lightbox-image-properties
   - use-lightbox-image-pattern
+isautopublish: true
 ---
 
 # Lightbox Image
@@ -33,23 +36,23 @@ Applies to the OutSystems UI framework only.
 
 You can use the Lightbox Image UI Pattern to open smaller thumbnail images in full screen mode. This UI pattern is often used when creating an image gallery, allowing you to navigate through each of the images and view them in more detail.
 
-## How to Use the Lightbox Image UI Pattern
+## How to use the lightbox image UI pattern
 
 1. In ODC Studio, in the Toolbox, search for `Lightbox Image`.
 
     The Lightbox Image widget is displayed.
 
-    ![Screenshot of the Lightbox Image widget in the ODC Studio Toolbox](images/lightboxmob-image-1.png "Lightbox Image Widget in ODC Studio Toolbox")
+    ![Screenshot of the Lightbox Image widget in the ODC Studio Toolbox](images/lightboxmob-image-1-odcs.png "Lightbox Image Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Lightbox Image widget into the Main Content area of your application's screen.
 
-      ![Process of dragging the Lightbox Image widget into the application's main content area](images/lightboxmob-image-2.png "Dragging Lightbox Image Widget into Main Content Area")
+      ![Process of dragging the Lightbox Image widget into the application's main content area](images/lightboxmob-image-2-odcs.png "Dragging Lightbox Image Widget into Main Content Area")
 
       By default, the Lightbox Image widget contains an Image placeholder. You can add as many images as required by dragging the Image widget from the Toolbox into the Lightbox Image widget.
 
 1. Select the **Image** placeholder and on the **Properties** tab, from the **Image** drop-down, select or import the thumbnail image you want to display. In this example, we use the sample OutSystems UI Images.
 
-    ![Image placeholder selection and properties adjustment in the Lightbox Image widget](images/lightboxmob-image-3.png "Selecting Image Placeholder Properties")
+    ![Image placeholder selection and properties adjustment in the Lightbox Image widget](images/lightboxmob-image-3-odcs.png "Selecting Image Placeholder Properties")
 
     **Note:** In this example, the image property Type is set to **Local** image. You can also add External and Binary Data images.
 
@@ -76,3 +79,13 @@ The Lightbox Image UI pattern can be used only with images.
 Watch how the [Product Overview sample](https://silkui.outsystems.com/Samples_Mobile.aspx#Mobile_Details-Samples_ProductOverview) uses the Lightbox Image UI Pattern:
 
 <iframe src="https://player.vimeo.com/video/977630859" width="372" height="666" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video exhibiting an application using the Lightbox Image UI Pattern.</iframe>
+
+## Accessibility – WCAG 2.2 AA compliance {#accessibility}
+
+To ensure the **Lightbox Image** UI Pattern is fully compliant with **WCAG 2.2 AA**, you must ensure that the images displayed within the lightbox dialog are accessible.
+
+The key requirement is:
+
+* Each image inside the Lightbox must include an accessible name. You must use the `aria-label` attribute or an appropriate `alt` attribute when applicable. Without an accessible name, the image fails WCAG success criteria related to **Non-text Content (1.1.1)** and [Name, Role, Value (4.1.2)](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html).
+
+Providing a meaningful `aria-label` for every Lightbox image ensures that screen reader users can understand the image's purpose or content. This ensures compliance and improves overall accessibility.

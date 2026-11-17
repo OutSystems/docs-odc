@@ -1,7 +1,7 @@
 ---
 tags:
+  - Accessibility
   - CSS
-  - Events
   - Front-End
   - OutSystems UI
   - UI
@@ -23,6 +23,7 @@ coverage-type:
   - remember
 topic:
   - add-widget-ui-pattern
+isautopublish: true
 ---
 
 # Tabs
@@ -114,3 +115,124 @@ To ensure predictable behavior and avoid runtime issues, the Tabs component is d
 ## Device and pattern compatibility
 
 Avoid using the Tabs Pattern inside patterns with swipe events, such as the Stacked Cards or Carousel Patterns.
+
+## Accessibility – WCAG 2.2 AA compliance {#accessibility}
+
+Starting with OutSystems UI version **2.29.0**, the **Tabs** is compliant with WCAG 2.2 AA accessibility standards by default. No changes or manual work are required. If you customized the pattern, validate your implementation to ensure it still meets accessibility requirements.
+
+<div class="info" markdown="1">
+
+**For versions earlier than 2.29.0**: If you use an OutSystems UI version earlier than **2.29.0** and manually applied accessibility fixes as described below, remove the manual code added by following the steps in this section before updating to version **2.29.0**.
+
+</div>
+
+### Manual fix required (for versions before 2.29.0)
+
+By default, the **Tabs** UI Pattern does not fully comply with the ARIA tabs specification. The `role="tabpanel"` attribute does not align with the semantic `<article>` HTML element used for tab panels. If you're using OutSystems UI version earlier than **2.29.0**, follow the steps in this section to manually fix this. Before updating to **2.29.0** or later, remove any manual code you added by following the steps in this section.
+
+To fix this, you keep the existing `<article>` structure but move the accessibility attributes to an inner `<div>`. This approach preserves the current navigation logic, which relies on the `<article>` containers, while ensuring that assistive technologies interpret tabs and panels correctly.
+
+#### Move the tabpanel role to the inner container
+
+1. In **ODC Studio**, go to the **Interface** tab and select the screen or block that uses the **Tabs** UI Pattern.
+
+1. In the screen or block **Properties**, under **Events**, set **OnReady** to a **Client Action**.
+
+    ![Example of configuring the OnReady client action in ODC Studio](images/tabs-a11y-addonready-ss.png "Configuring the OnReady client action")
+
+1. In the **OnReady** action, add a **JavaScript** node.
+
+1. Add an input parameter **WidgetId** (`Text`) and set its value to `Tabs.Id`.
+
+    ![Example of adding a JavaScript node to the OnReady Client Action in ODC Studio](images/tabs-a11y-addjsnode-ss.png "Adding a JavaScript node to the OnReady Client Action")
+
+1. Paste the following code into the JavaScript node, publish the app, and verify the Tabs behavior with keyboard and screen readers.
+
+    ```javascript
+    var tabsRoot = document.getElementById($parameters.WidgetId);
+    if (!tabsRoot) return;
+
+    var panels = tabsRoot.querySelectorAll('.osui-tabs__content-item[role="tabpanel"]');
+
+    panels.forEach(function (panel) {
+        if (panel.getAttribute('data-a11y-panel-updated') === 'true') return;
+
+        var inner = panel.firstElementChild;
+        if (!inner) return;
+
+        // Ensure the inner container has an id
+        if (!inner.id && panel.id) {
+            inner.id = panel.id + '-content';
+        }
+
+        var attrs = ['role', 'tabindex', 'aria-hidden', 'aria-labelledby'];
+
+        attrs.forEach(function (attr) {
+            var value = panel.getAttribute(attr);
+
+            if (attr === 'role') {
+                if (value === 'tabpanel') {
+                    inner.setAttribute('role', 'tabpanel');
+                    panel.removeAttribute('role');
+                }
+            } else if (value !== null) {
+                inner.setAttribute(attr, value);
+            }
+        });
+
+        panel.setAttribute('data-a11y-panel-updated', 'true');
+
+        // Point the tab header to the new tabpanel element
+        var tab = tabsRoot.querySelector('[aria-controls="' + panel.id + '"]');
+        if (tab && inner.id) {
+            tab.setAttribute('aria-controls', inner.id);
+        }
+
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                var name = mutation.attributeName;
+                if (name === 'tabindex' || name === 'aria-hidden' || name === 'aria-labelledby') {
+                    var value = panel.getAttribute(name);
+                    if (value === null) {
+                        inner.removeAttribute(name);
+                    } else {
+                        inner.setAttribute(name, value);
+                    }
+                }
+            });
+        });
+
+        observer.observe(panel, { attributes: true });
+        panel._a11yObserver = observer;
+    });
+    ```
+
+1. In the same screen or block **Properties**, set **OnDestroy** to a **Client Action**.
+
+1. In this action, add a **JavaScript** node.
+
+1. Add an input parameter **WidgetId** (`Text`) and set its value to `Tabs.Id`.
+
+1. Paste the following code into the JavaScript node:
+
+    ```javascript
+    var tabsRoot = document.getElementById($parameters.WidgetId);
+    if (!tabsRoot) return;
+
+    var panels = tabsRoot.querySelectorAll('.osui-tabs__content-item[data-a11y-panel-updated="true"]');
+
+    panels.forEach(function (panel) {
+        if (panel._a11yObserver) {
+            panel._a11yObserver.disconnect();
+            panel._a11yObserver = null;
+        }
+    });
+    ```
+
+    ![Example of the JavaScript node configuration that disconnects the Tabs observer in ODC Studio](images/tabs-a11y-destroyobserver-ss.png "JavaScript node to disconnect the Tabs observer")
+
+1. Publish the app.
+
+#### Result
+
+After completing these steps, each tab panel exposes `role="tabpanel"` and related ARIA attributes on the inner container instead of the `<article>` element. Screen readers correctly associate tabs with their panels, keyboard navigation remains unchanged, and automated accessibility tools stop reporting invalid ARIA role usage on the Tabs pattern.

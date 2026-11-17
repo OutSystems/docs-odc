@@ -1,11 +1,11 @@
 ---
 tags:
+  - Accessibility
   - Front-End
-  - Mobile app
   - OutSystems UI
   - UI
   - UI Patterns
-  - Web
+  - UX
   - Widgets
 summary: Explore how to animate user input labels using the Animated Label UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
@@ -23,6 +23,7 @@ coverage-type:
   - remember
 topic:
   - add-widget-ui-pattern
+isautopublish: true
 ---
 
 # Animated Label
@@ -37,7 +38,7 @@ You can use the Animated Label UI Pattern to animate a label when there is a use
 
 ![Screenshot of an example of the Animated Label in action](images/animatedlabel-example-ss.png "Animated Label Example")
 
-**How to use the Animated Label UI Pattern**
+## How to use the animated label UI pattern
 
 1. In ODC Studio, in the Toolbox, search for `Animated Label`.
 
@@ -72,3 +73,43 @@ After following these steps and publishing the app, you can test the pattern in 
 | Property | Description |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/> <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+
+## Accessibility – WCAG 2.2 AA compliance {#accessibility}
+
+By default, the **Animated Label** UI pattern might not fully meet WCAG 2.2 AA accessibility requirements. Associating each input field with its corresponding label ensures that screen readers can correctly announce the purpose of the input, improving usability for all users, including those who rely on assistive technologies.
+
+<div class="info" markdown="1">
+
+Every input must have a label associated with it so screen readers can identify and announce its purpose to users.
+
+</div>
+
+### Associate a label and an input
+
+1. In **ODC Studio**, go to the **Elements** tab.
+
+1. Select the **Screen/Block** where you use the **Animated Label**.
+
+    ![Example of an Animated Label in the Widget Tree in ODC Studio](images/animatedlabel-setinputname-ss.png "Animated Label in the Widget Tree")
+
+1. Select the **Input** widget inside the **Animated Label** (in the input placeholder), and give it a name. For example: `RequestName_Input`.
+
+1. Select the **Label** widget inside the label placeholder of the same **Animated Label** block.
+
+    <div class="info" markdown="1">
+
+    If you only have a text or expression, wrap it with a **Label** widget before continuing to the next step.
+
+    </div>
+
+1. In the **Label Properties**, set the **Input Widget** dropdown to `RequestName_Input`.
+
+    ![Example of how to associate an input with a label in ODC Studio](images/animatedlabel-associateinputwithlabel-ss.png "Associating Input with the Label")
+
+1. Publish the app.
+
+### Result
+
+After completing these steps, each **Animated Label** will have a properly associated label and input, allowing screen readers to announce the input purpose accurately and improving accessibility compliance.
+
+Test it in your app to confirm the update.

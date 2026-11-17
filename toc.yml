@@ -405,6 +405,14 @@
             - href: eap/building-apps/ui/accessibility/testing-fixing-accessibility-issues.md
             - href: eap/building-apps/ui/accessibility/aria-roles-and-attributes.md
             - href: eap/building-apps/ui/accessibility/ui-patterns-accessibility-reference.md
+            - topics:
+                - href: eap/building-apps/ui/accessibility/widgets/button.md
+                - href: eap/building-apps/ui/accessibility/widgets/dropdown.md
+                - href: eap/building-apps/ui/accessibility/widgets/list.md
+                - href: eap/building-apps/ui/accessibility/widgets/popover-menu.md
+                - href: eap/building-apps/ui/accessibility/widgets/popup.md
+                - href: eap/building-apps/ui/accessibility/widgets/switch.md
+                - href: eap/building-apps/ui/accessibility/widgets/upload.md
             - href: eap/building-apps/ui/accessibility/additional-accessibility-resources.md
     # Logic
     - href: eap/building-apps/logic/intro.md

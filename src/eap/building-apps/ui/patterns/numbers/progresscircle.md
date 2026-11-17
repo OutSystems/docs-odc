@@ -1,9 +1,9 @@
 ---
 tags:
+  - Accessibility
   - Front-End
   - Mobile app
   - OutSystems UI
-  - Screens
   - UI
   - UI Patterns
   - Widgets
@@ -23,6 +23,7 @@ coverage-type:
   - remember
 topic:
   - use-progress-circle-pattern
+isautopublish: true
 ---
 
 # Progress Circle
@@ -37,7 +38,7 @@ You can use the Progress Circle UI Pattern to show the current progress of an op
 
 ![Screenshot of an example progress circle showing current operation flow progress](images/progresscircle-example-ss.png "Example Progress Circle")
 
-**How to use the Progress Circle UI Pattern**
+## How to use the progress circle UI pattern
 
 In this example, we create a button that increments the progress circle each time it's clicked and displays the progress as a fraction.
 
@@ -98,3 +99,49 @@ After following these steps and publishing the app, you can test the pattern in 
 | OptionalConfigs.Shape (Shape Identifier): Optional | Set the progress circle shape. |
 | OptionalConfigs.AnimateInitialProgress (Boolean): Optional | If True, the progress from zero to the progress value is animated. This is the default. |
 | ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+
+## Accessibility – WCAG 2.2 AA compliance {#accessibility}
+
+Out of the box, the **Progress Circle** UI pattern may not be correctly announced by screen readers, as it's primarily a decorative element that doesn't expose meaningful information. To make it accessible, hide the decorative circle and add a descriptive text alternative so users of assistive technologies can understand the progress status.
+
+### Hide progress circle from Screen Readers
+
+1. In **ODC Studio**, go to the **Interface** tab, and select the **Screen/Block** where you use the **Progress Circle**.
+
+1. In the **Widget Tree**, find the **Progress Circle**, right-click it, and select **Enclose in Container**.
+
+    ![Example of Enclosing the Progress Circle in a container  in ODC Studio](images/progresscircle-encloseincontainer-ss.png "Enclosing in Container the Progress Circle")
+
+1. In **Container Properties**, under **Attributes**, add `aria-hidden="true"`.
+
+   ![Example of setting aria-hidden true in ODC Studio](images/progresscircle-setariahidden-ss.png "Setting aria hidden attribute to Container")
+
+1. Drag and drop an **Expression** to the **Widget Tree**, below the container (be careful not to place it inside).
+
+   ![Example of dragging an expression to Widget Tree in ODC Studio](images/progresscircle-dragexpression-ss.png "Dragging an expression to Widget Tree")
+
+1. In the **Expression Properties**, set a descriptive text value. For example:  
+   `"Decorative progress circle bar that shows 15 of 30 results have been achieved."`  
+   Then, add the CSS class `wcag-hide-text` so that it's hidden visually but announced by screen readers.
+
+   ![Example of setting value and class in an Expression](images/progresscircle-setvalue-ss.png "Setting a Value and a Class in an Expression")
+
+    <div class="info" markdown="1">
+
+    If the progress value updates dynamically, make sure to notify users of changes using an appropriate ARIA live region or focus management technique.
+
+    </div>
+
+1. Publish the app.
+
+### Result
+
+After completing these steps:
+
+* The decorative **Progress Circle** is hidden from assistive technologies.
+
+* Screen readers announce an accurate, descriptive text alternative instead.
+
+* Users relying on screen readers receive meaningful progress feedback.
+
+Test the pattern in your app to confirm the update.

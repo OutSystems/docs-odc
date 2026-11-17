@@ -1,93 +1,93 @@
 ---
-summary: OutSystems Developer Cloud (ODC) aligns UI patterns with WCAG 2.1, detailing accessibility configurations for Alert and MasterDetail patterns.
+summary: ODC UI patterns and widgets that require extra configuration to meet WCAG 2.2 AA accessibility compliance.
 tags:
   - Accessibility
-  - Best Practices
   - Front-End
   - OutSystems UI
   - UI
   - UI Patterns
-  - UX
+  - Widgets
 locale: en-us
 guid: 95cea8e4-df3b-4ed0-9251-d3fdf3825854
 app_type: reactive web apps
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4583-544&mode=design&t=iVonMVebdcf91Gwq-0
+figma:
 platform-version: odc
 audience:
-  - Developer
   - Front-end developer
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:
-  - apply
   - remember
+  - unblock
 topic:
   - accessibility-screen-reader
+isautopublish: true
 ---
 
-# UI Patterns accessibility reference
+# UI patterns accessibility
 
-The OutSystems UI is in accordance with the WCAG 2.1. However, the UI patterns can introduce complex UI interactions in the app. These interactions may not be intuitive to the users of assistive technologies.
+Most OutSystems UI patterns and widgets are **WCAG 2.2 AA** compliant by default. However, a few of them rely on complex interactions that assistive technologies don't always interpret correctly, so they need additional configuration to stay accessible.
 
-## Alert pattern
+## Known issues {#known-issues}
 
-The Alert UI pattern lets you provide important information on the screen to get the users' attention. The alert pattern has different built-in ARIA roles, depending on the alert type:
+This section indicates the UI patterns and widgets that might require manual effort to be fully compliant with WCAG 2.2 AA.
 
-* The ARIA role is **alert** when you set the **AlertType** property to **Entities.Alert.Error** or **Entities.Alert.Warning**.
-* The ARIA role is **status** when you set the **AlertType** property to **Entities.Alert.Success** or **Entities.Alert.Info**.
+### OutSystems UI patterns
 
-    ![Screenshot of the Alert UI pattern in OutSystems with different ARIA roles highlighted](images/alert-pattern-odcs.png "Alert Pattern")
+The table below lists the UI patterns that might require manual effort to be fully compliant with WCAG 2.2 AA, depending on your **OutSystems UI** version. Follow the documentation link in the **UI pattern** column to see the detailed accessibility guidelines for each pattern.
 
-The Alert pattern further supports changing the ARIA role with the **SetAccessibilityRole** action. Here's an example of how to set the ARIA role "status".
+Patterns not listed in this table are compliant by default since **OutSystems UI 2.24.0**.
 
-1. Select the Alert pattern, and on the **Properties** tab, in the **Name** field, enter **myAlert**. This is now the element identifier.
-1. Open the logic flow that's relevant to the Alert showing on the screen.
-1. Locate **Logic** > **OutSystemsUI** > **Accessibility** > **SetAccessibilityRole**. Drag the **SetAccessibilityRole** action to the flow.
-1. In the **SetAccessibilityRole** action properties set **WidgetId** to **myAlert.Id** and enter **"status"** in the **Role** field.
+<div class="info" markdown="1">
 
-While toggling the visibility of the Alert, you must update the **aria-hidden** attribute to guarantee the alert complies with the Accessibility guidelines. You can do this by using the **SetAriaHidden** client action.
+If you're upgrading OutSystems UI to a version that includes WCAG 2.2 AA compliance for a pattern, you must remove any manual workaround from that pattern before upgrading. Refer to the pattern documentation for specific details.
 
-![Step-by-step process showing how to set the ARIA role 'status' for the Alert pattern in OutSystems](images/set-role-alert-pattern-odcs.png "Setting the role of the Alert pattern")
+</div>
 
-## MasterDetail pattern
+| UI pattern | WCAG 2.2 AA compliant by default? | Compliant since OutSystems UI version |
+| --- | --- | --- |
+| [Accordion](../patterns/content/accordion.md#accessibility) | Yes | 2.29.0 |
+| [Action Sheet](../patterns/interaction/actionsheet.md#accessibility) | Yes | 2.29.0 |
+| [Animated Label](../patterns/interaction/animatedlabel.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Badge](../patterns/numbers/badge.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Blank Slate](../patterns/content/blankslate.md#accessibility) | Yes | 2.29.0 |
+| [Card Background](../patterns/content/cardbackground.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Carousel](../patterns/interaction/carousel.md#accessibility) | Yes | 2.29.0 |
+| [Counter](../patterns/numbers/counter.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Inline SVG](../patterns/utilities/inlinesvg.md#accessibility) | Yes | 2.30.0 |
+| [Lightbox](../patterns/interaction/lightboximage.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Master Detail](../patterns/adaptive/masterdetail.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Notification](../patterns/interaction/notification.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Progress circle](../patterns/numbers/progresscircle.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Range Slider Interval](../patterns/interaction/rangesliderinterval.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Submenu](../patterns/navigation/submenu.md#accessibility) | Yes, optional improvements recommended | 2.24.0 |
+| [Tabs](../patterns/navigation/tabs.md#accessibility) | Yes | 2.29.0 |
+| [Tag](../patterns/content/tag.md#accessibility) | No<br/> (requires manual effort) | - |
+| [Tooltip](../patterns/content/tooltip.md#accessibility) | No<br/> (requires manual effort) | - |
+| [User Avatar](../patterns/content/useravatar.md#accessibility) | Yes | 2.29.0 |
+| [Wizard](../patterns/navigation/wizard.md#accessibility) | No<br/> (requires manual effort) | - |
 
-The **Master Detail** UI pattern splits the screen vertically into two panels. Clicking an item in the list pane opens the details pane.
+<div class="info" markdown="1">
 
-### Configure the correct keyboard interaction
+The following components are built on top of external libraries, thus OutSystems hasn't assessed them for WCAG 2.2 AA compliance:
 
-The Master Detail UI Pattern requires you to be careful with how the tab key behaves on the page. You should set **tabindex="0"** to the list section of the pattern, so the focus isn't lost elsewhere on the page. When the item in the list doesn't have text (you're using images), or the text isn't descriptive (you're using short text), use **aria-label** to provide more information to screen readers.
+* [OutSystems Data Grid](../patterns/interaction/data-grid/data-grid-overview.md)
+* [OutSystems Maps](../patterns/interaction/map/intro.md)
+* [OutSystems Charts](https://charts.outsystems.com/)
 
-### Configure the correct switch of the focus
+</div>
 
-Make sure that the focus switches to the detail pane of the pattern. Use the action **MasterDetailSetContentFocus** available in **Logic** > **OutSystemsUI** > **Accessibility** to switch the focus, preferably after you populate the details pane with the data.
+### Widgets
 
-### Configuration instructions
+The built-in widgets listed below require manual effort to be fully compliant with WCAG 2.2 AA. Widgets not listed are compliant by default.
 
-To configure the Mater Detail pattern for accessibility, proceed with the following steps:
+For the detailed accessibility guidelines, refer to the page for each widget:
 
-1. Open the **ListItem** pattern you are using.
-1. Create an action on ListItem click, for example, **ListItemOnClick** with two input parameters:
-
-    **CurrentRecordId** - to identify the current record
-
-    **ClickedItemId** - to identify the Id of the clicked ListItem
-
-    ![Configuration of the ListItem click action in the Master Detail UI pattern for accessibility](images/master-detail-listitemonclick-odcs.png "Setting the master detail list item on click action")
-
-1. On the **Properties** tab, add a **tabindex** attribute and set it to "**0**”.
-1. Create an **aria-label** attribute, and add a descriptive text about the action after the aggregate, for example, **YourAggregate + " list item, click to open the detail".** You should also add an **onkeypress** event to  ensure keyboard navigation on the list item.
-
-    ![Example of setting an aria-label attribute with descriptive text for list items in the Master Detail UI pattern](images/master-detail-aria-label-aggregate-odcs.png "Master detail aria label aggregate")
-
-1. On the **ListItemOnClick** action, add the **MasterDetailSetContentFocus** action. You need this for accessibility compliance, as it allows to change the focus between the detail and the next **listitem**, with parameters mapped from the **ListItemOnClick**:
-
-    1. **ContentID** (text) - Id of the content to focus on.
-    1. **TriggerItem** (text) - Id of the clicked item.
-
-    ![Illustration of how to set the MasterDetailSetContentFocus action for switching focus in the Master Detail UI pattern](images/master-detail-setcontentfocus-odcs.png "Setting the Master detail set content focus action")
-
-### Demo
-
-OutSystems recommends that you create a sample screen from the **Master Detail** Screen Template and check the accessibility settings in a working example.
-
-![Example screen showing the Master Detail UI pattern with accessibility settings applied in OutSystems](images/master-detail-example-odcs.png "Master detail example")
+* [Button](widgets/button.md#accessibility)
+* [Dropdown](widgets/dropdown.md#accessibility)
+* [List](widgets/list.md#accessibility)
+* [Popover menu](widgets/popover-menu.md#accessibility)
+* [Popup](widgets/popup.md#accessibility)
+* [Switch](widgets/switch.md#accessibility)
+* [Upload](widgets/upload.md#accessibility)

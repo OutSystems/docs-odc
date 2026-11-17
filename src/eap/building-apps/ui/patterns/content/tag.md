@@ -1,11 +1,11 @@
 ---
 tags:
+  - Accessibility
   - CSS
   - Front-End
   - OutSystems UI
   - UI
   - UI Patterns
-  - UX
   - Widgets
 summary: Tag UI Pattern in OutSystems Developer Cloud (ODC) lets you display statuses, labels, or categories with customizable color, shape, and size.
 locale: en-us
@@ -23,6 +23,7 @@ coverage-type:
   - remember
 topic:
   - add-widget-ui-pattern
+isautopublish: true
 ---
 
 # Tag
@@ -35,25 +36,25 @@ Applies to the OutSystems UI framework only.
 
 You can use the Tag UI Pattern to style small texts in a colored tag format. Use the Tags UI Pattern to display statuses, labels, or categories thus providing great user experience.
 
-**How to use the Tag UI Pattern**
+## How to use the tag UI pattern
 
 1. In ODC Studio, in the Toolbox, search for `Tag`.
   
     The Tag widget is displayed.
 
-    ![Screenshot of the Tag widget in the ODC Studio Toolbox](images/tag-1-ss.png "Tag Widget in ODC Studio Toolbox")
+    ![Screenshot of the Tag widget in the ODC Studio Toolbox](images/tag-1-odcs.png "Tag Widget in ODC Studio Toolbox")
 
 1. To From the Toolbox, drag the Tag widget into the Main Content area of your application's screen.
 
-    ![Dragging the Tag widget into the main content area of the application screen](images/tag-2-ss.png "Dragging Tag Widget into Main Content Area")
+    ![Dragging the Tag widget into the main content area of the application screen](images/tag-2-odcs.png "Dragging Tag Widget into Main Content Area")
 
 1. Add your content to the placeholders. In this example, we add some text.
 
-    ![Adding text to the placeholders in the Tag widget](images/tag-3-ss.png "Adding Text to Tag Widget")
+    ![Adding text to the placeholders in the Tag widget](images/tag-3-odcs.png "Adding Text to Tag Widget")
 
 1. On the properties tab, you can change the Tag's look and feel by setting the (optional) properties, for example, size and color.
 
-    ![Properties tab for changing the look and feel of the Tag widget](images/tag-4-ss.png "Tag Widget Properties Tab")
+    ![Properties tab for changing the look and feel of the Tag widget](images/tag-4-odcs.png "Tag Widget Properties Tab")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 
@@ -66,3 +67,228 @@ After following these steps and publishing the app, you can test the pattern in 
 | Size (Size Identifier): Optional | Set the Tag's size. Small and medium are the predefined sizes available. <p>Examples <ul><li>_Entities.Size.Medium_ - Displays a medium-sized badge.</li><li>_Entities.Size.Small_ - Displays a small sized Tag.</li></ul></p> |
 | IsLight (Boolean): Optional | Specify the Tag's background color. <p>Examples <ul><li>_Blank_ - A darker hue of the color is applied to the Tag and a lighter color to the text (default value).</li><li>_True_ - A brighter hue of the color is applied to the Tag and a darker color to the text.</li><li>_False_ - A darker hue of the color is applied to the Tag and a lighter color to the text.</li></ul></p> |
 | ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+
+## Accessibility – WCAG 2.2 AA compliance {#accessibility}
+
+By default, the **Tag** UI Pattern uses color combinations that might not meet the minimum contrast ratio required for WCAG 2.2 AA compliance. This happens because the **OutSystems UI** color palette was designed to provide broad coverage across many projects, similar to other design systems.
+
+With so many available colors, it's easy to create combinations that don't provide enough contrast. Some of these combinations are also part of the default Tag configuration, which wasn't specifically optimized for accessibility. However, these combinations only pose an issue when they're used or become available through dynamic settings.
+
+In most cases, customizing the palette to match your brand styles or adjusting individual color tokens might resolve the contrast problems—or, if done without testing, make them worse.
+
+### OutSystems UI colors with low contrast combinations
+
+<div class="info" markdown="1">
+
+Some colors in the **OutSystems UI** palette don't meet the minimum recommended contrast ratio **(4.5:1 for normal text or 3:1 for large text)** when used together as text and background colors. The following colors, for example, may create low-contrast combinations when applied to text, icons, or interactive elements such as buttons and links:
+
+* orange
+
+* yellow
+
+* lime
+
+* green
+
+* neutral-5
+
+* neutral-6
+
+* light-yellow
+
+* light-lime
+
+* light-transparent
+
+* light-neutral-6
+
+</div>
+
+You can still use these colors for decorative or non-textual purposes, as long as they don't affect readability or information perception.
+
+If your application relies on these color tokens, update the related CSS variables to improve contrast across all components. When applying custom or brand colors, always validate the contrast between text and background to ensure WCAG 2.2 AA compliance.
+
+Use a contrast checking tool such as:
+
+* [Color Contrast Checker by Pivotal Accessibility](https://chromewebstore.google.com/detail/color-contrast-checker/gbfgefkhkofclanlcgnhlbmfgjjomock)
+
+* [Accessible Color Picker](https://chromewebstore.google.com/detail/accessible-color-picker/bgfhbflmeekopanooidljpnmnljdihld)
+
+* [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+
+* [Contrast Ratio by Lea Verou](https://contrast-ratio.com/)
+
+  ![Example of how to use Color Contrast Checker to validate compliant colors](images/tag-greencontrast-sa.png "Validating contrast color with Color Contrast Checker")
+
+### Update CSS variables to improve contrast
+
+Update the theme color tokens so text and background combinations meet WCAG 2.2 AA. Replace each placeholder value with your brand colors (hex or rgba) and publish.
+
+1. In **ODC Studio**, go to the **Elements** tab.
+
+1. Select your **Theme** in **Themes**.
+
+1. In the theme's CSS, add or update the needed variables.
+
+1. Replace the placeholder values with new accessible colors and **Publish** the app.
+
+<div class="info" markdown="1">
+
+**Disclaimer:**  
+The following code block lists all root color variables for quick reference. You don't need to include all of them in your theme — only the ones you intend to update.
+
+For readability, the examples use a black hex value (`#000000`), but you can replace it with any valid CSS color format, such as `rgb()`, `rgba()`, `hsl()`, or `oklch()`.
+
+</div>
+
+```css
+:root {
+    /* ── Color > Brand ───────────────────────────────────── */
+    --color-primary:          [#000000 /* replace */];
+    --color-secondary:        [#000000 /* replace */];
+    --color-primary-hover:    [#000000 /* replace */];
+    --color-primary-selected: [#000000 /* replace */];
+    --color-primary-lightest: [#000000 /* replace */];
+
+    /* ── Color > Focus ───────────────────────────────────── */
+    --color-focus-outer:      [#000000 /* replace */];
+    --color-focus-inner:      [#000000 /* replace */];
+
+    /* ── Color > Extended (Reds) ─────────────────────────── */
+    --color-red-lightest:     [#000000 /* replace */];
+    --color-red-lighter:      [#000000 /* replace */];
+    --color-red-light:        [#000000 /* replace */];
+    --color-red:              [#000000 /* replace */];
+    --color-red-dark:         [#000000 /* replace */];
+    --color-red-darker:       [#000000 /* replace */];
+    --color-red-darkest:      [#000000 /* replace */];
+
+    /* ── Color > Extended (Oranges) ──────────────────────── */
+    --color-orange-lightest:  [#000000 /* replace */];
+    --color-orange-lighter:   [#000000 /* replace */];
+    --color-orange-light:     [#000000 /* replace */];
+    --color-orange:           [#000000 /* replace */];
+    --color-orange-dark:      [#000000 /* replace */];
+    --color-orange-darker:    [#000000 /* replace */];
+    --color-orange-darkest:   [#000000 /* replace */];
+
+    /* ── Color > Extended (Yellows) ──────────────────────── */
+    --color-yellow-lightest:  [#000000 /* replace */];
+    --color-yellow-lighter:   [#000000 /* replace */];
+    --color-yellow-light:     [#000000 /* replace */];
+    --color-yellow:           [#000000 /* replace */];
+    --color-yellow-dark:      [#000000 /* replace */];
+    --color-yellow-darker:    [#000000 /* replace */];
+    --color-yellow-darkest:   [#000000 /* replace */];
+
+    /* ── Color > Extended (Limes) ────────────────────────── */
+    --color-lime-lightest:    [#000000 /* replace */];
+    --color-lime-lighter:     [#000000 /* replace */];
+    --color-lime-light:       [#000000 /* replace */];
+    --color-lime:             [#000000 /* replace */];
+    --color-lime-dark:        [#000000 /* replace */];
+    --color-lime-darker:      [#000000 /* replace */];
+    --color-lime-darkest:     [#000000 /* replace */];
+
+    /* ── Color > Extended (Greens) ───────────────────────── */
+    --color-green-lightest:   [#000000 /* replace */];
+    --color-green-lighter:    [#000000 /* replace */];
+    --color-green-light:      [#000000 /* replace */];
+    --color-green:            [#000000 /* replace */];
+    --color-green-dark:       [#000000 /* replace */];
+    --color-green-darker:     [#000000 /* replace */];
+    --color-green-darkest:    [#000000 /* replace */];
+
+    /* ── Color > Extended (Teals) ────────────────────────── */
+    --color-teal-lightest:    [#000000 /* replace */];
+    --color-teal-lighter:     [#000000 /* replace */];
+    --color-teal-light:       [#000000 /* replace */];
+    --color-teal:             [#000000 /* replace */];
+    --color-teal-dark:        [#000000 /* replace */];
+    --color-teal-darker:      [#000000 /* replace */];
+    --color-teal-darkest:     [#000000 /* replace */];
+
+    /* ── Color > Extended (Cyans) ────────────────────────── */
+    --color-cyan-lightest:    [#000000 /* replace */];
+    --color-cyan-lighter:     [#000000 /* replace */];
+    --color-cyan-light:       [#000000 /* replace */];
+    --color-cyan:             [#000000 /* replace */];
+    --color-cyan-dark:        [#000000 /* replace */];
+    --color-cyan-darker:      [#000000 /* replace */];
+    --color-cyan-darkest:     [#000000 /* replace */];
+
+    /* ── Color > Extended (Blues) ────────────────────────── */
+    --color-blue-lightest:    [#000000 /* replace */];
+    --color-blue-lighter:     [#000000 /* replace */];
+    --color-blue-light:       [#000000 /* replace */];
+    --color-blue:             [#000000 /* replace */];
+    --color-blue-dark:        [#000000 /* replace */];
+    --color-blue-darker:      [#000000 /* replace */];
+    --color-blue-darkest:     [#000000 /* replace */];
+
+    /* ── Color > Extended (Indigos) ──────────────────────── */
+    --color-indigo-lightest:  [#000000 /* replace */];
+    --color-indigo-lighter:   [#000000 /* replace */];
+    --color-indigo-light:     [#000000 /* replace */];
+    --color-indigo:           [#000000 /* replace */];
+    --color-indigo-dark:      [#000000 /* replace */];
+    --color-indigo-darker:    [#000000 /* replace */];
+    --color-indigo-darkest:   [#000000 /* replace */];
+
+    /* ── Color > Extended (Violets) ──────────────────────── */
+    --color-violet-lightest:  [#000000 /* replace */];
+    --color-violet-lighter:   [#000000 /* replace */];
+    --color-violet-light:     [#000000 /* replace */];
+    --color-violet:           [#000000 /* replace */];
+    --color-violet-dark:      [#000000 /* replace */];
+    --color-violet-darker:    [#000000 /* replace */];
+    --color-violet-darkest:   [#000000 /* replace */];
+
+    /* ── Color > Extended (Grapes) ───────────────────────── */
+    --color-grape-lightest:   [#000000 /* replace */];
+    --color-grape-lighter:    [#000000 /* replace */];
+    --color-grape-light:      [#000000 /* replace */];
+    --color-grape:            [#000000 /* replace */];
+    --color-grape-dark:       [#000000 /* replace */];
+    --color-grape-darker:     [#000000 /* replace */];
+    --color-grape-darkest:    [#000000 /* replace */];
+
+    /* ── Color > Extended (Pinks) ────────────────────────── */
+    --color-pink-lightest:    [#000000 /* replace */];
+    --color-pink-lighter:     [#000000 /* replace */];
+    --color-pink-light:       [#000000 /* replace */];
+    --color-pink:             [#000000 /* replace */];
+    --color-pink-dark:        [#000000 /* replace */];
+    --color-pink-darker:      [#000000 /* replace */];
+    --color-pink-darkest:     [#000000 /* replace */];
+
+    /* ── Color > Neutral ─────────────────────────────────── */
+    --color-neutral-0:        [#000000 /* replace */];
+    --color-neutral-1:        [#000000 /* replace */];
+    --color-neutral-2:        [#000000 /* replace */];
+    --color-neutral-3:        [#000000 /* replace */];
+    --color-neutral-4:        [#000000 /* replace */];
+    --color-neutral-5:        [#000000 /* replace */];
+    --color-neutral-6:        [#000000 /* replace */];
+    --color-neutral-7:        [#000000 /* replace */];
+    --color-neutral-8:        [#000000 /* replace */];
+    --color-neutral-9:        [#000000 /* replace */];
+    --color-neutral-10:       [#000000 /* replace */];
+
+    /* ── Color > Semantic ────────────────────────────────── */
+    --color-error-light:      [#000000 /* replace */];
+    --color-error:            [#000000 /* replace */];
+    --color-warning-light:    [#000000 /* replace */];
+    --color-warning:          [#000000 /* replace */];
+    --color-success-light:    [#000000 /* replace */];
+    --color-success:          [#000000 /* replace */];
+    --color-info-light:       [#000000 /* replace */];
+    --color-info:             [#000000 /* replace */];
+}
+```
+
+### Result
+
+After you update the theme color variables with accessible values, validate that each combination of background and text colors used in the **Tag** meets the WCAG 2.2 AA contrast requirements.
+
+When validating in a Style Guide or Design System context, make sure to check both the default state and the **IsLight** variant, which inverts background and text colors.

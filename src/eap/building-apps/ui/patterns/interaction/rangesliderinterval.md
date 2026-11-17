@@ -1,6 +1,8 @@
 ---
 tags:
+  - Accessibility
   - Front-End
+  - JavaScript
   - OutSystems UI
   - UI
   - UI Patterns
@@ -21,6 +23,7 @@ coverage-type:
   - remember
 topic:
   - add-widget-ui-pattern
+isautopublish: true
 ---
 
 # Range Slider Interval
@@ -47,45 +50,45 @@ In this example, we create a Range Slider Interval that allows the user to selec
 
     The Range Slider Interval widget is displayed.
 
-    ![Screenshot of the Range Slider Interval widget in ODC Studio](images/rangesliderinterval-widget-ss.png "Range Slider Interval Widget")
+    ![Screenshot of the Range Slider Interval widget in ODC Studio](images/rangesliderinterval-widget-odcs.png "Range Slider Interval Widget")
 
 1. From the Toolbox, drag the **Range Slider Interval** widget into the Main Content area of your application's screen, and on the **Properties** tab, enter the **MinValue**, **MaxValue**, **StartingValueFrom**, and **StartingValueTo** values.
 
     In this example, we add static values.
 
-    ![Screenshot showing how to add mandatory values on the Properties tab for the Range Slider Interval](images/rangesliderinterval-dragwidget-ss.png "Adding Mandatory Values")
+    ![Screenshot showing how to add mandatory values on the Properties tab for the Range Slider Interval](images/rangesliderinterval-dragwidget-odcs.png "Adding Mandatory Values")
 
 1. To create a new client action, from the **OnValueChange** drop-down, select **New Client Action**.
 
-    ![Screenshot illustrating the creation of a new client action for the Range Slider Interval](images/rangesliderinterval-clientaction-ss.png "Creating a New Client Action")
+    ![Screenshot illustrating the creation of a new client action for the Range Slider Interval](images/rangesliderinterval-clientaction-odcs.png "Creating a New Client Action")
 
     By default, the **IntervalStart** and **IntervalEnd** input parameters are created.
 
-    ![Screenshot of the default input parameters created for the Range Slider Interval client action](images/rangesliderinterval-inputparameters-ss.png "Default Input Parameters")
+    ![Screenshot of the default input parameters created for the Range Slider Interval client action](images/rangesliderinterval-inputparameters-odcs.png "Default Input Parameters")
 
 1. From the Toolbox, drag the **Container** widget into the Main Content area of your application's screen, and add your content to the Container placeholder.
 
     In this example, we add some text and an expression for each of the input parameters.
 
-    ![Screenshot showing a container with text and expressions added to the Main Content area for the Range Slider Interval](images/rangesliderinterval-container-ss.png "Adding Container with Text and Expressions")
+    ![Screenshot showing a container with text and expressions added to the Main Content area for the Range Slider Interval](images/rangesliderinterval-container-odcs.png "Adding Container with Text and Expressions")
 
 1. To create a variable for each of the expressions, right-click your screen name, select **Add Local Variable**, and on the **Properties** tab, enter a name and data type. In this example we create the **LowerPrice** and **HighestPrice** variables with the **Currency** data type.
 
-    ![Screenshot demonstrating how to create local variables for the Range Slider Interval](images/rangesliderinterval-locvar-ss.png "Creating Local Variables")
+    ![Screenshot demonstrating how to create local variables for the Range Slider Interval](images/rangesliderinterval-locvar-odcs.png "Creating Local Variables")
 
 1. To bind the **IntervalStart** variable to the expression, double-click the expression widget, and in the **Expression Value** editor, select the variable you just have created, and click **Close**.
 
-    ![Screenshot showing the process of binding local variables to expressions in the Range Slider Interval](images/rangesliderinterval-bindvar-ss.png "Binding Local Variables")
+    ![Screenshot showing the process of binding local variables to expressions in the Range Slider Interval](images/rangesliderinterval-bindvar-odcs.png "Binding Local Variables")
 
 1. Repeat step 6 for the **IntervalEnd** input parameter.
 
 1. So that the parameters read the range slider selections, double-click your client action, and from the Toolbox, add the **Assign** action to the client action and set the variable and value assignments.
 
-    ![Screenshot of adding an assign action to the client action for the Range Slider Interval](images/rangesliderinterval-assign-ss.png "Adding an Assign to the Client Action")
+    ![Screenshot of adding an assign action to the client action for the Range Slider Interval](images/rangesliderinterval-assign-odcs.png "Adding an Assign to the Client Action")
 
 1. You can configure the  Range Slider Interval by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the orientation. For more configurations, expand the **OptionalConfigs** property.
 
-    ![Screenshot showing how to set optional properties for the Range Slider Interval on the Properties tab](images/rangesliderinterval-properties-ss.png "Setting Optional Properties")
+    ![Screenshot showing how to set optional properties for the Range Slider Interval on the Properties tab](images/rangesliderinterval-properties-odcs.png "Setting Optional Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 
@@ -105,3 +108,48 @@ After following these steps and publishing the app, you can test the pattern in 
 | OptionalConfigs.ShowTickMarks (Boolean): Optional | Set to True to display tick marks below the slider. Default value is False. To generate the tick marks, you must set the TickMarksInterval to True. |
 | OptionalConfigs.TickMarksInterval (Integer): Optional | Range interval after which a tick mark is displayed (when ShowTickMarks is set to True). For example, if TickMarksInterval = 5, a tick mark is shown for each 5 steps. The value can not be less than 0 (library restraint). |
 | OptionalConfigs.IsDisabled (Boolean): Optional | Set as True to disable the Range Slider Interval. Default value is True.build |
+
+## Accessibility – WCAG 2.2 AA compliance {#accessibility}
+
+By default, the **Range Slider Interval** UI Pattern might not expose the correct roles and labels for assistive technologies. As a result, screen readers can't distinguish between the lower and upper handles, making it harder for users who rely on assistive tools to understand which value they're adjusting.
+
+To fix this, you can assign accurate ARIA labels to both handles so that they're properly announced when focused.
+
+### Assign accurate roles to handlers
+
+1. In **ODC Studio**, go to the **Interface** tab, and select the **Screen/Block** where you use the **Range Slider Interval**.
+
+1. In the **Screen/Block** properties, under **Events**, select **OnReady** to create a client action.
+
+    ![Screenshot of creating the OnReady client action in ODC Studio](images/rangesliderint-onready-odcs.png "OnReady Client Action")
+
+1. In **OnReady**, add a **JavaScript** node.
+
+    ![Screenshot of a JavaScript node added to the OnReady client action in ODC Studio](images/rangesliderint-addjsnode-odcs.png "OnReady JavaScript Node")
+
+1. Add the following code to the **JavaScript** node to assign distinct labels to each handle:
+
+    ```javascript
+    const rangeSlider = document.getElementById($parameters.WidgetId);
+    const handlers = rangeSlider.querySelectorAll('.noUi-handle');
+
+    handlers.forEach(handler => {
+        if (handler.classList.contains("noUi-handle-lower")) {
+            handler.setAttribute('aria-label', 'Lower value handle');
+        } else {
+            handler.setAttribute('aria-label', 'Upper value handle');
+        }
+    });
+    ```
+
+1. Set **WidgetId** to the Range Slider Interval block/widget ID (for example, `RangeSliderInt.Id`).
+
+    ![Screenshot of the WidgetId parameter set to the Range Slider Interval block ID in ODC Studio](images/rangesliderint-setwidgetid-odcs.png "WidgetId Parameter")
+
+1. Publish the app
+
+### Result
+
+After completing these steps, assistive technologies can identify and announce each slider handle as either “Lower value handle” or “Upper value handle.” This improvement provides better context for users who rely on screen readers, allowing them to adjust ranges accurately and independently.
+
+Test the component in your app to confirm that each handle is correctly recognized and labeled.
