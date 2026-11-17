@@ -17,6 +17,7 @@ tags:
   - Entities
   - Infrastructure
   - Platform Server
+  - Private Gateway
   - Troubleshooting
 outsystems-tools:
   - lifetime

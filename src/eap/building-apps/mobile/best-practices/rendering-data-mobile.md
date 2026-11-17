@@ -12,7 +12,7 @@ tags:
   - Performance
   - Screens
   - UI
-  - UX
+  - Widgets
 audience:
   - Developer
   - Front-end developer
