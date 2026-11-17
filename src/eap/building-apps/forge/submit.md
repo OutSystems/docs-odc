@@ -18,7 +18,7 @@ coverage-type:
   - apply
 isautopublish: true
 topic:
-  - submit-asset-to-forge
+  - upload-forge-asset
   - submit-new-forge-version
 ---
 
