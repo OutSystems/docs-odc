@@ -1,6 +1,6 @@
 ---
 helpids: 30547
-summary: In this article you will learn how to add custom data source to the AI Agent Builder app.
+summary: OutSystems Developer Cloud (ODC) AI Agent Builder custom data sources connect databases using API contracts and authentication headers.
 tags:
   - AI
   - Agentic
