@@ -20,6 +20,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+  - evaluate
 topic:
   - mobile-best-practices
 isautopublish: true
