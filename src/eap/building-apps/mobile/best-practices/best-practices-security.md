@@ -6,6 +6,10 @@ figma:
 coverage-type:
   - evaluate
   - apply
+topic:
+  - appshield-hardening
+  - mobile-app-security
+  - mobile-data-security
 app_type: mobile apps
 platform-version: odc
 audience:

@@ -6,6 +6,10 @@ figma:
 coverage-type:
   - apply
   - evaluate
+topic:
+  - browser-fallbacks
+  - choose-plugin-source
+  - pin-plugin-versions
 app_type: mobile apps
 platform-version: odc
 audience:

@@ -7,6 +7,8 @@ coverage-type:
   - understand
 topic:
   - install-flow-overview
+  - install-self-hosted-stage
+  - stage-prerequisites
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:
