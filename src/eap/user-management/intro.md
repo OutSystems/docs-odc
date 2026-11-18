@@ -10,9 +10,9 @@ tags:
   - Authorization
   - End-users
   - Groups
+  - IdP
   - IT Users
   - Roles
-  - Teams
 audience:
   - Developer
   - Platform administrator
