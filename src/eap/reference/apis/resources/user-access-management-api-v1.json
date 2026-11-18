@@ -28,7 +28,7 @@
           "application-roles"
         ],
         "summary": "Returns a list of application roles.",
-        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
+        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > View end users** permission.",
         "operationId": "ApplicationRole_QueryApplicationRoles",
         "parameters": [
           {
@@ -169,7 +169,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** permission."
+        "x-os-permissions": "API Client needs the **End-user management > View end users** permission."
       }
     },
     "/application-roles/{key}/users": {
@@ -178,7 +178,7 @@
           "application-roles"
         ],
         "summary": "Returns the list of users for the specific application role.",
-        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > View end users** permission.",
         "operationId": "ApplicationRole_QueryUsersByApplicationRole",
         "parameters": [
           {
@@ -324,7 +324,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** permission."
+        "x-os-permissions": "API Client needs the **End-user management > View end users** permission."
       }
     },
     "/users/bulk": {
@@ -333,7 +333,7 @@
           "users"
         ],
         "summary": "Bulk create users and optionally in the built-in identity provider.",
-        "description": "The number of users added must be between 1 and 100 (inclusive), otherwise a bad request is returned.\nReturns an operations status object with an operation key that can be used later to get the status of the bulk create.\n            \nAPI Client needs the User management > Manage users permission.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "The number of users added must be between 1 and 100 (inclusive), otherwise a bad request is returned.\nReturns an operations status object with an operation key that can be used later to get the status of the bulk create.\n            \nAPI Client needs the User management > Manage users permission.\n\nAPI Client needs the **User and access management > Manage users** permission.",
         "operationId": "BulkUserProfile_CreateBulkUserProfilesOperation",
         "requestBody": {
           "description": "Bulk Create User Request.",
@@ -410,7 +410,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage users** permission."
       }
     },
     "/users/bulk/{key}": {
@@ -419,7 +419,7 @@
           "users"
         ],
         "summary": "Get the bulk user operation status.",
-        "description": "Returns an operations status object that contains the overall status of the bulk operation.\nIf the bulk operation has a Finished or FinishedWithError status,\nthe result of each and every item in the list is returned as well.\nIf the bulk operation has a Pending or Processing status, only the overall status is returned.\n            \nAPI Client needs the User management > Manage users permission.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Returns an operations status object that contains the overall status of the bulk operation.\nIf the bulk operation has a Finished or FinishedWithError status,\nthe result of each and every item in the list is returned as well.\nIf the bulk operation has a Pending or Processing status, only the overall status is returned.\n            \nAPI Client needs the User management > Manage users permission.\n\nAPI Client needs the **User and access management > Manage users** permission.",
         "operationId": "BulkUserProfile_GetBulkUserProfileOperationStatus",
         "parameters": [
           {
@@ -494,7 +494,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage users** permission."
       }
     },
     "/groups/{key}/users": {
@@ -503,7 +503,7 @@
           "groups"
         ],
         "summary": "Allow to add or remove users from a group.",
-        "description": "Allows adding or removing users from a specified group. Manage group membership by specifying the group key and providing lists of user keys to be added or removed.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Allows adding or removing users from a specified group. Manage group membership by specifying the group key and providing lists of user keys to be added or removed.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_AddOrRemoveUsersFromGroup",
         "parameters": [
           {
@@ -595,14 +595,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       },
       "get": {
         "tags": [
           "groups"
         ],
         "summary": "Returns a list of users associated with a group.",
-        "description": "Returns a list of users associated with a group that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns a list of users associated with a group that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_QueryUsersFromGroup",
         "parameters": [
           {
@@ -782,7 +782,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       }
     },
     "/groups": {
@@ -791,7 +791,7 @@
           "groups"
         ],
         "summary": "Creates a new group.",
-        "description": "Creates a new group by specifying a name and environment (stage). Optionally, you can include a list of users and application roles to assign to the group during creation.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Creates a new group by specifying a name and environment (stage). Optionally, you can include a list of users and application roles to assign to the group during creation.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_CreateGroup",
         "requestBody": {
           "description": "Group object with the necessary information.",
@@ -868,14 +868,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       },
       "get": {
         "tags": [
           "groups"
         ],
         "summary": "Returns the list of groups based on specified conditions.",
-        "description": "Returns a list of groups that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns a list of groups that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_QueryGroups",
         "parameters": [
           {
@@ -1009,7 +1009,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       }
     },
     "/groups/{key}": {
@@ -1018,7 +1018,7 @@
           "groups"
         ],
         "summary": "Deletes a group.",
-        "description": "Deletes a specified group using the group's key.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Deletes a specified group using the group's key.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_DeleteGroup",
         "parameters": [
           {
@@ -1097,14 +1097,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       },
       "get": {
         "tags": [
           "groups"
         ],
         "summary": "Returns information for a group.",
-        "description": "Retrieves detailed information about a group, including its name, description, and environment.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Retrieves detailed information about a group, including its name, description, and environment.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_ReadGroup",
         "parameters": [
           {
@@ -1180,14 +1180,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       },
       "patch": {
         "tags": [
           "groups"
         ],
         "summary": "Updates a group.",
-        "description": "Updates the details of a group using the group's key. Allows modification of the group's name or description.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Updates the details of a group using the group's key. Allows modification of the group's name or description.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_UpdateGroup",
         "parameters": [
           {
@@ -1289,7 +1289,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       }
     },
     "/groups/{key}/application-roles": {
@@ -1298,7 +1298,7 @@
           "groups"
         ],
         "summary": "Allow to add or remove application roles from a group.",
-        "description": "Allows adding or removing application roles from a specified group. Manage roles by specifying the group key and providing lists of application role keys to be added or removed.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Allows adding or removing application roles from a specified group. Manage roles by specifying the group key and providing lists of application role keys to be added or removed.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_ModifyGroupApplicationRoles",
         "parameters": [
           {
@@ -1390,14 +1390,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       },
       "get": {
         "tags": [
           "groups"
         ],
         "summary": "Returns a list of application roles associated with a group.",
-        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "Group_QueryApplicationRolesGroups",
         "parameters": [
           {
@@ -1537,7 +1537,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       }
     },
     "/groups/{key}/claim-mappings": {
@@ -1546,7 +1546,7 @@
           "groups"
         ],
         "summary": "Creates a new group IdP mapping.",
-        "description": "Creates a group mapping.\nReturns the key of the newly created group mapping.\nRequires the `AppGroupManage` permission.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Creates a group mapping.\nReturns the key of the newly created group mapping.\nRequires the `AppGroupManage` permission.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "GroupIdpClaimMapping_CreateGroupIdpClaimMapping",
         "parameters": [
           {
@@ -1635,14 +1635,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       },
       "get": {
         "tags": [
           "groups"
         ],
         "summary": "Queries group IdP mappings.",
-        "description": "Searches and retrieves the list of group IdP mappings that match the conditions passed.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Searches and retrieves the list of group IdP mappings that match the conditions passed.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "GroupIdpClaimMapping_QueryGroupIdpClaimMappings",
         "parameters": [
           {
@@ -1745,7 +1745,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       }
     },
     "/groups/{key}/claim-mappings/{mappingKey}": {
@@ -1754,7 +1754,7 @@
           "groups"
         ],
         "summary": "Deletes a group IdP mapping.",
-        "description": "Deletes a specified group IdP mapping object using its key.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Deletes a specified group IdP mapping object using its key.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "GroupIdpClaimMapping_DeleteGroupIdpClaimMapping",
         "parameters": [
           {
@@ -1833,14 +1833,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       },
       "get": {
         "tags": [
           "groups"
         ],
         "summary": "Gets a group IdP mapping.",
-        "description": "Returns information of a given group IdP mapping.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns information of a given group IdP mapping.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "GroupIdpClaimMapping_ReadGroupIdpClaimMapping",
         "parameters": [
           {
@@ -1926,14 +1926,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       },
       "put": {
         "tags": [
           "groups"
         ],
         "summary": "Updates a group IdP mapping.",
-        "description": "Updates a group IdP mapping object.\nRequires the `AppGroupManage` permission.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Updates a group IdP mapping object.\nRequires the `AppGroupManage` permission.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "GroupIdpClaimMapping_UpdateAppGroupIdpClaimMapping",
         "parameters": [
           {
@@ -2035,7 +2035,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       }
     },
     "/identity-providers": {
@@ -2209,7 +2209,7 @@
           "organization-roles"
         ],
         "summary": "Create an organization role.",
-        "description": "Creates an organization role.\n\nAPI Client needs the **User management > Manage organization roles** permission.",
+        "description": "Creates an organization role.\n\nAPI Client needs the **User and access management > Manage organization roles** permission.",
         "operationId": "OrganizationRole_CreateOrganizationRole",
         "requestBody": {
           "description": "Organization role object.",
@@ -2296,7 +2296,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage organization roles** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage organization roles** permission."
       },
       "get": {
         "tags": [
@@ -2313,6 +2313,18 @@
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "roleKeys",
+            "in": "query",
+            "description": "Returns only organization roles with any of these keys. Separate multiple keys with commas. Don't send this parameter together with `roleKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -2421,7 +2433,7 @@
           "organization-roles"
         ],
         "summary": "Delete an organization role.",
-        "description": "Deletes an organization role.\n\nAPI Client needs the **User management > Manage organization roles** permission.",
+        "description": "Deletes an organization role.\n\nAPI Client needs the **User and access management > Manage organization roles** permission.",
         "operationId": "OrganizationRole_DeleteOrganizationRole",
         "parameters": [
           {
@@ -2490,7 +2502,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage organization roles** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage organization roles** permission."
       },
       "get": {
         "tags": [
@@ -2580,7 +2592,7 @@
           "organization-roles"
         ],
         "summary": "Update an organization role.",
-        "description": "Updates the details of an organization role based on the organization role key.\n\nAPI Client needs the **User management > Manage organization roles** permission.",
+        "description": "Updates the details of an organization role based on the organization role key.\n\nAPI Client needs the **User and access management > Manage organization roles** permission.",
         "operationId": "OrganizationRole_UpdateOrganizationRole",
         "parameters": [
           {
@@ -2682,7 +2694,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage organization roles** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage organization roles** permission."
       }
     },
     "/organization-roles/{key}/users": {
@@ -2690,8 +2702,8 @@
         "tags": [
           "organization-roles"
         ],
-        "summary": "Returns a list of users with a specific organization role.",
-        "description": "Returns a list of users with a specific organization role, based on the organization role key.\nUse query parameters to filter the result based on different criteria.\n\nAPI Client needs the **User management > View members** permission.",
+        "summary": "Returns the users assigned an organization role.",
+        "description": "Returns the users assigned the organization role identified by the role key.\nUse query parameters to filter and sort the results.\n\nAPI Client needs the **User and access management > View members** permission.",
         "operationId": "OrganizationRole_QueryUsersByRole",
         "parameters": [
           {
@@ -2707,7 +2719,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters list by name or email. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
+            "description": "Returns only users whose name or email contains this text. Percent-encode the value so the server reads special characters correctly. For example, to search for `john+doe@example.com`, send `john%2Bdoe@example.com`. The server reads an unencoded `+` as a space.",
             "schema": {
               "type": "string"
             }
@@ -2715,7 +2727,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters list by name, email, or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
+            "description": "Returns only users whose name, email, or username contains this text. Percent-encode the value as described for `nameOrEmailContains`.",
             "schema": {
               "type": "string"
             }
@@ -2723,7 +2735,7 @@
           {
             "name": "scopes",
             "in": "query",
-            "description": "Optional. Comma-separated. `Organization` returns users with an Organization-scoped assignment of the role; `Asset` returns users with an Asset-scoped assignment; `Team` returns users with a Team-scoped assignment. All together (or omitted) returns all.",
+            "description": "Filters users by the scope of their role assignment. Accepted values are `Organization`, `Asset`, and `Team`. Separate multiple values with commas, for example `Asset,Team`. If you omit the parameter or specify all three values, the endpoint returns users with any scope.",
             "schema": {
               "type": "array",
               "items": {
@@ -2734,7 +2746,7 @@
           {
             "name": "assetKeys",
             "in": "query",
-            "description": "Optional. Comma-separated list of asset keys. Only returns users with an Asset-scoped assignment of the role for any of the specified assets.",
+            "description": "Comma-separated list of asset keys. Only returns users with an Asset-scoped assignment of the role for any of the specified assets.",
             "schema": {
               "type": "array",
               "items": {
@@ -2746,7 +2758,7 @@
           {
             "name": "teamKeys",
             "in": "query",
-            "description": "Optional. Comma-separated list of team keys. Only returns users with a Team-scoped assignment of the role for any of the specified teams.",
+            "description": "Comma-separated list of team keys. Only returns users with a Team-scoped assignment of the role for any of the specified teams.",
             "schema": {
               "type": "array",
               "items": {
@@ -2758,7 +2770,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Maximum number of results returned. The value must be within 1 - 100 (both inclusive). The default value is 100.",
+            "description": "Maximum number of results returned. Valid values are 1 to 100. The default value is 100.",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2767,7 +2779,7 @@
           {
             "name": "offset",
             "in": "query",
-            "description": "Starting point or position of the first result returned. The default value is 0.",
+            "description": "Number of results to skip before the first result returned. Default: 0.",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2776,7 +2788,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort, for example \"-name\". The default is name. Allowed: userKey, name, email, status, lastLoginAt.",
+            "description": "Field to sort by. Allowed values are `userKey`, `name`, `email`, `status`, and `lastLoginAt`. The default is `name`. Results sort in ascending order. Prefix the value with a hyphen for descending order, for example `-name`.",
             "schema": {
               "type": "string"
             }
@@ -2855,7 +2867,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View members** permission."
+        "x-os-permissions": "API Client needs the **User and access management > View members** permission."
       }
     },
     "/permissions": {
@@ -3034,13 +3046,1020 @@
         "x-os-permissions": "API client must have at least one permission."
       }
     },
+    "/teams": {
+      "post": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Creates a team.",
+        "description": "Creates a team owned by the organization. The team can optionally start with members and with the\nassets it owns. Each member carries the organization role held in this team, and a user has\none role per team. An asset belongs to a single team.\n\nAPI Client needs the **User and access management > Manage teams** permission.",
+        "operationId": "Teams_CreateTeam",
+        "requestBody": {
+          "description": "The team to create.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TeamCreateRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TeamCreateRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamCreateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "A member references users and/or organization roles that do not exist; the error names every unknown key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "x-os-permissions": "API Client needs the **User and access management > Manage teams** permission."
+      },
+      "get": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Returns the list of teams that match the specified filters.",
+        "description": "Returns the list of teams in the organization that match the specified filters.\n\nAPI client must have at least one permission.",
+        "operationId": "Teams_QueryTeams",
+        "parameters": [
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Returns only teams whose name contains this text.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamKeys",
+            "in": "query",
+            "description": "Returns only teams with any of these keys. Separate multiple keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Returns only teams that own any of these assets. Separate multiple keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "userKeys",
+            "in": "query",
+            "description": "Returns only teams that have any of these users as members. Separate multiple keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Returns only teams that own assets in any of these portfolios. Separate multiple keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Property to sort by. Sorts in ascending order by default. Add a hyphen prefix for descending order, for example `-name`. Accepted value: `name`. Default: `name`.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Includes related data in each team of the response. Accepted values are `members` and `assets`. Separate multiple values with commas, for example `members,assets`. The `members` value requires the OrgUserView permission.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/TeamEmbedType"
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return. Accepted values: 1 to 100. Default: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of results to skip before the first result returned. Default: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponsePaginatedResponseApi"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      }
+    },
+    "/teams/{key}": {
+      "delete": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Deletes a team.",
+        "description": "Deletes the team. As a consequence of the tenant schema's cascading foreign keys, the team's\nmember and asset ownership links are removed with it.\n\nAPI Client needs the **User and access management > Manage teams** permission.",
+        "operationId": "Teams_DeleteTeam",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the team to delete.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "x-os-permissions": "API Client needs the **User and access management > Manage teams** permission."
+      },
+      "get": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Returns a team.",
+        "description": "Retrieves detailed information about a team using the team's key.\n\nAPI client must have at least one permission.",
+        "operationId": "Teams_GetTeam",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The team key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Includes related data in the response. Accepted values are `members` and `assets`. Separate multiple values with commas, for example `members,assets`. The `members` value requires the OrgUserView permission.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/TeamEmbedType"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      },
+      "patch": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Updates the name or description of a team.",
+        "description": "Updates the name or description of a team. Specify at least one of name or description.\n\nAPI Client needs the **User and access management > Manage teams** permission.",
+        "operationId": "Teams_UpdateTeam",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the team to update.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The fields to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TeamUpdateRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TeamUpdateRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "x-os-permissions": "API Client needs the **User and access management > Manage teams** permission."
+      }
+    },
+    "/teams/{key}/assets": {
+      "get": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Lists a team's assets.",
+        "description": "Returns the assets owned by the team, with each asset's portfolio. The paginated equivalent of\n`GET /teams/{key}?embed=assets`.\n\nAPI client must have at least one permission.",
+        "operationId": "Teams_QueryTeamAssets",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The team key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Returns only assets with any of these keys. Separate multiple keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Returns only assets that belong to any of these portfolios. Separate multiple keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return. Accepted values: 1 to 100. Default: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of results to skip before the first result returned. Default: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamAssetResponsePaginatedResponseApi"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      },
+      "patch": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Assigns or removes asset ownership for a team, in a single atomic operation.",
+        "description": "The request fails in the following cases:\n\n* An asset in `assetsToAdd` is already owned by this team.\n\n* An asset in `assetKeysToRemove` isn't owned by this team.\n\n* An asset in `assetsToAdd` is owned by another team. Remove the asset from that team first, in a separate call.\n\n* An asset appears in both `assetsToAdd` and `assetKeysToRemove`.\n\nAPI Client needs the **User and access management > Manage teams** permission.",
+        "operationId": "Teams_UpdateTeamAssets",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the team to update.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The assets to add and the keys of the assets to remove. Specify at least one item in either list.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TeamAssetsUpdateRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TeamAssetsUpdateRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The team's asset ownership was updated."
+          },
+          "400": {
+            "description": "The request is invalid: neither list was provided, an asset appears in both lists, or an asset in `assetsToAdd` is already owned by this team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The team does not exist, an asset in `assetKeysToRemove` is not owned by the team, or an asset in `assetsToAdd` references a portfolio that does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "An asset in `assetsToAdd` is already owned by a different team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User and access management > Manage teams** permission."
+      }
+    },
+    "/teams/{key}/members": {
+      "get": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Lists a team's members.",
+        "description": "Returns the users that hold an organization role in the team. The paginated equivalent of\n`GET /teams/{key}?embed=members`. Requires the OrgUserView permission.\n\nAPI Client needs the **User and access management > View members** permission.",
+        "operationId": "Teams_QueryTeamMembers",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The team key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "userKeys",
+            "in": "query",
+            "description": "Returns only members with any of these user keys. Separate multiple keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "roleKeys",
+            "in": "query",
+            "description": "Returns only members who have any of these organization roles. Separate multiple role keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return. Accepted values: 1 to 100. Default: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of results to skip before the first result returned. Default: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamMemberResponsePaginatedResponseApi"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User and access management > View members** permission."
+      },
+      "patch": {
+        "tags": [
+          "teams"
+        ],
+        "summary": "Adds, updates, and removes members of a team.",
+        "description": "Adds, updates, and removes members in one atomic call. Each entry in membersToAddOrUpdate carries the\norganization role held in this team: a user who is not a member is added with that role, and a\ncurrent member has their role replaced by it. A user has one role per team.\n\nAPI Client needs the **User and access management > Manage teams** permission.",
+        "operationId": "Teams_UpdateTeamMembers",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the team whose membership changes.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The members to add or update and the members to remove.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TeamMembersUpdateRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TeamMembersUpdateRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The team does not exist, a key in `memberKeysToRemove` is not a member, or an entry in `membersToAddOrUpdate` references users and/or organization roles that do not exist; the latter error names every unknown key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "x-os-permissions": "API Client needs the **User and access management > Manage teams** permission."
+      }
+    },
     "/users/{key}/application-roles/{roleKey}": {
       "post": {
         "tags": [
           "users"
         ],
         "summary": "Grants an application role to a user.",
-        "description": "Assigns an application role to a user by providing the application role key and the user key.\n\nAPI Client needs the **User management > Manage end-user access** permission.",
+        "description": "Assigns an application role to a user by providing the application role key and the user key.\n\nAPI Client needs the **End-user management > Manage end-user access** permission.",
         "operationId": "UserApplicationRoles_GrantApplicationRoleToUser",
         "parameters": [
           {
@@ -3119,14 +4138,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user access** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user access** permission."
       },
       "delete": {
         "tags": [
           "users"
         ],
         "summary": "Revokes an application role to a user.",
-        "description": "Revokes an application role from a user by providing the user key and application role key.\n\nAPI Client needs the **User management > Manage end-user access** permission.",
+        "description": "Revokes an application role from a user by providing the user key and application role key.\n\nAPI Client needs the **End-user management > Manage end-user access** permission.",
         "operationId": "UserApplicationRoles_RevokeApplicationRoleForUser",
         "parameters": [
           {
@@ -3205,7 +4224,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user access** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user access** permission."
       }
     },
     "/users/{key}/application-roles": {
@@ -3214,7 +4233,7 @@
           "users"
         ],
         "summary": "Returns the list of application roles associated with a user.",
-        "description": "Returns a list of application roles associated with a user that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
+        "description": "Returns a list of application roles associated with a user that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > View end users** permission.",
         "operationId": "UserApplicationRoles_QueryUserApplicationRoles",
         "parameters": [
           {
@@ -3292,7 +4311,7 @@
           {
             "name": "groupKeys",
             "in": "query",
-            "description": "Only returns application roles inherited from the specified groups.",
+            "description": "Only returns application roles inherited from any of the specified groups. Comma-separated list of group keys. Requires `assignmentSources` to include GroupAssigned, GroupMapped or both. Each returned role still lists in AssignedGroups every group it is inherited from under the selected sources, including groups not in `groupKeys`.",
             "schema": {
               "type": "array",
               "items": {
@@ -3342,7 +4361,7 @@
           {
             "name": "assignmentSources",
             "in": "query",
-            "description": "Filters by assignment source. Repeatable. Allowed: Direct, GroupAssigned, GroupMapped. Empty or omitted defaults to Direct. The IsDirectlyAssigned flag and AssignedGroups list on each returned role reflect only the selected sources.",
+            "description": "Filters by assignment source. Comma-separated list of assignment sources. Allowed: Direct, GroupAssigned, GroupMapped. Omitted defaults to Direct. Must include GroupAssigned, GroupMapped or both when `groupKeys` is sent. The IsDirectlyAssigned flag and AssignedGroups list on each returned role reflect only the selected sources.",
             "schema": {
               "type": "array",
               "items": {
@@ -3413,7 +4432,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** permission."
+        "x-os-permissions": "API Client needs the **End-user management > View end users** permission."
       }
     },
     "/users/{key}/organization-roles": {
@@ -3422,7 +4441,7 @@
           "users"
         ],
         "summary": "Returns the list of organization roles associated with a user.",
-        "description": "Returns the list of organization roles associated with a user.\nIf the authenticated user is requesting their own roles, no permission is required.\n\nAPI Client needs the **User management > View members** or **User management > Manage users** permissions.",
+        "description": "Returns the list of organization roles associated with a user.\nIf the authenticated user is requesting their own roles, no permission is required.\n\nAPI Client needs the **User and access management > View members** or **User and access management > Manage users** permissions.",
         "operationId": "UserOrganizationRoles_GetUserOrganizationRoles",
         "parameters": [
           {
@@ -3450,6 +4469,30 @@
             "name": "assetKeys",
             "in": "query",
             "description": "Optional. Comma-separated list of asset keys. Only returns organization roles assigned in Asset scope for any of the specified assets.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "teamKeys",
+            "in": "query",
+            "description": "Returns only roles assigned in the Team scope for any of these teams. Separate multiple keys with commas.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Returns only roles assigned in the Asset scope for assets in any of these portfolios. Separate multiple keys with commas.",
             "schema": {
               "type": "array",
               "items": {
@@ -3539,7 +4582,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View members** or **User management > Manage users** permissions."
+        "x-os-permissions": "API Client needs the **User and access management > View members** or **User and access management > Manage users** permissions."
       }
     },
     "/users/{key}/organization-roles/{roleKey}": {
@@ -3548,7 +4591,7 @@
           "users"
         ],
         "summary": "Grant organization roles to a user.",
-        "description": "Assigns organization roles to a user based on the user key.\n\nAPI Client needs the **User management > Manage member access** permission.",
+        "description": "Assigns organization roles to a user based on the user key.\n\nAPI Client needs the **User and access management > Manage member access** permission.",
         "operationId": "UserOrganizationRoles_GrantOrganizationRoleToUser",
         "parameters": [
           {
@@ -3650,14 +4693,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage member access** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage member access** permission."
       },
       "delete": {
         "tags": [
           "users"
         ],
         "summary": "Delete a user's organization roles.",
-        "description": "Revokes organization roles for a user.\n\nAPI Client needs the **User management > Manage member access** permission.",
+        "description": "Revokes organization roles for a user.\n\nAPI Client needs the **User and access management > Manage member access** permission.",
         "operationId": "UserOrganizationRoles_RevokeOrganizationRoleForUser",
         "parameters": [
           {
@@ -3759,7 +4802,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage member access** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage member access** permission."
       }
     },
     "/users/count": {
@@ -3768,7 +4811,7 @@
           "users"
         ],
         "summary": "Returns the user count based on specified conditions.",
-        "description": "Returns the user count that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission.",
+        "description": "Returns the user count that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > View end users** or **User and access management > View members** or **User and access management > Manage users** permissions. If API Client has the **End-user management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User and access management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **End-user management > View end users** and **User and access management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User and access management > Manage users** permission.",
         "operationId": "UserProfile_CountUsers",
         "parameters": [
           {
@@ -3806,6 +4849,14 @@
             "name": "hasApplicationRoles",
             "in": "query",
             "description": "When set to true, only counts users that have at least one application role. Default is false.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasEmail",
+            "in": "query",
+            "description": "When set to true, only counts users that have an email. When set to false, only counts users without an email. When omitted, counts users regardless of having an email.",
             "schema": {
               "type": "boolean"
             }
@@ -3929,7 +4980,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **End-user management > View end users** or **User and access management > View members** or **User and access management > Manage users** permissions. If API Client has the **End-user management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User and access management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **End-user management > View end users** and **User and access management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User and access management > Manage users** permission."
       }
     },
     "/users": {
@@ -3938,7 +4989,7 @@
           "users"
         ],
         "summary": "Creates a new user.",
-        "description": "\nCreates a new user by specifying the user information, such as name, email, photo URL, and active status.\n\nTo let the user sign in with the built-in identity provider, set `addToBuiltInIdentityProvider` to `true`. The built-in identity provider identifies users by email, not by username.\n\nTo link the user to an external identity provider at creation time, provide `identityProviderKey`. ODC creates a `UserIdpProfile` for that provider and stores `username` and `subject` on it. ODC uses those values to match the user the first time they sign in through that provider.\n\nWithout `identityProviderKey`, ODC ignores `username` and `subject`, and the user profile has no username. A username belongs to one identity provider, and the `PATCH /users/{ key }` method doesn't update it.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "\nCreates a new user by specifying the user information, such as name, email,\n            photo URL, and active status.\n\nTo let the user sign in with the built-in identity provider, set\n            `addToBuiltInIdentityProvider` to `true`. The built-in identity provider\n            identifies users by email, not by username.\n\nTo link the user to an external identity provider at creation time, provide\n            `identityProviderKey`. ODC creates a `UserIdpProfile` for that provider and\n            stores `username` and `subject` on it. ODC uses those values to match the user\n            the first time they sign in through that provider.\n\nWithout `identityProviderKey`, ODC ignores `username` and `subject`, and the\n            user profile has no username. A username belongs to one identity provider, and\n            the `PATCH /users/{ key }` method doesn't update it.\n\nAPI Client needs the **User and access management > Manage users** permission.",
         "operationId": "UserProfile_CreateUser",
         "requestBody": {
           "description": "The user object with the necessary information.",
@@ -4015,14 +5066,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage users** permission."
       },
       "get": {
         "tags": [
           "users"
         ],
         "summary": "Returns the list of users based on specified conditions.",
-        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > View end users** or **User and access management > View members** or **User and access management > Manage users** permissions. If API Client has the **End-user management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User and access management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **End-user management > View end users** and **User and access management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User and access management > Manage users** permission.",
         "operationId": "UserProfile_QueryUsers",
         "parameters": [
           {
@@ -4100,6 +5151,14 @@
             "name": "hasApplicationRoles",
             "in": "query",
             "description": "When set to true, only returns users that have at least one application role. Default is false.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasEmail",
+            "in": "query",
+            "description": "When set to true, only returns users that have an email. When set to false, only returns users without an email. When omitted, returns users regardless of having an email.",
             "schema": {
               "type": "boolean"
             }
@@ -4262,7 +5321,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **End-user management > View end users** or **User and access management > View members** or **User and access management > Manage users** permissions. If API Client has the **End-user management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User and access management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **End-user management > View end users** and **User and access management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User and access management > Manage users** permission."
       }
     },
     "/users/{key}": {
@@ -4271,7 +5330,7 @@
           "users"
         ],
         "summary": "Deletes a user.",
-        "description": "Deletes a specified user using the user's key.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Deletes a specified user using the user's key.\n\nAPI Client needs the **User and access management > Manage users** permission.",
         "operationId": "UserProfile_DeleteUser",
         "parameters": [
           {
@@ -4340,14 +5399,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage users** permission."
       },
       "get": {
         "tags": [
           "users"
         ],
         "summary": "Retrieves a user.",
-        "description": "Retrieves detailed information about a user using the user's key.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission.",
+        "description": "Retrieves detailed information about a user using the user's key.\n\nAPI Client needs the **End-user management > View end users** or **User and access management > View members** or **User and access management > Manage users** permissions. If API Client has the **End-user management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User and access management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **End-user management > View end users** and **User and access management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User and access management > Manage users** permission.",
         "operationId": "UserProfile_GetUser",
         "parameters": [
           {
@@ -4434,14 +5493,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **User management > View end users** and **User management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **End-user management > View end users** or **User and access management > View members** or **User and access management > Manage users** permissions. If API Client has the **End-user management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User and access management > View members** permission, retrieves the list of users with organization roles. If API Client has both the **End-user management > View end users** and **User and access management > View members** permissions, retrieves the list of users with end-user roles or organization roles; users without any roles are not included. To get a list of all users, including users without roles, the API client needs the **User and access management > Manage users** permission."
       },
       "patch": {
         "tags": [
           "users"
         ],
         "summary": "Updates the user.",
-        "description": "Updates the details of a user using the user's key. Allows modification of the user's name, photo URL, and active status.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Updates the details of a user using the user's key. Allows modification of the user's name, photo URL, and active status.\n\nAPI Client needs the **User and access management > Manage users** permission.",
         "operationId": "UserProfile_PatchUser",
         "parameters": [
           {
@@ -4533,7 +5592,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User and access management > Manage users** permission."
       }
     },
     "/users/{key}/groups": {
@@ -4542,7 +5601,7 @@
           "users"
         ],
         "summary": "Returns a list of groups associated with a user.",
-        "description": "Returns a list of groups associated with a user that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns a list of groups associated with a user that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **End-user management > Manage end-user groups** permission.",
         "operationId": "UserProfile_QueryGroupsByUser",
         "parameters": [
           {
@@ -4698,7 +5757,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+        "x-os-permissions": "API Client needs the **End-user management > Manage end-user groups** permission."
       }
     }
   },
@@ -5812,6 +6871,12 @@
             "description": "Gets or sets the portfolio key this assignment belongs to.",
             "format": "uuid",
             "nullable": true
+          },
+          "teamKey": {
+            "type": "string",
+            "description": "Gets or sets the team key.",
+            "format": "uuid",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -6402,6 +7467,327 @@
         ],
         "type": "string"
       },
+      "TeamAssetRequest": {
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "type": "string",
+            "description": "The key of the asset the team owns.",
+            "format": "uuid"
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The key of the portfolio the asset belongs to.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamAssetResponse": {
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "type": "string",
+            "description": "The key of the owned asset.",
+            "format": "uuid"
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The key of the portfolio the asset belongs to.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamAssetResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamAssetResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamAssetsUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "assetsToAdd": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamAssetRequest"
+            },
+            "description": "The assets to assign to the team.",
+            "nullable": true
+          },
+          "assetKeysToRemove": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The keys of the assets to remove from the team.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamCreateRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Name of the team. Required. The name must be unique in the organization, ignoring case."
+          },
+          "description": {
+            "maxLength": 250,
+            "type": "string",
+            "description": "The description of the team.",
+            "nullable": true
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamMemberRequest"
+            },
+            "description": "The initial members of the team. Each member carries the organization role held in this team, and a\nuser has one role per team.",
+            "nullable": true
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamAssetRequest"
+            },
+            "description": "Assets that the team initially owns. An asset belongs to one team, so the request fails if another team already owns any of the assets.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamCreateResponse": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key of the created team.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamEmbedType": {
+        "enum": [
+          "Members",
+          "Assets"
+        ],
+        "type": "string"
+      },
+      "TeamEmbeddedResponse": {
+        "type": "object",
+        "properties": {
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamMemberResponse"
+            },
+            "description": "List of the team's members.",
+            "nullable": true
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamAssetResponse"
+            },
+            "description": "List of the team's owned assets.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamMemberRequest": {
+        "type": "object",
+        "properties": {
+          "userKey": {
+            "type": "string",
+            "description": "The key of the member user.",
+            "format": "uuid"
+          },
+          "organizationRoleKey": {
+            "type": "string",
+            "description": "The key of the organization role the user holds in the team.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamMemberResponse": {
+        "type": "object",
+        "properties": {
+          "userKey": {
+            "type": "string",
+            "description": "The key of the member user.",
+            "format": "uuid"
+          },
+          "organizationRoleKey": {
+            "type": "string",
+            "description": "The key of the organization role the user holds in the team.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamMemberResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamMemberResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamMembersUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "membersToAddOrUpdate": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamMemberRequest"
+            },
+            "description": "The members to add to the team or whose role to update. Each member carries the organization role\nheld in this team: a user who is not a member is added with that role, and a current member has\ntheir role replaced by it. A user has one role per team.",
+            "nullable": true
+          },
+          "memberKeysToRemove": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The keys of the users to remove from the team.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key of the team.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the team.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the team.",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "The last updated date and time of the team.",
+            "format": "date-time"
+          },
+          "assetCount": {
+            "type": "integer",
+            "description": "The number of assets owned by the team.",
+            "format": "int32"
+          },
+          "memberCount": {
+            "type": "integer",
+            "description": "The number of members belonging to the team.",
+            "format": "int32"
+          },
+          "_embedded": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TeamEmbeddedResponse"
+              }
+            ],
+            "description": "The embedded information to provide. (optional)\nOnly available when the request includes the query parameter `embed=`, e.g. `embed=members,assets`.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "The new name of the team. If you set the value to null, the name doesn't change. The name can't be blank. The name must be unique in the organization, ignoring case.",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 250,
+            "type": "string",
+            "description": "The new description of the team. If you set the value to null, the description doesn't change.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "TokenNormalizationModel": {
         "type": "object",
         "properties": {
@@ -6946,6 +8332,9 @@
     },
     {
       "name": "subjects"
+    },
+    {
+      "name": "teams"
     },
     {
       "name": "tenants"
