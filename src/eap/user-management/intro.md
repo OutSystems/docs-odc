@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) user management covers user types, authentication, roles, permissions, groups, and access scopes.
+summary: OutSystems Developer Cloud (ODC) user management covers user types, authentication, roles, permissions, groups, teams, and access scopes.
 locale: en-us
 guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
 app_type: mobile apps, reactive web apps
@@ -8,11 +8,11 @@ platform-version: odc
 tags:
   - Authentication
   - Authorization
-  - End-user Authentication
   - End-users
   - Groups
   - IT Users
   - Roles
+  - Teams
 audience:
   - Developer
   - Platform administrator
@@ -30,7 +30,7 @@ isautopublish: true
 
 # User management
 
-User management in OutSystems Developer Cloud (ODC) ensures secure and efficient access to your organization’s resources and apps. It involves managing **users**, **roles**, **permissions**, and **groups** to control access and define what users can do within the platform.
+User management in OutSystems Developer Cloud (ODC) ensures secure and efficient access to your organization’s resources and apps. It involves managing **users**, **roles**, **permissions**, **teams**, and **groups** to control access and define what users can do within the platform.
 
 This article introduces key concepts and points to detailed guides for managing users in ODC.
 
@@ -44,7 +44,9 @@ ODC supports three main types of users: Members (IT-users), End-users, and API c
 
 ### Members (IT-users) {#members-it-users}
 
-Members, such as administrators, developers, and architects, access the ODC Portal and ODC Studio to build, manage, and deploy apps. They can also have custom roles with specific permissions and don't count for licensing. These users aren't included in your licensed end-user count, so adding members doesn't affect your licensing limits.
+Members, such as administrators, developers, and architects, access the ODC Portal and ODC Studio to build, manage, and deploy apps. You can add members to teams to simplify management.
+
+These users aren't included in your licensed end-user count, so adding members doesn't affect your licensing limits. They can also have custom roles with specific permissions and don't count for licensing.
 
 For more information, refer to [Managing members](it-users/intro.md).
 
@@ -52,7 +54,9 @@ For more information, refer to [Managing members](it-users/intro.md).
 
 End-users interact with your web or mobile apps but don't access the ODC Portal or ODC Studio. They're typically external users or internal users with limited access.
 
-You can group end-users to simplify management. Internal and external end-user capacities are [licensed separately](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9). For details on classifying internal and external users, refer to [Classify Users in ODC](classify-users.md). For more information on how to manage end-users, refer to [Managing end-users](end-users/intro.md).
+You can group end-users to simplify management. Internal and external end-user capacities are [licensed separately](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9). For details on classifying internal and external users, refer to [Classify Users in ODC](classify-users.md).
+
+For more information on how to manage end-users, refer to [Managing end-users](end-users/intro.md).
 
 <div class="info" markdown="1">
 
@@ -126,7 +130,13 @@ Authorization determines what a user can do after authentication. It's managed t
 
     For more details on roles for end-users, refer to [Secure your app with end-user roles](secure-app-with-roles.md).
 
-* **Permissions**: Granular controls assigned to roles to limit access to specific tasks or resources. You can apply permissions at different levels. For more information, refer to the [Organization, app stage, and app scope](#organization-app-stage-and-app-scope) section.
+* **Permissions**: Granular controls assigned to roles to limit access to specific tasks or resources. You can apply permissions at different levels. For more information, refer to the [Organization, stage, asset, and team scope](#organization-app-stage-and-app-scope) section.
+
+* **Teams (available only for members)**: Collections of members that own a set of assets. Teams simplify managing access to those assets.
+
+    For example, you can create a team for the mobile development team and add the apps and libraries it owns.
+
+    For more information, refer to [Teams and asset ownership](it-users/teams.md).
 
 * **Groups (available only for end-users)**: Collections of end-users with shared roles and permissions. Groups simplify managing access to apps.
 
@@ -134,19 +144,25 @@ Authorization determines what a user can do after authentication. It's managed t
 
     For more information, refer to [Manage end-user groups](end-users/groups.md).
 
-## Organization, app stage, and app scope {#organization-app-stage-and-app-scope}
+## Organization, stage, asset, and team scope {#organization-app-stage-and-app-scope}
 
-ODC organizes access into three scopes:
+ODC organizes access into the following scopes:
 
 * **Organization scope**: Access to the ODC Portal and ODC Studio for managing the platform and all applications across the organization.
 
-* **App stage scope**: Access to all apps within a specific stage. For example: development, QA, and production.
+* **Stage scope**: Access to all apps within a specific stage. For example: development, QA, and production.
 
-* **App scope**: Access to a specific application.
+* **Asset scope**: Access to a specific asset, such as an app, a library, or an agentic app.
 
-These scopes define the level at which you can assign [roles](#authorization) and permissions to users, as well as configure [end-user groups](end-users/groups.md) and [Identity Providers (IdPs)](../../../build/eap/manage-platform-app-lifecycle/external-idps/intro.html). While roles are assigned at the organization or app level, app stage scope is mainly relevant when assigning permissions while creating [custom roles](roles.md) and when managing IdPs. In a multi-portfolio organization, some permissions become portfolio-scoped, adding a level between organization and stage. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md). Understanding these scopes helps you control what resources users can access and what actions they can perform, ensuring secure and efficient management.
+* **Team scope**: Access to every asset a team owns.
 
-![Diagram illustrating organization, app stage, and app scope in ODC](images/org-stage-app-scope-diag.png "Organization, App Stage, and App Scope in ODC")
+These scopes define the level at which you can assign [roles](#authorization) and permissions to users, and configure [end-user groups](end-users/groups.md) and [Identity Providers (IdPs)](../../../build/eap/manage-platform-app-lifecycle/external-idps/intro.html). While roles are assigned at the organization, team, or asset level, stage scope is mainly relevant when assigning permissions while creating [custom roles](roles.md) and when managing IdPs.
+
+In a multi-portfolio organization, some permissions become portfolio-scoped, adding a level between organization and stage. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md).
+
+Understanding these scopes helps you control what resources users can access and what actions they can perform, ensuring secure and efficient management.
+
+![Diagram illustrating the organization, stage, team, and asset scopes in ODC, and the assets each one covers](images/org-stage-app-scope-diag.png "Organization, Stage, Team, and Asset Scope in ODC")
 
 ## Related resources
 
@@ -155,6 +171,7 @@ These scopes define the level at which you can assign [roles](#authorization) an
 * [Managing authorization and authentication for members (IT-users)](it-users/intro.md)
 * [Create, activate, deactivate, and delete users](create-deactivate-and-delete-users.md)
 * [Grant and revoke user roles](grant-and-revoke-user-roles.md)
+* [Create and manage teams](it-users/manage-teams.md)
 * [Basic User Management in ODC](https://learn.outsystems.com/training/journeys/user-management-odc-881) online course
 * [Role-Based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course
 * [Basic Governance for End-Users](https://learn.outsystems.com/training/journeys/basic-governance-for-end-users-2693) online course

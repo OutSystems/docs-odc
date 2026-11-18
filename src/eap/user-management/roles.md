@@ -1,6 +1,6 @@
 ---
 helpids: 30493, 30704
-summary: OutSystems Developer Cloud (ODC) member roles assign cumulative permissions at organization and app scopes, with built-in roles and custom role creation.
+summary: OutSystems Developer Cloud (ODC) member roles assign cumulative permissions at the organization, team, and asset scopes, with built-in and custom roles.
 locale: en-us
 guid: 766ab743-31f2-4f58-ad91-a4cd0db8ab93
 app_type: mobile apps,reactive web apps
@@ -12,6 +12,7 @@ tags:
   - IT Users
   - Roles
   - Security
+  - Teams
 audience:
   - Architect
   - Developer
@@ -34,7 +35,7 @@ isautopublish: true
 
 This article covers permissions for [members (IT-users)](intro.md#members-it-users) who build and manage apps in ODC. For information about end-user roles, refer to [Secure your app with end-user roles](secure-app-with-roles.md).
 
-In ODC, you control what your members (IT-users) can do by assigning them roles. A role is a set of permissions that you can grant at the **organization** and **asset** (**app**) [**scopes**](intro.md#organization-app-stage-and-app-scope).
+In ODC, you control what your members (IT-users) can do by assigning them roles. A role is a set of permissions that you can grant at the **organization**, **team**, and **asset** [scopes](intro.md#organization-app-stage-and-app-scope).
 
 ODC allows implementing user access control policies on these domains:
 
@@ -56,15 +57,23 @@ ODC allows implementing user access control policies on these domains:
 
 ## Effective permissions calculation { #effective-permissions-calculation }
 
-Permissions are applied at the **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). A user's total permissions are the sum of all roles assigned to them at both the **organization** and **asset** (**app**) [**scopes**](intro.md#organization-app-stage-and-app-scope). You can assign one role for the organization scope, and one role for each app.
+To understand how ODC calculates permissions for members (IT-users), consider the following:
 
-![Diagram illustrating scopes with roles and permissions](images/role-permission-diag.png "Scopes for roles and permissions")
+* Permissions are applied to a role at the **organization** or **stage** [scope](intro.md#organization-app-stage-and-app-scope).
 
-The fundamental rule is that permissions are cumulative. A role assigned at the app scope adds to the permissions granted at the organization scope.
+* You can assign a user with one role for the **organization** scope, one role for each **team**, and one role for each **asset**.
+
+* You can add a member to several [teams](it-users/teams.md) with different roles. Adding a user to a team gives them the team's role on every asset the team owns.
+
+A user's total permissions are the sum of all roles assigned to them at the **organization**, **team**, and **asset** [scopes](intro.md#organization-app-stage-and-app-scope).
+
+![Diagram illustrating scopes for permission and role assignment, including organization, stage, team, and asset scopes](images/role-permission-diag.png "Scopes for roles and permissions")
+
+The fundamental rule is that permissions are cumulative. A role assigned at the team or asset scopes adds to the permissions granted at the organization scope. A team-level or asset-level role can grant additional permissions for an asset, but it can't revoke permissions a user already has from an organization-level role.
 
 <div class="info" markdown="1">
 
-An app-level role can grant additional permissions for that specific app, but it can't revoke permissions a user already has from an organization-level role.
+An organization-only permission, such as **Manage users**, has no effect when granted through a team or asset role.
 
 </div>
 
@@ -72,19 +81,29 @@ An app-level role can grant additional permissions for that specific app, but it
 
 Here's how this principle works in practice.
 
-**Scenario 1: A more permissive role is assigned at the app level**
-:   A user has a general role for the organization but needs elevated permissions for one app:
+#### Scenario 1: A more permissive role is assigned at the app level
 
-    * Organization Role: Developer.
-    * App Role: Administrator.
-    * Result: The user has Developer permissions across the organization. For the specific app where they're an Administrator, they gain the additional permissions of that role. For example, they can now manage that app's configurations in Production stage, a permission the Developer role doesn't have.
+A user has a general role for the organization but needs elevated permissions for one app:
 
-**Scenario 2: A less permissive role is assigned at the app level**
-:   A user has a high-level role for the organization, and a more restrictive role is assigned for one app:
+* Organization Role: Developer.
+* App Role: Administrator.
+* Result: The user has Developer permissions across the organization. For the specific app where they're an Administrator, they gain the additional permissions of that role. For example, they can now manage that app's configurations in Production stage, a permission the Developer role doesn't have.
 
-    * Organization Role: **Administrator**.
-    * App Role: **Developer**.
-    * Result: The organization-level permissions prevail. Since app-level roles can't remove permissions, the user remains an Administrator for the entire organization, including the specific app. The Developer role at the app level has no effect.
+#### Scenario 2: A less permissive role is assigned at the app level
+
+A user has a high-level role for the organization, and a more restrictive role is assigned for one app:
+
+* Organization Role: **Administrator**.
+* App Role: **Developer**.
+* Result: The organization-level permissions prevail. Since app-level roles can't remove permissions, the user remains an Administrator for the entire organization, including the specific app. The Developer role at the app level has no effect.
+
+#### Scenario 3: A more permissive role is assigned at the team level
+
+A user has a general role for the organization and is also a member of a team with a more permissive role:
+
+* Organization Role: Developer.
+* Team Role: Administrator.
+* Result: The user has Developer permissions across the organization. On every asset the team owns, they gain the additional permissions of the Administrator role.
 
 ## Types of roles for members (IT-users) {#types-of-roles}
 
@@ -113,7 +132,7 @@ To see the full list of permissions for the **Admin** or **Developer** role, in 
 
 ### Custom roles {#custom-roles}
 
-You can create custom roles to tailor permissions to your organization's needs. Custom roles let you select specific [permissions](#permissions-registry) and apply them at **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). After creating a custom role, you need to assign it to users either at **organization scope** or to specific **apps**. In a multi-portfolio organization, you assign custom roles per portfolio. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md). For more details on creating custom roles and assigning roles to users, refer to [Create custom roles for members](#create-custom-roles-for-it-users) and [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members).
+You can create custom roles to tailor permissions to your organization's needs. Custom roles let you select specific [permissions](#permissions-registry) and apply them at **organization** or **stage** [scope](intro.md#organization-app-stage-and-app-scope). After creating a custom role, you need to assign it to users either at **organization scope**, or to specific **teams** or **assets**. In a multi-portfolio organization, you assign custom roles per portfolio. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md). For more details on creating custom roles and assigning roles to users, refer to [Create custom roles for members](#create-custom-roles-for-it-users) and [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members).
 
 For more details about recommended custom roles, refer to [Recommended custom roles for members (IT-users)](#recommended-custom-roles).
 
@@ -129,7 +148,7 @@ To create a custom role for members, follow these steps:
 
 ## ODC permissions {#permissions-registry}
 
-The following table lists the permissions you can assign to custom roles. For more details on **organization** (global) and **asset** (**app**) scope, refer to [Organization, app stage, and app scope](intro.md#organization-app-stage-and-app-scope).
+The following table lists the permissions you can assign to custom roles. For more details on **organization** (global) and **asset** scope, refer to [Organization, stage, asset, and team scope](intro.md#organization-app-stage-and-app-scope).
 
 <div class="info" markdown="1">
 
@@ -139,26 +158,26 @@ Some permissions are automatically inherited by others to ensure consistent beha
 
 | Category | Permission Name | Purpose | Scope |
 | --------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| Asset management | Open | Users can open assets. | Organization <br/> Asset |
+| Asset management | Open | Users can open assets. | Organization <br/> Team <br/> Asset |
 | Asset management | Create | Users can create new assets. | Organization |
-| Asset management | Debug | Users can view, open and debug assets. | Organization <br/> Asset |
-| Asset management | Change | Users can view, open, debug and publish assets. | Organization <br/> Asset |
-| Asset management | Delete | Users can delete assets. | Organization <br/> Asset |
+| Asset management | Debug | Users can view, open and debug assets. | Organization <br/> Team <br/> Asset |
+| Asset management | Change | Users can view, open, debug and publish assets. | Organization <br/> Team <br/> Asset |
+| Asset management | Delete | Users can delete assets. | Organization <br/> Team <br/> Asset |
 | Mentor | Use | Users can use Mentor to generate or edit assets. | Organization |
 | Portfolio management | Manage portfolio | Users can rename a portfolio and reorder its stages. | Organization |
 | Portfolio management | Manage stage | Users can rename a stage within a portfolio. Necessary to configure self-hosted stages. | Organization |
 | Portfolio management | View stage | Users can view a given stage. | Organization |
-| Release management | Deploy assets | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Asset |
-| Release management | Release | Users can release an asset, assign a version number (1.0.0), and add release notes. | Organization <br/> Asset |
-| Release management | Upload to stores | Users can upload a mobile package to an app store. | Organization <br/> Asset |
-| Monitoring | Access asset logs and traces | Users can view asset logs and traces in a given stage. | Organization <br/> Asset |
-| Monitoring | Access user information | Users can view user information connected to a given log or activity. | Organization <br/> Asset |
-| Analyze | Manage code quality findings | Users can comment and change the status of code quality findings. | Organization <br/> Asset |
-| Analyze | View code quality findings | Users can view code quality findings in apps they have permissions to open. | Organization <br/> Asset |
+| Release management | Deploy assets | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Team <br/> Asset |
+| Release management | Release | Users can release an asset, assign a version number (1.0.0), and add release notes. | Organization <br/> Team <br/> Asset |
+| Release management | Upload to stores | Users can upload a mobile package to an app store. | Organization <br/> Team <br/> Asset |
+| Monitoring | Access asset logs and traces | Users can view asset logs and traces in a given stage. | Organization <br/> Team <br/> Asset |
+| Monitoring | Access user information | Users can view user information connected to a given log or activity. | Organization <br/> Team <br/> Asset |
+| Analyze | Manage code quality findings | Users can comment and change the status of code quality findings. | Organization <br/> Team <br/> Asset |
+| Analyze | View code quality findings | Users can view code quality findings in apps they have permissions to open. | Organization <br/> Team <br/> Asset |
 | Analyze | View evaluations | Users can view runs, results, and reports for evaluations in the Development stage. | Organization |
 | Analyze | Manage evaluations | Users can create, configure, and run evaluations in the Development stage. | Organization |
-| Configuration management | View configurations | Users can view all configurations listed below in this table for selected stages. | Organization <br/> Asset |
-| Configuration management | Edit asset configurations | Users can change app or library configurations in a given stage. | Organization <br/> Asset |
+| Configuration management | View configurations | Users can view all configurations listed below in this table for selected stages. | Organization <br/> Team <br/> Asset |
+| Configuration management | Edit asset configurations | Users can change app or library configurations in a given stage. | Organization <br/> Team <br/> Asset |
 | Configuration management | Configure connections | Users can edit connection and AI models configurations in a given stage. | Organization |
 | Configuration management | Manage domains | Users can create, edit, and delete stage level domains for end-user access. | Organization |
 | Configuration management | Manage email configurations | Users can create, edit, and delete SMTP emails. | Organization |
@@ -174,10 +193,11 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | User and access management | Manage users | View, activate, deactivate, and delete other organization members and end-users. | Organization |
 | User and access management | Manage member access | Users can invite organization members and grant or revoke organization roles. | Organization |
 | User and access management | Manage organization roles | Users can create, edit, and delete organization roles. | Organization |
+| User and access management | Manage teams | Users can create, edit, and delete teams, set asset ownership for a team, and assign users and their org roles to team assets. | Organization |
 | User and access management | Manage authentication | Users can view and manage the authentication providers to access the organization and apps. | Organization |
 | User and access management | Manage API clients | Users can manage API Clients, create, suspend, delete, change permissions, and rotate secrets.  <br/>**Note:** This permission allows users to create API clients that can modify their own permissions. | Organization |
-| End-user management | View end-users | Users can view users with end-user roles. | Organization <br/> Asset |
-| End-user management | Manage end-user access | Users can invite users and grant or revoke end-user roles. | Organization <br/> Asset |
+| End-user management | View end-users | Users can view users with end-user roles. | Organization <br/> Team <br/> Asset |
+| End-user management | Manage end-user access | Users can invite users and grant or revoke end-user roles. | Organization <br/> Team <br/> Asset |
 | End-user management | Manage end-user groups | Users can view, create, edit, and delete end-user groups and group mappings. | Organization |
 | Organization management | Manage organization | Users can edit the organization domain as well as the organization display name. | Organization |
 | Organization management | View audit trail | Users can view the audit trails. | Organization |
@@ -189,19 +209,19 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Support | View all support cases | Users can view all the organization's support cases. | Organization |
 | Subscriptions | Manage subscription | Users can manage their subscription's internal user email domains. | Organization |
 | Subscriptions | View subscription | Users can view the organization's subscription information. | Organization |
-| Maintenance | View platform updates | Users can view the list of asset and platform updates. | Organization <br/> Asset |
+| Maintenance | View platform updates | Users can view the list of asset and platform updates. | Organization <br/> Team <br/> Asset |
 | Maintenance | Manage platform updates | Users can manage the scheduling of updates. | Organization |
 
 ## Recommended custom roles for members (IT-users) {#recommended-custom-roles}
 
 As a general guideline, you can create these custom roles based on the scope to use when assigning roles to a member:
 
-* **App scope**: Basic Developer, Tech Lead.
+* **Team or asset scope**: Basic Developer, Tech Lead.
 * **Organization scope**: Basic Member, Architect, Tenant Admin.
 
 In this reference model, the **Architect** role owns and manages the asset lifecycle, including creating, deleting, and installing assets from Forge, and managing releases. The **Tenant Admin** role focuses on global infrastructure configurations, not on asset or release management. If a user needs both sets of permissions, assign the built-in **Admin** role, which combines all capabilities.  
 
-This approach supports a DevOps-oriented model, where delivery teams (**Tech Lead** + **Developers**) have full ownership of their assigned assets (and only theirs).
+This approach supports a DevOps-oriented model, where delivery teams (**Tech Lead** + **Developers**) have full ownership of their assigned assets (and only theirs). [Teams](it-users/teams.md) are the recommended way to implement this model, giving every member their role across the whole set of assets without assigning roles asset by asset.
 
 The following table outlines the permissions you can configure for each of these recommended custom roles:
 

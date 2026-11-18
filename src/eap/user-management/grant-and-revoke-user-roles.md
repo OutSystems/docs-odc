@@ -1,7 +1,7 @@
 ---
 guid: df369b59-5c40-4954-9622-722503ee54d1
 locale: en-us
-summary: Grant and revoke user roles in OutSystems Developer Cloud (ODC) for members and end-users across organization, asset, and app stage scopes.
+summary: Grant and revoke user roles in OutSystems Developer Cloud (ODC) for members and end-users across organization, asset, and stage scopes.
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3883-106&t=9snmrSiMZOFs7g77-1
 app_type: mobile apps, reactive web apps
 platform-version: odc
@@ -11,6 +11,7 @@ tags:
   - Authorization
   - End-users
   - IT Roles
+  - IT Teams
   - IT Users
   - Roles
 outsystems-tools:
@@ -52,43 +53,70 @@ You can manage user roles for both members [(IT-users)](#grant-roles-to-members)
 
 ### Grant or revoke roles for members (IT-users) {#grant-roles-to-members}
 
-Members (IT-users) can have roles at different scopes within your organization. You can assign organization-level roles for tenant-wide access or app-specific roles for granular permissions. In a multi-portfolio organization, you assign roles per portfolio. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md).
+Members (IT-users) can have roles at different scopes within your organization. You can assign organization-level roles for tenant-wide access, team roles for every asset a team owns, or app-specific roles for granular permissions. In a multi-portfolio organization, you assign roles per portfolio. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md).
 
 To grant or revoke a role for a member (IT-user):
 
 1. Go to the **ODC Portal**.
+
 1. Go to **Management** > **Govern** > **Users**.
+
 1. Search for the member you want to update, and then click anywhere in the user's row.
 
+1. Go to the **Organization access** tab.
+
 1. To grant or revoke a role at the [**Organization scope**](intro.md#organization-app-stage-and-app-scope):
-    1. On the **Organization access** tab, click **Edit role**.
+
+    1. On the **Organization scope** area, click **Edit role**.
+
     ![Screenshot of the ODC Portal showing the option to edit roles at the Organization scope for a user.](images/organization-scope-pl.png "Edit role at Organization scope")
+
     1. Change the role:
-        * To grant a role, pick one option from the dropdown list.
+        * To grant a role, pick one option from the dropdown list.  
         * To revoke a role, pick **No role** from the dropdown list.
+
+    1. Click **Save**.
 
     <div class="info" markdown="1">
 
-    You can't have more than one role for the organization scope. Consider adding a [custom role](roles.md#custom-roles) with the permissions you want instead.
+    You can't have more than one role for the organization scope. Consider adding a [custom role](roles.md#custom-roles) with the permissions you want instead, or [adding the member to a team](it-users/manage-teams.md#add-members) to grant them access on the assets the team owns.
 
     </div>
 
+1. To grant or revoke roles at the **Team scope**:
+
+    1. The **Team scope** area lists the teams the user is already a member. If the user if not assign to any team yet, click **assign teams** to add the user to teams.
+
+        ![Screenshot of the ODC Portal showing the Team scope area with no teams yet.](images/team-scope-assign-teams-pl.png "Assign teams to a user")
+
+        Otherwise, click **Manage roles** to change or revoke the member's role on a team.
+
+        To add the member to another team, refer to [Add members to a team](it-users/manage-teams.md#add-members).
+
+        ![Screenshot of the ODC Portal showing the Team scope area with a member's teams and roles, and the Manage roles button highlighted.](images/team-scope-pl.png "Manage roles in the Team scope")
+
+    1. Change the roles:
+        * To change the member's role in a team, pick the new team role from the dropdown list.  
+        * To revoke the member's role in a team, pick **No role** from the dropdown list. By revoking the member's role in a team, you remove that member from the team.
+
+    1. Click **Save**.
+
 1. To grant or revoke roles at the [**Assets scope**](intro.md#organization-app-stage-and-app-scope):
-    1. On the **Organization access** tab, click **Manage roles**.
+    1. On the **Assets scope** area, click **Manage roles**.
 
         ![ODC Portal user details page on the Organization access tab, with the Manage roles button highlighted in the Assets scope section.](images/asset-scope-pl.png "Manage roles in the Assets scope")
 
     1. Change the roles:
-        * To grant a role, pick the role you want for each app from the dropdown list.  
-        * To revoke a role, pick **Unassigned** for the relevant app from the dropdown list.
+        * To grant a role, pick the role you want for each asset from the dropdown list. You can use the **Search assets** box to find the asset, or filter by **Portfolio**, if your organization uses [multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).  
+        * To revoke a role, pick **No role** for the relevant asset from the dropdown list.
 
-1. Click **Save**.
+    1. Click **Save**.
 
 The user immediately receives or loses the permissions associated with the chosen roles.
 
 <div class="info" markdown="1">
 
-If you remove all roles from a user, the user may lose access to the ODC Portal, Studio, or specific apps, depending on your configuration.
+If you remove all roles from a user, the user may lose access to the ODC Portal, Studio, or assets, depending on your configuration.
 
 </div>
 
@@ -116,7 +144,7 @@ To grant or revoke a role for an end-user:
 
 1. Click **Save**.
 
-The end-user immediately receives or loses the roles you assign or remove. If your applications already use these roles to control access or behavior, the changes take effect right away, and the end-user's access or experience will update accordingly.
+The end-user immediately receives or loses the roles you assign or remove. If your applications already use these roles to control access or behavior, the changes take effect right away, and the end-user's access or experience updates accordingly.
 
 <div class="info" markdown="1">
 
@@ -126,6 +154,8 @@ If you remove all roles from an end-user, the user may lose access to the associ
 
 ## Related resources
 
+* [Teams and asset ownership](it-users/teams.md)
+* [Create and manage teams](it-users/manage-teams.md)
 * [Best practices for user governance](best-practices-user-management.md)
 * [Managing members (IT-users)](it-users/intro.md)
 * [Managing end-users](end-users/intro.md)

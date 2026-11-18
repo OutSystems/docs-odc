@@ -107,7 +107,7 @@ Follow these steps to change the roles of an end-user group:
 1. Select or clear the roles you want to grant or revoke to the end-user group for each app.
 1. Click **Save**.
 
-All users in the end-user group automatically inherit the updated roles. This only applies to the app stage you selected when you created the group.
+All users in the end-user group automatically inherit the updated roles. This only applies to the stage you selected when you created the group.
 
 ### Add or remove users from an end-user group {#remove-users-group}
 

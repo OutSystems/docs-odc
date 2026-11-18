@@ -871,6 +871,8 @@
     - href: eap/user-management/it-users/intro.md
     - topics:
         - href: eap/user-management/roles.md
+        - href: eap/user-management/it-users/teams.md
+        - href: eap/user-management/it-users/manage-teams.md
     - href: eap/user-management/end-users/intro.md
     - topics:
         - href: eap/user-management/end-users/groups.md

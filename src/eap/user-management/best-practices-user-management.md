@@ -9,6 +9,7 @@ topic:
   - assign-to-user-groups
   - avoid-idp-lockout
   - permission-governance
+  - team-ownership
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
@@ -34,7 +35,7 @@ User management in OutSystems Developer Cloud (ODC) is essential for securing yo
 
 ## Test external IdPs before removing the built-in IdP
 
-Switching authentication providers is a critical operation. Removing the built-in identity provider (IdP) assignment (to the organization for IT-users or to an app stage for end-users) without proper testing can result in a [lockout](../manage-platform-app-lifecycle/external-idps/intro.md#lockout), where no one can access either the ODC Portal and Studio, or the apps developed in ODC.
+Switching authentication providers is a critical operation. Removing the built-in identity provider (IdP) assignment (to the organization for IT-users or to a stage for end-users) without proper testing can result in a [lockout](../manage-platform-app-lifecycle/external-idps/intro.md#lockout), where no one can access either the ODC Portal and Studio, or the apps developed in ODC.
 
 ### Recommendations
 
@@ -55,6 +56,18 @@ Assign users only the minimum roles and permissions needed for their tasks.
 ### Benefits
 
 Minimizing permissions reduces security risks and limits the impact of potential incidents. Over-privileged users can unintentionally or intentionally compromise data or system integrity.
+
+## Use teams to manage asset ownership
+
+Managing access to a set of assets one member at a time doesn't scale as your organization grows.
+
+### Recommendations
+
+Group members (IT-users) into a [team](it-users/teams.md), and assign the team ownership of a set of assets. Assign each member a role within the team instead of granting asset-scope roles one by one. Keep the organization-scope role least-privilege, and grant members more access through team roles or asset-scope roles.
+
+### Benefits
+
+A team role applies to every asset the team owns. Adding a member or an asset to the team updates access for the whole team at once, without per-asset role assignments. Team roles add up with the organization-scope role, so you grant a group of members more access without raising the organization-scope role for everyone.
 
 ## Use end-user groups for simplified access management
 
@@ -96,8 +109,12 @@ The [User and access management API](../reference/apis/identity-v1.md) enables y
 
 * View all users with permissions for a specific app. Currently, this functionality isn't available in the ODC Portal.
 
+* Manage the lifecycle, membership, and asset ownership of teams of members (IT-users).
+
 ## Related resources
 
+* [Teams and asset ownership](it-users/teams.md)
+* [Create and manage teams](it-users/manage-teams.md)
 * [Roles and permissions for members (IT-users)](roles.md)
 * [Secure your app with end-user roles](secure-app-with-roles.md)
 * [Configure authentication with external identity providers](../manage-platform-app-lifecycle/external-idps/intro.md)

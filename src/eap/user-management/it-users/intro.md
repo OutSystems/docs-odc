@@ -15,7 +15,7 @@ tags:
   - Authorization
   - External Authentication
   - IdP
-  - IT Roles
+  - IT Teams
   - IT Users
   - Roles
 outsystems-tools:
@@ -39,13 +39,17 @@ With built-in authentication, you manage members (IT-users) directly in the ODC 
 
 To manage members using built-in authentication, follow these steps:
 
-![Diagram showing steps to manage members with built-in authentication: create custom roles, create members, grant or revoke roles.](images/managing-members-built-in-authentication-diag.png "Managing Members with Built-in Authentication")
+![Diagram showing steps to manage members with built-in authentication: create custom roles, create members, grant or revoke roles, create teams, add members to teams.](images/managing-members-built-in-authentication-diag.png "Managing Members with Built-in Authentication")
 
 1. (Optional) [Create custom roles](../roles.md#create-custom-roles-for-members-it-users): Define [roles](../roles.md) with specific permissions in the ODC Portal.
 
-1. [Create members](../create-deactivate-and-delete-users.md#create-new-members-it-users): Add new users in the ODC Portal at the organization or app level during creation. You can also [create users programmatically using APIs](../../reference/apis/identity-v1.md), without assigning roles.
+1. [Create members](../create-deactivate-and-delete-users.md#create-new-members): Add new users in the ODC Portal at the organization or app level during creation. You can also [create users programmatically using APIs](../../reference/apis/identity-v1.md), without assigning roles.
 
 1. [Grant or revoke roles](../grant-and-revoke-user-roles.md#grant-roles-to-members): Assign or remove roles as needed. If you assigned roles during creation, use this step only to make changes. You can also assign roles using [APIs](../../reference/apis/identity-v1.md).
+
+1. (Optional) [Create teams](manage-teams.md#create): Define teams that own a set of assets. You can also create teams using [APIs](../../reference/apis/identity-v1.md).
+
+1. (Optional) [Add members to teams](manage-teams.md#add-members): Give members a role within a team, which grants them access to every asset the team owns. If you added members to a team during creation, use this step only to make changes. You can also add members to teams using [APIs](../../reference/apis/identity-v1.md).
 
 ## Managing members (IT-users) with external IdP authentication
 
@@ -65,7 +69,7 @@ Users that sign in through an external IdP manage their passwords in the identit
 
 To manage members with external IdP authentication, follow these steps:
 
-![Diagram showing steps to manage members with external IdP authentication: create custom roles, configure an IdP, add members, grant or revoke roles.](images/managing-members-external-idp-authentication-diag.png "Managing Members with External IdP Authentication")
+![Diagram showing steps to manage members with external IdP authentication: create custom roles, configure an IdP, add members, grant or revoke roles, create teams, add members to teams.](images/managing-members-external-idp-authentication-diag.png "Managing Members with External IdP Authentication")
 
 1. (Optional) [Create custom roles](../roles.md#create-custom-roles-for-members-it-users): Define [roles](../roles.md) with specific permissions in the ODC Portal.
 
@@ -73,7 +77,7 @@ To manage members with external IdP authentication, follow these steps:
 
 1. Add members. Choose one of the following options:
 
-    * Manually: [Invite users](../create-deactivate-and-delete-users.md#create-new-members-it-users) by using the email associated with their IdP account.
+    * Manually: [Invite users](../create-deactivate-and-delete-users.md#create-new-members) by using the email associated with their IdP account.
 
     * Programmatically: [Create users via API](../../reference/apis/identity-v1.md).
 
@@ -91,8 +95,20 @@ To manage members with external IdP authentication, follow these steps:
 
 1. [Grant or revoke roles](../grant-and-revoke-user-roles.md#grant-roles-to-members): After creation, assign roles to members manually in the ODC Portal. If you assigned roles during manual user creation, you only need to use this step if you want to change the assigned roles later. You can also assign roles using [APIs](../../reference/apis/identity-v1.md).
 
+1. (Optional) [Create teams](manage-teams.md#create): Define teams that own a set of assets. You can also create teams using [APIs](../../reference/apis/identity-v1.md).
+
+1. (Optional) [Add members to teams](manage-teams.md#add-members): Give members a role within a team, which grants them access to every asset the team owns. If you added members to a team during creation, use this step only to make changes. You can also add members to teams using [APIs](../../reference/apis/identity-v1.md).
+
+<div class="info" markdown="1">
+
+You can't map IdP groups to teams. To automate team membership for members who use an external IdP, use the [User and access management API](../../reference/apis/identity-v1.md).
+
+</div>
+
 ## Related resources
 
+* [Teams and asset ownership](teams.md)
+* [Create and manage teams](manage-teams.md)
 * [Best practices for user management](../best-practices-user-management.md)
 * [Roles and permissions for members (IT-users)](../roles.md)
 * [Create, activate, deactivate, and delete users](../create-deactivate-and-delete-users.md)

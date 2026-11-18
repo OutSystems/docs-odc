@@ -83,13 +83,17 @@ To manually register [members (IT-users)](intro.md#members-it-users), follow the
 
     * **Organization**: Choose a role for the tenant.
 
-    * **Assets**: For each asset, choose a role or leave it as **Unassigned** if you don't want to assign a role to the user for that asset.
+    * **Assets**: For each asset, choose a role or leave it as **No role** if you don't want to assign a role to the user for that asset.
 
-      ![Screenshot of the Invite user screen in ODC Portal showing fields for email, organization access, and scope selection.](images/create-new-member-pl.png "Invite new member in ODC Portal")
+        Assign a role at asset scope only when the user needs additional permissions on that specific asset. For access to a group of assets owned by a team, use the **Team** option instead.
+
+    * **Team**: Add the user to one or more [teams](it-users/teams.md) by assigning them a role in each team. The user gets that role on every asset the team owns.
+
+    ![Screenshot of the Invite user screen in ODC Portal showing the scope dropdown expanded with the Organization, Assets, and Team options.](images/create-new-member-pl.png "Choose a scope when inviting a member in ODC Portal")
 
     <div class="info" markdown="1">
 
-    For more details about how permissions are applied at the **organization** or **asset** scope, refer to [effective permissions](roles.md#effective-permissions-calculation) calculation.
+    For more details about how permissions are applied at the **organization**, **team**, or **asset** scope, refer to [effective permissions](roles.md#effective-permissions-calculation) calculation.
 
     </div>
 
@@ -283,6 +287,7 @@ Deleting a user can't be undone. If you may need to restore access in the future
 * [Managing end-users](end-users/intro.md)
 * [Password management in ODC](passwords.md)
 * [Grant and revoke roles](grant-and-revoke-user-roles.md)
+* [Create and manage teams](it-users/manage-teams.md)
 * [Create custom roles for members (IT-users)](roles.md)
 * [Create end-user roles](secure-app-with-roles.md)
 * [User management](intro.md)
