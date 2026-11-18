@@ -9,7 +9,6 @@ topic:
   - assign-to-user-groups
   - avoid-idp-lockout
   - permission-governance
-  - team-ownership
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
