@@ -2,7 +2,10 @@
 summary: OutSystems Developer Cloud (ODC) workflows automate business processes using a visual editor with event or schedule triggers, human activities, and decisions.
 tags:
   - Business Processes
+  - Debugging
   - Events
+  - Triggers
+  - Troubleshooting
   - Workflows
 locale: en-us
 guid: 70b986e2-cd07-48a6-92c0-e57751112bb7
@@ -164,7 +167,7 @@ Here are some points to consider as you implement workflows in ODC:
 
 * **Workflows can be implemented, tested, and deployed across stages independent of ODC apps and libraries**. Because they rely on the app's public elements, they are subject to impact analysis. For detailed information about deploying workflows, refer to [Deploying assets](../../deploying-apps/deploy-apps.md).  
 
-* **Workflows can have** [**multiple revisions**](../../deploying-apps/deploy-apps.md#workflow-revisions) **running simultaneously in the same stage**, and every revision can have one or more instances of the workflow in execution. An instance is a unit of execution of a workflow. Each instance can run up to 1,000 activities.
+* **Workflows can have** [**multiple revisions**](../../deploying-apps/deploy-apps.md#workflow-revisions) **running simultaneously in the same stage**, and every revision can have one or more instances of the workflow in execution. An instance is a unit of execution of a workflow. Each instance can run up to 1,000 activities. Every node an instance runs counts as one activity, and a node that runs again, for example after a **Go to a flow step** node, counts again. When an instance tries to run more than 1,000 activities, ODC terminates the instance and its status changes to **Terminated**. You can't retry an instance that ODC terminated. Design loops to finish well before the limit.
 
     <div class="info" markdown="1">
 

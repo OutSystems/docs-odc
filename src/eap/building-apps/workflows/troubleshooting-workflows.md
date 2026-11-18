@@ -1,5 +1,5 @@
 ---
-summary: Learn more about how to troublehsoot errors in your workflows
+summary: ODC workflow troubleshooting helps you investigate active-with-errors instances, review activity details, and retry failed activities.
 tags:
   - Troubleshooting
   - Workflows
@@ -10,12 +10,15 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5860-10
 audience:
   - Developer
+  - Platform administrator
 coverage-type:
   - apply
+  - unblock
 outsystems-tools:
   - odc portal
 topic:
   - troubleshoot-workflows
+isautopublish: true
 ---
 # Troubleshooting workflows
 
@@ -29,7 +32,7 @@ After you deploy a workflow in a specific environment, an instance of that workf
 
 * **Done**: An instance is done when it completes the last activity of the workflow.
 
-* **Terminated**: An instance is terminated when a terminate instance operation is used (explicit operation) and can no longer continue its course. This ensures the instance doesn't remain in its active state forever. You can only terminate an instance that is in an **Active** or **Active with errors** state.
+* **Terminated**: An instance is terminated when someone terminates it in the Portal, when an app calls the [ProcessTerminate](../../reference/system-actions/workflows.md#processterminate) action, or when the instance reaches the limit of 1,000 activities. A terminated instance can no longer continue its course. You can only terminate an instance that's in an **Active** or **Active with errors** state. When an instance reaches a **Terminate** node, its status changes to **Done**, not **Terminated**.
 
 The status of a workflow instance can be viewed from the Portal on the **Instances** tab of the workflow detail.
 

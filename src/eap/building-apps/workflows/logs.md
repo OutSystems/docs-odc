@@ -1,5 +1,5 @@
 ---
-summary: Introduction to ODC workflow logs.
+summary: OutSystems Developer Cloud (ODC) workflow logs help you trace instance and activity status changes, filter executions, and troubleshoot delays.
 tags:
   - Business Processes
   - Logging
@@ -25,6 +25,7 @@ coverage-type:
   - apply
 topic:
   - view-workflow-logs
+isautopublish: true
 ---
 # Workflow logs
 
@@ -53,6 +54,8 @@ The following types of changes are logged automatically:
 * When a human activity is assigned to a role
 
 * When a terminate instance operation is used
+
+* When ODC terminates an instance because it reached the limit of activities
 
 * When a retry operation is used
 
