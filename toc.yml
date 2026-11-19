@@ -697,6 +697,7 @@
             - href: eap/integration-with-systems/external-databases/considerations-postgresql.md
             - href: eap/integration-with-systems/external-databases/considerations-salesforce.md
             - href: eap/integration-with-systems/external-databases/considerations-sap-odata.md
+            - href: eap/integration-with-systems/external-databases/considerations-sql-server.md
         - href: eap/integration-with-systems/external-databases/custom-certificates.md
         - href: eap/integration-with-systems/external-databases/handle-null-values.md
         - href: eap/integration-with-systems/external-databases/sap-odata.md

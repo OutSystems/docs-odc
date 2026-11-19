@@ -7,6 +7,7 @@ tags:
   - External Databases
   - Private Gateway
   - SQL
+  - Testing
 guid: 32004a44-1a95-46b2-abcb-88ad76f51961
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -265,3 +266,4 @@ Some external systems have additional, vendor-specific considerations.
 * **PostgreSQL:** For more information, refer to [PostgreSQL connection considerations](considerations-postgresql.md).
 * **Salesforce:** For more information, refer to [Salesforce connection considerations](considerations-salesforce.md).
 * **SAP OData:** For more information, refer to [SAP OData connection considerations](considerations-sap-odata.md).
+* **SQL Server:** For more information, refer to [SQL Server connection considerations](considerations-sql-server.md).
