@@ -783,6 +783,7 @@
 # Security
 - href: eap/security/security.md
 - topics:
+    - href: eap/security/owasp-top-10-coverage.md
     - href: eap/security/sentry.md
     - href: eap/security/hipaa.md
     - href: eap/security/pci.md
