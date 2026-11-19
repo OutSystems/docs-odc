@@ -5,6 +5,10 @@ summary: OWASP Top 10:2025 coverage in OutSystems Developer Cloud (ODC) maps def
 figma:
 coverage-type:
   - understand
+topic:
+  - owasp-top-10-lists
+  - outsystems-security-approach
+  - shared-responsibility-overview
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

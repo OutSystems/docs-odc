@@ -18,6 +18,8 @@ audience:
   - Front-end developer
 outsystems-tools:
   - odc studio
+topic:
+  - use-alert-pattern
 coverage-type:
   - remember
   - apply

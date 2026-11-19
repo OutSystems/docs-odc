@@ -5,6 +5,10 @@ summary: OWASP A09 in OutSystems Developer Cloud (ODC) explains audit trails, SI
 figma:
 coverage-type:
   - understand
+topic:
+  - delayed-breach-detection
+  - shared-responsibility-overview
+  - understand-analytics-stream
 app_type: reactive web apps
 platform-version: odc
 audience:

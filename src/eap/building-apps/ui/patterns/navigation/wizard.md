@@ -23,7 +23,9 @@ coverage-type:
   - apply
   - unblock
 topic:
-  - use-wizard-pattern
+  - accessible-wizard-labels
+  - accessible-wizard-panels
+  - accessible-wizard-progress-tracker
 isautopublish: true
 ---
 
