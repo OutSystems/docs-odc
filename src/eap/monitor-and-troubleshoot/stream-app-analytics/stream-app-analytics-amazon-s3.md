@@ -1,5 +1,5 @@
 ---
-summary: Learn how to stream observability data from ODC to Amazon S3 by setting up the OpenTelemetry Collector and configuring the log streaming service.
+summary: OutSystems Developer Cloud (ODC) Amazon S3 streaming uses an OpenTelemetry Collector and AWS S3 exporter to deliver observability data.
 tags:
   - Infrastructure
   - Logging

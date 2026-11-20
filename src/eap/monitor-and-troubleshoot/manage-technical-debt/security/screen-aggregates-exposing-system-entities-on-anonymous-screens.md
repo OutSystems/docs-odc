@@ -1,5 +1,5 @@
 ---
-summary: A Screen Aggregate exposes System Entity data on a screen accessible by anyone.
+summary: OutSystems Developer Cloud (ODC) Screen Aggregates expose System Entity data on anonymous screens; restrict access to authenticated users.
 tags:
   - Aggregates
   - Authorization
