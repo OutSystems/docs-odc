@@ -3,8 +3,6 @@ summary: Streamed metrics data attributes from OutSystems Developer Cloud (ODC) 
 tags:
   - Monitoring
   - Performance
-  - REST
-  - Troubleshooting
 guid: 53d9c0ea-11bd-41d9-b4e2-74eb5c3076b8
 locale: en-us
 app_type: mobile apps,reactive web apps

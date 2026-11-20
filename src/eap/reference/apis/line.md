@@ -1,7 +1,7 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables the creation of a Line Chart with a Spline line and custom markers.
 tags:
-  - Mobile app
+  - Data
   - OutSystems UI
   - Screens
   - UI

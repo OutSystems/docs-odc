@@ -1,8 +1,8 @@
 ---
 summary: 'OutSystems Developer Cloud (ODC) charts: populate the DataPointList with fixed or variable data points and set up multiple series.'
 tags:
+  - Data
   - Front-End
-  - Mobile app
   - OutSystems UI
   - Screens
   - UI

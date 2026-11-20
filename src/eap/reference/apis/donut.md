@@ -2,7 +2,6 @@
 summary: 'ODC Donut Chart setup: add DataPointList data points and customize the InnerSize property in OutSystems Developer Cloud (ODC).'
 tags:
   - Front-End
-  - Mobile app
   - OutSystems UI
   - Screens
   - UI
