@@ -7,7 +7,9 @@ coverage-type:
   - remember
   - apply
 topic:
-  - customize-mobile-apps
+  - app-extensibility-use-cases
+  - configure-app-properties
+  - configure-sync-triggers
 app_type: mobile apps
 platform-version: odc
 audience:

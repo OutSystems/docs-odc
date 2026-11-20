@@ -7,6 +7,10 @@ coverage-type:
   - understand
 app_type: mobile apps, reactive web apps
 platform-version: odc
+topic:
+  - configure-csp-directive-values
+  - odc-appshield-protection
+  - odc-container-image-integrity
 audience:
   - Architect
   - Developer

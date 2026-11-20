@@ -23,9 +23,8 @@ content-type:
 outsystems-tools:
   - odc portal
 topic:
-  - teams-concept
-  - team-ownership
-  - team-roles
+  - manage-team-assets-odc
+  - manage-team-members-odc
 isautopublish: true
 ---
 

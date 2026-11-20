@@ -17,6 +17,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - configure-ai-models
+  - model-high-availability
 ---
 
 # Configure your AI models

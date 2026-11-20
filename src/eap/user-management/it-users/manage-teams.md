@@ -23,8 +23,8 @@ outsystems-tools:
   - odc portal
 topic:
   - create-a-team
-  - manage-team-members
-  - manage-team-assets
+  - manage-team-assets-odc
+  - manage-team-members-odc
 isautopublish: true
 ---
 

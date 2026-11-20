@@ -21,7 +21,7 @@ audience:
 coverage-type:
   - understand
 topic:
-  - sql-server-connections
+  - sql-server-permissions
 isautopublish: true
 ---
 

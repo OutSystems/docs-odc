@@ -11,6 +11,8 @@ figma:
 coverage-type:
   - unblock
   - remember
+topic:
+  - code-analysis-process
 audience:
   - Developer
   - Front-end developer
