@@ -1,5 +1,5 @@
 ---
-summary: Disabled button that is still visible.
+summary: OutSystems Developer Cloud (ODC) disabled buttons expose restricted actions when Visible stays true; hide them to block client-side re-enabling.
 tags:
   - Best Practices
   - Front-End

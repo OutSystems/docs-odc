@@ -1,5 +1,5 @@
 ---
-summary: Avoid passing identity information from the client side to the server side as an action parameter.
+summary: OutSystems Developer Cloud (ODC) GetUserId security prevents client identity tampering by retrieving user identity in server actions.
 tags:
   - Best Practices
   - Security

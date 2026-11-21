@@ -1,5 +1,5 @@
 ---
-summary: Set up the OpenTelemetry Collector in OutSystems platform for receiving logs in Datadog, Splunk, or Amazon S3.
+summary: OutSystems Developer Cloud (ODC) configures OpenTelemetry Collector authentication and OTLP endpoints for Datadog, Splunk, or Amazon S3 logs.
 tags:
   - Infrastructure
   - Logging

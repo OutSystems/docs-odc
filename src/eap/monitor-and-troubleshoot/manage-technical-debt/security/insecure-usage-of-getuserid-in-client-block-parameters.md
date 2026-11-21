@@ -1,5 +1,5 @@
 ---
-summary: Avoid passing identity information ina Block widget parameter.
+summary: OutSystems Developer Cloud (ODC) GetUserId in Block parameters risks impersonation and bypassed role checks; validate identity on the server.
 tags:
   - Blocks
   - Roles

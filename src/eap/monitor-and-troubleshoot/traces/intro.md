@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud(ODC) features traces to monitor requests and pinpoint issues
+summary: OutSystems Developer Cloud (ODC) traces reveal request spans, retention rules, and trace details for troubleshooting application performance.
 tags:
   - Logging
   - Monitoring
