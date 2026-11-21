@@ -9,6 +9,7 @@ tags:
   - CSS
   - Logic
   - Screens
+  - Troubleshooting
 audience:
   - Developer
   - Front-end developer

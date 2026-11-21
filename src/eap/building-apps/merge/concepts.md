@@ -1,6 +1,10 @@
 ---
 summary: ODC merge feature. How automatic revision merging, conflict resolution, and comparing revisions work in OutSystems Developer Cloud (ODC) Studio.
-tags: []
+tags:
+  - Deploy
+  - Development lifecycle
+  - Lifecycle
+  - Troubleshooting
 locale: en-us
 guid: c9965707-75fb-442f-ad27-6fbe322fcf08
 app_type: mobile apps, reactive web apps

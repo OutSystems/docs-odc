@@ -12,10 +12,12 @@ platform-version: odc
 audience:
   - Developer
 tags:
+  - Authorization
   - End-users
   - Libraries
   - REST
   - Roles
+  - Web services
 outsystems-tools:
   - odc studio
   - odc portal

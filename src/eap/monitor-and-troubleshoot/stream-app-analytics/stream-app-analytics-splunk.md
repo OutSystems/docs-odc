@@ -3,6 +3,7 @@ summary: Stream observability data from OutSystems Developer Cloud (ODC) apps to
 tags:
   - Logging
   - Monitoring
+  - Web services
 guid: 24060b42-fd25-47b6-a6ae-e3a85c46fc28
 locale: en-us
 app_type: mobile apps,reactive web apps
