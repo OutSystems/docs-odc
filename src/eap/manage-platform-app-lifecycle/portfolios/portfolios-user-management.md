@@ -14,6 +14,7 @@ figma: https://www.figma.com/design/JGkyjoh08ekwG6WQ8fKRc0/Portfolios?node-id=58
 platform-version: odc
 audience:
   - Platform administrator
+  - Architect
   - Tech lead
 outsystems-tools:
   - odc portal
