@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - remember
 topic:
-  - library-actions
+  - xml-library-actions
 ---
 
 # XML
