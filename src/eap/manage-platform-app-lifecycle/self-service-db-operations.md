@@ -2,6 +2,7 @@
 summary: "OutSystems Developer Cloud (ODC) infrastructure updates: reschedule updates by stage and track lifecycle states in the ODC Portal."
 tags:
   - Infrastructure
+  - IT Roles
   - Lifecycle
 guid: b34fef09-2fa8-4b16-ad5c-b7d032d7032f
 locale: en-us

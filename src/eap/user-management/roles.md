@@ -9,10 +9,10 @@ platform-version: odc
 tags:
   - Authorization
   - IT Roles
+  - IT Teams
   - IT Users
   - Roles
   - Security
-  - Teams
 audience:
   - Architect
   - Developer
