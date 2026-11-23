@@ -1,7 +1,7 @@
 ---
 guid: f87890c8-0e38-443b-85be-38be20882571
 locale: en-us
-summary: This article describes some of the common use cases with JSON snippets for Cordova-based extensibility configuration JSON schema.
+summary: Cordova extensibility configurations for OutSystems Developer Cloud (ODC) show JSON use cases for plugins, secrets, images, and deep links.
 figma: 
 coverage-type:
   - apply
