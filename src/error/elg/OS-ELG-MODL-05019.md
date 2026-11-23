@@ -16,6 +16,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-name-length-error
 ---
 
 # OS-ELG-MODL-05019

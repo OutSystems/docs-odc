@@ -10,6 +10,8 @@ platform-version: odc
 figma:
 coverage-type:
   - unblock
+topic:
+  - troubleshoot-integrations-errors
 audience:
   - Developer
   - Front-end developer

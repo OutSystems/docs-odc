@@ -7,6 +7,10 @@ tags:
   - Testing
 locale: en-us
 guid: 6969A397-CC0D-49E5-BF17-C2B71FDB7C91
+topic:
+  - bdd-test-setup
+  - component-tests-overview
+  - install-bddframework
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/r2zu8cQscEuqfT3j3sfTjm/Testing-Apps?node-id=4601-233

@@ -11,6 +11,8 @@ platform-version: odc
 figma:
 coverage-type:
   - unblock
+topic:
+  - fix-invalid-characters-error
 audience:
   - Developer
 outsystems-tools:

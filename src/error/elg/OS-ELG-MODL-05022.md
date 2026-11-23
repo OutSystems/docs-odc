@@ -12,6 +12,8 @@ platform-version: odc
 figma:
 coverage-type:
   - unblock
+topic:
+  - fix-underscore-names
 audience:
   - Developer
 outsystems-tools:

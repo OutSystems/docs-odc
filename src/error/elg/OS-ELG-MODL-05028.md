@@ -19,6 +19,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - fix-zip-uncompress-error
 ---
 
 # OS-ELG-MODL-05028

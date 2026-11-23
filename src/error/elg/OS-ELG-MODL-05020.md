@@ -12,6 +12,8 @@ platform-version: odc
 figma:
 coverage-type:
   - unblock
+topic:
+  - fix-leading-digit-error
 audience:
   - Developer
 outsystems-tools:
