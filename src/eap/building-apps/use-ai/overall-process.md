@@ -21,7 +21,7 @@ coverage-type:
 topic:
   - agent-builder-process
   - ai-agent-builder-sample-apps
-  - create-ai-agent
+  - create-agent-ai-agent-builder
 ---
 
 # Using the AI Agent Builder
