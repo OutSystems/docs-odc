@@ -18,7 +18,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - create-ai-agent
+  - create-agent-ai-agent-builder
 ---
 
 # Create an agent
