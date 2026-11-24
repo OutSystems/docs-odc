@@ -23,6 +23,7 @@ coverage-type:
   - understand
   - apply
 topic:
+  - eu-sovereign-cloud
   - external-idp-system-limits
   - idp-assignment-scopes
   - self-hosted-idp-requirements
@@ -47,6 +48,12 @@ ODC also provides accelerators for [commonly used social providers](configure-so
 <div class="info" markdown="1">
 
 In a multi-portfolio organization, identity provider assignment is portfolio-scoped. For more information, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
+
+<div class="info" markdown="1">
+
+ODC EU Sovereign Cloud requires an external OIDC identity provider for every stage, including Development. For details, refer to the [Shared responsibility model for ODC EU Sovereign Cloud](../eu-sovereign-cloud/esc-shared-responsibility.md#your-responsibilities).
 
 </div>
 

@@ -52,6 +52,12 @@ By understanding this shared responsibility model, customers can:
 * Ensure infrastructure readiness for platform operations.
 * Confidently scale and operate their self-hosted ODC environments in coordination with OutSystems.
 
+<div class="info" markdown="1">
+
+If your organization has EU data-sovereignty requirements, refer to [Shared responsibility model for ODC EU Sovereign Cloud](../eu-sovereign-cloud/esc-shared-responsibility.md) instead.
+
+</div>
+
 ## Responsibility model {#responsibility-model}
 
 The ODC self-hosted model introduces a clear operational boundary between what OutSystems delivers and maintains, and what the customer must provision, operate, and secure.

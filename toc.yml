@@ -843,6 +843,12 @@
             - href: eap/manage-platform-app-lifecycle/self-hosted/install-sh.md
             - href: eap/manage-platform-app-lifecycle/self-hosted/sh-domain-config.md
             - href: eap/manage-platform-app-lifecycle/self-hosted/sh-open-configurator.md
+    - href: eap/manage-platform-app-lifecycle/eu-sovereign-cloud/esc-overview.md
+    - topics:
+        - href: eap/manage-platform-app-lifecycle/eu-sovereign-cloud/esc-get-started.md
+        - href: eap/manage-platform-app-lifecycle/eu-sovereign-cloud/esc-shared-responsibility.md
+        - href: eap/manage-platform-app-lifecycle/eu-sovereign-cloud/esc-getting-support.md
+        - href: eap/manage-platform-app-lifecycle/eu-sovereign-cloud/esc-limitations.md
     - href: eap/manage-platform-app-lifecycle/configuration-management.md
     - href: eap/manage-platform-app-lifecycle/configure-app-settings.md
     - href: eap/manage-platform-app-lifecycle/domains/domains.md

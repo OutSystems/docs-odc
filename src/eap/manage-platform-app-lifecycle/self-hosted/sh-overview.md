@@ -41,6 +41,12 @@ As cloud computing becomes more popular, self-hosted deployments continue to hol
 * **Customization and control**: Provides complete control over customization and data management, empowering customers to adapt the deployment to their unique IT environment. Customers can manage resources, fine-tune performance, and adjust configurations based on specific operational requirements.  
 * **Hybrid flexibility**: Supports hybrid models, allowing customers to connect their self-managed infrastructure with cloud services. This flexibility makes it possible for organizations to adopt a hybrid cloud strategy, combining the benefits of on-premises and cloud-based services.
 
+<div class="info" markdown="1">
+
+If your organization has EU data-sovereignty requirements, refer to [ODC EU Sovereign Cloud](../eu-sovereign-cloud/esc-overview.md) instead.
+
+</div>
+
 ## Use cases {#use-cases}
 
 * **Data-sensitive environments**: Businesses operating in industries with stringent data regulations, such as finance or healthcare, can leverage the self-hosted model to comply with local data sovereignty laws. By keeping sensitive data within their own infrastructure, these organizations can meet regulatory requirements without compromising on application capabilities.
