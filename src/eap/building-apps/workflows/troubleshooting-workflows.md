@@ -1,6 +1,7 @@
 ---
 summary: ODC workflow troubleshooting helps you investigate active-with-errors instances, review activity details, and retry failed activities.
 tags:
+  - Debugging
   - Troubleshooting
   - Workflows
 guid: bf12c288-f7ad-4253-b6b7-bdf502c33e9b
@@ -24,7 +25,7 @@ isautopublish: true
 
 Troubleshooting workflow instances involves tracking and analyzing the progress, performance, and outcomes of specific instances of your workflows. It ensures that processes are running as expected and identifies potential bottlenecks, inefficiencies, or failures in real time.
 
-After you deploy a workflow in a specific environment, an instance of that workflow can end up with one of the following statutes:
+After you deploy a workflow in a specific environment, an instance of that workflow can end up with one of the following statuses:
 
 * **Active**: An instance is active when its start activity is triggered (for example, a loan approval request). It remains in an active status until all activities are completed or the instance is terminated.
 
@@ -34,9 +35,7 @@ After you deploy a workflow in a specific environment, an instance of that workf
 
 * **Terminated**: An instance is terminated when someone terminates it in the Portal, when an app calls the [ProcessTerminate](../../reference/system-actions/workflows.md#processterminate) action, or when the instance reaches the limit of 1,000 activities. A terminated instance can no longer continue its course. You can only terminate an instance that's in an **Active** or **Active with errors** state. When an instance reaches a **Terminate** node, its status changes to **Done**, not **Terminated**.
 
-The status of a workflow instance can be viewed from the Portal on the **Instances** tab of the workflow detail.
-
-The status of a workflow instance can be viewed from the Portal on the Instances tab of the workflow detail. You can select an instance and view its details, such as the executing activities, their status, activity inputs and outputs, and an overall view of the execution of the instance flow. Having all of this information helps you ensure that the workflow implementation is working as expected and helps you identify any potential issues.  
+You can view the status of a workflow instance on the **Instances** tab of the workflow detail in the ODC Portal. To view the details of an instance, select it. The details include the executing activities and their status, the activity inputs and outputs, and an overview of the instance's execution flow. Use these details to check that the workflow works as expected and to identify issues.
 
 ## Troubleshooting instance errors
 

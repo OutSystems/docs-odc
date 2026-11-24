@@ -29,7 +29,7 @@ isautopublish: true
 ---
 # Workflow logs
 
-The ODC portal provides a centralized, detailed view of all activities within a workflow. Workflow logs allow business process owners (BPOs) and developers to analyze and troubleshoot workflows.
+The ODC Portal provides a centralized, detailed view of all activities within a workflow. Workflow logs allow business process owners (BPOs) and developers to analyze and troubleshoot workflows.
 
 The following types of changes are logged automatically:
 

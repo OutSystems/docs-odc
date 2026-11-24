@@ -1,6 +1,7 @@
 ---
-summary: Learn how to add wait nodes to your workflow.
+summary: OutSystems Developer Cloud (ODC) workflow wait activity pauses execution for close-on events, matching conditions, or a configured timeout.
 tags:
+  - Business Processes
   - Events
   - Workflows
 locale: en-us
@@ -12,12 +13,12 @@ coverage-type:
   - apply
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal
 topic:
   - add-wait-activity
+isautopublish: true
 ---
 
 # Add wait
@@ -52,7 +53,7 @@ To include wait in a workflow, follow these steps:
 
     c. **Close after timeout**: (Optional) Set the timeout duration. You can choose from predefined time units (days, hours, minutes, and seconds), or you can define your own custom timeout expression.
 
-Once the event occurs and the conditions are met or the **Close after timeout** is reached,, the wait ends, and the workflow moves on to the next step.
+Once the event occurs and the conditions are met or the **Close after timeout** is reached, the wait ends, and the workflow moves on to the next step.
 
 ## Next steps
 
