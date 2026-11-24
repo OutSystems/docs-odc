@@ -30,24 +30,6 @@ helpids:
 isautopublish: true
 ---
 
-<!--
-DRAFT for TK-24330. ODC copy of a page that is duplicated for O11 (docs-next
-has no platform-agnostic content yet). Resolve and delete these notes before
-publishing.
-
-* Row links point to anchors such as #a012025-broken-access-control on the
-  first-aid page. The anchors don't exist until PR #2232 merges. After it
-  merges, confirm that each anchor resolves and that the tk/redirect link
-  keeps the #fragment. Each ODC category PR switches its rows to the ODC page:
-  A08 and A09 link to their ODC pages (PR #4025), A01 to A03 link to theirs
-  (PR #4069), and A04 to A06 link to theirs (PR #4113).
-* TK-24108 SME review: Fred confirmed the "Your responsibility" statements
-  (Q2). SSRF is left out of the page, including the A01 row in the
-  2021 comparison table, until product documentation covers it. No product
-  doc mentions SSRF, and the only statement is in the ODC training lesson.
-  Don't link the shared responsibility article as SSRF support.
--->
-
 # OWASP Top 10:2025 coverage in ODC
 
 The OWASP Top 10 lists the most critical security risks to web applications. Security teams use it as an awareness baseline when they assess a platform. It isn't a security standard or a certification.
@@ -105,10 +87,10 @@ This matrix describes stages that run in the OutSystems Cloud. In a self-hosted 
 | [Cryptographic Failures (A04)](owasp-a04-cryptographic-failures.md) | Encryption in transit with HTTPS, HSTS as a native default, and TLS 1.3 support.<br/>Encryption at rest with AES-256-GCM, including backups, and a per-customer key for production runtime app data. | Marking settings as secret, which always encrypts them and never shows them as plain text. | Protect the sensitive data that your custom logic and integrations handle. |
 | [Injection (A05)](owasp-a05-injection.md) | SQL queries that run as prepared statements.<br/>The WAF, as an extra layer of protection from SQL injection attacks. | Functions that encode and sanitize input when you build code dynamically. | Validate the input that you add to queries, HTML, or JavaScript. |
 | [Insecure Design (A06)](owasp-a06-insecure-design.md) | A platform designed with the secure-by-design principles of the OWASP Developer Guide, such as defense in depth and least privilege.<br/>A separate network namespace for each stage. | Static code analysis that flags insecure patterns across your apps. | Design your apps for security, for example with threat modeling. |
-| [Authentication Failures (A07)](https://www.outsystems.com/tk/redirect?g=74924eac-d729-4c99-bcb4-09b40a483cfa#a072025-authentication-failures) | A fixed password policy of at least 12 characters with a digit and an uppercase letter.<br/>Temporary lockout after five consecutive failed sign-in or password change attempts, which grows to about 5 minutes.<br/>Refresh token rotation, and a different session identifier on each sign-in. | Single sign-on and multi-factor authentication through your identity provider (IdP).<br/>The Authorization Code flow with Proof Key for Code Exchange (PKCE) for OIDC providers.<br/>The maximum and idle session duration for each stage. | Apply your organization's authentication policies through an external IdP. |
+| [Authentication Failures (A07)](owasp-a07-authentication-failures.md) | A fixed password policy of at least 12 characters with a digit and an uppercase letter.<br/>Temporary lockout after five consecutive failed sign-in or password change attempts, which grows to about 5 minutes.<br/>Refresh token rotation, and a different session identifier on each sign-in. | Single sign-on and multi-factor authentication through your identity provider (IdP).<br/>The Authorization Code flow with Proof Key for Code Exchange (PKCE) for OIDC providers.<br/>The maximum and idle session duration for each stage. | Apply your organization's authentication policies through an external IdP. |
 | [Software or Data Integrity Failures (A08)](owasp-a08-software-data-integrity-failures.md) | Signed access tokens.<br/>Production container images for the Platform services that are identical to the built images. | **Web apps**: A content security policy that restricts the app to code from approved sources.<br/>**Mobile apps**: AppShield detects modified app bundles, with an AppShield license. | Verify the code and data that your apps get from external sources. |
 | [Security Logging and Alerting Failures (A09)](owasp-a09-security-logging-alerting-failures.md) | An immutable audit trail of significant platform actions and changes, including successful sign-ins, shown for 30 days in the ODC Portal and exportable for up to 3 months. Failed sign-ins aren't recorded.<br/>Monitoring of the ODC infrastructure, events, and availability by OutSystems, 24 hours a day, seven days a week. | Streaming the audit trail to your security information and event management (SIEM) tool, with a Sentry for ODC subscription.<br/>Streaming logs, traces, and metrics to your performance monitoring tool, with an Analytics Stream subscription. | Set up alerts and monitor your apps in your SIEM and performance monitoring tools. |
-| [Mishandling of Exceptional Conditions (A10)](https://www.outsystems.com/tk/redirect?g=74924eac-d729-4c99-bcb4-09b40a483cfa#a102025-mishandling-of-exceptional-conditions) | Rollback of database changes when an exception isn't handled, and a default Global Exception Handler.<br/>HTTP status code 500 for unhandled exceptions in exposed REST APIs.<br/>Platform timeouts of 60 seconds for an exposed REST API method and 100 seconds for a service action. | Exception handlers in actions, UI flows, and modules or apps. | Handle errors in your logic, and control the messages that users see. |
+| [Mishandling of Exceptional Conditions (A10)](owasp-a10-mishandling-exceptional-conditions.md) | Rollback of database changes when an exception isn't handled, and a default Global Exception Handler.<br/>HTTP status code 500 for unhandled exceptions in exposed REST APIs.<br/>Platform timeouts of 60 seconds for an exposed REST API method and 100 seconds for a service action. | Exception handlers in actions, UI flows, and modules or apps. | Handle errors in your logic, and control the messages that users see. |
 
 <div class="info" markdown="1">
 

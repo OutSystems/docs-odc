@@ -24,20 +24,6 @@ helpids:
 isautopublish: true
 ---
 
-<!--
-DRAFT for TK-24662. ODC copy. The O11 copy is created at the end of the plan.
-Resolve and delete these notes before publishing.
-
-* The WAF is described as a first layer of defense. The page doesn't claim
-  which OWASP risks it blocks (TK-24108 Q1).
-* Non-blocking: the CSP section is sourced from the CSP articles only.
-* Non-blocking: the enforced TLS claim for REST services is sourced from the
-  REST exposure pattern article and the Code Quality finding, not from
-  security.md.
-* Non-blocking: no doc describes the CSP for self-hosted stages. The info box
-  scopes the page to cloud stages.
--->
-
 # OWASP A02 security misconfiguration in ODC
 
 Security Misconfiguration happens when settings, defaults, or hardening leave an app or its infrastructure more exposed than necessary. Examples include insecure defaults, unneeded features left on, and missing security headers. The OWASP Top 10:2025 report moves this category up from rank #5 to rank #2.
@@ -58,7 +44,7 @@ The following protections apply in cloud stages without any action from you. The
 
 A web application firewall (WAF) runs on the content delivery network (CDN). It protects the Platform and the Runtime from common web exploits and bots, as a first layer of defense. The OutSystems Security Office periodically reviews the WAF rules, and the firewall enforces them automatically.
 
-In self-hosted stages, end-user traffic enters through your own load balancer and ingress controller, not through the OutSystems CDN, so this WAF doesn't filter it.
+In a self-hosted tenant, end-user traffic enters through your own ingress controller and load balancer.
 
 For more information, refer to [Security of OutSystems Developer Cloud](security.md#web-application-firewall).
 

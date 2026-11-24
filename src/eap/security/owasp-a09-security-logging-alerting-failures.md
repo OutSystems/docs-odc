@@ -27,16 +27,6 @@ helpids:
 isautopublish: true
 ---
 
-<!--
-DRAFT for TK-24661. ODC copy. The O11 copy is created at the end of the plan.
-Resolve and delete these notes before publishing.
-
-* Non-blocking (TK-24108 Q3): no source names incident response as a customer duty, so this
-  page stops at alerts and monitoring for the customer side.
-* Non-blocking: no doc describes the audit trail or intrusion detection for
-  self-hosted stages. The info box scopes the page to cloud stages.
--->
-
 # OWASP A09 security logging and alerting failures in ODC
 
 Security logging and alerting failures delay the detection of an attack. Logs that nobody reviews, and events that trigger no alert, give an attacker time to stay in a system and reach more data. The OWASP Top 10:2025 report keeps this category at rank #9 and adds alerting to its name. Recording events isn't enough. Someone must receive an alert and act on it.
@@ -126,4 +116,6 @@ For more information about how OutSystems secures ODC, refer to the following ar
 * [OWASP A04 cryptographic failures in ODC](owasp-a04-cryptographic-failures.md)
 * [OWASP A05 injection in ODC](owasp-a05-injection.md)
 * [OWASP A06 insecure design in ODC](owasp-a06-insecure-design.md)
+* [OWASP A07 authentication failures in ODC](owasp-a07-authentication-failures.md)
 * [OWASP A08 software or data integrity failures in ODC](owasp-a08-software-data-integrity-failures.md)
+* [OWASP A10 mishandling of exceptional conditions in ODC](owasp-a10-mishandling-exceptional-conditions.md)

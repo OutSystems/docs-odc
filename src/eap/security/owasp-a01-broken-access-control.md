@@ -26,19 +26,6 @@ helpids:
 isautopublish: true
 ---
 
-<!--
-DRAFT for TK-24662. ODC copy. The O11 copy is created at the end of the plan.
-Resolve and delete these notes before publishing.
-
-* SSRF is left out until product documentation covers it (TK-24108 SME
-  review).
-* Non-blocking: no ODC doc states the license requirement of Code Quality,
-  so the page doesn't state it.
-* Non-blocking: no doc describes access token validation for self-hosted
-  stages. The info box scopes the page to cloud stages.
-* O11 CSRF tokens are out of scope for this ODC page.
--->
-
 # OWASP A01 broken access control in ODC
 
 Broken Access Control happens when users can act outside their intended permissions. Examples include opening a screen that you meant to restrict, reading another user's data, and calling server logic without a role check. The OWASP Top 10:2025 report keeps this category at rank #1.

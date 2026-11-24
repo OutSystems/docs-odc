@@ -17,8 +17,8 @@ tags:
   - JavaScript
   - Libraries
   - OWASP
-  - SQL
   - Security
+  - SQL
   - Web
 outsystems-tools:
   - odc studio
@@ -26,18 +26,6 @@ outsystems-tools:
 helpids:
 isautopublish: true
 ---
-
-<!--
-DRAFT for TK-24663. ODC copy. The O11 copy is created at the end of the plan.
-Resolve and delete these notes before publishing.
-
-* Non-blocking: no product doc says whether the Escape Content property
-  of an Expression protects against cross-site scripting (XSS). The text
-  functions page mentions it only in an EncodeHtml example. The page doesn't
-  claim it.
-* Non-blocking: the intro answers "does low-code protect us by default?" for
-  SQL only, based on the SQL injection article.
--->
 
 # OWASP A05 injection in ODC
 
@@ -67,7 +55,7 @@ For more information, refer to [SQL injection](../monitor-and-troubleshoot/manag
 
 A web application firewall (WAF) runs on the content delivery network and protects the Platform and the Runtime from common web exploits. Its policies cover SQL injection attacks. The WAF is an extra layer of defense. It doesn't replace input validation in your apps.
 
-In self-hosted stages, end-user traffic enters through your own load balancer and ingress controller, not through the OutSystems CDN, so this WAF doesn't filter it.
+In a self-hosted tenant, end-user traffic enters through your own ingress controller and load balancer.
 
 For more information, refer to [Web Application Firewall](security.md#web-application-firewall).
 
@@ -110,3 +98,5 @@ For more information about how OutSystems secures ODC, refer to the following ar
 * [Security of OutSystems Developer Cloud](security.md)
 * [OWASP A04 cryptographic failures in ODC](owasp-a04-cryptographic-failures.md)
 * [OWASP A06 insecure design in ODC](owasp-a06-insecure-design.md)
+* [OWASP A07 authentication failures in ODC](owasp-a07-authentication-failures.md)
+* [OWASP A10 mishandling of exceptional conditions in ODC](owasp-a10-mishandling-exceptional-conditions.md)

@@ -24,19 +24,6 @@ helpids:
 isautopublish: true
 ---
 
-<!--
-DRAFT for TK-24663. ODC copy. The O11 copy is created at the end of the plan.
-Resolve and delete these notes before publishing.
-
-* Doc owner, non-blocking: security.md says requests are "end-to-end
-  encrypted" and also that they "terminate at an HTTPS endpoint". This page
-  uses only the second statement.
-* Non-blocking: no product doc describes how the built-in user store protects
-  passwords, for example hashing. The page doesn't claim it.
-* Non-blocking: no doc describes secret settings for self-hosted stages. The
-  info box scopes the page to cloud stages.
--->
-
 # OWASP A04 cryptographic failures in ODC
 
 Cryptographic failures expose sensitive data. Examples are traffic sent without encryption, data stored in plain text, and keys kept where others can read them. The OWASP Top 10:2025 report lists this category at rank #4, down from #2.
@@ -98,3 +85,5 @@ For more information about how OutSystems secures ODC, refer to the following ar
 * [Security of OutSystems Developer Cloud](security.md)
 * [OWASP A05 injection in ODC](owasp-a05-injection.md)
 * [OWASP A06 insecure design in ODC](owasp-a06-insecure-design.md)
+* [OWASP A07 authentication failures in ODC](owasp-a07-authentication-failures.md)
+* [OWASP A10 mishandling of exceptional conditions in ODC](owasp-a10-mishandling-exceptional-conditions.md)

@@ -23,20 +23,6 @@ helpids:
 isautopublish: true
 ---
 
-<!--
-DRAFT for TK-24663. ODC copy. The O11 copy is created at the end of the plan.
-Resolve and delete these notes before publishing.
-
-* The coverage page has a CHECK note about the license requirement of static
-  code analysis. This page doesn't mention activation or licensing, because
-  that is a packaging question, not an SME item.
-* Non-blocking: the docs cover testing, not design. Material such as STRIDE threat
-  modeling exists only in training, so this page doesn't describe a design
-  method.
-* agentic-development/security-safeguards.md has no secure-by-design content,
-  so this page doesn't cite it.
--->
-
 # OWASP A06 insecure design in ODC
 
 Insecure design is a flaw in how an app is planned, not in how it's coded. A missing control or an unchecked assumption stays in the app even when the code is correct. The OWASP Top 10:2025 report lists this category at rank #6, down from #4.
@@ -93,3 +79,5 @@ For more information about the other OWASP categories in ODC, refer to the follo
 
 * [OWASP A04 cryptographic failures in ODC](owasp-a04-cryptographic-failures.md)
 * [OWASP A05 injection in ODC](owasp-a05-injection.md)
+* [OWASP A07 authentication failures in ODC](owasp-a07-authentication-failures.md)
+* [OWASP A10 mishandling of exceptional conditions in ODC](owasp-a10-mishandling-exceptional-conditions.md)

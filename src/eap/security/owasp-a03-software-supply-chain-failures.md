@@ -25,18 +25,6 @@ helpids:
 isautopublish: true
 ---
 
-<!--
-DRAFT for TK-24662. ODC copy. The O11 copy is created at the end of the plan.
-Resolve and delete these notes before publishing.
-
-* Peer review: the pipeline admission control is also covered in A08. This
-  page links to A08 instead of repeating it.
-* Non-blocking: the vulnerability policy link goes to the ODC section of
-  security.md, which points to an external page.
-* Non-blocking: no doc describes the daily scans or automatic patching for
-  self-hosted stages. The info box scopes the page to cloud stages.
--->
-
 # OWASP A03 software supply chain failures in ODC
 
 Software Supply Chain Failures happen when the components, tools, or pipelines that build and deliver software are vulnerable or compromised. Examples include a vulnerable library, a tampered build pipeline, and a malicious update. The OWASP Top 10:2025 report adds this category at rank #3. It extends the 2021 category Vulnerable and Outdated Components to how software is built, distributed, and updated.

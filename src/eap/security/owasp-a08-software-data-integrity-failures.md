@@ -31,20 +31,6 @@ helpids:
 isautopublish: true
 ---
 
-<!--
-DRAFT for TK-24661. ODC copy. The O11 copy is created at the end of the plan.
-Resolve and delete these notes before publishing.
-
-* Non-blocking, not claimed (TK-24108 Q5): how ODC protects serialized data. The only
-  source is a 2024 ChatODC answer and the ODC training lesson, with no product
-  doc behind it.
-* Non-blocking: the CSP section is sourced from the CSP articles only.
-* Non-blocking: no doc describes access token signing or the CSP for
-  self-hosted stages. The info box scopes the page to cloud stages.
-* The OWASP 2025 name is "Software or Data Integrity Failures". The ticket and
-  the 2021-based training lesson use "and".
--->
-
 # OWASP A08 software or data integrity failures in ODC
 
 Software or Data Integrity Failures happen when an app trusts code or data that an attacker can change without detection. Examples include tampered tokens, updates without an integrity check, and a build that changes between test and production. The OWASP Top 10:2025 report keeps this category at rank #8.
@@ -124,4 +110,6 @@ For more information about how OutSystems secures ODC, refer to the following ar
 * [OWASP A04 cryptographic failures in ODC](owasp-a04-cryptographic-failures.md)
 * [OWASP A05 injection in ODC](owasp-a05-injection.md)
 * [OWASP A06 insecure design in ODC](owasp-a06-insecure-design.md)
+* [OWASP A07 authentication failures in ODC](owasp-a07-authentication-failures.md)
 * [OWASP A09 security logging and alerting failures in ODC](owasp-a09-security-logging-alerting-failures.md)
+* [OWASP A10 mishandling of exceptional conditions in ODC](owasp-a10-mishandling-exceptional-conditions.md)
