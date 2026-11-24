@@ -13,11 +13,16 @@ platform-version: odc
 audience:
   - Developer
 tags:
+  - Business Processes
+  - End-users
+  - Events
+  - Triggers
   - Workflows
 outsystems-tools:
   - odc studio
   - portal
 helpids:
+isautopublish: true
 ---
 # Human activity status definitions
 
@@ -25,13 +30,13 @@ At any given time, based on the progress of the human activity, the **HumanActiv
 
 **Running** - The human activity is currently being executed, such as when a service action is retrieving data.
 
-**Waiting** - The human activity is on hold, awaiting further action. For instance, it may be paused for manual intervention.
+**Waiting** - The human activity waits for its **Close on** event, for example when an end user completes the task in your app, or for its **Close after timeout**, whichever happens first. When either one happens, the human activity closes and the workflow moves to the next step.
 
 **Completed** - The human activity has finished, allowing the workflow to proceed to the next step.
 
 **Terminated** - The human activity and the entire workflow is terminated following the successful execution of the ProcessTerminate API.
 
-**Error**- The human activity encounters an issue, which can happen due to:
+**Error** - The human activity encounters an issue, which can happen due to:
 
 * A failure in the service action it depends on.
 * Reaching the maximum number of retries without successful execution.
