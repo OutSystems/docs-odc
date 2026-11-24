@@ -1,6 +1,8 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) asset deployment: deploy apps and workflows across stages, track revisions, and review impact analysis results."
 tags:
+  - Agentic
+  - CI/CD
   - Deploy
   - Development lifecycle
   - Workflows
@@ -36,7 +38,7 @@ Assets in each stage are isolated from each other. Each stage runs its own copy 
 
 <div class="info" markdown="1">
 
-In a multi-portfolio organization, an asset is deployed and promoted only through the stages of its portfolio. For more information, refer to [Asset deployment with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-deploy-assets.md).
+In a multi-portfolio organization, an asset is deployed and promoted only through the stages of its portfolio. This applies even when a [team](../user-management/it-users/teams.md) owns assets from several portfolios: each asset follows the stages of its own portfolio. For more information, refer to [Asset deployment with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-deploy-assets.md).
 
 </div>
 

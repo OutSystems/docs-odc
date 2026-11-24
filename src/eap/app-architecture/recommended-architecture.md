@@ -1,9 +1,11 @@
 ---
-summary: Explore scalable app design in OutSystems Developer Cloud (ODC) by aligning business problems with organizational structures.
+summary: OutSystems Developer Cloud (ODC) app architecture uses bounded contexts, ownership, and team boundaries to support independent releases.
 tags:
   - Architecture
   - Best Practices
   - Development lifecycle
+  - Domains
+  - IT Teams
   - Libraries
   - Modular Programming
 locale: en-us
@@ -13,6 +15,8 @@ figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=desi
 platform-version: odc
 audience:
   - Architect
+  - Business analyst
+  - Developer
   - Tech lead
 outsystems-tools:
   - none
@@ -97,6 +101,10 @@ To keep app development running smoothly, define clear ownership so you avoid co
 
 Clear ownership requires and means you have only one go-to person for each business context: the business owner.
 
+To represent the group that owns a set of assets, create a [team](../user-management/it-users/teams.md) in the ODC Portal. A team can own assets from more than one portfolio.
+
+<!-- TODO(sharing, R-stories): add the sharing half of team ownership here. -->
+
 ### Best practices
 
 Use these best practices to keep ownership clear as you split work across apps:
@@ -142,7 +150,7 @@ In this scenario, if two sponsors manage the **Claims & Billing** app, conflicti
 
 As a best practice, avoid this scenario.
 
-![Diagram illustrating the complexity of having two business sponsors and owners for one app](images/two-business-sponsors-and-owners-diag.png "Two Business Sponsors and Owners Diagram")
+![Diagram showing two business sponsors for the Claims & Billing app and the resulting conflicting priorities](images/two-business-sponsors-and-owners-diag.png "Two Sponsors for Claims and Billing")
 
 To ensure business sponsors can request changes at different rates, create two apps: one for **Claims** and one for **Billing**.
 
