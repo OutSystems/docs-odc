@@ -21,8 +21,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - using-cordova-plugins
-  - using-capacitor-plugins
+  - close-inappbrowser-sessions
+  - handle-inappbrowser-events
+  - open-inappbrowser-urls
 ---
 
 # InAppBrowser plugin

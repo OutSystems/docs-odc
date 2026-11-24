@@ -26,8 +26,10 @@ coverage-type:
   - understand
   - apply
 topic:
-  - role-assignment
   - create-a-team
+  - create-custom-member-role-odc
+  - organizational-roles-overview
+  - permission-precedence-odc
 isautopublish: true
 ---
 

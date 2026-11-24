@@ -23,7 +23,6 @@ coverage-type:
   - understand
   - apply
 topic:
-  - eu-sovereign-cloud
   - external-idp-system-limits
   - idp-assignment-scopes
   - self-hosted-idp-requirements
