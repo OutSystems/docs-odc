@@ -34,7 +34,12 @@ At any given time, based on the progress of the human activity, the **HumanActiv
 
 **Completed** - The human activity has finished, allowing the workflow to proceed to the next step.
 
-**Terminated** - The human activity and the entire workflow is terminated following the successful execution of the ProcessTerminate API.
+**Terminated** - The human activity stops before it finishes because the workflow instance ends early, which happens when:
+
+* The instance reaches a **Terminate** node.
+* Someone terminates the instance in the Portal.
+* An app calls the [ProcessTerminate](../../reference/system-actions/workflows.md#processterminate) action.
+* The instance reaches the limit of 1,000 activities.
 
 **Error** - The human activity encounters an issue, which can happen due to:
 

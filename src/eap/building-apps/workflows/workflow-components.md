@@ -1,6 +1,9 @@
 ---
 summary: Implement and manage workflow nodes using OutSystems Developer Cloud (ODC). Learn about different node statuses including Running, Waiting, and Error.
 tags:
+  - Business Processes
+  - Events
+  - Logic
   - Workflows
 guid: e9f56ae4-aea1-411e-8ddd-6391e0b51fcc
 locale: en-us
@@ -20,6 +23,7 @@ topic:
   - workflow-node-statuses
 outsystems-tools:
   - none
+isautopublish: true
 ---
 # Implement workflow
 
@@ -71,7 +75,7 @@ Here's the loan approval process:
             * **Decision: docs insufficient**
                 * The finance department routes the application to the customer relationship manager to restart the document verification process.
 
-    ![Example workflow of approving a bank transaction](images/example-workflow-pl.png "Example workflow of approving a bank transaction")
+    ![Workflow diagram showing customer background and financial reviews, decision branches, email notifications, and end states for a loan application](images/example-workflow-pl.png "Loan Approval Workflow")
 
 For detailed step-by-step information about using workflows, refer to [Using workflows](using-workflows.md).
 
@@ -89,11 +93,17 @@ At any given time, based on the progress of the activity, the workflow node can 
 
 * **Running** - The activity is currently being executed, such as when a service action is retrieving data.
 
-* **Waiting** - The activity is on hold, awaiting further action. For instance, the **HumanActivityNode** can be on stand-by for manual intervention or the **AutomaticActivityNode** can be waiting for a scheduled event.
+* **Waiting** - The activity is on hold until an event or a timeout closes it. Human activities and wait activities stay in this status until their **Close on** event occurs or their **Close after timeout** is reached. Automatic activities never have this status.
 
 * **Completed** -  The activity has finished, allowing the workflow to proceed to the next step.
 
-* **Terminated** - The activity and the entire workflow is terminated following the successful execution of the **ProcessTerminate** API or any other unexpected terminate activity.
+* **Terminated** - The activity stops before it finishes because the workflow instance ends early, which happens when:
+    * The instance reaches a **Terminate** node.
+    * Someone terminates the instance in the Portal.
+    * An app calls the [ProcessTerminate](../../reference/system-actions/workflows.md#processterminate) action.
+    * The instance reaches the limit of 1,000 activities.
+
+    Only human, wait, and decision activities change to **Terminated**. Automatic activities that are running finish and change to **Completed** or **Error**.
 
 * **Error** - The activity encounters an issue, which can happen due to:
     * An error in the service action that the activity calls.
@@ -105,6 +115,12 @@ At any given time, based on the progress of the activity, the workflow node can 
 <div class="info" markdown="1">
 
 The **Open** status applies only to human activity node.
+
+</div>
+
+<div class="info" markdown="1">
+
+An activity status is different from the instance status. When an instance reaches a **Terminate** node, its ongoing human, wait, and decision activities change to **Terminated**, but the instance status changes to **Done**. For more information about instance statuses, refer to [Troubleshooting workflows](troubleshooting-workflows.md).
 
 </div>
 
