@@ -788,6 +788,9 @@
     - href: eap/security/owasp-a01-broken-access-control.md
     - href: eap/security/owasp-a02-security-misconfiguration.md
     - href: eap/security/owasp-a03-software-supply-chain-failures.md
+    - href: eap/security/owasp-a04-cryptographic-failures.md
+    - href: eap/security/owasp-a05-injection.md
+    - href: eap/security/owasp-a06-insecure-design.md
     - href: eap/security/owasp-a08-software-data-integrity-failures.md
     - href: eap/security/owasp-a09-security-logging-alerting-failures.md
     - href: eap/security/sentry.md

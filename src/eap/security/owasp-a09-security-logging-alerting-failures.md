@@ -123,4 +123,7 @@ For more information about how OutSystems secures ODC, refer to the following ar
 
 * [Security of OutSystems Developer Cloud](security.md)
 * [OWASP Top 10:2025 coverage in ODC](owasp-top-10-coverage.md)
+* [OWASP A04 cryptographic failures in ODC](owasp-a04-cryptographic-failures.md)
+* [OWASP A05 injection in ODC](owasp-a05-injection.md)
+* [OWASP A06 insecure design in ODC](owasp-a06-insecure-design.md)
 * [OWASP A08 software or data integrity failures in ODC](owasp-a08-software-data-integrity-failures.md)
