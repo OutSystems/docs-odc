@@ -106,7 +106,7 @@ Each portfolio has its own runtime resources, configurations, stages, and delive
 
 ## Governance and permissions
 
-With portfolios, you manage users at the organization level and assign roles that include portfolio level permissions. This keeps responsibility boundaries clear when multiple groups share the same organization. Each user has one organization-level role. This supports least privilege access and reduces the risk of unintended changes outside the portfolios a user is responsible for.
+With portfolios, you manage users at the organization level and assign roles that include portfolio level permissions. This keeps responsibility boundaries clear when multiple groups share the same organization. Each user has an organization role and can also hold roles through teams and on individual assets. Permissions add up across the three scopes. A team role or an asset role raises a user's access to the assets it covers and never lowers what the organization role grants. This supports least privilege access. You keep the organization role least-privilege and grant more access only where a user needs it, which reduces the risk of unintended changes outside the portfolios a user is responsible for.
 
 Organization-level permissions cover organization-wide governance tasks, while portfolio level permissions apply within a portfolio, including its assets, stages, and stage-level configurations.
 
@@ -119,7 +119,7 @@ Portfolio-scoped permissions determine whether a user can:
 * Manage stage-level configurations and connections.
 * Install and update Forge assets.
 
-For more information about portfolio level permissions, refer to [User management with multiple portfolios](portfolios-user-management.md). For the full permission registry, refer to [Roles and permissions for members (IT-users)](../../user-management/roles.md).
+For more information about portfolio level permissions, refer to [User management with multiple portfolios](portfolios-user-management.md). For the full permission registry, refer to [Roles and permissions for members (IT-users)](../../user-management/roles.md). For more information about roles that users hold through teams, refer to [Teams and asset ownership](../../user-management/it-users/teams.md).
 
 ## What's shared and what's portfolio-scoped {#whats-shared-and-portfolio-scoped}
 

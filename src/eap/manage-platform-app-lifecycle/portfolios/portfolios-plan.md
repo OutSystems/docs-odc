@@ -7,6 +7,7 @@ tags:
   - Libraries
   - REST
   - Roles
+  - Security
 locale: en-us
 guid: f7a2c1d8-3e5b-4a9f-b812-6d8e4f2a1c3b
 app_type: mobile apps, reactive web apps
@@ -81,6 +82,8 @@ Consider separate portfolios when:
 * Different groups require different portfolio level permissions for assets, stages, and stage-level configurations.
 
 * Different asset groups follow different approval workflows or change governance.
+
+Portfolios separate delivery and non-functional requirements, while teams own sets of assets. Teams and portfolios are independent, and a team can own assets in several portfolios. For more information, refer to [Teams and asset ownership](../../user-management/it-users/teams.md).
 
 ## Decision checklist
 
@@ -176,6 +179,8 @@ Roles are defined at the organization level. Portfolio-scoped permissions determ
 * Use one organization role when users need the same permissions in the same set of portfolios. Define separate organization roles when the portfolio sets differ.
 
 * Confirm that each role includes the required portfolio level permissions for its portfolios.
+
+* Keep each organization role least-privilege, and grant more access to specific assets through team roles or asset roles. A team role never lowers what the organization role grants.
 
 For details, refer to [User management with multiple portfolios](portfolios-user-management.md).
 

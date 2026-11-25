@@ -190,6 +190,20 @@ Track how you grant and revoke access within your organization. This includes bo
 
 * Unassign users from  end user group
 
+### Team management
+
+Track changes to teams, their members, and the assets they own. These events are organization-scoped.
+
+* Create team (`CreateTeam`)
+
+* Update team (`UpdateTeam`)
+
+* Delete team (`DeleteTeam`)
+
+* Update team members (`UpdateTeamMembers`)
+
+* Update team assets (`UpdateTeamAssets`)
+
 ### Portfolio management
 
 Track portfolio-level changes, such as renaming a portfolio or changing the order of its stages. These events are portfolio-scoped.

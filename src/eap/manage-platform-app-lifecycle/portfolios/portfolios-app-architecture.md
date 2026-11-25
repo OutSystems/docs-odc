@@ -63,6 +63,8 @@ With multiple portfolios, the shared library layer needs clear ownership so it's
 
 Cross-portfolio libraries typically sit with a platform group or Center of Excellence (CoE). That group controls the release schedule of shared components and manages versioning. Other portfolios adopt updated library versions when they're ready, without affecting their release schedule.
 
+A team can own shared libraries regardless of portfolio, so you can track who's responsible for them. For more information, refer to [Teams and asset ownership](../../user-management/it-users/teams.md).
+
 ### Shared building blocks portfolio
 
 A dedicated portfolio for those libraries gives the platform group its own delivery process and governance while other portfolios consume the libraries.

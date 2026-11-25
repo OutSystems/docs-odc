@@ -113,7 +113,7 @@ Portfolio-scoped permissions let you control what each user can do in each portf
 
 ### Recommendations
 
-Group users by responsibility (for example, developer, tech lead, platform admin) and identify which portfolios each group needs access to. Define custom roles with portfolio-scoped permissions only for the portfolios users actively work in. For details, refer to [User management with multiple portfolios](portfolios-user-management.md).
+Group users by responsibility (for example, developer, tech lead, platform admin) and identify which portfolios each group needs access to. Define custom roles with portfolio-scoped permissions only for the portfolios users actively work in. When a user needs more access to a group of assets, give the user a role in the [team](../../user-management/it-users/teams.md) that owns them instead of widening the organization role. For details, refer to [User management with multiple portfolios](portfolios-user-management.md).
 
 ### Benefits
 

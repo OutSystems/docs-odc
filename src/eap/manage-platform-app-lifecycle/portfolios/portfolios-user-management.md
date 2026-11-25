@@ -44,6 +44,12 @@ You manage all users (members, end-users, and API clients) at the organization l
 
 * You assign organization roles to users at the organization level. Organization roles can include portfolio level permissions for one or more portfolios.
 
+* A user can also hold roles in teams and on individual assets. Roles add up across the organization, team, and asset scopes, so a team role never lowers what the organization role grants.
+
+* The **Manage teams** permission is an organization-level permission. It applies to every team in the organization, across portfolios.
+
+For more information about team roles, refer to [Teams and asset ownership](../../user-management/it-users/teams.md).
+
 The following diagram shows how user profiles, roles, and permissions are scoped in a multi-portfolio organization.
 
 ![Diagram showing an organization-level user directory feeding portfolios A and B, where members, end users, and API clients share accounts and roles that grant portfolio-scoped permissions such as Developer, Release manager, Reviewer, and Monitor.](images/organization-uses-multiple-portfolios-diag.png "Organization user management across multiple portfolios")
