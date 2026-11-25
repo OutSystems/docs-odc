@@ -5,6 +5,10 @@ summary: OWASP A03 in OutSystems Developer Cloud (ODC) explains the vulnerabilit
 figma:
 coverage-type:
   - understand
+topic:
+  - automatic-app-patching
+  - odc-container-image-integrity
+  - review-accepted-library-updates
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

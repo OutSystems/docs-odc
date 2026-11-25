@@ -5,6 +5,10 @@ summary: OWASP A05 in OutSystems Developer Cloud (ODC) explains prepared stateme
 figma:
 coverage-type:
   - understand
+topic:
+  - encode-custom-html-javascript
+  - odc-injection-defense-overview
+  - prevent-sql-injection
 app_type: reactive web apps
 platform-version: odc
 audience:

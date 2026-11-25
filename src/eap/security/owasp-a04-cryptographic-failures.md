@@ -5,6 +5,10 @@ summary: OWASP A04 in OutSystems Developer Cloud (ODC) explains encryption in tr
 figma:
 coverage-type:
   - understand
+topic:
+  - cloud-customer-duties
+  - odc-data-protection
+  - set-app-setting-secret
 app_type: reactive web apps
 platform-version: odc
 audience:

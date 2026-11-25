@@ -17,7 +17,7 @@ audience:
 outsystems-tools:
   - mentor studio
 topic:
-  - troubleshoot-code-mentor
+  - mentor-studio-errors
 coverage-type:
   - unblock
 isautopublish: true

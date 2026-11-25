@@ -6,7 +6,7 @@ figma:
 coverage-type:
   - apply
 topic:
-  - eu-sovereign-cloud
+  - eu-sovereign-cloud-support
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

@@ -5,6 +5,9 @@ summary: OWASP A02 in OutSystems Developer Cloud (ODC) explains the WAF, infrast
 figma:
 coverage-type:
   - understand
+topic:
+  - odc-content-security-policy
+  - outsystems-security-approach
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

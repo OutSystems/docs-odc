@@ -5,6 +5,10 @@ summary: OWASP A07 in OutSystems Developer Cloud (ODC) covers password lockout, 
 figma:
 coverage-type:
   - understand
+topic:
+  - configure-session-timeout-odc
+  - external-idp-system-limits
+  - refresh-token-rotation
 app_type: reactive web apps
 platform-version: odc
 audience:

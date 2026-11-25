@@ -5,6 +5,10 @@ summary: OWASP A01 in OutSystems Developer Cloud (ODC) explains access token val
 figma:
 coverage-type:
   - understand
+topic:
+  - check-role-actions-odc
+  - ip-filter-groups
+  - token-lifecycle
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

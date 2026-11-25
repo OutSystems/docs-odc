@@ -5,6 +5,10 @@ summary: OWASP A06 in OutSystems Developer Cloud (ODC) explains the secure-by-de
 figma:
 coverage-type:
   - understand
+topic:
+  - code-analysis-process
+  - insecure-design-basics
+  - shared-responsibility-overview
 app_type: reactive web apps
 platform-version: odc
 audience:

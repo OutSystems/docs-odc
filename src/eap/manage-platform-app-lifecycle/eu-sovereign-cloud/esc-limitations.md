@@ -8,7 +8,7 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - eu-sovereign-cloud
+  - eu-sovereign-limitations
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

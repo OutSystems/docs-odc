@@ -6,7 +6,9 @@ figma:
 coverage-type:
   - apply
 topic:
-  - eu-sovereign-cloud
+  - configure-eu-idp
+  - move-apps-to-eu-cloud
+  - use-test-data-in-development
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

@@ -7,7 +7,8 @@ coverage-type:
   - understand
   - evaluate
 topic:
-  - eu-sovereign-cloud
+  - eu-sovereign-overview
+  - move-apps-to-eu-cloud
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
