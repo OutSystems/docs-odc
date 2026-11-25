@@ -1,7 +1,6 @@
 ---
 summary: OS-AISA-42901 occurs in OutSystems Developer Cloud (ODC) Mentor when requests to the AI Provider service exceed the allowed rate. Wait and retry.
 tags:
-  - Agentic
   - AI
   - Mentor
   - Mentor Studio
