@@ -5,6 +5,7 @@ summary: Learn how to govern asset creation in OutSystems Developer Cloud (ODC) 
 figma:
 coverage-type:
   - understand
+  - apply
 topic:
   - asset-creation-governance
 app_type: mobile apps, reactive web apps
@@ -26,6 +27,7 @@ outsystems-tools:
   - odc portal
   - odc studio
 helpids:
+isautopublish: true
 ---
 # Asset creation governance
 
@@ -46,6 +48,8 @@ To implement governed asset creation, follow these steps:
 
 1. After you approve the request, run your approval automation to create the asset and grant access to the requesting user or team.
 
+    To grant access to a team, add the asset to the team. The members of the team then hold their team role on the asset.
+
 ## Next steps
 
 To implement the approval automation, follow these API procedures:
@@ -54,11 +58,13 @@ To implement the approval automation, follow these API procedures:
 
 1. [Create an asset from scratch or from a template](create-asset.md) — Create the asset and copy the asset key, `applicationKey`, from the response.
 
-1. [Manage asset permissions](manage-asset-permissions.md) — Grant an organization role to the requesting user and scope it to the new asset key, `applicationKey`.
+1. [Manage asset permissions](manage-asset-permissions.md) — Grant an organization role to the requesting user and scope it to the new asset key, `applicationKey`. To grant access to a team, add the asset to the team.
 
 ## Related resources
 
 * [Using OAuth 2.0 to access public REST APIs](../authentication/using-oauth-access-api.md)
+
+* [Teams and asset ownership](../../../../user-management/it-users/teams.md)
 
 * [Asset Repository API reference](../../asset-v1.md)
 

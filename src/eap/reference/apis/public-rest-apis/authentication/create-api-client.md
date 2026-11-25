@@ -1,6 +1,6 @@
 ---
 helpids: 30566
-summary: Learn how to configure API access for OutSystems Developer Cloud (ODC) using an API client, including creating clients, managing credentials, and setting permissions.
+summary: OutSystems Developer Cloud (ODC) API client configuration covers OAuth 2.0 credentials, secret expiration, and stage permissions.
 tags:
   - Authentication
   - Authorization
@@ -82,6 +82,8 @@ To create a new API client, follow these steps:
 1. Configure permissions for the API client at each ODC stage. This allows you to use the client credentials to generate an access token with the necessary permissions to access ODC REST APIs and data.
 
     Select the corresponding permissions. For details about what permissions are needed for the API, refer to the [API reference](../../identity-v1.md) document.
+
+    To call the team endpoints that change teams, the API client needs the **User and access management > Manage teams** permission. These endpoints create, update, and delete a team, change its members, and add or remove its assets. The endpoints that only read teams don't need it.
 
     ![Permissions configuration screen for API client in ODC portal, showing various stages and user management options.](images/assign-user-mgmt-permissions-pl.png "Assign Permissions to API Client")
 

@@ -3,6 +3,7 @@ guid: 60d22645-2be2-4f38-9884-ed1a9cc26f52
 locale: en-us
 summary: "ODC asset permissions REST API: grant an organization role to a user for a specific asset by calling the OutSystems identity API."
 figma:
+api-render: true
 coverage-type:
   - apply
 topic:
@@ -14,28 +15,44 @@ audience:
   - Platform administrator
 tags:
   - Authorization
+  - IT Teams
   - REST
   - Roles
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 # Manage asset permissions
 
-When you create an asset as part of a governed creation process, you must grant access to the user or team that requested it. You do this by assigning an organization role scoped to the newly created asset.
+<style>
+#b3-b4-b1-InjectHTMLWrapper {height: auto!important}
+.image-zoom div div{height: auto!important}
+</style>
+
+When you create an asset as part of a governed creation process, you must grant access to the user or team that requested it. You can do this in the following ways:
+
+* Assign an organization role to a user, scoped to the newly created asset.
+* Add the asset to a team, so that every member of the team holds their team role on the asset.
+
+Permissions from the organization, team, and asset scopes add up. A role at one scope doesn't remove what a role at another scope grants.
 
 ## Prerequisites
 
 Before using the APIs to manage asset permissions, ensure that you have:
 
-* An API client with the **User management > Manage organization access** permission.
+* An API client with the following permissions:
+    * **User and access management > Manage member access**, to grant an organization role scoped to the asset.
+    * **User and access management > Manage teams**, to add the asset to a team or change the members of a team.
   
-  For more information, refer to [Edit permissions of API client](../authentication/create-api-client.md#edit-permissions-of-api-client).
+    For more information, refer to [Edit permissions of API client](../authentication/create-api-client.md#edit-permissions-of-api-client).
 
 * [Generated an access token](../authentication/get-access-token.md) for the API client. Include the token in the `Authorization` header.
 * The asset key you want to grant access to.
 
 * The user key of the user you want to grant access to.
+
+* The team key of the team you want to grant access to, if you grant access through a team.
 
 ## Grant access to a user for a specific asset
 
@@ -64,3 +81,12 @@ To grant access to a newly created asset, follow these steps:
     ```
 
 After this step, you have granted the user the permissions from the assigned role for that asset.
+
+## Grant access through a team
+
+To give every member of a team access to the asset, add the asset to the team. Each member holds their team role on every asset that the team owns. For more information about adding the asset to a team, refer to [Add the asset to a team](create-asset.md#add-the-asset-to-a-team). For more information about teams, refer to [Teams and asset ownership](../../../../user-management/it-users/teams.md).
+
+To add, update, or remove the members of a team, use the following endpoint:
+
+<rapi-doc-mini spec-url='../../resources/user-access-management-api-v1.json' filter-operations='PATCH /teams/{key}/members' allow-try='false' paths-expanded='true' color-scheme='light' theme='#242320'>
+</rapi-doc-mini>

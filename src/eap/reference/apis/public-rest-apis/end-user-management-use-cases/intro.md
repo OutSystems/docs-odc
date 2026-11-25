@@ -23,12 +23,15 @@ outsystems-tools:
   - odc portal
   - forge
 helpids:
+isautopublish: true
 ---
 # User and access management
 
 ODC provides a set of user and access management APIs that allow you to programmatically create, view, and manage users and their permissions at runtime. For detailed information on individual endpoints of these APIs, refer to [User and access management API](../../identity-v1.md). You can use these APIs to do the following:
 
 * [Create a single user and assign a role to the user](create-user-assign-role.md)
+
+You can also use these APIs to manage the lifecycle, membership, and asset ownership of teams. To manage teams, the API client needs the **User and access management > Manage teams** permission.
 
 OutSystems recommends that you consume all the user and access management APIs in a separate [library](../../../libraries/intro.md) and create individual server actions that invoke the corresponding REST API. This allows you to reuse the APIs across different ODC apps.  For detailed information about how to consume REST APIs, refer to [Consume one or more REST API methods](../../../../integration-with-systems/consume_rest/consume-a-rest-api.md).
 

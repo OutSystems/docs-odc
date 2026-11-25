@@ -1,11 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) REST APIs for user management, deployments, builds, and code quality with OAuth 2.0 authentication.
 tags:
-  - Authorization
   - Authentication
+  - Authorization
   - Deploy
-  - OIDC
   - OAuth
+  - OIDC
   - REST
   - Roles
 outsystems-tools:
@@ -50,6 +50,8 @@ The user and access management REST API enables you to programmatically manage u
 * Listing the current end-users of the apps to understand their status and modifying specific user information.
 
 * Managing user access to specific resources or functionalities within the app. It includes granting or revoking access permissions, managing user groups, and defining access policies.
+
+* Managing teams, including their lifecycle, membership, and asset ownership.
 
 For detailed information about the endpoints, refer to [User management API reference](../identity-v1.md).
 

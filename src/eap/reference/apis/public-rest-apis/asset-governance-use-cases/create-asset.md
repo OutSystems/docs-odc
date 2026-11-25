@@ -3,6 +3,7 @@ guid: 85322991-4747-4dbc-b7c1-dd297c35f090
 locale: en-us
 summary: Learn how to use OutSystems APIs to create a new asset in OutSystems Developer Cloud (ODC), either empty or based on a template.
 figma:
+api-render: true
 coverage-type:
   - apply
 topic:
@@ -19,8 +20,14 @@ tags:
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 # Create an asset from scratch or from a template
+
+<style>
+#b3-b4-b1-InjectHTMLWrapper {height: auto!important}
+.image-zoom div div{height: auto!important}
+</style>
 
 You can use OutSystems APIs to programmatically create a new asset in your development stage. You create the new asset as an [empty asset](#create-an-empty-asset) or [based on a template](#create-an-asset-based-on-a-template).
 
@@ -105,6 +112,15 @@ To create an asset based on a template, follow these steps:
 1. Copy the `applicationKey` from the response.
 
     Use the `applicationKey` value to [manage asset permissions](manage-asset-permissions.md).
+
+## Add the asset to a team
+
+To add a new asset to a team, create the asset first, and then add it to the team. An asset belongs to at most one team. If another team already owns the asset, the request fails with a 409 error, so remove the asset from that team first, in a separate call.
+
+Use the following endpoint to add the asset to a team:
+
+<rapi-doc-mini spec-url='../../resources/user-access-management-api-v1.json' filter-operations='PATCH /teams/{key}/assets' allow-try='false' paths-expanded='true' color-scheme='light' theme='#242320'>
+</rapi-doc-mini>
 
 ## Next steps
 
