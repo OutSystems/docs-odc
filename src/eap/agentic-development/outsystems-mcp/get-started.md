@@ -53,7 +53,7 @@ You need the following before you start:
 * The Claude Code command-line tool installed, so that the `claude` command runs in your terminal. To check, run `claude --version`. For more information about installing Claude Code, refer to the [Claude Code quickstart](https://code.claude.com/docs/en/quickstart).
 * Your ODC tenant hostname, the host part of your ODC Portal URL, for example `mycompany.outsystems.dev`.
 * A web browser on the same machine as Claude Code. The sign-in redirect goes to a local loopback address.
-* A tenant with OutSystems MCP enabled for your organization, and your user able to sign in to it.
+* A tenant that you can sign in to.
 * The ODC role permissions for the work you plan to do. The following permissions are examples for common workflows:
     * **Asset management** > **Create** to create an app.
     * **Asset management** > **Change** to change an app and publish it.
@@ -138,7 +138,7 @@ This request lists stages rather than apps, so it returns results on a tenant th
 
 * "List the apps in my ODC tenant."
 
-If a call returns a `tenant_not_allowed` rejection, your sign-in succeeded, but your tenant needs OutSystems MCP enabled. The rejection comes from a server-side check, so reinstalling the plugin leaves the result unchanged. Ask your organization to enable OutSystems MCP.
+If a call returns a `tenant_not_allowed` rejection, your sign-in succeeded, but your tenant needs OutSystems MCP enabled. The rejection comes from a server-side check, so reinstalling the plugin leaves the result unchanged. To have OutSystems MCP enabled for your tenant, contact your OutSystems representative or OutSystems Support.
 
 ## Next steps
 

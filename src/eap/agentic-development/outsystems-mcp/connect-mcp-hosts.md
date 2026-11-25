@@ -40,7 +40,7 @@ The steps on this page assume that you're comfortable with command-line tools an
 
 You need the following for any MCP host:
 
-* An OutSystems tenant with OutSystems MCP enabled for your organization. Access is gated server-side, so confirm this with your administrator before you install. If a call later returns a `tenant_not_allowed` rejection, refer to [Verify the connection](get-started.md#verify-the-connection) for the cause and the resolution.
+* An OutSystems tenant that you can sign in to. If a call returns a `tenant_not_allowed` rejection, contact your OutSystems representative or OutSystems Support. For more information about the cause, refer to [Verify the connection](get-started.md#verify-the-connection).
 * Your ODC tenant hostname. Replace `TENANT_HOSTNAME` with the host part of your ODC Portal URL, for example `mycompany.outsystems.dev`.
 * A web browser on the same machine as your MCP host. The sign-in redirect goes to a local loopback address, so run the MCP host and the browser on one machine.
 

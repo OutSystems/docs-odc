@@ -130,14 +130,14 @@ The following behaviors apply when you work from an MCP host:
 
 ## Supported MCP hosts
 
-For example, OutSystems validates the following MCP hosts:
+OutSystems validates the following MCP hosts:
 
 * AWS Kiro
-* Claude Code
-* Cursor
-* GitHub Copilot, in VS Code, the Copilot CLI, and Visual Studio
+* Claude Code, including the **Code** tab of Claude Desktop
+* Cursor, in the Cursor IDE and the Cursor CLI
+* GitHub Copilot, in VS Code, the Copilot CLI, and Visual Studio on Windows
 
-Any other MCP host that supports the MCP Streamable HTTP transport with OAuth connects to the same endpoint, without validated setup. For per-host setup, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md).
+Any other MCP host that supports the MCP Streamable HTTP transport with OAuth and Dynamic Client Registration can connect to the same endpoint, without validated setup. For per-host setup, refer to [Connect MCP hosts to OutSystems MCP](connect-mcp-hosts.md).
 
 ## Give feedback
 

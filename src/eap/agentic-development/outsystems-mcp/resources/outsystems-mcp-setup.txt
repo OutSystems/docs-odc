@@ -99,10 +99,9 @@ Use this section only when the user has no PE tenant yet. A PE tenant has one st
 
 This section confirms the conditions that setup depends on. If one is missing, tell the user before you continue.
 
-For a PE tenant, skip the conditions about OutSystems MCP and the ODC role, because a PE tenant has OutSystems MCP enabled and gives the user the permissions that setup and the first tasks need. Confirm the other conditions. For any other tenant, confirm every condition.
+For a PE tenant, skip the condition about the ODC role, because a PE tenant gives the user the permissions that setup and the first tasks need. Confirm the other conditions. For any other tenant, confirm every condition.
 
 * The user can sign in to `https://TENANT_HOSTNAME` in a browser.
-* OutSystems MCP is enabled for the tenant. If it isn't, the user's administrator must enable it.
 * The user's ODC role allows the work they plan to do, such as **Asset management** > **Create** or **Change**, and **Release management** > **Deploy assets**.
 * The AI tool and a web browser run on the same machine, because the sign-in redirect uses a local loopback address. If the AI tool runs on a remote machine, such as an SSH session, a container, or a virtual machine, tell the user to paste a callback URL back to you in the Sign in section.
 * The user's plan includes the AI tool. Claude Code, including the **Code** tab of Claude Desktop, requires a paid Claude plan.
@@ -315,7 +314,7 @@ If you see one of the results in the following table, take the action in the las
 
 | What you see | What it means | What to do |
 | ------------ | ------------- | ---------- |
-| `tenant_not_allowed` | Sign-in worked, but OutSystems MCP isn't enabled for this tenant. | Stop. Tell the user that their administrator must enable OutSystems MCP for the tenant. Don't retry sign-in. Retry once only when the user says the administrator enabled it. |
+| `tenant_not_allowed` | Sign-in worked, but OutSystems MCP isn't enabled for this tenant. | Stop. Tell the user to contact their OutSystems representative or OutSystems Support to have OutSystems MCP enabled for the tenant. Don't retry sign-in. Retry once only when the user says that OutSystems enabled it. |
 | The OutSystems tools aren't visible | The server isn't configured, or the tool wasn't restarted. | Go back to the Configure the AI tool section for the user's tool. Restart the tool, and check again. |
 | `tenant not configured` | The hostname is missing or wrong. | Go back to the Get the tenant hostname section, and check the hostname. |
 | An authentication error after sign-in | The sign-in token expired, or the server refused it. | Sign in again once. If the error persists, stop and report the error. |
