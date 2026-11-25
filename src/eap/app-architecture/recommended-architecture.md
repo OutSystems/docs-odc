@@ -103,8 +103,6 @@ Clear ownership requires and means you have only one go-to person for each busin
 
 To represent the group that owns a set of assets, create a [team](../user-management/it-users/teams.md) in the ODC Portal. A team can own assets from more than one portfolio.
 
-<!-- TODO(sharing, R-stories): add the sharing half of team ownership here. -->
-
 ### Best practices
 
 Use these best practices to keep ownership clear as you split work across apps:
