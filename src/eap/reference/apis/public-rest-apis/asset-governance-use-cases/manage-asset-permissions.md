@@ -3,7 +3,6 @@ guid: 60d22645-2be2-4f38-9884-ed1a9cc26f52
 locale: en-us
 summary: "ODC asset permissions REST API: grant an organization role to a user for a specific asset by calling the OutSystems identity API."
 figma:
-api-render: true
 coverage-type:
   - apply
 topic:
@@ -24,11 +23,6 @@ helpids:
 isautopublish: true
 ---
 # Manage asset permissions
-
-<style>
-#b3-b4-b1-InjectHTMLWrapper {height: auto!important}
-.image-zoom div div{height: auto!important}
-</style>
 
 When you create an asset as part of a governed creation process, you must grant access to the user or team that requested it. You can do this in the following ways:
 
@@ -86,7 +80,4 @@ After this step, you have granted the user the permissions from the assigned rol
 
 To give every member of a team access to the asset, add the asset to the team. Each member holds their team role on every asset that the team owns. For more information about adding the asset to a team, refer to [Add the asset to a team](create-asset.md#add-the-asset-to-a-team). For more information about teams, refer to [Teams and asset ownership](../../../../user-management/it-users/teams.md).
 
-To add, update, or remove the members of a team, use the following endpoint:
-
-<rapi-doc-mini spec-url='../../resources/user-access-management-api-v1.json' filter-operations='PATCH /teams/{key}/members' allow-try='false' paths-expanded='true' color-scheme='light' theme='#242320'>
-</rapi-doc-mini>
+To add, update, or remove the members of a team, use the [`PATCH /teams/{key}/members`](../../identity-v1.md#patch-/teams/-key-/members) endpoint.
